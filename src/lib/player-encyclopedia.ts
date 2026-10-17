@@ -469,8 +469,12 @@ export function buildPlayerEncyclopedia(
         const myChar = (isHome ? b.homeChara : b.awayChara) || stat.mainChar;
         const oppPlayerKey = isHome ? b.awayPlayer : b.homePlayer;
         const oppChar = (isHome ? b.awayChara : b.homeChara) || "";
-        const oppTeamKey = isHome ? m.away : m.home;
-        const oppTeamMeta = TEAM_META_MAP[oppTeamKey];
+        // 相手選手の所属チームを選手キーから厳密に直接特定
+        const oppTeamMeta =
+          Object.values(TEAM_META_MAP).find((t) =>
+            t.players.includes(oppPlayerKey)
+          ) || TEAM_META_MAP[isHome ? m.away : m.home];
+        const oppTeamKey = oppTeamMeta?.key || (isHome ? m.away : m.home);
         const myBattle = isHome ? b.homeBattle : b.awayBattle;
         const oppBattle = isHome ? b.awayBattle : b.homeBattle;
         const myPoint = isHome ? b.homePoint : b.awayPoint;
