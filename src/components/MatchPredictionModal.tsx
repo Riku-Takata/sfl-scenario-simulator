@@ -7,11 +7,13 @@ import { SCORE_OUTCOME_MAP, TEAM_META_MAP } from "@/lib/simulator";
 interface MatchPrediction {
   matchId: string;
   sectionNumber: number;
+  matchIndex: number;
   homeTeamKey: string;
   awayTeamKey: string;
   homeScore: number;
   awayScore: number;
   isFilled: boolean;
+  outcomeLabel?: string;
 }
 
 interface MatchPredictionModalProps {
@@ -21,6 +23,20 @@ interface MatchPredictionModalProps {
   allUnplayedMatches: MatchRecord[];
   customOutcomes: Record<string, ScorePatternId>;
   shareUrl: string;
+}
+
+/**
+ * 背景色(HEX)の輝度から適切な文字色（白/黒）を判定
+ */
+function getContrastColor(hex?: string): string {
+  if (!hex) return "#ffffff";
+  const cleaned = hex.replace("#", "");
+  if (cleaned.length !== 6) return "#ffffff";
+  const r = parseInt(cleaned.substring(0, 2), 16);
+  const g = parseInt(cleaned.substring(2, 4), 16);
+  const b = parseInt(cleaned.substring(4, 6), 16);
+  const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+  return yiq >= 150 ? "#000000" : "#ffffff";
 }
 
 export function MatchPredictionModal({
@@ -45,6 +61,9 @@ export function MatchPredictionModal({
     return availableSections[0] || 9;
   });
 
+  // 出力モード: 'all' (全試合まとめ) または 特定の matchId
+  const [selectedMatchMode, setSelectedMatchMode] = useState<string>("all");
+
   if (!isOpen) return null;
 
   // 対象節のマッチ一覧
@@ -52,19 +71,44 @@ export function MatchPredictionModal({
     (m) => m.sectionNumber === selectedSection
   );
 
-  const predictions: MatchPrediction[] = sectionMatches.map((m) => {
+  const predictions: MatchPrediction[] = sectionMatches.map((m, idx) => {
     const outcomeId = customOutcomes[m.id];
     const outcome = outcomeId ? SCORE_OUTCOME_MAP[outcomeId] : null;
     return {
       matchId: m.id,
       sectionNumber: m.sectionNumber,
+      matchIndex: idx + 1,
       homeTeamKey: m.home,
       awayTeamKey: m.away,
       homeScore: outcome ? outcome.homePoint : 0,
       awayScore: outcome ? outcome.awayPoint : 0,
       isFilled: Boolean(outcome),
+      outcomeLabel: outcome?.label,
     };
   });
+
+  // 選択中の単一マッチ（単一モード時）
+  const currentSingleMatch =
+    selectedMatchMode !== "all"
+      ? predictions.find((p) => p.matchId === selectedMatchMode) || predictions[0]
+      : null;
+
+  const currentHomeMeta = currentSingleMatch
+    ? TEAM_META_MAP[currentSingleMatch.homeTeamKey]
+    : null;
+  const currentAwayMeta = currentSingleMatch
+    ? TEAM_META_MAP[currentSingleMatch.awayTeamKey]
+    : null;
+
+  // ダウンロードファイル名の決定
+  const getDownloadFileName = () => {
+    if (selectedMatchMode === "all" || !currentSingleMatch) {
+      return `SFL2026_Div${division.toUpperCase()}_Sec${selectedSection}_All_Predictions.png`;
+    }
+    const hName = currentHomeMeta?.shortName || currentSingleMatch.homeTeamKey;
+    const aName = currentAwayMeta?.shortName || currentSingleMatch.awayTeamKey;
+    return `SFL2026_Div${division.toUpperCase()}_Sec${selectedSection}_MATCH${currentSingleMatch.matchIndex}_${hName}_vs_${aName}.png`;
+  };
 
   const handleDownloadImage = async () => {
     if (!cardRef.current) return;
@@ -76,7 +120,7 @@ export function MatchPredictionModal({
         backgroundColor: "#090d16",
       });
       const link = document.createElement("a");
-      link.download = `SFL2026_Div${division.toUpperCase()}_Sec${selectedSection}_Prediction.png`;
+      link.download = getDownloadFileName();
       link.href = dataUrl;
       link.click();
     } catch (err) {
@@ -119,7 +163,19 @@ export function MatchPredictionModal({
     }
   };
 
-  const tweetText = `【SFL 2026 Div.${division.toUpperCase()} 第${selectedSection}節 予想】\n次節のスコア予想カードを作成しました！\nこの予想通りに進んだ場合のプレーオフ進出ボーダー・順位表シミュレーションはこちら👇`;
+  // Xシェア文面の生成
+  let tweetText = "";
+  if (selectedMatchMode === "all" || !currentSingleMatch) {
+    tweetText = `【SFL 2026 Div.${division.toUpperCase()} 第${selectedSection}節 予想】\n次節全カードのスコア予想を作成しました！\nこの予想による順位表・プレーオフ進出条件シミュレーションはこちら👇`;
+  } else {
+    const hName = currentHomeMeta?.shortName || currentSingleMatch.homeTeamKey;
+    const aName = currentAwayMeta?.shortName || currentSingleMatch.awayTeamKey;
+    const scoreStr = currentSingleMatch.isFilled
+      ? `（予想スコア: ${hName} ${currentSingleMatch.homeScore} - ${currentSingleMatch.awayScore} ${aName}）`
+      : "";
+    tweetText = `【SFL 2026 Div.${division.toUpperCase()} 第${selectedSection}節 MATCH ${currentSingleMatch.matchIndex}】\n${hName} vs ${aName} の対戦スコア予想カードを作成しました！${scoreStr}\n順位表・突破条件シミュレーションはこちら👇`;
+  }
+
   const tweetIntentUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     tweetText
   )}&url=${encodeURIComponent(shareUrl)}&hashtags=SF6,SFL2026,SFLシミュレーター`;
@@ -150,7 +206,7 @@ export function MatchPredictionModal({
           background: "#ffffff",
           borderRadius: "16px",
           width: "100%",
-          maxWidth: "680px",
+          maxWidth: "700px",
           maxHeight: "90vh",
           overflowY: "auto",
           padding: "1.5rem",
@@ -171,10 +227,10 @@ export function MatchPredictionModal({
         >
           <div>
             <h3 style={{ fontSize: "1.2rem", fontWeight: 800 }}>
-              次節スコア予想カード画像生成 & Xシェア
+              次節スコア予想カード出力 & Xシェア
             </h3>
             <p style={{ fontSize: "0.82rem", color: "var(--text-muted)" }}>
-              タイムラインで目立つ高解像度16:9予想画像をワンクリックで出力・保存できます
+              節全体のまとめ、または1マッチ単位での迫力ある対戦画面風カードを出力できます
             </p>
           </div>
           <button
@@ -184,11 +240,11 @@ export function MatchPredictionModal({
             style={{
               background: "none",
               border: "none",
-              fontSize: "1.4rem",
-              fontWeight: 700,
-              cursor: "pointer",
+              fontSize: "1.5rem",
+              lineHeight: 1,
               color: "var(--text-muted)",
-              padding: "0.2rem 0.5rem",
+              cursor: "pointer",
+              padding: "0.25rem 0.5rem",
             }}
           >
             ×
@@ -196,250 +252,624 @@ export function MatchPredictionModal({
         </div>
 
         {/* 節セレクター */}
-        {availableSections.length > 1 && (
-          <div
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            marginBottom: "0.75rem",
+            flexWrap: "wrap",
+          }}
+        >
+          <span style={{ fontSize: "0.85rem", fontWeight: 700 }}>
+            対象の節を選択:
+          </span>
+          <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
+            {availableSections.map((sec) => (
+              <button
+                key={sec}
+                type="button"
+                onClick={() => {
+                  setSelectedSection(sec);
+                  setSelectedMatchMode("all");
+                }}
+                style={{
+                  padding: "0.35rem 0.75rem",
+                  borderRadius: "6px",
+                  fontSize: "0.82rem",
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  border:
+                    selectedSection === sec
+                      ? "1px solid var(--primary)"
+                      : "1px solid var(--border-color)",
+                  background:
+                    selectedSection === sec ? "var(--primary-bg)" : "#ffffff",
+                  color:
+                    selectedSection === sec
+                      ? "var(--primary)"
+                      : "var(--text-main)",
+                }}
+              >
+                第{sec}節
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* 出力対象の選択タブ（全試合まとめ / 各マッチ単体） */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            marginBottom: "1rem",
+            padding: "0.4rem",
+            background: "var(--bg-subtle)",
+            borderRadius: "8px",
+            border: "1px solid var(--border-color)",
+            overflowX: "auto",
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => setSelectedMatchMode("all")}
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              marginBottom: "1rem",
+              padding: "0.4rem 0.85rem",
+              borderRadius: "6px",
+              fontSize: "0.82rem",
+              fontWeight: 800,
+              cursor: "pointer",
+              border: "none",
+              whiteSpace: "nowrap",
+              background: selectedMatchMode === "all" ? "var(--primary)" : "transparent",
+              color: selectedMatchMode === "all" ? "#ffffff" : "var(--text-main)",
+              transition: "all 0.15s ease",
             }}
           >
-            <span style={{ fontSize: "0.84rem", fontWeight: 700, color: "var(--text-sub)" }}>
-              予想対象の節を選択:
-            </span>
-            <select
-              value={selectedSection}
-              onChange={(e) => setSelectedSection(Number(e.target.value))}
-              style={{
-                padding: "0.35rem 0.65rem",
-                borderRadius: "6px",
-                border: "1px solid var(--border-strong)",
-                fontWeight: 800,
-                fontSize: "0.86rem",
-              }}
-            >
-              {availableSections.map((sec) => (
-                <option key={sec} value={sec}>
-                  第 {sec} 節
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
+            📋 節全体（全{predictions.length}試合）
+          </button>
 
-        {/* ============================================================ */}
-        {/* 16:9 画像生成ターゲット（高解像度ダークグラデーションカード） */}
-        {/* ============================================================ */}
+          {predictions.map((p) => {
+            const hMeta = TEAM_META_MAP[p.homeTeamKey];
+            const aMeta = TEAM_META_MAP[p.awayTeamKey];
+            const isSelected = selectedMatchMode === p.matchId;
+            return (
+              <button
+                key={p.matchId}
+                type="button"
+                onClick={() => setSelectedMatchMode(p.matchId)}
+                style={{
+                  padding: "0.4rem 0.8rem",
+                  borderRadius: "6px",
+                  fontSize: "0.82rem",
+                  fontWeight: 800,
+                  cursor: "pointer",
+                  border: "none",
+                  whiteSpace: "nowrap",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                  background: isSelected ? "var(--primary)" : "transparent",
+                  color: isSelected ? "#ffffff" : "var(--text-main)",
+                  transition: "all 0.15s ease",
+                }}
+              >
+                <span>MATCH {p.matchIndex}:</span>
+                <span style={{ fontWeight: 900 }}>
+                  {hMeta?.shortName || p.homeTeamKey.toUpperCase()} vs{" "}
+                  {aMeta?.shortName || p.awayTeamKey.toUpperCase()}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 画像化対象のカードコンテナ（16:9比率対応・高コントラストeスポーツ仕様） */}
         <div
           ref={cardRef}
           style={{
-            width: "100%",
-            background: "linear-gradient(135deg, #090d16 0%, #131a29 50%, #090d16 100%)",
-            border: "1px solid rgba(255, 255, 255, 0.15)",
+            background: "linear-gradient(135deg, #090d16 0%, #111827 50%, #0a0f1d 100%)",
             borderRadius: "14px",
-            padding: "1.25rem 1.5rem",
-            boxShadow: "0 12px 24px rgba(0, 0, 0, 0.4)",
+            padding: "1.4rem",
             color: "#ffffff",
-            fontFamily: "Inter, Noto Sans JP, sans-serif",
             marginBottom: "1.25rem",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            boxShadow: "0 12px 32px rgba(0, 0, 0, 0.45)",
+            position: "relative",
+            overflow: "hidden",
           }}
         >
-          {/* カードヘッダー */}
+          {/* 背景のサイバーグリッド装飾 */}
           <div
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
-              paddingBottom: "0.75rem",
-              marginBottom: "1rem",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: "4px",
+              background: "linear-gradient(90deg, #3b82f6, #f59e0b, #ec4899)",
             }}
-          >
-            <div>
+          />
+
+          {/* ===== パターンA: 節全体（全試合まとめ） ===== */}
+          {selectedMatchMode === "all" ? (
+            <>
+              {/* カードヘッダー */}
               <div
                 style={{
-                  fontSize: "0.75rem",
-                  fontWeight: 800,
-                  letterSpacing: "0.1em",
-                  color: "#fbbf24",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
+                  paddingBottom: "0.75rem",
+                  marginBottom: "1rem",
                 }}
               >
-                STREET FIGHTER LEAGUE: Pro-JP 2026
-              </div>
-              <h2
-                style={{
-                  fontSize: "1.25rem",
-                  fontWeight: 900,
-                  color: "#ffffff",
-                  marginTop: "0.1rem",
-                }}
-              >
-                Division {division.toUpperCase()} 第 {selectedSection} 節 スコア予想
-              </h2>
-            </div>
-            <div
-              style={{
-                fontSize: "0.68rem",
-                fontWeight: 700,
-                color: "#94a3b8",
-                background: "rgba(255, 255, 255, 0.08)",
-                padding: "0.2rem 0.55rem",
-                borderRadius: "999px",
-                border: "1px solid rgba(255, 255, 255, 0.12)",
-              }}
-            >
-              非公式シミュレーター
-            </div>
-          </div>
-
-          {/* 対戦カード一覧 */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
-            {predictions.map((p) => {
-              const homeMeta = TEAM_META_MAP[p.homeTeamKey];
-              const awayMeta = TEAM_META_MAP[p.awayTeamKey];
-              return (
-                <div
-                  key={p.matchId}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    background: "rgba(255, 255, 255, 0.04)",
-                    border: "1px solid rgba(255, 255, 255, 0.08)",
-                    borderRadius: "10px",
-                    padding: "0.75rem 1rem",
-                  }}
-                >
-                  {/* HOME チーム */}
+                <div>
                   <div
                     style={{
-                      width: "38%",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.45rem",
+                      fontSize: "0.75rem",
+                      fontWeight: 800,
+                      letterSpacing: "0.1em",
+                      color: "#fbbf24",
                     }}
                   >
+                    STREET FIGHTER LEAGUE: Pro-JP 2026
+                  </div>
+                  <h2
+                    style={{
+                      fontSize: "1.25rem",
+                      fontWeight: 900,
+                      color: "#ffffff",
+                      marginTop: "0.1rem",
+                    }}
+                  >
+                    Division {division.toUpperCase()} 第 {selectedSection} 節 スコア予想
+                  </h2>
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.68rem",
+                    fontWeight: 700,
+                    color: "#94a3b8",
+                    background: "rgba(255, 255, 255, 0.08)",
+                    padding: "0.2rem 0.55rem",
+                    borderRadius: "999px",
+                    border: "1px solid rgba(255, 255, 255, 0.12)",
+                  }}
+                >
+                  ファン予測カード
+                </div>
+              </div>
+
+              {/* 対戦カード一覧 */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
+                {predictions.map((p) => {
+                  const homeMeta = TEAM_META_MAP[p.homeTeamKey];
+                  const awayMeta = TEAM_META_MAP[p.awayTeamKey];
+                  const homeBadgeColor = homeMeta?.color || "#3b82f6";
+                  const awayBadgeColor = awayMeta?.color || "#ef4444";
+                  return (
+                    <div
+                      key={p.matchId}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        background: "rgba(255, 255, 255, 0.04)",
+                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                        borderRadius: "10px",
+                        padding: "0.75rem 1rem",
+                      }}
+                    >
+                      {/* HOME チーム */}
+                      <div
+                        style={{
+                          width: "38%",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "0.55rem",
+                        }}
+                      >
+                        {/* 権利侵害のない公式カラーバッジ */}
+                        <span
+                          style={{
+                            background: homeBadgeColor,
+                            color: getContrastColor(homeBadgeColor),
+                            fontSize: "0.75rem",
+                            fontWeight: 900,
+                            padding: "0.25rem 0.55rem",
+                            borderRadius: "5px",
+                            letterSpacing: "0.04em",
+                            minWidth: "46px",
+                            textAlign: "center",
+                            boxShadow: `0 0 10px ${homeBadgeColor}50`,
+                          }}
+                        >
+                          {homeMeta?.shortName || p.homeTeamKey.toUpperCase()}
+                        </span>
+                        <div style={{ overflow: "hidden" }}>
+                          <div
+                            style={{
+                              fontSize: "0.95rem",
+                              fontWeight: 800,
+                              color: "#ffffff",
+                              whiteSpace: "nowrap",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }}
+                          >
+                            {homeMeta?.name}
+                          </div>
+                          <div
+                            style={{
+                              fontSize: "0.68rem",
+                              color: "#94a3b8",
+                            }}
+                          >
+                            [HOME]
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* スコア */}
+                      <div
+                        style={{
+                          width: "24%",
+                          textAlign: "center",
+                        }}
+                      >
+                        {p.isFilled ? (
+                          <div>
+                            <div
+                              style={{
+                                fontSize: "1.35rem",
+                                fontWeight: 900,
+                                letterSpacing: "0.05em",
+                                color: "#fde047",
+                                textShadow: "0 0 12px rgba(253, 224, 71, 0.35)",
+                              }}
+                            >
+                              {p.homeScore} - {p.awayScore}
+                            </div>
+                            {p.outcomeLabel && (
+                              <div
+                                style={{
+                                  fontSize: "0.65rem",
+                                  color: "#94a3b8",
+                                  marginTop: "0.1rem",
+                                }}
+                              >
+                                {p.outcomeLabel}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <div
+                            style={{
+                              fontSize: "0.8rem",
+                              fontWeight: 700,
+                              color: "#64748b",
+                              background: "rgba(255, 255, 255, 0.05)",
+                              padding: "0.2rem 0.5rem",
+                              borderRadius: "4px",
+                            }}
+                          >
+                            未入力
+                          </div>
+                        )}
+                      </div>
+
+                      {/* AWAY チーム */}
+                      <div
+                        style={{
+                          width: "38%",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "flex-end",
+                          gap: "0.55rem",
+                        }}
+                      >
+                        <div style={{ overflow: "hidden", textAlign: "right" }}>
+                          <div
+                            style={{
+                              fontSize: "0.95rem",
+                              fontWeight: 800,
+                              color: "#ffffff",
+                              whiteSpace: "nowrap",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }}
+                          >
+                            {awayMeta?.name}
+                          </div>
+                          <div
+                            style={{
+                              fontSize: "0.68rem",
+                              color: "#94a3b8",
+                            }}
+                          >
+                            [AWAY]
+                          </div>
+                        </div>
+                        {/* 権利侵害のない公式カラーバッジ */}
+                        <span
+                          style={{
+                            background: awayBadgeColor,
+                            color: getContrastColor(awayBadgeColor),
+                            fontSize: "0.75rem",
+                            fontWeight: 900,
+                            padding: "0.25rem 0.55rem",
+                            borderRadius: "5px",
+                            letterSpacing: "0.04em",
+                            minWidth: "46px",
+                            textAlign: "center",
+                            boxShadow: `0 0 10px ${awayBadgeColor}50`,
+                          }}
+                        >
+                          {awayMeta?.shortName || p.awayTeamKey.toUpperCase()}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            /* ===== パターンB: 単一マッチ（迫力のVS対戦画面スタイル） ===== */
+            currentSingleMatch && (
+              <div>
+                {/* マッチヘッダー */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    borderBottom: "1px solid rgba(255, 255, 255, 0.12)",
+                    paddingBottom: "0.6rem",
+                    marginBottom: "1.2rem",
+                  }}
+                >
+                  <div>
                     <span
                       style={{
-                        width: "5px",
-                        height: "24px",
-                        borderRadius: "2px",
-                        background: homeMeta?.color || "#ffffff",
-                        display: "inline-block",
+                        fontSize: "0.75rem",
+                        fontWeight: 800,
+                        letterSpacing: "0.1em",
+                        color: "#fbbf24",
                       }}
-                    />
-                    <div style={{ overflow: "hidden" }}>
-                      <div
-                        style={{
-                          fontSize: "0.95rem",
-                          fontWeight: 800,
-                          color: "#ffffff",
-                          whiteSpace: "nowrap",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                        }}
-                      >
-                        {homeMeta?.shortName || p.homeTeamKey.toUpperCase()}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: "0.7rem",
-                          color: "#94a3b8",
-                          whiteSpace: "nowrap",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                        }}
-                      >
-                        [HOME] {homeMeta?.name}
-                      </div>
+                    >
+                      STREET FIGHTER LEAGUE: Pro-JP 2026
+                    </span>
+                    <h2
+                      style={{
+                        fontSize: "1.2rem",
+                        fontWeight: 900,
+                        color: "#ffffff",
+                        marginTop: "0.1rem",
+                      }}
+                    >
+                      Division {division.toUpperCase()} 第 {selectedSection} 節 — MATCH{" "}
+                      {currentSingleMatch.matchIndex}
+                    </h2>
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "0.68rem",
+                      fontWeight: 800,
+                      color: "#38bdf8",
+                      background: "rgba(56, 189, 248, 0.12)",
+                      border: "1px solid rgba(56, 189, 248, 0.3)",
+                      padding: "0.25rem 0.6rem",
+                      borderRadius: "999px",
+                    }}
+                  >
+                    MATCH PREDICTION
+                  </div>
+                </div>
+
+                {/* VS 対戦グリッド */}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto 1fr",
+                    alignItems: "center",
+                    gap: "1rem",
+                    padding: "1rem 0",
+                  }}
+                >
+                  {/* HOME 側 */}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      textAlign: "center",
+                      gap: "0.5rem",
+                      background: "rgba(255, 255, 255, 0.03)",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                      borderRadius: "12px",
+                      padding: "1.1rem 0.8rem",
+                      borderTop: `4px solid ${currentHomeMeta?.color || "#3b82f6"}`,
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: "0.7rem",
+                        fontWeight: 800,
+                        color: "#94a3b8",
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      [HOME TEAM]
+                    </div>
+                    {/* 特大チームバッジ */}
+                    <div
+                      style={{
+                        background: currentHomeMeta?.color || "#3b82f6",
+                        color: getContrastColor(currentHomeMeta?.color),
+                        fontWeight: 900,
+                        fontSize: "1.45rem",
+                        letterSpacing: "0.05em",
+                        padding: "0.45rem 1.25rem",
+                        borderRadius: "8px",
+                        boxShadow: `0 0 20px ${currentHomeMeta?.color}60`,
+                        border: "1px solid rgba(255, 255, 255, 0.25)",
+                      }}
+                    >
+                      {currentHomeMeta?.shortName ||
+                        currentSingleMatch.homeTeamKey.toUpperCase()}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "0.95rem",
+                        fontWeight: 800,
+                        color: "#ffffff",
+                        marginTop: "0.2rem",
+                      }}
+                    >
+                      {currentHomeMeta?.name}
+                    </div>
+                    {/* 獲得予想ポイント */}
+                    <div
+                      style={{
+                        marginTop: "0.4rem",
+                        fontSize: "1.8rem",
+                        fontWeight: 900,
+                        color:
+                          currentSingleMatch.homeScore > currentSingleMatch.awayScore
+                            ? "#4ade80"
+                            : "#ffffff",
+                        textShadow:
+                          currentSingleMatch.homeScore > currentSingleMatch.awayScore
+                            ? "0 0 16px rgba(74, 222, 128, 0.4)"
+                            : "none",
+                      }}
+                    >
+                      {currentSingleMatch.isFilled
+                        ? `${currentSingleMatch.homeScore} pt`
+                        : "- pt"}
                     </div>
                   </div>
 
-                  {/* スコア */}
+                  {/* 中央 VS 演出 */}
                   <div
                     style={{
-                      width: "24%",
-                      textAlign: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "0.5rem",
                     }}
                   >
-                    {p.isFilled ? (
-                      <div
+                    <div
+                      style={{
+                        fontSize: "1.4rem",
+                        fontWeight: 900,
+                        fontStyle: "italic",
+                        letterSpacing: "0.1em",
+                        color: "#fbbf24",
+                        textShadow: "0 0 14px rgba(251, 191, 36, 0.5)",
+                      }}
+                    >
+                      VS
+                    </div>
+                    {currentSingleMatch.outcomeLabel && (
+                      <span
                         style={{
-                          fontSize: "1.35rem",
-                          fontWeight: 900,
-                          letterSpacing: "0.05em",
+                          fontSize: "0.72rem",
+                          fontWeight: 800,
                           color: "#fde047",
-                          textShadow: "0 0 12px rgba(253, 224, 71, 0.35)",
+                          background: "rgba(253, 224, 71, 0.15)",
+                          border: "1px solid rgba(253, 224, 71, 0.3)",
+                          padding: "0.25rem 0.6rem",
+                          borderRadius: "999px",
+                          whiteSpace: "nowrap",
                         }}
                       >
-                        {p.homeScore} - {p.awayScore}
-                      </div>
-                    ) : (
-                      <div
-                        style={{
-                          fontSize: "0.82rem",
-                          fontWeight: 700,
-                          color: "#64748b",
-                          background: "rgba(255, 255, 255, 0.05)",
-                          padding: "0.2rem 0.5rem",
-                          borderRadius: "4px",
-                        }}
-                      >
-                        スコア未入力
-                      </div>
+                        {currentSingleMatch.outcomeLabel}
+                      </span>
                     )}
                   </div>
 
-                  {/* AWAY チーム */}
+                  {/* AWAY 側 */}
                   <div
                     style={{
-                      width: "38%",
                       display: "flex",
+                      flexDirection: "column",
                       alignItems: "center",
-                      justifyContent: "flex-end",
-                      gap: "0.45rem",
+                      textAlign: "center",
+                      gap: "0.5rem",
+                      background: "rgba(255, 255, 255, 0.03)",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                      borderRadius: "12px",
+                      padding: "1.1rem 0.8rem",
+                      borderTop: `4px solid ${currentAwayMeta?.color || "#ef4444"}`,
                     }}
                   >
-                    <div style={{ overflow: "hidden", textAlign: "right" }}>
-                      <div
-                        style={{
-                          fontSize: "0.95rem",
-                          fontWeight: 800,
-                          color: "#ffffff",
-                          whiteSpace: "nowrap",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                        }}
-                      >
-                        {awayMeta?.shortName || p.awayTeamKey.toUpperCase()}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: "0.7rem",
-                          color: "#94a3b8",
-                          whiteSpace: "nowrap",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                        }}
-                      >
-                        [AWAY] {awayMeta?.name}
-                      </div>
-                    </div>
-                    <span
+                    <div
                       style={{
-                        width: "5px",
-                        height: "24px",
-                        borderRadius: "2px",
-                        background: awayMeta?.color || "#ffffff",
-                        display: "inline-block",
+                        fontSize: "0.7rem",
+                        fontWeight: 800,
+                        color: "#94a3b8",
+                        letterSpacing: "0.08em",
                       }}
-                    />
+                    >
+                      [AWAY TEAM]
+                    </div>
+                    {/* 特大チームバッジ */}
+                    <div
+                      style={{
+                        background: currentAwayMeta?.color || "#ef4444",
+                        color: getContrastColor(currentAwayMeta?.color),
+                        fontWeight: 900,
+                        fontSize: "1.45rem",
+                        letterSpacing: "0.05em",
+                        padding: "0.45rem 1.25rem",
+                        borderRadius: "8px",
+                        boxShadow: `0 0 20px ${currentAwayMeta?.color}60`,
+                        border: "1px solid rgba(255, 255, 255, 0.25)",
+                      }}
+                    >
+                      {currentAwayMeta?.shortName ||
+                        currentSingleMatch.awayTeamKey.toUpperCase()}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "0.95rem",
+                        fontWeight: 800,
+                        color: "#ffffff",
+                        marginTop: "0.2rem",
+                      }}
+                    >
+                      {currentAwayMeta?.name}
+                    </div>
+                    {/* 獲得予想ポイント */}
+                    <div
+                      style={{
+                        marginTop: "0.4rem",
+                        fontSize: "1.8rem",
+                        fontWeight: 900,
+                        color:
+                          currentSingleMatch.awayScore > currentSingleMatch.homeScore
+                            ? "#4ade80"
+                            : "#ffffff",
+                        textShadow:
+                          currentSingleMatch.awayScore > currentSingleMatch.homeScore
+                            ? "0 0 16px rgba(74, 222, 128, 0.4)"
+                            : "none",
+                      }}
+                    >
+                      {currentSingleMatch.isFilled
+                        ? `${currentSingleMatch.awayScore} pt`
+                        : "- pt"}
+                    </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            )
+          )}
 
           {/* カードフッター */}
           <div
@@ -454,7 +884,7 @@ export function MatchPredictionModal({
               color: "#94a3b8",
             }}
           >
-            <span>※ この予想による順位推計・ボーダー再現リンクあり</span>
+            <span>SFL 2026 順位・突破条件シミュレーター (ファンツール)</span>
             <span style={{ fontFamily: "monospace", color: "#64748b" }}>
               sfl-scenario-simulator.vercel.app
             </span>
@@ -505,10 +935,17 @@ export function MatchPredictionModal({
               display: "inline-flex",
               alignItems: "center",
               gap: "0.4rem",
+              cursor: "pointer",
             }}
           >
             <span>📷</span>
-            <span>{generating ? "画像生成中..." : "予想画像を保存する"}</span>
+            <span>
+              {generating
+                ? "画像生成中..."
+                : selectedMatchMode === "all"
+                  ? "節全体の予想画像を保存"
+                  : `MATCH ${currentSingleMatch?.matchIndex} の画像を保存`}
+            </span>
           </button>
 
           <button
@@ -524,6 +961,7 @@ export function MatchPredictionModal({
               display: "inline-flex",
               alignItems: "center",
               gap: "0.4rem",
+              cursor: "pointer",
             }}
           >
             <span>📋</span>
@@ -549,7 +987,11 @@ export function MatchPredictionModal({
             }}
           >
             <span>𝕏</span>
-            <span>Xでポストする</span>
+            <span>
+              {selectedMatchMode === "all"
+                ? "節予想をXでポスト"
+                : `MATCH ${currentSingleMatch?.matchIndex} をXでポスト`}
+            </span>
           </a>
         </div>
 
@@ -562,10 +1004,10 @@ export function MatchPredictionModal({
             lineHeight: 1.45,
           }}
         >
-          ※画像を保存またはコピーして、Xの投稿に画像添付するとタイムラインで目立ちます！
+          ※画像を保存またはコピーしてXに画像添付すると、タイムラインで大きく目立ちます！
         </p>
 
-        {/* ドネーション誘導（Buy Me a Coffee） */}
+        {/* Buy Me a Coffee 応援リンク */}
         <div
           style={{
             background: "var(--bg-subtle)",

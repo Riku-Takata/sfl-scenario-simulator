@@ -224,95 +224,6 @@ function main() {
       }
     }
 
-    // 2. SF6の過去大会（CPT Premier/WW, EVO 2023-2025, EVO Japan 2024-2026, SFL 2023-2025, Capcom Cup X/XI）
-    // 各キャラに対して最低1〜3試合の実戦対戦ログを付与し、網羅的な戦績を形成
-    // (選手の実力Eloや得意キャラ傾向に基づいて勝敗を自然に決定)
-    const targetCharList = [...ALL_SF6_CHARS];
-    
-    // シード値として決定的なハッシュを用い、毎回同一で安定したデータを生成
-    let seed = 0;
-    for (let i = 0; i < pKey.length; i++) seed = (seed * 31 + pKey.charCodeAt(i)) & 0xffffff;
-
-    const pseudoRandom = () => {
-      seed = (seed * 1664525 + 1013904223) & 0xffffffff;
-      return (seed >>> 0) / 4294967296;
-    };
-
-    // 過去大会から各キャラに対して対戦カードを生成
-    for (let cIdx = 0; cIdx < targetCharList.length; cIdx++) {
-      const oppChar = targetCharList[cIdx];
-      // 今期SFLで既に戦ったキャラでも、過去大型大会での対決実績を追加
-      const existingCount = bouts.filter(b => b.opponentChar === oppChar).length;
-      
-      // 各キャラに対して 1〜4 試合程度（合計 35〜50 試合）を大会プールから抽出
-      const boutsToAdd = Math.max(1, Math.min(3, Math.floor(pseudoRandom() * 3) + 1));
-
-      for (let b = 0; b < boutsToAdd; b++) {
-        // 大会選択
-        const tIdx = Math.floor(pseudoRandom() * SF6_TOURNAMENT_POOL.length);
-        const tour = SF6_TOURNAMENT_POOL[tIdx];
-        const round = tour.rounds[Math.floor(pseudoRandom() * tour.rounds.length)];
-
-        // 対戦相手選択
-        const oppCandidates = CHAR_REPRESENTATIVE_PLAYERS[oppChar] || [{ key: "rival", name: "ライバル選手" }];
-        const oppPick = oppCandidates[Math.floor(pseudoRandom() * oppCandidates.length)];
-        if (oppPick.key === pKey) continue; // 自分自身とは戦わない
-
-        // 自分の使用キャラ（大会の時期に合わせて過去メインまたは現メイン）
-        const myChar = (tour.date < "2024-05-22" && charProfile.pastMains.length > 0)
-          ? charProfile.pastMains[Math.floor(pseudoRandom() * charProfile.pastMains.length)]
-          : charProfile.main;
-
-        // 勝敗確率の計算（Eloレート差 & ベイズ）
-        const oppStat = playerStatsData.players[oppPick.key];
-        const oppElo = oppStat?.eloRating || 1930;
-        const eloDiff = elo - oppElo;
-        const winProb = 1 / (1 + Math.pow(10, -eloDiff / 400));
-        
-        // 勝敗決定
-        const roll = pseudoRandom();
-        const won = roll < winProb;
-
-        // スコア決定 (Bo3: 2-0 / 2-1 or Bo5: 3-0 / 3-1 / 3-2)
-        const isBo5 = round.includes("Top 8") || round.includes("大将戦") || round.includes("決勝");
-        let myScore: number;
-        let oppScore: number;
-        if (isBo5) {
-          if (won) {
-            myScore = 3;
-            oppScore = Math.floor(pseudoRandom() * 3); // 0, 1, or 2
-          } else {
-            oppScore = 3;
-            myScore = Math.floor(pseudoRandom() * 3);
-          }
-        } else {
-          if (won) {
-            myScore = 2;
-            oppScore = Math.floor(pseudoRandom() * 2); // 0 or 1
-          } else {
-            oppScore = 2;
-            myScore = Math.floor(pseudoRandom() * 2);
-          }
-        }
-
-        bouts.push({
-          id: `sf6-tour-${boutIdSeq++}`,
-          tournamentName: tour.name,
-          category: tour.category,
-          date: tour.date,
-          round,
-          playerKey: pKey,
-          myChar,
-          opponentPlayerKey: oppPick.key,
-          opponentPlayerName: oppPick.name,
-          opponentChar: oppChar,
-          myScore,
-          opponentScore: oppScore,
-          won,
-        });
-      }
-    }
-
     // 日付順にソート（新しい順）
     bouts.sort((a, b) => b.date.localeCompare(a.date));
     resultPlayers[pKey] = bouts;
@@ -320,7 +231,7 @@ function main() {
 
   const outputData: Sf6TournamentMatchupsData = {
     updatedAt: new Date().toISOString(),
-    source: "SF6 Official Tournaments (CPT Premier, Super Premier, World Warrior, Capcom Cup X/XI, EVO 2023-2025, EVO Japan 2024-2026, SFL Pro-JP 2023-2026)",
+    source: "SFL 2026 Pro-JP 公式戦実戦対戦ログ（※実在の公式戦のみを集計。未対戦キャラクターは0戦表示）",
     sf6ReleaseDate: "2023-06-02",
     players: resultPlayers,
   };
