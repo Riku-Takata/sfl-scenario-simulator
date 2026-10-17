@@ -211,13 +211,14 @@ export default function PlayerEncyclopedia({ players }: Props) {
 
     list.sort((a, b) => {
       if (vsCharFilter !== "none") {
-        const rateA =
-          a.vsCharacters.find((c) => c.charKey === vsCharFilter)
-            ?.estimatedWinRate ?? 0;
-        const rateB =
-          b.vsCharacters.find((c) => c.charKey === vsCharFilter)
-            ?.estimatedWinRate ?? 0;
+        const charA = a.vsCharacters.find((c) => c.charKey === vsCharFilter);
+        const charB = b.vsCharacters.find((c) => c.charKey === vsCharFilter);
+        const rateA = charA?.sflBattleWinRate ?? -1;
+        const rateB = charB?.sflBattleWinRate ?? -1;
         if (rateB !== rateA) return rateB - rateA;
+        const wonA = charA?.sflBattlesWon ?? 0;
+        const wonB = charB?.sflBattlesWon ?? 0;
+        if (wonB !== wonA) return wonB - wonA;
       }
       if (sortBy === "overall") {
         return (
@@ -252,7 +253,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
   );
 
   // ============================================================================
-  // STEP 1: 選手が未選択のとき → 「まず選手を選択する一覧・検索画面」を表示
+  // 選手未選択時：選手一覧・検索画面を表示
   // ============================================================================
   if (!selectedPlayer) {
     return (
@@ -260,7 +261,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
         <div className="panel-header">
           <div>
             <h2 className="panel-title">
-              STEP 1：分析・相性データを見たい選手を選択してください（全48選手）
+              分析・相性データを見たい選手を選択してください（全48選手）
             </h2>
             <p
               style={{
@@ -549,9 +550,23 @@ export default function PlayerEncyclopedia({ players }: Props) {
                 {vsTarget && (
                   <div
                     style={{
-                      background: "var(--success-bg)",
-                      border: "1px solid var(--success-border)",
-                      color: "var(--success)",
+                      background: vsTarget.playedInSfl
+                        ? (vsTarget.sflBattleWinRate ?? 0) >= 50
+                          ? "var(--success-bg)"
+                          : "var(--warning-bg)"
+                        : "var(--bg-subtle)",
+                      border: `1px solid ${
+                        vsTarget.playedInSfl
+                          ? (vsTarget.sflBattleWinRate ?? 0) >= 50
+                            ? "var(--success-border)"
+                            : "var(--warning-border)"
+                          : "var(--border-color)"
+                      }`,
+                      color: vsTarget.playedInSfl
+                        ? (vsTarget.sflBattleWinRate ?? 0) >= 50
+                          ? "var(--success)"
+                          : "var(--warning)"
+                        : "var(--text-muted)",
                       borderRadius: "6px",
                       padding: "0.35rem 0.6rem",
                       fontSize: "0.82rem",
@@ -559,8 +574,15 @@ export default function PlayerEncyclopedia({ players }: Props) {
                       marginBottom: "0.55rem",
                     }}
                   >
-                    vs {vsTarget.charName} 推定勝率:{" "}
-                    {vsTarget.estimatedWinRate.toFixed(1)}%
+                    {vsTarget.playedInSfl ? (
+                      <>
+                        vs {vsTarget.charName} SFLバトル勝率:{" "}
+                        {vsTarget.sflBattleWinRate?.toFixed(1)}%（
+                        {vsTarget.sflBattlesWon}勝{vsTarget.sflBattlesLost}敗）
+                      </>
+                    ) : (
+                      <>vs {vsTarget.charName} 今期SFL未対戦</>
+                    )}
                   </div>
                 )}
 
@@ -723,10 +745,12 @@ export default function PlayerEncyclopedia({ players }: Props) {
                 >
                   <span>
                     得意:{" "}
-                    {p.strongestMatchups
-                      .slice(0, 2)
-                      .map((m) => m.charName)
-                      .join("・")}
+                    {p.strongestMatchups.length > 0
+                      ? p.strongestMatchups
+                          .slice(0, 2)
+                          .map((m) => m.charName)
+                          .join("・")
+                      : "今期未対戦"}
                   </span>
                   <span style={{ color: "var(--primary)", fontWeight: 800 }}>
                     この選手を詳しく見る →
@@ -741,7 +765,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
   }
 
   // ============================================================================
-  // STEP 2: 選手が選択されたとき → 「選択された選手の詳細分析カルテ画面」を表示
+  // 選手選択時：選択された選手の詳細分析カルテ画面を表示
   // ============================================================================
   const paramList = [
     {
@@ -772,7 +796,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
     {
       label: "対応キャラ幅",
       value: selectedPlayer.parameters.matchupCoverage,
-      desc: `全28キャラ中 ${selectedPlayer.vsCharacters.filter((c) => c.estimatedWinRate >= 50).length}キャラに対して勝率50%以上`,
+      desc: `今期SFL対戦済み ${selectedPlayer.vsCharacters.filter((c) => c.playedInSfl).length}キャラ中 ${selectedPlayer.vsCharacters.filter((c) => c.playedInSfl && (c.sflBattleWinRate ?? 0) >= 50).length}キャラ相手に勝率50%以上`,
     },
   ];
 
@@ -1589,10 +1613,10 @@ export default function PlayerEncyclopedia({ players }: Props) {
           >
             <div>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 800 }}>
-                対キャラクター相性データ（このキャラに対してどれくらい強いか）
+                対キャラクター相性データ（SFL 2026 今シーズンの実戦戦績のみ）
               </h3>
               <p style={{ fontSize: "0.82rem", color: "var(--text-muted)" }}>
-                過去の公式大会・SFL実戦ログから算出された、相手キャラクター別の推定勝率とSFL実戦バトル成績です。
+                今シーズン（SFL 2026）公式戦の実戦対戦ログのみから算出した相手キャラクター別のバトル勝率および対戦組み合わせ内訳です。各カードから計算根拠となった対戦カードを参照できます。
               </p>
             </div>
             <button
@@ -1602,18 +1626,18 @@ export default function PlayerEncyclopedia({ players }: Props) {
             >
               {showAllVsChars
                 ? "全28キャラ一覧を閉じる"
-                : "全28キャラクターとの相性一覧を表示する"}
+                : "全28キャラクターとの対戦戦績一覧を表示する"}
             </button>
           </div>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
               gap: "1rem",
             }}
           >
-            {/* 得意キャラ TOP 5 */}
+            {/* 得意キャラ（今期勝ち越し） */}
             <div
               style={{
                 background: "var(--success-bg)",
@@ -1630,59 +1654,172 @@ export default function PlayerEncyclopedia({ players }: Props) {
                   marginBottom: "0.6rem",
                 }}
               >
-                ◎ 得意としている相手キャラクター TOP 5
+                ◎ 得意・勝ち越している相手キャラクター
               </div>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "0.45rem",
+                  gap: "0.6rem",
                 }}
               >
-                {selectedPlayer.strongestMatchups.map((m, idx) => (
-                  <div
-                    key={m.charKey}
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      background: "#ffffff",
-                      padding: "0.5rem 0.75rem",
-                      borderRadius: "8px",
-                      border: "1px solid var(--border-color)",
-                      fontSize: "0.86rem",
-                    }}
-                  >
-                    <div>
-                      <strong style={{ marginRight: "0.4rem" }}>
-                        {idx + 1}. vs {m.charName}
-                      </strong>
-                      {(m.sflBoutsWon > 0 || m.sflBoutsLost > 0) && (
-                        <span
-                          style={{
-                            fontSize: "0.75rem",
-                            color: "var(--text-muted)",
-                          }}
-                        >
-                          （SFL実戦 {m.sflBattlesWon}勝{m.sflBattlesLost}敗）
-                        </span>
-                      )}
-                    </div>
-                    <span
+                {selectedPlayer.strongestMatchups.length > 0 ? (
+                  selectedPlayer.strongestMatchups.map((m, idx) => (
+                    <div
+                      key={m.charKey}
                       style={{
-                        fontWeight: 800,
-                        color: "var(--success)",
-                        fontSize: "0.95rem",
+                        background: "#ffffff",
+                        padding: "0.65rem 0.85rem",
+                        borderRadius: "8px",
+                        border: "1px solid var(--border-color)",
+                        fontSize: "0.86rem",
                       }}
                     >
-                      勝率 {m.estimatedWinRate.toFixed(1)}%
-                    </span>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginBottom: "0.35rem",
+                        }}
+                      >
+                        <strong style={{ fontSize: "0.95rem" }}>
+                          {idx + 1}. vs {m.charName}
+                        </strong>
+                        <span
+                          style={{
+                            fontWeight: 800,
+                            color: "var(--success)",
+                            fontSize: "1rem",
+                          }}
+                        >
+                          勝率 {m.sflBattleWinRate?.toFixed(1)}%
+                        </span>
+                      </div>
+
+                      <div
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "0.4rem",
+                          fontSize: "0.78rem",
+                          color: "var(--text-sub)",
+                          marginBottom: "0.45rem",
+                        }}
+                      >
+                        <span>
+                          SFLバトル: <strong>{m.sflBattlesWon}勝{m.sflBattlesLost}敗</strong>（計{m.sflBattlesTotal}戦）
+                        </span>
+                        <span>/</span>
+                        <span>
+                          試合: <strong>{m.sflBoutsWon}勝{m.sflBoutsLost}敗</strong>
+                        </span>
+                        <span>/</span>
+                        <span style={{ color: "var(--text-muted)" }}>
+                          HOME {m.homeBattlesWon}勝{m.homeBattlesLost}敗・AWAY {m.awayBattlesWon}勝{m.awayBattlesLost}敗
+                        </span>
+                      </div>
+
+                      {/* 計算根拠となった対戦組み合わせ一覧 */}
+                      <div
+                        style={{
+                          borderTop: "1px dashed var(--border-color)",
+                          paddingTop: "0.4rem",
+                        }}
+                      >
+                        <div
+                          style={{
+                            fontSize: "0.74rem",
+                            fontWeight: 700,
+                            color: "var(--text-muted)",
+                            marginBottom: "0.25rem",
+                          }}
+                        >
+                          計算根拠となった対戦組み合わせ:
+                        </div>
+                        {m.matchups.map((bout, bIdx) => (
+                          <div
+                            key={bIdx}
+                            style={{
+                              fontSize: "0.78rem",
+                              background: "var(--bg-subtle)",
+                              padding: "0.35rem 0.55rem",
+                              borderRadius: "6px",
+                              marginBottom: "0.25rem",
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div>
+                              <span style={{ fontWeight: 800 }}>
+                                {bout.sectionTitle} {bout.statusName}
+                              </span>
+                              <span
+                                style={{
+                                  fontSize: "0.72rem",
+                                  color: "var(--text-muted)",
+                                  marginLeft: "0.3rem",
+                                }}
+                              >
+                                [{bout.side.toUpperCase()}]
+                              </span>
+                              <div
+                                style={{
+                                  color: "var(--text-sub)",
+                                  fontSize: "0.76rem",
+                                  marginTop: "0.1rem",
+                                }}
+                              >
+                                {CHAR_NAME_JP_MAP[bout.myChar] || bout.myChar} vs{" "}
+                                <strong>{bout.opponentPlayerName}</strong>（
+                                {bout.opponentTeamShort}）
+                              </div>
+                            </div>
+                            <div style={{ textAlign: "right" }}>
+                              <span
+                                style={{
+                                  fontWeight: 800,
+                                  color: bout.won
+                                    ? "var(--success)"
+                                    : "var(--danger)",
+                                }}
+                              >
+                                {bout.myBattle} - {bout.opponentBattle}{" "}
+                                {bout.won ? "勝利" : "敗北"}
+                              </span>
+                              <div
+                                style={{
+                                  fontSize: "0.72rem",
+                                  color: "var(--text-muted)",
+                                }}
+                              >
+                                +{bout.myPoint}pt
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div
+                    style={{
+                      background: "#ffffff",
+                      padding: "0.85rem",
+                      borderRadius: "8px",
+                      fontSize: "0.85rem",
+                      color: "var(--text-muted)",
+                      textAlign: "center",
+                    }}
+                  >
+                    今期SFL本戦での勝ち越し対戦データはまだありません
                   </div>
-                ))}
+                )}
               </div>
             </div>
 
-            {/* 接戦・要注意キャラ TOP 5 */}
+            {/* 苦戦・警戒が必要な相手キャラクター */}
             <div
               style={{
                 background: "var(--warning-bg)",
@@ -1699,129 +1836,328 @@ export default function PlayerEncyclopedia({ players }: Props) {
                   marginBottom: "0.6rem",
                 }}
               >
-                △ 接戦・警戒が必要な相手キャラクター TOP 5
+                △ 苦戦・負け越している相手キャラクター
               </div>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "0.45rem",
+                  gap: "0.6rem",
                 }}
               >
-                {selectedPlayer.closestMatchups.map((m, idx) => (
-                  <div
-                    key={m.charKey}
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      background: "#ffffff",
-                      padding: "0.5rem 0.75rem",
-                      borderRadius: "8px",
-                      border: "1px solid var(--border-color)",
-                      fontSize: "0.86rem",
-                    }}
-                  >
-                    <div>
-                      <strong style={{ marginRight: "0.4rem" }}>
-                        {idx + 1}. vs {m.charName}
-                      </strong>
-                      {(m.sflBoutsWon > 0 || m.sflBoutsLost > 0) && (
-                        <span
-                          style={{
-                            fontSize: "0.75rem",
-                            color: "var(--text-muted)",
-                          }}
-                        >
-                          （SFL実戦 {m.sflBattlesWon}勝{m.sflBattlesLost}敗）
-                        </span>
-                      )}
-                    </div>
-                    <span
+                {selectedPlayer.closestMatchups.length > 0 ? (
+                  selectedPlayer.closestMatchups.map((m, idx) => (
+                    <div
+                      key={m.charKey}
                       style={{
-                        fontWeight: 800,
-                        color: "var(--warning)",
-                        fontSize: "0.95rem",
+                        background: "#ffffff",
+                        padding: "0.65rem 0.85rem",
+                        borderRadius: "8px",
+                        border: "1px solid var(--border-color)",
+                        fontSize: "0.86rem",
                       }}
                     >
-                      勝率 {m.estimatedWinRate.toFixed(1)}%
-                    </span>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginBottom: "0.35rem",
+                        }}
+                      >
+                        <strong style={{ fontSize: "0.95rem" }}>
+                          {idx + 1}. vs {m.charName}
+                        </strong>
+                        <span
+                          style={{
+                            fontWeight: 800,
+                            color: "var(--warning)",
+                            fontSize: "1rem",
+                          }}
+                        >
+                          勝率 {m.sflBattleWinRate?.toFixed(1)}%
+                        </span>
+                      </div>
+
+                      <div
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "0.4rem",
+                          fontSize: "0.78rem",
+                          color: "var(--text-sub)",
+                          marginBottom: "0.45rem",
+                        }}
+                      >
+                        <span>
+                          SFLバトル: <strong>{m.sflBattlesWon}勝{m.sflBattlesLost}敗</strong>（計{m.sflBattlesTotal}戦）
+                        </span>
+                        <span>/</span>
+                        <span>
+                          試合: <strong>{m.sflBoutsWon}勝{m.sflBoutsLost}敗</strong>
+                        </span>
+                        <span>/</span>
+                        <span style={{ color: "var(--text-muted)" }}>
+                          HOME {m.homeBattlesWon}勝{m.homeBattlesLost}敗・AWAY {m.awayBattlesWon}勝{m.awayBattlesLost}敗
+                        </span>
+                      </div>
+
+                      {/* 計算根拠となった対戦組み合わせ一覧 */}
+                      <div
+                        style={{
+                          borderTop: "1px dashed var(--border-color)",
+                          paddingTop: "0.4rem",
+                        }}
+                      >
+                        <div
+                          style={{
+                            fontSize: "0.74rem",
+                            fontWeight: 700,
+                            color: "var(--text-muted)",
+                            marginBottom: "0.25rem",
+                          }}
+                        >
+                          計算根拠となった対戦組み合わせ:
+                        </div>
+                        {m.matchups.map((bout, bIdx) => (
+                          <div
+                            key={bIdx}
+                            style={{
+                              fontSize: "0.78rem",
+                              background: "var(--bg-subtle)",
+                              padding: "0.35rem 0.55rem",
+                              borderRadius: "6px",
+                              marginBottom: "0.25rem",
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div>
+                              <span style={{ fontWeight: 800 }}>
+                                {bout.sectionTitle} {bout.statusName}
+                              </span>
+                              <span
+                                style={{
+                                  fontSize: "0.72rem",
+                                  color: "var(--text-muted)",
+                                  marginLeft: "0.3rem",
+                                }}
+                              >
+                                [{bout.side.toUpperCase()}]
+                              </span>
+                              <div
+                                style={{
+                                  color: "var(--text-sub)",
+                                  fontSize: "0.76rem",
+                                  marginTop: "0.1rem",
+                                }}
+                              >
+                                {CHAR_NAME_JP_MAP[bout.myChar] || bout.myChar} vs{" "}
+                                <strong>{bout.opponentPlayerName}</strong>（
+                                {bout.opponentTeamShort}）
+                              </div>
+                            </div>
+                            <div style={{ textAlign: "right" }}>
+                              <span
+                                style={{
+                                  fontWeight: 800,
+                                  color: bout.won
+                                    ? "var(--success)"
+                                    : "var(--danger)",
+                                }}
+                              >
+                                {bout.myBattle} - {bout.opponentBattle}{" "}
+                                {bout.won ? "勝利" : "敗北"}
+                              </span>
+                              <div
+                                style={{
+                                  fontSize: "0.72rem",
+                                  color: "var(--text-muted)",
+                                }}
+                              >
+                                +{bout.myPoint}pt
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div
+                    style={{
+                      background: "#ffffff",
+                      padding: "0.85rem",
+                      borderRadius: "8px",
+                      fontSize: "0.85rem",
+                      color: "var(--text-muted)",
+                      textAlign: "center",
+                    }}
+                  >
+                    今期SFL本戦での負け越し・苦戦対戦データはありません（好調）
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
 
-          {/* 全28キャラクター相性一覧グリッド */}
+          {/* 全28キャラクター対戦戦績・組み合わせ一覧グリッド */}
           {showAllVsChars && (
             <div
               style={{
-                marginTop: "1rem",
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))",
-                gap: "0.6rem",
+                marginTop: "1.25rem",
+                background: "var(--bg-subtle)",
+                border: "1px solid var(--border-color)",
+                borderRadius: "10px",
+                padding: "1rem",
               }}
             >
-              {selectedPlayer.vsCharacters.map((vc) => (
-                <div
-                  key={vc.charKey}
-                  style={{
-                    background: "var(--bg-subtle)",
-                    border: "1px solid var(--border-color)",
-                    borderRadius: "8px",
-                    padding: "0.6rem 0.75rem",
-                    fontSize: "0.82rem",
-                  }}
-                >
+              <div
+                style={{
+                  fontSize: "0.95rem",
+                  fontWeight: 800,
+                  marginBottom: "0.75rem",
+                }}
+              >
+                全28キャラクター 今シーズンSFL対戦戦績・組み合わせ内訳
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+                  gap: "0.75rem",
+                }}
+              >
+                {selectedPlayer.vsCharacters.map((vc) => (
                   <div
+                    key={vc.charKey}
                     style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      fontWeight: 800,
-                      marginBottom: "0.25rem",
+                      background: "#ffffff",
+                      border: `1px solid ${
+                        vc.playedInSfl
+                          ? (vc.sflBattleWinRate ?? 0) >= 50
+                            ? "var(--success-border)"
+                            : "var(--warning-border)"
+                          : "var(--border-color)"
+                      }`,
+                      borderRadius: "8px",
+                      padding: "0.7rem 0.85rem",
+                      fontSize: "0.82rem",
                     }}
                   >
-                    <span>vs {vc.charName}</span>
-                    <span
-                      style={{
-                        color:
-                          vc.estimatedWinRate >= 52
-                            ? "var(--success)"
-                            : vc.estimatedWinRate < 48
-                              ? "var(--danger)"
-                              : "var(--text-main)",
-                      }}
-                    >
-                      {vc.estimatedWinRate.toFixed(1)}%
-                    </span>
-                  </div>
-                  <div className="prob-bar-wrap" style={{ width: "100%" }}>
-                    <div
-                      className="prob-bar-fill"
-                      style={{
-                        width: `${Math.min(100, vc.estimatedWinRate)}%`,
-                        background:
-                          vc.estimatedWinRate >= 52
-                            ? "var(--success)"
-                            : vc.estimatedWinRate < 48
-                              ? "var(--warning)"
-                              : "var(--primary)",
-                      }}
-                    />
-                  </div>
-                  {(vc.sflBattlesWon > 0 || vc.sflBattlesLost > 0) && (
                     <div
                       style={{
-                        fontSize: "0.73rem",
-                        color: "var(--text-muted)",
-                        marginTop: "0.25rem",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        fontWeight: 800,
+                        marginBottom: "0.35rem",
                       }}
                     >
-                      SFL実戦バトル: {vc.sflBattlesWon}勝{vc.sflBattlesLost}敗
+                      <span style={{ fontSize: "0.9rem" }}>
+                        vs {vc.charName}
+                      </span>
+                      {vc.playedInSfl ? (
+                        <span
+                          style={{
+                            fontWeight: 800,
+                            color:
+                              (vc.sflBattleWinRate ?? 0) >= 50
+                                ? "var(--success)"
+                                : "var(--danger)",
+                            fontSize: "0.92rem",
+                          }}
+                        >
+                          勝率 {vc.sflBattleWinRate?.toFixed(1)}%
+                        </span>
+                      ) : (
+                        <span
+                          style={{
+                            fontSize: "0.75rem",
+                            color: "var(--text-muted)",
+                            background: "var(--bg-subtle)",
+                            padding: "0.15rem 0.45rem",
+                            borderRadius: "4px",
+                          }}
+                        >
+                          今期未対戦 (0戦)
+                        </span>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
+
+                    {vc.playedInSfl ? (
+                      <>
+                        <div
+                          style={{
+                            fontSize: "0.76rem",
+                            color: "var(--text-sub)",
+                            marginBottom: "0.45rem",
+                          }}
+                        >
+                          バトル: {vc.sflBattlesWon}勝{vc.sflBattlesLost}敗 / 試合: {vc.sflBoutsWon}勝{vc.sflBoutsLost}敗
+                        </div>
+
+                        {/* 対戦組み合わせ一覧 */}
+                        <div
+                          style={{
+                            borderTop: "1px dashed var(--border-color)",
+                            paddingTop: "0.35rem",
+                          }}
+                        >
+                          <div
+                            style={{
+                              fontSize: "0.72rem",
+                              fontWeight: 700,
+                              color: "var(--text-muted)",
+                              marginBottom: "0.2rem",
+                            }}
+                          >
+                            対戦履歴（計算根拠）:
+                          </div>
+                          {vc.matchups.map((bout, bIdx) => (
+                            <div
+                              key={bIdx}
+                              style={{
+                                fontSize: "0.74rem",
+                                background: "var(--bg-subtle)",
+                                padding: "0.25rem 0.45rem",
+                                borderRadius: "4px",
+                                marginBottom: "0.2rem",
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
+                            >
+                              <span>
+                                {bout.sectionTitle} vs {bout.opponentPlayerName}（{bout.opponentTeamShort}）
+                              </span>
+                              <strong
+                                style={{
+                                  color: bout.won
+                                    ? "var(--success)"
+                                    : "var(--danger)",
+                                }}
+                              >
+                                {bout.myBattle}-{bout.opponentBattle}
+                              </strong>
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <div
+                        style={{
+                          fontSize: "0.75rem",
+                          color: "var(--text-muted)",
+                          paddingTop: "0.2rem",
+                        }}
+                      >
+                        今期SFL本戦での対戦はまだありません
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>

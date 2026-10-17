@@ -75,12 +75,21 @@ export interface PlayerBoutLog {
 export interface VsCharDetail {
   charKey: string;
   charName: string;
-  estimatedWinRate: number; // 0..100
+  playedInSfl: boolean;
   sflBattlesWon: number;
   sflBattlesLost: number;
+  sflBattlesTotal: number;
+  sflBattleWinRate: number | null; // 0..100 (%) または 未対戦時は null
   sflBoutsWon: number;
   sflBoutsLost: number;
-  tierLabel: "大得意" | "有利" | "五分" | "接戦";
+  sflBoutsTotal: number;
+  sflBoutWinRate: number | null; // 0..100 (%) または 未対戦時は null
+  homeBattlesWon: number;
+  homeBattlesLost: number;
+  awayBattlesWon: number;
+  awayBattlesLost: number;
+  tierLabel: "大得意" | "勝ち越し" | "五分" | "苦戦" | "未対戦";
+  matchups: PlayerBoutLog[]; // 計算に使用している今期SFL実戦の対戦組み合わせ内訳
 }
 
 export interface PlayerRadarParameters {
@@ -594,50 +603,106 @@ export function buildPlayerEncyclopedia(
       });
     }
 
-    // 対キャラクター相性一覧
-    const vsCharacters: VsCharDetail[] = Object.values(stat.vsCharStats).map(
-      (vc) => {
-        const obs = sflVsCharBouts[vc.vsChar] || {
-          bWon: 0,
-          bLost: 0,
-          mWon: 0,
-          mLost: 0,
-        };
-        const estRate = Math.round(vc.smoothedWinRate * 1000) / 10;
-        const tierLabel: VsCharDetail["tierLabel"] =
-          estRate >= 56
-            ? "大得意"
-            : estRate >= 51.5
-              ? "有利"
-              : estRate >= 48.5
-                ? "五分"
-                : "接戦";
-        return {
-          charKey: vc.vsChar,
-          charName: formatCharName(vc.vsChar),
-          estimatedWinRate: estRate,
-          sflBattlesWon: obs.bWon,
-          sflBattlesLost: obs.bLost,
-          sflBoutsWon: obs.mWon,
-          sflBoutsLost: obs.mLost,
-          tierLabel,
-        };
-      }
-    );
+    // SF6全28キャラクター一覧
+    const ALL_SF6_CHARS = [
+      "ryu", "luke", "jamie", "chunli", "guile", "kimberly", "juri", "ken",
+      "blanka", "dhalsim", "ehonda", "dee_jay", "manon", "marisa", "jp",
+      "zangief", "lily", "cammy", "rashid", "aki", "ed", "gouki_akuma",
+      "vega_mbison", "terry", "mai", "elena", "sagat", "cviper",
+    ];
 
-    const sortedByWinRateDesc = [...vsCharacters].sort(
-      (a, b) =>
-        b.estimatedWinRate - a.estimatedWinRate ||
-        b.sflBoutsWon - a.sflBoutsWon
-    );
-    const strongestMatchups = sortedByWinRateDesc.slice(0, 5);
-    const closestMatchups = [...vsCharacters]
+    // 対キャラクター相性（今シーズンSFL実戦の対戦結果のみから集計）
+    const vsCharacters: VsCharDetail[] = ALL_SF6_CHARS.map((cKey) => {
+      const matchups = boutLogs.filter((b) => b.opponentChar === cKey);
+      const bWon = matchups.reduce((sum, b) => sum + b.myBattle, 0);
+      const bLost = matchups.reduce((sum, b) => sum + b.opponentBattle, 0);
+      const bTotal = bWon + bLost;
+      const mWon = matchups.filter((b) => b.won).length;
+      const mLost = matchups.filter((b) => !b.won).length;
+      const mTotal = matchups.length;
+      const playedInSfl = bTotal > 0;
+
+      const homeBattlesWon = matchups
+        .filter((b) => b.side === "home")
+        .reduce((sum, b) => sum + b.myBattle, 0);
+      const homeBattlesLost = matchups
+        .filter((b) => b.side === "home")
+        .reduce((sum, b) => sum + b.opponentBattle, 0);
+      const awayBattlesWon = matchups
+        .filter((b) => b.side === "away")
+        .reduce((sum, b) => sum + b.myBattle, 0);
+      const awayBattlesLost = matchups
+        .filter((b) => b.side === "away")
+        .reduce((sum, b) => sum + b.opponentBattle, 0);
+
+      const sflBattleWinRate =
+        bTotal > 0 ? Math.round((bWon / bTotal) * 1000) / 10 : null;
+      const sflBoutWinRate =
+        mTotal > 0 ? Math.round((mWon / mTotal) * 1000) / 10 : null;
+
+      let tierLabel: VsCharDetail["tierLabel"] = "未対戦";
+      if (playedInSfl && sflBattleWinRate !== null) {
+        if (sflBattleWinRate >= 70) tierLabel = "大得意";
+        else if (sflBattleWinRate > 50) tierLabel = "勝ち越し";
+        else if (sflBattleWinRate === 50) tierLabel = "五分";
+        else tierLabel = "苦戦";
+      }
+
+      return {
+        charKey: cKey,
+        charName: formatCharName(cKey),
+        playedInSfl,
+        sflBattlesWon: bWon,
+        sflBattlesLost: bLost,
+        sflBattlesTotal: bTotal,
+        sflBattleWinRate,
+        sflBoutsWon: mWon,
+        sflBoutsLost: mLost,
+        sflBoutsTotal: mTotal,
+        sflBoutWinRate,
+        homeBattlesWon,
+        homeBattlesLost,
+        awayBattlesWon,
+        awayBattlesLost,
+        tierLabel,
+        matchups,
+      };
+    });
+
+    const playedVsChars = vsCharacters.filter((c) => c.playedInSfl);
+    const unplayedVsChars = vsCharacters.filter((c) => !c.playedInSfl);
+
+    // 得意キャラ（今期SFLで対戦し、勝率50%以上）
+    const strongestMatchups = [...playedVsChars]
+      .filter((c) => (c.sflBattleWinRate ?? 0) >= 50)
       .sort(
         (a, b) =>
-          a.estimatedWinRate - b.estimatedWinRate ||
-          b.sflBoutsLost - a.sflBoutsLost
+          (b.sflBattleWinRate ?? 0) - (a.sflBattleWinRate ?? 0) ||
+          b.sflBattlesWon - a.sflBattlesWon
       )
       .slice(0, 5);
+
+    // 苦戦・要注意キャラ（今期SFLで対戦し、勝率50%未満）
+    const closestMatchups = [...playedVsChars]
+      .filter((c) => (c.sflBattleWinRate ?? 0) < 50)
+      .sort(
+        (a, b) =>
+          (a.sflBattleWinRate ?? 0) - (b.sflBattleWinRate ?? 0) ||
+          b.sflBattlesLost - a.sflBattlesLost
+      )
+      .slice(0, 5);
+
+    // 対戦済みキャラ（勝率降順）→ 未対戦キャラ（五十音順）
+    const sortedVsChars = [
+      ...[...playedVsChars].sort(
+        (a, b) =>
+          (b.sflBattleWinRate ?? 0) - (a.sflBattleWinRate ?? 0) ||
+          b.sflBattlesWon - a.sflBattlesWon
+      ),
+      ...[...unplayedVsChars].sort((a, b) =>
+        a.charName.localeCompare(b.charName, "ja")
+      ),
+    ];
 
     // 6角形客観パラメーター算出 (0..100)
     const eloNorm = (stat.eloRating - 1850) / 2.2; // ~ 1950 -> 45, 2000 -> 68
@@ -674,13 +739,15 @@ export function buildPlayerEncyclopedia(
         : 50 + (stat.cptStats.overallWinRate * 100 - 50) * 1.4
     );
 
-    const favorableCharCount = vsCharacters.filter(
-      (c) => c.estimatedWinRate >= 50.0
+    const favorableCharCount = playedVsChars.filter(
+      (c) => (c.sflBattleWinRate ?? 0) >= 50.0
     ).length;
     const matchupCoverage = clampScore(
-      42 +
-        (favorableCharCount / Math.max(1, vsCharacters.length)) * 48 +
-        Math.min(8, actualSubChars.length * 3)
+      playedVsChars.length > 0
+        ? 50 +
+            (favorableCharCount / playedVsChars.length) * 35 +
+            Math.min(10, actualSubChars.length * 3)
+        : 50 + Math.min(10, actualSubChars.length * 3)
     );
 
     const overallScore = Math.round(
@@ -705,7 +772,7 @@ export function buildPlayerEncyclopedia(
                 ? "B+"
                 : "B";
 
-    // 客観データに基づく特徴タグと分析文の自動生成（主観ゼロ）
+    // 客観データに基づく特徴タグと分析文の自動生成
     const featureTags: string[] = [];
     if (positions.anchor.entries >= 2) {
       featureTags.push(
@@ -729,8 +796,8 @@ export function buildPlayerEncyclopedia(
     } else if (homeEntries >= 1 && homeWins === homeEntries) {
       featureTags.push(`HOME後出し無敗 (${homeWins}勝0敗)`);
     }
-    if (favorableCharCount >= 18) {
-      featureTags.push(`広範囲キャラ対応 (${favorableCharCount}/28キャラ有利)`);
+    if (playedVsChars.length >= 2 && favorableCharCount === playedVsChars.length) {
+      featureTags.push(`対戦キャラ全勝 (${favorableCharCount}キャラ相手に勝ち越し)`);
     }
     if (featureTags.length === 0) {
       featureTags.push(
@@ -772,18 +839,26 @@ export function buildPlayerEncyclopedia(
       `【HOME / AWAY・ラウンド取得傾向】HOME（後出し）出場時は${homeEntries}戦${homeWins}勝（推定勝率${homeWinRate.toFixed(1)}%）、AWAY（先出し）出場時は${awayEntries}戦${awayWins}勝（推定勝率${awayWinRate.toFixed(1)}%）。バトル取得率は${battleWinRate.toFixed(1)}%（${battleWon}勝${battleLost}敗）、ラウンド取得率は${roundWinRate.toFixed(1)}%（${roundWon}R/${roundPlayed}R）です。`
     );
 
-    // 3. 対キャラクター相性の事実
-    const top3Names = strongestMatchups
-      .slice(0, 3)
-      .map((m) => `${m.charName}（${m.estimatedWinRate.toFixed(1)}%）`)
-      .join("・");
+    // 3. 今期SFL対キャラクター戦績の事実
     const subCharText =
       actualSubChars.length > 0
         ? `（サブ使用: ${actualSubChars.map(formatCharName).join("・")}）`
         : "";
-    objectiveSummary.push(
-      `【対キャラクター相性データ】今期メイン使用キャラ「${formatCharName(actualMainChar)}」${subCharText}を軸に、全28キャラ中${favorableCharCount}キャラに対して推定勝率50%以上を保持。特に ${top3Names} に対して高い勝率データが算出されています。`
-    );
+    if (playedVsChars.length > 0) {
+      const topNames = strongestMatchups
+        .map(
+          (m) =>
+            `${m.charName}（${m.sflBattleWinRate?.toFixed(1)}% / ${m.sflBattlesWon}勝${m.sflBattlesLost}敗）`
+        )
+        .join("・");
+      objectiveSummary.push(
+        `【今期SFL 対キャラクター戦績】今期メイン使用キャラ「${formatCharName(actualMainChar)}」${subCharText}を軸に、今期SFL本戦で${playedVsChars.length}キャラクターと対戦。${topNames ? `特に ${topNames} に対して勝ち越し` : "各キャラクターと接戦を展開"}を記録しています。`
+      );
+    } else {
+      objectiveSummary.push(
+        `【今期SFL 対キャラクター戦績】今期メイン使用キャラ「${formatCharName(actualMainChar)}」${subCharText}。現時点では今期SFL本戦での対戦データはありません。`
+      );
+    }
 
     const rawSns = PLAYER_SNS_MAP[pKey] || {};
     const snsLinks: PlayerSnsLinks = {
@@ -842,7 +917,7 @@ export function buildPlayerEncyclopedia(
       },
       featureTags,
       objectiveSummary,
-      vsCharacters: sortedByWinRateDesc,
+      vsCharacters: sortedVsChars,
       strongestMatchups,
       closestMatchups,
       boutLogs,

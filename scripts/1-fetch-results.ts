@@ -76,10 +76,10 @@ function extractBouts(slot: CapcomMatchSlot): MatchBoutSummary[] | undefined {
 
   const bouts: MatchBoutSummary[] = [];
   for (let i = 0; i < count; i++) {
-    const awayP = p1[i]; // SFLでは1P側がAWAY先出し、2P側がHOME後出し
-    const homeP = p2[i];
-    const awayChara = Object.keys(awayP.use_chara || {})[0] || "";
+    const homeP = p1[i]; // Capcom API: 1P側がHOMEチーム
+    const awayP = p2[i]; // Capcom API: 2P側がAWAYチーム
     const homeChara = Object.keys(homeP.use_chara || {})[0] || "";
+    const awayChara = Object.keys(awayP.use_chara || {})[0] || "";
     bouts.push({
       status: homeP.status,
       statusName: homeP.status_name,
