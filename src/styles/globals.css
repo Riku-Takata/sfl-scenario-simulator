@@ -475,12 +475,29 @@ a {
   border-radius: 12px;
   padding: 1.35rem;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.route-subtitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1.4;
+  min-height: 2.8em;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.35rem;
 }
 
 .route-card h3 {
   font-size: 1.08rem;
   font-weight: 800;
   color: var(--text-main);
+  line-height: 1.35;
+  min-height: 2.7em;
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 0.35rem;
 }
 
