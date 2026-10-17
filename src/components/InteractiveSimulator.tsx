@@ -273,6 +273,7 @@ export default function InteractiveSimulator({
     Record<string, ScorePatternId>
   >({});
   const [copiedMessage, setCopiedMessage] = useState<string | null>(null);
+  const [urlCopied, setUrlCopied] = useState<boolean>(false);
 
   const divTeams = useMemo(
     () =>
@@ -409,13 +410,42 @@ export default function InteractiveSimulator({
 
   const handleCopyShareUrl = async () => {
     const url = buildShareUrl();
-    try {
-      await navigator.clipboard.writeText(url);
-      setCopiedMessage("現在の予想URLをコピーしました！");
-      setTimeout(() => setCopiedMessage(null), 3000);
-    } catch {
-      setCopiedMessage(url);
+    if (typeof window !== "undefined" && window.history?.replaceState) {
+      window.history.replaceState(null, "", url);
     }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = url;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+    } catch {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = url;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      } catch {
+        // Ignore fallback failure
+      }
+    }
+    setUrlCopied(true);
+    setCopiedMessage("URLをコピーしました！");
+    setTimeout(() => {
+      setUrlCopied(false);
+      setCopiedMessage(null);
+    }, 3000);
   };
 
   // 節ごとにグルーピング
@@ -603,28 +633,80 @@ export default function InteractiveSimulator({
                   type="button"
                   onClick={handleCopyShareUrl}
                   className="btn"
+                  style={
+                    urlCopied
+                      ? {
+                          background: "var(--success)",
+                          color: "#ffffff",
+                          borderColor: "var(--success)",
+                        }
+                      : {}
+                  }
                 >
-                  この予想URLをコピー
+                  {urlCopied ? "✓ URLをコピーしました！" : "この予想URLをコピー"}
                 </button>
               </div>
             </div>
           </div>
 
           {copiedMessage && (
-            <div
-              style={{
-                marginBottom: "1rem",
-                padding: "0.65rem 1rem",
-                background: "var(--success-bg)",
-                border: "1px solid var(--success-border)",
-                borderRadius: "8px",
-                fontSize: "0.85rem",
-                color: "var(--success)",
-                fontWeight: 700,
-              }}
-            >
-              {copiedMessage}
-            </div>
+            <>
+              <div
+                role="status"
+                aria-live="polite"
+                style={{
+                  marginBottom: "1rem",
+                  padding: "0.75rem 1rem",
+                  background: "var(--success-bg)",
+                  border: "1px solid var(--success-border)",
+                  borderRadius: "8px",
+                  fontSize: "0.9rem",
+                  color: "var(--success)",
+                  fontWeight: 800,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                }}
+              >
+                <span>✓</span>
+                <span>{copiedMessage}</span>
+              </div>
+              <div
+                style={{
+                  position: "fixed",
+                  bottom: "1.5rem",
+                  right: "1.5rem",
+                  zIndex: 9999,
+                  padding: "0.85rem 1.25rem",
+                  background: "#0f172a",
+                  color: "#ffffff",
+                  borderRadius: "10px",
+                  boxShadow: "0 10px 25px rgba(15, 23, 42, 0.25)",
+                  fontSize: "0.92rem",
+                  fontWeight: 800,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.55rem",
+                }}
+              >
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "22px",
+                    height: "22px",
+                    borderRadius: "50%",
+                    background: "#16a34a",
+                    color: "#ffffff",
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  ✓
+                </span>
+                <span>{copiedMessage}</span>
+              </div>
+            </>
           )}
 
           {sectionsMap.map(([secNum, matches]) => (
