@@ -13,7 +13,11 @@ import {
   predictBoutWinRate,
   predictTeamMatchOutcomeDistribution,
 } from "../src/lib/predictor";
-import { generateOutcomesForTargetRank } from "../src/components/InteractiveSimulator";
+import {
+  decodeSimulationCode,
+  encodeSimulationCode,
+  generateOutcomesForTargetRank,
+} from "../src/components/InteractiveSimulator";
 import {
   CptMatchupsTop96DataSchema,
   MasterPlayersDataSchema,
@@ -195,6 +199,28 @@ test("generateOutcomesForTargetRank achieves exact target rank (1st, 2nd, 3rd) f
         `Team ${team.key} should achieve exact rank ${rank}`
       );
     }
+  }
+});
+
+test("encodeSimulationCode and decodeSimulationCode compress 18-21 matches into <=11 chars losslessly", () => {
+  for (const div of ["s", "f"] as const) {
+    const unplayed = matchesData.matches.filter(
+      (m) => m.division === div && !m.played
+    );
+    const sampleTeam = div === "s" ? "fav" : "rc";
+    const fullOutcomes = generateOutcomesForTargetRank(
+      div,
+      matchesData.matches,
+      sampleTeam,
+      1
+    );
+    const code = encodeSimulationCode(unplayed, fullOutcomes);
+    assert.ok(
+      code.length > 0 && code.length <= 11,
+      `Expected compact code <= 11 chars, got "${code}" (${code.length})`
+    );
+    const decoded = decodeSimulationCode(unplayed, code);
+    assert.deepEqual(decoded, fullOutcomes);
   }
 });
 

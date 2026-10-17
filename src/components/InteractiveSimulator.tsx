@@ -192,6 +192,75 @@ export function generateOutcomesForTargetRank(
   return fallback;
 }
 
+const B64_CHARS =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+
+const CODE_TO_PATTERN: Array<ScorePatternId | null> = [
+  null,
+  "AWAY_40_0",
+  "AWAY_30_10",
+  "AWAY_30_20",
+  "HOME_30_20",
+  "HOME_30_10",
+  "HOME_40_0",
+];
+
+const PATTERN_TO_CODE: Record<ScorePatternId, number> = {
+  AWAY_40_0: 1,
+  AWAY_30_10: 2,
+  AWAY_30_20: 3,
+  HOME_30_20: 4,
+  HOME_30_10: 5,
+  HOME_40_0: 6,
+};
+
+/**
+ * 未消化試合の選択状態を 1文字あたり2試合（3bit × 2 = 6bit Base64url）に圧縮エンコードする
+ * 例: 18試合すべて埋めてもわずか9文字 (?s=q7N1xK9mP)
+ */
+export function encodeSimulationCode(
+  unplayedMatches: MatchRecord[],
+  outcomes: Record<string, ScorePatternId>
+): string {
+  let result = "";
+  for (let i = 0; i < unplayedMatches.length; i += 2) {
+    const m1 = unplayedMatches[i];
+    const m2 = unplayedMatches[i + 1];
+    const c1 = (m1 && outcomes[m1.id] ? PATTERN_TO_CODE[outcomes[m1.id]] : 0) || 0;
+    const c2 = (m2 && outcomes[m2.id] ? PATTERN_TO_CODE[outcomes[m2.id]] : 0) || 0;
+    const val = (c1 << 3) | c2;
+    result += B64_CHARS[val];
+  }
+  // 末尾の未入力連続 ('A' = 0) を除去してさらに短縮
+  return result.replace(/A+$/, "");
+}
+
+/**
+ * 短縮Base64urlコードから試合結果マップへ安全にデコードする
+ */
+export function decodeSimulationCode(
+  unplayedMatches: MatchRecord[],
+  code: string
+): Record<string, ScorePatternId> {
+  const nextMap: Record<string, ScorePatternId> = Object.create(null);
+  const maxChars = Math.ceil(unplayedMatches.length / 2);
+  const cleanCode = code.slice(0, maxChars);
+
+  for (let i = 0; i < cleanCode.length; i++) {
+    const val = B64_CHARS.indexOf(cleanCode[i]);
+    if (val < 0) continue;
+    const c1 = (val >> 3) & 0b111;
+    const c2 = val & 0b111;
+    const m1 = unplayedMatches[i * 2];
+    const m2 = unplayedMatches[i * 2 + 1];
+    const pat1 = CODE_TO_PATTERN[c1];
+    const pat2 = CODE_TO_PATTERN[c2];
+    if (m1 && pat1) nextMap[m1.id] = pat1;
+    if (m2 && pat2) nextMap[m2.id] = pat2;
+  }
+  return { ...nextMap };
+}
+
 export default function InteractiveSimulator({
   matchesData,
   standingsData,
@@ -223,22 +292,39 @@ export default function InteractiveSimulator({
     [matchesData.matches, division]
   );
 
-  // URLクエリパラメータの安全な初期反映（ホワイトリスト＆プロトタイプ汚染対策済）
+  // URLクエリパラメータ (?s=短縮コード または ?f=短縮コード) の安全な初期反映
   useEffect(() => {
     if (typeof window === "undefined") return;
     const searchParams = new URLSearchParams(window.location.search);
+
+    const shortS = searchParams.get("s");
+    const shortF = searchParams.get("f");
     const qDiv = searchParams.get("div");
-    const targetDiv: DivisionId = qDiv === "f" ? "f" : "s";
+
+    const targetDiv: DivisionId =
+      shortF !== null ? "f" : shortS !== null ? "s" : qDiv === "f" ? "f" : "s";
     setDivision(targetDiv);
     setTargetTeam(targetDiv === "f" ? "varrel" : "fav");
+
+    const divUnplayed = matchesData.matches
+      .filter((m) => m.division === targetDiv && !m.played)
+      .sort((a, b) =>
+        a.sectionNumber !== b.sectionNumber
+          ? a.sectionNumber - b.sectionNumber
+          : a.matchNumber - b.matchNumber
+      );
+
+    const shortCode = targetDiv === "f" ? shortF : shortS;
+    if (shortCode && shortCode.length <= 40) {
+      setCustomOutcomes(decodeSimulationCode(divUnplayed, shortCode));
+      return;
+    }
 
     const qSim = searchParams.get("sim");
     const qTeam = searchParams.get("team");
     const qPreset = searchParams.get("preset") || "route1";
 
-    const validMatchIds = new Set(
-      matchesData.matches.filter((m) => !m.played).map((m) => m.id)
-    );
+    const validMatchIds = new Set(divUnplayed.map((m) => m.id));
 
     if (qSim && qSim.length <= 1500) {
       const nextMap: Record<string, ScorePatternId> = Object.create(null);
@@ -311,16 +397,13 @@ export default function InteractiveSimulator({
   };
 
   const buildShareUrl = () => {
-    const pairs = unplayedMatches
-      .filter((m) => customOutcomes[m.id])
-      .map((m) => `${m.id}:${customOutcomes[m.id]}`)
-      .join(",");
+    const code = encodeSimulationCode(unplayedMatches, customOutcomes);
     const baseUrl =
       typeof window !== "undefined"
         ? `${window.location.origin}/simulator`
         : "/simulator";
-    return pairs
-      ? `${baseUrl}?div=${division}&sim=${pairs}`
+    return code
+      ? `${baseUrl}?${division}=${code}`
       : `${baseUrl}?div=${division}`;
   };
 
