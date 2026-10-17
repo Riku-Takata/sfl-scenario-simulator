@@ -193,7 +193,7 @@ export const PLAYER_NAME_MAP: Record<string, string> = {
 export const SCORE_OUTCOMES: ScoreOutcome[] = [
   {
     id: "HOME_40_0",
-    label: "HOME 40 - 0 AWAY",
+    label: "AWAY 0 - 40 HOME",
     homePoint: 40,
     awayPoint: 0,
     homeBattleDiff: 5,
@@ -206,7 +206,7 @@ export const SCORE_OUTCOMES: ScoreOutcome[] = [
   },
   {
     id: "HOME_30_10",
-    label: "HOME 30 - 10 AWAY",
+    label: "AWAY 10 - 30 HOME",
     homePoint: 30,
     awayPoint: 10,
     homeBattleDiff: 2,
@@ -219,7 +219,7 @@ export const SCORE_OUTCOMES: ScoreOutcome[] = [
   },
   {
     id: "HOME_30_20",
-    label: "HOME 30 - 20 AWAY (延長)",
+    label: "AWAY 20 - 30 HOME (延長)",
     homePoint: 30,
     awayPoint: 20,
     homeBattleDiff: 1,
@@ -232,7 +232,7 @@ export const SCORE_OUTCOMES: ScoreOutcome[] = [
   },
   {
     id: "AWAY_30_20",
-    label: "HOME 20 - 30 AWAY (延長)",
+    label: "AWAY 30 - 20 HOME (延長)",
     homePoint: 20,
     awayPoint: 30,
     homeBattleDiff: -1,
@@ -245,7 +245,7 @@ export const SCORE_OUTCOMES: ScoreOutcome[] = [
   },
   {
     id: "AWAY_30_10",
-    label: "HOME 10 - 30 AWAY",
+    label: "AWAY 30 - 10 HOME",
     homePoint: 10,
     awayPoint: 30,
     homeBattleDiff: -2,
@@ -258,7 +258,7 @@ export const SCORE_OUTCOMES: ScoreOutcome[] = [
   },
   {
     id: "AWAY_40_0",
-    label: "HOME 0 - 40 AWAY",
+    label: "AWAY 40 - 0 HOME",
     homePoint: 0,
     awayPoint: 40,
     homeBattleDiff: -5,
