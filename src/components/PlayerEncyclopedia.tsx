@@ -603,6 +603,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
               display: "flex",
               flexDirection: "column",
               gap: "1rem",
+              minWidth: 0,
             }}
           >
             <div
@@ -654,70 +655,158 @@ export default function PlayerEncyclopedia({ players }: Props) {
                 border: "1px solid var(--border-color)",
                 borderRadius: "10px",
                 padding: "1.1rem",
+                minWidth: 0,
               }}
             >
               <h3
                 style={{
                   fontSize: "0.95rem",
                   fontWeight: 800,
-                  marginBottom: "0.6rem",
+                  marginBottom: "0.65rem",
                 }}
               >
                 SFL 2026 ポジション別起用・獲得ポイント内訳
               </h3>
-              <table className="standings-table" style={{ background: "#ffffff" }}>
-                <thead>
-                  <tr>
-                    <th>ポジション</th>
-                    <th>配点</th>
-                    <th>出場数</th>
-                    <th>勝敗</th>
-                    <th>勝率</th>
-                    <th>獲得pt</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    {
-                      name: "先鋒戦",
-                      pt: "10pt",
-                      rec: selectedPlayer.positions.vanguard,
-                    },
-                    {
-                      name: "中堅戦",
-                      pt: "10pt",
-                      rec: selectedPlayer.positions.middle,
-                    },
-                    {
-                      name: "大将戦",
-                      pt: "20pt",
-                      rec: selectedPlayer.positions.anchor,
-                    },
-                    {
-                      name: "延長戦",
-                      pt: "10pt",
-                      rec: selectedPlayer.positions.tiebreaker,
-                    },
-                  ].map((row) => (
-                    <tr key={row.name}>
-                      <td style={{ fontWeight: 800 }}>{row.name}</td>
-                      <td style={{ color: "var(--text-muted)", fontSize: "0.8rem" }}>
-                        {row.pt}
-                      </td>
-                      <td>{row.rec.entries}戦</td>
-                      <td style={{ fontWeight: 700 }}>
-                        {row.rec.wins}勝{row.rec.losses}敗
-                      </td>
-                      <td>
-                        {row.rec.entries > 0 ? `${row.rec.winRate}%` : "-"}
-                      </td>
-                      <td style={{ fontWeight: 800, color: "var(--primary)" }}>
-                        {row.rec.points}pt
-                      </td>
+              <div
+                className="table-scroll"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid var(--border-color)",
+                  borderRadius: "8px",
+                  overflowX: "auto",
+                }}
+              >
+                <table
+                  className="standings-table"
+                  style={{
+                    minWidth: "100%",
+                    width: "100%",
+                    background: "#ffffff",
+                  }}
+                >
+                  <thead>
+                    <tr>
+                      <th style={{ padding: "0.6rem 0.75rem" }}>ポジション</th>
+                      <th style={{ padding: "0.6rem 0.65rem", textAlign: "center" }}>配点</th>
+                      <th style={{ padding: "0.6rem 0.65rem", textAlign: "center" }}>出場数</th>
+                      <th style={{ padding: "0.6rem 0.65rem", textAlign: "center" }}>勝敗</th>
+                      <th style={{ padding: "0.6rem 0.65rem", textAlign: "right" }}>勝率</th>
+                      <th style={{ padding: "0.6rem 0.75rem", textAlign: "right" }}>獲得pt</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {[
+                      {
+                        name: "先鋒戦",
+                        pt: "10pt",
+                        rec: selectedPlayer.positions.vanguard,
+                      },
+                      {
+                        name: "中堅戦",
+                        pt: "10pt",
+                        rec: selectedPlayer.positions.middle,
+                      },
+                      {
+                        name: "大将戦",
+                        pt: "20pt",
+                        rec: selectedPlayer.positions.anchor,
+                      },
+                      {
+                        name: "延長戦",
+                        pt: "10pt",
+                        rec: selectedPlayer.positions.tiebreaker,
+                      },
+                    ].map((row, idx, arr) => (
+                      <tr key={row.name}>
+                        <td
+                          style={{
+                            padding: "0.65rem 0.75rem",
+                            fontWeight: 800,
+                            whiteSpace: "nowrap",
+                            borderBottom:
+                              idx === arr.length - 1
+                                ? "none"
+                                : "1px solid var(--border-color)",
+                          }}
+                        >
+                          {row.name}
+                        </td>
+                        <td
+                          style={{
+                            padding: "0.65rem 0.65rem",
+                            color: "var(--text-muted)",
+                            fontSize: "0.82rem",
+                            textAlign: "center",
+                            whiteSpace: "nowrap",
+                            borderBottom:
+                              idx === arr.length - 1
+                                ? "none"
+                                : "1px solid var(--border-color)",
+                          }}
+                        >
+                          {row.pt}
+                        </td>
+                        <td
+                          style={{
+                            padding: "0.65rem 0.65rem",
+                            textAlign: "center",
+                            whiteSpace: "nowrap",
+                            borderBottom:
+                              idx === arr.length - 1
+                                ? "none"
+                                : "1px solid var(--border-color)",
+                          }}
+                        >
+                          {row.rec.entries}戦
+                        </td>
+                        <td
+                          style={{
+                            padding: "0.65rem 0.65rem",
+                            fontWeight: 700,
+                            textAlign: "center",
+                            whiteSpace: "nowrap",
+                            borderBottom:
+                              idx === arr.length - 1
+                                ? "none"
+                                : "1px solid var(--border-color)",
+                          }}
+                        >
+                          {row.rec.wins}勝{row.rec.losses}敗
+                        </td>
+                        <td
+                          style={{
+                            padding: "0.65rem 0.65rem",
+                            textAlign: "right",
+                            fontWeight: 700,
+                            whiteSpace: "nowrap",
+                            borderBottom:
+                              idx === arr.length - 1
+                                ? "none"
+                                : "1px solid var(--border-color)",
+                          }}
+                        >
+                          {row.rec.entries > 0 ? `${row.rec.winRate}%` : "-"}
+                        </td>
+                        <td
+                          style={{
+                            padding: "0.65rem 0.75rem",
+                            fontWeight: 800,
+                            color: "var(--primary)",
+                            textAlign: "right",
+                            whiteSpace: "nowrap",
+                            borderBottom:
+                              idx === arr.length - 1
+                                ? "none"
+                                : "1px solid var(--border-color)",
+                          }}
+                        >
+                          {row.rec.points}pt
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
