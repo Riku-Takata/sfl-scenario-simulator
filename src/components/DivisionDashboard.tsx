@@ -7,16 +7,38 @@ import type {
 } from "@/lib/types";
 import { PLAYER_NAME_MAP, TEAM_META_MAP } from "@/lib/simulator";
 
+export interface UnplayedMatchPrediction {
+  matchId: string;
+  awayWinProb: number;
+  homeWinProb: number;
+  expectedAwayPts: number;
+  expectedHomePts: number;
+  mostLikelyScore: string;
+  bouts: Array<{
+    roleName: string;
+    awayPlayerKey: string;
+    awayPlayerName: string;
+    awayCharName: string;
+    awayWinRate: number;
+    homePlayerKey: string;
+    homePlayerName: string;
+    homeCharName: string;
+    homeWinRate: number;
+  }>;
+}
+
 interface Props {
   standingsData: StandingsData;
   matchesData: MatchesData;
   scenariosData: ScenariosData;
+  matchPredictions?: Record<string, UnplayedMatchPrediction>;
 }
 
 export default function DivisionDashboard({
   standingsData,
   matchesData,
   scenariosData,
+  matchPredictions = {},
 }: Props) {
   const [division, setDivision] = useState<DivisionId>("s");
   const [selectedSection, setSelectedSection] = useState<number | "next">("next");
@@ -435,7 +457,12 @@ export default function DivisionDashboard({
                         }}
                       >
                         <span style={{ width: "40%", textAlign: "left" }}>
-                          {PLAYER_NAME_MAP[b.awayPlayer] || b.awayPlayer}{" "}
+                          <a
+                            href={`/players?player=${b.awayPlayer}`}
+                            style={{ color: "inherit", textDecoration: "underline" }}
+                          >
+                            {PLAYER_NAME_MAP[b.awayPlayer] || b.awayPlayer}
+                          </a>{" "}
                           <strong>({b.awayBattle})</strong>
                         </span>
                         <span style={{ color: "var(--text-muted)", fontWeight: 700 }}>
@@ -443,12 +470,217 @@ export default function DivisionDashboard({
                         </span>
                         <span style={{ width: "40%", textAlign: "right" }}>
                           <strong>({b.homeBattle})</strong>{" "}
-                          {PLAYER_NAME_MAP[b.homePlayer] || b.homePlayer}
+                          <a
+                            href={`/players?player=${b.homePlayer}`}
+                            style={{ color: "inherit", textDecoration: "underline" }}
+                          >
+                            {PLAYER_NAME_MAP[b.homePlayer] || b.homePlayer}
+                          </a>
                         </span>
                       </div>
                     ))}
                   </div>
                 )}
+
+                {!m.played && matchPredictions[m.id] && (() => {
+                  const pred = matchPredictions[m.id];
+                  return (
+                    <div
+                      style={{
+                        marginTop: "0.75rem",
+                        paddingTop: "0.75rem",
+                        borderTop: "1px solid var(--border-color)",
+                        fontSize: "0.8rem",
+                      }}
+                    >
+                      {/* チーム予想勝率 & 2色バー */}
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          fontWeight: 800,
+                          marginBottom: "0.3rem",
+                        }}
+                      >
+                        <span style={{ color: "var(--primary)" }}>
+                          AWAY勝率 {pred.awayWinProb.toFixed(1)}%
+                        </span>
+                        <span
+                          style={{
+                            fontSize: "0.74rem",
+                            color: "var(--text-muted)",
+                            fontWeight: 700,
+                          }}
+                        >
+                          最有力: {pred.mostLikelyScore}
+                        </span>
+                        <span style={{ color: "var(--success)" }}>
+                          HOME勝率 {pred.homeWinProb.toFixed(1)}%
+                        </span>
+                      </div>
+
+                      <div
+                        style={{
+                          display: "flex",
+                          width: "100%",
+                          height: "8px",
+                          borderRadius: "999px",
+                          overflow: "hidden",
+                          background: "#e2e8f0",
+                          marginBottom: "0.45rem",
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: `${pred.awayWinProb}%`,
+                            background: "var(--primary)",
+                          }}
+                        />
+                        <div
+                          style={{
+                            width: `${pred.homeWinProb}%`,
+                            background: "var(--success)",
+                          }}
+                        />
+                      </div>
+
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          fontSize: "0.74rem",
+                          color: "var(--text-muted)",
+                          marginBottom: "0.65rem",
+                        }}
+                      >
+                        <span>期待獲得: {pred.expectedAwayPts.toFixed(1)}pt</span>
+                        <span>HOME後出し考慮・組み合わせ予測</span>
+                        <span>期待獲得: {pred.expectedHomePts.toFixed(1)}pt</span>
+                      </div>
+
+                      {/* 先鋒・中堅・大将の予想組み合わせと勝率 */}
+                      <div
+                        style={{
+                          background: "#ffffff",
+                          border: "1px solid var(--border-color)",
+                          borderRadius: "8px",
+                          padding: "0.5rem 0.65rem",
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "0.4rem",
+                        }}
+                      >
+                        {pred.bouts.map((b) => (
+                          <div
+                            key={b.roleName}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                              fontSize: "0.78rem",
+                              borderBottom:
+                                b.roleName.startsWith("大将")
+                                  ? "none"
+                                  : "1px dashed var(--border-color)",
+                              paddingBottom: b.roleName.startsWith("大将")
+                                ? 0
+                                : "0.35rem",
+                            }}
+                          >
+                            {/* AWAY 選手 */}
+                            <div style={{ width: "41%", textAlign: "left" }}>
+                              <div>
+                                <a
+                                  href={`/players?player=${b.awayPlayerKey}`}
+                                  style={{
+                                    fontWeight: 800,
+                                    color: "var(--text-main)",
+                                  }}
+                                >
+                                  {b.awayPlayerName}
+                                </a>
+                                <span
+                                  style={{
+                                    fontSize: "0.7rem",
+                                    color: "var(--text-muted)",
+                                    marginLeft: "0.2rem",
+                                  }}
+                                >
+                                  ({b.awayCharName})
+                                </span>
+                              </div>
+                              <div
+                                style={{
+                                  fontSize: "0.73rem",
+                                  fontWeight: 800,
+                                  color:
+                                    b.awayWinRate >= 50
+                                      ? "var(--primary)"
+                                      : "var(--text-muted)",
+                                }}
+                              >
+                                勝率 {b.awayWinRate.toFixed(1)}%
+                              </div>
+                            </div>
+
+                            {/* ポジション */}
+                            <div
+                              style={{
+                                width: "18%",
+                                textAlign: "center",
+                                fontSize: "0.72rem",
+                                fontWeight: 800,
+                                color: "var(--text-muted)",
+                              }}
+                            >
+                              {b.roleName.replace(" (10pt)", "").replace(" (20pt)", "")}
+                              <div style={{ fontSize: "0.66rem", fontWeight: 600 }}>
+                                {b.roleName.includes("20pt") ? "20pt" : "10pt"}
+                              </div>
+                            </div>
+
+                            {/* HOME 選手 */}
+                            <div style={{ width: "41%", textAlign: "right" }}>
+                              <div>
+                                <span
+                                  style={{
+                                    fontSize: "0.7rem",
+                                    color: "var(--text-muted)",
+                                    marginRight: "0.2rem",
+                                  }}
+                                >
+                                  ({b.homeCharName})
+                                </span>
+                                <a
+                                  href={`/players?player=${b.homePlayerKey}`}
+                                  style={{
+                                    fontWeight: 800,
+                                    color: "var(--text-main)",
+                                  }}
+                                >
+                                  {b.homePlayerName}
+                                </a>
+                              </div>
+                              <div
+                                style={{
+                                  fontSize: "0.73rem",
+                                  fontWeight: 800,
+                                  color:
+                                    b.homeWinRate >= 50
+                                      ? "var(--success)"
+                                      : "var(--text-muted)",
+                                }}
+                              >
+                                勝率 {b.homeWinRate.toFixed(1)}%
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             );
           })}

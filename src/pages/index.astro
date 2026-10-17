@@ -1,18 +1,57 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import DivisionDashboard from "@/components/DivisionDashboard";
+import DivisionDashboard, {
+  type UnplayedMatchPrediction,
+} from "@/components/DivisionDashboard";
 import rawStandings from "@/data/standings.json";
 import rawMatches from "@/data/matches.json";
 import rawScenarios from "@/data/scenarios.json";
+import rawCptMatchups from "@/data/cpt-matchups-top96.json";
+import rawPlayerStats from "@/data/player-stats.json";
 import {
+  CptMatchupsTop96DataSchema,
   MatchesDataSchema,
+  PlayerStatsDataSchema,
   ScenariosDataSchema,
   StandingsDataSchema,
 } from "@/lib/schema";
+import { predictTeamMatchOutcomeDistribution } from "@/lib/predictor";
+import { formatCharName } from "@/lib/player-encyclopedia";
 
 const standingsData = StandingsDataSchema.parse(rawStandings);
 const matchesData = MatchesDataSchema.parse(rawMatches);
 const scenariosData = ScenariosDataSchema.parse(rawScenarios);
+const cptMatchupsData = CptMatchupsTop96DataSchema.parse(rawCptMatchups);
+const playerStatsData = PlayerStatsDataSchema.parse(rawPlayerStats);
+
+const matchPredictions: Record<string, UnplayedMatchPrediction> = {};
+for (const m of matchesData.matches) {
+  if (m.played) continue;
+  const dist = predictTeamMatchOutcomeDistribution(
+    m,
+    cptMatchupsData,
+    playerStatsData
+  );
+  matchPredictions[m.id] = {
+    matchId: m.id,
+    awayWinProb: dist.awayWinProbability,
+    homeWinProb: dist.homeWinProbability,
+    expectedAwayPts: dist.awayOrderRecommendation.expectedTeamPoints,
+    expectedHomePts: dist.homeOrderRecommendation.expectedTeamPoints,
+    mostLikelyScore: dist.homeOrderRecommendation.mostLikelyScore,
+    bouts: dist.homeOrderRecommendation.recommendedLineup.map((b) => ({
+      roleName: b.roleName,
+      awayPlayerKey: b.playerBKey,
+      awayPlayerName: b.playerBName,
+      awayCharName: formatCharName(b.charB.toLowerCase()),
+      awayWinRate: Math.round((100 - b.expectedWinRateA) * 10) / 10,
+      homePlayerKey: b.playerAKey,
+      homePlayerName: b.playerAName,
+      homeCharName: formatCharName(b.charA.toLowerCase()),
+      homeWinRate: b.expectedWinRateA,
+    })),
+  };
+}
 ---
 
 <BaseLayout title="SFL 2026 順位表・プレイオフ突破条件">
@@ -35,5 +74,6 @@ const scenariosData = ScenariosDataSchema.parse(rawScenarios);
     standingsData={standingsData}
     matchesData={matchesData}
     scenariosData={scenariosData}
+    matchPredictions={matchPredictions}
   />
 </BaseLayout>
