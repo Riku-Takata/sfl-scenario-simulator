@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import type { PlayerEncyclopediaEntry } from "@/lib/player-encyclopedia";
+import type { PlayerEncyclopediaEntry, VsCharDetail } from "@/lib/player-encyclopedia";
 import { PlayerDetailBoutLogs } from "./PlayerDetailBoutLogs";
 import { PlayerDetailHeader } from "./PlayerDetailHeader";
 import { PlayerDetailStats } from "./PlayerDetailStats";
 import { VsCharCard } from "./VsCharCard";
+import { VsCharDetailModal } from "./VsCharDetailModal";
 
 interface PlayerDetailViewProps {
   selectedPlayer: PlayerEncyclopediaEntry;
@@ -23,6 +24,8 @@ export function PlayerDetailView({
   onBackToList,
 }: PlayerDetailViewProps) {
   const [showAllVsChars, setShowAllVsChars] = useState<boolean>(false);
+  const [selectedMatchupModal, setSelectedMatchupModal] =
+    useState<VsCharDetail | null>(null);
 
   const strongestList =
     matchupMode === "tournament"
@@ -263,6 +266,7 @@ export function PlayerDetailView({
                       matchupMode={matchupMode}
                       index={idx}
                       highlightType="strong"
+                      onClick={(item) => setSelectedMatchupModal(item)}
                     />
                   ))
                 ) : (
@@ -318,6 +322,7 @@ export function PlayerDetailView({
                       matchupMode={matchupMode}
                       index={idx}
                       highlightType="close"
+                      onClick={(item) => setSelectedMatchupModal(item)}
                     />
                   ))
                 ) : (
@@ -353,14 +358,33 @@ export function PlayerDetailView({
             >
               <div
                 style={{
-                  fontSize: "0.95rem",
-                  fontWeight: 800,
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
+                  gap: "0.5rem",
                   marginBottom: "0.75rem",
                 }}
               >
-                {matchupMode === "tournament"
-                  ? "全28キャラクター SF6公式・大型大会 通算戦績＆対戦履歴内訳"
-                  : "全28キャラクター 今シーズンSFL対戦戦績・組み合わせ内訳"}
+                <div
+                  style={{
+                    fontSize: "0.95rem",
+                    fontWeight: 800,
+                  }}
+                >
+                  {matchupMode === "tournament"
+                    ? "全28キャラクター SF6公式・大型大会 通算戦績＆対戦履歴内訳"
+                    : "全28キャラクター 今シーズンSFL対戦戦績・組み合わせ内訳"}
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.78rem",
+                    color: "var(--primary)",
+                    fontWeight: 700,
+                  }}
+                >
+                  ※ 各カードをクリックすると、全対戦ログをポップアップで拡大表示します
+                </div>
               </div>
               <div
                 style={{
@@ -375,6 +399,7 @@ export function PlayerDetailView({
                     matchup={vc}
                     matchupMode={matchupMode}
                     compact
+                    onClick={(item) => setSelectedMatchupModal(item)}
                   />
                 ))}
               </div>
@@ -407,6 +432,15 @@ export function PlayerDetailView({
           </button>
         </div>
       </div>
+
+      {/* キャラクター相性・全対戦ログ詳細ポップアップモーダル */}
+      <VsCharDetailModal
+        isOpen={selectedMatchupModal !== null}
+        onClose={() => setSelectedMatchupModal(null)}
+        matchup={selectedMatchupModal}
+        matchupMode={matchupMode}
+        playerName={selectedPlayer.name}
+      />
     </div>
   );
 }

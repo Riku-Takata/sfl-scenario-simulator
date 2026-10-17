@@ -8,6 +8,7 @@ interface VsCharCardProps {
   index?: number;
   highlightType?: "strong" | "close" | "neutral";
   compact?: boolean;
+  onClick?: (matchup: VsCharDetail) => void;
 }
 
 export function VsCharCard({
@@ -16,6 +17,7 @@ export function VsCharCard({
   index,
   highlightType = "neutral",
   compact = false,
+  onClick,
 }: VsCharCardProps) {
   const isPlayed =
     matchupMode === "tournament" ? m.playedInTournament : m.playedInSfl;
@@ -23,6 +25,8 @@ export function VsCharCard({
     matchupMode === "tournament"
       ? m.tournamentMatchWinRate
       : m.sflBattleWinRate;
+  const tierLabel =
+    matchupMode === "tournament" ? m.tournamentTierLabel : m.tierLabel;
 
   const winRateColor =
     highlightType === "strong"
@@ -33,9 +37,23 @@ export function VsCharCard({
           ? "var(--success)"
           : "var(--danger)";
 
+  const boutsCount =
+    matchupMode === "tournament"
+      ? m.tournamentMatchups.length
+      : m.matchups.length;
+
   if (compact) {
     return (
       <div
+        role="button"
+        tabIndex={0}
+        onClick={() => onClick?.(m)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onClick?.(m);
+          }
+        }}
         style={{
           background: "#ffffff",
           border: `1px solid ${
@@ -46,112 +64,127 @@ export function VsCharCard({
               : "var(--border-color)"
           }`,
           borderRadius: "8px",
-          padding: "0.7rem 0.85rem",
+          padding: "0.75rem 0.85rem",
           fontSize: "0.82rem",
+          cursor: "pointer",
+          transition: "transform 0.1s ease, box-shadow 0.15s ease, border-color 0.15s ease",
+          boxShadow: "var(--shadow-sm)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontWeight: 800,
-            marginBottom: "0.35rem",
-          }}
-        >
-          <span style={{ fontSize: "0.9rem" }}>vs {m.charName}</span>
+        <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              fontWeight: 800,
+              marginBottom: "0.35rem",
+            }}
+          >
+            <span style={{ fontSize: "0.92rem", color: "var(--text-main)" }}>
+              vs {m.charName}
+            </span>
+            {isPlayed ? (
+              <span
+                style={{
+                  fontWeight: 800,
+                  color: (winRate ?? 0) >= 50 ? "var(--success)" : "var(--danger)",
+                  fontSize: "0.95rem",
+                }}
+              >
+                勝率 {winRate?.toFixed(1)}%
+              </span>
+            ) : (
+              <span
+                style={{
+                  fontSize: "0.72rem",
+                  color: "var(--text-muted)",
+                  background: "var(--bg-subtle)",
+                  padding: "0.15rem 0.45rem",
+                  borderRadius: "4px",
+                }}
+              >
+                {matchupMode === "tournament" ? "未対戦 (0戦)" : "未対戦 (0戦)"}
+              </span>
+            )}
+          </div>
+
           {isPlayed ? (
-            <span
+            <div
               style={{
-                fontWeight: 800,
-                color: (winRate ?? 0) >= 50 ? "var(--success)" : "var(--danger)",
-                fontSize: "0.92rem",
+                fontSize: "0.78rem",
+                color: "var(--text-sub)",
+                marginBottom: "0.55rem",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
               }}
             >
-              勝率 {winRate?.toFixed(1)}%
-            </span>
+              <span>
+                {matchupMode === "tournament"
+                  ? `${m.tournamentMatchesWon}勝${m.tournamentMatchesLost}敗 (計${m.tournamentMatchesTotal}戦)`
+                  : `${m.sflBattlesWon}勝${m.sflBattlesLost}敗 (計${m.sflBattlesTotal}戦)`}
+              </span>
+              <span
+                style={{
+                  fontWeight: 700,
+                  fontSize: "0.72rem",
+                  padding: "0.1rem 0.35rem",
+                  borderRadius: "4px",
+                  background:
+                    tierLabel === "大得意" || tierLabel === "勝ち越し"
+                      ? "var(--success-bg)"
+                      : tierLabel === "苦戦"
+                        ? "var(--warning-bg)"
+                        : "var(--bg-subtle)",
+                  color:
+                    tierLabel === "大得意" || tierLabel === "勝ち越し"
+                      ? "var(--success)"
+                      : tierLabel === "苦戦"
+                        ? "var(--warning)"
+                        : "var(--text-sub)",
+                }}
+              >
+                {tierLabel}
+              </span>
+            </div>
           ) : (
-            <span
+            <div
               style={{
                 fontSize: "0.75rem",
                 color: "var(--text-muted)",
-                background: "var(--bg-subtle)",
-                padding: "0.15rem 0.45rem",
-                borderRadius: "4px",
+                padding: "0.15rem 0 0.55rem 0",
               }}
             >
-              {matchupMode === "tournament"
-                ? "大会未対戦 (0戦)"
-                : "今期未対戦 (0戦)"}
-            </span>
+              対戦データなし
+            </div>
           )}
         </div>
 
-        {isPlayed ? (
-          <>
-            <div
-              style={{
-                fontSize: "0.76rem",
-                color: "var(--text-sub)",
-                marginBottom: "0.45rem",
-              }}
-            >
-              {matchupMode === "tournament" ? (
-                <>
-                  公式大会: {m.tournamentMatchesWon}勝{m.tournamentMatchesLost}敗（計
-                  {m.tournamentMatchesTotal}戦） / {m.tournamentTierLabel}
-                </>
-              ) : (
-                <>
-                  バトル: {m.sflBattlesWon}勝{m.sflBattlesLost}敗 / 試合:{" "}
-                  {m.sflBoutsWon}勝{m.sflBoutsLost}敗
-                </>
-              )}
-            </div>
-
-            <div
-              style={{
-                borderTop: "1px dashed var(--border-color)",
-                paddingTop: "0.35rem",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "0.72rem",
-                  fontWeight: 700,
-                  color: "var(--text-muted)",
-                  marginBottom: "0.2rem",
-                }}
-              >
-                対戦履歴（計算根拠）:
-              </div>
-
-              {matchupMode === "tournament"
-                ? m.tournamentMatchups.map((bout) => (
-                    <TournamentBoutRow key={bout.id} bout={bout} compact />
-                  ))
-                : m.matchups.map((bout, bIdx) => (
-                    <SflBoutRow key={bIdx} bout={bout} compact />
-                  ))}
-            </div>
-          </>
-        ) : (
-          <div
-            style={{
-              fontSize: "0.75rem",
-              color: "var(--text-muted)",
-              paddingTop: "0.2rem",
-            }}
-          >
-            {matchupMode === "tournament"
-              ? "公式大会での対戦データはありません"
-              : "今期SFL本戦での対戦はまだありません"}
-          </div>
-        )}
+        {/* クリックしてポップアップを開く誘導 */}
+        <div
+          style={{
+            borderTop: "1px dashed var(--border-color)",
+            paddingTop: "0.45rem",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            color: "var(--primary)",
+            fontWeight: 700,
+            fontSize: "0.75rem",
+          }}
+        >
+          <span>{isPlayed ? `全対戦ログ (${boutsCount}件)` : "詳細カルテ"}</span>
+          <span style={{ fontSize: "0.8rem" }}>詳細を見る →</span>
+        </div>
       </div>
     );
   }
 
+  // 通常カード（得意・苦戦表示用）
   return (
     <div
       style={{
@@ -173,15 +206,35 @@ export function VsCharCard({
         <strong style={{ fontSize: "0.95rem" }}>
           {index != null ? `${index + 1}. ` : ""}vs {m.charName}
         </strong>
-        <span
-          style={{
-            fontWeight: 800,
-            color: winRateColor,
-            fontSize: "1rem",
-          }}
-        >
-          勝率 {winRate != null ? `${winRate.toFixed(1)}%` : "-"}
-        </span>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <span
+            style={{
+              fontWeight: 800,
+              color: winRateColor,
+              fontSize: "1rem",
+            }}
+          >
+            勝率 {winRate != null ? `${winRate.toFixed(1)}%` : "-"}
+          </span>
+          {onClick && (
+            <button
+              type="button"
+              onClick={() => onClick(m)}
+              style={{
+                background: "var(--bg-subtle)",
+                border: "1px solid var(--border-color)",
+                borderRadius: "4px",
+                padding: "0.15rem 0.45rem",
+                fontSize: "0.72rem",
+                fontWeight: 700,
+                color: "var(--primary)",
+                cursor: "pointer",
+              }}
+            >
+              ポップアップで拡大 ↗
+            </button>
+          )}
+        </div>
       </div>
 
       <div
@@ -256,12 +309,33 @@ export function VsCharCard({
         </div>
 
         {matchupMode === "tournament"
-          ? m.tournamentMatchups.map((bout) => (
+          ? m.tournamentMatchups.slice(0, 5).map((bout) => (
               <TournamentBoutRow key={bout.id} bout={bout} />
             ))
-          : m.matchups.map((bout, bIdx) => (
+          : m.matchups.slice(0, 5).map((bout, bIdx) => (
               <SflBoutRow key={bIdx} bout={bout} />
             ))}
+
+        {boutsCount > 5 && onClick && (
+          <button
+            type="button"
+            onClick={() => onClick(m)}
+            style={{
+              width: "100%",
+              marginTop: "0.35rem",
+              padding: "0.35rem",
+              background: "var(--bg-subtle)",
+              border: "1px solid var(--border-color)",
+              borderRadius: "6px",
+              fontSize: "0.76rem",
+              fontWeight: 700,
+              color: "var(--primary)",
+              cursor: "pointer",
+            }}
+          >
+            他 {boutsCount - 5} 件の対戦ログをポップアップで全件表示 ↗
+          </button>
+        )}
       </div>
     </div>
   );
