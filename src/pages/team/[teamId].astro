@@ -1,0 +1,527 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import rawStandings from "@/data/standings.json";
+import rawMatches from "@/data/matches.json";
+import rawScenarios from "@/data/scenarios.json";
+import rawMasterPlayers from "@/data/master-players.json";
+import {
+  MasterPlayersDataSchema,
+  MatchesDataSchema,
+  ScenariosDataSchema,
+  StandingsDataSchema,
+} from "@/lib/schema";
+import {
+  PLAYER_NAME_MAP,
+  TEAM_META_MAP,
+} from "@/lib/simulator";
+
+export function getStaticPaths() {
+  return Object.values(TEAM_META_MAP).map((t) => ({
+    params: { teamId: t.key },
+  }));
+}
+
+const { teamId } = Astro.params;
+const meta = teamId ? TEAM_META_MAP[teamId] : undefined;
+if (!meta || !teamId) {
+  return Astro.redirect("/");
+}
+
+const standingsData = StandingsDataSchema.parse(rawStandings);
+const matchesData = MatchesDataSchema.parse(rawMatches);
+const scenariosData = ScenariosDataSchema.parse(rawScenarios);
+const masterPlayersData = MasterPlayersDataSchema.parse(rawMasterPlayers);
+
+const analysis = scenariosData.teams[teamId];
+const divStandings = standingsData.divisions[meta.division];
+const currentStanding = divStandings.find((s) => s.key === teamId)!;
+
+const teamMatches = matchesData.matches
+  .filter((m) => m.home === teamId || m.away === teamId)
+  .sort((a, b) => a.sectionNumber - b.sectionNumber);
+
+const playedMatches = teamMatches.filter((m) => m.played);
+const routeList = [
+  analysis.routes.route1First,
+  analysis.routes.route2Second,
+  analysis.routes.route3Third,
+  analysis.routes.route4Cheering,
+];
+const nextPred = analysis.nextMatchPrediction;
+---
+
+<BaseLayout title={`${meta.name} | SFL 2026 シナリオ推定＆星取表`}>
+  <!-- Breadcrumb & Team Switcher -->
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 1.25rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+      <a href="/" style="color: var(--text-muted);">
+        ← ディビジョン順位表へ戻る
+      </a>
+      <span style="color: var(--text-dim);">/</span>
+      <span style="font-weight: 800;">
+        Division {meta.division.toUpperCase()}
+      </span>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+      {divStandings.map((t) => (
+        <a
+          href={`/team/${t.key}`}
+          class="score-chip"
+          style={
+            t.key === teamId
+              ? `background: ${t.color}; color: #fff; border-color: ${t.color};`
+              : ""
+          }
+        >
+          {t.rank}位 {t.shortName} ({t.point}pt)
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Team Header Card -->
+  <section
+    class="hero-banner"
+    style={`border-left: 6px solid ${meta.color};`}
+  >
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+          <span
+            class="badge"
+            style={
+              meta.division === "s"
+                ? "background: rgba(249,115,22,0.2); color: #fb923c;"
+                : "background: rgba(6,182,212,0.2); color: #22d3ee;"
+            }
+          >
+            DIVISION {meta.division.toUpperCase()} — 現在 第{currentStanding.rank}位
+          </span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">
+            選手:{" "}
+            {meta.players
+              .map((p) => {
+                const mp = masterPlayersData.players[p];
+                const charLabel = mp ? mp.mainChar.toUpperCase() : "";
+                return `${PLAYER_NAME_MAP[p] || p}${charLabel ? `(${charLabel})` : ""}`;
+              })
+              .join(" / ")}
+          </span>
+        </div>
+
+        <h1 class="hero-title">{meta.name}</h1>
+        <p class="hero-subtitle" style="margin-top: 0.5rem;">
+          {analysis.statusSummary} {analysis.playoffOutlook}
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.5rem; min-width: 240px;">
+        <a
+          href={`/simulator?div=${meta.division}&team=${meta.key}&preset=route1`}
+          class="btn btn-accent"
+          style="justify-content: center;"
+        >
+          🎮 {meta.shortName} 1位突破シナリオをシミュレート
+        </a>
+        <a
+          href={`/simulator?div=${meta.division}&team=${meta.key}&preset=route2`}
+          class="btn"
+          style="justify-content: center;"
+        >
+          2位HOME権確保プランをシミュレート
+        </a>
+      </div>
+    </div>
+
+    <div class="grid-cards" style="margin-top: 1.25rem; margin-bottom: 0;">
+      <div class="stat-card">
+        <div class="stat-label">現在順位 / 獲得ポイント</div>
+        <div class="stat-value">
+          {currentStanding.rank}位{" "}
+          <span style="color: var(--accent-gold);">{currentStanding.point}pt</span>
+        </div>
+        <div class="stat-sub">
+          {currentStanding.victory}勝{currentStanding.entry - currentStanding.victory}敗 / バトル得失{" "}
+          {currentStanding.battleDiff > 0
+            ? `+${currentStanding.battleDiff}`
+            : currentStanding.battleDiff}{" "}
+          / ラウンド{" "}
+          {currentStanding.roundDiff > 0
+            ? `+${currentStanding.roundDiff}`
+            : currentStanding.roundDiff}
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">プレイオフ進出確率 (3位以内)</div>
+        <div class="stat-value" style="color: var(--accent-green);">
+          {analysis.probabilities.playoffTop3.toFixed(1)}%
+        </div>
+        <div class="stat-sub">
+          理論最大到達: {analysis.maxPossiblePoints}pt / 予想中央値: {analysis.projectedPoints.p50}pt
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">2位以内確保率 (準決勝HOME権)</div>
+        <div class="stat-value" style="color: #e2e8f0;">
+          {analysis.probabilities.top2HomeAdvantage.toFixed(1)}%
+        </div>
+        <div class="stat-sub">
+          1位FINAL直行率: <strong style="color: var(--accent-gold);">{analysis.probabilities.firstPlace.toFixed(1)}%</strong>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">残り試合数 (HOME / AWAY内訳)</div>
+        <div class="stat-value">
+          残り {currentStanding.remainingMatches} 戦
+        </div>
+        <div class="stat-sub">
+          HOME(後出し有利): {currentStanding.remainingHome}戦 / AWAY(先出し): {currentStanding.remainingAway}戦
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Match CPT Top 96 Counter-Pick Order Prediction -->
+  {nextPred && (
+    <div class="panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">
+            🎯 次節（{nextPred.sectionTitle}: vs {nextPred.opponentName}）CPT Top 96 キャラ相性 × 選手戦績 最適オーダー予測
+          </h2>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">
+            {nextPred.tacticalSummary}
+          </p>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 0.75rem; color: var(--text-muted);">
+            {meta.shortName} ({nextPred.side.toUpperCase()}) チーム勝利確率
+          </div>
+          <div style="font-size: 1.15rem; font-weight: 900; color: var(--accent-gold);">
+            {nextPred.teamWinProbability}% （最頻予想: {nextPred.mostLikelyScore}）
+          </div>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th>ポジション</th>
+              <th>{meta.shortName} 推奨起用選手 (キャラ)</th>
+              <th>予想勝率</th>
+              <th>対戦相手 想定出場選手 (キャラ)</th>
+              <th>CPT Top96 相性 / 対キャラ戦績 / H2H内訳</th>
+            </tr>
+          </thead>
+          <tbody>
+            {nextPred.recommendedLineup.map((b) => (
+              <tr>
+                <td>
+                  <span class="badge" style="background: var(--bg-elevated); color: #fff;">
+                    {b.roleName}
+                  </span>
+                </td>
+                <td>
+                  <div style="font-weight: 800;">{b.playerAName}</div>
+                  <div style="font-size: 0.75rem; color: #fbbf24;">{b.charA}</div>
+                </td>
+                <td>
+                  <div style="font-weight: 900; font-size: 0.95rem;">
+                    <span style={`color: ${b.expectedWinRateA >= 50 ? "var(--accent-green)" : "var(--text-muted)"};`}>
+                      {b.expectedWinRateA}%
+                    </span>
+                    <span style="margin: 0 0.35rem; color: var(--text-dim);">:</span>
+                    <span style={`color: ${100 - b.expectedWinRateA > 50 ? "var(--accent-gold)" : "var(--text-muted)"};`}>
+                      {(100 - b.expectedWinRateA).toFixed(1)}%
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div style="font-weight: 800;">{b.playerBName}</div>
+                  <div style="font-size: 0.75rem; color: #93c5fd;">{b.charB}</div>
+                </td>
+                <td style="font-size: 0.78rem; color: var(--text-muted);">
+                  <div>{b.rationale}</div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+
+  <!-- 4 Major Scenario Cards -->
+  <h2 style="font-size: 1.3rem; font-weight: 900; margin: 1.5rem 0 0.85rem;">
+    📊 {meta.shortName} の4大突破・他力本願シナリオ分析
+  </h2>
+
+  <div class="scenario-grid">
+    {routeList.map((route, i) => {
+      const cardClass =
+        i === 0
+          ? "route-card route-1"
+          : i === 1
+            ? "route-card route-2"
+            : i === 2
+              ? "route-card route-3"
+              : "route-card route-4";
+
+      return (
+        <div class={cardClass}>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span
+              class="badge"
+              style="background: rgba(255,255,255,0.08); color: #fff;"
+            >
+              {route.subtitle}
+            </span>
+            <span style="font-size: 0.78rem; font-weight: 800; color: var(--accent-gold);">
+              到達確率: {route.probability.toFixed(1)}%
+            </span>
+          </div>
+
+          <h3>{route.title}</h3>
+          <div style="font-size: 0.85rem; font-weight: 700; color: #e2e8f0; margin-bottom: 0.65rem;">
+            {route.headline}
+          </div>
+
+          <div
+            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; padding: 0.65rem; background: rgba(10,12,18,0.65); border-radius: 8px; margin-bottom: 0.85rem; font-size: 0.78rem;"
+          >
+            <div>
+              <div style="color: var(--text-muted);">目安到達Pt</div>
+              <div style="font-weight: 900; font-size: 1rem; color: var(--accent-gold);">
+                {route.targetPoints}pt
+              </div>
+            </div>
+            <div>
+              <div style="color: var(--text-muted);">必要目安勝敗</div>
+              <div style="font-weight: 800;">
+                残り{route.requiredWins}勝{route.requiredLosses}敗
+              </div>
+            </div>
+            <div>
+              <div style="color: var(--text-muted);">突破期待値</div>
+              <div style="font-weight: 800;">{route.probability.toFixed(1)}%</div>
+            </div>
+          </div>
+
+          <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            {route.narrative}
+          </p>
+
+          <ul class="bullet-list">
+            {route.keyConditions.map((cond) => (
+              <li>{cond}</li>
+            ))}
+          </ul>
+
+          {i < 3 && (
+            <div style="margin-top: 0.9rem;">
+              <a
+                href={`/simulator?div=${meta.division}&team=${meta.key}&preset=route${i + 1}`}
+                class="btn"
+                style="font-size: 0.78rem; width: 100%; justify-content: center;"
+              >
+                このシナリオの星取表をシミュレーターに読み込む →
+              </a>
+            </div>
+          )}
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Target Star Chart for Route 1 -->
+  {analysis.routes.route1First.targetSchedule &&
+    analysis.routes.route1First.targetSchedule.length > 0 && (
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title">
+              ⭐ {meta.shortName} 1位突破（または最高到達）に向けた残り全節・理想星取表 ＆ AI勝率予測
+            </h2>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">
+              SFL 2026の配点ルール（先鋒10pt / 中堅10pt / 大将20pt / 同点延長10pt）とHOME後出し権、およびCPTキャラ相性エンジンに基づく推奨ターゲットスコアです。
+            </p>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table class="standings-table">
+            <thead>
+              <tr>
+                <th>節</th>
+                <th>対戦相手</th>
+                <th>HOME / AWAY</th>
+                <th>推奨目標スコア</th>
+                <th>CPTキャラ相性AI勝率 & 被せ注目カード</th>
+                <th>戦術・ポイント獲得のポイント</th>
+              </tr>
+            </thead>
+            <tbody>
+              {analysis.routes.route1First.targetSchedule.map((plan) => (
+                <tr>
+                  <td style="font-weight: 800;">{plan.sectionTitle}</td>
+                  <td>
+                    <a
+                      href={`/team/${plan.opponentKey}`}
+                      style="font-weight: 800; text-decoration: underline;"
+                    >
+                      vs {plan.opponentName}
+                    </a>
+                  </td>
+                  <td>
+                    <span
+                      class={`badge ${
+                        plan.side === "home" ? "badge-home" : "badge-away"
+                      }`}
+                    >
+                      {plan.side === "home" ? "HOME (後出し)" : "AWAY (先出し)"}
+                    </span>
+                  </td>
+                  <td>
+                    <span style="font-weight: 900; color: var(--accent-gold);">
+                      {plan.recommendedScore} (+{plan.teamPointGain}pt)
+                    </span>
+                  </td>
+                  <td style="font-size: 0.78rem;">
+                    {plan.predictedWinProb !== undefined && (
+                      <div style="font-weight: 800; color: var(--accent-green);">
+                        予想勝率: {plan.predictedWinProb}%
+                      </div>
+                    )}
+                    {plan.keyMatchupNote && (
+                      <div style="color: var(--text-muted);">{plan.keyMatchupNote}</div>
+                    )}
+                  </td>
+                  <td style="font-size: 0.82rem; color: var(--text-muted);">
+                    {plan.note}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
+  <!-- Next Section Cheering Guide (他力本願ガイド) -->
+  <div class="panel">
+    <div class="panel-header">
+      <div>
+        <h2 class="panel-title">
+          📣 次節の「他力本願」応援ガイド（他会場のどのチームの何対何の勝利を祈るべきか？）
+        </h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">
+          {meta.shortName} が上位突破・プレイオフ圏内入りを果たす上で、次節の同ディビジョン他会場カードで最も都合が良い理想スコアを算出しています。
+        </p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+      {analysis.nextSectionCheeringGuide.map((item) => (
+        <div
+          style="background: var(--bg-base); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 1rem;"
+        >
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.78rem; color: var(--text-muted);">
+              {item.sectionTitle}: {item.awayName} vs {item.homeName}
+            </span>
+            <span
+              class="badge"
+              style="background: rgba(16,185,129,0.16); color: #34d399;"
+            >
+              PO確率変動 +{item.playoffProbDelta.toFixed(1)}%
+            </span>
+          </div>
+
+          <div style="font-size: 1rem; font-weight: 900; color: var(--accent-gold); margin-bottom: 0.45rem;">
+            🙏 {item.recommendedWinnerName} の勝利を応援！
+          </div>
+          <div style="font-size: 0.82rem; font-weight: 700; margin-bottom: 0.45rem;">
+            理想スコア: {item.recommendedScoreLabel}
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">
+            {item.reason}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Played Matches History -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2 class="panel-title">
+        📜 {meta.shortName} の消化済み対戦履歴（全{playedMatches.length}戦）
+      </h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem;">
+      {playedMatches.map((m) => {
+        const isHome = m.home === teamId;
+        const oppKey = isHome ? m.away : m.home;
+        const oppMeta = TEAM_META_MAP[oppKey];
+        const teamPt = isHome ? m.homePoint : m.awayPoint;
+        const oppPt = isHome ? m.awayPoint : m.homePoint;
+        const won = (isHome && m.winner === "home") || (!isHome && m.winner === "away");
+
+        return (
+          <div
+            style="background: var(--bg-base); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 1rem;"
+          >
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">
+                {m.sectionTitle} ({m.scheduledAt.slice(0, 10)}) —{" "}
+                <strong style={`color: ${isHome ? "#fca5a5" : "#93c5fd"};`}>
+                  {isHome ? "HOME" : "AWAY"}
+                </strong>
+              </span>
+              <span
+                class="badge"
+                style={`background: ${won ? "rgba(16,185,129,0.2)" : "rgba(244,63,94,0.2)"}; color: ${won ? "#34d399" : "#fb7185"};`}
+              >
+                {won ? "WIN" : "LOSE"} {teamPt} - {oppPt}
+              </span>
+            </div>
+
+            <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 0.5rem;">
+              vs {oppMeta?.name ?? oppKey}
+            </div>
+
+            {m.bouts && (
+              <div style="font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+                {m.bouts.map((b) => {
+                  const myPlayer = isHome ? b.homePlayer : b.awayPlayer;
+                  const oppPlayer = isHome ? b.awayPlayer : b.homePlayer;
+                  const myBattle = isHome ? b.homeBattle : b.awayBattle;
+                  const oppBattle = isHome ? b.awayBattle : b.homeBattle;
+                  return (
+                    <div
+                      style="display: flex; justify-content: space-between; padding: 0.15rem 0;"
+                    >
+                      <span>
+                        [{b.statusName}] {PLAYER_NAME_MAP[myPlayer] || myPlayer}
+                      </span>
+                      <strong>
+                        {myBattle} - {oppBattle}
+                      </strong>
+                      <span>vs {PLAYER_NAME_MAP[oppPlayer] || oppPlayer}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>

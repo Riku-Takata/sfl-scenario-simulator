@@ -1,0 +1,58 @@
+name: SFL 2026 Auto Result Fetch & Scenario Update
+
+on:
+  schedule:
+    # SFL 2026 火曜・金曜 放送終了後〜翌日 (JST 23:30 / 02:30 = UTC 14:30 / 17:30)
+    - cron: "30 14,17 * * 2,5"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "差分がなくても強制的に再計算・シナリオ再生成を実行する"
+        required: false
+        default: "false"
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  update-scenarios:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run SFL 2026 & CPT Top 96 Pipeline (Zod Validated)
+        env:
+          STARTGG_API_TOKEN: ${{ secrets.STARTGG_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            npm run pipeline:force
+          else
+            npm run pipeline
+          fi
+
+      - name: Run Zod & Simulator Unit Tests
+        run: npm test
+
+      - name: Commit and Push updated JSON data (Triggers Vercel Re-deploy)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/*.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(data): auto-update SFL 2026 match results and CPT scenarios"
+            git push
+          fi

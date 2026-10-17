@@ -1,0 +1,192 @@
+---
+import { TEAM_META_MAP } from "@/lib/simulator";
+import "@/styles/globals.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "SFL 2026 シナリオ推計＆順位シミュレーター | CPT Top 96 高度予測対応",
+  description = "ストリートファイターリーグ 2026 (Division S / Division F) 全12チームのプレイオフ進出確率・CPT Top 96キャラ相性＆出場48選手データに基づく勝敗予測・リアルタイム順位シミュレーター",
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+const isHome = pathname === "/";
+const isSimulator = pathname.startsWith("/simulator");
+
+const divSTeams = Object.values(TEAM_META_MAP).filter((t) => t.division === "s");
+const divFTeams = Object.values(TEAM_META_MAP).filter((t) => t.division === "f");
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="brand-title">
+          <span class="brand-logo-mark">SF6</span>
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="brand-badge">SFL 2026 × CPT Top96</span>
+              <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700;">
+                PRO-JP ANALYTICS
+              </span>
+            </div>
+            <div style="font-size: 1.02rem; font-weight: 900; margin-top: 1px;">
+              シナリオ推計 ＆ 高度勝敗シミュレーター
+            </div>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="メインナビゲーション">
+          <a href="/" class={`nav-btn ${isHome ? "active" : ""}`}>
+            <span>📊</span>
+            <span>順位表・突破確率</span>
+          </a>
+          <a
+            href="/simulator"
+            class={`nav-btn ${isSimulator ? "active" : "nav-btn-primary"}`}
+          >
+            <span>🎮</span>
+            <span>勝敗＆CPT相性シミュレーター</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="team-bar">
+        <div class="team-bar-inner">
+          <span class="div-tag-s">DIV S</span>
+          {
+            divSTeams.map((t) => {
+              const active = pathname.includes(`/team/${t.key}`);
+              return (
+                <a
+                  href={`/team/${t.key}`}
+                  class={`team-pill ${active ? "active-team" : ""}`}
+                >
+                  <span
+                    style={`width: 7px; height: 7px; border-radius: 50%; background: ${t.color}; display: inline-block; box-shadow: 0 0 6px ${t.color};`}
+                  />
+                  <span>{t.shortName}</span>
+                </a>
+              );
+            })
+          }
+
+          <span class="div-tag-f">DIV F</span>
+          {
+            divFTeams.map((t) => {
+              const active = pathname.includes(`/team/${t.key}`);
+              return (
+                <a
+                  href={`/team/${t.key}`}
+                  class={`team-pill ${active ? "active-team" : ""}`}
+                >
+                  <span
+                    style={`width: 7px; height: 7px; border-radius: 50%; background: ${t.color}; display: inline-block; box-shadow: 0 0 6px ${t.color};`}
+                  />
+                  <span>{t.shortName}</span>
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.75rem;">
+              <span class="brand-logo-mark" style="width: 32px; height: 32px; font-size: 0.85rem;">SF6</span>
+              <span style="font-weight: 900; color: var(--text-main); font-size: 1rem;">
+                SFL 2026 Scenario Estimator
+              </span>
+            </div>
+            <p style="font-size: 0.8rem; line-height: 1.65; color: var(--text-muted);">
+              SFL Pro-JP 2026 公式APIデータと Capcom Pro Tour (CPT) Top 96 キャラ相性マトリクス（ベイズ平滑化済）・全48選手戦績を統合した数理シナリオ推計プラットフォーム。
+            </p>
+            <div style="margin-top: 0.85rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-secondary);">
+                Astro SSG + React Islands
+              </span>
+              <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-secondary);">
+                Zod Schema Validated
+              </span>
+              <span class="badge" style="background: rgba(16,185,129,0.14); color: #34d399;">
+                Monte Carlo 10,000 runs
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-col-title" style="color: var(--div-s-light);">
+              Division S チーム分析
+            </div>
+            <ul class="footer-links">
+              {
+                divSTeams.map((t) => (
+                  <li>
+                    <a href={`/team/${t.key}`}>
+                      {t.shortName} — {t.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title" style="color: var(--div-f-light);">
+              Division F チーム分析
+            </div>
+            <ul class="footer-links">
+              {
+                divFTeams.map((t) => (
+                  <li>
+                    <a href={`/team/${t.key}`}>
+                      {t.shortName} — {t.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">SFL 2026 公式規定・予測モデル仕様</div>
+            <ul class="footer-links" style="color: var(--text-muted); font-size: 0.78rem;">
+              <li>・配点: 先鋒10pt / 中堅10pt / 大将20pt (全3戦必実施)</li>
+              <li>・同点時(20-20): リザーブ1on1延長戦 (勝者+10pt → 30-20)</li>
+              <li>・有効スコア: 40-0 / 30-10 / 30-20 / 20-30 / 10-30 / 0-40</li>
+              <li>・順位決定優先度: ①獲得Pt → ②得失バトル差 → ③得失ラウンド差</li>
+              <li>・予測式: w1(40%)×Top96相性 + w2(35%)×対キャラ戦績 + w3(25%)×H2H</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            © 2026 SFL Scenario Simulator Project. Built with Astro, React & Zod.
+          </div>
+          <div>
+            ※当サイトはファンによる非公式数理分析・シミュレーションツールであり、株式会社カプコン公式とは一切関係ありません。
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

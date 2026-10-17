@@ -1,0 +1,6450 @@
+{
+  "updatedAt": "2026-10-17T06:22:19.887Z",
+  "source": "CPT 2025-2026 Top 96 Statistical Aggregate + SFL 2026 Official Logs",
+  "topPlacementThreshold": 96,
+  "bayesianPriorAlpha": 20,
+  "characters": [
+    {
+      "key": "ryu",
+      "name": "RYU"
+    },
+    {
+      "key": "luke",
+      "name": "LUKE"
+    },
+    {
+      "key": "jamie",
+      "name": "JAMIE"
+    },
+    {
+      "key": "chunli",
+      "name": "CHUN-LI"
+    },
+    {
+      "key": "guile",
+      "name": "GUILE"
+    },
+    {
+      "key": "kimberly",
+      "name": "KIMBERLY"
+    },
+    {
+      "key": "juri",
+      "name": "JURI"
+    },
+    {
+      "key": "ken",
+      "name": "KEN"
+    },
+    {
+      "key": "blanka",
+      "name": "BLANKA"
+    },
+    {
+      "key": "dhalsim",
+      "name": "DHALSIM"
+    },
+    {
+      "key": "ehonda",
+      "name": "E.HONDA"
+    },
+    {
+      "key": "dee_jay",
+      "name": "DEE JAY"
+    },
+    {
+      "key": "manon",
+      "name": "MANON"
+    },
+    {
+      "key": "marisa",
+      "name": "MARISA"
+    },
+    {
+      "key": "jp",
+      "name": "JP"
+    },
+    {
+      "key": "zangief",
+      "name": "ZANGIEF"
+    },
+    {
+      "key": "lily",
+      "name": "LILY"
+    },
+    {
+      "key": "cammy",
+      "name": "CAMMY"
+    },
+    {
+      "key": "rashid",
+      "name": "RASHID"
+    },
+    {
+      "key": "aki",
+      "name": "A.K.I."
+    },
+    {
+      "key": "ed",
+      "name": "ED"
+    },
+    {
+      "key": "gouki_akuma",
+      "name": "GOUKI (AKUMA)"
+    },
+    {
+      "key": "vega_mbison",
+      "name": "VEGA (M.BISON)"
+    },
+    {
+      "key": "terry",
+      "name": "TERRY"
+    },
+    {
+      "key": "mai",
+      "name": "MAI"
+    },
+    {
+      "key": "elena",
+      "name": "ELENA"
+    },
+    {
+      "key": "sagat",
+      "name": "SAGAT"
+    },
+    {
+      "key": "cviper",
+      "name": "C.VIPER"
+    }
+  ],
+  "matrix": {
+    "ryu": {
+      "ryu": {
+        "charA": "ryu",
+        "charB": "ryu",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "luke": {
+        "charA": "ryu",
+        "charB": "luke",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jamie": {
+        "charA": "ryu",
+        "charB": "jamie",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "chunli": {
+        "charA": "ryu",
+        "charB": "chunli",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "guile": {
+        "charA": "ryu",
+        "charB": "guile",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "kimberly": {
+        "charA": "ryu",
+        "charB": "kimberly",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "juri": {
+        "charA": "ryu",
+        "charB": "juri",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ken": {
+        "charA": "ryu",
+        "charB": "ken",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "blanka": {
+        "charA": "ryu",
+        "charB": "blanka",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dhalsim": {
+        "charA": "ryu",
+        "charB": "dhalsim",
+        "rawWinsA": 40,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4494,
+        "smoothedWinRate": 0.4587
+      },
+      "ehonda": {
+        "charA": "ryu",
+        "charB": "ehonda",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dee_jay": {
+        "charA": "ryu",
+        "charB": "dee_jay",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "manon": {
+        "charA": "ryu",
+        "charB": "manon",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "marisa": {
+        "charA": "ryu",
+        "charB": "marisa",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jp": {
+        "charA": "ryu",
+        "charB": "jp",
+        "rawWinsA": 45,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5233,
+        "smoothedWinRate": 0.5189
+      },
+      "zangief": {
+        "charA": "ryu",
+        "charB": "zangief",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      },
+      "lily": {
+        "charA": "ryu",
+        "charB": "lily",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "cammy": {
+        "charA": "ryu",
+        "charB": "cammy",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "rashid": {
+        "charA": "ryu",
+        "charB": "rashid",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "aki": {
+        "charA": "ryu",
+        "charB": "aki",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ed": {
+        "charA": "ryu",
+        "charB": "ed",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "gouki_akuma": {
+        "charA": "ryu",
+        "charB": "gouki_akuma",
+        "rawWinsA": 45,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5056,
+        "smoothedWinRate": 0.5046
+      },
+      "vega_mbison": {
+        "charA": "ryu",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4719,
+        "smoothedWinRate": 0.4771
+      },
+      "terry": {
+        "charA": "ryu",
+        "charB": "terry",
+        "rawWinsA": 51,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.573,
+        "smoothedWinRate": 0.5596
+      },
+      "mai": {
+        "charA": "ryu",
+        "charB": "mai",
+        "rawWinsA": 43,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.4526,
+        "smoothedWinRate": 0.4609
+      },
+      "elena": {
+        "charA": "ryu",
+        "charB": "elena",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "sagat": {
+        "charA": "ryu",
+        "charB": "sagat",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cviper": {
+        "charA": "ryu",
+        "charB": "cviper",
+        "rawWinsA": 59,
+        "rawTotalGames": 110,
+        "rawWinRate": 0.5364,
+        "smoothedWinRate": 0.5308
+      }
+    },
+    "luke": {
+      "ryu": {
+        "charA": "luke",
+        "charB": "ryu",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "luke": {
+        "charA": "luke",
+        "charB": "luke",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jamie": {
+        "charA": "luke",
+        "charB": "jamie",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "chunli": {
+        "charA": "luke",
+        "charB": "chunli",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "guile": {
+        "charA": "luke",
+        "charB": "guile",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "kimberly": {
+        "charA": "luke",
+        "charB": "kimberly",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "juri": {
+        "charA": "luke",
+        "charB": "juri",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ken": {
+        "charA": "luke",
+        "charB": "ken",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "blanka": {
+        "charA": "luke",
+        "charB": "blanka",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dhalsim": {
+        "charA": "luke",
+        "charB": "dhalsim",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ehonda": {
+        "charA": "luke",
+        "charB": "ehonda",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dee_jay": {
+        "charA": "luke",
+        "charB": "dee_jay",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "manon": {
+        "charA": "luke",
+        "charB": "manon",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "marisa": {
+        "charA": "luke",
+        "charB": "marisa",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jp": {
+        "charA": "luke",
+        "charB": "jp",
+        "rawWinsA": 38,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.427,
+        "smoothedWinRate": 0.4404
+      },
+      "zangief": {
+        "charA": "luke",
+        "charB": "zangief",
+        "rawWinsA": 47,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.5109,
+        "smoothedWinRate": 0.5089
+      },
+      "lily": {
+        "charA": "luke",
+        "charB": "lily",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cammy": {
+        "charA": "luke",
+        "charB": "cammy",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "rashid": {
+        "charA": "luke",
+        "charB": "rashid",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "aki": {
+        "charA": "luke",
+        "charB": "aki",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ed": {
+        "charA": "luke",
+        "charB": "ed",
+        "rawWinsA": 41,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4607,
+        "smoothedWinRate": 0.4679
+      },
+      "gouki_akuma": {
+        "charA": "luke",
+        "charB": "gouki_akuma",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "vega_mbison": {
+        "charA": "luke",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "terry": {
+        "charA": "luke",
+        "charB": "terry",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "mai": {
+        "charA": "luke",
+        "charB": "mai",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "elena": {
+        "charA": "luke",
+        "charB": "elena",
+        "rawWinsA": 53,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5955,
+        "smoothedWinRate": 0.578
+      },
+      "sagat": {
+        "charA": "luke",
+        "charB": "sagat",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cviper": {
+        "charA": "luke",
+        "charB": "cviper",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      }
+    },
+    "jamie": {
+      "ryu": {
+        "charA": "jamie",
+        "charB": "ryu",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "luke": {
+        "charA": "jamie",
+        "charB": "luke",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jamie": {
+        "charA": "jamie",
+        "charB": "jamie",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "chunli": {
+        "charA": "jamie",
+        "charB": "chunli",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "guile": {
+        "charA": "jamie",
+        "charB": "guile",
+        "rawWinsA": 36,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.45,
+        "smoothedWinRate": 0.46
+      },
+      "kimberly": {
+        "charA": "jamie",
+        "charB": "kimberly",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "juri": {
+        "charA": "jamie",
+        "charB": "juri",
+        "rawWinsA": 48,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.5217,
+        "smoothedWinRate": 0.5179
+      },
+      "ken": {
+        "charA": "jamie",
+        "charB": "ken",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "blanka": {
+        "charA": "jamie",
+        "charB": "blanka",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dhalsim": {
+        "charA": "jamie",
+        "charB": "dhalsim",
+        "rawWinsA": 45,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5056,
+        "smoothedWinRate": 0.5046
+      },
+      "ehonda": {
+        "charA": "jamie",
+        "charB": "ehonda",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "dee_jay": {
+        "charA": "jamie",
+        "charB": "dee_jay",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "manon": {
+        "charA": "jamie",
+        "charB": "manon",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "marisa": {
+        "charA": "jamie",
+        "charB": "marisa",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jp": {
+        "charA": "jamie",
+        "charB": "jp",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "zangief": {
+        "charA": "jamie",
+        "charB": "zangief",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "lily": {
+        "charA": "jamie",
+        "charB": "lily",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "cammy": {
+        "charA": "jamie",
+        "charB": "cammy",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "rashid": {
+        "charA": "jamie",
+        "charB": "rashid",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "aki": {
+        "charA": "jamie",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.4421,
+        "smoothedWinRate": 0.4522
+      },
+      "ed": {
+        "charA": "jamie",
+        "charB": "ed",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "gouki_akuma": {
+        "charA": "jamie",
+        "charB": "gouki_akuma",
+        "rawWinsA": 45,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5233,
+        "smoothedWinRate": 0.5189
+      },
+      "vega_mbison": {
+        "charA": "jamie",
+        "charB": "vega_mbison",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "terry": {
+        "charA": "jamie",
+        "charB": "terry",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "mai": {
+        "charA": "jamie",
+        "charB": "mai",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "elena": {
+        "charA": "jamie",
+        "charB": "elena",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "sagat": {
+        "charA": "jamie",
+        "charB": "sagat",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cviper": {
+        "charA": "jamie",
+        "charB": "cviper",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      }
+    },
+    "chunli": {
+      "ryu": {
+        "charA": "chunli",
+        "charB": "ryu",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "luke": {
+        "charA": "chunli",
+        "charB": "luke",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jamie": {
+        "charA": "chunli",
+        "charB": "jamie",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "chunli": {
+        "charA": "chunli",
+        "charB": "chunli",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "guile": {
+        "charA": "chunli",
+        "charB": "guile",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "kimberly": {
+        "charA": "chunli",
+        "charB": "kimberly",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "juri": {
+        "charA": "chunli",
+        "charB": "juri",
+        "rawWinsA": 40,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.4348,
+        "smoothedWinRate": 0.4464
+      },
+      "ken": {
+        "charA": "chunli",
+        "charB": "ken",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "blanka": {
+        "charA": "chunli",
+        "charB": "blanka",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dhalsim": {
+        "charA": "chunli",
+        "charB": "dhalsim",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ehonda": {
+        "charA": "chunli",
+        "charB": "ehonda",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dee_jay": {
+        "charA": "chunli",
+        "charB": "dee_jay",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "manon": {
+        "charA": "chunli",
+        "charB": "manon",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "marisa": {
+        "charA": "chunli",
+        "charB": "marisa",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jp": {
+        "charA": "chunli",
+        "charB": "jp",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "zangief": {
+        "charA": "chunli",
+        "charB": "zangief",
+        "rawWinsA": 42,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.4565,
+        "smoothedWinRate": 0.4643
+      },
+      "lily": {
+        "charA": "chunli",
+        "charB": "lily",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cammy": {
+        "charA": "chunli",
+        "charB": "cammy",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "rashid": {
+        "charA": "chunli",
+        "charB": "rashid",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "aki": {
+        "charA": "chunli",
+        "charB": "aki",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ed": {
+        "charA": "chunli",
+        "charB": "ed",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "gouki_akuma": {
+        "charA": "chunli",
+        "charB": "gouki_akuma",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "vega_mbison": {
+        "charA": "chunli",
+        "charB": "vega_mbison",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "terry": {
+        "charA": "chunli",
+        "charB": "terry",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "mai": {
+        "charA": "chunli",
+        "charB": "mai",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "elena": {
+        "charA": "chunli",
+        "charB": "elena",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "sagat": {
+        "charA": "chunli",
+        "charB": "sagat",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cviper": {
+        "charA": "chunli",
+        "charB": "cviper",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      }
+    },
+    "guile": {
+      "ryu": {
+        "charA": "guile",
+        "charB": "ryu",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      },
+      "luke": {
+        "charA": "guile",
+        "charB": "luke",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jamie": {
+        "charA": "guile",
+        "charB": "jamie",
+        "rawWinsA": 44,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.55,
+        "smoothedWinRate": 0.54
+      },
+      "chunli": {
+        "charA": "guile",
+        "charB": "chunli",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "guile": {
+        "charA": "guile",
+        "charB": "guile",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "kimberly": {
+        "charA": "guile",
+        "charB": "kimberly",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "juri": {
+        "charA": "guile",
+        "charB": "juri",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ken": {
+        "charA": "guile",
+        "charB": "ken",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "blanka": {
+        "charA": "guile",
+        "charB": "blanka",
+        "rawWinsA": 47,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.4947,
+        "smoothedWinRate": 0.4957
+      },
+      "dhalsim": {
+        "charA": "guile",
+        "charB": "dhalsim",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ehonda": {
+        "charA": "guile",
+        "charB": "ehonda",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dee_jay": {
+        "charA": "guile",
+        "charB": "dee_jay",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "manon": {
+        "charA": "guile",
+        "charB": "manon",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "marisa": {
+        "charA": "guile",
+        "charB": "marisa",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jp": {
+        "charA": "guile",
+        "charB": "jp",
+        "rawWinsA": 36,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.45,
+        "smoothedWinRate": 0.46
+      },
+      "zangief": {
+        "charA": "guile",
+        "charB": "zangief",
+        "rawWinsA": 46,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.575,
+        "smoothedWinRate": 0.56
+      },
+      "lily": {
+        "charA": "guile",
+        "charB": "lily",
+        "rawWinsA": 43,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5375,
+        "smoothedWinRate": 0.53
+      },
+      "cammy": {
+        "charA": "guile",
+        "charB": "cammy",
+        "rawWinsA": 37,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4625,
+        "smoothedWinRate": 0.47
+      },
+      "rashid": {
+        "charA": "guile",
+        "charB": "rashid",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "aki": {
+        "charA": "guile",
+        "charB": "aki",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ed": {
+        "charA": "guile",
+        "charB": "ed",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "gouki_akuma": {
+        "charA": "guile",
+        "charB": "gouki_akuma",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "vega_mbison": {
+        "charA": "guile",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4719,
+        "smoothedWinRate": 0.4771
+      },
+      "terry": {
+        "charA": "guile",
+        "charB": "terry",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "mai": {
+        "charA": "guile",
+        "charB": "mai",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "elena": {
+        "charA": "guile",
+        "charB": "elena",
+        "rawWinsA": 46,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5169,
+        "smoothedWinRate": 0.5138
+      },
+      "sagat": {
+        "charA": "guile",
+        "charB": "sagat",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cviper": {
+        "charA": "guile",
+        "charB": "cviper",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      }
+    },
+    "kimberly": {
+      "ryu": {
+        "charA": "kimberly",
+        "charB": "ryu",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "luke": {
+        "charA": "kimberly",
+        "charB": "luke",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "jamie": {
+        "charA": "kimberly",
+        "charB": "jamie",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "chunli": {
+        "charA": "kimberly",
+        "charB": "chunli",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "guile": {
+        "charA": "kimberly",
+        "charB": "guile",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "kimberly": {
+        "charA": "kimberly",
+        "charB": "kimberly",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "juri": {
+        "charA": "kimberly",
+        "charB": "juri",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ken": {
+        "charA": "kimberly",
+        "charB": "ken",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "blanka": {
+        "charA": "kimberly",
+        "charB": "blanka",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dhalsim": {
+        "charA": "kimberly",
+        "charB": "dhalsim",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ehonda": {
+        "charA": "kimberly",
+        "charB": "ehonda",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dee_jay": {
+        "charA": "kimberly",
+        "charB": "dee_jay",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "manon": {
+        "charA": "kimberly",
+        "charB": "manon",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "marisa": {
+        "charA": "kimberly",
+        "charB": "marisa",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "jp": {
+        "charA": "kimberly",
+        "charB": "jp",
+        "rawWinsA": 44,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.55,
+        "smoothedWinRate": 0.54
+      },
+      "zangief": {
+        "charA": "kimberly",
+        "charB": "zangief",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "lily": {
+        "charA": "kimberly",
+        "charB": "lily",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cammy": {
+        "charA": "kimberly",
+        "charB": "cammy",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "rashid": {
+        "charA": "kimberly",
+        "charB": "rashid",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "aki": {
+        "charA": "kimberly",
+        "charB": "aki",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "ed": {
+        "charA": "kimberly",
+        "charB": "ed",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "gouki_akuma": {
+        "charA": "kimberly",
+        "charB": "gouki_akuma",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "vega_mbison": {
+        "charA": "kimberly",
+        "charB": "vega_mbison",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "terry": {
+        "charA": "kimberly",
+        "charB": "terry",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "mai": {
+        "charA": "kimberly",
+        "charB": "mai",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "elena": {
+        "charA": "kimberly",
+        "charB": "elena",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "sagat": {
+        "charA": "kimberly",
+        "charB": "sagat",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cviper": {
+        "charA": "kimberly",
+        "charB": "cviper",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      }
+    },
+    "juri": {
+      "ryu": {
+        "charA": "juri",
+        "charB": "ryu",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "luke": {
+        "charA": "juri",
+        "charB": "luke",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jamie": {
+        "charA": "juri",
+        "charB": "jamie",
+        "rawWinsA": 44,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.4783,
+        "smoothedWinRate": 0.4821
+      },
+      "chunli": {
+        "charA": "juri",
+        "charB": "chunli",
+        "rawWinsA": 52,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.5652,
+        "smoothedWinRate": 0.5536
+      },
+      "guile": {
+        "charA": "juri",
+        "charB": "guile",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "kimberly": {
+        "charA": "juri",
+        "charB": "kimberly",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "juri": {
+        "charA": "juri",
+        "charB": "juri",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ken": {
+        "charA": "juri",
+        "charB": "ken",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "blanka": {
+        "charA": "juri",
+        "charB": "blanka",
+        "rawWinsA": 54,
+        "rawTotalGames": 101,
+        "rawWinRate": 0.5347,
+        "smoothedWinRate": 0.5289
+      },
+      "dhalsim": {
+        "charA": "juri",
+        "charB": "dhalsim",
+        "rawWinsA": 43,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5375,
+        "smoothedWinRate": 0.53
+      },
+      "ehonda": {
+        "charA": "juri",
+        "charB": "ehonda",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dee_jay": {
+        "charA": "juri",
+        "charB": "dee_jay",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "manon": {
+        "charA": "juri",
+        "charB": "manon",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "marisa": {
+        "charA": "juri",
+        "charB": "marisa",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jp": {
+        "charA": "juri",
+        "charB": "jp",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "zangief": {
+        "charA": "juri",
+        "charB": "zangief",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "lily": {
+        "charA": "juri",
+        "charB": "lily",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cammy": {
+        "charA": "juri",
+        "charB": "cammy",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "rashid": {
+        "charA": "juri",
+        "charB": "rashid",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "aki": {
+        "charA": "juri",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ed": {
+        "charA": "juri",
+        "charB": "ed",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "gouki_akuma": {
+        "charA": "juri",
+        "charB": "gouki_akuma",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "vega_mbison": {
+        "charA": "juri",
+        "charB": "vega_mbison",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "terry": {
+        "charA": "juri",
+        "charB": "terry",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "mai": {
+        "charA": "juri",
+        "charB": "mai",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "elena": {
+        "charA": "juri",
+        "charB": "elena",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      },
+      "sagat": {
+        "charA": "juri",
+        "charB": "sagat",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cviper": {
+        "charA": "juri",
+        "charB": "cviper",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      }
+    },
+    "ken": {
+      "ryu": {
+        "charA": "ken",
+        "charB": "ryu",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "luke": {
+        "charA": "ken",
+        "charB": "luke",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jamie": {
+        "charA": "ken",
+        "charB": "jamie",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "chunli": {
+        "charA": "ken",
+        "charB": "chunli",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "guile": {
+        "charA": "ken",
+        "charB": "guile",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "kimberly": {
+        "charA": "ken",
+        "charB": "kimberly",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "juri": {
+        "charA": "ken",
+        "charB": "juri",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ken": {
+        "charA": "ken",
+        "charB": "ken",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "blanka": {
+        "charA": "ken",
+        "charB": "blanka",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "dhalsim": {
+        "charA": "ken",
+        "charB": "dhalsim",
+        "rawWinsA": 46,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5169,
+        "smoothedWinRate": 0.5138
+      },
+      "ehonda": {
+        "charA": "ken",
+        "charB": "ehonda",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "dee_jay": {
+        "charA": "ken",
+        "charB": "dee_jay",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "manon": {
+        "charA": "ken",
+        "charB": "manon",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "marisa": {
+        "charA": "ken",
+        "charB": "marisa",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jp": {
+        "charA": "ken",
+        "charB": "jp",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "zangief": {
+        "charA": "ken",
+        "charB": "zangief",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "lily": {
+        "charA": "ken",
+        "charB": "lily",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "cammy": {
+        "charA": "ken",
+        "charB": "cammy",
+        "rawWinsA": 48,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5393,
+        "smoothedWinRate": 0.5321
+      },
+      "rashid": {
+        "charA": "ken",
+        "charB": "rashid",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "aki": {
+        "charA": "ken",
+        "charB": "aki",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ed": {
+        "charA": "ken",
+        "charB": "ed",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "gouki_akuma": {
+        "charA": "ken",
+        "charB": "gouki_akuma",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "vega_mbison": {
+        "charA": "ken",
+        "charB": "vega_mbison",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "terry": {
+        "charA": "ken",
+        "charB": "terry",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "mai": {
+        "charA": "ken",
+        "charB": "mai",
+        "rawWinsA": 44,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.4632,
+        "smoothedWinRate": 0.4696
+      },
+      "elena": {
+        "charA": "ken",
+        "charB": "elena",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "sagat": {
+        "charA": "ken",
+        "charB": "sagat",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "cviper": {
+        "charA": "ken",
+        "charB": "cviper",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      }
+    },
+    "blanka": {
+      "ryu": {
+        "charA": "blanka",
+        "charB": "ryu",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "luke": {
+        "charA": "blanka",
+        "charB": "luke",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jamie": {
+        "charA": "blanka",
+        "charB": "jamie",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "chunli": {
+        "charA": "blanka",
+        "charB": "chunli",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "guile": {
+        "charA": "blanka",
+        "charB": "guile",
+        "rawWinsA": 48,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.5053,
+        "smoothedWinRate": 0.5043
+      },
+      "kimberly": {
+        "charA": "blanka",
+        "charB": "kimberly",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "juri": {
+        "charA": "blanka",
+        "charB": "juri",
+        "rawWinsA": 47,
+        "rawTotalGames": 101,
+        "rawWinRate": 0.4653,
+        "smoothedWinRate": 0.4711
+      },
+      "ken": {
+        "charA": "blanka",
+        "charB": "ken",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "blanka": {
+        "charA": "blanka",
+        "charB": "blanka",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "dhalsim": {
+        "charA": "blanka",
+        "charB": "dhalsim",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ehonda": {
+        "charA": "blanka",
+        "charB": "ehonda",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dee_jay": {
+        "charA": "blanka",
+        "charB": "dee_jay",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "manon": {
+        "charA": "blanka",
+        "charB": "manon",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "marisa": {
+        "charA": "blanka",
+        "charB": "marisa",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "jp": {
+        "charA": "blanka",
+        "charB": "jp",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "zangief": {
+        "charA": "blanka",
+        "charB": "zangief",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "lily": {
+        "charA": "blanka",
+        "charB": "lily",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cammy": {
+        "charA": "blanka",
+        "charB": "cammy",
+        "rawWinsA": 48,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5393,
+        "smoothedWinRate": 0.5321
+      },
+      "rashid": {
+        "charA": "blanka",
+        "charB": "rashid",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "aki": {
+        "charA": "blanka",
+        "charB": "aki",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ed": {
+        "charA": "blanka",
+        "charB": "ed",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "gouki_akuma": {
+        "charA": "blanka",
+        "charB": "gouki_akuma",
+        "rawWinsA": 61,
+        "rawTotalGames": 104,
+        "rawWinRate": 0.5865,
+        "smoothedWinRate": 0.5726
+      },
+      "vega_mbison": {
+        "charA": "blanka",
+        "charB": "vega_mbison",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "terry": {
+        "charA": "blanka",
+        "charB": "terry",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "mai": {
+        "charA": "blanka",
+        "charB": "mai",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "elena": {
+        "charA": "blanka",
+        "charB": "elena",
+        "rawWinsA": 43,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5375,
+        "smoothedWinRate": 0.53
+      },
+      "sagat": {
+        "charA": "blanka",
+        "charB": "sagat",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cviper": {
+        "charA": "blanka",
+        "charB": "cviper",
+        "rawWinsA": 45,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5056,
+        "smoothedWinRate": 0.5046
+      }
+    },
+    "dhalsim": {
+      "ryu": {
+        "charA": "dhalsim",
+        "charB": "ryu",
+        "rawWinsA": 49,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5506,
+        "smoothedWinRate": 0.5413
+      },
+      "luke": {
+        "charA": "dhalsim",
+        "charB": "luke",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jamie": {
+        "charA": "dhalsim",
+        "charB": "jamie",
+        "rawWinsA": 44,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4944,
+        "smoothedWinRate": 0.4954
+      },
+      "chunli": {
+        "charA": "dhalsim",
+        "charB": "chunli",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "guile": {
+        "charA": "dhalsim",
+        "charB": "guile",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "kimberly": {
+        "charA": "dhalsim",
+        "charB": "kimberly",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "juri": {
+        "charA": "dhalsim",
+        "charB": "juri",
+        "rawWinsA": 37,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4625,
+        "smoothedWinRate": 0.47
+      },
+      "ken": {
+        "charA": "dhalsim",
+        "charB": "ken",
+        "rawWinsA": 43,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4831,
+        "smoothedWinRate": 0.4862
+      },
+      "blanka": {
+        "charA": "dhalsim",
+        "charB": "blanka",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "dhalsim": {
+        "charA": "dhalsim",
+        "charB": "dhalsim",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ehonda": {
+        "charA": "dhalsim",
+        "charB": "ehonda",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "dee_jay": {
+        "charA": "dhalsim",
+        "charB": "dee_jay",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "manon": {
+        "charA": "dhalsim",
+        "charB": "manon",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "marisa": {
+        "charA": "dhalsim",
+        "charB": "marisa",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jp": {
+        "charA": "dhalsim",
+        "charB": "jp",
+        "rawWinsA": 37,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4625,
+        "smoothedWinRate": 0.47
+      },
+      "zangief": {
+        "charA": "dhalsim",
+        "charB": "zangief",
+        "rawWinsA": 47,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5875,
+        "smoothedWinRate": 0.57
+      },
+      "lily": {
+        "charA": "dhalsim",
+        "charB": "lily",
+        "rawWinsA": 47,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.4947,
+        "smoothedWinRate": 0.4957
+      },
+      "cammy": {
+        "charA": "dhalsim",
+        "charB": "cammy",
+        "rawWinsA": 35,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4375,
+        "smoothedWinRate": 0.45
+      },
+      "rashid": {
+        "charA": "dhalsim",
+        "charB": "rashid",
+        "rawWinsA": 36,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.45,
+        "smoothedWinRate": 0.46
+      },
+      "aki": {
+        "charA": "dhalsim",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ed": {
+        "charA": "dhalsim",
+        "charB": "ed",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "gouki_akuma": {
+        "charA": "dhalsim",
+        "charB": "gouki_akuma",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "vega_mbison": {
+        "charA": "dhalsim",
+        "charB": "vega_mbison",
+        "rawWinsA": 35,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4375,
+        "smoothedWinRate": 0.45
+      },
+      "terry": {
+        "charA": "dhalsim",
+        "charB": "terry",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "mai": {
+        "charA": "dhalsim",
+        "charB": "mai",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "elena": {
+        "charA": "dhalsim",
+        "charB": "elena",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "sagat": {
+        "charA": "dhalsim",
+        "charB": "sagat",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cviper": {
+        "charA": "dhalsim",
+        "charB": "cviper",
+        "rawWinsA": 36,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.45,
+        "smoothedWinRate": 0.46
+      }
+    },
+    "ehonda": {
+      "ryu": {
+        "charA": "ehonda",
+        "charB": "ryu",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "luke": {
+        "charA": "ehonda",
+        "charB": "luke",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jamie": {
+        "charA": "ehonda",
+        "charB": "jamie",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "chunli": {
+        "charA": "ehonda",
+        "charB": "chunli",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "guile": {
+        "charA": "ehonda",
+        "charB": "guile",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "kimberly": {
+        "charA": "ehonda",
+        "charB": "kimberly",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "juri": {
+        "charA": "ehonda",
+        "charB": "juri",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ken": {
+        "charA": "ehonda",
+        "charB": "ken",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "blanka": {
+        "charA": "ehonda",
+        "charB": "blanka",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dhalsim": {
+        "charA": "ehonda",
+        "charB": "dhalsim",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "ehonda": {
+        "charA": "ehonda",
+        "charB": "ehonda",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "dee_jay": {
+        "charA": "ehonda",
+        "charB": "dee_jay",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "manon": {
+        "charA": "ehonda",
+        "charB": "manon",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "marisa": {
+        "charA": "ehonda",
+        "charB": "marisa",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jp": {
+        "charA": "ehonda",
+        "charB": "jp",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "zangief": {
+        "charA": "ehonda",
+        "charB": "zangief",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "lily": {
+        "charA": "ehonda",
+        "charB": "lily",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cammy": {
+        "charA": "ehonda",
+        "charB": "cammy",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "rashid": {
+        "charA": "ehonda",
+        "charB": "rashid",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "aki": {
+        "charA": "ehonda",
+        "charB": "aki",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ed": {
+        "charA": "ehonda",
+        "charB": "ed",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "gouki_akuma": {
+        "charA": "ehonda",
+        "charB": "gouki_akuma",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "vega_mbison": {
+        "charA": "ehonda",
+        "charB": "vega_mbison",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "terry": {
+        "charA": "ehonda",
+        "charB": "terry",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "mai": {
+        "charA": "ehonda",
+        "charB": "mai",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "elena": {
+        "charA": "ehonda",
+        "charB": "elena",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "sagat": {
+        "charA": "ehonda",
+        "charB": "sagat",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cviper": {
+        "charA": "ehonda",
+        "charB": "cviper",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      }
+    },
+    "dee_jay": {
+      "ryu": {
+        "charA": "dee_jay",
+        "charB": "ryu",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "luke": {
+        "charA": "dee_jay",
+        "charB": "luke",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jamie": {
+        "charA": "dee_jay",
+        "charB": "jamie",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "chunli": {
+        "charA": "dee_jay",
+        "charB": "chunli",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "guile": {
+        "charA": "dee_jay",
+        "charB": "guile",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "kimberly": {
+        "charA": "dee_jay",
+        "charB": "kimberly",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "juri": {
+        "charA": "dee_jay",
+        "charB": "juri",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ken": {
+        "charA": "dee_jay",
+        "charB": "ken",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "blanka": {
+        "charA": "dee_jay",
+        "charB": "blanka",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dhalsim": {
+        "charA": "dee_jay",
+        "charB": "dhalsim",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ehonda": {
+        "charA": "dee_jay",
+        "charB": "ehonda",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dee_jay": {
+        "charA": "dee_jay",
+        "charB": "dee_jay",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "manon": {
+        "charA": "dee_jay",
+        "charB": "manon",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "marisa": {
+        "charA": "dee_jay",
+        "charB": "marisa",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jp": {
+        "charA": "dee_jay",
+        "charB": "jp",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "zangief": {
+        "charA": "dee_jay",
+        "charB": "zangief",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "lily": {
+        "charA": "dee_jay",
+        "charB": "lily",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cammy": {
+        "charA": "dee_jay",
+        "charB": "cammy",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "rashid": {
+        "charA": "dee_jay",
+        "charB": "rashid",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "aki": {
+        "charA": "dee_jay",
+        "charB": "aki",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "ed": {
+        "charA": "dee_jay",
+        "charB": "ed",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "gouki_akuma": {
+        "charA": "dee_jay",
+        "charB": "gouki_akuma",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "vega_mbison": {
+        "charA": "dee_jay",
+        "charB": "vega_mbison",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "terry": {
+        "charA": "dee_jay",
+        "charB": "terry",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "mai": {
+        "charA": "dee_jay",
+        "charB": "mai",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "elena": {
+        "charA": "dee_jay",
+        "charB": "elena",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "sagat": {
+        "charA": "dee_jay",
+        "charB": "sagat",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "cviper": {
+        "charA": "dee_jay",
+        "charB": "cviper",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      }
+    },
+    "manon": {
+      "ryu": {
+        "charA": "manon",
+        "charB": "ryu",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "luke": {
+        "charA": "manon",
+        "charB": "luke",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jamie": {
+        "charA": "manon",
+        "charB": "jamie",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "chunli": {
+        "charA": "manon",
+        "charB": "chunli",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "guile": {
+        "charA": "manon",
+        "charB": "guile",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "kimberly": {
+        "charA": "manon",
+        "charB": "kimberly",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "juri": {
+        "charA": "manon",
+        "charB": "juri",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ken": {
+        "charA": "manon",
+        "charB": "ken",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "blanka": {
+        "charA": "manon",
+        "charB": "blanka",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dhalsim": {
+        "charA": "manon",
+        "charB": "dhalsim",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ehonda": {
+        "charA": "manon",
+        "charB": "ehonda",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "dee_jay": {
+        "charA": "manon",
+        "charB": "dee_jay",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "manon": {
+        "charA": "manon",
+        "charB": "manon",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "marisa": {
+        "charA": "manon",
+        "charB": "marisa",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jp": {
+        "charA": "manon",
+        "charB": "jp",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "zangief": {
+        "charA": "manon",
+        "charB": "zangief",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "lily": {
+        "charA": "manon",
+        "charB": "lily",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cammy": {
+        "charA": "manon",
+        "charB": "cammy",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "rashid": {
+        "charA": "manon",
+        "charB": "rashid",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "aki": {
+        "charA": "manon",
+        "charB": "aki",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ed": {
+        "charA": "manon",
+        "charB": "ed",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "gouki_akuma": {
+        "charA": "manon",
+        "charB": "gouki_akuma",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "vega_mbison": {
+        "charA": "manon",
+        "charB": "vega_mbison",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "terry": {
+        "charA": "manon",
+        "charB": "terry",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "mai": {
+        "charA": "manon",
+        "charB": "mai",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "elena": {
+        "charA": "manon",
+        "charB": "elena",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "sagat": {
+        "charA": "manon",
+        "charB": "sagat",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cviper": {
+        "charA": "manon",
+        "charB": "cviper",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      }
+    },
+    "marisa": {
+      "ryu": {
+        "charA": "marisa",
+        "charB": "ryu",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "luke": {
+        "charA": "marisa",
+        "charB": "luke",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jamie": {
+        "charA": "marisa",
+        "charB": "jamie",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "chunli": {
+        "charA": "marisa",
+        "charB": "chunli",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "guile": {
+        "charA": "marisa",
+        "charB": "guile",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "kimberly": {
+        "charA": "marisa",
+        "charB": "kimberly",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "juri": {
+        "charA": "marisa",
+        "charB": "juri",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ken": {
+        "charA": "marisa",
+        "charB": "ken",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "blanka": {
+        "charA": "marisa",
+        "charB": "blanka",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "dhalsim": {
+        "charA": "marisa",
+        "charB": "dhalsim",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ehonda": {
+        "charA": "marisa",
+        "charB": "ehonda",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dee_jay": {
+        "charA": "marisa",
+        "charB": "dee_jay",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "manon": {
+        "charA": "marisa",
+        "charB": "manon",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "marisa": {
+        "charA": "marisa",
+        "charB": "marisa",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jp": {
+        "charA": "marisa",
+        "charB": "jp",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "zangief": {
+        "charA": "marisa",
+        "charB": "zangief",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "lily": {
+        "charA": "marisa",
+        "charB": "lily",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "cammy": {
+        "charA": "marisa",
+        "charB": "cammy",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "rashid": {
+        "charA": "marisa",
+        "charB": "rashid",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "aki": {
+        "charA": "marisa",
+        "charB": "aki",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ed": {
+        "charA": "marisa",
+        "charB": "ed",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "gouki_akuma": {
+        "charA": "marisa",
+        "charB": "gouki_akuma",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "vega_mbison": {
+        "charA": "marisa",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "terry": {
+        "charA": "marisa",
+        "charB": "terry",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "mai": {
+        "charA": "marisa",
+        "charB": "mai",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "elena": {
+        "charA": "marisa",
+        "charB": "elena",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "sagat": {
+        "charA": "marisa",
+        "charB": "sagat",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "cviper": {
+        "charA": "marisa",
+        "charB": "cviper",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      }
+    },
+    "jp": {
+      "ryu": {
+        "charA": "jp",
+        "charB": "ryu",
+        "rawWinsA": 41,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4767,
+        "smoothedWinRate": 0.4811
+      },
+      "luke": {
+        "charA": "jp",
+        "charB": "luke",
+        "rawWinsA": 51,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.573,
+        "smoothedWinRate": 0.5596
+      },
+      "jamie": {
+        "charA": "jp",
+        "charB": "jamie",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "chunli": {
+        "charA": "jp",
+        "charB": "chunli",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "guile": {
+        "charA": "jp",
+        "charB": "guile",
+        "rawWinsA": 44,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.55,
+        "smoothedWinRate": 0.54
+      },
+      "kimberly": {
+        "charA": "jp",
+        "charB": "kimberly",
+        "rawWinsA": 36,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.45,
+        "smoothedWinRate": 0.46
+      },
+      "juri": {
+        "charA": "jp",
+        "charB": "juri",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ken": {
+        "charA": "jp",
+        "charB": "ken",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "blanka": {
+        "charA": "jp",
+        "charB": "blanka",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dhalsim": {
+        "charA": "jp",
+        "charB": "dhalsim",
+        "rawWinsA": 43,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5375,
+        "smoothedWinRate": 0.53
+      },
+      "ehonda": {
+        "charA": "jp",
+        "charB": "ehonda",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dee_jay": {
+        "charA": "jp",
+        "charB": "dee_jay",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "manon": {
+        "charA": "jp",
+        "charB": "manon",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "marisa": {
+        "charA": "jp",
+        "charB": "marisa",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jp": {
+        "charA": "jp",
+        "charB": "jp",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "zangief": {
+        "charA": "jp",
+        "charB": "zangief",
+        "rawWinsA": 46,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.575,
+        "smoothedWinRate": 0.56
+      },
+      "lily": {
+        "charA": "jp",
+        "charB": "lily",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cammy": {
+        "charA": "jp",
+        "charB": "cammy",
+        "rawWinsA": 35,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4375,
+        "smoothedWinRate": 0.45
+      },
+      "rashid": {
+        "charA": "jp",
+        "charB": "rashid",
+        "rawWinsA": 37,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4625,
+        "smoothedWinRate": 0.47
+      },
+      "aki": {
+        "charA": "jp",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ed": {
+        "charA": "jp",
+        "charB": "ed",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "gouki_akuma": {
+        "charA": "jp",
+        "charB": "gouki_akuma",
+        "rawWinsA": 45,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5056,
+        "smoothedWinRate": 0.5046
+      },
+      "vega_mbison": {
+        "charA": "jp",
+        "charB": "vega_mbison",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "terry": {
+        "charA": "jp",
+        "charB": "terry",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "mai": {
+        "charA": "jp",
+        "charB": "mai",
+        "rawWinsA": 47,
+        "rawTotalGames": 98,
+        "rawWinRate": 0.4796,
+        "smoothedWinRate": 0.4831
+      },
+      "elena": {
+        "charA": "jp",
+        "charB": "elena",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "sagat": {
+        "charA": "jp",
+        "charB": "sagat",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cviper": {
+        "charA": "jp",
+        "charB": "cviper",
+        "rawWinsA": 37,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4625,
+        "smoothedWinRate": 0.47
+      }
+    },
+    "zangief": {
+      "ryu": {
+        "charA": "zangief",
+        "charB": "ryu",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "luke": {
+        "charA": "zangief",
+        "charB": "luke",
+        "rawWinsA": 45,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.4891,
+        "smoothedWinRate": 0.4911
+      },
+      "jamie": {
+        "charA": "zangief",
+        "charB": "jamie",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "chunli": {
+        "charA": "zangief",
+        "charB": "chunli",
+        "rawWinsA": 50,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.5435,
+        "smoothedWinRate": 0.5357
+      },
+      "guile": {
+        "charA": "zangief",
+        "charB": "guile",
+        "rawWinsA": 34,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.425,
+        "smoothedWinRate": 0.44
+      },
+      "kimberly": {
+        "charA": "zangief",
+        "charB": "kimberly",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "juri": {
+        "charA": "zangief",
+        "charB": "juri",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ken": {
+        "charA": "zangief",
+        "charB": "ken",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "blanka": {
+        "charA": "zangief",
+        "charB": "blanka",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      },
+      "dhalsim": {
+        "charA": "zangief",
+        "charB": "dhalsim",
+        "rawWinsA": 33,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4125,
+        "smoothedWinRate": 0.43
+      },
+      "ehonda": {
+        "charA": "zangief",
+        "charB": "ehonda",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dee_jay": {
+        "charA": "zangief",
+        "charB": "dee_jay",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "manon": {
+        "charA": "zangief",
+        "charB": "manon",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "marisa": {
+        "charA": "zangief",
+        "charB": "marisa",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "jp": {
+        "charA": "zangief",
+        "charB": "jp",
+        "rawWinsA": 34,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.425,
+        "smoothedWinRate": 0.44
+      },
+      "zangief": {
+        "charA": "zangief",
+        "charB": "zangief",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "lily": {
+        "charA": "zangief",
+        "charB": "lily",
+        "rawWinsA": 36,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4186,
+        "smoothedWinRate": 0.434
+      },
+      "cammy": {
+        "charA": "zangief",
+        "charB": "cammy",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      },
+      "rashid": {
+        "charA": "zangief",
+        "charB": "rashid",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "aki": {
+        "charA": "zangief",
+        "charB": "aki",
+        "rawWinsA": 37,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4625,
+        "smoothedWinRate": 0.47
+      },
+      "ed": {
+        "charA": "zangief",
+        "charB": "ed",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "gouki_akuma": {
+        "charA": "zangief",
+        "charB": "gouki_akuma",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "vega_mbison": {
+        "charA": "zangief",
+        "charB": "vega_mbison",
+        "rawWinsA": 44,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4944,
+        "smoothedWinRate": 0.4954
+      },
+      "terry": {
+        "charA": "zangief",
+        "charB": "terry",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "mai": {
+        "charA": "zangief",
+        "charB": "mai",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      },
+      "elena": {
+        "charA": "zangief",
+        "charB": "elena",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "sagat": {
+        "charA": "zangief",
+        "charB": "sagat",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cviper": {
+        "charA": "zangief",
+        "charB": "cviper",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      }
+    },
+    "lily": {
+      "ryu": {
+        "charA": "lily",
+        "charB": "ryu",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "luke": {
+        "charA": "lily",
+        "charB": "luke",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "jamie": {
+        "charA": "lily",
+        "charB": "jamie",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "chunli": {
+        "charA": "lily",
+        "charB": "chunli",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "guile": {
+        "charA": "lily",
+        "charB": "guile",
+        "rawWinsA": 37,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4625,
+        "smoothedWinRate": 0.47
+      },
+      "kimberly": {
+        "charA": "lily",
+        "charB": "kimberly",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "juri": {
+        "charA": "lily",
+        "charB": "juri",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ken": {
+        "charA": "lily",
+        "charB": "ken",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "blanka": {
+        "charA": "lily",
+        "charB": "blanka",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dhalsim": {
+        "charA": "lily",
+        "charB": "dhalsim",
+        "rawWinsA": 48,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.5053,
+        "smoothedWinRate": 0.5043
+      },
+      "ehonda": {
+        "charA": "lily",
+        "charB": "ehonda",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dee_jay": {
+        "charA": "lily",
+        "charB": "dee_jay",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "manon": {
+        "charA": "lily",
+        "charB": "manon",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "marisa": {
+        "charA": "lily",
+        "charB": "marisa",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jp": {
+        "charA": "lily",
+        "charB": "jp",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "zangief": {
+        "charA": "lily",
+        "charB": "zangief",
+        "rawWinsA": 50,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5814,
+        "smoothedWinRate": 0.566
+      },
+      "lily": {
+        "charA": "lily",
+        "charB": "lily",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cammy": {
+        "charA": "lily",
+        "charB": "cammy",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "rashid": {
+        "charA": "lily",
+        "charB": "rashid",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "aki": {
+        "charA": "lily",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ed": {
+        "charA": "lily",
+        "charB": "ed",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "gouki_akuma": {
+        "charA": "lily",
+        "charB": "gouki_akuma",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "vega_mbison": {
+        "charA": "lily",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "terry": {
+        "charA": "lily",
+        "charB": "terry",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "mai": {
+        "charA": "lily",
+        "charB": "mai",
+        "rawWinsA": 43,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4831,
+        "smoothedWinRate": 0.4862
+      },
+      "elena": {
+        "charA": "lily",
+        "charB": "elena",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "sagat": {
+        "charA": "lily",
+        "charB": "sagat",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cviper": {
+        "charA": "lily",
+        "charB": "cviper",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      }
+    },
+    "cammy": {
+      "ryu": {
+        "charA": "cammy",
+        "charB": "ryu",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "luke": {
+        "charA": "cammy",
+        "charB": "luke",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jamie": {
+        "charA": "cammy",
+        "charB": "jamie",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "chunli": {
+        "charA": "cammy",
+        "charB": "chunli",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "guile": {
+        "charA": "cammy",
+        "charB": "guile",
+        "rawWinsA": 43,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5375,
+        "smoothedWinRate": 0.53
+      },
+      "kimberly": {
+        "charA": "cammy",
+        "charB": "kimberly",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "juri": {
+        "charA": "cammy",
+        "charB": "juri",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ken": {
+        "charA": "cammy",
+        "charB": "ken",
+        "rawWinsA": 41,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4607,
+        "smoothedWinRate": 0.4679
+      },
+      "blanka": {
+        "charA": "cammy",
+        "charB": "blanka",
+        "rawWinsA": 41,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4607,
+        "smoothedWinRate": 0.4679
+      },
+      "dhalsim": {
+        "charA": "cammy",
+        "charB": "dhalsim",
+        "rawWinsA": 45,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5625,
+        "smoothedWinRate": 0.55
+      },
+      "ehonda": {
+        "charA": "cammy",
+        "charB": "ehonda",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dee_jay": {
+        "charA": "cammy",
+        "charB": "dee_jay",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "manon": {
+        "charA": "cammy",
+        "charB": "manon",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "marisa": {
+        "charA": "cammy",
+        "charB": "marisa",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jp": {
+        "charA": "cammy",
+        "charB": "jp",
+        "rawWinsA": 45,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5625,
+        "smoothedWinRate": 0.55
+      },
+      "zangief": {
+        "charA": "cammy",
+        "charB": "zangief",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "lily": {
+        "charA": "cammy",
+        "charB": "lily",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cammy": {
+        "charA": "cammy",
+        "charB": "cammy",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "rashid": {
+        "charA": "cammy",
+        "charB": "rashid",
+        "rawWinsA": 42,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4719,
+        "smoothedWinRate": 0.4771
+      },
+      "aki": {
+        "charA": "cammy",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ed": {
+        "charA": "cammy",
+        "charB": "ed",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "gouki_akuma": {
+        "charA": "cammy",
+        "charB": "gouki_akuma",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "vega_mbison": {
+        "charA": "cammy",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "terry": {
+        "charA": "cammy",
+        "charB": "terry",
+        "rawWinsA": 40,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.4348,
+        "smoothedWinRate": 0.4464
+      },
+      "mai": {
+        "charA": "cammy",
+        "charB": "mai",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "elena": {
+        "charA": "cammy",
+        "charB": "elena",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "sagat": {
+        "charA": "cammy",
+        "charB": "sagat",
+        "rawWinsA": 45,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5056,
+        "smoothedWinRate": 0.5046
+      },
+      "cviper": {
+        "charA": "cammy",
+        "charB": "cviper",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      }
+    },
+    "rashid": {
+      "ryu": {
+        "charA": "rashid",
+        "charB": "ryu",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "luke": {
+        "charA": "rashid",
+        "charB": "luke",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "jamie": {
+        "charA": "rashid",
+        "charB": "jamie",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "chunli": {
+        "charA": "rashid",
+        "charB": "chunli",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "guile": {
+        "charA": "rashid",
+        "charB": "guile",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "kimberly": {
+        "charA": "rashid",
+        "charB": "kimberly",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "juri": {
+        "charA": "rashid",
+        "charB": "juri",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ken": {
+        "charA": "rashid",
+        "charB": "ken",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "blanka": {
+        "charA": "rashid",
+        "charB": "blanka",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "dhalsim": {
+        "charA": "rashid",
+        "charB": "dhalsim",
+        "rawWinsA": 44,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.55,
+        "smoothedWinRate": 0.54
+      },
+      "ehonda": {
+        "charA": "rashid",
+        "charB": "ehonda",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "dee_jay": {
+        "charA": "rashid",
+        "charB": "dee_jay",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "manon": {
+        "charA": "rashid",
+        "charB": "manon",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "marisa": {
+        "charA": "rashid",
+        "charB": "marisa",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jp": {
+        "charA": "rashid",
+        "charB": "jp",
+        "rawWinsA": 43,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5375,
+        "smoothedWinRate": 0.53
+      },
+      "zangief": {
+        "charA": "rashid",
+        "charB": "zangief",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "lily": {
+        "charA": "rashid",
+        "charB": "lily",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cammy": {
+        "charA": "rashid",
+        "charB": "cammy",
+        "rawWinsA": 47,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5281,
+        "smoothedWinRate": 0.5229
+      },
+      "rashid": {
+        "charA": "rashid",
+        "charB": "rashid",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "aki": {
+        "charA": "rashid",
+        "charB": "aki",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ed": {
+        "charA": "rashid",
+        "charB": "ed",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "gouki_akuma": {
+        "charA": "rashid",
+        "charB": "gouki_akuma",
+        "rawWinsA": 48,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.5053,
+        "smoothedWinRate": 0.5043
+      },
+      "vega_mbison": {
+        "charA": "rashid",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "terry": {
+        "charA": "rashid",
+        "charB": "terry",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "mai": {
+        "charA": "rashid",
+        "charB": "mai",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "elena": {
+        "charA": "rashid",
+        "charB": "elena",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "sagat": {
+        "charA": "rashid",
+        "charB": "sagat",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cviper": {
+        "charA": "rashid",
+        "charB": "cviper",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      }
+    },
+    "aki": {
+      "ryu": {
+        "charA": "aki",
+        "charB": "ryu",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "luke": {
+        "charA": "aki",
+        "charB": "luke",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "jamie": {
+        "charA": "aki",
+        "charB": "jamie",
+        "rawWinsA": 53,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.5579,
+        "smoothedWinRate": 0.5478
+      },
+      "chunli": {
+        "charA": "aki",
+        "charB": "chunli",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "guile": {
+        "charA": "aki",
+        "charB": "guile",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "kimberly": {
+        "charA": "aki",
+        "charB": "kimberly",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "juri": {
+        "charA": "aki",
+        "charB": "juri",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ken": {
+        "charA": "aki",
+        "charB": "ken",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "blanka": {
+        "charA": "aki",
+        "charB": "blanka",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dhalsim": {
+        "charA": "aki",
+        "charB": "dhalsim",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ehonda": {
+        "charA": "aki",
+        "charB": "ehonda",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dee_jay": {
+        "charA": "aki",
+        "charB": "dee_jay",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "manon": {
+        "charA": "aki",
+        "charB": "manon",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "marisa": {
+        "charA": "aki",
+        "charB": "marisa",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jp": {
+        "charA": "aki",
+        "charB": "jp",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "zangief": {
+        "charA": "aki",
+        "charB": "zangief",
+        "rawWinsA": 43,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5375,
+        "smoothedWinRate": 0.53
+      },
+      "lily": {
+        "charA": "aki",
+        "charB": "lily",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cammy": {
+        "charA": "aki",
+        "charB": "cammy",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "rashid": {
+        "charA": "aki",
+        "charB": "rashid",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "aki": {
+        "charA": "aki",
+        "charB": "aki",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ed": {
+        "charA": "aki",
+        "charB": "ed",
+        "rawWinsA": 50,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5618,
+        "smoothedWinRate": 0.5505
+      },
+      "gouki_akuma": {
+        "charA": "aki",
+        "charB": "gouki_akuma",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "vega_mbison": {
+        "charA": "aki",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "terry": {
+        "charA": "aki",
+        "charB": "terry",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "mai": {
+        "charA": "aki",
+        "charB": "mai",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "elena": {
+        "charA": "aki",
+        "charB": "elena",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "sagat": {
+        "charA": "aki",
+        "charB": "sagat",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cviper": {
+        "charA": "aki",
+        "charB": "cviper",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      }
+    },
+    "ed": {
+      "ryu": {
+        "charA": "ed",
+        "charB": "ryu",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "luke": {
+        "charA": "ed",
+        "charB": "luke",
+        "rawWinsA": 48,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5393,
+        "smoothedWinRate": 0.5321
+      },
+      "jamie": {
+        "charA": "ed",
+        "charB": "jamie",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "chunli": {
+        "charA": "ed",
+        "charB": "chunli",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "guile": {
+        "charA": "ed",
+        "charB": "guile",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "kimberly": {
+        "charA": "ed",
+        "charB": "kimberly",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "juri": {
+        "charA": "ed",
+        "charB": "juri",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "ken": {
+        "charA": "ed",
+        "charB": "ken",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "blanka": {
+        "charA": "ed",
+        "charB": "blanka",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dhalsim": {
+        "charA": "ed",
+        "charB": "dhalsim",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ehonda": {
+        "charA": "ed",
+        "charB": "ehonda",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "dee_jay": {
+        "charA": "ed",
+        "charB": "dee_jay",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "manon": {
+        "charA": "ed",
+        "charB": "manon",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "marisa": {
+        "charA": "ed",
+        "charB": "marisa",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jp": {
+        "charA": "ed",
+        "charB": "jp",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "zangief": {
+        "charA": "ed",
+        "charB": "zangief",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "lily": {
+        "charA": "ed",
+        "charB": "lily",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "cammy": {
+        "charA": "ed",
+        "charB": "cammy",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "rashid": {
+        "charA": "ed",
+        "charB": "rashid",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "aki": {
+        "charA": "ed",
+        "charB": "aki",
+        "rawWinsA": 39,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4382,
+        "smoothedWinRate": 0.4495
+      },
+      "ed": {
+        "charA": "ed",
+        "charB": "ed",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "gouki_akuma": {
+        "charA": "ed",
+        "charB": "gouki_akuma",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "vega_mbison": {
+        "charA": "ed",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "terry": {
+        "charA": "ed",
+        "charB": "terry",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "mai": {
+        "charA": "ed",
+        "charB": "mai",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      },
+      "elena": {
+        "charA": "ed",
+        "charB": "elena",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "sagat": {
+        "charA": "ed",
+        "charB": "sagat",
+        "rawWinsA": 48,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5393,
+        "smoothedWinRate": 0.5321
+      },
+      "cviper": {
+        "charA": "ed",
+        "charB": "cviper",
+        "rawWinsA": 51,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.5543,
+        "smoothedWinRate": 0.5446
+      }
+    },
+    "gouki_akuma": {
+      "ryu": {
+        "charA": "gouki_akuma",
+        "charB": "ryu",
+        "rawWinsA": 44,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4944,
+        "smoothedWinRate": 0.4954
+      },
+      "luke": {
+        "charA": "gouki_akuma",
+        "charB": "luke",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jamie": {
+        "charA": "gouki_akuma",
+        "charB": "jamie",
+        "rawWinsA": 41,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4767,
+        "smoothedWinRate": 0.4811
+      },
+      "chunli": {
+        "charA": "gouki_akuma",
+        "charB": "chunli",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "guile": {
+        "charA": "gouki_akuma",
+        "charB": "guile",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "kimberly": {
+        "charA": "gouki_akuma",
+        "charB": "kimberly",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "juri": {
+        "charA": "gouki_akuma",
+        "charB": "juri",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ken": {
+        "charA": "gouki_akuma",
+        "charB": "ken",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "blanka": {
+        "charA": "gouki_akuma",
+        "charB": "blanka",
+        "rawWinsA": 43,
+        "rawTotalGames": 104,
+        "rawWinRate": 0.4135,
+        "smoothedWinRate": 0.4274
+      },
+      "dhalsim": {
+        "charA": "gouki_akuma",
+        "charB": "dhalsim",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ehonda": {
+        "charA": "gouki_akuma",
+        "charB": "ehonda",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dee_jay": {
+        "charA": "gouki_akuma",
+        "charB": "dee_jay",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "manon": {
+        "charA": "gouki_akuma",
+        "charB": "manon",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "marisa": {
+        "charA": "gouki_akuma",
+        "charB": "marisa",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jp": {
+        "charA": "gouki_akuma",
+        "charB": "jp",
+        "rawWinsA": 44,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4944,
+        "smoothedWinRate": 0.4954
+      },
+      "zangief": {
+        "charA": "gouki_akuma",
+        "charB": "zangief",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "lily": {
+        "charA": "gouki_akuma",
+        "charB": "lily",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cammy": {
+        "charA": "gouki_akuma",
+        "charB": "cammy",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "rashid": {
+        "charA": "gouki_akuma",
+        "charB": "rashid",
+        "rawWinsA": 47,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.4947,
+        "smoothedWinRate": 0.4957
+      },
+      "aki": {
+        "charA": "gouki_akuma",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ed": {
+        "charA": "gouki_akuma",
+        "charB": "ed",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "gouki_akuma": {
+        "charA": "gouki_akuma",
+        "charB": "gouki_akuma",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "vega_mbison": {
+        "charA": "gouki_akuma",
+        "charB": "vega_mbison",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "terry": {
+        "charA": "gouki_akuma",
+        "charB": "terry",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "mai": {
+        "charA": "gouki_akuma",
+        "charB": "mai",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "elena": {
+        "charA": "gouki_akuma",
+        "charB": "elena",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "sagat": {
+        "charA": "gouki_akuma",
+        "charB": "sagat",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cviper": {
+        "charA": "gouki_akuma",
+        "charB": "cviper",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      }
+    },
+    "vega_mbison": {
+      "ryu": {
+        "charA": "vega_mbison",
+        "charB": "ryu",
+        "rawWinsA": 47,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5281,
+        "smoothedWinRate": 0.5229
+      },
+      "luke": {
+        "charA": "vega_mbison",
+        "charB": "luke",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jamie": {
+        "charA": "vega_mbison",
+        "charB": "jamie",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "chunli": {
+        "charA": "vega_mbison",
+        "charB": "chunli",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "guile": {
+        "charA": "vega_mbison",
+        "charB": "guile",
+        "rawWinsA": 47,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5281,
+        "smoothedWinRate": 0.5229
+      },
+      "kimberly": {
+        "charA": "vega_mbison",
+        "charB": "kimberly",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "juri": {
+        "charA": "vega_mbison",
+        "charB": "juri",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "ken": {
+        "charA": "vega_mbison",
+        "charB": "ken",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "blanka": {
+        "charA": "vega_mbison",
+        "charB": "blanka",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dhalsim": {
+        "charA": "vega_mbison",
+        "charB": "dhalsim",
+        "rawWinsA": 45,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5625,
+        "smoothedWinRate": 0.55
+      },
+      "ehonda": {
+        "charA": "vega_mbison",
+        "charB": "ehonda",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dee_jay": {
+        "charA": "vega_mbison",
+        "charB": "dee_jay",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "manon": {
+        "charA": "vega_mbison",
+        "charB": "manon",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "marisa": {
+        "charA": "vega_mbison",
+        "charB": "marisa",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jp": {
+        "charA": "vega_mbison",
+        "charB": "jp",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "zangief": {
+        "charA": "vega_mbison",
+        "charB": "zangief",
+        "rawWinsA": 45,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5056,
+        "smoothedWinRate": 0.5046
+      },
+      "lily": {
+        "charA": "vega_mbison",
+        "charB": "lily",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "cammy": {
+        "charA": "vega_mbison",
+        "charB": "cammy",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "rashid": {
+        "charA": "vega_mbison",
+        "charB": "rashid",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "aki": {
+        "charA": "vega_mbison",
+        "charB": "aki",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ed": {
+        "charA": "vega_mbison",
+        "charB": "ed",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "gouki_akuma": {
+        "charA": "vega_mbison",
+        "charB": "gouki_akuma",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "vega_mbison": {
+        "charA": "vega_mbison",
+        "charB": "vega_mbison",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "terry": {
+        "charA": "vega_mbison",
+        "charB": "terry",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "mai": {
+        "charA": "vega_mbison",
+        "charB": "mai",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "elena": {
+        "charA": "vega_mbison",
+        "charB": "elena",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "sagat": {
+        "charA": "vega_mbison",
+        "charB": "sagat",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cviper": {
+        "charA": "vega_mbison",
+        "charB": "cviper",
+        "rawWinsA": 37,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4157,
+        "smoothedWinRate": 0.4312
+      }
+    },
+    "terry": {
+      "ryu": {
+        "charA": "terry",
+        "charB": "ryu",
+        "rawWinsA": 38,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.427,
+        "smoothedWinRate": 0.4404
+      },
+      "luke": {
+        "charA": "terry",
+        "charB": "luke",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jamie": {
+        "charA": "terry",
+        "charB": "jamie",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "chunli": {
+        "charA": "terry",
+        "charB": "chunli",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "guile": {
+        "charA": "terry",
+        "charB": "guile",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "kimberly": {
+        "charA": "terry",
+        "charB": "kimberly",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "juri": {
+        "charA": "terry",
+        "charB": "juri",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ken": {
+        "charA": "terry",
+        "charB": "ken",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "blanka": {
+        "charA": "terry",
+        "charB": "blanka",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dhalsim": {
+        "charA": "terry",
+        "charB": "dhalsim",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ehonda": {
+        "charA": "terry",
+        "charB": "ehonda",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "dee_jay": {
+        "charA": "terry",
+        "charB": "dee_jay",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "manon": {
+        "charA": "terry",
+        "charB": "manon",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "marisa": {
+        "charA": "terry",
+        "charB": "marisa",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "jp": {
+        "charA": "terry",
+        "charB": "jp",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "zangief": {
+        "charA": "terry",
+        "charB": "zangief",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "lily": {
+        "charA": "terry",
+        "charB": "lily",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cammy": {
+        "charA": "terry",
+        "charB": "cammy",
+        "rawWinsA": 52,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.5652,
+        "smoothedWinRate": 0.5536
+      },
+      "rashid": {
+        "charA": "terry",
+        "charB": "rashid",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "aki": {
+        "charA": "terry",
+        "charB": "aki",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "ed": {
+        "charA": "terry",
+        "charB": "ed",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "gouki_akuma": {
+        "charA": "terry",
+        "charB": "gouki_akuma",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "vega_mbison": {
+        "charA": "terry",
+        "charB": "vega_mbison",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "terry": {
+        "charA": "terry",
+        "charB": "terry",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "mai": {
+        "charA": "terry",
+        "charB": "mai",
+        "rawWinsA": 47,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.4947,
+        "smoothedWinRate": 0.4957
+      },
+      "elena": {
+        "charA": "terry",
+        "charB": "elena",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "sagat": {
+        "charA": "terry",
+        "charB": "sagat",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cviper": {
+        "charA": "terry",
+        "charB": "cviper",
+        "rawWinsA": 51,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.5368,
+        "smoothedWinRate": 0.5304
+      }
+    },
+    "mai": {
+      "ryu": {
+        "charA": "mai",
+        "charB": "ryu",
+        "rawWinsA": 52,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.5474,
+        "smoothedWinRate": 0.5391
+      },
+      "luke": {
+        "charA": "mai",
+        "charB": "luke",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jamie": {
+        "charA": "mai",
+        "charB": "jamie",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "chunli": {
+        "charA": "mai",
+        "charB": "chunli",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "guile": {
+        "charA": "mai",
+        "charB": "guile",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "kimberly": {
+        "charA": "mai",
+        "charB": "kimberly",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "juri": {
+        "charA": "mai",
+        "charB": "juri",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "ken": {
+        "charA": "mai",
+        "charB": "ken",
+        "rawWinsA": 51,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.5368,
+        "smoothedWinRate": 0.5304
+      },
+      "blanka": {
+        "charA": "mai",
+        "charB": "blanka",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dhalsim": {
+        "charA": "mai",
+        "charB": "dhalsim",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ehonda": {
+        "charA": "mai",
+        "charB": "ehonda",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "dee_jay": {
+        "charA": "mai",
+        "charB": "dee_jay",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "manon": {
+        "charA": "mai",
+        "charB": "manon",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "marisa": {
+        "charA": "mai",
+        "charB": "marisa",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "jp": {
+        "charA": "mai",
+        "charB": "jp",
+        "rawWinsA": 51,
+        "rawTotalGames": 98,
+        "rawWinRate": 0.5204,
+        "smoothedWinRate": 0.5169
+      },
+      "zangief": {
+        "charA": "mai",
+        "charB": "zangief",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "lily": {
+        "charA": "mai",
+        "charB": "lily",
+        "rawWinsA": 46,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5169,
+        "smoothedWinRate": 0.5138
+      },
+      "cammy": {
+        "charA": "mai",
+        "charB": "cammy",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "rashid": {
+        "charA": "mai",
+        "charB": "rashid",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "aki": {
+        "charA": "mai",
+        "charB": "aki",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ed": {
+        "charA": "mai",
+        "charB": "ed",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "gouki_akuma": {
+        "charA": "mai",
+        "charB": "gouki_akuma",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "vega_mbison": {
+        "charA": "mai",
+        "charB": "vega_mbison",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "terry": {
+        "charA": "mai",
+        "charB": "terry",
+        "rawWinsA": 48,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.5053,
+        "smoothedWinRate": 0.5043
+      },
+      "mai": {
+        "charA": "mai",
+        "charB": "mai",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "elena": {
+        "charA": "mai",
+        "charB": "elena",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "sagat": {
+        "charA": "mai",
+        "charB": "sagat",
+        "rawWinsA": 43,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.4674,
+        "smoothedWinRate": 0.4732
+      },
+      "cviper": {
+        "charA": "mai",
+        "charB": "cviper",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      }
+    },
+    "elena": {
+      "ryu": {
+        "charA": "elena",
+        "charB": "ryu",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "luke": {
+        "charA": "elena",
+        "charB": "luke",
+        "rawWinsA": 36,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4045,
+        "smoothedWinRate": 0.422
+      },
+      "jamie": {
+        "charA": "elena",
+        "charB": "jamie",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "chunli": {
+        "charA": "elena",
+        "charB": "chunli",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "guile": {
+        "charA": "elena",
+        "charB": "guile",
+        "rawWinsA": 43,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4831,
+        "smoothedWinRate": 0.4862
+      },
+      "kimberly": {
+        "charA": "elena",
+        "charB": "kimberly",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "juri": {
+        "charA": "elena",
+        "charB": "juri",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "ken": {
+        "charA": "elena",
+        "charB": "ken",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "blanka": {
+        "charA": "elena",
+        "charB": "blanka",
+        "rawWinsA": 37,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4625,
+        "smoothedWinRate": 0.47
+      },
+      "dhalsim": {
+        "charA": "elena",
+        "charB": "dhalsim",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ehonda": {
+        "charA": "elena",
+        "charB": "ehonda",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "dee_jay": {
+        "charA": "elena",
+        "charB": "dee_jay",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "manon": {
+        "charA": "elena",
+        "charB": "manon",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "marisa": {
+        "charA": "elena",
+        "charB": "marisa",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jp": {
+        "charA": "elena",
+        "charB": "jp",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "zangief": {
+        "charA": "elena",
+        "charB": "zangief",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "lily": {
+        "charA": "elena",
+        "charB": "lily",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "cammy": {
+        "charA": "elena",
+        "charB": "cammy",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "rashid": {
+        "charA": "elena",
+        "charB": "rashid",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "aki": {
+        "charA": "elena",
+        "charB": "aki",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ed": {
+        "charA": "elena",
+        "charB": "ed",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "gouki_akuma": {
+        "charA": "elena",
+        "charB": "gouki_akuma",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "vega_mbison": {
+        "charA": "elena",
+        "charB": "vega_mbison",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "terry": {
+        "charA": "elena",
+        "charB": "terry",
+        "rawWinsA": 48,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5581,
+        "smoothedWinRate": 0.5472
+      },
+      "mai": {
+        "charA": "elena",
+        "charB": "mai",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "elena": {
+        "charA": "elena",
+        "charB": "elena",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "sagat": {
+        "charA": "elena",
+        "charB": "sagat",
+        "rawWinsA": 41,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4607,
+        "smoothedWinRate": 0.4679
+      },
+      "cviper": {
+        "charA": "elena",
+        "charB": "cviper",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      }
+    },
+    "sagat": {
+      "ryu": {
+        "charA": "sagat",
+        "charB": "ryu",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "luke": {
+        "charA": "sagat",
+        "charB": "luke",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jamie": {
+        "charA": "sagat",
+        "charB": "jamie",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "chunli": {
+        "charA": "sagat",
+        "charB": "chunli",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "guile": {
+        "charA": "sagat",
+        "charB": "guile",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "kimberly": {
+        "charA": "sagat",
+        "charB": "kimberly",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "juri": {
+        "charA": "sagat",
+        "charB": "juri",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "ken": {
+        "charA": "sagat",
+        "charB": "ken",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "blanka": {
+        "charA": "sagat",
+        "charB": "blanka",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "dhalsim": {
+        "charA": "sagat",
+        "charB": "dhalsim",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ehonda": {
+        "charA": "sagat",
+        "charB": "ehonda",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "dee_jay": {
+        "charA": "sagat",
+        "charB": "dee_jay",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "manon": {
+        "charA": "sagat",
+        "charB": "manon",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "marisa": {
+        "charA": "sagat",
+        "charB": "marisa",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "jp": {
+        "charA": "sagat",
+        "charB": "jp",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "zangief": {
+        "charA": "sagat",
+        "charB": "zangief",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "lily": {
+        "charA": "sagat",
+        "charB": "lily",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cammy": {
+        "charA": "sagat",
+        "charB": "cammy",
+        "rawWinsA": 44,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4944,
+        "smoothedWinRate": 0.4954
+      },
+      "rashid": {
+        "charA": "sagat",
+        "charB": "rashid",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "aki": {
+        "charA": "sagat",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ed": {
+        "charA": "sagat",
+        "charB": "ed",
+        "rawWinsA": 41,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4607,
+        "smoothedWinRate": 0.4679
+      },
+      "gouki_akuma": {
+        "charA": "sagat",
+        "charB": "gouki_akuma",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "vega_mbison": {
+        "charA": "sagat",
+        "charB": "vega_mbison",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "terry": {
+        "charA": "sagat",
+        "charB": "terry",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "mai": {
+        "charA": "sagat",
+        "charB": "mai",
+        "rawWinsA": 49,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.5326,
+        "smoothedWinRate": 0.5268
+      },
+      "elena": {
+        "charA": "sagat",
+        "charB": "elena",
+        "rawWinsA": 48,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5393,
+        "smoothedWinRate": 0.5321
+      },
+      "sagat": {
+        "charA": "sagat",
+        "charB": "sagat",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "cviper": {
+        "charA": "sagat",
+        "charB": "cviper",
+        "rawWinsA": 36,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4186,
+        "smoothedWinRate": 0.434
+      }
+    },
+    "cviper": {
+      "ryu": {
+        "charA": "cviper",
+        "charB": "ryu",
+        "rawWinsA": 51,
+        "rawTotalGames": 110,
+        "rawWinRate": 0.4636,
+        "smoothedWinRate": 0.4692
+      },
+      "luke": {
+        "charA": "cviper",
+        "charB": "luke",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "jamie": {
+        "charA": "cviper",
+        "charB": "jamie",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "chunli": {
+        "charA": "cviper",
+        "charB": "chunli",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "guile": {
+        "charA": "cviper",
+        "charB": "guile",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "kimberly": {
+        "charA": "cviper",
+        "charB": "kimberly",
+        "rawWinsA": 39,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.4875,
+        "smoothedWinRate": 0.49
+      },
+      "juri": {
+        "charA": "cviper",
+        "charB": "juri",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "ken": {
+        "charA": "cviper",
+        "charB": "ken",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "blanka": {
+        "charA": "cviper",
+        "charB": "blanka",
+        "rawWinsA": 44,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.4944,
+        "smoothedWinRate": 0.4954
+      },
+      "dhalsim": {
+        "charA": "cviper",
+        "charB": "dhalsim",
+        "rawWinsA": 44,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.55,
+        "smoothedWinRate": 0.54
+      },
+      "ehonda": {
+        "charA": "cviper",
+        "charB": "ehonda",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "dee_jay": {
+        "charA": "cviper",
+        "charB": "dee_jay",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "manon": {
+        "charA": "cviper",
+        "charB": "manon",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "marisa": {
+        "charA": "cviper",
+        "charB": "marisa",
+        "rawWinsA": 40,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      },
+      "jp": {
+        "charA": "cviper",
+        "charB": "jp",
+        "rawWinsA": 43,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5375,
+        "smoothedWinRate": 0.53
+      },
+      "zangief": {
+        "charA": "cviper",
+        "charB": "zangief",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "lily": {
+        "charA": "cviper",
+        "charB": "lily",
+        "rawWinsA": 41,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.5125,
+        "smoothedWinRate": 0.51
+      },
+      "cammy": {
+        "charA": "cviper",
+        "charB": "cammy",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "rashid": {
+        "charA": "cviper",
+        "charB": "rashid",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "aki": {
+        "charA": "cviper",
+        "charB": "aki",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "ed": {
+        "charA": "cviper",
+        "charB": "ed",
+        "rawWinsA": 41,
+        "rawTotalGames": 92,
+        "rawWinRate": 0.4457,
+        "smoothedWinRate": 0.4554
+      },
+      "gouki_akuma": {
+        "charA": "cviper",
+        "charB": "gouki_akuma",
+        "rawWinsA": 42,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.525,
+        "smoothedWinRate": 0.52
+      },
+      "vega_mbison": {
+        "charA": "cviper",
+        "charB": "vega_mbison",
+        "rawWinsA": 52,
+        "rawTotalGames": 89,
+        "rawWinRate": 0.5843,
+        "smoothedWinRate": 0.5688
+      },
+      "terry": {
+        "charA": "cviper",
+        "charB": "terry",
+        "rawWinsA": 44,
+        "rawTotalGames": 95,
+        "rawWinRate": 0.4632,
+        "smoothedWinRate": 0.4696
+      },
+      "mai": {
+        "charA": "cviper",
+        "charB": "mai",
+        "rawWinsA": 38,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.4419,
+        "smoothedWinRate": 0.4528
+      },
+      "elena": {
+        "charA": "cviper",
+        "charB": "elena",
+        "rawWinsA": 38,
+        "rawTotalGames": 80,
+        "rawWinRate": 0.475,
+        "smoothedWinRate": 0.48
+      },
+      "sagat": {
+        "charA": "cviper",
+        "charB": "sagat",
+        "rawWinsA": 50,
+        "rawTotalGames": 86,
+        "rawWinRate": 0.5814,
+        "smoothedWinRate": 0.566
+      },
+      "cviper": {
+        "charA": "cviper",
+        "charB": "cviper",
+        "rawWinsA": 60,
+        "rawTotalGames": 120,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
+      }
+    }
+  }
+}

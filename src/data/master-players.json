@@ -1,0 +1,653 @@
+{
+  "updatedAt": "2026-10-17T06:22:19.887Z",
+  "totalPlayers": 48,
+  "players": {
+    "sako": {
+      "key": "sako",
+      "name": "sako",
+      "nameEn": "sako",
+      "teamKey": "fav",
+      "division": "s",
+      "mainChar": "elena",
+      "subChars": [
+        "chunli",
+        "aki"
+      ],
+      "startggSlug": "user/sako",
+      "eloRating": 1920
+    },
+    "fujimura": {
+      "key": "fujimura",
+      "name": "藤村",
+      "nameEn": "Fujimura",
+      "teamKey": "fav",
+      "division": "s",
+      "mainChar": "cviper",
+      "subChars": [
+        "ken",
+        "ibuki"
+      ],
+      "startggSlug": "user/fujimura",
+      "eloRating": 1953
+    },
+    "moke": {
+      "key": "moke",
+      "name": "もけ",
+      "nameEn": "Moke",
+      "teamKey": "fav",
+      "division": "s",
+      "mainChar": "mai",
+      "subChars": [
+        "chunli",
+        "rashid"
+      ],
+      "startggSlug": "user/moke",
+      "eloRating": 1991
+    },
+    "ryukichi": {
+      "key": "ryukichi",
+      "name": "りゅうきち",
+      "nameEn": "Ryukichi",
+      "teamKey": "fav",
+      "division": "s",
+      "mainChar": "ken",
+      "subChars": [
+        "mai",
+        "gouki_akuma"
+      ],
+      "startggSlug": "user/ryukichi",
+      "eloRating": 2019
+    },
+    "dogura": {
+      "key": "dogura",
+      "name": "どぐら",
+      "nameEn": "Dogura",
+      "teamKey": "cr",
+      "division": "s",
+      "mainChar": "elena",
+      "subChars": [
+        "vega_mbison",
+        "dee_jay"
+      ],
+      "startggSlug": "user/dogura",
+      "eloRating": 1894
+    },
+    "shuto": {
+      "key": "shuto",
+      "name": "Shuto",
+      "nameEn": "Shuto",
+      "teamKey": "cr",
+      "division": "s",
+      "mainChar": "ryu",
+      "subChars": [
+        "gouki_akuma",
+        "marisa"
+      ],
+      "startggSlug": "user/shuto",
+      "eloRating": 1922
+    },
+    "bonchan": {
+      "key": "bonchan",
+      "name": "ボンちゃん",
+      "nameEn": "Bonchan",
+      "teamKey": "cr",
+      "division": "s",
+      "mainChar": "sagat",
+      "subChars": [
+        "gouki_akuma",
+        "luke"
+      ],
+      "startggSlug": "user/bonchan",
+      "eloRating": 1932
+    },
+    "kazunoko": {
+      "key": "kazunoko",
+      "name": "かずのこ",
+      "nameEn": "Kazunoko",
+      "teamKey": "cr",
+      "division": "s",
+      "mainChar": "cviper",
+      "subChars": [
+        "cammy",
+        "jamie"
+      ],
+      "startggSlug": "user/kazunoko",
+      "eloRating": 1958
+    },
+    "machabo": {
+      "key": "machabo",
+      "name": "まちゃぼー",
+      "nameEn": "Machabo",
+      "teamKey": "sol",
+      "division": "s",
+      "mainChar": "ryu",
+      "subChars": [
+        "ken"
+      ],
+      "startggSlug": "user/machabo",
+      "eloRating": 1977
+    },
+    "kobayan": {
+      "key": "kobayan",
+      "name": "こばやん",
+      "nameEn": "Kobayan",
+      "teamKey": "sol",
+      "division": "s",
+      "mainChar": "zangief",
+      "subChars": [
+        "marisa"
+      ],
+      "startggSlug": "user/kobayan",
+      "eloRating": 1915
+    },
+    "cosa": {
+      "key": "cosa",
+      "name": "cosa",
+      "nameEn": "cosa",
+      "teamKey": "sol",
+      "division": "s",
+      "mainChar": "gouki_akuma",
+      "subChars": [
+        "ken",
+        "ryu",
+        "luke"
+      ],
+      "startggSlug": "user/cosa",
+      "eloRating": 1911
+    },
+    "kincho": {
+      "key": "kincho",
+      "name": "きんちょ",
+      "nameEn": "Kincho",
+      "teamKey": "sol",
+      "division": "s",
+      "mainChar": "terry",
+      "subChars": [
+        "ken",
+        "ryu"
+      ],
+      "startggSlug": "user/kincho",
+      "eloRating": 1973
+    },
+    "momochi": {
+      "key": "momochi",
+      "name": "ももち",
+      "nameEn": "Momochi",
+      "teamKey": "zeta",
+      "division": "s",
+      "mainChar": "jamie",
+      "subChars": [
+        "ken",
+        "cviper"
+      ],
+      "startggSlug": "user/momochi",
+      "eloRating": 1969
+    },
+    "higuchi": {
+      "key": "higuchi",
+      "name": "ひぐち",
+      "nameEn": "Higuchi",
+      "teamKey": "zeta",
+      "division": "s",
+      "mainChar": "guile",
+      "subChars": [
+        "sagat"
+      ],
+      "startggSlug": "user/higuchi",
+      "eloRating": 2026
+    },
+    "yamaguchi": {
+      "key": "yamaguchi",
+      "name": "ヤマグチ",
+      "nameEn": "Yamaguchi",
+      "teamKey": "zeta",
+      "division": "s",
+      "mainChar": "mai",
+      "subChars": [
+        "dee_jay",
+        "ed"
+      ],
+      "startggSlug": "user/yamaguchi",
+      "eloRating": 2017
+    },
+    "mena": {
+      "key": "mena",
+      "name": "MenaRD",
+      "nameEn": "MenaRD",
+      "teamKey": "zeta",
+      "division": "s",
+      "mainChar": "blanka",
+      "subChars": [
+        "luke",
+        "zangief"
+      ],
+      "startggSlug": "user/menard",
+      "eloRating": 2080
+    },
+    "acqua": {
+      "key": "acqua",
+      "name": "ACQUA",
+      "nameEn": "ACQUA",
+      "teamKey": "ixa",
+      "division": "s",
+      "mainChar": "blanka",
+      "subChars": [
+        "jp",
+        "ed"
+      ],
+      "startggSlug": "user/acqua",
+      "eloRating": 1879
+    },
+    "hibiki": {
+      "key": "hibiki",
+      "name": "ひびき",
+      "nameEn": "Hibiki",
+      "teamKey": "ixa",
+      "division": "s",
+      "mainChar": "lily",
+      "subChars": [
+        "mai"
+      ],
+      "startggSlug": "user/hibiki",
+      "eloRating": 1923
+    },
+    "akira": {
+      "key": "akira",
+      "name": "あきら",
+      "nameEn": "Akira",
+      "teamKey": "ixa",
+      "division": "s",
+      "mainChar": "cammy",
+      "subChars": [
+        "cviper"
+      ],
+      "startggSlug": "user/akira",
+      "eloRating": 1854
+    },
+    "takepi": {
+      "key": "takepi",
+      "name": "takepi",
+      "nameEn": "Takepi",
+      "teamKey": "ixa",
+      "division": "s",
+      "mainChar": "jp",
+      "subChars": [
+        "vega_mbison"
+      ],
+      "startggSlug": "user/takepi",
+      "eloRating": 1854
+    },
+    "yanai": {
+      "key": "yanai",
+      "name": "ヤナイ",
+      "nameEn": "Yanai",
+      "teamKey": "ibsg",
+      "division": "s",
+      "mainChar": "vega_mbison",
+      "subChars": [
+        "sagat"
+      ],
+      "startggSlug": "user/yanai",
+      "eloRating": 1903
+    },
+    "johnny": {
+      "key": "johnny",
+      "name": "ジョニィ",
+      "nameEn": "Johnny",
+      "teamKey": "ibsg",
+      "division": "s",
+      "mainChar": "elena",
+      "subChars": [
+        "marisa"
+      ],
+      "startggSlug": "user/johnny",
+      "eloRating": 1869
+    },
+    "torimeshi": {
+      "key": "torimeshi",
+      "name": "鶏めし",
+      "nameEn": "Torimeshi",
+      "teamKey": "ibsg",
+      "division": "s",
+      "mainChar": "dhalsim",
+      "subChars": [
+        "jp"
+      ],
+      "startggSlug": "user/torimeshi",
+      "eloRating": 1972
+    },
+    "2bassa": {
+      "key": "2bassa",
+      "name": "2BASSA",
+      "nameEn": "2BASSA",
+      "teamKey": "ibsg",
+      "division": "s",
+      "mainChar": "juri",
+      "subChars": [
+        "cammy"
+      ],
+      "startggSlug": "user/2bassa",
+      "eloRating": 1999
+    },
+    "tokido": {
+      "key": "tokido",
+      "name": "ときど",
+      "nameEn": "Tokido",
+      "teamKey": "varrel",
+      "division": "f",
+      "mainChar": "jp",
+      "subChars": [
+        "ken",
+        "gouki_akuma"
+      ],
+      "startggSlug": "user/tokido",
+      "eloRating": 2051
+    },
+    "mago": {
+      "key": "mago",
+      "name": "マゴ",
+      "nameEn": "Mago",
+      "teamKey": "varrel",
+      "division": "f",
+      "mainChar": "juri",
+      "subChars": [
+        "mai",
+        "cammy"
+      ],
+      "startggSlug": "user/mago",
+      "eloRating": 1900
+    },
+    "mizuha": {
+      "key": "mizuha",
+      "name": "水派",
+      "nameEn": "Mizuha",
+      "teamKey": "varrel",
+      "division": "f",
+      "mainChar": "cammy",
+      "subChars": [
+        "mai"
+      ],
+      "startggSlug": "user/mizuha",
+      "eloRating": 1859
+    },
+    "wabiichi": {
+      "key": "wabiichi",
+      "name": "わびいち",
+      "nameEn": "Wabiichi",
+      "teamKey": "varrel",
+      "division": "f",
+      "mainChar": "terry",
+      "subChars": [
+        "ken"
+      ],
+      "startggSlug": "user/wabiichi",
+      "eloRating": 1886
+    },
+    "gachikun": {
+      "key": "gachikun",
+      "name": "ガチくん",
+      "nameEn": "Gachikun",
+      "teamKey": "good8",
+      "division": "f",
+      "mainChar": "rashid",
+      "subChars": [
+        "sagat"
+      ],
+      "startggSlug": "user/gachikun",
+      "eloRating": 2007
+    },
+    "kawano": {
+      "key": "kawano",
+      "name": "カワノ",
+      "nameEn": "Kawano",
+      "teamKey": "good8",
+      "division": "f",
+      "mainChar": "luke",
+      "subChars": [
+        "gouki_akuma"
+      ],
+      "startggSlug": "user/kawano",
+      "eloRating": 2005
+    },
+    "pugera": {
+      "key": "pugera",
+      "name": "ぷげら",
+      "nameEn": "Pugera",
+      "teamKey": "good8",
+      "division": "f",
+      "mainChar": "cviper",
+      "subChars": [
+        "juri",
+        "vega_mbison"
+      ],
+      "startggSlug": "user/pugera",
+      "eloRating": 2000
+    },
+    "sahara": {
+      "key": "sahara",
+      "name": "さはら",
+      "nameEn": "Sahara",
+      "teamKey": "good8",
+      "division": "f",
+      "mainChar": "ed",
+      "subChars": [
+        "ryu"
+      ],
+      "startggSlug": "user/sahara",
+      "eloRating": 1959
+    },
+    "itazan": {
+      "key": "itazan",
+      "name": "板橋ザンギエフ",
+      "nameEn": "Itabashi Zangief",
+      "teamKey": "dng",
+      "division": "f",
+      "mainChar": "zangief",
+      "subChars": [
+        "marisa"
+      ],
+      "startggSlug": "user/itazan",
+      "eloRating": 2020
+    },
+    "nauman": {
+      "key": "nauman",
+      "name": "ナウマン",
+      "nameEn": "Nauman",
+      "teamKey": "dng",
+      "division": "f",
+      "mainChar": "mai",
+      "subChars": [
+        "ken",
+        "rashid"
+      ],
+      "startggSlug": "user/nauman",
+      "eloRating": 1879
+    },
+    "takeuchi": {
+      "key": "takeuchi",
+      "name": "竹内ジョン",
+      "nameEn": "John Takeuchi",
+      "teamKey": "dng",
+      "division": "f",
+      "mainChar": "jamie",
+      "subChars": [
+        "rashid"
+      ],
+      "startggSlug": "user/takeuchi_john",
+      "eloRating": 1989
+    },
+    "keib": {
+      "key": "keib",
+      "name": "KEI.B",
+      "nameEn": "KEI.B",
+      "teamKey": "dng",
+      "division": "f",
+      "mainChar": "mai",
+      "subChars": [
+        "jp"
+      ],
+      "startggSlug": "user/keib",
+      "eloRating": 1884
+    },
+    "seiya": {
+      "key": "seiya",
+      "name": "Seiya",
+      "nameEn": "Seiya",
+      "teamKey": "oja",
+      "division": "f",
+      "mainChar": "chunli",
+      "subChars": [
+        "mai"
+      ],
+      "startggSlug": "user/seiya",
+      "eloRating": 1875
+    },
+    "otani": {
+      "key": "otani",
+      "name": "大谷",
+      "nameEn": "Otani",
+      "teamKey": "oja",
+      "division": "f",
+      "mainChar": "elena",
+      "subChars": [
+        "ken",
+        "luke"
+      ],
+      "startggSlug": "user/otani",
+      "eloRating": 1901
+    },
+    "mocchi": {
+      "key": "mocchi",
+      "name": "もっちー",
+      "nameEn": "Mocchi",
+      "teamKey": "oja",
+      "division": "f",
+      "mainChar": "gouki_akuma",
+      "subChars": [
+        "rashid"
+      ],
+      "startggSlug": "user/mocchi",
+      "eloRating": 1883
+    },
+    "raoyamu": {
+      "key": "raoyamu",
+      "name": "らおやむ",
+      "nameEn": "Raoyamu",
+      "teamKey": "oja",
+      "division": "f",
+      "mainChar": "vega_mbison",
+      "subChars": [
+        "ken"
+      ],
+      "startggSlug": "user/raoyamu",
+      "eloRating": 1915
+    },
+    "daigo": {
+      "key": "daigo",
+      "name": "ウメハラ",
+      "nameEn": "Daigo",
+      "teamKey": "rc",
+      "division": "f",
+      "mainChar": "gouki_akuma",
+      "subChars": [
+        "ken",
+        "guile"
+      ],
+      "startggSlug": "user/daigo",
+      "eloRating": 1969
+    },
+    "fuudo": {
+      "key": "fuudo",
+      "name": "ふ～ど",
+      "nameEn": "Fuudo",
+      "teamKey": "rc",
+      "division": "f",
+      "mainChar": "cviper",
+      "subChars": [
+        "ed",
+        "dee_jay"
+      ],
+      "startggSlug": "user/fuudo",
+      "eloRating": 1941
+    },
+    "yas": {
+      "key": "yas",
+      "name": "YAS",
+      "nameEn": "YAS",
+      "teamKey": "rc",
+      "division": "f",
+      "mainChar": "ryu",
+      "subChars": [
+        "juri"
+      ],
+      "startggSlug": "user/yas",
+      "eloRating": 1974
+    },
+    "hinao": {
+      "key": "hinao",
+      "name": "ひなお",
+      "nameEn": "HINAO",
+      "teamKey": "rc",
+      "division": "f",
+      "mainChar": "sagat",
+      "subChars": [
+        "ryu",
+        "ken"
+      ],
+      "startggSlug": "user/hinao",
+      "eloRating": 1949
+    },
+    "jr": {
+      "key": "jr",
+      "name": "Jr.",
+      "nameEn": "Jr.",
+      "teamKey": "rid",
+      "division": "f",
+      "mainChar": "zangief",
+      "subChars": [
+        "honda"
+      ],
+      "startggSlug": "user/jr",
+      "eloRating": 1971
+    },
+    "takagi": {
+      "key": "takagi",
+      "name": "高木",
+      "nameEn": "Takagi",
+      "teamKey": "rid",
+      "division": "f",
+      "mainChar": "blanka",
+      "subChars": [
+        "lily"
+      ],
+      "startggSlug": "user/takagi",
+      "eloRating": 1921
+    },
+    "adelie": {
+      "key": "adelie",
+      "name": "あでりい ",
+      "nameEn": "Adelie",
+      "teamKey": "rid",
+      "division": "f",
+      "mainChar": "ed",
+      "subChars": [
+        "cammy"
+      ],
+      "startggSlug": "user/adelie",
+      "eloRating": 1972
+    },
+    "hikaru": {
+      "key": "hikaru",
+      "name": "ひかる",
+      "nameEn": "Hikaru",
+      "teamKey": "rid",
+      "division": "f",
+      "mainChar": "aki",
+      "subChars": [
+        "blanka"
+      ],
+      "startggSlug": "user/hikaru",
+      "eloRating": 2035
+    }
+  }
+}

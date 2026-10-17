@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.next/
+out/
+.env
+.env.local
+.env.*.local
+*.log
+tsconfig.tsbuildinfo
