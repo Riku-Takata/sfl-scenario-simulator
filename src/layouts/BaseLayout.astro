@@ -13,7 +13,8 @@ const {
 
 const pathname = Astro.url.pathname;
 const isSimulator = pathname.startsWith("/simulator");
-const isHome = !isSimulator;
+const isPlayers = pathname.startsWith("/players");
+const isHome = !isSimulator && !isPlayers;
 ---
 
 <!doctype html>
@@ -38,6 +39,9 @@ const isHome = !isSimulator;
           </a>
           <a href="/simulator" class={`nav-btn ${isSimulator ? "active" : ""}`}>
             残り試合シミュレーター
+          </a>
+          <a href="/players" class={`nav-btn ${isPlayers ? "active" : ""}`}>
+            選手図鑑・相性分析
           </a>
         </nav>
       </div>

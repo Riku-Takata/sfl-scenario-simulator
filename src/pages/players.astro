@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PlayerEncyclopedia from "@/components/PlayerEncyclopedia";
+import rawPlayerStats from "@/data/player-stats.json";
+import rawMatches from "@/data/matches.json";
+import rawCptMatchups from "@/data/cpt-matchups-top96.json";
+import {
+  CptMatchupsTop96DataSchema,
+  MatchesDataSchema,
+  PlayerStatsDataSchema,
+} from "@/lib/schema";
+import { buildPlayerEncyclopedia } from "@/lib/player-encyclopedia";
+
+const playerStatsData = PlayerStatsDataSchema.parse(rawPlayerStats);
+const matchesData = MatchesDataSchema.parse(rawMatches);
+const cptMatchupsData = CptMatchupsTop96DataSchema.parse(rawCptMatchups);
+
+const players = buildPlayerEncyclopedia(
+  playerStatsData,
+  matchesData,
+  cptMatchupsData
+);
+---
+
+<BaseLayout title="SFL 2026 選手図鑑・戦績パラメーター分析">
+  <div class="page-intro">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+      <div>
+        <h1 class="page-title">SFL 2026 全48選手 データ図鑑・対キャラ相性分析</h1>
+        <p class="page-desc">
+          個人の主観を一切排し、SFL公式戦および公式大会の統計データのみから算出した「各選手の6角形パラメーター」「起用傾向・特徴」「各キャラクターに対してどれくらい強いか」を網羅しています。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <PlayerEncyclopedia client:load players={players} />
+</BaseLayout>

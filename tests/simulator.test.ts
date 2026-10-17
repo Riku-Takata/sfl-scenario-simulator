@@ -278,3 +278,23 @@ test("predictTeamMatchOutcomeDistribution and analyzeDivisionScenarios integrate
     assert.equal(team.nextSectionCheeringGuide.length, 2);
   }
 });
+
+import { buildPlayerEncyclopedia } from "../src/lib/player-encyclopedia";
+
+test("buildPlayerEncyclopedia builds 48 objective player profiles with 6-axis parameters and 28 vs-character stats", () => {
+  const encyclopedia = buildPlayerEncyclopedia(
+    playerStatsData,
+    matchesData,
+    cptMatchupsData
+  );
+  assert.equal(encyclopedia.length, 48);
+
+  for (const p of encyclopedia) {
+    assert.ok(p.parameters.overallScore >= 35 && p.parameters.overallScore <= 99);
+    assert.equal(p.vsCharacters.length, 28);
+    assert.equal(p.strongestMatchups.length, 5);
+    assert.equal(p.closestMatchups.length, 5);
+    assert.equal(p.objectiveSummary.length, 3);
+  }
+});
+

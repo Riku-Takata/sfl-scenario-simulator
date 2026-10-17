@@ -76,9 +76,17 @@ const routeList = [
   >
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem;">
       <div>
-        <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.25rem;">
-          Division {meta.division.toUpperCase()} — 現在 {currentStanding.rank}位 / 所属選手:{" "}
-          {meta.players.map((p) => PLAYER_NAME_MAP[p] || p).join("・")}
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.35rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem;">
+          <span>Division {meta.division.toUpperCase()} — 現在 {currentStanding.rank}位 / 所属選手（図鑑）:</span>
+          {meta.players.map((p) => (
+            <a
+              href={`/players?player=${p}`}
+              class="score-chip"
+              style="padding: 0.15rem 0.55rem; font-size: 0.78rem; color: var(--primary);"
+            >
+              {PLAYER_NAME_MAP[p] || p} →
+            </a>
+          ))}
         </div>
         <h1 class="page-title">{meta.name}</h1>
         <p class="page-desc">
