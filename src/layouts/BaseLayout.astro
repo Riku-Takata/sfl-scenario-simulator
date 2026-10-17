@@ -16,7 +16,8 @@ const {
 const pathname = Astro.url.pathname;
 const isSimulator = pathname.startsWith("/simulator");
 const isPlayers = pathname.startsWith("/players");
-const isHome = !isSimulator && !isPlayers;
+const isAbout = pathname.startsWith("/about");
+const isHome = !isSimulator && !isPlayers && !isAbout;
 ---
 
 <!doctype html>
@@ -69,7 +70,7 @@ const isHome = !isSimulator && !isPlayers;
         <div>
           <strong>SFL 2026 順位・突破条件シミュレーター</strong> — レギュラーシーズン順位規定（①獲得ポイント → ②得失バトル差 → ③得失ラウンド差）対応
         </div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin: 0.5rem 0;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.85rem; margin: 0.5rem 0;">
           <a
             href={DONATION_CONFIG.bmcUrl}
             target="_blank"
@@ -80,7 +81,15 @@ const isHome = !isSimulator && !isPlayers;
             <span>開発者を支援する (Buy Me a Coffee)</span>
           </a>
           <span>・</span>
+          <a
+            href="/about"
+            style="color: var(--text-sub); font-weight: 600; text-decoration: underline;"
+          >
+            サイトについて・規約・支援
+          </a>
+          <span>・</span>
           <span>永続無料ファンツール</span>
+        </div>
         <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
           ※当サイトは非公式のファンサイトであり、株式会社カプコン公式とは関係ありません。
         </div>
