@@ -311,18 +311,20 @@ export async function fetchAndBuildCptData(): Promise<{
         startggSlug: `user/${normalizedKey}`,
       };
 
-      // 実戦での使用キャラ集計から最多使用キャラを特定
+      // 今シーズンのSFL実戦での使用キャラ集計から最多使用キャラをメイン、他に使用実績があるキャラのみをサブに設定
       const useCharRaw: Record<string, any> = rawP?.use_char || {};
-      const sortedUsedChars = Object.entries(useCharRaw).sort(
-        (a, b) => Number(b[1]?.entry || 0) - Number(a[1]?.entry || 0)
-      );
+      const sortedUsedChars = Object.entries(useCharRaw)
+        .filter(([, cObj]) => Number(cObj?.entry || 0) > 0)
+        .sort(
+          (a, b) =>
+            Number(b[1]?.entry || 0) - Number(a[1]?.entry || 0) ||
+            Number(b[1]?.win || 0) - Number(a[1]?.win || 0)
+        );
       const mainChar = sortedUsedChars[0]?.[0] || def.mainChar;
-      const subChars = Array.from(
-        new Set([
-          ...sortedUsedChars.slice(1).map(([k]) => k),
-          ...def.subChars,
-        ])
-      ).filter((c) => c !== mainChar);
+      const subChars = sortedUsedChars
+        .slice(1)
+        .map(([k]) => k)
+        .filter((c) => c !== mainChar);
 
       const displayName =
         rawP?.name || PLAYER_NAME_MAP[normalizedKey] || normalizedKey;

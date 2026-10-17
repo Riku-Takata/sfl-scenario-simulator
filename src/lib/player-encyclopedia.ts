@@ -300,7 +300,7 @@ export function buildPlayerEncyclopedia(
     const homeWinRate = Math.round(stat.sfl2026.homeWinRate * 1000) / 10;
     const awayWinRate = Math.round(stat.sfl2026.awayWinRate * 1000) / 10;
 
-    // 使用キャラクター一覧
+    // 今シーズンのSFL実戦での使用キャラクター集計（使用バトル数順）
     const usedCharacters = Object.entries(charBattleTally).map(
       ([cKey, tally]) => {
         const total = tally.w + tally.l;
@@ -315,17 +315,27 @@ export function buildPlayerEncyclopedia(
         };
       }
     );
+    usedCharacters.sort(
+      (a, b) => b.battlesTotal - a.battlesTotal || b.battlesWon - a.battlesWon
+    );
+
+    // 今シーズンのSFLで最も使用回数の多いキャラをメイン、ほかに今期SFLで使用されたキャラがある場合のみサブとする
+    const actualMainChar = usedCharacters[0]?.charKey || stat.mainChar;
+    const actualSubChars = usedCharacters
+      .slice(1)
+      .filter((u) => u.battlesTotal > 0)
+      .map((u) => u.charKey);
+
     if (usedCharacters.length === 0) {
       usedCharacters.push({
-        charKey: stat.mainChar,
-        charName: formatCharName(stat.mainChar),
+        charKey: actualMainChar,
+        charName: formatCharName(actualMainChar),
         battlesWon: 0,
         battlesLost: 0,
         battlesTotal: 0,
         battleWinRate: Math.round(stat.cptStats.overallWinRate * 1000) / 10,
       });
     }
-    usedCharacters.sort((a, b) => b.battlesTotal - a.battlesTotal);
 
     // 対キャラクター相性一覧
     const vsCharacters: VsCharDetail[] = Object.values(stat.vsCharStats).map(
@@ -413,7 +423,7 @@ export function buildPlayerEncyclopedia(
     const matchupCoverage = clampScore(
       42 +
         (favorableCharCount / Math.max(1, vsCharacters.length)) * 48 +
-        Math.min(8, stat.subChars.length * 3)
+        Math.min(8, actualSubChars.length * 3)
     );
 
     const overallScore = Math.round(
@@ -467,7 +477,7 @@ export function buildPlayerEncyclopedia(
     }
     if (featureTags.length === 0) {
       featureTags.push(
-        `主要使用キャラ: ${formatCharName(stat.mainChar)}`
+        `主要使用キャラ: ${formatCharName(actualMainChar)}`
       );
     }
 
@@ -510,8 +520,12 @@ export function buildPlayerEncyclopedia(
       .slice(0, 3)
       .map((m) => `${m.charName}（${m.estimatedWinRate.toFixed(1)}%）`)
       .join("・");
+    const subCharText =
+      actualSubChars.length > 0
+        ? `（サブ使用: ${actualSubChars.map(formatCharName).join("・")}）`
+        : "";
     objectiveSummary.push(
-      `【対キャラクター相性データ】メイン使用キャラ「${formatCharName(stat.mainChar)}」を軸に、全28キャラ中${favorableCharCount}キャラに対して推定勝率50%以上を保持。特に ${top3Names} に対して高い勝率データが算出されています。`
+      `【対キャラクター相性データ】今期メイン使用キャラ「${formatCharName(actualMainChar)}」${subCharText}を軸に、全28キャラ中${favorableCharCount}キャラに対して推定勝率50%以上を保持。特に ${top3Names} に対して高い勝率データが算出されています。`
     );
 
     entries.push({
@@ -523,10 +537,10 @@ export function buildPlayerEncyclopedia(
       teamShort: teamMeta.shortName,
       teamColor: teamMeta.color,
       division: stat.division,
-      mainChar: stat.mainChar,
-      mainCharName: formatCharName(stat.mainChar),
-      subChars: stat.subChars,
-      subCharNames: stat.subChars.map(formatCharName),
+      mainChar: actualMainChar,
+      mainCharName: formatCharName(actualMainChar),
+      subChars: actualSubChars,
+      subCharNames: actualSubChars.map(formatCharName),
       eloRating: stat.eloRating,
       sfl: {
         entry,

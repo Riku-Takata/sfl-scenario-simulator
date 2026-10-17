@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T06:57:30.040Z",
+  "updatedAt": "2026-10-17T07:42:50.383Z",
   "totalPlayers": 48,
   "players": {
     "sako": {
@@ -9,10 +9,7 @@
       "teamKey": "fav",
       "division": "s",
       "mainChar": "elena",
-      "subChars": [
-        "chunli",
-        "aki"
-      ],
+      "subChars": [],
       "startggSlug": "user/sako",
       "eloRating": 1920
     },
@@ -23,10 +20,7 @@
       "teamKey": "fav",
       "division": "s",
       "mainChar": "cviper",
-      "subChars": [
-        "ken",
-        "ibuki"
-      ],
+      "subChars": [],
       "startggSlug": "user/fujimura",
       "eloRating": 1953
     },
@@ -38,8 +32,7 @@
       "division": "s",
       "mainChar": "mai",
       "subChars": [
-        "chunli",
-        "rashid"
+        "chunli"
       ],
       "startggSlug": "user/moke",
       "eloRating": 1991
@@ -52,8 +45,7 @@
       "division": "s",
       "mainChar": "ken",
       "subChars": [
-        "mai",
-        "gouki_akuma"
+        "mai"
       ],
       "startggSlug": "user/ryukichi",
       "eloRating": 2019
@@ -65,10 +57,7 @@
       "teamKey": "cr",
       "division": "s",
       "mainChar": "elena",
-      "subChars": [
-        "vega_mbison",
-        "dee_jay"
-      ],
+      "subChars": [],
       "startggSlug": "user/dogura",
       "eloRating": 1894
     },
@@ -79,10 +68,7 @@
       "teamKey": "cr",
       "division": "s",
       "mainChar": "ryu",
-      "subChars": [
-        "gouki_akuma",
-        "marisa"
-      ],
+      "subChars": [],
       "startggSlug": "user/shuto",
       "eloRating": 1922
     },
@@ -94,8 +80,7 @@
       "division": "s",
       "mainChar": "sagat",
       "subChars": [
-        "gouki_akuma",
-        "luke"
+        "gouki_akuma"
       ],
       "startggSlug": "user/bonchan",
       "eloRating": 1932
@@ -107,10 +92,7 @@
       "teamKey": "cr",
       "division": "s",
       "mainChar": "cviper",
-      "subChars": [
-        "cammy",
-        "jamie"
-      ],
+      "subChars": [],
       "startggSlug": "user/kazunoko",
       "eloRating": 1958
     },
@@ -121,9 +103,7 @@
       "teamKey": "sol",
       "division": "s",
       "mainChar": "ryu",
-      "subChars": [
-        "ken"
-      ],
+      "subChars": [],
       "startggSlug": "user/machabo",
       "eloRating": 1977
     },
@@ -134,9 +114,7 @@
       "teamKey": "sol",
       "division": "s",
       "mainChar": "zangief",
-      "subChars": [
-        "marisa"
-      ],
+      "subChars": [],
       "startggSlug": "user/kobayan",
       "eloRating": 1915
     },
@@ -148,9 +126,7 @@
       "division": "s",
       "mainChar": "gouki_akuma",
       "subChars": [
-        "ken",
-        "ryu",
-        "luke"
+        "ken"
       ],
       "startggSlug": "user/cosa",
       "eloRating": 1911
@@ -162,10 +138,7 @@
       "teamKey": "sol",
       "division": "s",
       "mainChar": "terry",
-      "subChars": [
-        "ken",
-        "ryu"
-      ],
+      "subChars": [],
       "startggSlug": "user/kincho",
       "eloRating": 1973
     },
@@ -176,10 +149,7 @@
       "teamKey": "zeta",
       "division": "s",
       "mainChar": "jamie",
-      "subChars": [
-        "ken",
-        "cviper"
-      ],
+      "subChars": [],
       "startggSlug": "user/momochi",
       "eloRating": 1969
     },
@@ -190,9 +160,7 @@
       "teamKey": "zeta",
       "division": "s",
       "mainChar": "guile",
-      "subChars": [
-        "sagat"
-      ],
+      "subChars": [],
       "startggSlug": "user/higuchi",
       "eloRating": 2026
     },
@@ -203,10 +171,7 @@
       "teamKey": "zeta",
       "division": "s",
       "mainChar": "mai",
-      "subChars": [
-        "dee_jay",
-        "ed"
-      ],
+      "subChars": [],
       "startggSlug": "user/yamaguchi",
       "eloRating": 2017
     },
@@ -218,8 +183,7 @@
       "division": "s",
       "mainChar": "blanka",
       "subChars": [
-        "luke",
-        "zangief"
+        "luke"
       ],
       "startggSlug": "user/menard",
       "eloRating": 2080
@@ -231,10 +195,7 @@
       "teamKey": "ixa",
       "division": "s",
       "mainChar": "blanka",
-      "subChars": [
-        "jp",
-        "ed"
-      ],
+      "subChars": [],
       "startggSlug": "user/acqua",
       "eloRating": 1879
     },
@@ -245,9 +206,7 @@
       "teamKey": "ixa",
       "division": "s",
       "mainChar": "lily",
-      "subChars": [
-        "mai"
-      ],
+      "subChars": [],
       "startggSlug": "user/hibiki",
       "eloRating": 1923
     },
@@ -258,9 +217,7 @@
       "teamKey": "ixa",
       "division": "s",
       "mainChar": "cammy",
-      "subChars": [
-        "cviper"
-      ],
+      "subChars": [],
       "startggSlug": "user/akira",
       "eloRating": 1854
     },
@@ -271,9 +228,7 @@
       "teamKey": "ixa",
       "division": "s",
       "mainChar": "jp",
-      "subChars": [
-        "vega_mbison"
-      ],
+      "subChars": [],
       "startggSlug": "user/takepi",
       "eloRating": 1854
     },
@@ -297,9 +252,7 @@
       "teamKey": "ibsg",
       "division": "s",
       "mainChar": "elena",
-      "subChars": [
-        "marisa"
-      ],
+      "subChars": [],
       "startggSlug": "user/johnny",
       "eloRating": 1869
     },
@@ -310,9 +263,7 @@
       "teamKey": "ibsg",
       "division": "s",
       "mainChar": "dhalsim",
-      "subChars": [
-        "jp"
-      ],
+      "subChars": [],
       "startggSlug": "user/torimeshi",
       "eloRating": 1972
     },
@@ -323,9 +274,7 @@
       "teamKey": "ibsg",
       "division": "s",
       "mainChar": "juri",
-      "subChars": [
-        "cammy"
-      ],
+      "subChars": [],
       "startggSlug": "user/2bassa",
       "eloRating": 1999
     },
@@ -336,10 +285,7 @@
       "teamKey": "varrel",
       "division": "f",
       "mainChar": "jp",
-      "subChars": [
-        "ken",
-        "gouki_akuma"
-      ],
+      "subChars": [],
       "startggSlug": "user/tokido",
       "eloRating": 2051
     },
@@ -351,8 +297,7 @@
       "division": "f",
       "mainChar": "juri",
       "subChars": [
-        "mai",
-        "cammy"
+        "mai"
       ],
       "startggSlug": "user/mago",
       "eloRating": 1900
@@ -377,9 +322,7 @@
       "teamKey": "varrel",
       "division": "f",
       "mainChar": "terry",
-      "subChars": [
-        "ken"
-      ],
+      "subChars": [],
       "startggSlug": "user/wabiichi",
       "eloRating": 1886
     },
@@ -390,9 +333,7 @@
       "teamKey": "good8",
       "division": "f",
       "mainChar": "rashid",
-      "subChars": [
-        "sagat"
-      ],
+      "subChars": [],
       "startggSlug": "user/gachikun",
       "eloRating": 2007
     },
@@ -403,9 +344,7 @@
       "teamKey": "good8",
       "division": "f",
       "mainChar": "luke",
-      "subChars": [
-        "gouki_akuma"
-      ],
+      "subChars": [],
       "startggSlug": "user/kawano",
       "eloRating": 2005
     },
@@ -416,10 +355,7 @@
       "teamKey": "good8",
       "division": "f",
       "mainChar": "cviper",
-      "subChars": [
-        "juri",
-        "vega_mbison"
-      ],
+      "subChars": [],
       "startggSlug": "user/pugera",
       "eloRating": 2000
     },
@@ -443,9 +379,7 @@
       "teamKey": "dng",
       "division": "f",
       "mainChar": "zangief",
-      "subChars": [
-        "marisa"
-      ],
+      "subChars": [],
       "startggSlug": "user/itazan",
       "eloRating": 2020
     },
@@ -456,10 +390,7 @@
       "teamKey": "dng",
       "division": "f",
       "mainChar": "mai",
-      "subChars": [
-        "ken",
-        "rashid"
-      ],
+      "subChars": [],
       "startggSlug": "user/nauman",
       "eloRating": 1879
     },
@@ -470,9 +401,7 @@
       "teamKey": "dng",
       "division": "f",
       "mainChar": "jamie",
-      "subChars": [
-        "rashid"
-      ],
+      "subChars": [],
       "startggSlug": "user/takeuchi_john",
       "eloRating": 1989
     },
@@ -483,9 +412,7 @@
       "teamKey": "dng",
       "division": "f",
       "mainChar": "mai",
-      "subChars": [
-        "jp"
-      ],
+      "subChars": [],
       "startggSlug": "user/keib",
       "eloRating": 1884
     },
@@ -496,9 +423,7 @@
       "teamKey": "oja",
       "division": "f",
       "mainChar": "chunli",
-      "subChars": [
-        "mai"
-      ],
+      "subChars": [],
       "startggSlug": "user/seiya",
       "eloRating": 1875
     },
@@ -508,10 +433,10 @@
       "nameEn": "Otani",
       "teamKey": "oja",
       "division": "f",
-      "mainChar": "elena",
+      "mainChar": "ken",
       "subChars": [
-        "ken",
-        "luke"
+        "luke",
+        "elena"
       ],
       "startggSlug": "user/otani",
       "eloRating": 1901
@@ -523,9 +448,7 @@
       "teamKey": "oja",
       "division": "f",
       "mainChar": "gouki_akuma",
-      "subChars": [
-        "rashid"
-      ],
+      "subChars": [],
       "startggSlug": "user/mocchi",
       "eloRating": 1883
     },
@@ -536,9 +459,7 @@
       "teamKey": "oja",
       "division": "f",
       "mainChar": "vega_mbison",
-      "subChars": [
-        "ken"
-      ],
+      "subChars": [],
       "startggSlug": "user/raoyamu",
       "eloRating": 1915
     },
@@ -549,10 +470,7 @@
       "teamKey": "rc",
       "division": "f",
       "mainChar": "gouki_akuma",
-      "subChars": [
-        "ken",
-        "guile"
-      ],
+      "subChars": [],
       "startggSlug": "user/daigo",
       "eloRating": 1969
     },
@@ -564,8 +482,7 @@
       "division": "f",
       "mainChar": "cviper",
       "subChars": [
-        "ed",
-        "dee_jay"
+        "ed"
       ],
       "startggSlug": "user/fuudo",
       "eloRating": 1941
@@ -577,9 +494,7 @@
       "teamKey": "rc",
       "division": "f",
       "mainChar": "ryu",
-      "subChars": [
-        "juri"
-      ],
+      "subChars": [],
       "startggSlug": "user/yas",
       "eloRating": 1974
     },
@@ -590,10 +505,7 @@
       "teamKey": "rc",
       "division": "f",
       "mainChar": "sagat",
-      "subChars": [
-        "ryu",
-        "ken"
-      ],
+      "subChars": [],
       "startggSlug": "user/hinao",
       "eloRating": 1949
     },
@@ -604,9 +516,7 @@
       "teamKey": "rid",
       "division": "f",
       "mainChar": "zangief",
-      "subChars": [
-        "honda"
-      ],
+      "subChars": [],
       "startggSlug": "user/jr",
       "eloRating": 1971
     },
@@ -617,9 +527,7 @@
       "teamKey": "rid",
       "division": "f",
       "mainChar": "blanka",
-      "subChars": [
-        "lily"
-      ],
+      "subChars": [],
       "startggSlug": "user/takagi",
       "eloRating": 1921
     },
@@ -630,9 +538,7 @@
       "teamKey": "rid",
       "division": "f",
       "mainChar": "ed",
-      "subChars": [
-        "cammy"
-      ],
+      "subChars": [],
       "startggSlug": "user/adelie",
       "eloRating": 1972
     },
@@ -643,9 +549,7 @@
       "teamKey": "rid",
       "division": "f",
       "mainChar": "aki",
-      "subChars": [
-        "blanka"
-      ],
+      "subChars": [],
       "startggSlug": "user/hikaru",
       "eloRating": 2035
     }

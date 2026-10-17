@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T06:57:30.040Z",
+  "updatedAt": "2026-10-17T07:42:50.383Z",
   "players": {
     "sako": {
       "playerKey": "sako",
@@ -8,10 +8,7 @@
       "teamKey": "fav",
       "division": "s",
       "mainChar": "elena",
-      "subChars": [
-        "chunli",
-        "aki"
-      ],
+      "subChars": [],
       "eloRating": 1920,
       "recentFormScore": 0.5086,
       "sfl2026": {
@@ -260,10 +257,7 @@
       "teamKey": "fav",
       "division": "s",
       "mainChar": "cviper",
-      "subChars": [
-        "ken",
-        "ibuki"
-      ],
+      "subChars": [],
       "eloRating": 1953,
       "recentFormScore": 0.4448,
       "sfl2026": {
@@ -525,8 +519,7 @@
       "division": "s",
       "mainChar": "mai",
       "subChars": [
-        "chunli",
-        "rashid"
+        "chunli"
       ],
       "eloRating": 1991,
       "recentFormScore": 0.6448,
@@ -795,8 +788,7 @@
       "division": "s",
       "mainChar": "ken",
       "subChars": [
-        "mai",
-        "gouki_akuma"
+        "mai"
       ],
       "eloRating": 2019,
       "recentFormScore": 0.6848,
@@ -1064,10 +1056,7 @@
       "teamKey": "cr",
       "division": "s",
       "mainChar": "elena",
-      "subChars": [
-        "vega_mbison",
-        "dee_jay"
-      ],
+      "subChars": [],
       "eloRating": 1894,
       "recentFormScore": 0.527,
       "sfl2026": {
@@ -1328,10 +1317,7 @@
       "teamKey": "cr",
       "division": "s",
       "mainChar": "ryu",
-      "subChars": [
-        "gouki_akuma",
-        "marisa"
-      ],
+      "subChars": [],
       "eloRating": 1922,
       "recentFormScore": 0.4048,
       "sfl2026": {
@@ -1593,8 +1579,7 @@
       "division": "s",
       "mainChar": "sagat",
       "subChars": [
-        "gouki_akuma",
-        "luke"
+        "gouki_akuma"
       ],
       "eloRating": 1932,
       "recentFormScore": 0.356,
@@ -1856,10 +1841,7 @@
       "teamKey": "cr",
       "division": "s",
       "mainChar": "cviper",
-      "subChars": [
-        "cammy",
-        "jamie"
-      ],
+      "subChars": [],
       "eloRating": 1958,
       "recentFormScore": 0.46,
       "sfl2026": {
@@ -2114,9 +2096,7 @@
       "teamKey": "sol",
       "division": "s",
       "mainChar": "ryu",
-      "subChars": [
-        "ken"
-      ],
+      "subChars": [],
       "eloRating": 1977,
       "recentFormScore": 0.62,
       "sfl2026": {
@@ -2377,9 +2357,7 @@
       "teamKey": "sol",
       "division": "s",
       "mainChar": "zangief",
-      "subChars": [
-        "marisa"
-      ],
+      "subChars": [],
       "eloRating": 1915,
       "recentFormScore": 0.2575,
       "sfl2026": {
@@ -2629,9 +2607,7 @@
       "division": "s",
       "mainChar": "gouki_akuma",
       "subChars": [
-        "ken",
-        "ryu",
-        "luke"
+        "ken"
       ],
       "eloRating": 1911,
       "recentFormScore": 0.4747,
@@ -2887,10 +2863,7 @@
       "teamKey": "sol",
       "division": "s",
       "mainChar": "terry",
-      "subChars": [
-        "ken",
-        "ryu"
-      ],
+      "subChars": [],
       "eloRating": 1973,
       "recentFormScore": 0.5431,
       "sfl2026": {
@@ -3151,10 +3124,7 @@
       "teamKey": "zeta",
       "division": "s",
       "mainChar": "jamie",
-      "subChars": [
-        "ken",
-        "cviper"
-      ],
+      "subChars": [],
       "eloRating": 1969,
       "recentFormScore": 0.3745,
       "sfl2026": {
@@ -3397,9 +3367,7 @@
       "teamKey": "zeta",
       "division": "s",
       "mainChar": "guile",
-      "subChars": [
-        "sagat"
-      ],
+      "subChars": [],
       "eloRating": 2026,
       "recentFormScore": 0.6341,
       "sfl2026": {
@@ -3660,10 +3628,7 @@
       "teamKey": "zeta",
       "division": "s",
       "mainChar": "mai",
-      "subChars": [
-        "dee_jay",
-        "ed"
-      ],
+      "subChars": [],
       "eloRating": 2017,
       "recentFormScore": 0.756,
       "sfl2026": {
@@ -3919,8 +3884,7 @@
       "division": "s",
       "mainChar": "blanka",
       "subChars": [
-        "luke",
-        "zangief"
+        "luke"
       ],
       "eloRating": 2080,
       "recentFormScore": 0.6471,
@@ -4188,10 +4152,7 @@
       "teamKey": "ixa",
       "division": "s",
       "mainChar": "blanka",
-      "subChars": [
-        "jp",
-        "ed"
-      ],
+      "subChars": [],
       "eloRating": 1879,
       "recentFormScore": 0.44,
       "sfl2026": {
@@ -4446,9 +4407,7 @@
       "teamKey": "ixa",
       "division": "s",
       "mainChar": "lily",
-      "subChars": [
-        "mai"
-      ],
+      "subChars": [],
       "eloRating": 1923,
       "recentFormScore": 0.46,
       "sfl2026": {
@@ -4703,9 +4662,7 @@
       "teamKey": "ixa",
       "division": "s",
       "mainChar": "cammy",
-      "subChars": [
-        "cviper"
-      ],
+      "subChars": [],
       "eloRating": 1854,
       "recentFormScore": 0.2267,
       "sfl2026": {
@@ -4966,9 +4923,7 @@
       "teamKey": "ixa",
       "division": "s",
       "mainChar": "jp",
-      "subChars": [
-        "vega_mbison"
-      ],
+      "subChars": [],
       "eloRating": 1854,
       "recentFormScore": 0.2747,
       "sfl2026": {
@@ -5486,9 +5441,7 @@
       "teamKey": "ibsg",
       "division": "s",
       "mainChar": "elena",
-      "subChars": [
-        "marisa"
-      ],
+      "subChars": [],
       "eloRating": 1869,
       "recentFormScore": 0.2747,
       "sfl2026": {
@@ -5737,9 +5690,7 @@
       "teamKey": "ibsg",
       "division": "s",
       "mainChar": "dhalsim",
-      "subChars": [
-        "jp"
-      ],
+      "subChars": [],
       "eloRating": 1972,
       "recentFormScore": 0.6114,
       "sfl2026": {
@@ -6000,9 +5951,7 @@
       "teamKey": "ibsg",
       "division": "s",
       "mainChar": "juri",
-      "subChars": [
-        "cammy"
-      ],
+      "subChars": [],
       "eloRating": 1999,
       "recentFormScore": 0.6711,
       "sfl2026": {
@@ -6263,10 +6212,7 @@
       "teamKey": "varrel",
       "division": "f",
       "mainChar": "jp",
-      "subChars": [
-        "ken",
-        "gouki_akuma"
-      ],
+      "subChars": [],
       "eloRating": 2051,
       "recentFormScore": 0.7676,
       "sfl2026": {
@@ -6522,8 +6468,7 @@
       "division": "f",
       "mainChar": "juri",
       "subChars": [
-        "mai",
-        "cammy"
+        "mai"
       ],
       "eloRating": 1900,
       "recentFormScore": 0.2575,
@@ -7042,9 +6987,7 @@
       "teamKey": "varrel",
       "division": "f",
       "mainChar": "terry",
-      "subChars": [
-        "ken"
-      ],
+      "subChars": [],
       "eloRating": 1886,
       "recentFormScore": 0.3747,
       "sfl2026": {
@@ -7299,9 +7242,7 @@
       "teamKey": "good8",
       "division": "f",
       "mainChar": "rashid",
-      "subChars": [
-        "sagat"
-      ],
+      "subChars": [],
       "eloRating": 2007,
       "recentFormScore": 0.556,
       "sfl2026": {
@@ -7556,9 +7497,7 @@
       "teamKey": "good8",
       "division": "f",
       "mainChar": "luke",
-      "subChars": [
-        "gouki_akuma"
-      ],
+      "subChars": [],
       "eloRating": 2005,
       "recentFormScore": 0.5075,
       "sfl2026": {
@@ -7807,10 +7746,7 @@
       "teamKey": "good8",
       "division": "f",
       "mainChar": "cviper",
-      "subChars": [
-        "juri",
-        "vega_mbison"
-      ],
+      "subChars": [],
       "eloRating": 2000,
       "recentFormScore": 0.7943,
       "sfl2026": {
@@ -8322,9 +8258,7 @@
       "teamKey": "dng",
       "division": "f",
       "mainChar": "zangief",
-      "subChars": [
-        "marisa"
-      ],
+      "subChars": [],
       "eloRating": 2020,
       "recentFormScore": 0.806,
       "sfl2026": {
@@ -8579,10 +8513,7 @@
       "teamKey": "dng",
       "division": "f",
       "mainChar": "mai",
-      "subChars": [
-        "ken",
-        "rashid"
-      ],
+      "subChars": [],
       "eloRating": 1879,
       "recentFormScore": 0.2747,
       "sfl2026": {
@@ -8831,9 +8762,7 @@
       "teamKey": "dng",
       "division": "f",
       "mainChar": "jamie",
-      "subChars": [
-        "rashid"
-      ],
+      "subChars": [],
       "eloRating": 1989,
       "recentFormScore": 0.6139,
       "sfl2026": {
@@ -9088,9 +9017,7 @@
       "teamKey": "dng",
       "division": "f",
       "mainChar": "mai",
-      "subChars": [
-        "jp"
-      ],
+      "subChars": [],
       "eloRating": 1884,
       "recentFormScore": 0.2747,
       "sfl2026": {
@@ -9339,9 +9266,7 @@
       "teamKey": "oja",
       "division": "f",
       "mainChar": "chunli",
-      "subChars": [
-        "mai"
-      ],
+      "subChars": [],
       "eloRating": 1875,
       "recentFormScore": 0.3433,
       "sfl2026": {
@@ -9583,10 +9508,10 @@
       "nameEn": "Otani",
       "teamKey": "oja",
       "division": "f",
-      "mainChar": "elena",
+      "mainChar": "ken",
       "subChars": [
-        "ken",
-        "luke"
+        "luke",
+        "elena"
       ],
       "eloRating": 1901,
       "recentFormScore": 0.3867,
@@ -9634,49 +9559,49 @@
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4994
+          "smoothedWinRate": 0.4885
         },
         "luke": {
           "vsChar": "luke",
-          "wins": 6,
-          "losses": 14,
+          "wins": 7,
+          "losses": 13,
           "entries": 20,
-          "smoothedWinRate": 0.3315
+          "smoothedWinRate": 0.3895
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4921
+          "smoothedWinRate": 0.5031
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4885
+          "smoothedWinRate": 0.4994
         },
         "guile": {
           "vsChar": "guile",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4908
+          "smoothedWinRate": 0.4994
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4885
+          "smoothedWinRate": 0.5031
         },
         "juri": {
           "vsChar": "juri",
-          "wins": 6,
-          "losses": 8,
+          "wins": 7,
+          "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4332
+          "smoothedWinRate": 0.4994
         },
         "ken": {
           "vsChar": "ken",
@@ -9687,17 +9612,17 @@
         },
         "blanka": {
           "vsChar": "blanka",
-          "wins": 6,
-          "losses": 8,
+          "wins": 7,
+          "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4394
+          "smoothedWinRate": 0.4958
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4994
+          "smoothedWinRate": 0.5008
         },
         "ehonda": {
           "vsChar": "ehonda",
@@ -9711,7 +9636,7 @@
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4958
+          "smoothedWinRate": 0.5031
         },
         "manon": {
           "vsChar": "manon",
@@ -9739,28 +9664,28 @@
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4994
+          "smoothedWinRate": 0.4885
         },
         "lily": {
           "vsChar": "lily",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.5031
+          "smoothedWinRate": 0.4921
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.5031
+          "smoothedWinRate": 0.5075
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4921
+          "smoothedWinRate": 0.4885
         },
         "aki": {
           "vsChar": "aki",
@@ -9774,35 +9699,35 @@
           "wins": 9,
           "losses": 11,
           "entries": 20,
-          "smoothedWinRate": 0.4581
+          "smoothedWinRate": 0.4553
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4994
+          "smoothedWinRate": 0.4885
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4921
+          "smoothedWinRate": 0.4885
         },
         "terry": {
           "vsChar": "terry",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.5129
+          "smoothedWinRate": 0.5031
         },
         "mai": {
           "vsChar": "mai",
-          "wins": 11,
-          "losses": 9,
+          "wins": 10,
+          "losses": 10,
           "entries": 20,
-          "smoothedWinRate": 0.5381
+          "smoothedWinRate": 0.488
         },
         "elena": {
           "vsChar": "elena",
@@ -9813,17 +9738,17 @@
         },
         "sagat": {
           "vsChar": "sagat",
-          "wins": 6,
-          "losses": 8,
+          "wins": 7,
+          "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.4387
+          "smoothedWinRate": 0.4921
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 7,
           "losses": 7,
           "entries": 14,
-          "smoothedWinRate": 0.5031
+          "smoothedWinRate": 0.4958
         }
       },
       "h2hStats": {
@@ -9854,9 +9779,7 @@
       "teamKey": "oja",
       "division": "f",
       "mainChar": "gouki_akuma",
-      "subChars": [
-        "rashid"
-      ],
+      "subChars": [],
       "eloRating": 1883,
       "recentFormScore": 0.2782,
       "sfl2026": {
@@ -10111,9 +10034,7 @@
       "teamKey": "oja",
       "division": "f",
       "mainChar": "vega_mbison",
-      "subChars": [
-        "ken"
-      ],
+      "subChars": [],
       "eloRating": 1915,
       "recentFormScore": 0.5075,
       "sfl2026": {
@@ -10362,10 +10283,7 @@
       "teamKey": "rc",
       "division": "f",
       "mainChar": "gouki_akuma",
-      "subChars": [
-        "ken",
-        "guile"
-      ],
+      "subChars": [],
       "eloRating": 1969,
       "recentFormScore": 0.5413,
       "sfl2026": {
@@ -10615,8 +10533,7 @@
       "division": "f",
       "mainChar": "cviper",
       "subChars": [
-        "ed",
-        "dee_jay"
+        "ed"
       ],
       "eloRating": 1941,
       "recentFormScore": 0.2424,
@@ -10872,9 +10789,7 @@
       "teamKey": "rc",
       "division": "f",
       "mainChar": "ryu",
-      "subChars": [
-        "juri"
-      ],
+      "subChars": [],
       "eloRating": 1974,
       "recentFormScore": 0.6379,
       "sfl2026": {
@@ -11129,10 +11044,7 @@
       "teamKey": "rc",
       "division": "f",
       "mainChar": "sagat",
-      "subChars": [
-        "ryu",
-        "ken"
-      ],
+      "subChars": [],
       "eloRating": 1949,
       "recentFormScore": 0.5413,
       "sfl2026": {
@@ -11381,9 +11293,7 @@
       "teamKey": "rid",
       "division": "f",
       "mainChar": "zangief",
-      "subChars": [
-        "honda"
-      ],
+      "subChars": [],
       "eloRating": 1971,
       "recentFormScore": 0.5853,
       "sfl2026": {
@@ -11638,9 +11548,7 @@
       "teamKey": "rid",
       "division": "f",
       "mainChar": "blanka",
-      "subChars": [
-        "lily"
-      ],
+      "subChars": [],
       "eloRating": 1921,
       "recentFormScore": 0.4776,
       "sfl2026": {
@@ -11889,9 +11797,7 @@
       "teamKey": "rid",
       "division": "f",
       "mainChar": "ed",
-      "subChars": [
-        "cammy"
-      ],
+      "subChars": [],
       "eloRating": 1972,
       "recentFormScore": 0.695,
       "sfl2026": {
@@ -12140,9 +12046,7 @@
       "teamKey": "rid",
       "division": "f",
       "mainChar": "aki",
-      "subChars": [
-        "blanka"
-      ],
+      "subChars": [],
       "eloRating": 2035,
       "recentFormScore": 0.7289,
       "sfl2026": {
