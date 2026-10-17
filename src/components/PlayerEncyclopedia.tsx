@@ -13,9 +13,6 @@ export default function PlayerEncyclopedia({ players }: Props) {
   const [divFilter, setDivFilter] = useState<"all" | "s" | "f">("all");
   const [teamFilter, setTeamFilter] = useState<string>("all");
   const [vsCharFilter, setVsCharFilter] = useState<string>("none");
-  const [matchupMode, setMatchupMode] = useState<"tournament" | "sfl2026">(
-    "tournament"
-  );
   const [sortBy, setSortBy] = useState<SortKey>("point");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedPlayerKey, setSelectedPlayerKey] = useState<string | null>(
@@ -93,21 +90,12 @@ export default function PlayerEncyclopedia({ players }: Props) {
       if (vsCharFilter !== "none") {
         const charA = a.vsCharacters.find((c) => c.charKey === vsCharFilter);
         const charB = b.vsCharacters.find((c) => c.charKey === vsCharFilter);
-        if (matchupMode === "tournament") {
-          const rateA = charA?.tournamentMatchWinRate ?? -1;
-          const rateB = charB?.tournamentMatchWinRate ?? -1;
-          if (rateB !== rateA) return rateB - rateA;
-          const wonA = charA?.tournamentMatchesWon ?? 0;
-          const wonB = charB?.tournamentMatchesWon ?? 0;
-          if (wonB !== wonA) return wonB - wonA;
-        } else {
-          const rateA = charA?.sflBattleWinRate ?? -1;
-          const rateB = charB?.sflBattleWinRate ?? -1;
-          if (rateB !== rateA) return rateB - rateA;
-          const wonA = charA?.sflBattlesWon ?? 0;
-          const wonB = charB?.sflBattlesWon ?? 0;
-          if (wonB !== wonA) return wonB - wonA;
-        }
+        const rateA = charA?.sflBattleWinRate ?? -1;
+        const rateB = charB?.sflBattleWinRate ?? -1;
+        if (rateB !== rateA) return rateB - rateA;
+        const wonA = charA?.sflBattlesWon ?? 0;
+        const wonB = charB?.sflBattlesWon ?? 0;
+        if (wonB !== wonA) return wonB - wonA;
       }
       if (sortBy === "overall") {
         return (
@@ -136,7 +124,6 @@ export default function PlayerEncyclopedia({ players }: Props) {
     divFilter,
     teamFilter,
     vsCharFilter,
-    matchupMode,
     sortBy,
     searchQuery,
   ]);
@@ -154,8 +141,6 @@ export default function PlayerEncyclopedia({ players }: Props) {
       <PlayerDetailView
         selectedPlayer={selectedPlayer}
         players={players}
-        matchupMode={matchupMode}
-        setMatchupMode={setMatchupMode}
         onSelectPlayer={handleSelectPlayer}
         onBackToList={handleBackToList}
       />
@@ -182,8 +167,6 @@ export default function PlayerEncyclopedia({ players }: Props) {
       </div>
 
       <PlayerFilterBar
-        matchupMode={matchupMode}
-        setMatchupMode={setMatchupMode}
         divFilter={divFilter}
         setDivFilter={setDivFilter}
         teamFilter={teamFilter}
@@ -208,7 +191,6 @@ export default function PlayerEncyclopedia({ players }: Props) {
           <PlayerCard
             key={p.playerKey}
             player={p}
-            matchupMode={matchupMode}
             vsCharFilter={vsCharFilter}
             onSelect={handleSelectPlayer}
           />

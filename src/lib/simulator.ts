@@ -22,7 +22,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "カドカワ ファブ ゲーミング",
     shortName: "FAV",
     division: "s",
-    color: "#f59e0b",
+    color: "#ea580c", // FAV Mars Red/Orange
     order: 0,
     players: ["sako", "fujimura", "moke", "ryukichi"],
   },
@@ -32,7 +32,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "クレイジーラクーン",
     shortName: "CR",
     division: "s",
-    color: "#ef4444",
+    color: "#e11d48", // CR Crimson Red
     order: 1,
     players: ["dogura", "shuto", "bonchan", "kazunoko"],
   },
@@ -42,7 +42,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "サイシュンカン ソル クマモト",
     shortName: "SOL",
     division: "s",
-    color: "#f97316",
+    color: "#f97316", // Sol Sun Flame
     order: 2,
     players: ["machabo", "kobayan", "cosa", "kincho"],
   },
@@ -52,7 +52,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "ゼータディビジョン ギークリー",
     shortName: "ZETA",
     division: "s",
-    color: "#10b981",
+    color: "#18181b", // ZETA Iconic Black & White
     order: 3,
     players: ["momochi", "higuchi", "yamaguchi", "mena"],
   },
@@ -62,7 +62,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "ヒロシマ チーム イクサ",
     shortName: "iXA",
     division: "s",
-    color: "#3b82f6",
+    color: "#eab308", // iXA Hiroshima Lemon Yellow
     order: 4,
     players: ["acqua", "hibiki", "akira", "takepi"],
   },
@@ -72,7 +72,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "フクシマ イブシギン",
     shortName: "IBSG",
     division: "s",
-    color: "#8b5cf6",
+    color: "#475569", // Ibushigin Silver Slate
     order: 5,
     players: ["yanai", "johnny", "torimeshi", "2bassa"],
   },
@@ -83,7 +83,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "ヴァレル",
     shortName: "VARREL",
     division: "f",
-    color: "#ec4899",
+    color: "#059669", // VARREL Green & White
     order: 6,
     players: ["tokido", "mago", "mizuha", "wabiichi"],
   },
@@ -93,7 +93,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "グッドエイトスクワッド",
     shortName: "G8S",
     division: "f",
-    color: "#06b6d4",
+    color: "#1e3a8a", // G8S Denim / Dark Navy
     order: 7,
     players: ["gachikun", "kawano", "pugera", "sahara"],
   },
@@ -103,7 +103,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "デトネーション フォーカスミー",
     shortName: "DFM",
     division: "f",
-    color: "#2563eb",
+    color: "#0284c7", // DFM Electric Blue
     order: 8,
     players: ["itazan", "nauman", "takeuchi", "keib"],
   },
@@ -113,7 +113,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "ナゴヤ エヌティーピー オージャ",
     shortName: "OJA",
     division: "f",
-    color: "#eab308",
+    color: "#0f172a", // OJA Deep NTP Navy
     order: 9,
     players: ["seiya", "otani", "mocchi", "raoyamu"],
   },
@@ -123,7 +123,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "リジェクト",
     shortName: "RC",
     division: "f",
-    color: "#a855f7",
+    color: "#dc2626", // REJECT Red & White
     order: 10,
     players: ["daigo", "fuudo", "yas", "hinao"],
   },
@@ -133,7 +133,7 @@ export const TEAM_META_MAP: Record<string, TeamMeta> = {
     nameJp: "リドルオーダー",
     shortName: "RID",
     division: "f",
-    color: "#14b8a6",
+    color: "#facc15", // RIDDLE Warning Yellow & Black
     order: 11,
     players: ["jr", "takagi", "adelie", "hikaru"],
   },

@@ -100,14 +100,14 @@ export function MatchPredictionModal({
     ? TEAM_META_MAP[currentSingleMatch.awayTeamKey]
     : null;
 
-  // ダウンロードファイル名の決定
+  // ダウンロードファイル名の決定 (SFL公式順: AWAY vs HOME)
   const getDownloadFileName = () => {
     if (selectedMatchMode === "all" || !currentSingleMatch) {
       return `SFL2026_Div${division.toUpperCase()}_Sec${selectedSection}_All_Predictions.png`;
     }
-    const hName = currentHomeMeta?.shortName || currentSingleMatch.homeTeamKey;
     const aName = currentAwayMeta?.shortName || currentSingleMatch.awayTeamKey;
-    return `SFL2026_Div${division.toUpperCase()}_Sec${selectedSection}_MATCH${currentSingleMatch.matchIndex}_${hName}_vs_${aName}.png`;
+    const hName = currentHomeMeta?.shortName || currentSingleMatch.homeTeamKey;
+    return `SFL2026_Div${division.toUpperCase()}_Sec${selectedSection}_MATCH${currentSingleMatch.matchIndex}_${aName}_vs_${hName}.png`;
   };
 
   const handleDownloadImage = async () => {
@@ -163,17 +163,17 @@ export function MatchPredictionModal({
     }
   };
 
-  // Xシェア文面の生成
+  // Xシェア文面の生成 (SFL公式順: AWAY vs HOME)
   let tweetText = "";
   if (selectedMatchMode === "all" || !currentSingleMatch) {
     tweetText = `【SFL 2026 Div.${division.toUpperCase()} 第${selectedSection}節 予想】\n次節全カードのスコア予想を作成しました！\nこの予想による順位表・プレーオフ進出条件シミュレーションはこちら👇`;
   } else {
-    const hName = currentHomeMeta?.shortName || currentSingleMatch.homeTeamKey;
     const aName = currentAwayMeta?.shortName || currentSingleMatch.awayTeamKey;
+    const hName = currentHomeMeta?.shortName || currentSingleMatch.homeTeamKey;
     const scoreStr = currentSingleMatch.isFilled
-      ? `（予想スコア: ${hName} ${currentSingleMatch.homeScore} - ${currentSingleMatch.awayScore} ${aName}）`
+      ? `（予想スコア: ${aName} ${currentSingleMatch.awayScore} - ${currentSingleMatch.homeScore} ${hName}）`
       : "";
-    tweetText = `【SFL 2026 Div.${division.toUpperCase()} 第${selectedSection}節 MATCH ${currentSingleMatch.matchIndex}】\n${hName} vs ${aName} の対戦スコア予想カードを作成しました！${scoreStr}\n順位表・突破条件シミュレーションはこちら👇`;
+    tweetText = `【SFL 2026 Div.${division.toUpperCase()} 第${selectedSection}節 MATCH ${currentSingleMatch.matchIndex}】\n${aName}(AWAY) vs ${hName}(HOME) の対戦スコア予想カードを作成しました！${scoreStr}\n順位表・突破条件シミュレーションはこちら👇`;
   }
 
   const tweetIntentUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -230,7 +230,7 @@ export function MatchPredictionModal({
               次節スコア予想カード出力 & Xシェア
             </h3>
             <p style={{ fontSize: "0.82rem", color: "var(--text-muted)" }}>
-              節全体のまとめ、または1マッチ単位での迫力ある対戦画面風カードを出力できます
+              SFL公式順（左: AWAY / 右: HOME）で迫力ある対戦画面風カードを出力できます
             </p>
           </div>
           <button
@@ -297,7 +297,7 @@ export function MatchPredictionModal({
           </div>
         </div>
 
-        {/* 出力対象の選択タブ（全試合まとめ / 各マッチ単体） */}
+        {/* 出力対象の選択タブ (SFL公式順: AWAY vs HOME) */}
         <div
           style={{
             display: "flex",
@@ -357,8 +357,8 @@ export function MatchPredictionModal({
               >
                 <span>MATCH {p.matchIndex}:</span>
                 <span style={{ fontWeight: 900 }}>
-                  {hMeta?.shortName || p.homeTeamKey.toUpperCase()} vs{" "}
-                  {aMeta?.shortName || p.awayTeamKey.toUpperCase()}
+                  {aMeta?.shortName || p.awayTeamKey.toUpperCase()} vs{" "}
+                  {hMeta?.shortName || p.homeTeamKey.toUpperCase()}
                 </span>
               </button>
             );
@@ -443,13 +443,13 @@ export function MatchPredictionModal({
                 </div>
               </div>
 
-              {/* 対戦カード一覧 */}
+              {/* 対戦カード一覧 (SFL公式準拠: 左側 AWAY / 右側 HOME) */}
               <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
                 {predictions.map((p) => {
                   const homeMeta = TEAM_META_MAP[p.homeTeamKey];
                   const awayMeta = TEAM_META_MAP[p.awayTeamKey];
-                  const homeBadgeColor = homeMeta?.color || "#3b82f6";
-                  const awayBadgeColor = awayMeta?.color || "#ef4444";
+                  const homeBadgeColor = homeMeta?.color || "#ea580c";
+                  const awayBadgeColor = awayMeta?.color || "#475569";
                   return (
                     <div
                       key={p.matchId}
@@ -463,7 +463,7 @@ export function MatchPredictionModal({
                         padding: "0.75rem 1rem",
                       }}
                     >
-                      {/* HOME チーム */}
+                      {/* AWAY チーム (左側・先手) */}
                       <div
                         style={{
                           width: "38%",
@@ -472,22 +472,22 @@ export function MatchPredictionModal({
                           gap: "0.55rem",
                         }}
                       >
-                        {/* 権利侵害のない公式カラーバッジ */}
                         <span
                           style={{
-                            background: homeBadgeColor,
-                            color: getContrastColor(homeBadgeColor),
+                            background: awayBadgeColor,
+                            color: getContrastColor(awayBadgeColor),
                             fontSize: "0.75rem",
                             fontWeight: 900,
                             padding: "0.25rem 0.55rem",
                             borderRadius: "5px",
                             letterSpacing: "0.04em",
-                            minWidth: "46px",
+                            minWidth: "48px",
                             textAlign: "center",
-                            boxShadow: `0 0 10px ${homeBadgeColor}50`,
+                            boxShadow: `0 0 10px ${awayBadgeColor}50`,
+                            border: "1px solid rgba(255, 255, 255, 0.2)",
                           }}
                         >
-                          {homeMeta?.shortName || p.homeTeamKey.toUpperCase()}
+                          {awayMeta?.shortName || p.awayTeamKey.toUpperCase()}
                         </span>
                         <div style={{ overflow: "hidden" }}>
                           <div
@@ -500,7 +500,7 @@ export function MatchPredictionModal({
                               textOverflow: "ellipsis",
                             }}
                           >
-                            {homeMeta?.name}
+                            {awayMeta?.name}
                           </div>
                           <div
                             style={{
@@ -508,12 +508,12 @@ export function MatchPredictionModal({
                               color: "#94a3b8",
                             }}
                           >
-                            [HOME]
+                            [AWAY]
                           </div>
                         </div>
                       </div>
 
-                      {/* スコア */}
+                      {/* スコア (AWAY - HOME) */}
                       <div
                         style={{
                           width: "24%",
@@ -531,7 +531,7 @@ export function MatchPredictionModal({
                                 textShadow: "0 0 12px rgba(253, 224, 71, 0.35)",
                               }}
                             >
-                              {p.homeScore} - {p.awayScore}
+                              {p.awayScore} - {p.homeScore}
                             </div>
                             {p.outcomeLabel && (
                               <div
@@ -561,7 +561,7 @@ export function MatchPredictionModal({
                         )}
                       </div>
 
-                      {/* AWAY チーム */}
+                      {/* HOME チーム (右側・迎え撃つ側) */}
                       <div
                         style={{
                           width: "38%",
@@ -582,7 +582,7 @@ export function MatchPredictionModal({
                               textOverflow: "ellipsis",
                             }}
                           >
-                            {awayMeta?.name}
+                            {homeMeta?.name}
                           </div>
                           <div
                             style={{
@@ -590,25 +590,25 @@ export function MatchPredictionModal({
                               color: "#94a3b8",
                             }}
                           >
-                            [AWAY]
+                            [HOME]
                           </div>
                         </div>
-                        {/* 権利侵害のない公式カラーバッジ */}
                         <span
                           style={{
-                            background: awayBadgeColor,
-                            color: getContrastColor(awayBadgeColor),
+                            background: homeBadgeColor,
+                            color: getContrastColor(homeBadgeColor),
                             fontSize: "0.75rem",
                             fontWeight: 900,
                             padding: "0.25rem 0.55rem",
                             borderRadius: "5px",
                             letterSpacing: "0.04em",
-                            minWidth: "46px",
+                            minWidth: "48px",
                             textAlign: "center",
-                            boxShadow: `0 0 10px ${awayBadgeColor}50`,
+                            boxShadow: `0 0 10px ${homeBadgeColor}50`,
+                            border: "1px solid rgba(255, 255, 255, 0.2)",
                           }}
                         >
-                          {awayMeta?.shortName || p.awayTeamKey.toUpperCase()}
+                          {homeMeta?.shortName || p.homeTeamKey.toUpperCase()}
                         </span>
                       </div>
                     </div>
@@ -617,7 +617,7 @@ export function MatchPredictionModal({
               </div>
             </>
           ) : (
-            /* ===== パターンB: 単一マッチ（迫力のVS対戦画面スタイル） ===== */
+            /* ===== パターンB: 単一マッチ（SFL公式順: 左側 AWAY / 右側 HOME） ===== */
             currentSingleMatch && (
               <div>
                 {/* マッチヘッダー */}
@@ -669,7 +669,7 @@ export function MatchPredictionModal({
                   </div>
                 </div>
 
-                {/* VS 対戦グリッド */}
+                {/* VS 対戦グリッド (左: AWAY / 右: HOME) */}
                 <div
                   style={{
                     display: "grid",
@@ -679,7 +679,7 @@ export function MatchPredictionModal({
                     padding: "1rem 0",
                   }}
                 >
-                  {/* HOME 側 */}
+                  {/* AWAY 側 (左側) */}
                   <div
                     style={{
                       display: "flex",
@@ -691,7 +691,7 @@ export function MatchPredictionModal({
                       border: "1px solid rgba(255, 255, 255, 0.08)",
                       borderRadius: "12px",
                       padding: "1.1rem 0.8rem",
-                      borderTop: `4px solid ${currentHomeMeta?.color || "#3b82f6"}`,
+                      borderTop: `4px solid ${currentAwayMeta?.color || "#475569"}`,
                     }}
                   >
                     <div
@@ -702,24 +702,24 @@ export function MatchPredictionModal({
                         letterSpacing: "0.08em",
                       }}
                     >
-                      [HOME TEAM]
+                      [AWAY TEAM]
                     </div>
                     {/* 特大チームバッジ */}
                     <div
                       style={{
-                        background: currentHomeMeta?.color || "#3b82f6",
-                        color: getContrastColor(currentHomeMeta?.color),
+                        background: currentAwayMeta?.color || "#475569",
+                        color: getContrastColor(currentAwayMeta?.color),
                         fontWeight: 900,
                         fontSize: "1.45rem",
                         letterSpacing: "0.05em",
                         padding: "0.45rem 1.25rem",
                         borderRadius: "8px",
-                        boxShadow: `0 0 20px ${currentHomeMeta?.color}60`,
+                        boxShadow: `0 0 20px ${currentAwayMeta?.color}60`,
                         border: "1px solid rgba(255, 255, 255, 0.25)",
                       }}
                     >
-                      {currentHomeMeta?.shortName ||
-                        currentSingleMatch.homeTeamKey.toUpperCase()}
+                      {currentAwayMeta?.shortName ||
+                        currentSingleMatch.awayTeamKey.toUpperCase()}
                     </div>
                     <div
                       style={{
@@ -729,7 +729,7 @@ export function MatchPredictionModal({
                         marginTop: "0.2rem",
                       }}
                     >
-                      {currentHomeMeta?.name}
+                      {currentAwayMeta?.name}
                     </div>
                     {/* 獲得予想ポイント */}
                     <div
@@ -738,17 +738,17 @@ export function MatchPredictionModal({
                         fontSize: "1.8rem",
                         fontWeight: 900,
                         color:
-                          currentSingleMatch.homeScore > currentSingleMatch.awayScore
+                          currentSingleMatch.awayScore > currentSingleMatch.homeScore
                             ? "#4ade80"
                             : "#ffffff",
                         textShadow:
-                          currentSingleMatch.homeScore > currentSingleMatch.awayScore
+                          currentSingleMatch.awayScore > currentSingleMatch.homeScore
                             ? "0 0 16px rgba(74, 222, 128, 0.4)"
                             : "none",
                       }}
                     >
                       {currentSingleMatch.isFilled
-                        ? `${currentSingleMatch.homeScore} pt`
+                        ? `${currentSingleMatch.awayScore} pt`
                         : "- pt"}
                     </div>
                   </div>
@@ -793,7 +793,7 @@ export function MatchPredictionModal({
                     )}
                   </div>
 
-                  {/* AWAY 側 */}
+                  {/* HOME 側 (右側) */}
                   <div
                     style={{
                       display: "flex",
@@ -805,7 +805,7 @@ export function MatchPredictionModal({
                       border: "1px solid rgba(255, 255, 255, 0.08)",
                       borderRadius: "12px",
                       padding: "1.1rem 0.8rem",
-                      borderTop: `4px solid ${currentAwayMeta?.color || "#ef4444"}`,
+                      borderTop: `4px solid ${currentHomeMeta?.color || "#ea580c"}`,
                     }}
                   >
                     <div
@@ -816,24 +816,24 @@ export function MatchPredictionModal({
                         letterSpacing: "0.08em",
                       }}
                     >
-                      [AWAY TEAM]
+                      [HOME TEAM]
                     </div>
                     {/* 特大チームバッジ */}
                     <div
                       style={{
-                        background: currentAwayMeta?.color || "#ef4444",
-                        color: getContrastColor(currentAwayMeta?.color),
+                        background: currentHomeMeta?.color || "#ea580c",
+                        color: getContrastColor(currentHomeMeta?.color),
                         fontWeight: 900,
                         fontSize: "1.45rem",
                         letterSpacing: "0.05em",
                         padding: "0.45rem 1.25rem",
                         borderRadius: "8px",
-                        boxShadow: `0 0 20px ${currentAwayMeta?.color}60`,
+                        boxShadow: `0 0 20px ${currentHomeMeta?.color}60`,
                         border: "1px solid rgba(255, 255, 255, 0.25)",
                       }}
                     >
-                      {currentAwayMeta?.shortName ||
-                        currentSingleMatch.awayTeamKey.toUpperCase()}
+                      {currentHomeMeta?.shortName ||
+                        currentSingleMatch.homeTeamKey.toUpperCase()}
                     </div>
                     <div
                       style={{
@@ -843,7 +843,7 @@ export function MatchPredictionModal({
                         marginTop: "0.2rem",
                       }}
                     >
-                      {currentAwayMeta?.name}
+                      {currentHomeMeta?.name}
                     </div>
                     {/* 獲得予想ポイント */}
                     <div
@@ -852,17 +852,17 @@ export function MatchPredictionModal({
                         fontSize: "1.8rem",
                         fontWeight: 900,
                         color:
-                          currentSingleMatch.awayScore > currentSingleMatch.homeScore
+                          currentSingleMatch.homeScore > currentSingleMatch.awayScore
                             ? "#4ade80"
                             : "#ffffff",
                         textShadow:
-                          currentSingleMatch.awayScore > currentSingleMatch.homeScore
+                          currentSingleMatch.homeScore > currentSingleMatch.awayScore
                             ? "0 0 16px rgba(74, 222, 128, 0.4)"
                             : "none",
                       }}
                     >
                       {currentSingleMatch.isFilled
-                        ? `${currentSingleMatch.awayScore} pt`
+                        ? `${currentSingleMatch.homeScore} pt`
                         : "- pt"}
                     </div>
                   </div>

@@ -9,8 +9,6 @@ import { VsCharDetailModal } from "./VsCharDetailModal";
 interface PlayerDetailViewProps {
   selectedPlayer: PlayerEncyclopediaEntry;
   players: PlayerEncyclopediaEntry[];
-  matchupMode: "tournament" | "sfl2026";
-  setMatchupMode: (mode: "tournament" | "sfl2026") => void;
   onSelectPlayer: (playerKey: string) => void;
   onBackToList: () => void;
 }
@@ -18,8 +16,6 @@ interface PlayerDetailViewProps {
 export function PlayerDetailView({
   selectedPlayer,
   players,
-  matchupMode,
-  setMatchupMode,
   onSelectPlayer,
   onBackToList,
 }: PlayerDetailViewProps) {
@@ -27,20 +23,9 @@ export function PlayerDetailView({
   const [selectedMatchupModal, setSelectedMatchupModal] =
     useState<VsCharDetail | null>(null);
 
-  const strongestList =
-    matchupMode === "tournament"
-      ? selectedPlayer.tournamentStrongestMatchups
-      : selectedPlayer.strongestMatchups;
-
-  const closestList =
-    matchupMode === "tournament"
-      ? selectedPlayer.tournamentClosestMatchups
-      : selectedPlayer.closestMatchups;
-
-  const fullCharList =
-    matchupMode === "tournament"
-      ? selectedPlayer.tournamentVsCharacters
-      : selectedPlayer.vsCharacters;
+  const strongestList = selectedPlayer.strongestMatchups;
+  const closestList = selectedPlayer.closestMatchups;
+  const fullCharList = selectedPlayer.vsCharacters;
 
   return (
     <div>
@@ -71,104 +56,14 @@ export function PlayerDetailView({
             marginBottom: "1.25rem",
           }}
         >
-          {/* モード切替タブ ＆ 全28キャラ一覧表示トグル */}
+          {/* 全28キャラ一覧表示トグル */}
           <div
             style={{
               display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "0.75rem",
+              justifyContent: "flex-end",
               marginBottom: "0.85rem",
-              padding: "0.6rem 0.85rem",
-              background: "var(--bg-subtle)",
-              borderRadius: "10px",
-              border: "1px solid var(--border-color)",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                flexWrap: "wrap",
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "0.82rem",
-                  fontWeight: 800,
-                  color: "var(--text-muted)",
-                }}
-              >
-                集計対象モード:
-              </span>
-              <div
-                style={{
-                  display: "inline-flex",
-                  background: "#cbd5e1",
-                  padding: "2px",
-                  borderRadius: "8px",
-                  gap: "2px",
-                }}
-              >
-                <button
-                  type="button"
-                  onClick={() => setMatchupMode("tournament")}
-                  style={{
-                    padding: "0.4rem 0.85rem",
-                    borderRadius: "6px",
-                    border: "none",
-                    fontSize: "0.84rem",
-                    fontWeight: 800,
-                    cursor: "pointer",
-                    background:
-                      matchupMode === "tournament"
-                        ? "var(--primary)"
-                        : "transparent",
-                    color:
-                      matchupMode === "tournament"
-                        ? "#ffffff"
-                        : "var(--text-main)",
-                    boxShadow:
-                      matchupMode === "tournament"
-                        ? "0 1px 3px rgba(0,0,0,0.18)"
-                        : "none",
-                    transition: "all 0.15s ease",
-                  }}
-                >
-                  ★ SF6公式・大型大会 通算実戦
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setMatchupMode("sfl2026")}
-                  style={{
-                    padding: "0.4rem 0.85rem",
-                    borderRadius: "6px",
-                    border: "none",
-                    fontSize: "0.84rem",
-                    fontWeight: 800,
-                    cursor: "pointer",
-                    background:
-                      matchupMode === "sfl2026"
-                        ? "var(--primary)"
-                        : "transparent",
-                    color:
-                      matchupMode === "sfl2026"
-                        ? "#ffffff"
-                        : "var(--text-main)",
-                    boxShadow:
-                      matchupMode === "sfl2026"
-                        ? "0 1px 3px rgba(0,0,0,0.18)"
-                        : "none",
-                    transition: "all 0.15s ease",
-                  }}
-                >
-                  今期 SFL 2026 実戦のみ
-                </button>
-              </div>
-            </div>
-
             <button
               type="button"
               onClick={() => setShowAllVsChars((prev) => !prev)}
@@ -183,45 +78,11 @@ export function PlayerDetailView({
 
           {/* セクション見出し & 説明 */}
           <div style={{ marginBottom: "1rem" }}>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: "0.5rem",
-                marginBottom: "0.25rem",
-              }}
-            >
-              <h3 style={{ fontSize: "1.1rem", fontWeight: 800 }}>
-                {matchupMode === "tournament"
-                  ? "対キャラクター相性データ（★ SF6公式・大型大会 通算実戦）"
-                  : "対キャラクター相性データ（SFL 2026 今シーズンの実戦戦績のみ）"}
-              </h3>
-              {matchupMode === "tournament" && (
-                <div
-                  style={{
-                    background: "rgba(37, 99, 235, 0.08)",
-                    border: "1px solid rgba(37, 99, 235, 0.25)",
-                    padding: "0.25rem 0.65rem",
-                    borderRadius: "6px",
-                    fontSize: "0.78rem",
-                    fontWeight: 700,
-                    color: "var(--primary)",
-                  }}
-                >
-                  公式大会通算: 計{selectedPlayer.tournamentSummary.totalMatches}戦{" "}
-                  {selectedPlayer.tournamentSummary.won}勝
-                  {selectedPlayer.tournamentSummary.lost}敗（勝率{" "}
-                  {selectedPlayer.tournamentSummary.winRate.toFixed(1)}% /{" "}
-                  {selectedPlayer.tournamentSummary.tournamentsCount}大会）
-                </div>
-              )}
-            </div>
+            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, marginBottom: "0.25rem" }}>
+              対キャラクター相性データ（SFL 2026 今シーズンの実戦戦績のみ）
+            </h3>
             <p style={{ fontSize: "0.82rem", color: "var(--text-muted)" }}>
-              {matchupMode === "tournament"
-                ? "SFL 2026 Pro-JP 公式戦の実在する対戦記録のみを集計した相手キャラクター別戦績です。架空の推定生成は行わず、公式対戦ログが存在するカードのみを表示しています（未対戦キャラクターは0戦表示）。各カードから対戦内訳を参照できます。"
-                : "今シーズン（SFL 2026）公式戦の実戦対戦ログのみから算出した相手キャラクター別のバトル勝率および対戦組み合わせ内訳です。各カードから計算根拠となった対戦カードを参照できます。"}
+              今シーズン（SFL 2026）公式戦の実戦対戦ログのみから算出した相手キャラクター別のバトル勝率および対戦組み合わせ内訳です。各カードから計算根拠となった対戦カードを参照できます。
             </p>
           </div>
 
@@ -263,7 +124,7 @@ export function PlayerDetailView({
                     <VsCharCard
                       key={m.charKey}
                       matchup={m}
-                      matchupMode={matchupMode}
+                      matchupMode="sfl2026"
                       index={idx}
                       highlightType="strong"
                       onClick={(item) => setSelectedMatchupModal(item)}
@@ -280,9 +141,7 @@ export function PlayerDetailView({
                       textAlign: "center",
                     }}
                   >
-                    {matchupMode === "tournament"
-                      ? "公式大会での得意対戦データはありません"
-                      : "今期SFL本戦での勝ち越し対戦データはまだありません"}
+                    今期SFL本戦での勝ち越し対戦データはまだありません
                   </div>
                 )}
               </div>
@@ -319,7 +178,7 @@ export function PlayerDetailView({
                     <VsCharCard
                       key={m.charKey}
                       matchup={m}
-                      matchupMode={matchupMode}
+                      matchupMode="sfl2026"
                       index={idx}
                       highlightType="close"
                       onClick={(item) => setSelectedMatchupModal(item)}
@@ -336,9 +195,7 @@ export function PlayerDetailView({
                       textAlign: "center",
                     }}
                   >
-                    {matchupMode === "tournament"
-                      ? "公式大会での負け越し対戦データはありません（好調）"
-                      : "今期SFL本戦での負け越し・苦戦対戦データはありません（好調）"}
+                    今期SFL本戦での負け越し・苦戦対戦データはありません（好調）
                   </div>
                 )}
               </div>
@@ -372,9 +229,7 @@ export function PlayerDetailView({
                     fontWeight: 800,
                   }}
                 >
-                  {matchupMode === "tournament"
-                    ? "全28キャラクター SF6公式・大型大会 通算戦績＆対戦履歴内訳"
-                    : "全28キャラクター 今シーズンSFL対戦戦績・組み合わせ内訳"}
+                  全28キャラクター 今シーズンSFL対戦戦績・組み合わせ内訳
                 </div>
                 <div
                   style={{
@@ -397,7 +252,7 @@ export function PlayerDetailView({
                   <VsCharCard
                     key={vc.charKey}
                     matchup={vc}
-                    matchupMode={matchupMode}
+                    matchupMode="sfl2026"
                     compact
                     onClick={(item) => setSelectedMatchupModal(item)}
                   />
@@ -438,7 +293,7 @@ export function PlayerDetailView({
         isOpen={selectedMatchupModal !== null}
         onClose={() => setSelectedMatchupModal(null)}
         matchup={selectedMatchupModal}
-        matchupMode={matchupMode}
+        matchupMode="sfl2026"
         playerName={selectedPlayer.name}
       />
     </div>

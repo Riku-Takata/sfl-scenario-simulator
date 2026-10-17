@@ -3,14 +3,12 @@ import type { PlayerEncyclopediaEntry } from "@/lib/player-encyclopedia";
 
 interface PlayerCardProps {
   player: PlayerEncyclopediaEntry;
-  matchupMode: "tournament" | "sfl2026";
   vsCharFilter: string;
   onSelect: (playerKey: string) => void;
 }
 
 export function PlayerCard({
   player: p,
-  matchupMode,
   vsCharFilter,
   onSelect,
 }: PlayerCardProps) {
@@ -166,30 +164,17 @@ export function PlayerCard({
       {vsTarget && (
         <div
           style={{
-            background:
-              matchupMode === "tournament"
-                ? vsTarget.playedInTournament
-                  ? (vsTarget.tournamentMatchWinRate ?? 0) >= 50
-                    ? "var(--success-bg)"
-                    : "var(--warning-bg)"
-                  : "var(--bg-subtle)"
-                : vsTarget.playedInSfl
-                  ? (vsTarget.sflBattleWinRate ?? 0) >= 50
-                    ? "var(--success-bg)"
-                    : "var(--warning-bg)"
-                  : "var(--bg-subtle)",
+            background: vsTarget.playedInSfl
+              ? (vsTarget.sflBattleWinRate ?? 0) >= 50
+                ? "var(--success-bg)"
+                : "var(--warning-bg)"
+              : "var(--bg-subtle)",
             border: `1px solid ${
-              matchupMode === "tournament"
-                ? vsTarget.playedInTournament
-                  ? (vsTarget.tournamentMatchWinRate ?? 0) >= 50
-                    ? "var(--success-border)"
-                    : "var(--warning-border)"
-                  : "var(--border-color)"
-                : vsTarget.playedInSfl
-                  ? (vsTarget.sflBattleWinRate ?? 0) >= 50
-                    ? "var(--success-border)"
-                    : "var(--warning-border)"
-                  : "var(--border-color)"
+              vsTarget.playedInSfl
+                ? (vsTarget.sflBattleWinRate ?? 0) >= 50
+                  ? "var(--success-border)"
+                  : "var(--warning-border)"
+                : "var(--border-color)"
             }`,
             borderRadius: "6px",
             padding: "0.45rem 0.65rem",
@@ -206,26 +191,7 @@ export function PlayerCard({
           >
             <span>vs {vsTarget.charName} 相性:</span>
             <span>
-              {matchupMode === "tournament" ? (
-                vsTarget.playedInTournament ? (
-                  <strong
-                    style={{
-                      color:
-                        (vsTarget.tournamentMatchWinRate ?? 0) >= 50
-                          ? "var(--success)"
-                          : "var(--danger)",
-                    }}
-                  >
-                    勝率 {vsTarget.tournamentMatchWinRate?.toFixed(1)}% (
-                    {vsTarget.tournamentMatchesWon}勝
-                    {vsTarget.tournamentMatchesLost}敗)
-                  </strong>
-                ) : (
-                  <span style={{ color: "var(--text-muted)" }}>
-                    大会未対戦 (0戦)
-                  </span>
-                )
-              ) : vsTarget.playedInSfl ? (
+              {vsTarget.playedInSfl ? (
                 <strong
                   style={{
                     color:
@@ -299,21 +265,13 @@ export function PlayerCard({
         }}
       >
         <span>
-          {matchupMode === "tournament" ? "大会得意: " : "今期得意: "}
-          {(matchupMode === "tournament"
-            ? p.tournamentStrongestMatchups
-            : p.strongestMatchups
-          ).length > 0
-            ? (matchupMode === "tournament"
-                ? p.tournamentStrongestMatchups
-                : p.strongestMatchups
-              )
+          得意相性:{" "}
+          {p.strongestMatchups.length > 0
+            ? p.strongestMatchups
                 .slice(0, 2)
                 .map((m) => m.charName)
                 .join("・")
-            : matchupMode === "tournament"
-              ? "大会未対戦"
-              : "今期未対戦"}
+            : "今期未対戦"}
         </span>
         <span style={{ color: "var(--primary)", fontWeight: 800 }}>
           この選手を詳しく見る →
