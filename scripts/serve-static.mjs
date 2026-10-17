@@ -18,25 +18,75 @@ const MIME_TYPES = {
   ".ico": "image/x-icon",
 };
 
-const server = http.createServer((req, res) => {
-  const urlObj = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
-  let pathname = decodeURIComponent(urlObj.pathname);
+const SECURITY_HEADERS = {
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "DENY",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy":
+    "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  "Content-Security-Policy":
+    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';",
+};
 
-  if (pathname === "/api/health" || pathname === "/api/health.json") {
-    const healthFile = path.join(DIST_DIR, "api", "health.json");
-    if (fs.existsSync(healthFile)) {
-      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-      res.end(fs.readFileSync(healthFile));
-      return;
-    }
-    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-    res.end(JSON.stringify({ status: "ok", service: "sfl-scenario-simulator" }));
+const server = http.createServer((req, res) => {
+  // 1. 静的配信専用のため GET / HEAD 以外のメソッド（POST/PUT/DELETE等）は即座に拒否
+  if (req.method !== "GET" && req.method !== "HEAD") {
+    res.writeHead(405, {
+      ...SECURITY_HEADERS,
+      "Content-Type": "text/plain; charset=utf-8",
+      Allow: "GET, HEAD",
+    });
+    res.end("Method Not Allowed");
     return;
   }
 
-  let filePath = path.join(DIST_DIR, pathname);
-  if (!filePath.startsWith(DIST_DIR)) {
-    res.writeHead(403);
+  let pathname = "/";
+  try {
+    const urlObj = new URL(req.url || "/", "http://localhost");
+    pathname = decodeURIComponent(urlObj.pathname);
+  } catch {
+    res.writeHead(400, {
+      ...SECURITY_HEADERS,
+      "Content-Type": "text/plain; charset=utf-8",
+    });
+    res.end("Bad Request");
+    return;
+  }
+
+  if (pathname.includes("\0")) {
+    res.writeHead(400, {
+      ...SECURITY_HEADERS,
+      "Content-Type": "text/plain; charset=utf-8",
+    });
+    res.end("Bad Request");
+    return;
+  }
+
+  if (pathname === "/api/health" || pathname === "/api/health.json") {
+    const healthFile = path.join(DIST_DIR, "api", "health.json");
+    res.writeHead(200, {
+      ...SECURITY_HEADERS,
+      "Content-Type": "application/json; charset=utf-8",
+    });
+    if (fs.existsSync(healthFile)) {
+      res.end(fs.readFileSync(healthFile));
+    } else {
+      res.end(
+        JSON.stringify({ status: "ok", service: "sfl-scenario-simulator" })
+      );
+    }
+    return;
+  }
+
+  // 2. パストラバーサル防止（正規化後のパスが DIST_DIR 配下であることを厳密検証）
+  let filePath = path.resolve(DIST_DIR, `.${pathname}`);
+  const isInsideDist =
+    filePath === DIST_DIR || filePath.startsWith(`${DIST_DIR}${path.sep}`);
+  if (!isInsideDist) {
+    res.writeHead(403, {
+      ...SECURITY_HEADERS,
+      "Content-Type": "text/plain; charset=utf-8",
+    });
     res.end("Forbidden");
     return;
   }
@@ -54,7 +104,10 @@ const server = http.createServer((req, res) => {
 
   if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
     const notFoundPage = path.join(DIST_DIR, "404.html");
-    res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+    res.writeHead(404, {
+      ...SECURITY_HEADERS,
+      "Content-Type": "text/html; charset=utf-8",
+    });
     res.end(
       fs.existsSync(notFoundPage) ? fs.readFileSync(notFoundPage) : "Not Found"
     );
@@ -63,10 +116,19 @@ const server = http.createServer((req, res) => {
 
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || "application/octet-stream";
-  res.writeHead(200, { "Content-Type": contentType });
+  res.writeHead(200, {
+    ...SECURITY_HEADERS,
+    "Content-Type": contentType,
+  });
+  if (req.method === "HEAD") {
+    res.end();
+    return;
+  }
   fs.createReadStream(filePath).pipe(res);
 });
 
 server.listen(PORT, HOST, () => {
-  console.log(`SFL 2026 Astro Static Server listening on http://${HOST}:${PORT}`);
+  console.log(
+    `SFL 2026 Astro Static Server listening on http://${HOST}:${PORT}`
+  );
 });

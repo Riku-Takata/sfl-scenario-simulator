@@ -89,7 +89,7 @@ export default function InteractiveSimulator({
     [matchesData.matches, division]
   );
 
-  // URLクエリパラメータ (?div=s&team=fav&preset=route1 または ?div=s&sim=...) の初期反映
+  // URLクエリパラメータ (?div=s&team=fav&preset=route1 または ?div=s&sim=...) の安全な初期反映（ホワイトリスト＆プロトタイプ汚染対策済）
   useEffect(() => {
     if (typeof window === "undefined") return;
     const searchParams = new URLSearchParams(window.location.search);
@@ -101,16 +101,28 @@ export default function InteractiveSimulator({
     const qTeam = searchParams.get("team");
     const qPreset = searchParams.get("preset") || "route1";
 
-    if (qSim) {
-      const nextMap: Record<string, ScorePatternId> = {};
-      for (const pair of qSim.split(",")) {
+    const validMatchIds = new Set(
+      matchesData.matches.filter((m) => !m.played).map((m) => m.id)
+    );
+
+    if (qSim && qSim.length <= 1500) {
+      const nextMap: Record<string, ScorePatternId> = Object.create(null);
+      for (const pair of qSim.split(",").slice(0, 60)) {
         const [mId, pat] = pair.split(":");
-        if (mId && pat && pat in SCORE_OUTCOME_MAP) {
+        if (
+          mId &&
+          pat &&
+          validMatchIds.has(mId) &&
+          Object.hasOwn(SCORE_OUTCOME_MAP, pat)
+        ) {
           nextMap[mId] = pat as ScorePatternId;
         }
       }
-      setCustomOutcomes(nextMap);
-    } else if (qTeam && scenariosData.teams[qTeam]) {
+      setCustomOutcomes({ ...nextMap });
+    } else if (
+      qTeam &&
+      Object.hasOwn(scenariosData.teams, qTeam)
+    ) {
       const tAnalysis = scenariosData.teams[qTeam];
       const routeObj =
         qPreset === "route2"
@@ -119,17 +131,19 @@ export default function InteractiveSimulator({
             ? tAnalysis.routes.route3Third
             : tAnalysis.routes.route1First;
 
-      const nextMap: Record<string, ScorePatternId> = {};
+      const nextMap: Record<string, ScorePatternId> = Object.create(null);
       for (const plan of routeObj.targetSchedule || []) {
-        nextMap[plan.matchId] = mapPlanToScorePattern(
-          plan.side,
-          plan.teamPointGain,
-          plan.opponentPointGain
-        );
+        if (validMatchIds.has(plan.matchId)) {
+          nextMap[plan.matchId] = mapPlanToScorePattern(
+            plan.side,
+            plan.teamPointGain,
+            plan.opponentPointGain
+          );
+        }
       }
-      setCustomOutcomes(nextMap);
+      setCustomOutcomes({ ...nextMap });
     }
-  }, [scenariosData.teams]);
+  }, [matchesData.matches, scenariosData.teams]);
 
   const baseStandings = standingsData.divisions[division];
   const baseRankMap = useMemo(
