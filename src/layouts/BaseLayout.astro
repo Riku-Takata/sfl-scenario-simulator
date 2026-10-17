@@ -1,7 +1,7 @@
 ---
 import "@/styles/globals.css";
 import Analytics from "@vercel/analytics/astro";
-import { DONATION_CONFIG } from "@/config/affiliates";
+import { DONATION_CONFIG } from "@/config/donation";
 
 interface Props {
   title?: string;
@@ -81,10 +81,8 @@ const isHome = !isSimulator && !isPlayers;
           </a>
           <span>・</span>
           <span>永続無料ファンツール</span>
-        </div>
         <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
-          ※当サイトは非公式のファンサイトであり、株式会社カプコン公式とは関係ありません。<br />
-          ※掲載されている一部リンクにはアフィリエイト広告（PR）が含まれており、適法に運営されています。
+          ※当サイトは非公式のファンサイトであり、株式会社カプコン公式とは関係ありません。
         </div>
       </div>
     </footer>

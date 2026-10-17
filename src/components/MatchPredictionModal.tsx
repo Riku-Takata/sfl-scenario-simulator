@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { toPng } from "html-to-image";
-import { DONATION_CONFIG } from "@/config/affiliates";
+import { DONATION_CONFIG } from "@/config/donation";
 import type { DivisionId, MatchRecord, ScorePatternId } from "@/lib/types";
 import { SCORE_OUTCOME_MAP, TEAM_META_MAP } from "@/lib/simulator";
 

@@ -42,7 +42,6 @@ import {
   mapPlanToScorePattern,
 } from "@/lib/simulation-code";
 import { MatchPredictionModal } from "./MatchPredictionModal";
-import { SupportAndAffiliateSection } from "./SupportAndAffiliateSection";
 
 export { decodeSimulationCode, encodeSimulationCode, generateOutcomesForTargetRank };
 
@@ -783,9 +782,6 @@ export default function InteractiveSimulator({
                 </strong>
               </div>
             </div>
-
-            {/* 収益化・支援 & 格ゲー・esportsアフィリエイト枠 */}
-            <SupportAndAffiliateSection />
           </div>
         </div>
       </div>
