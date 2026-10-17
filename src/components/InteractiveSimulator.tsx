@@ -41,6 +41,8 @@ import {
   HOME_WIN_PATTERNS,
   mapPlanToScorePattern,
 } from "@/lib/simulation-code";
+import { MatchPredictionModal } from "./MatchPredictionModal";
+import { SupportAndAffiliateSection } from "./SupportAndAffiliateSection";
 
 export { decodeSimulationCode, encodeSimulationCode, generateOutcomesForTargetRank };
 
@@ -57,6 +59,7 @@ export default function InteractiveSimulator({
   >({});
   const [copiedMessage, setCopiedMessage] = useState<string | null>(null);
   const [urlCopied, setUrlCopied] = useState<boolean>(false);
+  const [isPredictionModalOpen, setIsPredictionModalOpen] = useState<boolean>(false);
 
   const divTeams = useMemo(
     () =>
@@ -86,7 +89,7 @@ export default function InteractiveSimulator({
     const qDiv = searchParams.get("div");
 
     const targetDiv: DivisionId =
-      shortF !== null ? "f" : shortS !== null ? "s" : qDiv === "f" ? "f" : "s";
+      qDiv === "f" || shortF !== null ? "f" : "s";
     setDivision(targetDiv);
     setTargetTeam(targetDiv === "f" ? "varrel" : "fav");
 
@@ -98,7 +101,7 @@ export default function InteractiveSimulator({
           : a.matchNumber - b.matchNumber
       );
 
-    const shortCode = targetDiv === "f" ? shortF : shortS;
+    const shortCode = (targetDiv === "f" ? (shortF || shortS) : shortS) || "";
     if (shortCode && shortCode.length <= 40) {
       setCustomOutcomes(decodeSimulationCode(divUnplayed, shortCode));
       return;
@@ -180,15 +183,21 @@ export default function InteractiveSimulator({
     setTimeout(() => setCopiedMessage(null), 4000);
   };
 
-  const buildShareUrl = () => {
+  const buildShareUrl = (week?: number) => {
     const code = encodeSimulationCode(unplayedMatches, customOutcomes);
     const baseUrl =
       typeof window !== "undefined"
         ? `${window.location.origin}/simulator`
         : "/simulator";
-    return code
-      ? `${baseUrl}?${division}=${code}`
-      : `${baseUrl}?div=${division}`;
+    const params = new URLSearchParams();
+    params.set("div", division);
+    if (code) {
+      params.set("s", code);
+    }
+    if (week) {
+      params.set("w", String(week));
+    }
+    return `${baseUrl}?${params.toString()}`;
   };
 
   const handleCopyShareUrl = async () => {
@@ -405,6 +414,24 @@ export default function InteractiveSimulator({
                 入力済み: <strong>{filledCount} / {unplayedMatches.length}</strong> 試合
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                <button
+                  type="button"
+                  onClick={() => setIsPredictionModalOpen(true)}
+                  className="btn"
+                  style={{
+                    background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+                    color: "#fde047",
+                    border: "1px solid #334155",
+                    fontWeight: 800,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.4rem",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.12)",
+                  }}
+                >
+                  <span>📷</span>
+                  <span>次節予想カード画像を出力</span>
+                </button>
                 <button
                   type="button"
                   onClick={() => setCustomOutcomes({})}
@@ -756,9 +783,22 @@ export default function InteractiveSimulator({
                 </strong>
               </div>
             </div>
+
+            {/* 収益化・支援 & 格ゲー・esportsアフィリエイト枠 */}
+            <SupportAndAffiliateSection />
           </div>
         </div>
       </div>
+
+      {/* 次節予想カード画像生成 & Xシェア モーダル */}
+      <MatchPredictionModal
+        isOpen={isPredictionModalOpen}
+        onClose={() => setIsPredictionModalOpen(false)}
+        division={division}
+        allUnplayedMatches={unplayedMatches}
+        customOutcomes={customOutcomes}
+        shareUrl={buildShareUrl()}
+      />
     </div>
   );
 }
