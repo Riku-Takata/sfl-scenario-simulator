@@ -1,6 +1,7 @@
 ---
 import "@/styles/globals.css";
 import Analytics from "@vercel/analytics/astro";
+import { DONATION_CONFIG } from "@/config/affiliates";
 
 interface Props {
   title?: string;
@@ -45,6 +46,16 @@ const isHome = !isSimulator && !isPlayers;
           <a href="/players" class={`nav-btn ${isPlayers ? "active" : ""}`}>
             選手図鑑・相性分析
           </a>
+          <a
+            href={DONATION_CONFIG.bmcUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bmc-header-btn"
+            title="開発者を支援する (Buy Me a Coffee)"
+          >
+            <span>☕</span>
+            <span class="bmc-label">開発者を応援</span>
+          </a>
         </nav>
       </div>
     </header>
@@ -60,7 +71,7 @@ const isHome = !isSimulator && !isPlayers;
         </div>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin: 0.5rem 0;">
           <a
-            href="https://buymeacoffee.com/sfl_simulator"
+            href={DONATION_CONFIG.bmcUrl}
             target="_blank"
             rel="noopener noreferrer"
             style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;"

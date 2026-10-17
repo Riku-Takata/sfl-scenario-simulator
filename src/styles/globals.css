@@ -140,6 +140,40 @@ a {
   border-color: #bfdbfe;
 }
 
+.bmc-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  background: #FFDD00;
+  border: 1px solid #facc15;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-left: 0.25rem;
+}
+
+.bmc-header-btn:hover {
+  background: #ffe642;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  color: #000000;
+}
+
+@media (max-width: 640px) {
+  .bmc-header-btn .bmc-label {
+    display: none;
+  }
+  .bmc-header-btn {
+    padding: 0.45rem 0.65rem;
+    font-size: 1rem;
+  }
+}
+
 /* ============================================================================
    メインコンテナ・ページ見出し
    ============================================================================ */
