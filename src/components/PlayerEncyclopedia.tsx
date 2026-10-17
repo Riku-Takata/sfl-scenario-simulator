@@ -602,6 +602,114 @@ export default function PlayerEncyclopedia({ players }: Props) {
                   </div>
                 </div>
 
+                {/* SNS・配信チャンネル導線（カード上からもワンクリックで遷移可能） */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    marginBottom: "0.55rem",
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                  onKeyDown={(e) => e.stopPropagation()}
+                >
+                  {p.snsLinks.x && (
+                    <a
+                      href={p.snsLinks.x}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`${p.name}選手のX (旧Twitter)`}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.25rem",
+                        padding: "0.18rem 0.48rem",
+                        borderRadius: "6px",
+                        fontSize: "0.72rem",
+                        fontWeight: 800,
+                        background: "#0f172a",
+                        color: "#ffffff",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <span>𝕏</span>
+                      <span>X</span>
+                    </a>
+                  )}
+                  {p.snsLinks.youtube && (
+                    <a
+                      href={p.snsLinks.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`${p.name}選手のYouTubeチャンネル`}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.25rem",
+                        padding: "0.18rem 0.48rem",
+                        borderRadius: "6px",
+                        fontSize: "0.72rem",
+                        fontWeight: 800,
+                        background: "#fef2f2",
+                        border: "1px solid #fecaca",
+                        color: "#dc2626",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <span>▶</span>
+                      <span>YouTube</span>
+                    </a>
+                  )}
+                  {p.snsLinks.twitch && (
+                    <a
+                      href={p.snsLinks.twitch}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`${p.name}選手のTwitch配信チャンネル`}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.25rem",
+                        padding: "0.18rem 0.48rem",
+                        borderRadius: "6px",
+                        fontSize: "0.72rem",
+                        fontWeight: 800,
+                        background: "#f5f3ff",
+                        border: "1px solid #ddd6fe",
+                        color: "#7c3aed",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <span>📺</span>
+                      <span>Twitch</span>
+                    </a>
+                  )}
+                  {p.snsLinks.instagram && (
+                    <a
+                      href={p.snsLinks.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`${p.name}選手のInstagram`}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.25rem",
+                        padding: "0.18rem 0.48rem",
+                        borderRadius: "6px",
+                        fontSize: "0.72rem",
+                        fontWeight: 800,
+                        background: "#fdf2f8",
+                        border: "1px solid #fbcfe8",
+                        color: "#db2777",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <span>Instagram</span>
+                    </a>
+                  )}
+                </div>
+
                 <div
                   style={{
                     fontSize: "0.78rem",
@@ -667,6 +775,10 @@ export default function PlayerEncyclopedia({ players }: Props) {
       desc: `全28キャラ中 ${selectedPlayer.vsCharacters.filter((c) => c.estimatedWinRate >= 50).length}キャラに対して勝率50%以上`,
     },
   ];
+
+  const xHandle = selectedPlayer.snsLinks.x
+    ? `@${selectedPlayer.snsLinks.x.replace(/^https?:\/\/(www\.)?(x|twitter)\.com\//, "").split(/[/?#]/)[0]}`
+    : null;
 
   return (
     <div>
@@ -862,6 +974,146 @@ export default function PlayerEncyclopedia({ players }: Props) {
                   {tag}
                 </span>
               ))}
+            </div>
+
+            {/* 選手公式SNS・配信チャンネル・公式プロフィール導線 */}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                gap: "0.5rem",
+                marginTop: "0.85rem",
+                paddingTop: "0.75rem",
+                borderTop: "1px dashed var(--border-color)",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "0.78rem",
+                  fontWeight: 800,
+                  color: "var(--text-muted)",
+                  marginRight: "0.15rem",
+                }}
+              >
+                選手SNS・配信をフォローして応援:
+              </span>
+              {selectedPlayer.snsLinks.x && (
+                <a
+                  href={selectedPlayer.snsLinks.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    padding: "0.35rem 0.75rem",
+                    borderRadius: "8px",
+                    fontSize: "0.8rem",
+                    fontWeight: 800,
+                    background: "#0f172a",
+                    color: "#ffffff",
+                    textDecoration: "none",
+                    boxShadow: "var(--shadow-sm)",
+                  }}
+                >
+                  <span>𝕏</span>
+                  <span>{xHandle ? `X (${xHandle})` : "X (旧Twitter)"}</span>
+                  <span style={{ fontSize: "0.7rem", opacity: 0.8 }}>↗</span>
+                </a>
+              )}
+              {selectedPlayer.snsLinks.youtube && (
+                <a
+                  href={selectedPlayer.snsLinks.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    padding: "0.35rem 0.75rem",
+                    borderRadius: "8px",
+                    fontSize: "0.8rem",
+                    fontWeight: 800,
+                    background: "#fef2f2",
+                    border: "1px solid #fecaca",
+                    color: "#dc2626",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span>▶</span>
+                  <span>YouTube チャンネル</span>
+                  <span style={{ fontSize: "0.7rem", opacity: 0.8 }}>↗</span>
+                </a>
+              )}
+              {selectedPlayer.snsLinks.twitch && (
+                <a
+                  href={selectedPlayer.snsLinks.twitch}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    padding: "0.35rem 0.75rem",
+                    borderRadius: "8px",
+                    fontSize: "0.8rem",
+                    fontWeight: 800,
+                    background: "#f5f3ff",
+                    border: "1px solid #ddd6fe",
+                    color: "#7c3aed",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span>📺</span>
+                  <span>Twitch 配信</span>
+                  <span style={{ fontSize: "0.7rem", opacity: 0.8 }}>↗</span>
+                </a>
+              )}
+              {selectedPlayer.snsLinks.instagram && (
+                <a
+                  href={selectedPlayer.snsLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    padding: "0.35rem 0.75rem",
+                    borderRadius: "8px",
+                    fontSize: "0.8rem",
+                    fontWeight: 800,
+                    background: "#fdf2f8",
+                    border: "1px solid #fbcfe8",
+                    color: "#db2777",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span>Instagram</span>
+                  <span style={{ fontSize: "0.7rem", opacity: 0.8 }}>↗</span>
+                </a>
+              )}
+              <a
+                href={selectedPlayer.snsLinks.sflOfficial}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.35rem",
+                  padding: "0.35rem 0.75rem",
+                  borderRadius: "8px",
+                  fontSize: "0.8rem",
+                  fontWeight: 800,
+                  background: "var(--bg-subtle)",
+                  border: "1px solid var(--border-strong)",
+                  color: "var(--text-sub)",
+                  textDecoration: "none",
+                }}
+              >
+                <span>SFL公式選手ページ</span>
+                <span style={{ fontSize: "0.7rem", opacity: 0.8 }}>↗</span>
+              </a>
             </div>
           </div>
 
