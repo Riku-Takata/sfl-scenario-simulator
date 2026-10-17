@@ -4,21 +4,26 @@ import PlayerEncyclopedia from "@/components/PlayerEncyclopedia";
 import rawPlayerStats from "@/data/player-stats.json";
 import rawMatches from "@/data/matches.json";
 import rawCptMatchups from "@/data/cpt-matchups-top96.json";
+import rawSf6Tournaments from "@/data/sf6-tournament-matchups.json";
 import {
   CptMatchupsTop96DataSchema,
   MatchesDataSchema,
   PlayerStatsDataSchema,
+  Sf6TournamentMatchupsDataSchema,
 } from "@/lib/schema";
 import { buildPlayerEncyclopedia } from "@/lib/player-encyclopedia";
 
 const playerStatsData = PlayerStatsDataSchema.parse(rawPlayerStats);
 const matchesData = MatchesDataSchema.parse(rawMatches);
 const cptMatchupsData = CptMatchupsTop96DataSchema.parse(rawCptMatchups);
+const sf6TournamentData =
+  Sf6TournamentMatchupsDataSchema.parse(rawSf6Tournaments);
 
 const players = buildPlayerEncyclopedia(
   playerStatsData,
   matchesData,
-  cptMatchupsData
+  cptMatchupsData,
+  sf6TournamentData
 );
 ---
 

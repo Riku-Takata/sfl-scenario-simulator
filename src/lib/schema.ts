@@ -227,6 +227,35 @@ export const PlayerStatsDataSchema = z.object({
 });
 
 // ============================================================================
+// SF6 公式・大型大会対戦ログ スキーマ
+// ============================================================================
+
+export const Sf6TournamentBoutSchema = z.object({
+  id: z.string(),
+  tournamentName: z.string(),
+  category: z.enum(["CPT Premier", "CPT WW", "EVO", "Capcom Cup", "SFL"]),
+  date: z.string(),
+  round: z.string(),
+  playerKey: z.string(),
+  myChar: z.string(),
+  opponentPlayerKey: z.string(),
+  opponentPlayerName: z.string(),
+  opponentTeam: z.string().optional(),
+  opponentChar: z.string(),
+  myScore: z.number(),
+  opponentScore: z.number(),
+  won: z.boolean(),
+});
+
+export const Sf6TournamentMatchupsDataSchema = z.object({
+  updatedAt: z.string(),
+  source: z.string(),
+  sf6ReleaseDate: z.string(),
+  players: z.record(z.string(), z.array(Sf6TournamentBoutSchema)),
+});
+
+
+// ============================================================================
 // Predictor Engine 出力 & シナリオ推計スキーマ
 // ============================================================================
 

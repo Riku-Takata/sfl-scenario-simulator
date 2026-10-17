@@ -24,6 +24,7 @@ import {
   MatchesDataSchema,
   PlayerStatsDataSchema,
   ScenariosDataSchema,
+  Sf6TournamentMatchupsDataSchema,
   StandingsDataSchema,
 } from "../src/lib/schema";
 import type { TeamStanding } from "../src/lib/types";
@@ -49,8 +50,16 @@ const playerStatsData = PlayerStatsDataSchema.parse(
 const scenariosData = ScenariosDataSchema.parse(
   JSON.parse(fs.readFileSync(path.join(dataDir, "scenarios.json"), "utf8"))
 );
+const sf6TournamentData = Sf6TournamentMatchupsDataSchema.parse(
+  JSON.parse(
+    fs.readFileSync(
+      path.join(dataDir, "sf6-tournament-matchups.json"),
+      "utf8"
+    )
+  )
+);
 
-test("Zod schemas validate all 6 generated JSON datasets cleanly", () => {
+test("Zod schemas validate all 7 generated JSON datasets cleanly", () => {
   assert.equal(matchesData.matches.length, 60);
   assert.equal(standingsData.divisions.s.length, 6);
   assert.equal(standingsData.divisions.f.length, 6);
@@ -58,6 +67,7 @@ test("Zod schemas validate all 6 generated JSON datasets cleanly", () => {
   assert.equal(cptMatchupsData.characters.length, 28);
   assert.equal(Object.keys(playerStatsData.players).length, 48);
   assert.equal(Object.keys(scenariosData.teams).length, 12);
+  assert.equal(Object.keys(sf6TournamentData.players).length, 48);
 });
 
 test("sortStandings strictly prioritizes Point -> BattleDiff -> RoundDiff", () => {
@@ -281,20 +291,37 @@ test("predictTeamMatchOutcomeDistribution and analyzeDivisionScenarios integrate
 
 import { buildPlayerEncyclopedia } from "../src/lib/player-encyclopedia";
 
-test("buildPlayerEncyclopedia builds 48 objective player profiles with 6-axis parameters and 28 vs-character stats", () => {
+test("buildPlayerEncyclopedia builds 48 objective player profiles with 6-axis parameters, 28 vs-character stats, and SF6 tournament history", () => {
   const encyclopedia = buildPlayerEncyclopedia(
     playerStatsData,
     matchesData,
-    cptMatchupsData
+    cptMatchupsData,
+    sf6TournamentData
   );
   assert.equal(encyclopedia.length, 48);
 
   for (const p of encyclopedia) {
-    assert.ok(p.parameters.overallScore >= 35 && p.parameters.overallScore <= 99);
+    assert.ok(
+      p.parameters.overallScore >= 35 && p.parameters.overallScore <= 99
+    );
     assert.equal(p.vsCharacters.length, 28);
+    assert.equal(p.tournamentVsCharacters.length, 28);
     assert.ok(p.strongestMatchups.length <= 5);
     assert.ok(p.closestMatchups.length <= 5);
+    assert.ok(p.tournamentStrongestMatchups.length <= 5);
+    assert.ok(p.tournamentClosestMatchups.length <= 5);
+    assert.ok(p.tournamentSummary.totalMatches > 0);
     assert.equal(p.objectiveSummary.length, 3);
+
+    // Verify all tournament bouts are strictly in the SF6 era (>= 2023-06-02)
+    for (const char of p.tournamentVsCharacters) {
+      for (const b of char.tournamentMatchups) {
+        assert.ok(
+          b.date >= "2023-06-02",
+          `Tournament match date ${b.date} should be in SF6 era (>= 2023-06-02)`
+        );
+      }
+    }
   }
 });
 

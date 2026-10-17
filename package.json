@@ -17,7 +17,8 @@
     "fetch-cpt": "tsx scripts/0-fetch-cpt-data.ts",
     "fetch-results": "tsx scripts/1-fetch-results.ts",
     "calc-scenarios": "tsx scripts/2-calc-scenarios.ts",
-    "generate-narratives": "tsx scripts/3-generate-narratives.ts"
+    "generate-narratives": "tsx scripts/3-generate-narratives.ts",
+    "generate-tournaments": "tsx scripts/generate-sf6-tournaments.ts"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.1",

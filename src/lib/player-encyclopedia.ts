@@ -3,7 +3,10 @@ import type {
   DivisionId,
   MatchesData,
   PlayerStatsData,
+  Sf6TournamentBout,
+  Sf6TournamentMatchupsData,
 } from "./types";
+import rawSf6Tournaments from "../data/sf6-tournament-matchups.json";
 import { PLAYER_NAME_MAP, TEAM_META_MAP } from "./simulator";
 
 export const CHAR_NAME_JP_MAP: Record<string, string> = {
@@ -75,6 +78,7 @@ export interface PlayerBoutLog {
 export interface VsCharDetail {
   charKey: string;
   charName: string;
+  // SFL 2026 実戦集計
   playedInSfl: boolean;
   sflBattlesWon: number;
   sflBattlesLost: number;
@@ -90,6 +94,15 @@ export interface VsCharDetail {
   awayBattlesLost: number;
   tierLabel: "大得意" | "勝ち越し" | "五分" | "苦戦" | "未対戦";
   matchups: PlayerBoutLog[]; // 計算に使用している今期SFL実戦の対戦組み合わせ内訳
+
+  // ★ SF6公式・大型大会 通算実戦集計（CPT Premier / Super Premier / WW, Capcom Cup X/XI, EVO 2023-2025, EVO Japan 2024-2026, SFL 2023-2026）
+  playedInTournament: boolean;
+  tournamentMatchesWon: number;
+  tournamentMatchesLost: number;
+  tournamentMatchesTotal: number;
+  tournamentMatchWinRate: number | null; // 0..100 (%) または 未対戦時は null
+  tournamentTierLabel: "大得意" | "勝ち越し" | "五分" | "苦戦" | "未対戦";
+  tournamentMatchups: Sf6TournamentBout[]; // 計算根拠となった大会対戦組み合わせ内訳
 }
 
 export interface PlayerRadarParameters {
@@ -416,6 +429,16 @@ export interface PlayerEncyclopediaEntry {
   vsCharacters: VsCharDetail[];
   strongestMatchups: VsCharDetail[];
   closestMatchups: VsCharDetail[];
+  tournamentVsCharacters: VsCharDetail[];
+  tournamentStrongestMatchups: VsCharDetail[];
+  tournamentClosestMatchups: VsCharDetail[];
+  tournamentSummary: {
+    totalMatches: number;
+    won: number;
+    lost: number;
+    winRate: number;
+    tournamentsCount: number;
+  };
   boutLogs: PlayerBoutLog[];
 }
 
@@ -430,8 +453,12 @@ function emptyPos(): PositionRecord {
 export function buildPlayerEncyclopedia(
   playerStatsData: PlayerStatsData,
   matchesData: MatchesData,
-  _cptMatchupsData?: CptMatchupsTop96Data
+  _cptMatchupsData?: CptMatchupsTop96Data,
+  sf6TournamentData?: Sf6TournamentMatchupsData
 ): PlayerEncyclopediaEntry[] {
+  const sf6Tournaments: Sf6TournamentMatchupsData =
+    sf6TournamentData ||
+    (rawSf6Tournaments as unknown as Sf6TournamentMatchupsData);
   const entries: PlayerEncyclopediaEntry[] = [];
 
   for (const [pKey, stat] of Object.entries(playerStatsData.players)) {
@@ -652,6 +679,25 @@ export function buildPlayerEncyclopedia(
         else tierLabel = "苦戦";
       }
 
+      // ★ SF6公式・大型大会 通算実戦集計
+      const tourMatchups = (sf6Tournaments.players[pKey] || []).filter(
+        (b) => b.opponentChar === cKey
+      );
+      const tWon = tourMatchups.filter((b) => b.won).length;
+      const tLost = tourMatchups.filter((b) => !b.won).length;
+      const tTotal = tWon + tLost;
+      const playedInTournament = tTotal > 0;
+      const tournamentMatchWinRate =
+        tTotal > 0 ? Math.round((tWon / tTotal) * 1000) / 10 : null;
+
+      let tournamentTierLabel: VsCharDetail["tournamentTierLabel"] = "未対戦";
+      if (playedInTournament && tournamentMatchWinRate !== null) {
+        if (tournamentMatchWinRate >= 70) tournamentTierLabel = "大得意";
+        else if (tournamentMatchWinRate > 50) tournamentTierLabel = "勝ち越し";
+        else if (tournamentMatchWinRate === 50) tournamentTierLabel = "五分";
+        else tournamentTierLabel = "苦戦";
+      }
+
       return {
         charKey: cKey,
         charName: formatCharName(cKey),
@@ -670,6 +716,13 @@ export function buildPlayerEncyclopedia(
         awayBattlesLost,
         tierLabel,
         matchups,
+        playedInTournament,
+        tournamentMatchesWon: tWon,
+        tournamentMatchesLost: tLost,
+        tournamentMatchesTotal: tTotal,
+        tournamentMatchWinRate,
+        tournamentTierLabel,
+        tournamentMatchups: tourMatchups,
       };
     });
 
@@ -695,6 +748,56 @@ export function buildPlayerEncyclopedia(
           b.sflBattlesLost - a.sflBattlesLost
       )
       .slice(0, 5);
+
+    // 大会通算の得意・苦戦・ソート
+    const playedTourChars = vsCharacters.filter((c) => c.playedInTournament);
+    const unplayedTourChars = vsCharacters.filter((c) => !c.playedInTournament);
+
+    const tournamentStrongestMatchups = [...playedTourChars]
+      .filter((c) => (c.tournamentMatchWinRate ?? 0) >= 50)
+      .sort(
+        (a, b) =>
+          (b.tournamentMatchWinRate ?? 0) - (a.tournamentMatchWinRate ?? 0) ||
+          b.tournamentMatchesWon - a.tournamentMatchesWon
+      )
+      .slice(0, 5);
+
+    const tournamentClosestMatchups = [...playedTourChars]
+      .filter((c) => (c.tournamentMatchWinRate ?? 0) < 50)
+      .sort(
+        (a, b) =>
+          (a.tournamentMatchWinRate ?? 0) - (b.tournamentMatchWinRate ?? 0) ||
+          b.tournamentMatchesLost - a.tournamentMatchesLost
+      )
+      .slice(0, 5);
+
+    const tournamentVsCharacters = [
+      ...[...playedTourChars].sort(
+        (a, b) =>
+          (b.tournamentMatchWinRate ?? 0) - (a.tournamentMatchWinRate ?? 0) ||
+          b.tournamentMatchesWon - a.tournamentMatchesWon
+      ),
+      ...[...unplayedTourChars].sort((a, b) =>
+        a.charName.localeCompare(b.charName, "ja")
+      ),
+    ];
+
+    const allPlayerTourBouts = sf6Tournaments.players[pKey] || [];
+    const tourWon = allPlayerTourBouts.filter((b) => b.won).length;
+    const tourLost = allPlayerTourBouts.length - tourWon;
+    const uniqueTournaments = new Set(
+      allPlayerTourBouts.map((b) => b.tournamentName)
+    ).size;
+    const tournamentSummary = {
+      totalMatches: allPlayerTourBouts.length,
+      won: tourWon,
+      lost: tourLost,
+      winRate:
+        allPlayerTourBouts.length > 0
+          ? Math.round((tourWon / allPlayerTourBouts.length) * 1000) / 10
+          : 50,
+      tournamentsCount: uniqueTournaments,
+    };
 
     // 対戦済みキャラ（勝率降順）→ 未対戦キャラ（五十音順）
     const sortedVsChars = [
@@ -924,6 +1027,10 @@ export function buildPlayerEncyclopedia(
       vsCharacters: sortedVsChars,
       strongestMatchups,
       closestMatchups,
+      tournamentVsCharacters,
+      tournamentStrongestMatchups,
+      tournamentClosestMatchups,
+      tournamentSummary,
       boutLogs,
     });
   }

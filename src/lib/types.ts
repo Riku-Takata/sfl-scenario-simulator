@@ -15,6 +15,8 @@ import {
   PlayerMatchupPredictionSchema,
   PlayerStatEntrySchema,
   PlayerStatsDataSchema,
+  Sf6TournamentBoutSchema,
+  Sf6TournamentMatchupsDataSchema,
   ScenarioRouteDetailSchema,
   ScenariosDataSchema,
   ScoreOutcomeSchema,
@@ -44,6 +46,10 @@ export type PlayerCharVsRecord = z.infer<typeof PlayerCharVsRecordSchema>;
 export type PlayerH2HRecord = z.infer<typeof PlayerH2HRecordSchema>;
 export type PlayerStatEntry = z.infer<typeof PlayerStatEntrySchema>;
 export type PlayerStatsData = z.infer<typeof PlayerStatsDataSchema>;
+export type Sf6TournamentBout = z.infer<typeof Sf6TournamentBoutSchema>;
+export type Sf6TournamentMatchupsData = z.infer<
+  typeof Sf6TournamentMatchupsDataSchema
+>;
 
 export type PlayerMatchupPrediction = z.infer<
   typeof PlayerMatchupPredictionSchema

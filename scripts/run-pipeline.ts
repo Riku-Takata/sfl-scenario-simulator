@@ -3,6 +3,7 @@ import { fetchAndBuildCptData } from "./0-fetch-cpt-data";
 import { fetchAndSaveResults } from "./1-fetch-results";
 import { calculateAndSaveScenarios } from "./2-calc-scenarios";
 import { generateAndSaveNarratives } from "./3-generate-narratives";
+import { generateSf6Tournaments } from "./generate-sf6-tournaments";
 
 async function main() {
   const args = process.argv.slice(2);
@@ -23,6 +24,7 @@ async function main() {
   await fetchAndBuildCptData();
   calculateAndSaveScenarios(10000);
   await generateAndSaveNarratives();
+  await generateSf6Tournaments();
 
   if (commit) {
     console.log("[Step 5] Committing updated JSON data...");
