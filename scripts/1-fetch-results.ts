@@ -317,7 +317,9 @@ export async function fetchAndSaveResults(options: { force?: boolean } = {}): Pr
   return { updated: true, matchesData, standingsData };
 }
 
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, "/")}`) {
+import { pathToFileURL } from "node:url";
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const force = process.argv.includes("--force");
   fetchAndSaveResults({ force }).catch((err) => {
     console.error("[Step 1 Error]", err);

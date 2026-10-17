@@ -269,7 +269,9 @@ export async function generateAndSaveNarratives(): Promise<ScenariosData> {
   return validated;
 }
 
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, "/")}`) {
+import { pathToFileURL } from "node:url";
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   generateAndSaveNarratives().catch((err) => {
     console.error("[Step 3 Error]", err);
     process.exit(1);

@@ -541,7 +541,9 @@ export async function fetchAndBuildCptData(): Promise<{
   return { masterPlayers, cptMatchups, playerStats };
 }
 
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, "/")}`) {
+import { pathToFileURL } from "node:url";
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   fetchAndBuildCptData().catch((err) => {
     console.error("[Step 0 Error]", err);
     process.exit(1);

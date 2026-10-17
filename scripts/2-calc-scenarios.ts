@@ -99,6 +99,8 @@ export function calculateAndSaveScenarios(iterations = 10000): ScenariosData {
   return scenariosData;
 }
 
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, "/")}`) {
+import { pathToFileURL } from "node:url";
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   calculateAndSaveScenarios();
 }
