@@ -6,12 +6,14 @@ import {
   analyzeDivisionScenarios,
   calculateStandings,
   sortStandings,
+  TEAM_META_MAP,
 } from "../src/lib/simulator";
 import {
   PREDICTOR_WEIGHTS,
   predictBoutWinRate,
   predictTeamMatchOutcomeDistribution,
 } from "../src/lib/predictor";
+import { generateOutcomesForTargetRank } from "../src/components/InteractiveSimulator";
 import {
   CptMatchupsTop96DataSchema,
   MasterPlayersDataSchema,
@@ -170,6 +172,30 @@ test("calculateStandings produces valid 6-team tables for Division S and Divisio
   const afterHome = afterS.find((t) => t.key === unplayedS.home)!;
   assert.equal(afterHome.point, beforeHome.point + 40);
   assert.equal(afterHome.remainingMatches, beforeHome.remainingMatches - 1);
+});
+
+test("generateOutcomesForTargetRank achieves exact target rank (1st, 2nd, 3rd) for all 12 teams", () => {
+  for (const team of Object.values(TEAM_META_MAP)) {
+    for (const rank of [1, 2, 3] as const) {
+      const outcomes = generateOutcomesForTargetRank(
+        team.division,
+        matchesData.matches,
+        team.key,
+        rank
+      );
+      const standings = calculateStandings(
+        team.division,
+        matchesData.matches,
+        outcomes
+      );
+      const actualRank = standings.find((t) => t.key === team.key)?.rank;
+      assert.equal(
+        actualRank,
+        rank,
+        `Team ${team.key} should achieve exact rank ${rank}`
+      );
+    }
+  }
 });
 
 test("predictBoutWinRate computes bounded probabilities with weighted CPT Top 96 formula", () => {

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import type {
   DivisionId,
+  MatchRecord,
   MatchesData,
   ScenariosData,
   ScorePatternId,
@@ -31,6 +32,21 @@ const QUICK_SCORE_BUTTONS: Array<{
   { id: "HOME_40_0", shortLabel: "H 40-0", side: "home" },
 ];
 
+const HOME_WIN_PATTERNS: ScorePatternId[] = [
+  "HOME_30_10",
+  "HOME_30_20",
+  "HOME_40_0",
+];
+const AWAY_WIN_PATTERNS: ScorePatternId[] = [
+  "AWAY_30_10",
+  "AWAY_30_20",
+  "AWAY_40_0",
+];
+const ALL_PATTERNS: ScorePatternId[] = [
+  ...HOME_WIN_PATTERNS,
+  ...AWAY_WIN_PATTERNS,
+];
+
 function mapPlanToScorePattern(
   side: "home" | "away",
   teamGain: number,
@@ -46,16 +62,154 @@ function mapPlanToScorePattern(
   return "AWAY_40_0";
 }
 
+function pickRandom<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+/**
+ * 指定した推しチーム (targetTeamKey) が指定順位 (targetRank: 1 | 2 | 3) になるような
+ * 未消化全試合のスコアパターン組み合わせを探索して返す
+ */
+export function generateOutcomesForTargetRank(
+  division: DivisionId,
+  allMatches: MatchRecord[],
+  targetTeamKey: string,
+  targetRank: 1 | 2 | 3
+): Record<string, ScorePatternId> {
+  const unplayed = allMatches.filter(
+    (m) => m.division === division && !m.played
+  );
+  const currentStandings = calculateStandings(division, allMatches);
+  const otherTeams = currentStandings
+    .filter((t) => t.key !== targetTeamKey)
+    .map((t) => t.key);
+
+  const winForSide = (side: "home" | "away", dominant = false): ScorePatternId => {
+    if (dominant) {
+      return side === "home"
+        ? Math.random() < 0.6
+          ? "HOME_40_0"
+          : "HOME_30_10"
+        : Math.random() < 0.6
+          ? "AWAY_40_0"
+          : "AWAY_30_10";
+    }
+    return side === "home"
+      ? pickRandom(HOME_WIN_PATTERNS)
+      : pickRandom(AWAY_WIN_PATTERNS);
+  };
+
+  // 最大800回試行し、targetTeamKey がちょうど targetRank 位になる自然なスコア分布を探す
+  for (let attempt = 0; attempt < 800; attempt++) {
+    const candidate: Record<string, ScorePatternId> = {};
+
+    // targetRank === 1 なら上位チーム0、targetRank === 2 なら1チーム、targetRank === 3 なら2チームを上位候補に設定
+    const shuffledOthers = [...otherTeams].sort(
+      () => Math.random() - 0.5
+    );
+    // 前半の試行では現在順位が高いチームを上位候補にし、後半はランダムに広げる
+    const higherCount = targetRank - 1;
+    const higherSet = new Set(
+      (attempt < 400 ? otherTeams : shuffledOthers).slice(0, higherCount)
+    );
+
+    // 試行ごとに targetTeam の勝率バイアスを少しずつ変化させ、ちょうど2位や3位に収まるスイートスポットを通過させる
+    const targetWinRateVsLower =
+      targetRank === 1
+        ? 0.95
+        : targetRank === 2
+          ? 0.35 + (attempt % 10) * 0.06
+          : 0.2 + (attempt % 10) * 0.06;
+
+    for (const m of unplayed) {
+      if (m.home === targetTeamKey || m.away === targetTeamKey) {
+        const targetSide: "home" | "away" =
+          m.home === targetTeamKey ? "home" : "away";
+        const oppSide: "home" | "away" =
+          targetSide === "home" ? "away" : "home";
+        const oppKey = targetSide === "home" ? m.away : m.home;
+
+        if (targetRank === 1) {
+          // 1位狙い：推しチームが高確率で勝利
+          candidate[m.id] =
+            Math.random() < 0.92
+              ? winForSide(targetSide, attempt > 200)
+              : winForSide(oppSide);
+        } else if (higherSet.has(oppKey)) {
+          // 自分より上の順位にしたい相手には負ける確率を高める
+          candidate[m.id] =
+            Math.random() < 0.85
+              ? winForSide(oppSide, true)
+              : winForSide(targetSide);
+        } else {
+          // 自分より下の順位にしたい相手には適度に勝つ
+          candidate[m.id] =
+            Math.random() < targetWinRateVsLower
+              ? winForSide(targetSide)
+              : winForSide(oppSide);
+        }
+      } else {
+        // 他チーム同士の対戦
+        const homeIsHigher = higherSet.has(m.home);
+        const awayIsHigher = higherSet.has(m.away);
+
+        if (homeIsHigher && !awayIsHigher) {
+          candidate[m.id] =
+            Math.random() < 0.88
+              ? winForSide("home", true)
+              : winForSide("away");
+        } else if (awayIsHigher && !homeIsHigher) {
+          candidate[m.id] =
+            Math.random() < 0.88
+              ? winForSide("away", true)
+              : winForSide("home");
+        } else if (!homeIsHigher && !awayIsHigher && targetRank < 3) {
+          // 下位候補同士はポイントを分け合って突出しないようにする
+          candidate[m.id] = pickRandom([
+            "HOME_30_20",
+            "AWAY_30_20",
+            "HOME_30_10",
+            "AWAY_30_10",
+          ]);
+        } else {
+          candidate[m.id] = pickRandom(ALL_PATTERNS);
+        }
+      }
+    }
+
+    const simResult = calculateStandings(division, allMatches, candidate);
+    const achievedRank = simResult.find((t) => t.key === targetTeamKey)?.rank;
+    if (achievedRank === targetRank) {
+      return candidate;
+    }
+  }
+
+  // 万一800回で見つからなかった場合のフォールバック
+  const fallback: Record<string, ScorePatternId> = {};
+  for (const m of unplayed) {
+    fallback[m.id] = pickRandom(ALL_PATTERNS);
+  }
+  return fallback;
+}
+
 export default function InteractiveSimulator({
   matchesData,
   standingsData,
   scenariosData,
 }: Props) {
   const [division, setDivision] = useState<DivisionId>("s");
+  const [targetTeam, setTargetTeam] = useState<string>("fav");
+  const [targetRank, setTargetRank] = useState<1 | 2 | 3>(1);
   const [customOutcomes, setCustomOutcomes] = useState<
     Record<string, ScorePatternId>
   >({});
   const [copiedMessage, setCopiedMessage] = useState<string | null>(null);
+
+  const divTeams = useMemo(
+    () =>
+      Object.values(TEAM_META_MAP).filter((t) => t.division === division),
+    [division]
+  );
 
   const unplayedMatches = useMemo(
     () =>
@@ -76,6 +230,7 @@ export default function InteractiveSimulator({
     const qDiv = searchParams.get("div");
     const targetDiv: DivisionId = qDiv === "f" ? "f" : "s";
     setDivision(targetDiv);
+    setTargetTeam(targetDiv === "f" ? "varrel" : "fav");
 
     const qSim = searchParams.get("sim");
     const qTeam = searchParams.get("team");
@@ -100,25 +255,17 @@ export default function InteractiveSimulator({
       }
       setCustomOutcomes({ ...nextMap });
     } else if (qTeam && Object.hasOwn(scenariosData.teams, qTeam)) {
-      const tAnalysis = scenariosData.teams[qTeam];
-      const routeObj =
-        qPreset === "route2"
-          ? tAnalysis.routes.route2Second
-          : qPreset === "route3"
-            ? tAnalysis.routes.route3Third
-            : tAnalysis.routes.route1First;
-
-      const nextMap: Record<string, ScorePatternId> = Object.create(null);
-      for (const plan of routeObj.targetSchedule || []) {
-        if (validMatchIds.has(plan.matchId)) {
-          nextMap[plan.matchId] = mapPlanToScorePattern(
-            plan.side,
-            plan.teamPointGain,
-            plan.opponentPointGain
-          );
-        }
-      }
-      setCustomOutcomes({ ...nextMap });
+      setTargetTeam(qTeam);
+      const rankNum: 1 | 2 | 3 =
+        qPreset === "route2" ? 2 : qPreset === "route3" ? 3 : 1;
+      setTargetRank(rankNum);
+      const generated = generateOutcomesForTargetRank(
+        targetDiv,
+        matchesData.matches,
+        qTeam,
+        rankNum
+      );
+      setCustomOutcomes(generated);
     }
   }, [matchesData.matches, scenariosData.teams]);
 
@@ -148,22 +295,19 @@ export default function InteractiveSimulator({
     });
   };
 
-  const fillRandomRemaining = () => {
-    const patterns: ScorePatternId[] = [
-      "HOME_40_0",
-      "HOME_30_10",
-      "HOME_30_20",
-      "AWAY_30_20",
-      "AWAY_30_10",
-      "AWAY_40_0",
-    ];
-    const nextMap: Record<string, ScorePatternId> = { ...customOutcomes };
-    for (const m of unplayedMatches) {
-      if (!nextMap[m.id]) {
-        nextMap[m.id] = patterns[Math.floor(Math.random() * patterns.length)];
-      }
-    }
-    setCustomOutcomes(nextMap);
+  const handleAutoFillForTargetRank = () => {
+    const generated = generateOutcomesForTargetRank(
+      division,
+      matchesData.matches,
+      targetTeam,
+      targetRank
+    );
+    setCustomOutcomes(generated);
+    const teamShort = TEAM_META_MAP[targetTeam]?.shortName ?? targetTeam;
+    setCopiedMessage(
+      `${teamShort} が ${targetRank}位 になる試合結果パターンを自動入力しました！（もう一度押すと別パターンを生成します）`
+    );
+    setTimeout(() => setCopiedMessage(null), 4000);
   };
 
   const buildShareUrl = () => {
@@ -214,6 +358,7 @@ export default function InteractiveSimulator({
           type="button"
           onClick={() => {
             setDivision("s");
+            setTargetTeam("fav");
             setCustomOutcomes({});
           }}
           className={`div-tab ${division === "s" ? "active-s" : ""}`}
@@ -241,6 +386,7 @@ export default function InteractiveSimulator({
           type="button"
           onClick={() => {
             setDivision("f");
+            setTargetTeam("varrel");
             setCustomOutcomes({});
           }}
           className={`div-tab ${division === "f" ? "active-f" : ""}`}
@@ -267,44 +413,117 @@ export default function InteractiveSimulator({
 
       {/* 2カラム：左＝未消化カードのスコア選択 / 右＝追従するリアルタイム順位表 */}
       <div className="sim-layout">
-        {/* 左カラム：残り試合スコア入力 */}
+        {/* 左カラム：自動入力バー ＆ 残り試合スコア入力 */}
         <div>
           <div
             className="panel"
             style={{
-              padding: "1rem 1.25rem",
+              padding: "1.15rem 1.25rem",
               display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "0.75rem",
+              flexDirection: "column",
+              gap: "0.9rem",
             }}
           >
-            <div style={{ fontWeight: 800, fontSize: "0.95rem" }}>
-              入力済み: {filledCount} / {unplayedMatches.length} 試合
+            {/* 推しチーム × 目標順位（1位/2位/3位）自動生成バー */}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "0.75rem",
+                paddingBottom: "0.85rem",
+                borderBottom: "1px solid var(--border-color)",
+              }}
+            >
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem" }}>
+                <span style={{ fontWeight: 800, fontSize: "0.9rem", color: "var(--text-main)" }}>
+                  推しチーム条件で自動入力:
+                </span>
+
+                <select
+                  aria-label="推しチームを選択"
+                  value={targetTeam}
+                  onChange={(e) => setTargetTeam(e.target.value)}
+                  style={{
+                    padding: "0.45rem 0.75rem",
+                    borderRadius: "8px",
+                    border: "1px solid var(--border-strong)",
+                    background: "#ffffff",
+                    color: "var(--text-main)",
+                    fontWeight: 700,
+                    fontSize: "0.88rem",
+                  }}
+                >
+                  {divTeams.map((t) => (
+                    <option key={t.key} value={t.key}>
+                      {t.shortName}（{t.name}）
+                    </option>
+                  ))}
+                </select>
+
+                <span style={{ fontSize: "0.88rem", fontWeight: 700, color: "var(--text-sub)" }}>
+                  が
+                </span>
+
+                <select
+                  aria-label="目標順位を選択"
+                  value={targetRank}
+                  onChange={(e) => setTargetRank(Number(e.target.value) as 1 | 2 | 3)}
+                  style={{
+                    padding: "0.45rem 0.75rem",
+                    borderRadius: "8px",
+                    border: "1px solid var(--border-strong)",
+                    background: "#ffffff",
+                    color: "var(--primary)",
+                    fontWeight: 800,
+                    fontSize: "0.88rem",
+                  }}
+                >
+                  <option value={1}>1位（決勝シード）になる場合</option>
+                  <option value={2}>2位（準決勝HOME）になる場合</option>
+                  <option value={3}>3位（PO滑り込み）になる場合</option>
+                </select>
+
+                <button
+                  type="button"
+                  onClick={handleAutoFillForTargetRank}
+                  className="btn btn-primary"
+                >
+                  この条件で自動埋め
+                </button>
+              </div>
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-              <button
-                type="button"
-                onClick={fillRandomRemaining}
-                className="btn"
-              >
-                未入力の試合を自動埋め
-              </button>
-              <button
-                type="button"
-                onClick={() => setCustomOutcomes({})}
-                className="btn"
-              >
-                すべてリセット
-              </button>
-              <button
-                type="button"
-                onClick={handleCopyShareUrl}
-                className="btn btn-primary"
-              >
-                この予想URLをコピー
-              </button>
+
+            {/* 入力状況 ＆ リセット・URL共有 */}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: "0.75rem",
+              }}
+            >
+              <div style={{ fontWeight: 700, fontSize: "0.88rem", color: "var(--text-sub)" }}>
+                入力済み: <strong>{filledCount} / {unplayedMatches.length}</strong> 試合
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                <button
+                  type="button"
+                  onClick={() => setCustomOutcomes({})}
+                  className="btn"
+                >
+                  すべてリセット
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCopyShareUrl}
+                  className="btn"
+                >
+                  この予想URLをコピー
+                </button>
+              </div>
             </div>
           </div>
 
@@ -341,6 +560,8 @@ export default function InteractiveSimulator({
                   const selectedOut = selectedId
                     ? SCORE_OUTCOME_MAP[selectedId]
                     : null;
+                  const isTargetTeamMatch =
+                    m.home === targetTeam || m.away === targetTeam;
 
                   return (
                     <div
@@ -349,7 +570,9 @@ export default function InteractiveSimulator({
                         background: selectedOut ? "#f8fafc" : "#ffffff",
                         border: selectedOut
                           ? "2px solid var(--primary)"
-                          : "1px solid var(--border-color)",
+                          : isTargetTeamMatch
+                            ? "1px solid #93c5fd"
+                            : "1px solid var(--border-color)",
                         borderRadius: "10px",
                         padding: "0.95rem 1rem",
                       }}
@@ -364,7 +587,15 @@ export default function InteractiveSimulator({
                       >
                         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
                           <span className="badge badge-away">AWAY</span>
-                          <strong style={{ fontSize: "1rem" }}>
+                          <strong
+                            style={{
+                              fontSize: "1rem",
+                              color:
+                                m.away === targetTeam
+                                  ? "var(--primary)"
+                                  : "var(--text-main)",
+                            }}
+                          >
                             {awayMeta?.shortName ?? m.away}
                           </strong>
                         </div>
@@ -382,7 +613,15 @@ export default function InteractiveSimulator({
                         </div>
 
                         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                          <strong style={{ fontSize: "1rem" }}>
+                          <strong
+                            style={{
+                              fontSize: "1rem",
+                              color:
+                                m.home === targetTeam
+                                  ? "var(--primary)"
+                                  : "var(--text-main)",
+                            }}
+                          >
                             {homeMeta?.shortName ?? m.home}
                           </strong>
                           <span className="badge badge-home">HOME</span>
@@ -443,10 +682,17 @@ export default function InteractiveSimulator({
                     const base = baseRankMap[team.key];
                     const rankDelta = (base?.rank ?? team.rank) - team.rank;
                     const ptDelta = team.point - (base?.point ?? 0);
+                    const isSelectedTarget = team.key === targetTeam;
 
                     return (
                       <React.Fragment key={team.key}>
-                        <tr>
+                        <tr
+                          style={
+                            isSelectedTarget
+                              ? { background: "var(--primary-bg)" }
+                              : undefined
+                          }
+                        >
                           <td>
                             <div style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
                               <span
@@ -485,7 +731,15 @@ export default function InteractiveSimulator({
                                   borderRadius: "2px",
                                 }}
                               />
-                              <span>{team.shortName}</span>
+                              <span
+                                style={{
+                                  color: isSelectedTarget
+                                    ? "var(--primary)"
+                                    : "var(--text-main)",
+                                }}
+                              >
+                                {team.shortName}
+                              </span>
                             </div>
                           </td>
                           <td>
