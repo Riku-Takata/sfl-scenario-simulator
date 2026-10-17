@@ -135,34 +135,50 @@ export default function PlayerEncyclopedia({ players }: Props) {
   const [vsCharFilter, setVsCharFilter] = useState<string>("none");
   const [sortBy, setSortBy] = useState<SortKey>("point");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [selectedPlayerKey, setSelectedPlayerKey] = useState<string>(
-    players[0]?.playerKey ?? "mena"
+  // 初期状態は null（まずは選手を選択する画面を表示）
+  const [selectedPlayerKey, setSelectedPlayerKey] = useState<string | null>(
+    null
   );
   const [showAllVsChars, setShowAllVsChars] = useState<boolean>(false);
 
-  // URLクエリ (?player=xxx) からの初期選択反映
+  // URLクエリ (?player=xxx) からの初期選択 ＆ ブラウザ戻るボタン対応
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const params = new URLSearchParams(window.location.search);
-    const qPlayer = params.get("player");
-    const qTeam = params.get("team");
-    if (qPlayer && players.some((p) => p.playerKey === qPlayer)) {
-      setSelectedPlayerKey(qPlayer);
-    }
-    if (qTeam && Object.hasOwn(TEAM_META_MAP, qTeam)) {
-      setTeamFilter(qTeam);
-    }
+
+    const syncFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const qPlayer = params.get("player");
+      const qTeam = params.get("team");
+      if (qPlayer && players.some((p) => p.playerKey === qPlayer)) {
+        setSelectedPlayerKey(qPlayer);
+      } else {
+        setSelectedPlayerKey(null);
+      }
+      if (qTeam && Object.hasOwn(TEAM_META_MAP, qTeam)) {
+        setTeamFilter(qTeam);
+      }
+    };
+
+    syncFromUrl();
+    window.addEventListener("popstate", syncFromUrl);
+    return () => window.removeEventListener("popstate", syncFromUrl);
   }, [players]);
 
-  const handleSelectPlayer = (pKey: string, scroll = true) => {
+  const handleSelectPlayer = (pKey: string) => {
     setSelectedPlayerKey(pKey);
+    setShowAllVsChars(false);
     if (typeof window !== "undefined") {
       const nextUrl = `${window.location.pathname}?player=${pKey}`;
-      window.history.replaceState(null, "", nextUrl);
-      if (scroll) {
-        const el = document.getElementById("player-detail-panel");
-        el?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      window.history.pushState({ player: pKey }, "", nextUrl);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleBackToList = () => {
+    setSelectedPlayerKey(null);
+    if (typeof window !== "undefined") {
+      window.history.pushState({}, "", window.location.pathname);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -229,14 +245,396 @@ export default function PlayerEncyclopedia({ players }: Props) {
 
   const selectedPlayer = useMemo(
     () =>
-      players.find((p) => p.playerKey === selectedPlayerKey) ??
-      filteredPlayers[0] ??
-      players[0],
-    [players, selectedPlayerKey, filteredPlayers]
+      selectedPlayerKey
+        ? players.find((p) => p.playerKey === selectedPlayerKey) ?? null
+        : null,
+    [players, selectedPlayerKey]
   );
 
-  if (!selectedPlayer) return null;
+  // ============================================================================
+  // STEP 1: 選手が未選択のとき → 「まず選手を選択する一覧・検索画面」を表示
+  // ============================================================================
+  if (!selectedPlayer) {
+    return (
+      <div className="panel">
+        <div className="panel-header">
+          <div>
+            <h2 className="panel-title">
+              STEP 1：分析・相性データを見たい選手を選択してください（全48選手）
+            </h2>
+            <p
+              style={{
+                fontSize: "0.85rem",
+                color: "var(--text-muted)",
+                marginTop: "0.2rem",
+              }}
+            >
+              ディビジョン・所属チーム・名前検索、または「特定のキャラに強い選手順」で絞り込んで選手をクリックすると、詳細な6角形パラメーターと対キャラ相性カルテを表示します。
+            </p>
+          </div>
+        </div>
 
+        {/* フィルターバー */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "0.75rem",
+            alignItems: "center",
+            padding: "0.9rem 1rem",
+            background: "var(--bg-subtle)",
+            borderRadius: "10px",
+            border: "1px solid var(--border-color)",
+            marginBottom: "1rem",
+          }}
+        >
+          {/* Division 切替 */}
+          <div style={{ display: "flex", gap: "0.35rem" }}>
+            {[
+              { id: "all", label: "全選手 (48名)" },
+              { id: "s", label: "Division S (24名)" },
+              { id: "f", label: "Division F (24名)" },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => {
+                  setDivFilter(tab.id as "all" | "s" | "f");
+                  setTeamFilter("all");
+                }}
+                className="score-chip"
+                style={
+                  divFilter === tab.id
+                    ? {
+                        background: "var(--text-main)",
+                        color: "#ffffff",
+                        borderColor: "var(--text-main)",
+                      }
+                    : {}
+                }
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* チーム絞り込み */}
+          <select
+            aria-label="チームで絞り込み"
+            value={teamFilter}
+            onChange={(e) => setTeamFilter(e.target.value)}
+            style={{
+              padding: "0.45rem 0.7rem",
+              borderRadius: "8px",
+              border: "1px solid var(--border-strong)",
+              background: "#ffffff",
+              fontWeight: 700,
+              fontSize: "0.84rem",
+            }}
+          >
+            <option value="all">すべてのチーム (12チーム)</option>
+            {Object.values(TEAM_META_MAP)
+              .filter((t) => divFilter === "all" || t.division === divFilter)
+              .map((t) => (
+                <option key={t.key} value={t.key}>
+                  {t.shortName}（{t.name}）
+                </option>
+              ))}
+          </select>
+
+          {/* 対キャラ逆引きソート */}
+          <select
+            aria-label="特定キャラに対して強い選手を逆引き"
+            value={vsCharFilter}
+            onChange={(e) => {
+              setVsCharFilter(e.target.value);
+              if (e.target.value !== "none") setSortBy("vsChar");
+            }}
+            style={{
+              padding: "0.45rem 0.7rem",
+              borderRadius: "8px",
+              border: "1px solid var(--primary)",
+              background: "#ffffff",
+              color: "var(--primary)",
+              fontWeight: 800,
+              fontSize: "0.84rem",
+            }}
+          >
+            <option value="none">対キャラ相性で逆引き（指定なし）</option>
+            {allCharacters.map((c) => (
+              <option key={c.charKey} value={c.charKey}>
+                「vs {c.charName}」に強い選手順で並べる
+              </option>
+            ))}
+          </select>
+
+          {/* 並び順 */}
+          <select
+            aria-label="並び順"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as SortKey)}
+            style={{
+              padding: "0.45rem 0.7rem",
+              borderRadius: "8px",
+              border: "1px solid var(--border-strong)",
+              background: "#ffffff",
+              fontWeight: 700,
+              fontSize: "0.84rem",
+            }}
+          >
+            <option value="point">SFL獲得ポイント順</option>
+            <option value="overall">総合データ評価順</option>
+            <option value="winRate">SFL試合勝率順</option>
+            <option value="battleWinRate">バトル勝率順</option>
+          </select>
+
+          {/* フリーワード検索 */}
+          <input
+            type="search"
+            placeholder="選手名・キャラ名・チーム名で検索..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{
+              padding: "0.45rem 0.75rem",
+              borderRadius: "8px",
+              border: "1px solid var(--border-strong)",
+              background: "#ffffff",
+              fontSize: "0.85rem",
+              minWidth: "190px",
+              flex: 1,
+            }}
+          />
+        </div>
+
+        {/* チームクイックフィルターチップ */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "0.35rem",
+            marginBottom: "1.25rem",
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => setTeamFilter("all")}
+            className="score-chip"
+            style={
+              teamFilter === "all"
+                ? {
+                    background: "var(--primary)",
+                    color: "#ffffff",
+                    borderColor: "var(--primary)",
+                  }
+                : {}
+            }
+          >
+            全チーム表示
+          </button>
+          {Object.values(TEAM_META_MAP)
+            .filter((t) => divFilter === "all" || t.division === divFilter)
+            .map((t) => (
+              <button
+                key={t.key}
+                type="button"
+                onClick={() =>
+                  setTeamFilter((prev) => (prev === t.key ? "all" : t.key))
+                }
+                className="score-chip"
+                style={
+                  teamFilter === t.key
+                    ? {
+                        background: t.color,
+                        color: "#ffffff",
+                        borderColor: t.color,
+                      }
+                    : {}
+                }
+              >
+                {t.shortName}
+              </button>
+            ))}
+        </div>
+
+        {/* 選手カードグリッド */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(275px, 1fr))",
+            gap: "0.9rem",
+          }}
+        >
+          {filteredPlayers.map((p) => {
+            const vsTarget =
+              vsCharFilter !== "none"
+                ? p.vsCharacters.find((c) => c.charKey === vsCharFilter)
+                : null;
+
+            return (
+              <div
+                key={p.playerKey}
+                onClick={() => handleSelectPlayer(p.playerKey)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleSelectPlayer(p.playerKey);
+                  }
+                }}
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid var(--border-color)",
+                  borderLeft: `5px solid ${p.teamColor}`,
+                  borderRadius: "10px",
+                  padding: "1.05rem",
+                  cursor: "pointer",
+                  transition: "box-shadow 0.15s, border-color 0.15s",
+                  boxShadow: "var(--shadow-sm)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    marginBottom: "0.4rem",
+                  }}
+                >
+                  <div>
+                    <span
+                      style={{
+                        fontSize: "0.75rem",
+                        fontWeight: 800,
+                        color: "var(--text-muted)",
+                      }}
+                    >
+                      Div.{p.division.toUpperCase()} / {p.teamShort}
+                    </span>
+                    <div
+                      style={{
+                        fontSize: "1.15rem",
+                        fontWeight: 800,
+                        color: "var(--text-main)",
+                      }}
+                    >
+                      {p.name}
+                    </div>
+                  </div>
+                  <span
+                    className="badge"
+                    style={{
+                      background: "var(--primary-light)",
+                      color: "var(--primary)",
+                      fontWeight: 800,
+                    }}
+                  >
+                    評価 {p.parameters.overallGrade} ({p.parameters.overallScore})
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    fontSize: "0.82rem",
+                    fontWeight: 700,
+                    color: "var(--text-sub)",
+                    marginBottom: "0.55rem",
+                  }}
+                >
+                  メイン: <strong>{p.mainCharName}</strong>
+                  {p.subCharNames.length > 0 &&
+                    ` / サブ: ${p.subCharNames.slice(0, 2).join("・")}`}
+                </div>
+
+                {vsTarget && (
+                  <div
+                    style={{
+                      background: "var(--success-bg)",
+                      border: "1px solid var(--success-border)",
+                      color: "var(--success)",
+                      borderRadius: "6px",
+                      padding: "0.35rem 0.6rem",
+                      fontSize: "0.82rem",
+                      fontWeight: 800,
+                      marginBottom: "0.55rem",
+                    }}
+                  >
+                    vs {vsTarget.charName} 推定勝率:{" "}
+                    {vsTarget.estimatedWinRate.toFixed(1)}%
+                  </div>
+                )}
+
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, 1fr)",
+                    gap: "0.4rem",
+                    background: "var(--bg-subtle)",
+                    padding: "0.5rem",
+                    borderRadius: "8px",
+                    fontSize: "0.78rem",
+                    marginBottom: "0.6rem",
+                  }}
+                >
+                  <div>
+                    <div style={{ color: "var(--text-muted)" }}>獲得pt</div>
+                    <div
+                      style={{
+                        fontWeight: 800,
+                        fontSize: "0.95rem",
+                        color: "var(--primary)",
+                      }}
+                    >
+                      {p.sfl.point}pt
+                    </div>
+                  </div>
+                  <div>
+                    <div style={{ color: "var(--text-muted)" }}>SFL勝敗</div>
+                    <div style={{ fontWeight: 800 }}>
+                      {p.sfl.victory}勝{p.sfl.losses}敗
+                    </div>
+                  </div>
+                  <div>
+                    <div style={{ color: "var(--text-muted)" }}>バトル勝率</div>
+                    <div style={{ fontWeight: 800 }}>
+                      {p.sfl.battleWinRate.toFixed(0)}%
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    fontSize: "0.78rem",
+                    color: "var(--text-muted)",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    paddingTop: "0.35rem",
+                    borderTop: "1px solid var(--border-color)",
+                  }}
+                >
+                  <span>
+                    得意:{" "}
+                    {p.strongestMatchups
+                      .slice(0, 2)
+                      .map((m) => m.charName)
+                      .join("・")}
+                  </span>
+                  <span style={{ color: "var(--primary)", fontWeight: 800 }}>
+                    この選手を詳しく見る →
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  // ============================================================================
+  // STEP 2: 選手が選択されたとき → 「選択された選手の詳細分析カルテ画面」を表示
+  // ============================================================================
   const paramList = [
     {
       label: "ポイント獲得力",
@@ -272,13 +670,85 @@ export default function PlayerEncyclopedia({ players }: Props) {
 
   return (
     <div>
-      {/* 1. 選手 상세カルテ（選択中の選手） */}
+      {/* 上部ナビゲーション：「← 選手選択一覧に戻る」＆「別の選手へのクイック切替」 */}
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "0.75rem",
+          marginBottom: "1.15rem",
+          padding: "0.85rem 1.15rem",
+          background: "#ffffff",
+          border: "1px solid var(--border-color)",
+          borderRadius: "10px",
+          boxShadow: "var(--shadow-sm)",
+        }}
+      >
+        <button
+          type="button"
+          onClick={handleBackToList}
+          className="btn btn-primary"
+        >
+          ← 選手選択一覧に戻る（全48選手）
+        </button>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: "0.5rem",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "0.82rem",
+              fontWeight: 700,
+              color: "var(--text-muted)",
+            }}
+          >
+            別の選手へ直接切替:
+          </span>
+          <select
+            aria-label="別の選手を選択"
+            value={selectedPlayer.playerKey}
+            onChange={(e) => handleSelectPlayer(e.target.value)}
+            style={{
+              padding: "0.45rem 0.75rem",
+              borderRadius: "8px",
+              border: "1px solid var(--border-strong)",
+              background: "#ffffff",
+              fontWeight: 800,
+              fontSize: "0.86rem",
+              color: "var(--text-main)",
+            }}
+          >
+            {Object.values(TEAM_META_MAP).map((tm) => (
+              <optgroup
+                key={tm.key}
+                label={`[Div.${tm.division.toUpperCase()}] ${tm.shortName} (${tm.name})`}
+              >
+                {players
+                  .filter((p) => p.teamKey === tm.key)
+                  .map((p) => (
+                    <option key={p.playerKey} value={p.playerKey}>
+                      {p.name}（{p.mainCharName} / {p.sfl.point}pt）
+                    </option>
+                  ))}
+              </optgroup>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      {/* 選択された選手の詳細カルテパネル */}
       <div
         id="player-detail-panel"
         className="panel"
         style={{
           borderTop: `5px solid ${selectedPlayer.teamColor}`,
-          scrollMarginTop: "80px",
         }}
       >
         {/* 選手ヘッダー */}
@@ -291,7 +761,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
             gap: "1rem",
             paddingBottom: "1rem",
             borderBottom: "1px solid var(--border-color)",
-            marginBottom: "1.25rem",
+            marginBottom: "1.1rem",
           }}
         >
           <div>
@@ -488,7 +958,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
               <button
                 key={tm.playerKey}
                 type="button"
-                onClick={() => handleSelectPlayer(tm.playerKey, false)}
+                onClick={() => handleSelectPlayer(tm.playerKey)}
                 className="score-chip"
                 style={
                   tm.playerKey === selectedPlayer.playerKey
@@ -521,6 +991,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
               border: "1px solid var(--border-color)",
               borderRadius: "10px",
               padding: "1.1rem",
+              minWidth: 0,
             }}
           >
             <h3
@@ -687,11 +1158,46 @@ export default function PlayerEncyclopedia({ players }: Props) {
                   <thead>
                     <tr>
                       <th style={{ padding: "0.6rem 0.75rem" }}>ポジション</th>
-                      <th style={{ padding: "0.6rem 0.65rem", textAlign: "center" }}>配点</th>
-                      <th style={{ padding: "0.6rem 0.65rem", textAlign: "center" }}>出場数</th>
-                      <th style={{ padding: "0.6rem 0.65rem", textAlign: "center" }}>勝敗</th>
-                      <th style={{ padding: "0.6rem 0.65rem", textAlign: "right" }}>勝率</th>
-                      <th style={{ padding: "0.6rem 0.75rem", textAlign: "right" }}>獲得pt</th>
+                      <th
+                        style={{
+                          padding: "0.6rem 0.65rem",
+                          textAlign: "center",
+                        }}
+                      >
+                        配点
+                      </th>
+                      <th
+                        style={{
+                          padding: "0.6rem 0.65rem",
+                          textAlign: "center",
+                        }}
+                      >
+                        出場数
+                      </th>
+                      <th
+                        style={{
+                          padding: "0.6rem 0.65rem",
+                          textAlign: "center",
+                        }}
+                      >
+                        勝敗
+                      </th>
+                      <th
+                        style={{
+                          padding: "0.6rem 0.65rem",
+                          textAlign: "right",
+                        }}
+                      >
+                        勝率
+                      </th>
+                      <th
+                        style={{
+                          padding: "0.6rem 0.75rem",
+                          textAlign: "right",
+                        }}
+                      >
+                        獲得pt
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -874,7 +1380,13 @@ export default function PlayerEncyclopedia({ players }: Props) {
               >
                 ◎ 得意としている相手キャラクター TOP 5
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.45rem",
+                }}
+              >
                 {selectedPlayer.strongestMatchups.map((m, idx) => (
                   <div
                     key={m.charKey}
@@ -937,7 +1449,13 @@ export default function PlayerEncyclopedia({ players }: Props) {
               >
                 △ 接戦・警戒が必要な相手キャラクター TOP 5
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.45rem",
+                }}
+              >
                 {selectedPlayer.closestMatchups.map((m, idx) => (
                   <div
                     key={m.charKey}
@@ -1106,7 +1624,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
                         <button
                           type="button"
                           onClick={() =>
-                            handleSelectPlayer(log.opponentPlayerKey, true)
+                            handleSelectPlayer(log.opponentPlayerKey)
                           }
                           style={{
                             background: "none",
@@ -1147,330 +1665,24 @@ export default function PlayerEncyclopedia({ players }: Props) {
             </div>
           </div>
         )}
-      </div>
 
-      {/* 2. 全48選手 検索・絞り込み・逆引きランキング */}
-      <div className="panel">
-        <div className="panel-header">
-          <div>
-            <h2 className="panel-title">
-              全48選手 データ一覧・対キャラ相性逆引き検索
-            </h2>
-            <p
-              style={{
-                fontSize: "0.84rem",
-                color: "var(--text-muted)",
-                marginTop: "0.2rem",
-              }}
-            >
-              選手カードをクリックすると、上部の詳細パラメーター・対キャラ相性カルテが切り替わります。
-            </p>
-          </div>
-        </div>
-
-        {/* フィルターバー */}
+        {/* 下部にも「← 選手選択一覧に戻る」ボタンを配置 */}
         <div
           style={{
+            marginTop: "1.5rem",
+            paddingTop: "1rem",
+            borderTop: "1px solid var(--border-color)",
             display: "flex",
-            flexWrap: "wrap",
-            gap: "0.75rem",
-            alignItems: "center",
-            padding: "0.85rem 1rem",
-            background: "var(--bg-subtle)",
-            borderRadius: "10px",
-            border: "1px solid var(--border-color)",
-            marginBottom: "1.25rem",
+            justifyContent: "center",
           }}
         >
-          {/* Division 切替 */}
-          <div style={{ display: "flex", gap: "0.35rem" }}>
-            {[
-              { id: "all", label: "全選手 (48名)" },
-              { id: "s", label: "Division S (24名)" },
-              { id: "f", label: "Division F (24名)" },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => {
-                  setDivFilter(tab.id as "all" | "s" | "f");
-                  setTeamFilter("all");
-                }}
-                className="score-chip"
-                style={
-                  divFilter === tab.id
-                    ? {
-                        background: "var(--text-main)",
-                        color: "#ffffff",
-                        borderColor: "var(--text-main)",
-                      }
-                    : {}
-                }
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* チーム絞り込み */}
-          <select
-            aria-label="チームで絞り込み"
-            value={teamFilter}
-            onChange={(e) => setTeamFilter(e.target.value)}
-            style={{
-              padding: "0.45rem 0.7rem",
-              borderRadius: "8px",
-              border: "1px solid var(--border-strong)",
-              background: "#ffffff",
-              fontWeight: 700,
-              fontSize: "0.84rem",
-            }}
+          <button
+            type="button"
+            onClick={handleBackToList}
+            className="btn btn-primary"
           >
-            <option value="all">すべてのチーム</option>
-            {Object.values(TEAM_META_MAP)
-              .filter((t) => divFilter === "all" || t.division === divFilter)
-              .map((t) => (
-                <option key={t.key} value={t.key}>
-                  {t.shortName}（{t.name}）
-                </option>
-              ))}
-          </select>
-
-          {/* 対キャラ逆引きソート */}
-          <select
-            aria-label="特定キャラに対して強い選手を逆引き"
-            value={vsCharFilter}
-            onChange={(e) => {
-              setVsCharFilter(e.target.value);
-              if (e.target.value !== "none") setSortBy("vsChar");
-            }}
-            style={{
-              padding: "0.45rem 0.7rem",
-              borderRadius: "8px",
-              border: "1px solid var(--primary)",
-              background: "#ffffff",
-              color: "var(--primary)",
-              fontWeight: 800,
-              fontSize: "0.84rem",
-            }}
-          >
-            <option value="none">対キャラ相性で逆引き（指定なし）</option>
-            {allCharacters.map((c) => (
-              <option key={c.charKey} value={c.charKey}>
-                「vs {c.charName}」に強い選手順で並べる
-              </option>
-            ))}
-          </select>
-
-          {/* 並び順 */}
-          <select
-            aria-label="並び順"
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as SortKey)}
-            style={{
-              padding: "0.45rem 0.7rem",
-              borderRadius: "8px",
-              border: "1px solid var(--border-strong)",
-              background: "#ffffff",
-              fontWeight: 700,
-              fontSize: "0.84rem",
-            }}
-          >
-            <option value="point">SFL獲得ポイント順</option>
-            <option value="overall">総合データ評価順</option>
-            <option value="winRate">SFL試合勝率順</option>
-            <option value="battleWinRate">バトル勝率順</option>
-          </select>
-
-          {/* フリーワード検索 */}
-          <input
-            type="search"
-            placeholder="選手名・キャラ名で検索..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            style={{
-              padding: "0.45rem 0.75rem",
-              borderRadius: "8px",
-              border: "1px solid var(--border-strong)",
-              background: "#ffffff",
-              fontSize: "0.85rem",
-              minWidth: "180px",
-              flex: 1,
-            }}
-          />
-        </div>
-
-        {/* 選手カードグリッド */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-            gap: "0.9rem",
-          }}
-        >
-          {filteredPlayers.map((p) => {
-            const isSelected = p.playerKey === selectedPlayer.playerKey;
-            const vsTarget =
-              vsCharFilter !== "none"
-                ? p.vsCharacters.find((c) => c.charKey === vsCharFilter)
-                : null;
-
-            return (
-              <div
-                key={p.playerKey}
-                onClick={() => handleSelectPlayer(p.playerKey, true)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    handleSelectPlayer(p.playerKey, true);
-                  }
-                }}
-                style={{
-                  background: isSelected ? "#eff6ff" : "#ffffff",
-                  border: isSelected
-                    ? "2px solid var(--primary)"
-                    : "1px solid var(--border-color)",
-                  borderLeft: `5px solid ${p.teamColor}`,
-                  borderRadius: "10px",
-                  padding: "1rem",
-                  cursor: "pointer",
-                  transition: "box-shadow 0.15s, transform 0.15s",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    marginBottom: "0.4rem",
-                  }}
-                >
-                  <div>
-                    <span
-                      style={{
-                        fontSize: "0.75rem",
-                        fontWeight: 800,
-                        color: "var(--text-muted)",
-                      }}
-                    >
-                      Div.{p.division.toUpperCase()} / {p.teamShort}
-                    </span>
-                    <div
-                      style={{
-                        fontSize: "1.1rem",
-                        fontWeight: 800,
-                        color: "var(--text-main)",
-                      }}
-                    >
-                      {p.name}
-                    </div>
-                  </div>
-                  <span
-                    className="badge"
-                    style={{
-                      background: "var(--primary-light)",
-                      color: "var(--primary)",
-                      fontWeight: 800,
-                    }}
-                  >
-                    評価 {p.parameters.overallGrade} ({p.parameters.overallScore})
-                  </span>
-                </div>
-
-                <div
-                  style={{
-                    fontSize: "0.8rem",
-                    fontWeight: 700,
-                    color: "var(--text-sub)",
-                    marginBottom: "0.55rem",
-                  }}
-                >
-                  使用キャラ: <strong>{p.mainCharName}</strong>
-                  {p.subCharNames.length > 0 &&
-                    ` / ${p.subCharNames.slice(0, 2).join("・")}`}
-                </div>
-
-                {vsTarget && (
-                  <div
-                    style={{
-                      background: "var(--success-bg)",
-                      border: "1px solid var(--success-border)",
-                      color: "var(--success)",
-                      borderRadius: "6px",
-                      padding: "0.35rem 0.6rem",
-                      fontSize: "0.82rem",
-                      fontWeight: 800,
-                      marginBottom: "0.55rem",
-                    }}
-                  >
-                    vs {vsTarget.charName} 推定勝率:{" "}
-                    {vsTarget.estimatedWinRate.toFixed(1)}%
-                  </div>
-                )}
-
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "0.4rem",
-                    background: "var(--bg-subtle)",
-                    padding: "0.5rem",
-                    borderRadius: "8px",
-                    fontSize: "0.78rem",
-                    marginBottom: "0.55rem",
-                  }}
-                >
-                  <div>
-                    <div style={{ color: "var(--text-muted)" }}>獲得pt</div>
-                    <div
-                      style={{
-                        fontWeight: 800,
-                        fontSize: "0.95rem",
-                        color: "var(--primary)",
-                      }}
-                    >
-                      {p.sfl.point}pt
-                    </div>
-                  </div>
-                  <div>
-                    <div style={{ color: "var(--text-muted)" }}>SFL勝敗</div>
-                    <div style={{ fontWeight: 800 }}>
-                      {p.sfl.victory}勝{p.sfl.losses}敗
-                    </div>
-                  </div>
-                  <div>
-                    <div style={{ color: "var(--text-muted)" }}>バトル勝率</div>
-                    <div style={{ fontWeight: 800 }}>
-                      {p.sfl.battleWinRate.toFixed(0)}%
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    fontSize: "0.76rem",
-                    color: "var(--text-muted)",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <span>
-                    得意:{" "}
-                    {p.strongestMatchups
-                      .slice(0, 2)
-                      .map((m) => m.charName)
-                      .join("・")}
-                  </span>
-                  <span style={{ color: "var(--primary)", fontWeight: 700 }}>
-                    詳細を見る →
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+            ← 選手選択一覧に戻る（全48選手）
+          </button>
         </div>
       </div>
     </div>
