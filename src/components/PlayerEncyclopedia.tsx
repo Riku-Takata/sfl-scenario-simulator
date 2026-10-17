@@ -1253,7 +1253,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
                 marginBottom: "0.5rem",
               }}
             >
-              戦績ベース・6角形パラメーター（主観ゼロ・統計算出）
+              戦績ベース・6角形パラメーター
             </h3>
             <RadarChartSvg
               params={selectedPlayer.parameters}
