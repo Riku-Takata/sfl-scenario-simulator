@@ -849,7 +849,7 @@ export function analyzeDivisionScenarios(
     const diffFromFirst = leader.point - st.point;
     const diffFromThird = thirdTeam.point - st.point;
 
-    const statusSummary = `${st.name}は現在Division ${division.toUpperCase()} ${st.rank}位（${st.point}pt / バトル得失${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff} / ラウンド得失${st.roundDiff >= 0 ? "+" : ""}${st.roundDiff}）。残り${remCount}試合（HOME ${st.remainingHome}戦・AWAY ${st.remainingAway}戦）を残し、CPT Top 96相性＆48選手データ統合モンテカルロ推計でのプレイオフ進出率は${top3Prob}%、1位突破率は${firstPlaceProb}%です。`;
+    const statusSummary = `${st.name}は現在Division ${division.toUpperCase()} ${st.rank}位（${st.point}pt / バトル得失${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff} / ラウンド得失${st.roundDiff >= 0 ? "+" : ""}${st.roundDiff}）。残り${remCount}試合（HOME ${st.remainingHome}戦・AWAY ${st.remainingAway}戦）を残し、プレイオフ進出率は${top3Prob}%、1位突破率は${firstPlaceProb}%です。`;
 
     const playoffOutlook =
       st.rank === 1

@@ -13,104 +13,22 @@ import {
 const standingsData = StandingsDataSchema.parse(rawStandings);
 const matchesData = MatchesDataSchema.parse(rawMatches);
 const scenariosData = ScenariosDataSchema.parse(rawScenarios);
-
-const leaderS = standingsData.divisions.s[0];
-const leaderF = standingsData.divisions.f[0];
-const playedCount = matchesData.matches.filter((m) => m.played).length;
 ---
 
-<BaseLayout title="SFL 2026 シナリオ推定＆順位シミュレーター">
-  <section class="hero-banner">
-    <div class="hero-grid">
+<BaseLayout title="SFL 2026 順位表・プレイオフ突破条件">
+  <div class="page-intro">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
       <div>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem; margin-bottom: 0.65rem;">
-          <span class="live-pulse-badge">
-            <span class="live-pulse-dot"></span>
-            <span>OFFICIAL SFL 2026 + CPT TOP 96 SYNCED</span>
-          </span>
-          <span class="badge" style="background: rgba(251, 191, 36, 0.16); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.35);">
-            10,000回モンテカルロ推計
-          </span>
-          <span style="font-size: 0.76rem; color: var(--text-muted);">
-            更新: {new Date(standingsData.updatedAt).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}
-          </span>
-        </div>
-
-        <h1 class="hero-title">
-          SFL 2026 シナリオ推計 ＆ 高度勝敗シミュレーター
-        </h1>
-
-        <p class="hero-subtitle">
-          Division S / Division F 全12チームの最新順位表・得失バトル差に、<strong>CPT Top 96 キャラ相性マトリクス（28×28 ベイズ平滑化済）</strong>と<strong>出場48選手の対キャラ熟練度・H2H</strong>を統合。1位FINALシード直行から3位PO滑り込みボーダー、次節のHOME後出し最適被せオーダーまでリアルタイムに可視化します。
+        <h1 class="page-title">SFL 2026 順位表・プレイオフ突破条件</h1>
+        <p class="page-desc">
+          ディビジョンごとの現在順位・プレイオフ進出確率（上位3チームが進出）と、各チームの突破条件・日程を確認できます。
         </p>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem;">
-          <a href="/simulator" class="btn btn-accent">
-            <span>🎮 残り試合スコア＆1on1相性シミュレーターを開く</span>
-            <span>→</span>
-          </a>
-          <a href={`/team/${leaderS.key}`} class="btn">
-            <span>🔥 Div S 首位 ({leaderS.shortName}) 分析</span>
-          </a>
-          <a href={`/team/${leaderF.key}`} class="btn">
-            <span>⚡ Div F 首位 ({leaderF.shortName}) 分析</span>
-          </a>
-        </div>
       </div>
-
-      <!-- Right Bento Spotlight (supahero.io / glass.samasante.com style) -->
-      <div class="hero-bento-box">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
-          <span style="font-size: 0.76rem; font-weight: 800; color: var(--text-muted); letter-spacing: 0.05em;">
-            LEAGUE PROGRESS & CURRENT LEADERS
-          </span>
-          <span class="badge" style="background: rgba(255,255,255,0.08); color: #fff;">
-            全60戦中 {playedCount}戦消化
-          </span>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-          <div style="padding: 0.75rem 0.9rem; border-radius: 10px; background: rgba(255, 94, 26, 0.1); border: 1px solid rgba(255, 94, 26, 0.3); display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-size: 0.72rem; font-weight: 800; color: var(--div-s-light);">
-                DIVISION S 首位 (第{matchesData.completedSectionCount.s}節終了)
-              </div>
-              <div style="font-size: 1.05rem; font-weight: 900; color: #fff; margin-top: 2px;">
-                👑 {leaderS.name}
-              </div>
-            </div>
-            <div style="text-align: right;">
-              <div style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--accent-gold);">
-                {leaderS.point}pt
-              </div>
-              <div style="font-size: 0.72rem; color: var(--text-secondary);">
-                PO進出率 {scenariosData.teams[leaderS.key]?.probabilities.playoffTop3.toFixed(1)}%
-              </div>
-            </div>
-          </div>
-
-          <div style="padding: 0.75rem 0.9rem; border-radius: 10px; background: rgba(0, 210, 255, 0.1); border: 1px solid rgba(0, 210, 255, 0.3); display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-size: 0.72rem; font-weight: 800; color: var(--div-f-light);">
-                DIVISION F 首位 (第{matchesData.completedSectionCount.f}節終了)
-              </div>
-              <div style="font-size: 1.05rem; font-weight: 900; color: #fff; margin-top: 2px;">
-                👑 {leaderF.name}
-              </div>
-            </div>
-            <div style="text-align: right;">
-              <div style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--accent-gold);">
-                {leaderF.point}pt
-              </div>
-              <div style="font-size: 0.72rem; color: var(--text-secondary);">
-                PO進出率 {scenariosData.teams[leaderF.key]?.probabilities.playoffTop3.toFixed(1)}%
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="/simulator" class="btn btn-primary">
+        残り試合のスコアを自分で入力して試算する →
+      </a>
     </div>
-  </section>
+  </div>
 
   <DivisionDashboard
     client:load

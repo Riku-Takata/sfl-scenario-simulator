@@ -4,14 +4,8 @@ import InteractiveSimulator from "@/components/InteractiveSimulator";
 import rawMatches from "@/data/matches.json";
 import rawStandings from "@/data/standings.json";
 import rawScenarios from "@/data/scenarios.json";
-import rawMasterPlayers from "@/data/master-players.json";
-import rawCptMatchups from "@/data/cpt-matchups-top96.json";
-import rawPlayerStats from "@/data/player-stats.json";
 import {
-  CptMatchupsTop96DataSchema,
-  MasterPlayersDataSchema,
   MatchesDataSchema,
-  PlayerStatsDataSchema,
   ScenariosDataSchema,
   StandingsDataSchema,
 } from "@/lib/schema";
@@ -19,40 +13,20 @@ import {
 const matchesData = MatchesDataSchema.parse(rawMatches);
 const standingsData = StandingsDataSchema.parse(rawStandings);
 const scenariosData = ScenariosDataSchema.parse(rawScenarios);
-const masterPlayersData = MasterPlayersDataSchema.parse(rawMasterPlayers);
-const cptMatchupsData = CptMatchupsTop96DataSchema.parse(rawCptMatchups);
-const playerStatsData = PlayerStatsDataSchema.parse(rawPlayerStats);
 ---
 
-<BaseLayout title="インタラクティブ順位＆CPTマッチアップシミュレーター | SFL 2026">
-  <section class="hero-banner">
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
-      <div>
-        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.45rem;">
-          <span class="badge" style="background: rgba(249, 115, 22, 0.2); color: #fb923c;">
-            INTERACTIVE SIMULATOR + CPT PREDICTOR
-          </span>
-          <a href="/" style="font-size: 0.8rem; color: var(--text-muted);">
-            ← ディビジョン順位表ダッシュボードへ戻る
-          </a>
-        </div>
-        <h1 class="hero-title">
-          SFL 2026 残り試合スコア＆CPTキャラ相性シミュレーター
-        </h1>
-        <p class="hero-subtitle">
-          未消化カードのスコア（40-0 / 30-10 / 30-20）をクリックすると、SFL公式タイブレーク規定（ポイント → 獲得バトル得失差 → 獲得ラウンド得失差）に基づいて順位とプレイオフ進出チームがリアルタイムに再計算されます。CPT Top 96 キャラ相性 × 選手対キャラ戦績 × H2H による1on1勝率カルキュレーターも搭載。
-        </p>
-      </div>
-    </div>
-  </section>
+<BaseLayout title="残り試合 順位シミュレーター | SFL 2026">
+  <div class="page-intro">
+    <h1 class="page-title">SFL 2026 残り試合 順位シミュレーター</h1>
+    <p class="page-desc">
+      未消化の試合にスコア（40-0 / 30-10 / 30-20）をクリックして入力すると、右側の順位表にリアルタイムで反映されます。
+    </p>
+  </div>
 
   <InteractiveSimulator
     client:load
     matchesData={matchesData}
     standingsData={standingsData}
     scenariosData={scenariosData}
-    masterPlayersData={masterPlayersData}
-    cptMatchupsData={cptMatchupsData}
-    playerStatsData={playerStatsData}
   />
 </BaseLayout>

@@ -153,36 +153,24 @@ function generateRichDataDrivenNarrative(
       ? Math.round((standing.pointAway / standing.entryAway) * 10) / 10
       : 0;
 
-  const nextPred = team.nextMatchPrediction;
-  const nextAnchor = nextPred?.recommendedLineup?.[2];
-  const cptInsight = nextPred && nextAnchor
-    ? `次節（${nextPred.sectionTitle} vs ${nextPred.opponentName}・${nextPred.side.toUpperCase()}）では、CPT Top 96キャラ相性＆個人戦績モデルにより大将戦「${nextAnchor.playerAName}(${nextAnchor.charA}) vs ${nextAnchor.playerBName}(${nextAnchor.charB})」の期待勝率が【${nextAnchor.expectedWinRateA}%】（Top96相性 ${nextAnchor.macroMatchupTop96}% / 対キャラ熟練度 ${nextAnchor.playerVsCharRate}%）、チーム期待勝率は【${nextPred.teamWinProbability}%】（期待獲得 ${nextPred.expectedTeamPoints}pt）と算出されています。`
-    : "";
-
   const statusSummary = [
-    `【${team.teamName}（${rosterNames}）】は第${standing.entry}節終了時点で ${standing.victory}勝${standing.entry - standing.victory}敗・合計${standing.point}pt（バトル得失${standing.battleDiff >= 0 ? "+" : ""}${standing.battleDiff} / ラウンド得失${standing.roundDiff >= 0 ? "+" : ""}${standing.roundDiff}）でDivision ${team.division.toUpperCase()} 現在${standing.rank}位につけています。`,
-    `ここまでの戦績は ${recentResults.join("、")}。`,
-    `内訳を見るとHOME ${standing.entryHome}戦で${standing.pointHome}pt（平均${homeAvg}pt）、AWAY ${standing.entryAway}戦で${standing.pointAway}pt（平均${awayAvg}pt）、20ptが懸かる大将戦勝率は${anchorTotal > 0 ? `${anchorWins}勝${anchorTotal - anchorWins}敗` : "集計中"}${tiebreakerWins + tiebreakerLosses > 0 ? `（延長戦${tiebreakerWins}勝${tiebreakerLosses}敗）` : ""}です。`,
-    cptInsight,
-    `残り${team.remainingMatches}試合（HOME ${team.remainingHome}戦・AWAY ${team.remainingAway}戦）を踏まえたCPT相性統合モンテカルロ10,000回推計では、プレイオフ（3位以内）進出確率は【${team.probabilities.playoffTop3}%】、2位以内確率は【${team.probabilities.top2HomeAdvantage}%】、1位FINAL直行確率は【${team.probabilities.firstPlace}%】です。`,
+    `${team.teamName}は第${standing.entry}節終了時点で ${standing.victory}勝${standing.entry - standing.victory}敗・合計${standing.point}pt（バトル得失${standing.battleDiff >= 0 ? "+" : ""}${standing.battleDiff} / ラウンド得失${standing.roundDiff >= 0 ? "+" : ""}${standing.roundDiff}）でDivision ${team.division.toUpperCase()} 現在${standing.rank}位です。`,
+    `残り${team.remainingMatches}試合（HOME ${team.remainingHome}戦・AWAY ${team.remainingAway}戦）を踏まえた現在のプレイオフ進出確率は${team.probabilities.playoffTop3}%、2位以内確率は${team.probabilities.top2HomeAdvantage}%、1位突破確率は${team.probabilities.firstPlace}%となっています。`,
   ].join("");
 
   const playoffOutlook =
     standing.rank === 1
-      ? `現在Division ${team.division.toUpperCase()}首位（${standing.point}pt）を走る${team.shortName}。2位${second.shortName}（${second.point}pt）に${standing.point - second.point}pt差、4位${fourth.shortName}（${fourth.point}pt）に${standing.point - fourth.point}pt差をつけており、このまま1位突破を果たせばステップラダー方式のプレイオフで準決勝を免除され、FINALへ無条件HOME側としてシード直行できます。`
+      ? `現在2位${second.shortName}（${second.point}pt）に${standing.point - second.point}pt差、4位${fourth.shortName}（${fourth.point}pt）に${standing.point - fourth.point}pt差をつけて首位を走っています。このまま1位で突破すれば、プレイオフ準決勝が免除され決勝へHOME側としてシード直行できます。`
       : standing.rank <= 3
-        ? `現在プレイオフ圏内の${standing.rank}位（${standing.point}pt）。4位${fourth.shortName}（${fourth.point}pt）との差は${standing.point - fourth.point}pt、首位${leader.shortName}（${leader.point}pt）との差は${leader.point - standing.point}ptです。SFLのプレイオフは1位がFINALシード直行、2位が準決勝で奇数巡目のHOME優先権を握るため、CPTキャラ相性で優位なHOME被せ節を確実にモノにして2位以上・1位逆転を狙う価値が極めて高い局面です。`
-        : `現在${standing.rank}位（${standing.point}pt）とプレイオフ圏外ですが、3位ボーダーの${third.shortName}（${third.point}pt）とはわずか${third.point - standing.point}pt差（大将戦1勝〜本戦1勝圏内）です。SFLは1節で最大40ptが動くため、上位陣との直接対決で有利キャラ被せから30-10や40-0を決めることで一気にPO圏内へ浮上できる十分な逆転ポテンシャルを残しています。`;
+        ? `現在プレイオフ圏内の${standing.rank}位。4位${fourth.shortName}（${fourth.point}pt）との差は${standing.point - fourth.point}pt、首位${leader.shortName}（${leader.point}pt）との差は${leader.point - standing.point}ptです。2位以上で通過すればプレイオフでのHOME優先権を確保できます。`
+        : `現在${standing.rank}位ですが、3位ボーダーの${third.shortName}（${third.point}pt）とは${third.point - standing.point}pt差です。SFLは1節で最大40pt獲得できるため、直接対決での30pt〜40pt勝利で一気にプレイオフ圏内へ浮上可能です。`;
 
   const r1 = team.routes.route1First;
   const route1Narrative = [
-    `Division ${team.division.toUpperCase()}の1位突破予想ボーダーは平均【${team.projectedPoints.divisionFirstBorderAvg}pt】。${team.shortName}が首位通過（FINALシード直行）を確実にするためのターゲットは合計【${r1.targetPoints}pt】（残り${team.remainingMatches}試合で+${Math.max(0, r1.targetPoints - standing.point)}pt、目安${r1.requiredWins}勝${r1.requiredLosses}敗）です。`,
-    nextPred && nextAnchor
-      ? `まずは次節のvs ${nextPred.opponentName}戦（${nextPred.side.toUpperCase()}）において、${nextAnchor.playerAName}(${nextAnchor.charA})を軸としたオーダー（大将戦期待勝率${nextAnchor.expectedWinRateA}%）で${nextPred.mostLikelyScore}以上の勝利を収めることが第一関門となります。`
-      : "",
+    `1位突破（決勝シード直行）の予想目安は合計${r1.targetPoints}pt（残り${team.remainingMatches}試合で+${Math.max(0, r1.targetPoints - standing.point)}pt、目安${r1.requiredWins}勝${r1.requiredLosses}敗）です。`,
     team.remainingHome >= team.remainingAway
-      ? `残り${team.remainingMatches}戦のうちHOME戦を${team.remainingHome}試合残しているため、相手先出しに対してCPT Top 96相性で53%以上出るカウンター選手を被せ、大将戦（20pt）を取り切って30pt〜40ptを稼ぐことが1位突破（現在確率${team.probabilities.firstPlace}%）への王道シナリオです。`
-      : `残り${team.remainingMatches}戦のうちAWAYが${team.remainingAway}試合と続くタフな日程ですが、CPT相性で極端な不利がつかない安定キャラを先鋒・中堅に配置して10pt〜20ptを確保し、上位勢との直接対決で本戦30pt勝利を奪うことで1位突破（現在確率${team.probabilities.firstPlace}%）の道が開けます。`,
+      ? `残り${team.remainingMatches}戦のうち後出し有利なHOME戦が${team.remainingHome}試合残っているため、HOME戦で大将戦（20pt）を含め確実に30pt〜40ptを積み上げることが1位突破への鍵となります。`
+      : `残り${team.remainingMatches}戦のうちAWAY戦が${team.remainingAway}試合続きますが、先鋒・中堅で着実にポイントを確保し、上位チームとの直接対決で勝利を収めることで1位突破が視野に入ります。`,
   ].join("");
 
   const r2 = team.routes.route2Second;
