@@ -23,6 +23,7 @@
   "dependencies": {
     "@astrojs/react": "^4.2.1",
     "@vercel/analytics": "^1.6.1",
+    "@vercel/speed-insights": "^2.0.0",
     "astro": "^5.5.0",
     "html-to-image": "^1.11.13",
     "react": "^19.0.0",

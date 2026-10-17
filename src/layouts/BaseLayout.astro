@@ -1,6 +1,7 @@
 ---
 import "@/styles/globals.css";
 import Analytics from "@vercel/analytics/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 import { DONATION_CONFIG } from "@/config/donation";
 
 interface Props {
@@ -28,6 +29,7 @@ const isHome = !isSimulator && !isPlayers && !isAbout;
     <title>{title}</title>
     <meta name="description" content={description} />
     <Analytics />
+    <SpeedInsights />
   </head>
   <body>
     <header class="site-header">
