@@ -263,9 +263,10 @@ async function tryGenerateWithGeminiVideo(
   );
 
   const prompt = `
-あなたはストリートファイターリーグ(SFL)の専門アナリストです。
+あなたはストリートファイター6のプロ格ゲーマー兼SFL公式アナリストです。
 添付されたYouTubeのSFL公式動画クリップ（${startOffsetSec}秒〜${endOffsetSec}秒）から、
-【${matchInfo.home} vs ${matchInfo.away}】の試合展開を、画面上の映像（体力バー、ドライブゲージ、技、KOシーン）と実況音声から詳細に分析してください。
+【${matchInfo.home} vs ${matchInfo.away}】の試合展開を、「ゲームプレイ画面の映像」を注視して詳細に分析してください。
+実況の言葉だけでなく、画面内のドライブゲージ・バーンアウト状況、牽制技の振り合い（しゃがみ中P、立ち中K、小技など）、飛びと対空の成否、画面端のシミーやセットプレイなど、実際の画面で起きたプレイヤーの操作と状態を捉えてください。
 
 【公式確定結果】
 ${matchInfo.bouts
@@ -278,16 +279,16 @@ ${matchInfo.bouts
 以下のJSON形式で出力してください:
 {
   "matchHeadline": "試合全体の見出し（30文字以内）",
-  "matchSummary": "試合全体の流れとドラマの要約（150文字程度）",
+  "matchSummary": "試合全体の流れとドラマの要約（150文字程度。ゲージ攻防や主導権の推移を含む）",
   "matchHighlightSec": ${startOffsetSec + 120},
-  "matchHighlightText": "マッチ最大の決定打シーンの解説",
+  "matchHighlightText": "マッチ最大の決定打シーンの解説（具体的な技名・ヒット確認・逆転劇）",
   "bouts": [
     ${matchInfo.bouts
       .map(
         (b) => `{
-      "tacticalFocus": "${b.statusName}での立ち回り・ゲージ攻防（80文字）",
-      "turningPoint": "勝負の分かれ目となった場面（80文字）",
-      "lethalMove": "決着技やリーサルの情景（50文字）",
+      "tacticalFocus": "${b.statusName}での地上戦牽制（小技・中攻撃の振り合い）やドライブゲージ・バーンアウト攻防（80文字）",
+      "turningPoint": "飛びと対空、画面端のシミーやパニッシュカウンターなど勝負の分かれ目（80文字）",
+      "lethalMove": "決着技（SA/CA、OD無敵技、コマンド投げなど）やリーサルの情景（50文字）",
       "commentaryQuote": "実況解説席の盛り上がりや印象的な言葉",
       "highlightSec": ${startOffsetSec + 60},
       "highlightLabel": "名場面の見出し"
