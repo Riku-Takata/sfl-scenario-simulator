@@ -193,16 +193,43 @@ export default function MatchRecapDashboard({ recapsData }: Props) {
                 <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--text-muted)" }}>
                   第{m.matchNumber}試合 ({m.scheduledAt.slice(0, 10)})
                 </div>
-                <span
-                  className="badge"
-                  style={{
-                    background: m.isTiebreaker ? "#fef3c7" : "var(--success-bg)",
-                    color: m.isTiebreaker ? "#d97706" : "var(--success)",
-                    fontWeight: 700,
-                  }}
-                >
-                  {m.isTiebreaker ? "延長戦決着" : "試合終了"}
-                </span>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
+                  <span
+                    className="badge"
+                    style={{
+                      background: m.isTiebreaker ? "#fef3c7" : "var(--success-bg)",
+                      color: m.isTiebreaker ? "#d97706" : "var(--success)",
+                      fontWeight: 700,
+                    }}
+                  >
+                    {m.isTiebreaker ? "延長戦決着" : "試合終了"}
+                  </span>
+
+                  {m.matchVideoUrl && (
+                    <a
+                      href={m.matchVideoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline"
+                      style={{
+                        fontSize: "0.78rem",
+                        padding: "0.25rem 0.65rem",
+                        borderColor: "#dc2626",
+                        color: "#dc2626",
+                        fontWeight: 700,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.35rem",
+                      }}
+                    >
+                      <span>▶</span>
+                      <span>
+                        第{m.matchNumber}試合を見る
+                        {m.matchStartLabel ? ` (${m.matchStartLabel}〜)` : ""}
+                      </span>
+                    </a>
+                  )}
+                </div>
               </div>
 
               {/* スコアボード */}
@@ -323,29 +350,6 @@ export default function MatchRecapDashboard({ recapsData }: Props) {
                   <strong style={{ fontSize: "1.02rem", color: "var(--text-main)" }}>
                     📝 {m.matchHeadline}
                   </strong>
-
-                  {m.matchHighlight && (
-                    <a
-                      href={m.matchHighlight.videoUrlWithTime}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="score-chip"
-                      style={{
-                        background: "#fee2e2",
-                        color: "#b91c1c",
-                        borderColor: "#fca5a5",
-                        fontWeight: 700,
-                        fontSize: "0.76rem",
-                        padding: "0.25rem 0.6rem",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.3rem",
-                      }}
-                    >
-                      <span>▶</span>
-                      <span>決定打シーンを見る ({m.matchHighlight.timestampLabel})</span>
-                    </a>
-                  )}
                 </div>
                 <p
                   style={{
@@ -551,37 +555,6 @@ export default function MatchRecapDashboard({ recapsData }: Props) {
                                 </span>
                               </div>
                             </div>
-
-                            {/* タイムスタンプ動画ボタン */}
-                            {b.highlight && (
-                              <div
-                                style={{
-                                  marginTop: "0.75rem",
-                                  display: "flex",
-                                  justifyContent: "flex-end",
-                                }}
-                              >
-                                <a
-                                  href={b.highlight.videoUrlWithTime}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="btn btn-outline"
-                                  style={{
-                                    fontSize: "0.78rem",
-                                    padding: "0.35rem 0.75rem",
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: "0.35rem",
-                                    borderColor: "#dc2626",
-                                    color: "#dc2626",
-                                    fontWeight: 700,
-                                  }}
-                                >
-                                  <span>▶</span>
-                                  <span>このBoutの決着シーンを見る ({b.highlight.timestampLabel})</span>
-                                </a>
-                              </div>
-                            )}
                           </div>
                         )}
                       </div>

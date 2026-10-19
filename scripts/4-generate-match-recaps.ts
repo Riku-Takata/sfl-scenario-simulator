@@ -87,9 +87,28 @@ interface RawScheduleEntry {
 }
 
 /**
- * 1ゲームごとのラウンド奪取状況を解析
+ * 文章からタイムスタンプ関連の数字（XX分XX秒など）を除去
  */
-function analyzeRoundFlow(gameLogs: RawGameLog[] = []): {
+function cleanTimestampFromText(text: string): string {
+  if (!text) return "";
+  return text
+    .replace(/\d{1,3}分\d{1,2}秒[（(][^）)]*[）)]/g, "")
+    .replace(/\d{1,3}分\d{1,2}秒(?:頃|付近)?/g, "")
+    .replace(/\d{1,2}:\d{2}(?::\d{2})?(?:[（(][^）)]*[）)])?/g, "")
+    .replace(/（動画開始から約\d+秒）/g, "")
+    .replace(/約\d+秒/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+/**
+ * 1ゲームごとのラウンド奪取状況を解析（UIの表示順に合わせて [AWAY - HOME] の順序で出力）
+ */
+function analyzeRoundFlow(
+  gameLogs: RawGameLog[] = [],
+  awayPlayerName: string = "",
+  homePlayerName: string = ""
+): {
   roundFlowTexts: string[];
   gameOutcomes: Array<{
     gameNum: number;
@@ -115,16 +134,21 @@ function analyzeRoundFlow(gameLogs: RawGameLog[] = []): {
     const homeWins = rounds.filter((r) => r === "1").length;
     const awayWins = rounds.filter((r) => r === "2").length;
     const winner: "home" | "away" = homeWins > awayWins ? "home" : "away";
+    const winnerPlayer = winner === "away" ? awayPlayerName : homePlayerName;
     const isFullRound = rounds.length === 3;
     const isComeback =
       (winner === "home" && rounds[0] === "2") ||
       (winner === "away" && rounds[0] === "1");
 
-    let text = `Game ${idx + 1}: `;
+    // UIの表示順に合わせて [AWAY - HOME] の順序でスコアを表示
+    let text = `Game ${idx + 1}: [${awayWins}-${homeWins}] `;
+    if (winnerPlayer) {
+      text += `${winnerPlayer}選手が`;
+    }
     if (rounds.length === 2) {
-      text += `[${winner === "home" ? "2-0" : "0-2"}] ストレート先取`;
+      text += "ストレート先取";
     } else {
-      text += `[${winner === "home" ? "2-1" : "1-2"}] フルラウンド`;
+      text += "フルラウンド勝利";
       if (isComeback) text += "（先制されるも逆転）";
     }
     roundFlowTexts.push(text);
@@ -179,25 +203,49 @@ function generateDeterministicVisualAnalysis(
   let lethalMove = "";
 
   if (winnerChara.includes("ダルシム")) {
-    tacticalFocus = `${winnerPlayer}選手が長いリーチの通常技と低空ヨガフロートで間合いを徹底管理し、相手の突進や接近を許さない立ち回り。`;
+    tacticalFocus = `${winnerPlayer}選手が長いリーチの牽制と低空ヨガフロートで間合いを徹底管理し、相手の突進をヨガファイアで阻みながらドライブゲージを削る立ち回り。`;
   } else if (winnerChara.includes("ザンギエフ") || winnerChara.includes("リリー")) {
-    tacticalFocus = `${winnerPlayer}選手がドライブゲージを削る強烈なコマ投げと圧巻のプレッシャーで画面端に追い詰める展開。`;
+    tacticalFocus = `${winnerPlayer}選手がドライブゲージを削る強烈なコマ投げと圧巻のプレッシャーで画面端に追い詰め、相手にバーンアウトの重圧をかける展開。`;
   } else if (winnerChara.includes("ガイル") || winnerChara.includes("サガット")) {
-    tacticalFocus = `盤石の弾撃ちと鉄壁の対空迎撃で相手の飛びを完全にシャットアウトする完璧な要塞戦法。`;
+    tacticalFocus = `盤石の弾撃ちと鉄壁の対空迎撃で相手の飛びを完全にシャットアウトし、相手のドライブゲージを削り切る要塞戦法。`;
+  } else if (winnerChara.includes("エレナ")) {
+    tacticalFocus = `${winnerPlayer}選手がリーチの長い足技とローキックでの牽制を機能させ、地上戦の間合いを完全に支配。`;
+  } else if (winnerChara.includes("ルーク")) {
+    tacticalFocus = `${winnerPlayer}選手がしゃがみ中Pとサンドブラストで間合いを支配し、ドライブラッシュを交えて相手のドライブゲージを着実に削る完璧な主導権掌握。`;
+  } else if (winnerChara.includes("リュウ")) {
+    tacticalFocus = `${winnerPlayer}選手が重厚なしゃがみ中Pと波掌撃で地上を制圧し、バーンアウトを徹底回避しながら前線を押し上げる堂々の立ち回り。`;
+  } else if (winnerChara.includes("キャミィ")) {
+    tacticalFocus = `${winnerPlayer}選手が鋭いストライクと素早い地上ダッシュで画面端に追い詰め、シミーと打撃の二択で一気に体力を削り取る展開。`;
+  } else if (winnerChara.includes("ケン") || winnerChara.includes("豪鬼")) {
+    tacticalFocus = `${winnerPlayer}選手の鋭いラッシュ攻撃と弾牽制が光り、相手のドライブゲージを削りながら画面端へ運ぶ苛烈な攻勢。`;
   } else {
-    tacticalFocus = `${winnerPlayer}選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。`;
+    tacticalFocus = `${winnerPlayer}選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。`;
   }
 
   if (wonFromBehind || (isFullSet && totalGames >= 3)) {
-    turningPoint = `相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。`;
+    turningPoint = `相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。`;
   } else if (hadComebackGame) {
-    turningPoint = `第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めとミリ単位のヒット確認を連続で通した勝負強さが光る。`;
+    turningPoint = `第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。`;
   } else {
-    turningPoint = `序盤から相手の牽制に対して的確な差し返しを連発し、一度も主導権を渡さずペースを保ち続けた。`;
+    turningPoint = `序盤から相手の牽制に対して的確な差し返しを連発し、飛び込みに対しても寸分狂わぬ対空迎撃で一度も主導権を渡さなかった。`;
   }
 
-  if (isFullSet) {
-    lethalMove = `運命の最終セット、残り体力わずかの極限状態から、飛び込んできた${loserChara}に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！`;
+  if (winnerChara.includes("ダルシム")) {
+    lethalMove = isFullSet
+      ? `運命の最終セット、互いに体力ミリの極限状態から、相手の技の出かかりを捉えるパニッシュカウンターからヨガファイアを叩き込んで劇的KO！`
+      : `画面端に追い詰めた状況から、的確なリーチ牽制と対空迎撃で相手を寄せ付けず完勝KO！`;
+  } else if (winnerChara.includes("ルーク")) {
+    lethalMove = `バーンアウト状態で追い詰められた相手に対し、ドライブラッシュからの怒涛のラッシュでガードをこじ開け、最後はDDTを叩き込んで圧巻のKO勝利！`;
+  } else if (winnerChara.includes("エレナ")) {
+    lethalMove = `画面端でガードを固める相手に対し、ドライブラッシュからの下段崩しを冷静にヒット確認し、美しいコンボを叩き込んで完全決着KO！`;
+  } else if (winnerChara.includes("リュウ")) {
+    lethalMove = `画面端に追い詰めた状況から、投げ抜けを誘う鮮やかなシミー（バックステップ）でパニッシュカウンターを奪い、渾身のSA3（真・昇龍拳）を叩き込んでKO！`;
+  } else if (winnerChara.includes("ザンギエフ")) {
+    lethalMove = `画面端に追い詰めた極限のプレッシャーから、相手の暴れやジャンプを許さず完璧なコマンド投げを叩き込んで大ダメージKO！`;
+  } else if (winnerChara.includes("ガイル")) {
+    lethalMove = `相手の決死の飛び込みに対し、冷静沈着なサマーソルトキックからSA3（クロスファイアサマーソルト）へ繋いで完全KO！`;
+  } else if (isFullSet) {
+    lethalMove = `運命の最終セット、残り体力わずかの極限状態から、飛び込んできた相手に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！`;
   } else {
     lethalMove = `画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！`;
   }
@@ -206,7 +254,7 @@ function generateDeterministicVisualAnalysis(
     ? `${winnerPlayer}選手がフルセットの死闘を制す！${statusName}でチームを牽引`
     : `${winnerPlayer}選手が堂々の快勝！${statusName}で貴重な勝利をもたらす`;
 
-  const summary = `${statusName}（${homePlayerName} vs ${awayPlayerName}）は、${homeBattle}-${awayBattle}で${winnerPlayer}選手（${winnerChara}）が勝利。${tacticalFocus} ${turningPoint}`;
+  const summary = `${statusName}（${awayPlayerName} vs ${homePlayerName}）は、${awayBattle}-${homeBattle}で${winnerPlayer}選手（${winnerChara}）が勝利。${tacticalFocus} ${turningPoint}`;
 
   return {
     tacticalFocus,
@@ -482,38 +530,33 @@ export async function generateAndSaveMatchRecaps(): Promise<MatchRecapsData> {
       });
     }
 
-const DIVISION_S_SEC4_CONFIG = {
-  youtubeUrl: "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
-  matches: [
-    {
-      matchNum: 1, // iXA vs IBSG
-      clippingWindow: { start: 4750, end: 5260 }, // 大将戦 torimeshi vs hibiki 最終局面〜大逆転KO決着
-      bouts: [
-        { status: 0, startSec: 2632, label: "先鋒戦" }, // 43:52
-        { status: 1, startSec: 3486, label: "中堅戦" }, // 58:06
-        { status: 2, startSec: 4399, label: "大将戦" }, // 1:13:19
-      ],
-    },
-    {
-      matchNum: 2, // FAV vs CR
-      clippingWindow: { start: 8400, end: 9150 }, // 大将戦終盤〜延長戦 dogura vs sako 決着
-      bouts: [
-        { status: 0, startSec: 6887, label: "先鋒戦" }, // 1:54:47
-        { status: 1, startSec: 7470, label: "中堅戦" }, // 2:04:30
-        { status: 2, startSec: 8110, label: "大将戦" }, // 2:15:10
-        { status: 3, startSec: 8844, label: "延長戦" }, // 2:27:24
-      ],
-    },
-    {
-      matchNum: 3, // SOL vs ZETA
-      clippingWindow: { start: 12600, end: 13260 }, // 大将戦 mago vs tachikawa 決着
-      bouts: [
-        { status: 0, startSec: 10812, label: "先鋒戦" }, // 3:00:12
-        { status: 1, startSec: 11596, label: "中堅戦" }, // 3:13:16
-        { status: 2, startSec: 12364, label: "大将戦" }, // 3:26:04
-      ],
-    },
-  ],
+const DIVISION_SECTION_META: Record<
+  string,
+  {
+    youtubeUrl: string;
+    matches: Array<{
+      matchNum: number;
+      startTimeSec: number;
+      startLabel: string;
+    }>;
+  }
+> = {
+  "div-s-sec4": {
+    youtubeUrl: "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
+    matches: [
+      { matchNum: 1, startTimeSec: 2220, startLabel: "37:00" },
+      { matchNum: 2, startTimeSec: 6477, startLabel: "1:47:57" },
+      { matchNum: 3, startTimeSec: 10387, startLabel: "2:53:07" },
+    ],
+  },
+  "div-f-sec3": {
+    youtubeUrl: "https://www.youtube.com/watch?v=3X1zd27viu0",
+    matches: [
+      { matchNum: 1, startTimeSec: 2235, startLabel: "37:15" },
+      { matchNum: 2, startTimeSec: 6677, startLabel: "1:51:17" },
+      { matchNum: 3, startTimeSec: 10842, startLabel: "3:00:42" },
+    ],
+  },
 };
 
     // 最新節の詳細展開生成
@@ -522,15 +565,11 @@ const DIVISION_S_SEC4_CONFIG = {
 
     const secNum = latestSecNum[div];
     const sec = latestEntry.fields.section;
-    let defaultYtUrl =
+    const sectionMeta = DIVISION_SECTION_META[latestEntry.post_name];
+    const defaultYtUrl =
+      sectionMeta?.youtubeUrl ||
       sec.links?.live?.url ||
-      (div === "s" && secNum === 4
-        ? DIVISION_S_SEC4_CONFIG.youtubeUrl
-        : "https://www.youtube.com/@CapcomFightersJP");
-
-    if (div === "s" && secNum === 4) {
-      defaultYtUrl = DIVISION_S_SEC4_CONFIG.youtubeUrl;
-    }
+      "https://www.youtube.com/@CapcomFightersJP";
 
     const slots: Array<{ num: number; slot: RawMatchSlot }> = [
       { num: 1, slot: sec.match1 },
@@ -567,10 +606,16 @@ const DIVISION_S_SEC4_CONFIG = {
       for (let i = 0; i < count; i++) {
         const hp = p1[i];
         const ap = p2[i];
+        const homePlayerDisp = PLAYER_NAME_MAP[hp.player] || hp.player;
+        const awayPlayerDisp = PLAYER_NAME_MAP[ap.player] || ap.player;
         const homeCharaKey = Object.keys(hp.use_chara || {})[0] || "";
         const awayCharaKey = Object.keys(ap.use_chara || {})[0] || "";
         const boutLogs = rawLogs[i] || [];
-        const { roundFlowTexts, gameOutcomes } = analyzeRoundFlow(boutLogs);
+        const { roundFlowTexts, gameOutcomes } = analyzeRoundFlow(
+          boutLogs,
+          awayPlayerDisp,
+          homePlayerDisp
+        );
 
         const boutWinner: "home" | "away" = hp.battle > ap.battle ? "home" : "away";
         const isFullSet =
@@ -579,8 +624,8 @@ const DIVISION_S_SEC4_CONFIG = {
 
         const baseAnalysis = generateDeterministicVisualAnalysis(
           hp.status_name,
-          PLAYER_NAME_MAP[hp.player] || hp.player,
-          PLAYER_NAME_MAP[ap.player] || ap.player,
+          homePlayerDisp,
+          awayPlayerDisp,
           homeCharaKey,
           awayCharaKey,
           hp.battle,
@@ -588,27 +633,6 @@ const DIVISION_S_SEC4_CONFIG = {
           boutWinner,
           gameOutcomes
         );
-
-        let boutStartSec = 1800;
-        let boutHighlightTitle = baseAnalysis.headline;
-        let boutHighlightDesc = baseAnalysis.lethalMove;
-
-        if (div === "s" && secNum === 4) {
-          const s4MatchConfig = DIVISION_S_SEC4_CONFIG.matches.find((m) => m.matchNum === num);
-          const s4BoutConfig = s4MatchConfig?.bouts.find((b) => b.status === hp.status);
-          if (s4BoutConfig) {
-            boutStartSec = s4BoutConfig.startSec;
-            boutHighlightTitle = `${s4BoutConfig.label} 名場面 (${formatSecondsToTimestamp(boutStartSec)})`;
-          }
-        }
-
-        const highlightMoment: VideoHighlightMoment = {
-          timestampSeconds: boutStartSec,
-          timestampLabel: formatSecondsToTimestamp(boutStartSec),
-          title: boutHighlightTitle,
-          description: boutHighlightDesc,
-          videoUrlWithTime: `${defaultYtUrl}&t=${boutStartSec}s`,
-        };
 
         bouts.push({
           status: hp.status,
@@ -625,17 +649,16 @@ const DIVISION_S_SEC4_CONFIG = {
           isFullSet,
           roundFlow: roundFlowTexts,
           visualAnalysis: {
-            tacticalFocus: baseAnalysis.tacticalFocus,
-            turningPoint: baseAnalysis.turningPoint,
-            lethalMove: baseAnalysis.lethalMove,
+            tacticalFocus: cleanTimestampFromText(baseAnalysis.tacticalFocus),
+            turningPoint: cleanTimestampFromText(baseAnalysis.turningPoint),
+            lethalMove: cleanTimestampFromText(baseAnalysis.lethalMove),
           },
-          highlight: highlightMoment,
         });
 
         boutAnalysisList.push({
           statusName: hp.status_name,
-          homePlayer: PLAYER_NAME_MAP[hp.player] || hp.player,
-          awayPlayer: PLAYER_NAME_MAP[ap.player] || ap.player,
+          homePlayer: homePlayerDisp,
+          awayPlayer: awayPlayerDisp,
           homeChara: formatCharName(homeCharaKey),
           awayChara: formatCharName(awayCharaKey),
           winner: boutWinner === "home" ? homeName : awayName,
@@ -667,72 +690,12 @@ const DIVISION_S_SEC4_CONFIG = {
         matchSummary += `大将戦を制した${matchWinnerTeam}が大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。`;
       }
 
-      let matchHighlightSec = bouts[bouts.length - 1]?.highlight?.timestampSeconds || 1800;
-      let matchHighlightTitle = matchHeadline;
-      let matchHighlightDesc = matchSummary;
-
-      // Gemini Video API による動画理解（キーがあり、有効な動画URLの場合のみ実行）
-      if (apiKey && isValidYoutubeVideoUrl(defaultYtUrl)) {
-        let timeWindow = { start: 1800, end: 2400 };
-        if (div === "s" && secNum === 4) {
-          const s4MatchConfig = DIVISION_S_SEC4_CONFIG.matches.find((m) => m.matchNum === num);
-          if (s4MatchConfig) {
-            timeWindow = s4MatchConfig.clippingWindow;
-          }
-        }
-
-        console.log(
-          `[Gemini Video] Requesting video understanding for ${div.toUpperCase()} Sec${secNum} Match${num} (${timeWindow.start}s - ${timeWindow.end}s)...`
-        );
-        const geminiResult = await tryGenerateWithGeminiVideo(
-          apiKey,
-          defaultYtUrl,
-          timeWindow.start,
-          timeWindow.end,
-          {
-            home: homeName,
-            away: awayName,
-            bouts: boutAnalysisList,
-          }
-        );
-
-        if (geminiResult) {
-          usedGeminiVideo = true;
-          matchHeadline = geminiResult.matchHeadline || matchHeadline;
-          matchSummary = geminiResult.matchSummary || matchSummary;
-
-          const vo = geminiResult.videoObservations;
-          const koSec = vo.koTimestampSec || timeWindow.start;
-          const koLabel = vo.koTimestampLabel || formatSecondsToTimestamp(koSec);
-
-          // 決定打Bout（延長戦があれば延長戦、なければ大将戦）に深層映像解析結果を反映
-          const decisiveBout =
-            bouts.find((b) => b.status === 3) || bouts.find((b) => b.status === 2);
-
-          if (decisiveBout) {
-            decisiveBout.visualAnalysis.tacticalFocus = `${vo.pokesAndFootsies} ${vo.driveAndBurnout}`;
-            decisiveBout.visualAnalysis.turningPoint = `${vo.jumpAndAntiAir} ${vo.cornerAndShimmy}`;
-            decisiveBout.visualAnalysis.lethalMove = vo.finalLethalMove;
-            decisiveBout.highlight = {
-              timestampSeconds: koSec,
-              timestampLabel: koLabel,
-              title: `${decisiveBout.statusName} 決着の瞬間 (${koLabel})`,
-              description: vo.finalLethalMove,
-              videoUrlWithTime: `${defaultYtUrl}&t=${koSec}s`,
-            };
-          }
-
-          matchHighlightSec = koSec;
-          matchHighlightTitle = `${matchWinnerTeam} 劇的決着の瞬間 (${koLabel})`;
-          matchHighlightDesc = vo.finalLethalMove;
-        }
-
-        // TPM (250,000) レートリミット保護のため、次マッチリクエスト前に15秒待機
-        if (num < slots.length) {
-          console.log(`[Gemini API Protection] Waiting 15s before processing next match...`);
-          await new Promise((resolve) => setTimeout(resolve, 15000));
-        }
-      }
+      const matchMeta = sectionMeta?.matches.find((m) => m.matchNum === num);
+      const matchStartTime = matchMeta?.startTimeSec;
+      const matchStartLabel = matchMeta?.startLabel;
+      const matchVideoUrl = matchStartTime
+        ? `${defaultYtUrl}&t=${matchStartTime}s`
+        : defaultYtUrl;
 
       const recentMatch: RecentMatchRecap = {
         matchId: `${latestEntry.post_name}-m${num}`,
@@ -742,21 +705,17 @@ const DIVISION_S_SEC4_CONFIG = {
         matchNumber: num,
         scheduledAt: sec.time,
         youtubeUrl: defaultYtUrl,
+        matchVideoUrl,
+        matchStartTime,
+        matchStartLabel,
         home: slot.home,
         away: slot.away,
         homePoint: slot.result.total.point.home,
         awayPoint: slot.result.total.point.away,
         winner: slot.result.winner,
         isTiebreaker,
-        matchHeadline,
-        matchSummary,
-        matchHighlight: {
-          timestampSeconds: matchHighlightSec,
-          timestampLabel: formatSecondsToTimestamp(matchHighlightSec),
-          title: matchHighlightTitle,
-          description: matchHighlightDesc,
-          videoUrlWithTime: `${defaultYtUrl}&t=${matchHighlightSec}s`,
-        },
+        matchHeadline: cleanTimestampFromText(matchHeadline),
+        matchSummary: cleanTimestampFromText(matchSummary),
         bouts,
       };
 

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T15:36:45.479Z",
+  "updatedAt": "2026-10-19T17:04:39.412Z",
   "generatorMode": "gemini-video",
   "latestSection": {
     "s": 4,
@@ -15,21 +15,17 @@
         "matchNumber": 1,
         "scheduledAt": "2026-10-16 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=2220s",
+        "matchStartTime": 2220,
+        "matchStartLabel": "37:00",
         "home": "ibsg",
         "away": "ixa",
         "homePoint": 30,
         "awayPoint": 10,
         "winner": "home",
         "isTiebreaker": false,
-        "matchHeadline": "鶏めしダルシムが極限の地上戦を制し3-2で大将戦勝利！",
-        "matchSummary": "ひびきリリーの鋭い風コンドルスパイアや差し返しに対し、鶏めしダルシムはテレポートに頼らず徹底した地上牽制と的確な対空で対応。フルセットフルラウンドの接戦の末、最後は読みに勝った鶏めしが見事にKOを奪い、チームを勝利へ導いた。",
-        "matchHighlight": {
-          "timestampSeconds": 5201,
-          "timestampLabel": "1:26:41",
-          "title": "FUKUSHIMA IBUSHIGIN 劇的決着の瞬間 (86:41)",
-          "description": "86分41秒（動画開始から約5201秒）、最終セット最終ラウンドで鶏めしダルシムがひびきリリーの攻撃を見切り、技の出かかりを潰すパニッシュカウンターからヨガファイアを噛み合わせてK.O.を決めた。",
-          "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=5201s"
-        },
+        "matchHeadline": "FUKUSHIMA IBUSHIGINが30 - 10で勝利！",
+        "matchSummary": "第1試合【広島 TEAM iXA vs FUKUSHIMA IBUSHIGIN】は、10 - 30 でFUKUSHIMA IBUSHIGINがマッチ勝利。大将戦を制したFUKUSHIMA IBUSHIGINが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
         "bouts": [
           {
             "status": 0,
@@ -45,21 +41,14 @@
             "winner": "away",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [0-2] ストレート先取",
-              "Game 2: [2-1] フルラウンド（先制されるも逆転）",
-              "Game 3: [1-2] フルラウンド（先制されるも逆転）"
+              "Game 1: [2-0] ACQUA選手がストレート先取",
+              "Game 2: [1-2] 2BASSA選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 3: [2-1] ACQUA選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "ACQUA選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
-              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたジュリに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
-            },
-            "highlight": {
-              "timestampSeconds": 2632,
-              "timestampLabel": "43:52",
-              "title": "先鋒戦 名場面 (43:52)",
-              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたジュリに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=2632s"
+              "tacticalFocus": "ACQUA選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。",
+              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた相手に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             }
           },
           {
@@ -76,21 +65,14 @@
             "winner": "home",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [0-2] ストレート先取",
-              "Game 2: [2-1] フルラウンド（先制されるも逆転）",
-              "Game 3: [2-1] フルラウンド（先制されるも逆転）"
+              "Game 1: [2-0] あきら選手がストレート先取",
+              "Game 2: [1-2] ヤナイ選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 3: [1-2] ヤナイ選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "盤石の弾撃ちと鉄壁の対空迎撃で相手の飛びを完全にシャットアウトする完璧な要塞戦法。",
-              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
-              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたキャミィに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
-            },
-            "highlight": {
-              "timestampSeconds": 3486,
-              "timestampLabel": "58:06",
-              "title": "中堅戦 名場面 (58:06)",
-              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたキャミィに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=3486s"
+              "tacticalFocus": "盤石の弾撃ちと鉄壁の対空迎撃で相手の飛びを完全にシャットアウトし、相手のドライブゲージを削り切る要塞戦法。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。",
+              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた相手に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             }
           },
           {
@@ -107,23 +89,16 @@
             "winner": "home",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [2-0] ストレート先取",
-              "Game 2: [0-2] ストレート先取",
-              "Game 3: [0-2] ストレート先取",
-              "Game 4: [2-0] ストレート先取",
-              "Game 5: [2-0] ストレート先取"
+              "Game 1: [0-2] 鶏めし選手がストレート先取",
+              "Game 2: [2-0] ひびき選手がストレート先取",
+              "Game 3: [2-0] ひびき選手がストレート先取",
+              "Game 4: [0-2] 鶏めし選手がストレート先取",
+              "Game 5: [0-2] 鶏めし選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "ダルシムの長い立ちHP・立ちMPの牽制に対し、リリーが立ち中PやしゃがみHPの先端で差し返しを狙う高度な間合い管理が展開された。 ひびきがDラッシュやDリバーサルでゲージを積極的に消費して距離を詰める一方、鶏めしはヨガファイアと遠距離攻撃で相手のドライブゲージを着実に削り、バーンアウトの圧力をかけ続けた。",
-              "turningPoint": "ひびきが風纏いジャンプやコンドルダイブで襲いかかるが、鶏めしは慌てず立ちHPなどで的確に対空迎撃し、飛び込みを許さなかった。 画面端ではリリーのコマンド投げと打撃・シミーの揺さぶりに対し、ダルシムがDリバーサルやバックステップで間合いを外す激しい駆け引きが行われた。",
-              "lethalMove": "86分41秒（動画開始から約5201秒）、最終セット最終ラウンドで鶏めしダルシムがひびきリリーの攻撃を見切り、技の出かかりを潰すパニッシュカウンターからヨガファイアを噛み合わせてK.O.を決めた。"
-            },
-            "highlight": {
-              "timestampSeconds": 5201,
-              "timestampLabel": "86:41",
-              "title": "大将戦 決着の瞬間 (86:41)",
-              "description": "86分41秒（動画開始から約5201秒）、最終セット最終ラウンドで鶏めしダルシムがひびきリリーの攻撃を見切り、技の出かかりを潰すパニッシュカウンターからヨガファイアを噛み合わせてK.O.を決めた。",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=5201s"
+              "tacticalFocus": "鶏めし選手が長いリーチの牽制と低空ヨガフロートで間合いを徹底管理し、相手の突進をヨガファイアで阻みながらドライブゲージを削る立ち回り。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。",
+              "lethalMove": "運命の最終セット、互いに体力ミリの極限状態から、相手の技の出かかりを捉えるパニッシュカウンターからヨガファイアを叩き込んで劇的KO！"
             }
           }
         ]
@@ -136,6 +111,9 @@
         "matchNumber": 2,
         "scheduledAt": "2026-10-16 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=6477s",
+        "matchStartTime": 6477,
+        "matchStartLabel": "1:47:57",
         "home": "fav",
         "away": "cr",
         "homePoint": 20,
@@ -144,13 +122,6 @@
         "isTiebreaker": true,
         "matchHeadline": "大熱戦の延長戦を制し、Crazy Raccoonが勝ち点30をもぎ取る！",
         "matchSummary": "第2試合【Crazy Raccoon vs KADOKAWA FAV gaming】は、30 - 20 でCrazy Raccoonがマッチ勝利。先鋒・中堅・大将戦を終えて20-20の同点となり、決着は運命の延長戦へ。緊迫した1先勝負を制したCrazy Raccoonが大きな勝ち点30を獲得しました。",
-        "matchHighlight": {
-          "timestampSeconds": 9080,
-          "timestampLabel": "2:31:20",
-          "title": "Crazy Raccoon 劇的決着の瞬間 (2:31:20)",
-          "description": "同点で迎えた運命の延長戦・エレナ同キャラ対決。どぐら選手が画面端で相手のガードを崩す下段ヒット確認から鮮烈なコンボを叩き込み、Crazy Raccoonに勝ち点30をもたらした決着の瞬間。",
-          "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=9080s"
-        },
         "bouts": [
           {
             "status": 0,
@@ -166,20 +137,13 @@
             "winner": "home",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [2-0] ストレート先取",
-              "Game 2: [2-1] フルラウンド（先制されるも逆転）"
+              "Game 1: [0-2] もけ選手がストレート先取",
+              "Game 2: [1-2] もけ選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "もけ選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めとミリ単位のヒット確認を連続で通した勝負強さが光る。",
+              "tacticalFocus": "もけ選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。",
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 6887,
-              "timestampLabel": "1:54:47",
-              "title": "先鋒戦 名場面 (1:54:47)",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=6887s"
             }
           },
           {
@@ -196,20 +160,13 @@
             "winner": "home",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [2-1] フルラウンド",
-              "Game 2: [2-0] ストレート先取"
+              "Game 1: [1-2] りゅうきち選手がフルラウンド勝利",
+              "Game 2: [0-2] りゅうきち選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "りゅうきち選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、一度も主導権を渡さずペースを保ち続けた。",
+              "tacticalFocus": "りゅうきち選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、飛び込みに対しても寸分狂わぬ対空迎撃で一度も主導権を渡さなかった。",
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 7470,
-              "timestampLabel": "2:04:30",
-              "title": "中堅戦 名場面 (2:04:30)",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=7470s"
             }
           },
           {
@@ -226,21 +183,14 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [1-2] フルラウンド（先制されるも逆転）",
-              "Game 2: [1-2] フルラウンド",
-              "Game 3: [1-2] フルラウンド"
+              "Game 1: [2-1] Shuto選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 2: [2-1] Shuto選手がフルラウンド勝利",
+              "Game 3: [2-1] Shuto選手がフルラウンド勝利"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "Shutoリュウの重厚なしゃがみ中Pと波掌撃による地上制圧に対し、藤村ヴァイパーはセイスモハンマーとハイジャンプで撹乱を狙う。互いにドライブゲージを激しく削り合う中、Shutoはバーンアウトを徹底回避しながら前線を押し上げた。",
-              "turningPoint": "全ゲームでフルラウンドにもつれ込む大激戦。藤村の鋭い飛び込み急襲に対し、Shutoが寸分狂わぬ引きつけ昇龍拳で迎撃し、要所での空中制空権を渡さなかったことが勝敗を分けた。",
-              "lethalMove": "画面端に追い詰めた状況から、投げ抜けを誘う鮮やかなシミー（バックステップ）でパニッシュカウンターを奪い、渾身のSA3（真・昇龍拳）を叩き込んでストレートKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 8520,
-              "timestampLabel": "2:22:00",
-              "title": "大将戦 Shuto渾身の迎撃SA3決着 (2:22:00)",
-              "description": "画面端に追い詰めた状況から、投げ抜けを誘う鮮やかなシミー（バックステップ）でパニッシュカウンターを奪い、渾身のSA3（真・昇龍拳）を叩き込んでKO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=8520s"
+              "tacticalFocus": "Shuto選手が重厚なしゃがみ中Pと波掌撃で地上を制圧し、バーンアウトを徹底回避しながら前線を押し上げる堂々の立ち回り。",
+              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。",
+              "lethalMove": "画面端に追い詰めた状況から、投げ抜けを誘う鮮やかなシミー（バックステップ）でパニッシュカウンターを奪い、渾身のSA3（真・昇龍拳）を叩き込んでKO！"
             }
           },
           {
@@ -257,20 +207,13 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [0-2] ストレート先取",
-              "Game 2: [0-2] ストレート先取"
+              "Game 1: [2-0] どぐら選手がストレート先取",
+              "Game 2: [2-0] どぐら選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "運命の延長戦はエレナ同キャラ対決。どぐら選手がリーチの長い足技とローキック牽制で間合いを完全に支配し、sako選手の踏み込みを徹底して封殺。的確なパリィとドライブラッシュでゲージ優位を築き上げた。",
-              "turningPoint": "勝負を分けたのは画面端の攻防。どぐら選手がシミーと打撃の二択を完璧に通し続け、sako選手に一度も反撃の起点を作らせない圧巻のセットプレイを披露。",
-              "lethalMove": "2時間31分頃、画面端でガードを固める相手に対し、ドライブラッシュからの下段崩しをヒット確認し、美しいコンボを叩き込んで完全決着KO！チームに勝ち点30をもたらした。"
-            },
-            "highlight": {
-              "timestampSeconds": 9080,
-              "timestampLabel": "2:31:20",
-              "title": "延長戦 どぐら劇的KO決着 (2:31:20)",
-              "description": "2時間31分頃、画面端でガードを固める相手に対し、ドライブラッシュからの下段崩しをヒット確認し、美しいコンボを叩き込んで完全決着KO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=9080s"
+              "tacticalFocus": "どぐら選手がリーチの長い足技とローキックでの牽制を機能させ、地上戦の間合いを完全に支配。",
+              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、飛び込みに対しても寸分狂わぬ対空迎撃で一度も主導権を渡さなかった。",
+              "lethalMove": "画面端でガードを固める相手に対し、ドライブラッシュからの下段崩しを冷静にヒット確認し、美しいコンボを叩き込んで完全決着KO！"
             }
           }
         ]
@@ -283,21 +226,17 @@
         "matchNumber": 3,
         "scheduledAt": "2026-10-16 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=10387s",
+        "matchStartTime": 10387,
+        "matchStartLabel": "2:53:07",
         "home": "sol",
         "away": "zeta",
         "homePoint": 0,
         "awayPoint": 40,
         "winner": "away",
         "isTiebreaker": false,
-        "matchHeadline": "MenaRDルークが猛攻を凌ぎ切りZETAが大勝！",
-        "matchSummary": "MenaRDルークが正確な牽制と高火力コンボで主導権を握る中、こばやんザンギエフもジャストパリィやCAで反撃し1セットを返す接戦に。しかし最終セットのファイナルラウンドでMenaRDが相手をバーンアウトに追い込み、圧倒的なラッシュでKOを奪って3-1で勝利を収めた。",
-        "matchHighlight": {
-          "timestampSeconds": 13205,
-          "timestampLabel": "3:40:05",
-          "title": "ZETA DIVISION Geekly 劇的決着の瞬間 (220:05)",
-          "description": "220:05（13205秒）付近、バーンアウト状態で追い詰められたこばやんザンギエフに対し、MenaRDルークがドライブラッシュからの猛攻でガードを崩し、最後はDDTを叩き込んでKO勝ちを決めた。",
-          "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=13205s"
-        },
+        "matchHeadline": "ZETA DIVISION Geeklyが40-0の完全勝利で圧倒！",
+        "matchSummary": "第3試合【ZETA DIVISION Geekly vs Saishunkan Sol 熊本】は、40 - 0 でZETA DIVISION Geeklyがマッチ勝利。大将戦を制したZETA DIVISION Geeklyが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
         "bouts": [
           {
             "status": 0,
@@ -313,21 +252,14 @@
             "winner": "away",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [1-2] フルラウンド",
-              "Game 2: [2-0] ストレート先取",
-              "Game 3: [1-2] フルラウンド"
+              "Game 1: [2-1] ヤマグチ選手がフルラウンド勝利",
+              "Game 2: [0-2] きんちょ選手がストレート先取",
+              "Game 3: [2-1] ヤマグチ選手がフルラウンド勝利"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "ヤマグチ選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
-              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたテリーに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
-            },
-            "highlight": {
-              "timestampSeconds": 10812,
-              "timestampLabel": "3:00:12",
-              "title": "先鋒戦 名場面 (3:00:12)",
-              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたテリーに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=10812s"
+              "tacticalFocus": "ヤマグチ選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。",
+              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた相手に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             }
           },
           {
@@ -344,20 +276,13 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [0-2] ストレート先取",
-              "Game 2: [1-2] フルラウンド"
+              "Game 1: [2-0] ひぐち選手がストレート先取",
+              "Game 2: [2-1] ひぐち選手がフルラウンド勝利"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "盤石の弾撃ちと鉄壁の対空迎撃で相手の飛びを完全にシャットアウトする完璧な要塞戦法。",
-              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、一度も主導権を渡さずペースを保ち続けた。",
-              "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 11596,
-              "timestampLabel": "3:13:16",
-              "title": "中堅戦 名場面 (3:13:16)",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=11596s"
+              "tacticalFocus": "盤石の弾撃ちと鉄壁の対空迎撃で相手の飛びを完全にシャットアウトし、相手のドライブゲージを削り切る要塞戦法。",
+              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、飛び込みに対しても寸分狂わぬ対空迎撃で一度も主導権を渡さなかった。",
+              "lethalMove": "相手の決死の飛び込みに対し、冷静沈着なサマーソルトキックからSA3（クロスファイアサマーソルト）へ繋いで完全KO！"
             }
           },
           {
@@ -374,22 +299,15 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [0-2] ストレート先取",
-              "Game 2: [0-2] ストレート先取",
-              "Game 3: [2-0] ストレート先取",
-              "Game 4: [1-2] フルラウンド"
+              "Game 1: [2-0] MenaRD選手がストレート先取",
+              "Game 2: [2-0] MenaRD選手がストレート先取",
+              "Game 3: [0-2] こばやん選手がストレート先取",
+              "Game 4: [2-1] MenaRD選手がフルラウンド勝利"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "MenaRDルークは立ち中Pやサンドブラストで間合いを支配。こばやんザンギエフもアーマー付きの立ち強Pや立ち中Pで押し返し、互いに一歩も引かない緊迫した地上戦が繰り広げられた。 MenaRDはサンドブラストとドライブラッシュで絶え間なく相手のドライブゲージを削り、最終ラウンドではこばやんザンギエフをバーンアウトに追い込んでガードの上から削り切る完璧なゲージ管理を見せた。",
-              "turningPoint": "こばやんザンギエフの狙いすました飛び込みに対し、MenaRDルークは対空ライジングアッパーや立ち強Pで的確に迎撃。飛びからのまとまったダメージ許さない鉄壁の対空精度を誇った。 画面端に追い詰めたシーンでは、MenaRDが投げと打撃の二択だけでなく、シミー（下がり）で相手のコマ投げや暴れを誘発させ、パニッシュカウンターから特大ダメージを叩き込んだ。",
-              "lethalMove": "220:05（13205秒）付近、バーンアウト状態で追い詰められたこばやんザンギエフに対し、MenaRDルークがドライブラッシュからの猛攻でガードを崩し、最後はDDTを叩き込んでKO勝ちを決めた。"
-            },
-            "highlight": {
-              "timestampSeconds": 13205,
-              "timestampLabel": "220:05",
-              "title": "大将戦 決着の瞬間 (220:05)",
-              "description": "220:05（13205秒）付近、バーンアウト状態で追い詰められたこばやんザンギエフに対し、MenaRDルークがドライブラッシュからの猛攻でガードを崩し、最後はDDTを叩き込んでKO勝ちを決めた。",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=13205s"
+              "tacticalFocus": "MenaRD選手がしゃがみ中Pとサンドブラストで間合いを支配し、ドライブラッシュを交えて相手のドライブゲージを着実に削る完璧な主導権掌握。",
+              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、飛び込みに対しても寸分狂わぬ対空迎撃で一度も主導権を渡さなかった。",
+              "lethalMove": "バーンアウト状態で追い詰められた相手に対し、ドライブラッシュからの怒涛のラッシュでガードをこじ開け、最後はDDTを叩き込んで圧巻のKO勝利！"
             }
           }
         ]
@@ -403,7 +321,10 @@
         "sectionTitle": "Division F 第3節",
         "matchNumber": 1,
         "scheduledAt": "2026-10-06 00:00:00",
-        "youtubeUrl": "https://youtube.com/live/3X1zd27viu0",
+        "youtubeUrl": "https://www.youtube.com/watch?v=3X1zd27viu0",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=3X1zd27viu0&t=2235s",
+        "matchStartTime": 2235,
+        "matchStartLabel": "37:15",
         "home": "varrel",
         "away": "dng",
         "homePoint": 20,
@@ -412,13 +333,6 @@
         "isTiebreaker": true,
         "matchHeadline": "大熱戦の延長戦を制し、DetonatioN FocusMeが勝ち点30をもぎ取る！",
         "matchSummary": "第1試合【DetonatioN FocusMe vs VARREL】は、30 - 20 でDetonatioN FocusMeがマッチ勝利。先鋒・中堅・大将戦を終えて20-20の同点となり、決着は運命の延長戦へ。緊迫した1先勝負を制したDetonatioN FocusMeが大きな勝ち点30を獲得しました。",
-        "matchHighlight": {
-          "timestampSeconds": 1800,
-          "timestampLabel": "30:00",
-          "title": "大熱戦の延長戦を制し、DetonatioN FocusMeが勝ち点30をもぎ取る！",
-          "description": "第1試合【DetonatioN FocusMe vs VARREL】は、30 - 20 でDetonatioN FocusMeがマッチ勝利。先鋒・中堅・大将戦を終えて20-20の同点となり、決着は運命の延長戦へ。緊迫した1先勝負を制したDetonatioN FocusMeが大きな勝ち点30を獲得しました。",
-          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
-        },
         "bouts": [
           {
             "status": 0,
@@ -434,21 +348,14 @@
             "winner": "home",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [1-2] フルラウンド",
-              "Game 2: [2-1] フルラウンド",
-              "Game 3: [2-1] フルラウンド（先制されるも逆転）"
+              "Game 1: [2-1] ナウマン選手がフルラウンド勝利",
+              "Game 2: [1-2] ときど選手がフルラウンド勝利",
+              "Game 3: [1-2] ときど選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "ときど選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
-              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた不知火舞に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "ときど選手がフルセットの死闘を制す！先鋒戦でチームを牽引",
-              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた不知火舞に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
+              "tacticalFocus": "ときど選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。",
+              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた相手に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             }
           },
           {
@@ -465,20 +372,13 @@
             "winner": "home",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [2-1] フルラウンド（先制されるも逆転）",
-              "Game 2: [2-0] ストレート先取"
+              "Game 1: [1-2] わびいち選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 2: [0-2] わびいち選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "わびいち選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めとミリ単位のヒット確認を連続で通した勝負強さが光る。",
+              "tacticalFocus": "わびいち選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。",
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "わびいち選手が堂々の快勝！中堅戦で貴重な勝利をもたらす",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -495,22 +395,15 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [1-2] フルラウンド（先制されるも逆転）",
-              "Game 2: [2-0] ストレート先取",
-              "Game 3: [0-2] ストレート先取",
-              "Game 4: [0-2] ストレート先取"
+              "Game 1: [2-1] 竹内ジョン選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 2: [0-2] マゴ選手がストレート先取",
+              "Game 3: [2-0] 竹内ジョン選手がストレート先取",
+              "Game 4: [2-0] 竹内ジョン選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "竹内ジョン選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めとミリ単位のヒット確認を連続で通した勝負強さが光る。",
+              "tacticalFocus": "竹内ジョン選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。",
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "竹内ジョン選手が堂々の快勝！大将戦で貴重な勝利をもたらす",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -527,20 +420,13 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [1-2] フルラウンド",
-              "Game 2: [1-2] フルラウンド（先制されるも逆転）"
+              "Game 1: [2-1] 板橋ザンギエフ選手がフルラウンド勝利",
+              "Game 2: [2-1] 板橋ザンギエフ選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "板橋ザンギエフ選手がドライブゲージを削る強烈なコマ投げと圧巻のプレッシャーで画面端に追い詰める展開。",
-              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めとミリ単位のヒット確認を連続で通した勝負強さが光る。",
-              "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "板橋ザンギエフ選手が堂々の快勝！延長戦で貴重な勝利をもたらす",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
+              "tacticalFocus": "板橋ザンギエフ選手がドライブゲージを削る強烈なコマ投げと圧巻のプレッシャーで画面端に追い詰め、相手にバーンアウトの重圧をかける展開。",
+              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。",
+              "lethalMove": "画面端に追い詰めた極限のプレッシャーから、相手の暴れやジャンプを許さず完璧なコマンド投げを叩き込んで大ダメージKO！"
             }
           }
         ]
@@ -552,7 +438,10 @@
         "sectionTitle": "Division F 第3節",
         "matchNumber": 2,
         "scheduledAt": "2026-10-06 00:00:00",
-        "youtubeUrl": "https://youtube.com/live/3X1zd27viu0",
+        "youtubeUrl": "https://www.youtube.com/watch?v=3X1zd27viu0",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=3X1zd27viu0&t=6677s",
+        "matchStartTime": 6677,
+        "matchStartLabel": "1:51:17",
         "home": "rid",
         "away": "oja",
         "homePoint": 40,
@@ -561,13 +450,6 @@
         "isTiebreaker": false,
         "matchHeadline": "RIDDLE ORDERが40-0の完全勝利で圧倒！",
         "matchSummary": "第2試合【名古屋NTPOJA vs RIDDLE ORDER】は、0 - 40 でRIDDLE ORDERがマッチ勝利。大将戦を制したRIDDLE ORDERが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
-        "matchHighlight": {
-          "timestampSeconds": 1800,
-          "timestampLabel": "30:00",
-          "title": "RIDDLE ORDERが40-0の完全勝利で圧倒！",
-          "description": "第2試合【名古屋NTPOJA vs RIDDLE ORDER】は、0 - 40 でRIDDLE ORDERがマッチ勝利。大将戦を制したRIDDLE ORDERが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
-          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
-        },
         "bouts": [
           {
             "status": 0,
@@ -583,21 +465,14 @@
             "winner": "home",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [0-2] ストレート先取",
-              "Game 2: [2-1] フルラウンド（先制されるも逆転）",
-              "Game 3: [2-0] ストレート先取"
+              "Game 1: [2-0] 大谷選手がストレート先取",
+              "Game 2: [1-2] あでりい選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 3: [0-2] あでりい選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "あでりい選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
-              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたルークに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "あでりい選手がフルセットの死闘を制す！先鋒戦でチームを牽引",
-              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたルークに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
+              "tacticalFocus": "あでりい選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。",
+              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた相手に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             }
           },
           {
@@ -614,21 +489,14 @@
             "winner": "home",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [2-0] ストレート先取",
-              "Game 2: [1-2] フルラウンド（先制されるも逆転）",
-              "Game 3: [2-0] ストレート先取"
+              "Game 1: [0-2] Jr.選手がストレート先取",
+              "Game 2: [2-1] らおやむ選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 3: [0-2] Jr.選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "Jr.選手がドライブゲージを削る強烈なコマ投げと圧巻のプレッシャーで画面端に追い詰める展開。",
-              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
-              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたベガに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "Jr.選手がフルセットの死闘を制す！中堅戦でチームを牽引",
-              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたベガに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
+              "tacticalFocus": "Jr.選手がドライブゲージを削る強烈なコマ投げと圧巻のプレッシャーで画面端に追い詰め、相手にバーンアウトの重圧をかける展開。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。",
+              "lethalMove": "画面端に追い詰めた極限のプレッシャーから、相手の暴れやジャンプを許さず完璧なコマンド投げを叩き込んで大ダメージKO！"
             }
           },
           {
@@ -645,23 +513,16 @@
             "winner": "home",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [0-2] ストレート先取",
-              "Game 2: [1-2] フルラウンド（先制されるも逆転）",
-              "Game 3: [2-0] ストレート先取",
-              "Game 4: [2-1] フルラウンド",
-              "Game 5: [2-0] ストレート先取"
+              "Game 1: [2-0] もっちー選手がストレート先取",
+              "Game 2: [2-1] もっちー選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 3: [0-2] 高木選手がストレート先取",
+              "Game 4: [1-2] 高木選手がフルラウンド勝利",
+              "Game 5: [0-2] 高木選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "高木選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
-              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた豪鬼に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "高木選手がフルセットの死闘を制す！大将戦でチームを牽引",
-              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた豪鬼に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
+              "tacticalFocus": "高木選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。",
+              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた相手に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             }
           }
         ]
@@ -673,7 +534,10 @@
         "sectionTitle": "Division F 第3節",
         "matchNumber": 3,
         "scheduledAt": "2026-10-06 00:00:00",
-        "youtubeUrl": "https://youtube.com/live/3X1zd27viu0",
+        "youtubeUrl": "https://www.youtube.com/watch?v=3X1zd27viu0",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=3X1zd27viu0&t=10842s",
+        "matchStartTime": 10842,
+        "matchStartLabel": "3:00:42",
         "home": "rc",
         "away": "good8",
         "homePoint": 10,
@@ -682,13 +546,6 @@
         "isTiebreaker": false,
         "matchHeadline": "Good 8 Squadが30 - 10で勝利！",
         "matchSummary": "第3試合【Good 8 Squad vs REJECT】は、30 - 10 でGood 8 Squadがマッチ勝利。大将戦を制したGood 8 Squadが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
-        "matchHighlight": {
-          "timestampSeconds": 1800,
-          "timestampLabel": "30:00",
-          "title": "Good 8 Squadが30 - 10で勝利！",
-          "description": "第3試合【Good 8 Squad vs REJECT】は、30 - 10 でGood 8 Squadがマッチ勝利。大将戦を制したGood 8 Squadが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
-          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
-        },
         "bouts": [
           {
             "status": 0,
@@ -704,20 +561,13 @@
             "winner": "home",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [2-0] ストレート先取",
-              "Game 2: [2-0] ストレート先取"
+              "Game 1: [0-2] ウメハラ選手がストレート先取",
+              "Game 2: [0-2] ウメハラ選手がストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "ウメハラ選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、一度も主導権を渡さずペースを保ち続けた。",
+              "tacticalFocus": "ウメハラ選手の鋭いラッシュ攻撃と弾牽制が光り、相手のドライブゲージを削りながら画面端へ運ぶ苛烈な攻勢。",
+              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、飛び込みに対しても寸分狂わぬ対空迎撃で一度も主導権を渡さなかった。",
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "ウメハラ選手が堂々の快勝！先鋒戦で貴重な勝利をもたらす",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -734,20 +584,13 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [1-2] フルラウンド（先制されるも逆転）",
-              "Game 2: [1-2] フルラウンド"
+              "Game 1: [2-1] ぷげら選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 2: [2-1] ぷげら選手がフルラウンド勝利"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "ぷげら選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めとミリ単位のヒット確認を連続で通した勝負強さが光る。",
+              "tacticalFocus": "ぷげら選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。",
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "ぷげら選手が堂々の快勝！中堅戦で貴重な勝利をもたらす",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -764,22 +607,15 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [0-2] ストレート先取",
-              "Game 2: [2-0] ストレート先取",
-              "Game 3: [1-2] フルラウンド（先制されるも逆転）",
-              "Game 4: [1-2] フルラウンド（先制されるも逆転）"
+              "Game 1: [2-0] さはら選手がストレート先取",
+              "Game 2: [0-2] ふ～ど選手がストレート先取",
+              "Game 3: [2-1] さはら選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 4: [2-1] さはら選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "さはら選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めとミリ単位のヒット確認を連続で通した勝負強さが光る。",
+              "tacticalFocus": "さはら選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。",
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
-            },
-            "highlight": {
-              "timestampSeconds": 1800,
-              "timestampLabel": "30:00",
-              "title": "さはら選手が堂々の快勝！大将戦で貴重な勝利をもたらす",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           }
         ]
