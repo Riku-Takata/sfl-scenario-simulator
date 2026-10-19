@@ -217,6 +217,31 @@ function generateDeterministicVisualAnalysis(
   };
 }
 
+interface GeminiVideoAnalysisResult {
+  matchHeadline: string;
+  matchSummary: string;
+  videoObservations: {
+    driveAndBurnout: string;
+    pokesAndFootsies: string;
+    jumpAndAntiAir: string;
+    cornerAndShimmy: string;
+    finalLethalMove: string;
+    koTimestampSec: number;
+    koTimestampLabel?: string;
+  };
+}
+
+/**
+ * 有効なYouTube動画リンク（watch または /live/）かどうかを判定
+ */
+function isValidYoutubeVideoUrl(url: string): boolean {
+  return (
+    url.includes("watch?v=") ||
+    url.includes("youtube.com/live/") ||
+    url.includes("youtu.be/")
+  );
+}
+
 /**
  * Gemini API による YouTube 動画理解の呼び出し（タイムスタンプ・クリッピング対応）
  */
@@ -238,20 +263,8 @@ async function tryGenerateWithGeminiVideo(
       score: string;
     }>;
   }
-): Promise<{
-  matchHeadline: string;
-  matchSummary: string;
-  matchHighlightSec: number;
-  matchHighlightText: string;
-  bouts: Array<{
-    tacticalFocus: string;
-    turningPoint: string;
-    lethalMove: string;
-    commentaryQuote: string;
-    highlightSec: number;
-    highlightLabel: string;
-  }>;
-} | null> {
+): Promise<GeminiVideoAnalysisResult | null> {
+  // 安定性の高い gemini-3.5-flash を優先
   const candidateModels = Array.from(
     new Set(
       [
@@ -264,9 +277,14 @@ async function tryGenerateWithGeminiVideo(
 
   const prompt = `
 あなたはストリートファイター6のプロ格ゲーマー兼SFL公式アナリストです。
-添付されたYouTubeのSFL公式動画クリップ（${startOffsetSec}秒〜${endOffsetSec}秒）から、
-【${matchInfo.home} vs ${matchInfo.away}】の試合展開を、「ゲームプレイ画面の映像」を注視して詳細に分析してください。
-実況の言葉だけでなく、画面内のドライブゲージ・バーンアウト状況、牽制技の振り合い（しゃがみ中P、立ち中K、小技など）、飛びと対空の成否、画面端のシミーやセットプレイなど、実際の画面で起きたプレイヤーの操作と状態を捉えてください。
+添付されたYouTubeのSFL公式動画クリップ（${startOffsetSec}秒〜${endOffsetSec}秒、${matchInfo.away} vs ${matchInfo.home} の大一番・決着シーン）の【ゲーム画面の映像】を凝視して詳細に分析してください。
+
+実況の音声だけに頼らず、以下の「ゲーム画面に映る映像」を具体的に分析してください：
+1. ドライブゲージ状況（ドライブゲージ残量の削り合い、バーンアウトの発生、バーンアウト時の攻防）
+2. 地上戦・牽制（小技・中攻撃の振り合い、リーチ管理、差し返し）
+3. 飛びと対空（ジャンプ攻撃の成否、対空技による迎撃）
+4. 画面端の攻防（シミーでの投げ抜け誘い、柔道、画面端脱出の駆け引き）
+5. 試合の決着シーン（KOの瞬間・決着技：CA/SA、通常技、対空など、体力がミリになった極限状態からの逆転、決着時刻のタイムスタンプ）
 
 【公式確定結果】
 ${matchInfo.bouts
@@ -276,76 +294,83 @@ ${matchInfo.bouts
   )
   .join("\n")}
 
-以下のJSON形式で出力してください:
+以下のJSONフォーマットで出力してください:
 {
   "matchHeadline": "試合全体の見出し（30文字以内）",
-  "matchSummary": "試合全体の流れとドラマの要約（150文字程度。ゲージ攻防や主導権の推移を含む）",
-  "matchHighlightSec": ${startOffsetSec + 120},
-  "matchHighlightText": "マッチ最大の決定打シーンの解説（具体的な技名・ヒット確認・逆転劇）",
-  "bouts": [
-    ${matchInfo.bouts
-      .map(
-        (b) => `{
-      "tacticalFocus": "${b.statusName}での地上戦牽制（小技・中攻撃の振り合い）やドライブゲージ・バーンアウト攻防（80文字）",
-      "turningPoint": "飛びと対空、画面端のシミーやパニッシュカウンターなど勝負の分かれ目（80文字）",
-      "lethalMove": "決着技（SA/CA、OD無敵技、コマンド投げなど）やリーサルの情景（50文字）",
-      "commentaryQuote": "実況解説席の盛り上がりや印象的な言葉",
-      "highlightSec": ${startOffsetSec + 60},
-      "highlightLabel": "名場面の見出し"
-    }`
-      )
-      .join(",\n    ")}
-  ]
+  "matchSummary": "試合全体の流れと決着ドラマの要約（150文字程度。ゲージ攻防や主導権の推移を含む）",
+  "videoObservations": {
+    "driveAndBurnout": "ドライブゲージとバーンアウトの映像分析（具体的な画面状況）",
+    "pokesAndFootsies": "牽制技・地上戦の映像分析（振っていた小技・中技・リーチ管理）",
+    "jumpAndAntiAir": "飛びと対空の映像分析（ジャンプと迎撃技の攻防）",
+    "cornerAndShimmy": "画面端・シミーの映像分析（投げと打撃、シミーの駆け引き）",
+    "finalLethalMove": "最終決着シーンのKO技・リーサル状況（何分何秒あたりでどの技でKOが決まったか詳細に）",
+    "koTimestampSec": ${Math.floor((startOffsetSec + endOffsetSec) / 2)},
+    "koTimestampLabel": "MM:SSまたはHH:MM:SS"
+  }
 }
 `;
 
   for (const model of candidateModels) {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-    try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
-                {
-                  fileData: {
-                    fileUri: youtubeUrl,
+
+    // 一時的な503やネットワークエラーに備えて最大3回リトライ
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [
+                  {
+                    fileData: {
+                      fileUri: youtubeUrl,
+                    },
+                    videoMetadata: {
+                      startOffset: `${startOffsetSec}s`,
+                      endOffset: `${endOffsetSec}s`,
+                    },
                   },
-                  videoMetadata: {
-                    startOffset: `${startOffsetSec}s`,
-                    endOffset: `${endOffsetSec}s`,
+                  {
+                    text: prompt,
                   },
-                },
-                {
-                  text: prompt,
-                },
-              ],
+                ],
+              },
+            ],
+            generationConfig: {
+              responseMimeType: "application/json",
+              temperature: 0.2,
             },
-          ],
-          generationConfig: {
-            responseMimeType: "application/json",
-            temperature: 0.3,
-          },
-        }),
-      });
+          }),
+        });
 
-      if (!res.ok) {
-        console.warn(`[Gemini API - ${model}] HTTP ${res.status}. Trying next candidate...`);
-        continue;
+        if (res.status === 503 || res.status === 429) {
+          console.warn(
+            `[Gemini API - ${model}] HTTP ${res.status} (attempt ${attempt}/3). Backing off for 6s...`
+          );
+          await new Promise((r) => setTimeout(r, 6000));
+          continue;
+        }
+
+        if (!res.ok) {
+          const errBody = await res.text().catch(() => "");
+          console.warn(`[Gemini API - ${model}] HTTP ${res.status}: ${errBody.slice(0, 150)}`);
+          break; // 400等の致命的エラーはモデル切り替え
+        }
+
+        const data = (await res.json()) as {
+          candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+        };
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!text) continue;
+
+        console.log(`[Gemini API] Successfully analyzed video segment using ${model}!`);
+        return JSON.parse(text);
+      } catch (err) {
+        console.warn(`[Gemini API - ${model}] Error (attempt ${attempt}/3): ${(err as Error).message}`);
+        await new Promise((r) => setTimeout(r, 4000));
       }
-
-      const data = (await res.json()) as {
-        candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-      };
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!text) continue;
-
-      console.log(`[Gemini API] Successfully analyzed video segment using ${model}!`);
-      return JSON.parse(text);
-    } catch (err) {
-      console.warn(`[Gemini API - ${model}] Video understanding error: ${(err as Error).message}`);
     }
   }
 
@@ -457,17 +482,55 @@ export async function generateAndSaveMatchRecaps(): Promise<MatchRecapsData> {
       });
     }
 
+const DIVISION_S_SEC4_CONFIG = {
+  youtubeUrl: "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
+  matches: [
+    {
+      matchNum: 1, // iXA vs IBSG
+      clippingWindow: { start: 4750, end: 5260 }, // 大将戦 torimeshi vs hibiki 最終局面〜大逆転KO決着
+      bouts: [
+        { status: 0, startSec: 2632, label: "先鋒戦" }, // 43:52
+        { status: 1, startSec: 3486, label: "中堅戦" }, // 58:06
+        { status: 2, startSec: 4399, label: "大将戦" }, // 1:13:19
+      ],
+    },
+    {
+      matchNum: 2, // FAV vs CR
+      clippingWindow: { start: 8400, end: 9150 }, // 大将戦終盤〜延長戦 dogura vs sako 決着
+      bouts: [
+        { status: 0, startSec: 6887, label: "先鋒戦" }, // 1:54:47
+        { status: 1, startSec: 7470, label: "中堅戦" }, // 2:04:30
+        { status: 2, startSec: 8110, label: "大将戦" }, // 2:15:10
+        { status: 3, startSec: 8844, label: "延長戦" }, // 2:27:24
+      ],
+    },
+    {
+      matchNum: 3, // SOL vs ZETA
+      clippingWindow: { start: 12600, end: 13260 }, // 大将戦 mago vs tachikawa 決着
+      bouts: [
+        { status: 0, startSec: 10812, label: "先鋒戦" }, // 3:00:12
+        { status: 1, startSec: 11596, label: "中堅戦" }, // 3:13:16
+        { status: 2, startSec: 12364, label: "大将戦" }, // 3:26:04
+      ],
+    },
+  ],
+};
+
     // 最新節の詳細展開生成
     const latestEntry = completed[completed.length - 1];
     if (!latestEntry) continue;
 
     const secNum = latestSecNum[div];
     const sec = latestEntry.fields.section;
-    const defaultYtUrl =
+    let defaultYtUrl =
       sec.links?.live?.url ||
       (div === "s" && secNum === 4
-        ? "https://www.youtube.com/watch?v=23c5PgJcFwY"
+        ? DIVISION_S_SEC4_CONFIG.youtubeUrl
         : "https://www.youtube.com/@CapcomFightersJP");
+
+    if (div === "s" && secNum === 4) {
+      defaultYtUrl = DIVISION_S_SEC4_CONFIG.youtubeUrl;
+    }
 
     const slots: Array<{ num: number; slot: RawMatchSlot }> = [
       { num: 1, slot: sec.match1 },
@@ -477,14 +540,6 @@ export async function generateAndSaveMatchRecaps(): Promise<MatchRecapsData> {
     if (sec.match4 && sec.match4.use !== "hide" && sec.match4.home !== "none") {
       slots.push({ num: 4, slot: sec.match4 });
     }
-
-    // 1マッチあたり約8分(480秒 / 約12.6万トークン)の区間クリッピング (無料枠 250,000 TPM に完全適合)
-    const matchTimeWindows = [
-      { start: 1200, end: 1680 },
-      { start: 4200, end: 4680 },
-      { start: 7800, end: 8280 },
-      { start: 11400, end: 11880 },
-    ];
 
     for (const { num, slot } of slots) {
       if (!slot || slot.use === "hide" || typeof slot.result !== "object" || !slot.result) continue;
@@ -534,15 +589,25 @@ export async function generateAndSaveMatchRecaps(): Promise<MatchRecapsData> {
           gameOutcomes
         );
 
-        const timeWindow = matchTimeWindows[num - 1] || { start: 1800, end: 3600 };
-        const boutOffset = timeWindow.start + i * 600 + 300;
+        let boutStartSec = 1800;
+        let boutHighlightTitle = baseAnalysis.headline;
+        let boutHighlightDesc = baseAnalysis.lethalMove;
+
+        if (div === "s" && secNum === 4) {
+          const s4MatchConfig = DIVISION_S_SEC4_CONFIG.matches.find((m) => m.matchNum === num);
+          const s4BoutConfig = s4MatchConfig?.bouts.find((b) => b.status === hp.status);
+          if (s4BoutConfig) {
+            boutStartSec = s4BoutConfig.startSec;
+            boutHighlightTitle = `${s4BoutConfig.label} 名場面 (${formatSecondsToTimestamp(boutStartSec)})`;
+          }
+        }
 
         const highlightMoment: VideoHighlightMoment = {
-          timestampSeconds: boutOffset,
-          timestampLabel: formatSecondsToTimestamp(boutOffset),
-          title: baseAnalysis.headline,
-          description: baseAnalysis.lethalMove,
-          videoUrlWithTime: `${defaultYtUrl}&t=${boutOffset}s`,
+          timestampSeconds: boutStartSec,
+          timestampLabel: formatSecondsToTimestamp(boutStartSec),
+          title: boutHighlightTitle,
+          description: boutHighlightDesc,
+          videoUrlWithTime: `${defaultYtUrl}&t=${boutStartSec}s`,
         };
 
         bouts.push({
@@ -602,9 +667,20 @@ export async function generateAndSaveMatchRecaps(): Promise<MatchRecapsData> {
         matchSummary += `大将戦を制した${matchWinnerTeam}が大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。`;
       }
 
-      // Gemini Video API による動画理解（キーがあり、YouTubeリンクが有効な場合）
-      if (apiKey && defaultYtUrl.includes("youtube.com")) {
-        const timeWindow = matchTimeWindows[num - 1] || { start: 1200, end: 3600 };
+      let matchHighlightSec = bouts[bouts.length - 1]?.highlight?.timestampSeconds || 1800;
+      let matchHighlightTitle = matchHeadline;
+      let matchHighlightDesc = matchSummary;
+
+      // Gemini Video API による動画理解（キーがあり、有効な動画URLの場合のみ実行）
+      if (apiKey && isValidYoutubeVideoUrl(defaultYtUrl)) {
+        let timeWindow = { start: 1800, end: 2400 };
+        if (div === "s" && secNum === 4) {
+          const s4MatchConfig = DIVISION_S_SEC4_CONFIG.matches.find((m) => m.matchNum === num);
+          if (s4MatchConfig) {
+            timeWindow = s4MatchConfig.clippingWindow;
+          }
+        }
+
         console.log(
           `[Gemini Video] Requesting video understanding for ${div.toUpperCase()} Sec${secNum} Match${num} (${timeWindow.start}s - ${timeWindow.end}s)...`
         );
@@ -625,32 +701,39 @@ export async function generateAndSaveMatchRecaps(): Promise<MatchRecapsData> {
           matchHeadline = geminiResult.matchHeadline || matchHeadline;
           matchSummary = geminiResult.matchSummary || matchSummary;
 
-          // Boutごとの詳細をGemini動画理解結果で更新
-          geminiResult.bouts.forEach((gb, idx) => {
-            if (bouts[idx]) {
-              bouts[idx].visualAnalysis.tacticalFocus =
-                gb.tacticalFocus || bouts[idx].visualAnalysis.tacticalFocus;
-              bouts[idx].visualAnalysis.turningPoint =
-                gb.turningPoint || bouts[idx].visualAnalysis.turningPoint;
-              bouts[idx].visualAnalysis.lethalMove =
-                gb.lethalMove || bouts[idx].visualAnalysis.lethalMove;
-              bouts[idx].visualAnalysis.commentaryQuote = gb.commentaryQuote;
+          const vo = geminiResult.videoObservations;
+          const koSec = vo.koTimestampSec || timeWindow.start;
+          const koLabel = vo.koTimestampLabel || formatSecondsToTimestamp(koSec);
 
-              if (gb.highlightSec) {
-                bouts[idx].highlight = {
-                  timestampSeconds: gb.highlightSec,
-                  timestampLabel: formatSecondsToTimestamp(gb.highlightSec),
-                  title: gb.highlightLabel || bouts[idx].highlight?.title || "",
-                  description: gb.lethalMove,
-                  videoUrlWithTime: `${defaultYtUrl}&t=${gb.highlightSec}s`,
-                };
-              }
-            }
-          });
+          // 決定打Bout（延長戦があれば延長戦、なければ大将戦）に深層映像解析結果を反映
+          const decisiveBout =
+            bouts.find((b) => b.status === 3) || bouts.find((b) => b.status === 2);
+
+          if (decisiveBout) {
+            decisiveBout.visualAnalysis.tacticalFocus = `${vo.pokesAndFootsies} ${vo.driveAndBurnout}`;
+            decisiveBout.visualAnalysis.turningPoint = `${vo.jumpAndAntiAir} ${vo.cornerAndShimmy}`;
+            decisiveBout.visualAnalysis.lethalMove = vo.finalLethalMove;
+            decisiveBout.highlight = {
+              timestampSeconds: koSec,
+              timestampLabel: koLabel,
+              title: `${decisiveBout.statusName} 決着の瞬間 (${koLabel})`,
+              description: vo.finalLethalMove,
+              videoUrlWithTime: `${defaultYtUrl}&t=${koSec}s`,
+            };
+          }
+
+          matchHighlightSec = koSec;
+          matchHighlightTitle = `${matchWinnerTeam} 劇的決着の瞬間 (${koLabel})`;
+          matchHighlightDesc = vo.finalLethalMove;
+        }
+
+        // TPM (250,000) レートリミット保護のため、次マッチリクエスト前に15秒待機
+        if (num < slots.length) {
+          console.log(`[Gemini API Protection] Waiting 15s before processing next match...`);
+          await new Promise((resolve) => setTimeout(resolve, 15000));
         }
       }
 
-      const matchHighlightSec = matchTimeWindows[num - 1]?.start || 1800;
       const recentMatch: RecentMatchRecap = {
         matchId: `${latestEntry.post_name}-m${num}`,
         division: div,
@@ -670,8 +753,8 @@ export async function generateAndSaveMatchRecaps(): Promise<MatchRecapsData> {
         matchHighlight: {
           timestampSeconds: matchHighlightSec,
           timestampLabel: formatSecondsToTimestamp(matchHighlightSec),
-          title: matchHeadline,
-          description: matchSummary,
+          title: matchHighlightTitle,
+          description: matchHighlightDesc,
           videoUrlWithTime: `${defaultYtUrl}&t=${matchHighlightSec}s`,
         },
         bouts,

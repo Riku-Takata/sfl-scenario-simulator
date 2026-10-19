@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T15:09:43.293Z",
+  "updatedAt": "2026-10-19T15:36:45.479Z",
   "generatorMode": "gemini-video",
   "latestSection": {
     "s": 4,
@@ -14,21 +14,21 @@
         "sectionTitle": "Division S 第4節",
         "matchNumber": 1,
         "scheduledAt": "2026-10-16 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/watch?v=23c5PgJcFwY",
+        "youtubeUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
         "home": "ibsg",
         "away": "ixa",
         "homePoint": 30,
         "awayPoint": 10,
         "winner": "home",
         "isTiebreaker": false,
-        "matchHeadline": "FUKUSHIMA IBUSHIGINが30 - 10で勝利！",
-        "matchSummary": "第1試合【広島 TEAM iXA vs FUKUSHIMA IBUSHIGIN】は、10 - 30 でFUKUSHIMA IBUSHIGINがマッチ勝利。大将戦を制したFUKUSHIMA IBUSHIGINが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
+        "matchHeadline": "鶏めしダルシムが極限の地上戦を制し3-2で大将戦勝利！",
+        "matchSummary": "ひびきリリーの鋭い風コンドルスパイアや差し返しに対し、鶏めしダルシムはテレポートに頼らず徹底した地上牽制と的確な対空で対応。フルセットフルラウンドの接戦の末、最後は読みに勝った鶏めしが見事にKOを奪い、チームを勝利へ導いた。",
         "matchHighlight": {
-          "timestampSeconds": 1200,
-          "timestampLabel": "20:00",
-          "title": "FUKUSHIMA IBUSHIGINが30 - 10で勝利！",
-          "description": "第1試合【広島 TEAM iXA vs FUKUSHIMA IBUSHIGIN】は、10 - 30 でFUKUSHIMA IBUSHIGINがマッチ勝利。大将戦を制したFUKUSHIMA IBUSHIGINが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
-          "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=1200s"
+          "timestampSeconds": 5201,
+          "timestampLabel": "1:26:41",
+          "title": "FUKUSHIMA IBUSHIGIN 劇的決着の瞬間 (86:41)",
+          "description": "86分41秒（動画開始から約5201秒）、最終セット最終ラウンドで鶏めしダルシムがひびきリリーの攻撃を見切り、技の出かかりを潰すパニッシュカウンターからヨガファイアを噛み合わせてK.O.を決めた。",
+          "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=5201s"
         },
         "bouts": [
           {
@@ -55,11 +55,11 @@
               "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたジュリに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             },
             "highlight": {
-              "timestampSeconds": 1500,
-              "timestampLabel": "25:00",
-              "title": "ACQUA選手がフルセットの死闘を制す！先鋒戦でチームを牽引",
+              "timestampSeconds": 2632,
+              "timestampLabel": "43:52",
+              "title": "先鋒戦 名場面 (43:52)",
               "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたジュリに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=1500s"
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=2632s"
             }
           },
           {
@@ -86,11 +86,11 @@
               "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたキャミィに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             },
             "highlight": {
-              "timestampSeconds": 2100,
-              "timestampLabel": "35:00",
-              "title": "ヤナイ選手がフルセットの死闘を制す！中堅戦でチームを牽引",
+              "timestampSeconds": 3486,
+              "timestampLabel": "58:06",
+              "title": "中堅戦 名場面 (58:06)",
               "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたキャミィに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=2100s"
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=3486s"
             }
           },
           {
@@ -114,16 +114,16 @@
               "Game 5: [2-0] ストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "鶏めし選手が長いリーチの通常技と低空ヨガフロートで間合いを徹底管理し、相手の突進や接近を許さない立ち回り。",
-              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
-              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたリリーに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
+              "tacticalFocus": "ダルシムの長い立ちHP・立ちMPの牽制に対し、リリーが立ち中PやしゃがみHPの先端で差し返しを狙う高度な間合い管理が展開された。 ひびきがDラッシュやDリバーサルでゲージを積極的に消費して距離を詰める一方、鶏めしはヨガファイアと遠距離攻撃で相手のドライブゲージを着実に削り、バーンアウトの圧力をかけ続けた。",
+              "turningPoint": "ひびきが風纏いジャンプやコンドルダイブで襲いかかるが、鶏めしは慌てず立ちHPなどで的確に対空迎撃し、飛び込みを許さなかった。 画面端ではリリーのコマンド投げと打撃・シミーの揺さぶりに対し、ダルシムがDリバーサルやバックステップで間合いを外す激しい駆け引きが行われた。",
+              "lethalMove": "86分41秒（動画開始から約5201秒）、最終セット最終ラウンドで鶏めしダルシムがひびきリリーの攻撃を見切り、技の出かかりを潰すパニッシュカウンターからヨガファイアを噛み合わせてK.O.を決めた。"
             },
             "highlight": {
-              "timestampSeconds": 2700,
-              "timestampLabel": "45:00",
-              "title": "鶏めし選手がフルセットの死闘を制す！大将戦でチームを牽引",
-              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたリリーに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=2700s"
+              "timestampSeconds": 5201,
+              "timestampLabel": "86:41",
+              "title": "大将戦 決着の瞬間 (86:41)",
+              "description": "86分41秒（動画開始から約5201秒）、最終セット最終ラウンドで鶏めしダルシムがひびきリリーの攻撃を見切り、技の出かかりを潰すパニッシュカウンターからヨガファイアを噛み合わせてK.O.を決めた。",
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=5201s"
             }
           }
         ]
@@ -135,7 +135,7 @@
         "sectionTitle": "Division S 第4節",
         "matchNumber": 2,
         "scheduledAt": "2026-10-16 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/watch?v=23c5PgJcFwY",
+        "youtubeUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
         "home": "fav",
         "away": "cr",
         "homePoint": 20,
@@ -145,11 +145,11 @@
         "matchHeadline": "大熱戦の延長戦を制し、Crazy Raccoonが勝ち点30をもぎ取る！",
         "matchSummary": "第2試合【Crazy Raccoon vs KADOKAWA FAV gaming】は、30 - 20 でCrazy Raccoonがマッチ勝利。先鋒・中堅・大将戦を終えて20-20の同点となり、決着は運命の延長戦へ。緊迫した1先勝負を制したCrazy Raccoonが大きな勝ち点30を獲得しました。",
         "matchHighlight": {
-          "timestampSeconds": 4200,
-          "timestampLabel": "1:10:00",
-          "title": "大熱戦の延長戦を制し、Crazy Raccoonが勝ち点30をもぎ取る！",
-          "description": "第2試合【Crazy Raccoon vs KADOKAWA FAV gaming】は、30 - 20 でCrazy Raccoonがマッチ勝利。先鋒・中堅・大将戦を終えて20-20の同点となり、決着は運命の延長戦へ。緊迫した1先勝負を制したCrazy Raccoonが大きな勝ち点30を獲得しました。",
-          "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=4200s"
+          "timestampSeconds": 9080,
+          "timestampLabel": "2:31:20",
+          "title": "Crazy Raccoon 劇的決着の瞬間 (2:31:20)",
+          "description": "同点で迎えた運命の延長戦・エレナ同キャラ対決。どぐら選手が画面端で相手のガードを崩す下段ヒット確認から鮮烈なコンボを叩き込み、Crazy Raccoonに勝ち点30をもたらした決着の瞬間。",
+          "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=9080s"
         },
         "bouts": [
           {
@@ -175,11 +175,11 @@
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 4500,
-              "timestampLabel": "1:15:00",
-              "title": "もけ選手が堂々の快勝！先鋒戦で貴重な勝利をもたらす",
+              "timestampSeconds": 6887,
+              "timestampLabel": "1:54:47",
+              "title": "先鋒戦 名場面 (1:54:47)",
               "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=4500s"
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=6887s"
             }
           },
           {
@@ -205,11 +205,11 @@
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 5100,
-              "timestampLabel": "1:25:00",
-              "title": "りゅうきち選手が堂々の快勝！中堅戦で貴重な勝利をもたらす",
+              "timestampSeconds": 7470,
+              "timestampLabel": "2:04:30",
+              "title": "中堅戦 名場面 (2:04:30)",
               "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=5100s"
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=7470s"
             }
           },
           {
@@ -231,16 +231,16 @@
               "Game 3: [1-2] フルラウンド"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "Shuto選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めとミリ単位のヒット確認を連続で通した勝負強さが光る。",
-              "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
+              "tacticalFocus": "Shutoリュウの重厚なしゃがみ中Pと波掌撃による地上制圧に対し、藤村ヴァイパーはセイスモハンマーとハイジャンプで撹乱を狙う。互いにドライブゲージを激しく削り合う中、Shutoはバーンアウトを徹底回避しながら前線を押し上げた。",
+              "turningPoint": "全ゲームでフルラウンドにもつれ込む大激戦。藤村の鋭い飛び込み急襲に対し、Shutoが寸分狂わぬ引きつけ昇龍拳で迎撃し、要所での空中制空権を渡さなかったことが勝敗を分けた。",
+              "lethalMove": "画面端に追い詰めた状況から、投げ抜けを誘う鮮やかなシミー（バックステップ）でパニッシュカウンターを奪い、渾身のSA3（真・昇龍拳）を叩き込んでストレートKO！"
             },
             "highlight": {
-              "timestampSeconds": 5700,
-              "timestampLabel": "1:35:00",
-              "title": "Shuto選手が堂々の快勝！大将戦で貴重な勝利をもたらす",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=5700s"
+              "timestampSeconds": 8520,
+              "timestampLabel": "2:22:00",
+              "title": "大将戦 Shuto渾身の迎撃SA3決着 (2:22:00)",
+              "description": "画面端に追い詰めた状況から、投げ抜けを誘う鮮やかなシミー（バックステップ）でパニッシュカウンターを奪い、渾身のSA3（真・昇龍拳）を叩き込んでKO！",
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=8520s"
             }
           },
           {
@@ -261,16 +261,16 @@
               "Game 2: [0-2] ストレート先取"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "どぐら選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
-              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、一度も主導権を渡さずペースを保ち続けた。",
-              "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
+              "tacticalFocus": "運命の延長戦はエレナ同キャラ対決。どぐら選手がリーチの長い足技とローキック牽制で間合いを完全に支配し、sako選手の踏み込みを徹底して封殺。的確なパリィとドライブラッシュでゲージ優位を築き上げた。",
+              "turningPoint": "勝負を分けたのは画面端の攻防。どぐら選手がシミーと打撃の二択を完璧に通し続け、sako選手に一度も反撃の起点を作らせない圧巻のセットプレイを披露。",
+              "lethalMove": "2時間31分頃、画面端でガードを固める相手に対し、ドライブラッシュからの下段崩しをヒット確認し、美しいコンボを叩き込んで完全決着KO！チームに勝ち点30をもたらした。"
             },
             "highlight": {
-              "timestampSeconds": 6300,
-              "timestampLabel": "1:45:00",
-              "title": "どぐら選手が堂々の快勝！延長戦で貴重な勝利をもたらす",
-              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=6300s"
+              "timestampSeconds": 9080,
+              "timestampLabel": "2:31:20",
+              "title": "延長戦 どぐら劇的KO決着 (2:31:20)",
+              "description": "2時間31分頃、画面端でガードを固める相手に対し、ドライブラッシュからの下段崩しをヒット確認し、美しいコンボを叩き込んで完全決着KO！",
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=9080s"
             }
           }
         ]
@@ -282,21 +282,21 @@
         "sectionTitle": "Division S 第4節",
         "matchNumber": 3,
         "scheduledAt": "2026-10-16 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/watch?v=23c5PgJcFwY",
+        "youtubeUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
         "home": "sol",
         "away": "zeta",
         "homePoint": 0,
         "awayPoint": 40,
         "winner": "away",
         "isTiebreaker": false,
-        "matchHeadline": "ZETA DIVISIONが熊本を圧倒！アウェイで完全勝利を達成",
-        "matchSummary": "先鋒戦でヤマグチが接戦を制して勢いをつけると、中堅戦ではひぐちがまちゃぼーをストレートで完封。大将戦でもMenaRDがこばやんザンギエフの猛攻を冷静にいなし、1-3で勝利。ZETA DIVISIONがアウェイで勝ち点40を総取りする圧巻のパフォーマンスを見せた。",
+        "matchHeadline": "MenaRDルークが猛攻を凌ぎ切りZETAが大勝！",
+        "matchSummary": "MenaRDルークが正確な牽制と高火力コンボで主導権を握る中、こばやんザンギエフもジャストパリィやCAで反撃し1セットを返す接戦に。しかし最終セットのファイナルラウンドでMenaRDが相手をバーンアウトに追い込み、圧倒的なラッシュでKOを奪って3-1で勝利を収めた。",
         "matchHighlight": {
-          "timestampSeconds": 7800,
-          "timestampLabel": "2:10:00",
-          "title": "ZETA DIVISIONが熊本を圧倒！アウェイで完全勝利を達成",
-          "description": "先鋒戦でヤマグチが接戦を制して勢いをつけると、中堅戦ではひぐちがまちゃぼーをストレートで完封。大将戦でもMenaRDがこばやんザンギエフの猛攻を冷静にいなし、1-3で勝利。ZETA DIVISIONがアウェイで勝ち点40を総取りする圧巻のパフォーマンスを見せた。",
-          "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=7800s"
+          "timestampSeconds": 13205,
+          "timestampLabel": "3:40:05",
+          "title": "ZETA DIVISION Geekly 劇的決着の瞬間 (220:05)",
+          "description": "220:05（13205秒）付近、バーンアウト状態で追い詰められたこばやんザンギエフに対し、MenaRDルークがドライブラッシュからの猛攻でガードを崩し、最後はDDTを叩き込んでKO勝ちを決めた。",
+          "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=13205s"
         },
         "bouts": [
           {
@@ -318,17 +318,16 @@
               "Game 3: [1-2] フルラウンド"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "きんちょテリーの積極的な差し込みに対し、ヤマグチ舞が扇子と鋭い中距離技で牽制し主導権を渡さない展開。",
-              "turningPoint": "フルセットに及んだ最終局面で、ヤマグチがドライブゲージ管理で勝り画面端へ追い詰めた場面。",
-              "lethalMove": "ヤマグチ舞のOD花蝶扇からのSA3フィニッシュ。",
-              "commentaryQuote": "「ヤマグチ、土壇場での素晴らしい間合い管理と冷静なコンボ選択！」"
+              "tacticalFocus": "ヤマグチ選手の鋭いラッシュ攻撃とドライブインパクトの使い分けが光り、地上戦の主導権を終始握り続ける。",
+              "turningPoint": "相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な反撃から流れを完全に引き寄せた。",
+              "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたテリーに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             },
             "highlight": {
-              "timestampSeconds": 7830,
-              "timestampLabel": "2:10:30",
-              "title": "ヤマグチ舞の精密な間合い管理と画面端ラッシュ",
-              "description": "ヤマグチ舞のOD花蝶扇からのSA3フィニッシュ。",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=7830s"
+              "timestampSeconds": 10812,
+              "timestampLabel": "3:00:12",
+              "title": "先鋒戦 名場面 (3:00:12)",
+              "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたテリーに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=10812s"
             }
           },
           {
@@ -349,17 +348,16 @@
               "Game 2: [1-2] フルラウンド"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "まちゃぼーリュウの波動拳とドライブラッシュに対し、ひぐちガイルがソニックブームとサマーソルトでラインを守り切る立ち回り。",
-              "turningPoint": "第2セット、まちゃぼーの起死回生を図るラッシュに対し、ひぐちが完璧な対空とガードでドライブゲージを削り切った瞬間。",
-              "lethalMove": "ひぐちガイルのサマーソルトキック対空からのSAフィニッシュ。",
-              "commentaryQuote": "「ひぐちのガイル、一切の隙を見せない鉄壁の防衛陣！」"
+              "tacticalFocus": "盤石の弾撃ちと鉄壁の対空迎撃で相手の飛びを完全にシャットアウトする完璧な要塞戦法。",
+              "turningPoint": "序盤から相手の牽制に対して的確な差し返しを連発し、一度も主導権を渡さずペースを保ち続けた。",
+              "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 7950,
-              "timestampLabel": "2:12:30",
-              "title": "ひぐちガイルの鉄壁対空と要塞化",
-              "description": "ひぐちガイルのサマーソルトキック対空からのSAフィニッシュ。",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=7950s"
+              "timestampSeconds": 11596,
+              "timestampLabel": "3:13:16",
+              "title": "中堅戦 名場面 (3:13:16)",
+              "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=11596s"
             }
           },
           {
@@ -382,17 +380,16 @@
               "Game 4: [1-2] フルラウンド"
             ],
             "visualAnalysis": {
-              "tacticalFocus": "こばやんザンギエフのスクリューのプレッシャーに対し、MenaRDルークがしゃがみ中Pと弾で近寄せない丁寧なアウトボクシング。",
-              "turningPoint": "第4セット、こばやんが逆転を狙って放ったコマンド投げをMenaRDが垂直ジャンプで完全にかわした瞬間。",
-              "lethalMove": "MenaRDルークのSA3「ペイルライダー」による決定打。",
-              "commentaryQuote": "「MenaRD、コマ投げを完全に読んでの垂直ジャンプ！完璧な回答だ！」"
+              "tacticalFocus": "MenaRDルークは立ち中Pやサンドブラストで間合いを支配。こばやんザンギエフもアーマー付きの立ち強Pや立ち中Pで押し返し、互いに一歩も引かない緊迫した地上戦が繰り広げられた。 MenaRDはサンドブラストとドライブラッシュで絶え間なく相手のドライブゲージを削り、最終ラウンドではこばやんザンギエフをバーンアウトに追い込んでガードの上から削り切る完璧なゲージ管理を見せた。",
+              "turningPoint": "こばやんザンギエフの狙いすました飛び込みに対し、MenaRDルークは対空ライジングアッパーや立ち強Pで的確に迎撃。飛びからのまとまったダメージ許さない鉄壁の対空精度を誇った。 画面端に追い詰めたシーンでは、MenaRDが投げと打撃の二択だけでなく、シミー（下がり）で相手のコマ投げや暴れを誘発させ、パニッシュカウンターから特大ダメージを叩き込んだ。",
+              "lethalMove": "220:05（13205秒）付近、バーンアウト状態で追い詰められたこばやんザンギエフに対し、MenaRDルークがドライブラッシュからの猛攻でガードを崩し、最後はDDTを叩き込んでKO勝ちを決めた。"
             },
             "highlight": {
-              "timestampSeconds": 8080,
-              "timestampLabel": "2:14:40",
-              "title": "MenaRDルークのコマ投げ読み切り垂直ジャンプ",
-              "description": "MenaRDルークのSA3「ペイルライダー」による決定打。",
-              "videoUrlWithTime": "https://www.youtube.com/watch?v=23c5PgJcFwY&t=8080s"
+              "timestampSeconds": 13205,
+              "timestampLabel": "220:05",
+              "title": "大将戦 決着の瞬間 (220:05)",
+              "description": "220:05（13205秒）付近、バーンアウト状態で追い詰められたこばやんザンギエフに対し、MenaRDルークがドライブラッシュからの猛攻でガードを崩し、最後はDDTを叩き込んでKO勝ちを決めた。",
+              "videoUrlWithTime": "https://www.youtube.com/watch?v=WfaUMDDZ6Es&t=13205s"
             }
           }
         ]
@@ -416,11 +413,11 @@
         "matchHeadline": "大熱戦の延長戦を制し、DetonatioN FocusMeが勝ち点30をもぎ取る！",
         "matchSummary": "第1試合【DetonatioN FocusMe vs VARREL】は、30 - 20 でDetonatioN FocusMeがマッチ勝利。先鋒・中堅・大将戦を終えて20-20の同点となり、決着は運命の延長戦へ。緊迫した1先勝負を制したDetonatioN FocusMeが大きな勝ち点30を獲得しました。",
         "matchHighlight": {
-          "timestampSeconds": 1200,
-          "timestampLabel": "20:00",
+          "timestampSeconds": 1800,
+          "timestampLabel": "30:00",
           "title": "大熱戦の延長戦を制し、DetonatioN FocusMeが勝ち点30をもぎ取る！",
           "description": "第1試合【DetonatioN FocusMe vs VARREL】は、30 - 20 でDetonatioN FocusMeがマッチ勝利。先鋒・中堅・大将戦を終えて20-20の同点となり、決着は運命の延長戦へ。緊迫した1先勝負を制したDetonatioN FocusMeが大きな勝ち点30を獲得しました。",
-          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1200s"
+          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
         },
         "bouts": [
           {
@@ -447,11 +444,11 @@
               "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた不知火舞に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             },
             "highlight": {
-              "timestampSeconds": 1500,
-              "timestampLabel": "25:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "ときど選手がフルセットの死闘を制す！先鋒戦でチームを牽引",
               "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた不知火舞に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1500s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -477,11 +474,11 @@
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 2100,
-              "timestampLabel": "35:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "わびいち選手が堂々の快勝！中堅戦で貴重な勝利をもたらす",
               "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=2100s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -509,11 +506,11 @@
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 2700,
-              "timestampLabel": "45:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "竹内ジョン選手が堂々の快勝！大将戦で貴重な勝利をもたらす",
               "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=2700s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -539,11 +536,11 @@
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 3300,
-              "timestampLabel": "55:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "板橋ザンギエフ選手が堂々の快勝！延長戦で貴重な勝利をもたらす",
               "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=3300s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           }
         ]
@@ -565,11 +562,11 @@
         "matchHeadline": "RIDDLE ORDERが40-0の完全勝利で圧倒！",
         "matchSummary": "第2試合【名古屋NTPOJA vs RIDDLE ORDER】は、0 - 40 でRIDDLE ORDERがマッチ勝利。大将戦を制したRIDDLE ORDERが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
         "matchHighlight": {
-          "timestampSeconds": 4200,
-          "timestampLabel": "1:10:00",
+          "timestampSeconds": 1800,
+          "timestampLabel": "30:00",
           "title": "RIDDLE ORDERが40-0の完全勝利で圧倒！",
           "description": "第2試合【名古屋NTPOJA vs RIDDLE ORDER】は、0 - 40 でRIDDLE ORDERがマッチ勝利。大将戦を制したRIDDLE ORDERが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
-          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=4200s"
+          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
         },
         "bouts": [
           {
@@ -596,11 +593,11 @@
               "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたルークに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             },
             "highlight": {
-              "timestampSeconds": 4500,
-              "timestampLabel": "1:15:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "あでりい選手がフルセットの死闘を制す！先鋒戦でチームを牽引",
               "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたルークに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=4500s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -627,11 +624,11 @@
               "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたベガに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             },
             "highlight": {
-              "timestampSeconds": 5100,
-              "timestampLabel": "1:25:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "Jr.選手がフルセットの死闘を制す！中堅戦でチームを牽引",
               "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできたベガに対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=5100s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -660,11 +657,11 @@
               "lethalMove": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた豪鬼に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！"
             },
             "highlight": {
-              "timestampSeconds": 5700,
-              "timestampLabel": "1:35:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "高木選手がフルセットの死闘を制す！大将戦でチームを牽引",
               "description": "運命の最終セット、残り体力わずかの極限状態から、飛び込んできた豪鬼に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=5700s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           }
         ]
@@ -686,11 +683,11 @@
         "matchHeadline": "Good 8 Squadが30 - 10で勝利！",
         "matchSummary": "第3試合【Good 8 Squad vs REJECT】は、30 - 10 でGood 8 Squadがマッチ勝利。大将戦を制したGood 8 Squadが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
         "matchHighlight": {
-          "timestampSeconds": 7800,
-          "timestampLabel": "2:10:00",
+          "timestampSeconds": 1800,
+          "timestampLabel": "30:00",
           "title": "Good 8 Squadが30 - 10で勝利！",
           "description": "第3試合【Good 8 Squad vs REJECT】は、30 - 10 でGood 8 Squadがマッチ勝利。大将戦を制したGood 8 Squadが大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。",
-          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=7800s"
+          "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
         },
         "bouts": [
           {
@@ -716,11 +713,11 @@
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 8100,
-              "timestampLabel": "2:15:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "ウメハラ選手が堂々の快勝！先鋒戦で貴重な勝利をもたらす",
               "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=8100s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -746,11 +743,11 @@
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 8700,
-              "timestampLabel": "2:25:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "ぷげら選手が堂々の快勝！中堅戦で貴重な勝利をもたらす",
               "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=8700s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           },
           {
@@ -778,11 +775,11 @@
               "lethalMove": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！"
             },
             "highlight": {
-              "timestampSeconds": 9300,
-              "timestampLabel": "2:35:00",
+              "timestampSeconds": 1800,
+              "timestampLabel": "30:00",
               "title": "さはら選手が堂々の快勝！大将戦で貴重な勝利をもたらす",
               "description": "画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！",
-              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=9300s"
+              "videoUrlWithTime": "https://youtube.com/live/3X1zd27viu0&t=1800s"
             }
           }
         ]
