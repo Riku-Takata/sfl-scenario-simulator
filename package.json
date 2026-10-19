@@ -11,7 +11,7 @@
     "build": "astro build",
     "preview": "astro preview --port 3000 --host 0.0.0.0",
     "start": "node scripts/serve-static.mjs",
-    "test": "node --import tsx --test tests/simulator.test.ts",
+    "test": "node --import tsx --test tests/simulator.test.ts tests/match-recap.test.ts",
     "pipeline": "tsx scripts/run-pipeline.ts",
     "pipeline:force": "tsx scripts/run-pipeline.ts --force",
     "fetch-cpt": "tsx scripts/0-fetch-cpt-data.ts",

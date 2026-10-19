@@ -3,7 +3,7 @@ import { fetchAndBuildCptData } from "./0-fetch-cpt-data";
 import { fetchAndSaveResults } from "./1-fetch-results";
 import { calculateAndSaveScenarios } from "./2-calc-scenarios";
 import { generateAndSaveNarratives } from "./3-generate-narratives";
-import { generateAndSaveMatchRecaps } from "./4-generate-match-recaps";
+import { generateAndSaveMatchRecaps, hasPendingVideoWork } from "./4-generate-match-recaps";
 import { generateSf6Tournaments } from "./generate-sf6-tournaments";
 
 async function main() {
@@ -16,17 +16,22 @@ async function main() {
 
   const { updated } = await fetchAndSaveResults({ force });
   if (!updated && !force) {
-    console.log(
-      "=== No new match results found. Exiting pipeline (use --force to recalculate). ==="
-    );
-    return;
+    if (!hasPendingVideoWork()) {
+      console.log(
+        "=== No new match results found. Exiting pipeline (use --force to recalculate). ==="
+      );
+      return;
+    }
+    // 無料枠の日次上限で残った動画解析を、結果更新が無い日にも少しずつ進める
+    console.log("=== No new match results, but video analysis is pending. Resuming match recaps only. ===");
+    await generateAndSaveMatchRecaps();
+  } else {
+    await fetchAndBuildCptData();
+    calculateAndSaveScenarios(10000);
+    await generateAndSaveNarratives();
+    await generateAndSaveMatchRecaps();
+    await generateSf6Tournaments();
   }
-
-  await fetchAndBuildCptData();
-  calculateAndSaveScenarios(10000);
-  await generateAndSaveNarratives();
-  await generateAndSaveMatchRecaps();
-  await generateSf6Tournaments();
 
   if (commit) {
     console.log("[Step 5] Committing updated JSON data...");

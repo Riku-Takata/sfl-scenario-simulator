@@ -523,7 +523,7 @@ export default function MatchRecapDashboard({ recapsData }: Props) {
                               </div>
                             )}
 
-                            {/* 映像解析詳細解説 */}
+                            {/* Bout解説（動画解析で2回一致した要点 or 公式ログのみ） */}
                             <div
                               style={{
                                 background: "#f8fafc",
@@ -534,26 +534,32 @@ export default function MatchRecapDashboard({ recapsData }: Props) {
                                 color: "var(--text-main)",
                               }}
                             >
-                              <div style={{ marginBottom: "0.45rem" }}>
-                                <strong>🎯 立ち回り・ゲージ管理: </strong>
-                                <span style={{ color: "var(--text-sub)" }}>
-                                  {b.visualAnalysis.tacticalFocus}
-                                </span>
+                              <div
+                                style={{
+                                  fontSize: "0.7rem",
+                                  fontWeight: 700,
+                                  color: "var(--text-muted)",
+                                  marginBottom: "0.35rem",
+                                }}
+                              >
+                                {b.analysis.source === "editorial"
+                                  ? "🎙️ 配信の実況・映像と公式記録をもとにAIが作成"
+                                  : b.analysis.source === "gemini-video"
+                                    ? "🎥 配信映像の解析より"
+                                    : "📊 公式ラウンドログより"}
                               </div>
-
-                              <div style={{ marginBottom: "0.45rem" }}>
-                                <strong>⚡ 勝負の分かれ目: </strong>
-                                <span style={{ color: "var(--text-sub)" }}>
-                                  {b.visualAnalysis.turningPoint}
-                                </span>
+                              <div style={{ marginBottom: b.analysis.keyPoints.length > 0 ? "0.45rem" : 0 }}>
+                                {b.analysis.summary}
                               </div>
-
-                              <div>
-                                <strong>💥 決着シーン: </strong>
-                                <span style={{ color: "var(--text-sub)" }}>
-                                  {b.visualAnalysis.lethalMove}
-                                </span>
-                              </div>
+                              {b.analysis.keyPoints.length > 0 && (
+                                <ul style={{ margin: 0, paddingLeft: "1.2rem", color: "var(--text-sub)" }}>
+                                  {b.analysis.keyPoints.map((point, pi) => (
+                                    <li key={pi} style={{ marginBottom: "0.2rem" }}>
+                                      {point}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
                             </div>
                           </div>
                         )}

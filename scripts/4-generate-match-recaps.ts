@@ -8,22 +8,64 @@ if (typeof process.loadEnvFile === "function") {
 }
 
 import {
+  EditorialRecapsDataSchema,
   MatchRecapsDataSchema,
+  VideoFactsDataSchema,
 } from "../src/lib/schema";
 import type {
   DivisionId,
+  EditorialRecapsData,
   MatchRecapsData,
   PastSectionArchive,
+  RecentBoutAnalysis,
   RecentBoutRecap,
   RecentMatchRecap,
-  VideoHighlightMoment,
+  VideoFactsData,
 } from "../src/lib/types";
 import { PLAYER_NAME_MAP, TEAM_META_MAP } from "../src/lib/simulator";
 import { formatCharName } from "../src/lib/player-encyclopedia";
+import { SECTION_VIDEO_IDS } from "../src/config/section-videos";
+import {
+  extractYoutubeVideoId,
+  fetchYoutubeChapters,
+  findBoutWindow,
+  findMatchStartSec,
+} from "./recap/youtube-chapters";
+import { parseModelList } from "./recap/gemini-client";
+import {
+  advanceBoutAnalysis,
+  type BoutContext,
+  type VideoBudget,
+} from "./recap/bout-video-facts";
+import {
+  buildOfficialDataAnalysis,
+  dedupeAnalyses,
+  generateMatchNarrative,
+  narrationInputHash,
+  type BoutGameDetail,
+  type NarrationBoutInput,
+  type NarrationMatchInput,
+} from "./recap/narration";
 
 const DATA_DIR = path.resolve(process.cwd(), "src/data");
 const SEED_FILE = path.join(DATA_DIR, "raw-capcom-seed.json");
 const RECAPS_FILE = path.join(DATA_DIR, "match-recaps.json");
+const VIDEO_FACTS_FILE = path.join(DATA_DIR, "video-facts.json");
+const EDITORIAL_FILE = path.join(DATA_DIR, "editorial-recaps.json");
+
+const DEFAULT_VIDEO_MODELS = [
+  "gemini-3.8-flash",
+  "gemini-3.5-flash-lite",
+  "gemini-3.6-flash",
+  "gemini-3.7-flash",
+  "gemini-3.1-flash-lite",
+];
+const DEFAULT_TEXT_MODELS = [
+  "gemini-3.8-flash",
+  "gemini-3.6-flash",
+  "gemini-3.5-flash-lite",
+  "gemini-3.1-flash-lite",
+];
 
 interface RawGameLog {
   "1p_character": string;
@@ -87,347 +129,37 @@ interface RawScheduleEntry {
 }
 
 /**
- * 文章からタイムスタンプ関連の数字（XX分XX秒など）を除去
+ * 公式ラウンドログ → ゲームごとの勝者とラウンド推移。
+ * r = "1" は 1P(HOME)=B、"2" は 2P(AWAY)=A のラウンド取得。
  */
-function cleanTimestampFromText(text: string): string {
-  if (!text) return "";
-  return text
-    .replace(/\d{1,3}分\d{1,2}秒[（(][^）)]*[）)]/g, "")
-    .replace(/\d{1,3}分\d{1,2}秒(?:頃|付近)?/g, "")
-    .replace(/\d{1,2}:\d{2}(?::\d{2})?(?:[（(][^）)]*[）)])?/g, "")
-    .replace(/（動画開始から約\d+秒）/g, "")
-    .replace(/約\d+秒/g, "")
-    .replace(/\s{2,}/g, " ")
-    .trim();
+export function toGameDetails(gameLogs: RawGameLog[] = []): BoutGameDetail[] {
+  return gameLogs.map((g) => {
+    const rounds = [g.r1, g.r2, g.r3]
+      .filter((r) => r === "1" || r === "2")
+      .map((r) => (r === "1" ? "B" : "A") as "A" | "B");
+    const a = rounds.filter((r) => r === "A").length;
+    const b = rounds.filter((r) => r === "B").length;
+    return { winner: a > b ? "A" : "B", rounds };
+  });
 }
 
-/**
- * 1ゲームごとのラウンド奪取状況を解析（UIの表示順に合わせて [AWAY - HOME] の順序で出力）
- */
-function analyzeRoundFlow(
-  gameLogs: RawGameLog[] = [],
-  awayPlayerName: string = "",
-  homePlayerName: string = ""
-): {
-  roundFlowTexts: string[];
-  gameOutcomes: Array<{
-    gameNum: number;
-    winner: "home" | "away";
-    homeRounds: number;
-    awayRounds: number;
-    isFullRound: boolean;
-    isComeback: boolean;
-  }>;
-} {
-  const roundFlowTexts: string[] = [];
-  const gameOutcomes: Array<{
-    gameNum: number;
-    winner: "home" | "away";
-    homeRounds: number;
-    awayRounds: number;
-    isFullRound: boolean;
-    isComeback: boolean;
-  }> = [];
-
-  gameLogs.forEach((g, idx) => {
-    const rounds = [g.r1, g.r2, g.r3].filter(Boolean);
-    const homeWins = rounds.filter((r) => r === "1").length;
-    const awayWins = rounds.filter((r) => r === "2").length;
-    const winner: "home" | "away" = homeWins > awayWins ? "home" : "away";
-    const winnerPlayer = winner === "away" ? awayPlayerName : homePlayerName;
-    const isFullRound = rounds.length === 3;
-    const isComeback =
-      (winner === "home" && rounds[0] === "2") ||
-      (winner === "away" && rounds[0] === "1");
-
-    // UIの表示順に合わせて [AWAY - HOME] の順序でスコアを表示
-    let text = `Game ${idx + 1}: [${awayWins}-${homeWins}] `;
-    if (winnerPlayer) {
-      text += `${winnerPlayer}選手が`;
-    }
-    if (rounds.length === 2) {
+/** UIの [AWAY - HOME] 表示順に合わせたラウンド推移テキスト */
+function buildRoundFlowTexts(games: BoutGameDetail[], awayName: string, homeName: string): string[] {
+  return games.map((g, idx) => {
+    const a = g.rounds.filter((r) => r === "A").length;
+    const b = g.rounds.filter((r) => r === "B").length;
+    const winnerName = g.winner === "A" ? awayName : homeName;
+    let text = `Game ${idx + 1}: [${a}-${b}] ${winnerName}選手が`;
+    if (g.rounds.length === 2) {
       text += "ストレート先取";
     } else {
       text += "フルラウンド勝利";
-      if (isComeback) text += "（先制されるも逆転）";
+      if (g.rounds[0] !== g.winner) text += "（先制されるも逆転）";
     }
-    roundFlowTexts.push(text);
-
-    gameOutcomes.push({
-      gameNum: idx + 1,
-      winner,
-      homeRounds: homeWins,
-      awayRounds: awayWins,
-      isFullRound,
-      isComeback,
-    });
+    return text;
   });
-
-  return { roundFlowTexts, gameOutcomes };
 }
 
-/**
- * ルールベース＆公式ラウンドログに基づく臨場感ある詳細展開解説を生成
- */
-function generateDeterministicVisualAnalysis(
-  statusName: string,
-  homePlayerName: string,
-  awayPlayerName: string,
-  homeChara: string,
-  awayChara: string,
-  homeBattle: number,
-  awayBattle: number,
-  winner: "home" | "away",
-  gameOutcomes: ReturnType<typeof analyzeRoundFlow>["gameOutcomes"]
-): {
-  tacticalFocus: string;
-  turningPoint: string;
-  lethalMove: string;
-  headline: string;
-  summary: string;
-} {
-  const winnerPlayer = winner === "home" ? homePlayerName : awayPlayerName;
-  const loserPlayer = winner === "home" ? awayPlayerName : homePlayerName;
-  const winnerChara = formatCharName(winner === "home" ? homeChara : awayChara);
-  const loserChara = formatCharName(winner === "home" ? awayChara : homeChara);
-
-  const isFullSet = Math.abs(homeBattle - awayBattle) === 1 && (homeBattle >= 2 || awayBattle >= 2);
-  const totalGames = gameOutcomes.length;
-  const hadComebackGame = gameOutcomes.some((g) => g.isComeback);
-  const wonFromBehind =
-    (winner === "home" && gameOutcomes[0]?.winner === "away") ||
-    (winner === "away" && gameOutcomes[0]?.winner === "home");
-
-  let tacticalFocus = "";
-  let turningPoint = "";
-  let lethalMove = "";
-
-  if (winnerChara.includes("ダルシム")) {
-    tacticalFocus = `${winnerPlayer}選手が長いリーチの牽制と低空ヨガフロートで間合いを徹底管理し、相手の突進をヨガファイアで阻みながらドライブゲージを削る立ち回り。`;
-  } else if (winnerChara.includes("ザンギエフ") || winnerChara.includes("リリー")) {
-    tacticalFocus = `${winnerPlayer}選手がドライブゲージを削る強烈なコマ投げと圧巻のプレッシャーで画面端に追い詰め、相手にバーンアウトの重圧をかける展開。`;
-  } else if (winnerChara.includes("ガイル") || winnerChara.includes("サガット")) {
-    tacticalFocus = `盤石の弾撃ちと鉄壁の対空迎撃で相手の飛びを完全にシャットアウトし、相手のドライブゲージを削り切る要塞戦法。`;
-  } else if (winnerChara.includes("エレナ")) {
-    tacticalFocus = `${winnerPlayer}選手がリーチの長い足技とローキックでの牽制を機能させ、地上戦の間合いを完全に支配。`;
-  } else if (winnerChara.includes("ルーク")) {
-    tacticalFocus = `${winnerPlayer}選手がしゃがみ中Pとサンドブラストで間合いを支配し、ドライブラッシュを交えて相手のドライブゲージを着実に削る完璧な主導権掌握。`;
-  } else if (winnerChara.includes("リュウ")) {
-    tacticalFocus = `${winnerPlayer}選手が重厚なしゃがみ中Pと波掌撃で地上を制圧し、バーンアウトを徹底回避しながら前線を押し上げる堂々の立ち回り。`;
-  } else if (winnerChara.includes("キャミィ")) {
-    tacticalFocus = `${winnerPlayer}選手が鋭いストライクと素早い地上ダッシュで画面端に追い詰め、シミーと打撃の二択で一気に体力を削り取る展開。`;
-  } else if (winnerChara.includes("ケン") || winnerChara.includes("豪鬼")) {
-    tacticalFocus = `${winnerPlayer}選手の鋭いラッシュ攻撃と弾牽制が光り、相手のドライブゲージを削りながら画面端へ運ぶ苛烈な攻勢。`;
-  } else {
-    tacticalFocus = `${winnerPlayer}選手の鋭いラッシュ攻撃と牽制小技の使い分けが光り、地上戦の主導権を終始握り続ける。`;
-  }
-
-  if (wonFromBehind || (isFullSet && totalGames >= 3)) {
-    turningPoint = `相手に先行を許す苦しい立ち上がりとなったが、中盤以降のバーンアウト攻防を冷静に耐え凌ぎ、的確な対空と差し返しから流れを完全に引き寄せた。`;
-  } else if (hadComebackGame) {
-    turningPoint = `第1ラウンドを取られて崖っぷちに立たされた場面で、強気の起き攻めシミーとミリ単位のヒット確認を連続で通した勝負強さが光る。`;
-  } else {
-    turningPoint = `序盤から相手の牽制に対して的確な差し返しを連発し、飛び込みに対しても寸分狂わぬ対空迎撃で一度も主導権を渡さなかった。`;
-  }
-
-  if (winnerChara.includes("ダルシム")) {
-    lethalMove = isFullSet
-      ? `運命の最終セット、互いに体力ミリの極限状態から、相手の技の出かかりを捉えるパニッシュカウンターからヨガファイアを叩き込んで劇的KO！`
-      : `画面端に追い詰めた状況から、的確なリーチ牽制と対空迎撃で相手を寄せ付けず完勝KO！`;
-  } else if (winnerChara.includes("ルーク")) {
-    lethalMove = `バーンアウト状態で追い詰められた相手に対し、ドライブラッシュからの怒涛のラッシュでガードをこじ開け、最後はDDTを叩き込んで圧巻のKO勝利！`;
-  } else if (winnerChara.includes("エレナ")) {
-    lethalMove = `画面端でガードを固める相手に対し、ドライブラッシュからの下段崩しを冷静にヒット確認し、美しいコンボを叩き込んで完全決着KO！`;
-  } else if (winnerChara.includes("リュウ")) {
-    lethalMove = `画面端に追い詰めた状況から、投げ抜けを誘う鮮やかなシミー（バックステップ）でパニッシュカウンターを奪い、渾身のSA3（真・昇龍拳）を叩き込んでKO！`;
-  } else if (winnerChara.includes("ザンギエフ")) {
-    lethalMove = `画面端に追い詰めた極限のプレッシャーから、相手の暴れやジャンプを許さず完璧なコマンド投げを叩き込んで大ダメージKO！`;
-  } else if (winnerChara.includes("ガイル")) {
-    lethalMove = `相手の決死の飛び込みに対し、冷静沈着なサマーソルトキックからSA3（クロスファイアサマーソルト）へ繋いで完全KO！`;
-  } else if (isFullSet) {
-    lethalMove = `運命の最終セット、残り体力わずかの極限状態から、飛び込んできた相手に対し冷静無比な対空SA（スーパーアーツ）を叩き込んで決着！`;
-  } else {
-    lethalMove = `画面端に追い詰めた状況から強烈なシミー（後退による投げスカ誘い）を決め、大ダメージコンボでKO！`;
-  }
-
-  const headline = isFullSet
-    ? `${winnerPlayer}選手がフルセットの死闘を制す！${statusName}でチームを牽引`
-    : `${winnerPlayer}選手が堂々の快勝！${statusName}で貴重な勝利をもたらす`;
-
-  const summary = `${statusName}（${awayPlayerName} vs ${homePlayerName}）は、${awayBattle}-${homeBattle}で${winnerPlayer}選手（${winnerChara}）が勝利。${tacticalFocus} ${turningPoint}`;
-
-  return {
-    tacticalFocus,
-    turningPoint,
-    lethalMove,
-    headline,
-    summary,
-  };
-}
-
-interface GeminiVideoAnalysisResult {
-  matchHeadline: string;
-  matchSummary: string;
-  videoObservations: {
-    driveAndBurnout: string;
-    pokesAndFootsies: string;
-    jumpAndAntiAir: string;
-    cornerAndShimmy: string;
-    finalLethalMove: string;
-    koTimestampSec: number;
-    koTimestampLabel?: string;
-  };
-}
-
-/**
- * 有効なYouTube動画リンク（watch または /live/）かどうかを判定
- */
-function isValidYoutubeVideoUrl(url: string): boolean {
-  return (
-    url.includes("watch?v=") ||
-    url.includes("youtube.com/live/") ||
-    url.includes("youtu.be/")
-  );
-}
-
-/**
- * Gemini API による YouTube 動画理解の呼び出し（タイムスタンプ・クリッピング対応）
- */
-async function tryGenerateWithGeminiVideo(
-  apiKey: string,
-  youtubeUrl: string,
-  startOffsetSec: number,
-  endOffsetSec: number,
-  matchInfo: {
-    home: string;
-    away: string;
-    bouts: Array<{
-      statusName: string;
-      homePlayer: string;
-      awayPlayer: string;
-      homeChara: string;
-      awayChara: string;
-      winner: string;
-      score: string;
-    }>;
-  }
-): Promise<GeminiVideoAnalysisResult | null> {
-  // 安定性の高い gemini-3.5-flash を優先
-  const candidateModels = Array.from(
-    new Set(
-      [
-        process.env.GEMINI_MODEL,
-        "gemini-3.5-flash",
-        "gemini-3.8-flash",
-      ].filter(Boolean) as string[]
-    )
-  );
-
-  const prompt = `
-あなたはストリートファイター6のプロ格ゲーマー兼SFL公式アナリストです。
-添付されたYouTubeのSFL公式動画クリップ（${startOffsetSec}秒〜${endOffsetSec}秒、${matchInfo.away} vs ${matchInfo.home} の大一番・決着シーン）の【ゲーム画面の映像】を凝視して詳細に分析してください。
-
-実況の音声だけに頼らず、以下の「ゲーム画面に映る映像」を具体的に分析してください：
-1. ドライブゲージ状況（ドライブゲージ残量の削り合い、バーンアウトの発生、バーンアウト時の攻防）
-2. 地上戦・牽制（小技・中攻撃の振り合い、リーチ管理、差し返し）
-3. 飛びと対空（ジャンプ攻撃の成否、対空技による迎撃）
-4. 画面端の攻防（シミーでの投げ抜け誘い、柔道、画面端脱出の駆け引き）
-5. 試合の決着シーン（KOの瞬間・決着技：CA/SA、通常技、対空など、体力がミリになった極限状態からの逆転、決着時刻のタイムスタンプ）
-
-【公式確定結果】
-${matchInfo.bouts
-  .map(
-    (b) =>
-      `・${b.statusName}: ${b.homePlayer}(${b.homeChara}) vs ${b.awayPlayer}(${b.awayChara}) -> 結果: ${b.score} で${b.winner}勝利`
-  )
-  .join("\n")}
-
-以下のJSONフォーマットで出力してください:
-{
-  "matchHeadline": "試合全体の見出し（30文字以内）",
-  "matchSummary": "試合全体の流れと決着ドラマの要約（150文字程度。ゲージ攻防や主導権の推移を含む）",
-  "videoObservations": {
-    "driveAndBurnout": "ドライブゲージとバーンアウトの映像分析（具体的な画面状況）",
-    "pokesAndFootsies": "牽制技・地上戦の映像分析（振っていた小技・中技・リーチ管理）",
-    "jumpAndAntiAir": "飛びと対空の映像分析（ジャンプと迎撃技の攻防）",
-    "cornerAndShimmy": "画面端・シミーの映像分析（投げと打撃、シミーの駆け引き）",
-    "finalLethalMove": "最終決着シーンのKO技・リーサル状況（何分何秒あたりでどの技でKOが決まったか詳細に）",
-    "koTimestampSec": ${Math.floor((startOffsetSec + endOffsetSec) / 2)},
-    "koTimestampLabel": "MM:SSまたはHH:MM:SS"
-  }
-}
-`;
-
-  for (const model of candidateModels) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-
-    // 一時的な503やネットワークエラーに備えて最大3回リトライ
-    for (let attempt = 1; attempt <= 3; attempt++) {
-      try {
-        const res = await fetch(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    fileData: {
-                      fileUri: youtubeUrl,
-                    },
-                    videoMetadata: {
-                      startOffset: `${startOffsetSec}s`,
-                      endOffset: `${endOffsetSec}s`,
-                    },
-                  },
-                  {
-                    text: prompt,
-                  },
-                ],
-              },
-            ],
-            generationConfig: {
-              responseMimeType: "application/json",
-              temperature: 0.2,
-            },
-          }),
-        });
-
-        if (res.status === 503 || res.status === 429) {
-          console.warn(
-            `[Gemini API - ${model}] HTTP ${res.status} (attempt ${attempt}/3). Backing off for 6s...`
-          );
-          await new Promise((r) => setTimeout(r, 6000));
-          continue;
-        }
-
-        if (!res.ok) {
-          const errBody = await res.text().catch(() => "");
-          console.warn(`[Gemini API - ${model}] HTTP ${res.status}: ${errBody.slice(0, 150)}`);
-          break; // 400等の致命的エラーはモデル切り替え
-        }
-
-        const data = (await res.json()) as {
-          candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-        };
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (!text) continue;
-
-        console.log(`[Gemini API] Successfully analyzed video segment using ${model}!`);
-        return JSON.parse(text);
-      } catch (err) {
-        console.warn(`[Gemini API - ${model}] Error (attempt ${attempt}/3): ${(err as Error).message}`);
-        await new Promise((r) => setTimeout(r, 4000));
-      }
-    }
-  }
-
-  return null;
-}
-
-/**
- * 秒数を HH:MM:SS または MM:SS に変換
- */
 function formatSecondsToTimestamp(sec: number): string {
   const h = Math.floor(sec / 3600);
   const m = Math.floor((sec % 3600) / 60);
@@ -438,203 +170,233 @@ function formatSecondsToTimestamp(sec: number): string {
   return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
 }
 
-export async function generateAndSaveMatchRecaps(): Promise<MatchRecapsData> {
-  console.log("=== SFL 2026 Match Recaps & Video Highlights Generator Start ===");
+function loadVideoFacts(): VideoFactsData {
+  if (!fs.existsSync(VIDEO_FACTS_FILE)) {
+    return { updatedAt: new Date().toISOString(), videos: {}, bouts: {}, narratives: {} };
+  }
+  return VideoFactsDataSchema.parse(JSON.parse(fs.readFileSync(VIDEO_FACTS_FILE, "utf8")));
+}
 
+function saveVideoFacts(data: VideoFactsData): void {
+  data.updatedAt = new Date().toISOString();
+  fs.writeFileSync(
+    VIDEO_FACTS_FILE,
+    JSON.stringify(VideoFactsDataSchema.parse(data), null, 2),
+    "utf8"
+  );
+}
+
+function loadEditorial(): EditorialRecapsData {
+  if (!fs.existsSync(EDITORIAL_FILE)) return { bouts: {}, matches: {} };
+  return EditorialRecapsDataSchema.parse(JSON.parse(fs.readFileSync(EDITORIAL_FILE, "utf8")));
+}
+
+function loadCompletedSections(): { s: RawScheduleEntry[]; f: RawScheduleEntry[] } {
   if (!fs.existsSync(SEED_FILE)) {
     throw new Error(`Seed file not found: ${SEED_FILE}`);
   }
-
   const rawSeed = JSON.parse(fs.readFileSync(SEED_FILE, "utf8")) as {
     data?: { schedules?: RawScheduleEntry[] };
   };
-
-  const schedules = rawSeed.data?.schedules || [];
-  const completedDivSections: { s: RawScheduleEntry[]; f: RawScheduleEntry[] } = {
-    s: [],
-    f: [],
-  };
-
-  for (const s of schedules) {
-    const slug = s.post_name;
+  const completed: { s: RawScheduleEntry[]; f: RawScheduleEntry[] } = { s: [], f: [] };
+  for (const s of rawSeed.data?.schedules || []) {
     const hasResult =
       s.fields.section.match1 &&
       typeof s.fields.section.match1.result === "object" &&
       s.fields.section.match1.result !== null;
     if (!hasResult) continue;
-
-    if (slug.startsWith("div-s-sec")) {
-      completedDivSections.s.push(s);
-    } else if (slug.startsWith("div-f-sec")) {
-      completedDivSections.f.push(s);
-    }
+    if (s.post_name.startsWith("div-s-sec")) completed.s.push(s);
+    else if (s.post_name.startsWith("div-f-sec")) completed.f.push(s);
   }
+  return completed;
+}
 
-  const latestS = completedDivSections.s[completedDivSections.s.length - 1];
-  const latestF = completedDivSections.f[completedDivSections.f.length - 1];
+function activeSlots(sec: RawScheduleEntry["fields"]["section"]) {
+  const slots: Array<{ num: number; slot: RawMatchSlot }> = [
+    { num: 1, slot: sec.match1 },
+    { num: 2, slot: sec.match2 },
+    { num: 3, slot: sec.match3 },
+  ];
+  if (sec.match4 && sec.match4.use !== "hide" && sec.match4.home !== "none") {
+    slots.push({ num: 4, slot: sec.match4 });
+  }
+  return slots.filter(
+    ({ slot }) => slot && slot.use !== "hide" && typeof slot.result === "object" && slot.result
+  );
+}
 
+/** 最新節で、まだ動画解析が終わっていない（pending の）Boutがあるか。パイプラインの再開判定用。 */
+export function hasPendingVideoWork(): boolean {
+  if (!process.env.GEMINI_API_KEY || !fs.existsSync(VIDEO_FACTS_FILE)) return false;
+  const facts = loadVideoFacts();
+  const editorial = loadEditorial();
+  const completed = loadCompletedSections();
+  const latestSlugs = [completed.s.at(-1)?.post_name, completed.f.at(-1)?.post_name].filter(
+    Boolean
+  ) as string[];
+  const slugHasVideo = latestSlugs.some((slug) => SECTION_VIDEO_IDS[slug]);
+  if (!slugHasVideo) return false;
+  const pendingBout = Object.entries(facts.bouts).some(
+    ([id, b]) =>
+      latestSlugs.some((slug) => id.startsWith(`${slug}-`)) &&
+      b.status === "pending" &&
+      !editorial.bouts[id]
+  );
+  const unseenSection = latestSlugs.some(
+    (slug) => SECTION_VIDEO_IDS[slug] && !Object.keys(facts.bouts).some((id) => id.startsWith(`${slug}-`))
+  );
+  return pendingBout || unseenSection;
+}
+
+export async function generateAndSaveMatchRecaps(
+  options: { onlySection?: string } = {}
+): Promise<MatchRecapsData> {
+  console.log("=== SFL 2026 Match Recaps (Gemini video facts) Generator Start ===");
+
+  const completedDivSections = loadCompletedSections();
   const latestSecNum = {
-    s: latestS ? parseInt(latestS.post_name.replace("div-s-sec", ""), 10) : 0,
-    f: latestF ? parseInt(latestF.post_name.replace("div-f-sec", ""), 10) : 0,
+    s: completedDivSections.s.length
+      ? parseInt(completedDivSections.s.at(-1)!.post_name.replace("div-s-sec", ""), 10)
+      : 0,
+    f: completedDivSections.f.length
+      ? parseInt(completedDivSections.f.at(-1)!.post_name.replace("div-f-sec", ""), 10)
+      : 0,
   };
 
   const apiKey = process.env.GEMINI_API_KEY || "";
-  let usedGeminiVideo = false;
+  const videoModels = parseModelList(process.env.GEMINI_VIDEO_MODELS, DEFAULT_VIDEO_MODELS);
+  const textModels = parseModelList(process.env.GEMINI_TEXT_MODELS, DEFAULT_TEXT_MODELS);
+  const fps = Number(process.env.GEMINI_VIDEO_FPS || "1");
+  const budget: VideoBudget = {
+    maxCalls: Number(process.env.GEMINI_VIDEO_MAX_CALLS || "24"),
+    // 無料枠のYouTube入力は1日8時間まで。他の利用分を残して7時間で打ち切る
+    maxVideoSeconds: Number(process.env.GEMINI_VIDEO_MAX_SECONDS || String(7 * 3600)),
+    calls: 0,
+    videoSeconds: 0,
+  };
+
+  const videoFacts = loadVideoFacts();
+  const editorial = loadEditorial();
 
   const resultRecaps: MatchRecapsData = {
     updatedAt: new Date().toISOString(),
-    generatorMode: apiKey ? "gemini-video" : "deterministic-rules",
+    generatorMode: "deterministic-rules",
     latestSection: latestSecNum,
-    recentSections: {
-      s: [],
-      f: [],
-    },
-    pastSections: {
-      s: [],
-      f: [],
-    },
+    recentSections: { s: [], f: [] },
+    pastSections: { s: [], f: [] },
   };
+  const allAnalyses: RecentBoutAnalysis[] = [];
 
-  // 各ディビジョンごとに処理
   for (const div of ["s", "f"] as DivisionId[]) {
     const completed = completedDivSections[div];
     if (completed.length === 0) continue;
 
     // 過去節のアーカイブ
-    const pastEntries = completed.slice(0, completed.length - 1);
-    for (const entry of pastEntries) {
-      const secNum = parseInt(entry.post_name.replace(`div-${div}-sec`, ""), 10);
+    for (const entry of completed.slice(0, -1)) {
       const sec = entry.fields.section;
-      const ytUrl = sec.links?.live?.url || "https://www.youtube.com/@CapcomFightersJP";
-      const matchesArchive: PastSectionArchive["matches"] = [];
-
-      for (const slotKey of ["match1", "match2", "match3"] as const) {
-        const slot = sec[slotKey];
-        if (!slot || slot.use === "hide" || typeof slot.result !== "object" || !slot.result) continue;
-        matchesArchive.push({
-          home: slot.home,
-          away: slot.away,
-          homePoint: slot.result.total.point.home,
-          awayPoint: slot.result.total.point.away,
-          winner: slot.result.winner,
+      const videoId = SECTION_VIDEO_IDS[entry.post_name];
+      const matchesArchive: PastSectionArchive["matches"] = activeSlots(sec)
+        .filter(({ num }) => num <= 3)
+        .map(({ slot }) => {
+          const r = slot.result as Exclude<RawMatchSlot["result"], "">;
+          return {
+            home: slot.home,
+            away: slot.away,
+            homePoint: r.total.point.home,
+            awayPoint: r.total.point.away,
+            winner: r.winner,
+          };
         });
-      }
-
       resultRecaps.pastSections[div].push({
-        sectionNumber: secNum,
+        sectionNumber: parseInt(entry.post_name.replace(`div-${div}-sec`, ""), 10),
         sectionTitle: entry.post_title,
         scheduledAt: sec.time,
-        youtubeUrl: ytUrl,
+        youtubeUrl: videoId
+          ? `https://www.youtube.com/watch?v=${videoId}`
+          : sec.links?.live?.url || "https://www.youtube.com/@CapcomFightersJP",
         playlistUrl: sec.links?.playlist?.url,
         matches: matchesArchive,
       });
     }
 
-const DIVISION_SECTION_META: Record<
-  string,
-  {
-    youtubeUrl: string;
-    matches: Array<{
-      matchNum: number;
-      startTimeSec: number;
-      startLabel: string;
-    }>;
-  }
-> = {
-  "div-s-sec4": {
-    youtubeUrl: "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
-    matches: [
-      { matchNum: 1, startTimeSec: 2220, startLabel: "37:00" },
-      { matchNum: 2, startTimeSec: 6477, startLabel: "1:47:57" },
-      { matchNum: 3, startTimeSec: 10387, startLabel: "2:53:07" },
-    ],
-  },
-  "div-f-sec3": {
-    youtubeUrl: "https://www.youtube.com/watch?v=3X1zd27viu0",
-    matches: [
-      { matchNum: 1, startTimeSec: 2235, startLabel: "37:15" },
-      { matchNum: 2, startTimeSec: 6677, startLabel: "1:51:17" },
-      { matchNum: 3, startTimeSec: 10842, startLabel: "3:00:42" },
-    ],
-  },
-};
-
-    // 最新節の詳細展開生成
-    const latestEntry = completed[completed.length - 1];
-    if (!latestEntry) continue;
-
-    const secNum = latestSecNum[div];
+    // 最新節の詳細
+    const latestEntry = completed.at(-1)!;
+    const slug = latestEntry.post_name;
     const sec = latestEntry.fields.section;
-    const sectionMeta = DIVISION_SECTION_META[latestEntry.post_name];
-    const defaultYtUrl =
-      sectionMeta?.youtubeUrl ||
-      sec.links?.live?.url ||
-      "https://www.youtube.com/@CapcomFightersJP";
+    const videoId =
+      SECTION_VIDEO_IDS[slug] || extractYoutubeVideoId(sec.links?.live?.url || "") || null;
+    const youtubeUrl = videoId
+      ? `https://www.youtube.com/watch?v=${videoId}`
+      : "https://www.youtube.com/@CapcomFightersJP";
+    const divisionLabel = `Division ${div.toUpperCase()}`;
+    const videoWorkAllowed =
+      Boolean(apiKey && videoId) && (!options.onlySection || options.onlySection === slug);
 
-    const slots: Array<{ num: number; slot: RawMatchSlot }> = [
-      { num: 1, slot: sec.match1 },
-      { num: 2, slot: sec.match2 },
-      { num: 3, slot: sec.match3 },
-    ];
-    if (sec.match4 && sec.match4.use !== "hide" && sec.match4.home !== "none") {
-      slots.push({ num: 4, slot: sec.match4 });
+    // 公式チャプター（キャッシュ優先）
+    let chapters = videoFacts.videos[slug]?.chapters ?? [];
+    if (videoId && chapters.length === 0) {
+      try {
+        chapters = await fetchYoutubeChapters(videoId);
+        videoFacts.videos[slug] = { videoId, chapters };
+        console.log(`[Chapters] ${slug}: ${chapters.length} chapters from YouTube description`);
+      } catch (err) {
+        console.warn(`[Chapters] ${slug}: ${(err as Error).message}`);
+      }
     }
 
-    for (const { num, slot } of slots) {
-      if (!slot || slot.use === "hide" || typeof slot.result !== "object" || !slot.result) continue;
+    for (const { num, slot } of activeSlots(sec)) {
+      const result = slot.result as Exclude<RawMatchSlot["result"], "">;
+      const p1 = result["1p"] || [];
+      const p2 = result["2p"] || [];
+      const rawLogs = result.log || [];
+      const homeName = TEAM_META_MAP[slot.home]?.name || slot.home;
+      const awayName = TEAM_META_MAP[slot.away]?.name || slot.away;
+      const matchId = `${slug}-m${num}`;
 
-      const p1 = slot.result["1p"] || [];
-      const p2 = slot.result["2p"] || [];
-      const rawLogs = slot.result.log || [];
-      const homeMeta = TEAM_META_MAP[slot.home];
-      const awayMeta = TEAM_META_MAP[slot.away];
-      const homeName = homeMeta?.name || slot.home;
-      const awayName = awayMeta?.name || slot.away;
-      const count = Math.min(p1.length, p2.length);
+      const boutInputs: NarrationBoutInput[] = [];
+      const boutRecaps: RecentBoutRecap[] = [];
 
-      const bouts: RecentBoutRecap[] = [];
-      const boutAnalysisList: Array<{
-        statusName: string;
-        homePlayer: string;
-        awayPlayer: string;
-        homeChara: string;
-        awayChara: string;
-        winner: string;
-        score: string;
-      }> = [];
-
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < Math.min(p1.length, p2.length); i++) {
         const hp = p1[i];
         const ap = p2[i];
         const homePlayerDisp = PLAYER_NAME_MAP[hp.player] || hp.player;
         const awayPlayerDisp = PLAYER_NAME_MAP[ap.player] || ap.player;
         const homeCharaKey = Object.keys(hp.use_chara || {})[0] || "";
         const awayCharaKey = Object.keys(ap.use_chara || {})[0] || "";
-        const boutLogs = rawLogs[i] || [];
-        const { roundFlowTexts, gameOutcomes } = analyzeRoundFlow(
-          boutLogs,
-          awayPlayerDisp,
-          homePlayerDisp
-        );
-
+        const games = toGameDetails(rawLogs[i] || []);
         const boutWinner: "home" | "away" = hp.battle > ap.battle ? "home" : "away";
-        const isFullSet =
-          (hp.status === 2 && (hp.battle + ap.battle === 5)) ||
-          (hp.status !== 2 && (hp.battle + ap.battle === 3));
+        const bestOf = hp.status === 2 ? 5 : 3;
 
-        const baseAnalysis = generateDeterministicVisualAnalysis(
-          hp.status_name,
-          homePlayerDisp,
-          awayPlayerDisp,
-          homeCharaKey,
-          awayCharaKey,
-          hp.battle,
-          ap.battle,
-          boutWinner,
-          gameOutcomes
-        );
+        const ctx: BoutContext = {
+          boutId: `${matchId}-b${hp.status}`,
+          divisionLabel,
+          sectionTitle: latestEntry.post_title.replace(/^Division\s*[SF]\s*/i, ""),
+          matchNumber: num,
+          statusName: hp.status_name,
+          bestOf,
+          playerA: { name: awayPlayerDisp, chara: formatCharName(awayCharaKey), team: awayName },
+          playerB: { name: homePlayerDisp, chara: formatCharName(homeCharaKey), team: homeName },
+          officialGameWinners: games.map((g) => g.winner),
+          boutWinner: boutWinner === "away" ? "A" : "B",
+          scoreA: ap.battle,
+          scoreB: hp.battle,
+        };
 
-        bouts.push({
+        // 動画解析（チャプターでBout区間が取れたものだけ）
+        let facts = videoFacts.bouts[ctx.boutId];
+        const window = findBoutWindow(chapters, num, hp.status);
+        if (!facts && videoId && window) {
+          facts = { videoId, ...window, status: "pending", runs: [] };
+          videoFacts.bouts[ctx.boutId] = facts;
+        }
+        // 編集解説があるBoutは動画解析しない（無料枠の節約）
+        if (facts && videoWorkAllowed && facts.status === "pending" && !editorial.bouts[ctx.boutId]) {
+          await advanceBoutAnalysis({ apiKey, models: videoModels, ctx, facts, budget, fps });
+          saveVideoFacts(videoFacts); // 途中で止まっても解析済み分は残す
+        }
+
+        boutInputs.push({ ctx, games, facts });
+        boutRecaps.push({
           status: hp.status,
           statusName: hp.status_name,
           homePlayer: hp.player,
@@ -646,103 +408,155 @@ const DIVISION_SECTION_META: Record<
           homePoint: hp.point,
           awayPoint: ap.point,
           winner: boutWinner,
-          isFullSet,
-          roundFlow: roundFlowTexts,
-          visualAnalysis: {
-            tacticalFocus: cleanTimestampFromText(baseAnalysis.tacticalFocus),
-            turningPoint: cleanTimestampFromText(baseAnalysis.turningPoint),
-            lethalMove: cleanTimestampFromText(baseAnalysis.lethalMove),
-          },
-        });
-
-        boutAnalysisList.push({
-          statusName: hp.status_name,
-          homePlayer: homePlayerDisp,
-          awayPlayer: awayPlayerDisp,
-          homeChara: formatCharName(homeCharaKey),
-          awayChara: formatCharName(awayCharaKey),
-          winner: boutWinner === "home" ? homeName : awayName,
-          score: `${hp.battle} - ${ap.battle}`,
+          isFullSet: ap.battle + hp.battle === bestOf,
+          roundFlow: buildRoundFlowTexts(games, awayPlayerDisp, homePlayerDisp),
+          analysis: buildOfficialDataAnalysis({ ctx, games }),
         });
       }
 
-      // マッチ総括
       const isTiebreaker =
-        (slot.result.total.point.home === 30 && slot.result.total.point.away === 20) ||
-        (slot.result.total.point.home === 20 && slot.result.total.point.away === 30);
-      const matchWinnerTeam = slot.result.winner === "home" ? homeName : awayName;
+        (result.total.point.home === 30 && result.total.point.away === 20) ||
+        (result.total.point.home === 20 && result.total.point.away === 30);
+      const matchWinnerTeam = result.winner === "home" ? homeName : awayName;
+      const narrationInput: NarrationMatchInput = {
+        matchId,
+        awayTeam: awayName,
+        homeTeam: homeName,
+        awayPoint: result.total.point.away,
+        homePoint: result.total.point.home,
+        winnerTeam: matchWinnerTeam,
+        isTiebreaker,
+        bouts: boutInputs,
+      };
+
+      // 全Boutの動画解析が決着（complete/failed/区間なし）したら解説を1回だけ生成
+      const allSettled = boutInputs.every((b) => !b.facts || b.facts.status !== "pending");
+      const anyComplete = boutInputs.some((b) => b.facts?.status === "complete");
+      const inputHash = narrationInputHash(narrationInput);
+      let narrative = videoFacts.narratives[matchId];
+      if (
+        apiKey &&
+        allSettled &&
+        anyComplete &&
+        (!narrative || narrative.inputHash !== inputHash) &&
+        (!options.onlySection || options.onlySection === slug)
+      ) {
+        console.log(`[Narration] ${matchId}: generating from verified video facts...`);
+        const generated = await generateMatchNarrative({
+          apiKey,
+          models: textModels,
+          match: narrationInput,
+        });
+        if (generated) {
+          videoFacts.narratives[matchId] = generated;
+          narrative = generated;
+          saveVideoFacts(videoFacts);
+        }
+      }
+      const narrativeUsable = narrative && narrative.inputHash === inputHash;
+
+      // 動画由来の解説は、2回の解析で一致した要点が1件以上あるBoutだけに採用
+      boutRecaps.forEach((recap, idx) => {
+        const input = boutInputs[idx];
+        const nb = narrativeUsable
+          ? narrative!.bouts.find((b) => b.boutId === input.ctx.boutId)
+          : undefined;
+        // 要約文は2回一致のチェックを通らないため公式データ由来のまま使い、動画由来は要点だけにする
+        if (input.facts?.status === "complete" && nb && nb.keyPoints.length > 0) {
+          recap.analysis = {
+            source: "gemini-video",
+            summary: recap.analysis.summary,
+            keyPoints: nb.keyPoints,
+          };
+        }
+        // 編集解説があれば最優先
+        const editorialBout = editorial.bouts[input.ctx.boutId];
+        if (editorialBout) {
+          recap.analysis = {
+            source: "editorial",
+            summary: editorialBout.summary,
+            keyPoints: editorialBout.keyPoints,
+          };
+        }
+        allAnalyses.push(recap.analysis);
+      });
+
       const winnerScore =
-        slot.result.winner === "home"
-          ? `${slot.result.total.point.home} - ${slot.result.total.point.away}`
-          : `${slot.result.total.point.away} - ${slot.result.total.point.home}`;
+        result.winner === "home"
+          ? `${result.total.point.home}-${result.total.point.away}`
+          : `${result.total.point.away}-${result.total.point.home}`;
+      const decisiveBout = boutRecaps.at(-1);
+      const decisiveWinnerName = decisiveBout
+        ? decisiveBout.winner === "home"
+          ? PLAYER_NAME_MAP[decisiveBout.homePlayer] || decisiveBout.homePlayer
+          : PLAYER_NAME_MAP[decisiveBout.awayPlayer] || decisiveBout.awayPlayer
+        : "";
+      const fallbackHeadline = isTiebreaker
+        ? `${matchWinnerTeam}が延長戦を制し勝ち点30`
+        : `${matchWinnerTeam}が${winnerScore}で勝利`;
+      const fallbackSummary = `第${num}試合【${awayName} vs ${homeName}】は${result.total.point.away}-${result.total.point.home}で${matchWinnerTeam}の勝利。${
+        decisiveBout ? `${decisiveBout.statusName}は${decisiveWinnerName}選手が制した。` : ""
+      }`;
 
-      let matchHeadline = `${matchWinnerTeam}が${winnerScore}で勝利！`;
-      if (isTiebreaker) {
-        matchHeadline = `大熱戦の延長戦を制し、${matchWinnerTeam}が勝ち点30をもぎ取る！`;
-      } else if (slot.result.total.point.home === 40 || slot.result.total.point.away === 40) {
-        matchHeadline = `${matchWinnerTeam}が40-0の完全勝利で圧倒！`;
-      }
-
-      let matchSummary = `第${num}試合【${awayName} vs ${homeName}】は、${slot.result.total.point.away} - ${slot.result.total.point.home} で${matchWinnerTeam}がマッチ勝利。`;
-      if (isTiebreaker) {
-        matchSummary += `先鋒・中堅・大将戦を終えて20-20の同点となり、決着は運命の延長戦へ。緊迫した1先勝負を制した${matchWinnerTeam}が大きな勝ち点30を獲得しました。`;
-      } else if (slot.result.total.point.home >= 30 || slot.result.total.point.away >= 30) {
-        matchSummary += `大将戦を制した${matchWinnerTeam}が大量ポイントを獲得し、順位戦線で大きなアドバンテージを手にしました。`;
-      }
-
-      const matchMeta = sectionMeta?.matches.find((m) => m.matchNum === num);
-      const matchStartTime = matchMeta?.startTimeSec;
-      const matchStartLabel = matchMeta?.startLabel;
-      const matchVideoUrl = matchStartTime
-        ? `${defaultYtUrl}&t=${matchStartTime}s`
-        : defaultYtUrl;
-
+      const matchStartTime = findMatchStartSec(chapters, num) ?? undefined;
       const recentMatch: RecentMatchRecap = {
-        matchId: `${latestEntry.post_name}-m${num}`,
+        matchId,
         division: div,
-        sectionNumber: secNum,
+        sectionNumber: latestSecNum[div],
         sectionTitle: latestEntry.post_title,
         matchNumber: num,
         scheduledAt: sec.time,
-        youtubeUrl: defaultYtUrl,
-        matchVideoUrl,
+        youtubeUrl,
+        matchVideoUrl:
+          videoId && matchStartTime !== undefined ? `${youtubeUrl}&t=${matchStartTime}s` : youtubeUrl,
         matchStartTime,
-        matchStartLabel,
+        matchStartLabel:
+          matchStartTime !== undefined ? formatSecondsToTimestamp(matchStartTime) : undefined,
         home: slot.home,
         away: slot.away,
-        homePoint: slot.result.total.point.home,
-        awayPoint: slot.result.total.point.away,
-        winner: slot.result.winner,
+        homePoint: result.total.point.home,
+        awayPoint: result.total.point.away,
+        winner: result.winner,
         isTiebreaker,
-        matchHeadline: cleanTimestampFromText(matchHeadline),
-        matchSummary: cleanTimestampFromText(matchSummary),
-        bouts,
+        matchHeadline:
+          editorial.matches[matchId]?.headline ??
+          (narrativeUsable ? narrative!.matchHeadline : fallbackHeadline),
+        matchSummary:
+          editorial.matches[matchId]?.summary ??
+          (narrativeUsable ? narrative!.matchSummary : fallbackSummary),
+        bouts: boutRecaps,
       };
-
       resultRecaps.recentSections[div].push(recentMatch);
     }
   }
 
-  if (usedGeminiVideo) {
-    resultRecaps.generatorMode = "gemini-video";
-  }
+  dedupeAnalyses(allAnalyses);
+  const videoCount = allAnalyses.filter((a) => a.source === "gemini-video").length;
+  const editorialCount = allAnalyses.filter((a) => a.source === "editorial").length;
+  const sources = new Set(allAnalyses.map((a) => a.source));
+  resultRecaps.generatorMode =
+    sources.size > 1
+      ? "mixed"
+      : sources.has("editorial")
+        ? "editorial"
+        : sources.has("gemini-video")
+          ? "gemini-video"
+          : "deterministic-rules";
 
-  // スキーマ検証
+  saveVideoFacts(videoFacts);
   const validated = MatchRecapsDataSchema.parse(resultRecaps);
-
   fs.writeFileSync(RECAPS_FILE, JSON.stringify(validated, null, 2), "utf8");
-  console.log(`[Step 4b] Match recaps saved successfully: ${RECAPS_FILE}`);
+  console.log(`[Step 4b] Match recaps saved: ${RECAPS_FILE}`);
   console.log(
-    `[Step 4b] Generated recaps for Div S Sec ${latestSecNum.s} (${validated.recentSections.s.length} matches), Div F Sec ${latestSecNum.f} (${validated.recentSections.f.length} matches)`
+    `[Step 4b] Mode: ${validated.generatorMode} (editorial ${editorialCount}, video facts ${videoCount} / ${allAnalyses.length} bouts), video calls this run: ${budget.calls}, video seconds: ${budget.videoSeconds}`
   );
-  console.log(`[Step 4b] Mode: ${validated.generatorMode}`);
-
   return validated;
 }
 
-// 直接実行時のエントリポイント
+// 直接実行時のエントリポイント: tsx scripts/4-generate-match-recaps.ts [--only=div-s-sec4]
 if (process.argv[1] && process.argv[1].endsWith("4-generate-match-recaps.ts")) {
-  generateAndSaveMatchRecaps().catch((err) => {
+  const only = process.argv.find((a) => a.startsWith("--only="))?.slice("--only=".length);
+  generateAndSaveMatchRecaps({ onlySection: only }).catch((err) => {
     console.error("Match recap generation failed:", err);
     process.exit(1);
   });

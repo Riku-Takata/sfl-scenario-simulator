@@ -419,11 +419,15 @@ export const VideoHighlightMomentSchema = z.object({
   videoUrlWithTime: z.string(),
 });
 
-export const RecentBoutVisualAnalysisSchema = z.object({
-  tacticalFocus: z.string(),
-  turningPoint: z.string(),
-  lethalMove: z.string(),
-  commentaryQuote: z.string().optional(),
+/**
+ * Bout解説。source=editorial は配信の文字起こし・映像・公式ログを確認して書いた解説、
+ * gemini-video は2回の独立した動画解析で一致した事実のみ、
+ * official-data は公式ラウンドログのみから組み立てたもの。
+ */
+export const RecentBoutAnalysisSchema = z.object({
+  source: z.enum(["editorial", "gemini-video", "official-data"]),
+  summary: z.string(),
+  keyPoints: z.array(z.string()),
 });
 
 export const RecentBoutRecapSchema = z.object({
@@ -440,7 +444,7 @@ export const RecentBoutRecapSchema = z.object({
   winner: z.enum(["home", "away"]),
   isFullSet: z.boolean(),
   roundFlow: z.array(z.string()).optional(),
-  visualAnalysis: RecentBoutVisualAnalysisSchema,
+  analysis: RecentBoutAnalysisSchema,
   highlight: VideoHighlightMomentSchema.optional(),
 });
 
@@ -486,7 +490,7 @@ export const PastSectionArchiveSchema = z.object({
 
 export const MatchRecapsDataSchema = z.object({
   updatedAt: z.string(),
-  generatorMode: z.enum(["gemini-video", "deterministic-rules"]),
+  generatorMode: z.enum(["editorial", "gemini-video", "mixed", "deterministic-rules"]),
   latestSection: z.object({
     s: z.number(),
     f: z.number(),
@@ -501,3 +505,80 @@ export const MatchRecapsDataSchema = z.object({
   }),
 });
 
+
+/**
+ * 動画解析キャッシュ (src/data/video-facts.json)。
+ * Gemini無料枠を節約するため、一度解析したBout・生成済み解説は再利用する。
+ */
+export const VideoChapterSchema = z.object({
+  startSec: z.number(),
+  title: z.string(),
+});
+
+export const BoutVideoTopicSchema = z.object({
+  topic: z.string(),
+  evidence: z.enum(["映像", "実況", "両方"]),
+});
+
+export const BoutVideoRunSchema = z.object({
+  model: z.string(),
+  analyzedAt: z.string(),
+  gameWinnersSeen: z.array(z.enum(["A", "B", "不明"])),
+  gatePassed: z.boolean(),
+  gateReason: z.string(),
+  topics: z.array(BoutVideoTopicSchema),
+});
+
+export const BoutVideoFactsSchema = z.object({
+  videoId: z.string(),
+  startSec: z.number(),
+  endSec: z.number(),
+  status: z.enum(["pending", "complete", "failed"]),
+  runs: z.array(BoutVideoRunSchema),
+});
+
+export const MatchNarrativeSchema = z.object({
+  inputHash: z.string(),
+  model: z.string(),
+  generatedAt: z.string(),
+  matchHeadline: z.string(),
+  matchSummary: z.string(),
+  bouts: z.array(
+    z.object({
+      boutId: z.string(),
+      summary: z.string(),
+      keyPoints: z.array(z.string()),
+    })
+  ),
+});
+
+export const VideoFactsDataSchema = z.object({
+  updatedAt: z.string(),
+  videos: z.record(
+    z.string(),
+    z.object({ videoId: z.string(), chapters: z.array(VideoChapterSchema) })
+  ),
+  bouts: z.record(z.string(), BoutVideoFactsSchema),
+  narratives: z.record(z.string(), MatchNarrativeSchema),
+});
+
+/**
+ * 手書き（編集）解説 (src/data/editorial-recaps.json)。存在するBout/試合は自動生成より優先する。
+ */
+export const EditorialRecapsDataSchema = z.object({
+  bouts: z.record(
+    z.string(),
+    z.object({
+      summary: z.string(),
+      keyPoints: z.array(z.string()),
+      writtenAt: z.string(),
+    })
+  ),
+  matches: z.record(
+    z.string(),
+    z.object({
+      headline: z.string(),
+      summary: z.string(),
+    })
+  ),
+});

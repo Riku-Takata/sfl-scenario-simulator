@@ -27,12 +27,19 @@ import {
   TeamScenarioAnalysisSchema,
   TeamStandingSchema,
   VideoHighlightMomentSchema,
-  RecentBoutVisualAnalysisSchema,
+  RecentBoutAnalysisSchema,
   RecentBoutRecapSchema,
   RecentMatchRecapSchema,
   PastSectionMatchArchiveSchema,
   PastSectionArchiveSchema,
   MatchRecapsDataSchema,
+  VideoFactsDataSchema,
+  BoutVideoRunSchema,
+  BoutVideoFactsSchema,
+  BoutVideoTopicSchema,
+  VideoChapterSchema,
+  MatchNarrativeSchema,
+  EditorialRecapsDataSchema,
 } from "./schema";
 
 export type DivisionId = z.infer<typeof DivisionIdSchema>;
@@ -71,8 +78,8 @@ export type TeamScenarioAnalysis = z.infer<typeof TeamScenarioAnalysisSchema>;
 export type ScenariosData = z.infer<typeof ScenariosDataSchema>;
 
 export type VideoHighlightMoment = z.infer<typeof VideoHighlightMomentSchema>;
-export type RecentBoutVisualAnalysis = z.infer<
-  typeof RecentBoutVisualAnalysisSchema
+export type RecentBoutAnalysis = z.infer<
+  typeof RecentBoutAnalysisSchema
 >;
 export type RecentBoutRecap = z.infer<typeof RecentBoutRecapSchema>;
 export type RecentMatchRecap = z.infer<typeof RecentMatchRecapSchema>;
@@ -81,3 +88,10 @@ export type PastSectionMatchArchive = z.infer<
 >;
 export type PastSectionArchive = z.infer<typeof PastSectionArchiveSchema>;
 export type MatchRecapsData = z.infer<typeof MatchRecapsDataSchema>;
+export type VideoFactsData = z.infer<typeof VideoFactsDataSchema>;
+export type VideoChapter = z.infer<typeof VideoChapterSchema>;
+export type BoutVideoTopic = z.infer<typeof BoutVideoTopicSchema>;
+export type BoutVideoRun = z.infer<typeof BoutVideoRunSchema>;
+export type BoutVideoFacts = z.infer<typeof BoutVideoFactsSchema>;
+export type MatchNarrative = z.infer<typeof MatchNarrativeSchema>;
+export type EditorialRecapsData = z.infer<typeof EditorialRecapsDataSchema>;
