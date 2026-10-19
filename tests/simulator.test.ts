@@ -26,6 +26,7 @@ import {
   ScenariosDataSchema,
   Sf6TournamentMatchupsDataSchema,
   StandingsDataSchema,
+  MatchRecapsDataSchema,
 } from "../src/lib/schema";
 import type { TeamStanding } from "../src/lib/types";
 
@@ -58,8 +59,11 @@ const sf6TournamentData = Sf6TournamentMatchupsDataSchema.parse(
     )
   )
 );
+const matchRecapsData = MatchRecapsDataSchema.parse(
+  JSON.parse(fs.readFileSync(path.join(dataDir, "match-recaps.json"), "utf8"))
+);
 
-test("Zod schemas validate all 7 generated JSON datasets cleanly", () => {
+test("Zod schemas validate all 8 generated JSON datasets cleanly", () => {
   assert.equal(matchesData.matches.length, 60);
   assert.equal(standingsData.divisions.s.length, 6);
   assert.equal(standingsData.divisions.f.length, 6);
@@ -68,6 +72,8 @@ test("Zod schemas validate all 7 generated JSON datasets cleanly", () => {
   assert.equal(Object.keys(playerStatsData.players).length, 48);
   assert.equal(Object.keys(scenariosData.teams).length, 12);
   assert.equal(Object.keys(sf6TournamentData.players).length, 48);
+  assert.equal(matchRecapsData.recentSections.s.length, 3);
+  assert.equal(matchRecapsData.recentSections.f.length, 3);
 });
 
 test("sortStandings strictly prioritizes Point -> BattleDiff -> RoundDiff", () => {

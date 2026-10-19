@@ -26,6 +26,13 @@ import {
   TeamMetaSchema,
   TeamScenarioAnalysisSchema,
   TeamStandingSchema,
+  VideoHighlightMomentSchema,
+  RecentBoutVisualAnalysisSchema,
+  RecentBoutRecapSchema,
+  RecentMatchRecapSchema,
+  PastSectionMatchArchiveSchema,
+  PastSectionArchiveSchema,
+  MatchRecapsDataSchema,
 } from "./schema";
 
 export type DivisionId = z.infer<typeof DivisionIdSchema>;
@@ -62,3 +69,15 @@ export type CheeringMatchGuide = z.infer<typeof CheeringMatchGuideSchema>;
 export type ScenarioRouteDetail = z.infer<typeof ScenarioRouteDetailSchema>;
 export type TeamScenarioAnalysis = z.infer<typeof TeamScenarioAnalysisSchema>;
 export type ScenariosData = z.infer<typeof ScenariosDataSchema>;
+
+export type VideoHighlightMoment = z.infer<typeof VideoHighlightMomentSchema>;
+export type RecentBoutVisualAnalysis = z.infer<
+  typeof RecentBoutVisualAnalysisSchema
+>;
+export type RecentBoutRecap = z.infer<typeof RecentBoutRecapSchema>;
+export type RecentMatchRecap = z.infer<typeof RecentMatchRecapSchema>;
+export type PastSectionMatchArchive = z.infer<
+  typeof PastSectionMatchArchiveSchema
+>;
+export type PastSectionArchive = z.infer<typeof PastSectionArchiveSchema>;
+export type MatchRecapsData = z.infer<typeof MatchRecapsDataSchema>;

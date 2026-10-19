@@ -410,3 +410,91 @@ export const ScenariosDataSchema = z.object({
   }),
   teams: z.record(z.string(), TeamScenarioAnalysisSchema),
 });
+
+export const VideoHighlightMomentSchema = z.object({
+  timestampSeconds: z.number(),
+  timestampLabel: z.string(),
+  title: z.string(),
+  description: z.string(),
+  videoUrlWithTime: z.string(),
+});
+
+export const RecentBoutVisualAnalysisSchema = z.object({
+  tacticalFocus: z.string(),
+  turningPoint: z.string(),
+  lethalMove: z.string(),
+  commentaryQuote: z.string().optional(),
+});
+
+export const RecentBoutRecapSchema = z.object({
+  status: z.number(),
+  statusName: z.string(),
+  homePlayer: z.string(),
+  awayPlayer: z.string(),
+  homeChara: z.string(),
+  awayChara: z.string(),
+  homeBattle: z.number(),
+  awayBattle: z.number(),
+  homePoint: z.number(),
+  awayPoint: z.number(),
+  winner: z.enum(["home", "away"]),
+  isFullSet: z.boolean(),
+  roundFlow: z.array(z.string()).optional(),
+  visualAnalysis: RecentBoutVisualAnalysisSchema,
+  highlight: VideoHighlightMomentSchema.optional(),
+});
+
+export const RecentMatchRecapSchema = z.object({
+  matchId: z.string(),
+  division: DivisionIdSchema,
+  sectionNumber: z.number(),
+  sectionTitle: z.string(),
+  matchNumber: z.number(),
+  scheduledAt: z.string(),
+  youtubeUrl: z.string(),
+  home: z.string(),
+  away: z.string(),
+  homePoint: z.number(),
+  awayPoint: z.number(),
+  winner: z.enum(["home", "away"]),
+  isTiebreaker: z.boolean(),
+  matchHeadline: z.string(),
+  matchSummary: z.string(),
+  matchHighlight: VideoHighlightMomentSchema.optional(),
+  bouts: z.array(RecentBoutRecapSchema),
+});
+
+export const PastSectionMatchArchiveSchema = z.object({
+  home: z.string(),
+  away: z.string(),
+  homePoint: z.number(),
+  awayPoint: z.number(),
+  winner: z.enum(["home", "away"]),
+});
+
+export const PastSectionArchiveSchema = z.object({
+  sectionNumber: z.number(),
+  sectionTitle: z.string(),
+  scheduledAt: z.string(),
+  youtubeUrl: z.string(),
+  playlistUrl: z.string().optional(),
+  matches: z.array(PastSectionMatchArchiveSchema),
+});
+
+export const MatchRecapsDataSchema = z.object({
+  updatedAt: z.string(),
+  generatorMode: z.enum(["gemini-video", "deterministic-rules"]),
+  latestSection: z.object({
+    s: z.number(),
+    f: z.number(),
+  }),
+  recentSections: z.object({
+    s: z.array(RecentMatchRecapSchema),
+    f: z.array(RecentMatchRecapSchema),
+  }),
+  pastSections: z.object({
+    s: z.array(PastSectionArchiveSchema),
+    f: z.array(PastSectionArchiveSchema),
+  }),
+});
+

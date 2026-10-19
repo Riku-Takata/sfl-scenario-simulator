@@ -1,0 +1,29 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import MatchRecapDashboard from "@/components/MatchRecapDashboard";
+import rawRecaps from "@/data/match-recaps.json";
+import { MatchRecapsDataSchema } from "@/lib/schema";
+
+const recapsData = MatchRecapsDataSchema.parse(rawRecaps);
+---
+
+<BaseLayout
+  title="SFL 2026 直近試合結果・戦況詳細レポート"
+  description="ストリートファイターリーグ: Pro-JP 2026 の直近節の試合結果・ラウンド推移・試合展開の映像詳細レポートと公式YouTubeアーカイブ"
+>
+  <div class="page-intro">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+      <div>
+        <h1 class="page-title">SFL 2026 試合結果・戦況詳細レポート</h1>
+        <p class="page-desc">
+          直近節の試合展開やラウンドの攻防・決着シーンを動画解析に基づき詳細にレポート。過去節の公式配信アーカイブもまとめて確認できます。
+        </p>
+      </div>
+      <a href="/" class="btn btn-outline">
+        ← 現在の順位表・突破条件を見る
+      </a>
+    </div>
+  </div>
+
+  <MatchRecapDashboard client:load recapsData={recapsData} />
+</BaseLayout>

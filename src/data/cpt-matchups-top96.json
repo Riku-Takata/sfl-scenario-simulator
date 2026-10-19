@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-17T07:42:50.383Z",
-  "source": "CPT 2025-2026 Top 96 Statistical Aggregate + SFL 2026 Official Logs",
+  "updatedAt": "2026-10-19T15:04:36.979Z",
+  "source": "start.gg GraphQL API (CPT Premier / WW Top 96) + SFL 2026",
   "topPlacementThreshold": 96,
   "bayesianPriorAlpha": 20,
   "characters": [

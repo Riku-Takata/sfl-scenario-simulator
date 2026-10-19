@@ -19,8 +19,9 @@ const {
 const pathname = Astro.url.pathname;
 const isSimulator = pathname.startsWith("/simulator");
 const isPlayers = pathname.startsWith("/players");
+const isRecap = pathname.startsWith("/recap");
 const isAbout = pathname.startsWith("/about");
-const isHome = !isSimulator && !isPlayers && !isAbout;
+const isHome = !isSimulator && !isPlayers && !isRecap && !isAbout;
 
 const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, "") : "https://sfl-scenario-simulator.vercel.app";
 const canonicalURL = new URL(pathname, siteUrl).href;
@@ -97,6 +98,9 @@ const jsonLd = {
         <nav class="nav-links" aria-label="メインメニュー">
           <a href="/" class={`nav-btn ${isHome ? "active" : ""}`}>
             順位表・突破条件
+          </a>
+          <a href="/recap" class={`nav-btn ${isRecap ? "active" : ""}`}>
+            試合結果・戦況レポート
           </a>
           <a href="/simulator" class={`nav-btn ${isSimulator ? "active" : ""}`}>
             残り試合シミュレーター

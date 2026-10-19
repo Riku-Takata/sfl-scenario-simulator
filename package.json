@@ -18,6 +18,7 @@
     "fetch-results": "tsx scripts/1-fetch-results.ts",
     "calc-scenarios": "tsx scripts/2-calc-scenarios.ts",
     "generate-narratives": "tsx scripts/3-generate-narratives.ts",
+    "generate-recaps": "tsx scripts/4-generate-match-recaps.ts",
     "generate-tournaments": "tsx scripts/generate-sf6-tournaments.ts"
   },
   "dependencies": {

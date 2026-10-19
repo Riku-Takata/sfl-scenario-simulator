@@ -1,5 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
+
+if (typeof process.loadEnvFile === "function") {
+  try {
+    process.loadEnvFile();
+  } catch {}
+}
+
 import {
   CptMatchupsTop96DataSchema,
   MasterPlayersDataSchema,
