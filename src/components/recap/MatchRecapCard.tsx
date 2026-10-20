@@ -133,6 +133,11 @@ export default function MatchRecapCard({ match: m, isOpen, onToggle }: Props) {
           <div style={{ marginTop: "0.55rem", fontSize: "0.92rem", fontWeight: 700, color: "var(--text-main)" }}>
             {m.matchHeadline}
           </div>
+
+          {/* スコア推移は閉じた状態でも表示し、試合展開をひと目で分かるようにする */}
+          <div style={{ marginTop: "0.65rem" }}>
+            <ScoreProgression match={m} awayColor={awayColor} homeColor={homeColor} />
+          </div>
         </button>
 
         {isOpen && (
@@ -140,8 +145,6 @@ export default function MatchRecapCard({ match: m, isOpen, onToggle }: Props) {
             <p style={{ fontSize: "0.86rem", lineHeight: 1.7, color: "var(--text-sub)", margin: "0 0 0.9rem" }}>
               {m.matchSummary}
             </p>
-
-            <ScoreProgression match={m} awayColor={awayColor} homeColor={homeColor} />
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", margin: "0.9rem 0 0.2rem" }}>
               {m.matchVideoUrl && (
@@ -224,7 +227,13 @@ function ScoreProgression({
     const pts = BOUT_POINTS[b.status] ?? 10;
     if (b.winner === "away") awayTotal += pts;
     else homeTotal += pts;
-    return { label: b.statusName.replace("戦", ""), away: awayTotal, home: homeTotal, winner: b.winner };
+    return {
+      label: b.statusName.replace("戦", ""),
+      away: awayTotal,
+      home: homeTotal,
+      winner: b.winner,
+      winnerName: playerName(b.winner === "away" ? b.awayPlayer : b.homePlayer),
+    };
   });
 
   return (
@@ -252,6 +261,17 @@ function ScoreProgression({
             <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>{s.label}</div>
             <div style={{ fontFamily: "monospace", fontWeight: i === steps.length - 1 ? 800 : 600, fontSize: "0.9rem" }}>
               {s.away} - {s.home}
+            </div>
+            <div
+              style={{
+                fontSize: "0.7rem",
+                color: "var(--text-sub)",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {s.winnerName}
             </div>
           </div>
         ))}
