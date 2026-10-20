@@ -11,8 +11,9 @@ import { PLAYER_NAME_MAP, SCORE_OUTCOMES, TEAM_META_MAP } from "./simulator";
 import rawModelV2 from "../data/model-v2.json";
 import { seriesWinProb } from "./model/series";
 import type { ProductionModel } from "./model/production";
+import { teamMatchDistribution, type TeamMatchDistribution } from "./model/lineup";
 
-const MODEL_V2 = rawModelV2 as ProductionModel;
+const MODEL_V2 = rawModelV2 as unknown as ProductionModel;
 
 /**
  * 予測モデル v2 (既定): 1ゲーム勝率をロジスティックモデルで出し、先取本数でボウト勝率に換算
@@ -175,6 +176,47 @@ function predictBoutWinRateV2(
   };
 }
 
+export function predictTeamMatchOutcomeWeights(
+  match: MatchRecord,
+  cptMatchups: CptMatchupsTop96Data,
+  playerStats: PlayerStatsData,
+  model: ProductionModel | null = MODEL_V2
+): Record<ScorePatternId, number> {
+  const homeMeta = TEAM_META_MAP[match.home];
+  const awayMeta = TEAM_META_MAP[match.away];
+
+  const homeRoster = (homeMeta?.players || []).filter(
+    (p) => p !== "keib_oja" && playerStats.players[p]
+  );
+  const awayRoster = (awayMeta?.players || []).filter(
+    (p) => p !== "keib_oja" && playerStats.players[p]
+  );
+
+  if (model?.propensities && homeRoster.length >= 3 && awayRoster.length >= 3) {
+    const boutHome = (h: string, a: string, firstTo: number) =>
+      predictBoutWinRate(h, a, true, cptMatchups, playerStats, undefined, undefined, firstTo, model)
+        .expectedWinRateA / 100;
+    const lineupDist = teamMatchDistribution(
+      homeRoster,
+      awayRoster,
+      model.propensities,
+      model.propensities,
+      boutHome
+    );
+    const w = lineupDist.weights;
+    return {
+      HOME_40_0: Math.round(w.HOME_40_0 * 10000) / 10000,
+      HOME_30_10: Math.round(w.HOME_30_10 * 10000) / 10000,
+      HOME_30_20: Math.round(w.HOME_30_20 * 10000) / 10000,
+      AWAY_30_20: Math.round(w.AWAY_30_20 * 10000) / 10000,
+      AWAY_30_10: Math.round(w.AWAY_30_10 * 10000) / 10000,
+      AWAY_40_0: Math.round(w.AWAY_40_0 * 10000) / 10000,
+    };
+  }
+
+  return predictTeamMatchOutcomeDistribution(match, cptMatchups, playerStats, model).outcomeWeights;
+}
+
 /**
  * チーム間対戦カード (MatchRecord) に対する先鋒・中堅・大将・延長の最適被せオーダーと
  * SFL8通りのスコアパターン確率分布を算出する
@@ -190,6 +232,12 @@ export function predictTeamMatchOutcomeDistribution(
   awayWinProbability: number;
   homeOrderRecommendation: NextMatchOrderRecommendation;
   awayOrderRecommendation: NextMatchOrderRecommendation;
+  /** 出場選手モデルの内訳 (各ポジションの出場確率・起こりやすい組み合わせ) */
+  lineupBreakdown: {
+    slotAppearance: TeamMatchDistribution["slotAppearance"];
+    topLineups: TeamMatchDistribution["topLineups"];
+    tiebreakHomeWin: number;
+  } | null;
 } {
   const homeMeta = TEAM_META_MAP[match.home];
   const awayMeta = TEAM_META_MAP[match.away];
@@ -201,10 +249,22 @@ export function predictTeamMatchOutcomeDistribution(
     (p) => p !== "keib_oja" && playerStats.players[p]
   );
 
-  // AWAY側の想定標準ラインナップ (出場数・Elo順で先鋒・中堅・大将・リザーブを選定)
+  // 出場選手モデル (v2): 起用実績に基づき、出場選手の不確実性を含めてスコア分布を出す
+  const boutHome = (h: string, a: string, firstTo: number) =>
+    predictBoutWinRate(h, a, true, cptMatchups, playerStats, undefined, undefined, firstTo, model)
+      .expectedWinRateA / 100;
+  const lineupDist =
+    model?.propensities && homeRoster.length >= 3 && awayRoster.length >= 3
+      ? teamMatchDistribution(homeRoster, awayRoster, model.propensities, model.propensities, boutHome)
+      : null;
+  const mostLikely = lineupDist?.topLineups[0];
+
+  // AWAY側の想定ラインナップ: 出場選手モデルがあれば最も起こりやすい並び、無ければ実力順
   const strength = (p: string) =>
     model?.ratings[p] ?? playerStats.players[p]?.eloRating ?? 1900;
-  const sortedAway = [...awayRoster].sort((a, b) => strength(b) - strength(a));
+  const sortedAway = mostLikely
+    ? [mostLikely.away[2], mostLikely.away[1], mostLikely.away[0], ...awayRoster.filter((p) => !mostLikely.away.includes(p))]
+    : [...awayRoster].sort((a, b) => strength(b) - strength(a));
   // 大将にエース(0番目)、中堅に2番手、先鋒に3番手、延長に4番手
   const awayAnchor = sortedAway[0] || awayRoster[0] || "ryukichi";
   const awayMiddle = sortedAway[1] || awayRoster[1] || awayAnchor;
@@ -254,10 +314,23 @@ export function predictTeamMatchOutcomeDistribution(
   };
 
   // 大将戦は3本先取、先鋒・中堅・延長は2本先取
-  const anchorBout = pickBestHomeCounter(awayAnchor, "大将戦 (20pt)", 3);
-  const middleBout = pickBestHomeCounter(awayMiddle, "中堅戦 (10pt)", 2);
-  const vanguardBout = pickBestHomeCounter(awayVanguard, "先鋒戦 (10pt)", 2);
-  const tiebreakerBout = pickBestHomeCounter(awayReserve, "延長戦 (10pt)", 2);
+  const fixedBout = (homePlayer: string, awayPlayer: string, roleLabel: string, firstTo: number) => ({
+    ...predictBoutWinRate(homePlayer, awayPlayer, true, cptMatchups, playerStats, undefined, undefined, firstTo, model),
+    roleName: roleLabel,
+  });
+  const homeReserve = mostLikely ? homeRoster.find((p) => !mostLikely.home.includes(p)) ?? mostLikely.home[0] : null;
+  const anchorBout = mostLikely
+    ? fixedBout(mostLikely.home[2], awayAnchor, "大将戦 (20pt)", 3)
+    : pickBestHomeCounter(awayAnchor, "大将戦 (20pt)", 3);
+  const middleBout = mostLikely
+    ? fixedBout(mostLikely.home[1], awayMiddle, "中堅戦 (10pt)", 2)
+    : pickBestHomeCounter(awayMiddle, "中堅戦 (10pt)", 2);
+  const vanguardBout = mostLikely
+    ? fixedBout(mostLikely.home[0], awayVanguard, "先鋒戦 (10pt)", 2)
+    : pickBestHomeCounter(awayVanguard, "先鋒戦 (10pt)", 2);
+  const tiebreakerBout = mostLikely
+    ? fixedBout(homeReserve!, awayReserve, "延長戦 (10pt)", 2)
+    : pickBestHomeCounter(awayReserve, "延長戦 (10pt)", 2);
 
   const pV = vanguardBout.expectedWinRateA / 100; // 先鋒(10pt) HOME勝率
   const pM = middleBout.expectedWinRateA / 100;   // 中堅(10pt) HOME勝率
@@ -284,18 +357,20 @@ export function predictTeamMatchOutcomeDistribution(
   // AWAY 40-0: 先鋒A(10)・中堅A(10)・大将A(20)
   const probAway40_0 = qV * qM * qA;
 
+  // 出場選手モデルがあれば、全ラインナップの組み合わせで平均したスコア分布を使う
+  const w = lineupDist?.weights;
   const outcomeWeights: Record<ScorePatternId, number> = {
-    HOME_40_0: Math.round(probHome40_0 * 10000) / 10000,
-    HOME_30_10: Math.round(probHome30_10 * 10000) / 10000,
-    HOME_30_20: Math.round(probHome30_20 * 10000) / 10000,
-    AWAY_30_20: Math.round(probAway30_20 * 10000) / 10000,
-    AWAY_30_10: Math.round(probAway30_10 * 10000) / 10000,
-    AWAY_40_0: Math.round(probAway40_0 * 10000) / 10000,
+    HOME_40_0: Math.round((w?.HOME_40_0 ?? probHome40_0) * 10000) / 10000,
+    HOME_30_10: Math.round((w?.HOME_30_10 ?? probHome30_10) * 10000) / 10000,
+    HOME_30_20: Math.round((w?.HOME_30_20 ?? probHome30_20) * 10000) / 10000,
+    AWAY_30_20: Math.round((w?.AWAY_30_20 ?? probAway30_20) * 10000) / 10000,
+    AWAY_30_10: Math.round((w?.AWAY_30_10 ?? probAway30_10) * 10000) / 10000,
+    AWAY_40_0: Math.round((w?.AWAY_40_0 ?? probAway40_0) * 10000) / 10000,
   };
 
   const homeWinProb =
     Math.round(
-      (probHome40_0 + probHome30_10 + probHome30_20) * 1000
+      (outcomeWeights.HOME_40_0 + outcomeWeights.HOME_30_10 + outcomeWeights.HOME_30_20) * 1000
     ) / 10;
   const awayWinProb = Math.round((100 - homeWinProb) * 10) / 10;
 
@@ -345,7 +420,9 @@ export function predictTeamMatchOutcomeDistribution(
     expectedTeamPoints: Math.round(expectedHomePts * 10) / 10,
     mostLikelyScore: `${homeMeta?.shortName ?? match.home} ${mostLikelyOut.homePoint} - ${mostLikelyOut.awayPoint} ${awayMeta?.shortName ?? match.away}`,
     recommendedLineup: homeLineup,
-    tacticalSummary: `HOME（後出し）の利を活かし、相手エース${anchorBout.playerBName}(${anchorBout.charB})に対して${anchorBout.playerAName}(${anchorBout.charA})を被せることで大将戦勝率${anchorBout.expectedWinRateA}%を確保。チーム全体勝率は${homeWinProb}%（期待獲得ポイント ${Math.round(expectedHomePts * 10) / 10}pt）と推計されます。`,
+    tacticalSummary: lineupDist
+      ? `起用実績から最も起こりやすい組み合わせでは、大将戦 ${anchorBout.playerAName}(${anchorBout.charA}) 対 ${anchorBout.playerBName}(${anchorBout.charB}) の勝率が${anchorBout.expectedWinRateA}%。出場選手の組み合わせ全体で平均したチーム勝率は${homeWinProb}%（期待獲得ポイント ${Math.round(expectedHomePts * 10) / 10}pt）です。`
+      : `HOME（後出し）の利を活かし、相手エース${anchorBout.playerBName}(${anchorBout.charB})に対して${anchorBout.playerAName}(${anchorBout.charA})を被せることで大将戦勝率${anchorBout.expectedWinRateA}%を確保。チーム全体勝率は${homeWinProb}%（期待獲得ポイント ${Math.round(expectedHomePts * 10) / 10}pt）と推計されます。`,
   };
 
   const awayOrderRecommendation: NextMatchOrderRecommendation = {
@@ -359,7 +436,9 @@ export function predictTeamMatchOutcomeDistribution(
     expectedTeamPoints: Math.round(expectedAwayPts * 10) / 10,
     mostLikelyScore: `${awayMeta?.shortName ?? match.away} ${mostLikelyOut.awayPoint} - ${mostLikelyOut.homePoint} ${homeMeta?.shortName ?? match.home}`,
     recommendedLineup: awayLineup,
-    tacticalSummary: `AWAY（先出し）のハンデを克服するため、キャラ相性で不利がつきにくい${awayLineup[2].playerAName}(${awayLineup[2].charA})を大将に据え、先鋒・中堅で最低1勝をもぎ取って大将戦または延長戦へ持ち込むプラン（チーム期待勝率${awayWinProb}% / 期待獲得 ${Math.round(expectedAwayPts * 10) / 10}pt）が最有力です。`,
+    tacticalSummary: lineupDist
+      ? `起用実績から最も起こりやすい組み合わせでは、大将戦 ${awayLineup[2].playerAName}(${awayLineup[2].charA}) 対 ${awayLineup[2].playerBName}(${awayLineup[2].charB}) の勝率が${awayLineup[2].expectedWinRateA}%。出場選手の組み合わせ全体で平均したチーム勝率は${awayWinProb}%（期待獲得 ${Math.round(expectedAwayPts * 10) / 10}pt）です。`
+      : `AWAY（先出し）のハンデを克服するため、キャラ相性で不利がつきにくい${awayLineup[2].playerAName}(${awayLineup[2].charA})を大将に据え、先鋒・中堅で最低1勝をもぎ取って大将戦または延長戦へ持ち込むプラン（チーム期待勝率${awayWinProb}% / 期待獲得 ${Math.round(expectedAwayPts * 10) / 10}pt）が最有力です。`,
   };
 
   return {
@@ -368,5 +447,12 @@ export function predictTeamMatchOutcomeDistribution(
     awayWinProbability: awayWinProb,
     homeOrderRecommendation,
     awayOrderRecommendation,
+    lineupBreakdown: lineupDist
+      ? {
+          slotAppearance: lineupDist.slotAppearance,
+          topLineups: lineupDist.topLineups.slice(0, 3),
+          tiebreakHomeWin: lineupDist.tiebreakHomeWin,
+        }
+      : null,
   };
 }

@@ -292,6 +292,7 @@ test("predictTeamMatchOutcomeDistribution and analyzeDivisionScenarios integrate
         team.probabilities.playoffTop3 <= 100
     );
     assert.ok(team.nextMatchPrediction, "Should include nextMatchPrediction");
+    assert.ok(team.remainingMatchPredictions && team.remainingMatchPredictions.length > 0, "Should include remainingMatchPredictions");
     assert.equal(team.nextSectionCheeringGuide.length, 2);
   }
 });

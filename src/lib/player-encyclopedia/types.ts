@@ -1,4 +1,5 @@
 import type { DivisionId, Sf6TournamentBout } from "../types";
+export type { Sf6TournamentBout } from "../types";
 import type { PlayerTournamentProfile } from "../startgg/profile";
 
 export type { PlayerTournamentProfile } from "../startgg/profile";

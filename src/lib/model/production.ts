@@ -8,6 +8,8 @@ import type { StartggIdentitiesData, StartggPremierResultsData } from "../types"
 import { boutFeatures, fitV2, type BoutFeatures, type V2Params } from "./bout-model";
 import type { SflBout } from "./history";
 import { FeatureState, jstDayStart } from "./state";
+import { estimatePropensities, type Propensity } from "./lineup";
+import { DEFAULT_UNCERTAINTY, type UncertaintyParams } from "./uncertainty";
 
 export interface ProductionModel {
   fittedAt: string;
@@ -15,6 +17,12 @@ export interface ProductionModel {
   params: V2Params;
   /** 現時点の実力値 (選手キー → レーティング) */
   ratings: Record<string, number>;
+  /** 実力値の根拠になったゲーム数 (重み付き)。少ないほど実力値の不確実性が大きい */
+  games: Record<string, number>;
+  /** 出場選手モデルの起用傾向 (選手キー → 出場率・ポジション・延長傾向) */
+  propensities?: Record<string, Propensity>;
+  /** 実力値の不確実性の設定 (シーズンのシミュレーションで使う) */
+  uncertainty?: UncertaintyParams;
 }
 
 /** 単純版: 対キャラ戦績・直接対決を中立値にした特徴量 */
@@ -30,6 +38,7 @@ export function buildProductionModel(
   players: string[],
   now = Date.now() / 1000
 ): ProductionModel {
+  const currentSeason = [...bouts].map((b) => b.season).sort().at(-1) ?? "2026";
   const state = new FeatureState();
   state.addSflBouts(bouts);
   if (results && identities) state.addStartgg(results, identities);
@@ -54,5 +63,8 @@ export function buildProductionModel(
     trainBouts: train.length,
     params: fitV2(train),
     ratings: Object.fromEntries(players.map((p) => [p, Math.round(state.rating(p) * 10) / 10])),
+    games: Object.fromEntries(players.map((p) => [p, Math.round(state.gameCount(p) * 10) / 10])),
+    propensities: estimatePropensities(bouts, players, currentSeason),
+    uncertainty: DEFAULT_UNCERTAINTY,
   };
 }
