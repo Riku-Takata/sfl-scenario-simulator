@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T16:08:54.090Z",
+  "updatedAt": "2026-10-20T16:36:33.523Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -1711,7 +1711,52 @@
       "startSec": 12292,
       "endSec": 13249,
       "status": "pending",
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-20T16:27:54.693Z",
+          "gameWinnersSeen": [
+            "B",
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "らおやむ（ベガ）が対ジャンプや対垂直ジャンプでときど（JP）の立ち回りを制限した",
+              "evidence": "実況"
+            },
+            {
+              "topic": "らおやむ（ベガ）が中距離戦での立ち回りで優位を築き、ときど（JP）にリソースを吐かせた",
+              "evidence": "実況"
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-20T16:29:29.188Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B",
+            "B"
+          ],
+          "gatePassed": false,
+          "gateReason": "2 game winner mismatch(es)",
+          "topics": [
+            {
+              "topic": "らおやむ（ベガ）が、ときど（JP）のODサイコクラッシャー等に対するガード・パリングや垂直ジャンプ等の差し返しで立ち回りを制した",
+              "evidence": "両方"
+            },
+            {
+              "topic": "第4ゲームでらおやむ（ベガ）がODサイコクラッシャーをパニッシュカウンターとしてヒットさせ、強気に押し切って勝利を決めた",
+              "evidence": "両方"
+            }
+          ]
+        }
+      ]
     }
   },
   "narratives": {
@@ -1832,6 +1877,34 @@
           "boutId": "div-f-sec4-m2-b3",
           "summary": "ナウマンがウメハラに2-0で勝利した。",
           "keyPoints": []
+        }
+      ]
+    },
+    "div-f-sec4-m1": {
+      "inputHash": "f06f7188a4267f55",
+      "model": "gemini-3.8-flash",
+      "generatedAt": "2026-10-20T16:21:55.402Z",
+      "matchHeadline": "Jr.がフルセットをCAで制しRIDDLE ORDERが勝利",
+      "matchSummary": "RIDDLE ORDERがGood 8 Squadを相手に勝利した。先鋒戦であでりい、中堅戦でひかるが連勝して王手をかける。大将戦ではJr.がカワノにフルセットまで迫られる激戦となったが、最終第5ゲーム第3ラウンドをCAで制して勝利を掴んだ。",
+      "bouts": [
+        {
+          "boutId": "div-f-sec4-m1-b0",
+          "summary": "あでりいがさはらとのエド同キャラ戦を2-1で制し、RIDDLE ORDERが先手を取った。",
+          "keyPoints": []
+        },
+        {
+          "boutId": "div-f-sec4-m1-b1",
+          "summary": "ひかるがガチくんとの接戦を2-1で制し、RIDDLE ORDERが連勝を飾った。",
+          "keyPoints": [
+            "第1ゲーム第2ラウンドで、ガチくんがSA2「イウサール」を起点にパーフェクトK.O.を達成した。"
+          ]
+        },
+        {
+          "boutId": "div-f-sec4-m1-b2",
+          "summary": "Jr.がカワノの追い上げを退けて3-2でフルセットを制し、大将戦で勝利した。",
+          "keyPoints": [
+            "最終第5ゲーム第3ラウンドで、Jr.がCAを決めてKOし勝利を収めた。"
+          ]
         }
       ]
     }
@@ -7092,18 +7165,475 @@
       "videoId": "OvwqJkBiJqw",
       "startSec": 10753,
       "endSec": 11310,
-      "status": "pending",
-      "runs": []
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-10-20T16:23:17.029Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "SA2",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "SA3",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "B"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "anti_air",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-20T16:25:07.956Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "anti_air",
+              "side": "B"
+            },
+            {
+              "id": "whiff_punish",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            0,
+            2
+          ]
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-20T16:27:05.880Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "anti_air",
+              "side": "B"
+            },
+            {
+              "id": "corner",
+              "side": "B"
+            },
+            {
+              "id": "punish_counter",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            0,
+            2
+          ]
+        }
+      ]
     },
     "div-f-sec4-m3-b2": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 12292,
       "endSec": 13249,
-      "status": "pending",
-      "runs": []
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-20T16:33:28.992Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "SA2",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "SA2",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "B"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "throw",
+              "side": "B"
+            },
+            {
+              "id": "corner",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            1,
+            2
+          ]
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-20T16:35:08.834Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A",
+                "B"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "anti_air",
+              "side": "B"
+            },
+            {
+              "id": "throw",
+              "side": "B"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            1
+          ]
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-20T16:36:33.517Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "throw",
+              "side": "B"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            },
+            {
+              "id": "anti_air",
+              "side": "B"
+            },
+            {
+              "id": "punish_counter",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            1
+          ]
+        }
+      ]
     }
   },
-  "pendingNarrations": [
-    "div-f-sec4-m1"
-  ]
+  "pendingNarrations": []
 }

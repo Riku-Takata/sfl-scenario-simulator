@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T16:08:54.085Z",
+  "updatedAt": "2026-10-20T16:19:31.549Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 4,
@@ -830,8 +830,8 @@
         "awayPoint": 0,
         "winner": "home",
         "isTiebreaker": false,
-        "matchHeadline": "RIDDLE ORDERが40-0で勝利",
-        "matchSummary": "第1試合【Good 8 Squad vs RIDDLE ORDER】は0-40でRIDDLE ORDERの勝利。大将戦はJr.選手が制した。",
+        "matchHeadline": "Jr.がフルセットをCAで制しRIDDLE ORDERが勝利",
+        "matchSummary": "RIDDLE ORDERがGood 8 Squadを相手に勝利した。先鋒戦であでりい、中堅戦でひかるが連勝して王手をかける。大将戦ではJr.がカワノにフルセットまで迫られる激戦となったが、最終第5ゲーム第3ラウンドをCAで制して勝利を掴んだ。",
         "bouts": [
           {
             "status": 0,
@@ -949,12 +949,10 @@
               "Game 3: [1-2] ひかる選手がフルラウンド勝利"
             ],
             "analysis": {
-              "source": "official-data",
+              "source": "gemini-video",
               "summary": "ひかる選手（A.K.I.）がガチくん選手（ラシード）を2-1で下した。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームガチくん→第2ゲームひかる→第3ゲームひかる",
-                "第1ゲームをガチくん選手に先取されてからの逆転勝利。",
-                "第1ゲームはガチくん選手が1ラウンド目を落としてから逆転。"
+                "第1ゲーム第2ラウンドで、ガチくんがSA2「イウサール」を起点にパーフェクトK.O.を達成した。"
               ]
             },
             "games": [
@@ -1043,12 +1041,10 @@
               "Game 5: [1-2] Jr.選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "analysis": {
-              "source": "official-data",
+              "source": "gemini-video",
               "summary": "Jr.選手（ザンギエフ）がカワノ選手（ルーク）を3-2で下した。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームJr.→第2ゲームJr.→第3ゲームカワノ→第4ゲームカワノ→第5ゲームJr.",
-                "最終ゲームまでもつれたフルセットをJr.選手が制した。",
-                "第5ゲームはJr.選手が1ラウンド目を落としてから逆転。"
+                "最終第5ゲーム第3ラウンドで、Jr.がCAを決めてKOし勝利を収めた。"
               ]
             },
             "games": [
@@ -1141,7 +1137,7 @@
             "videoStatus": "complete"
           }
         ],
-        "narrationStatus": "pending"
+        "narrationStatus": "complete"
       },
       {
         "matchId": "div-f-sec4-m2",
@@ -1486,10 +1482,12 @@
                 "winner": "home",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "CA"
                   }
                 ]
               },
@@ -1511,16 +1509,21 @@
                 "winner": "home",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "CA"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -1625,8 +1628,12 @@
                     "winner": "home"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "CA"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               },
               {
@@ -1699,7 +1706,7 @@
         "sectionNumber": 2,
         "sectionTitle": "Division S 第2節",
         "scheduledAt": "2026-09-01 00:00:00",
-        "youtubeUrl": "https://youtube.com/live/4-TyAmHuxGY",
+        "youtubeUrl": "https://www.youtube.com/watch?v=4-TyAmHuxGY",
         "playlistUrl": "https://www.youtube.com/playlist?list=PLTbT9OzEmUbQ",
         "matches": [
           {
@@ -1761,7 +1768,7 @@
         "sectionNumber": 1,
         "sectionTitle": "Division F 第1節",
         "scheduledAt": "2026-08-28 00:00:00",
-        "youtubeUrl": "https://youtube.com/live/DMaK8ybx1ao",
+        "youtubeUrl": "https://www.youtube.com/watch?v=DMaK8ybx1ao",
         "playlistUrl": "https://www.youtube.com/playlist?list=PLNA_vh1wg1Tg",
         "matches": [
           {
