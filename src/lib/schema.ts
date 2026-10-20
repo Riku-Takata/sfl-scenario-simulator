@@ -523,6 +523,11 @@ export const RecentBoutRecapSchema = z.object({
   games: z.array(BoutGameDetailSchema).optional(),
   tags: z.array(BoutTagSchema).optional(),
   highlight: VideoHighlightMomentSchema.optional(),
+  /**
+   * 映像解析の進み具合。pending は解析待ち (無料枠の上限などで翌日以降に持ち越し)、
+   * unavailable は動画・区間が無いか解析できなかったもの。スコアは常に公式記録から表示する。
+   */
+  videoStatus: z.enum(["complete", "pending", "unavailable"]).default("complete"),
 });
 
 export const RecentMatchRecapSchema = z.object({
@@ -546,6 +551,11 @@ export const RecentMatchRecapSchema = z.object({
   matchSummary: z.string(),
   matchHighlight: VideoHighlightMomentSchema.optional(),
   bouts: z.array(RecentBoutRecapSchema),
+  /**
+   * 試合解説文の進み具合。pending は映像解析または解説生成が持ち越し中で、
+   * その間の見出し・要約は公式記録から組み立てた暫定文。
+   */
+  narrationStatus: z.enum(["complete", "pending", "unavailable"]).default("complete"),
 });
 
 export const PastSectionMatchArchiveSchema = z.object({

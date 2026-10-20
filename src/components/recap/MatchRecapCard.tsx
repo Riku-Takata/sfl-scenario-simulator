@@ -133,6 +133,11 @@ export default function MatchRecapCard({ match: m, isOpen, onToggle }: Props) {
           <div style={{ marginTop: "0.55rem", fontSize: "0.92rem", fontWeight: 700, color: "var(--text-main)" }}>
             {m.matchHeadline}
           </div>
+          {m.narrationStatus === "pending" && (
+            <div style={{ marginTop: "0.35rem" }}>
+              <InProgressNotice>試合レポート作成中（スコアは公式記録を反映済み）</InProgressNotice>
+            </div>
+          )}
 
           {/* スコア推移は閉じた状態でも表示し、試合展開をひと目で分かるようにする */}
           <div style={{ marginTop: "0.65rem" }}>
@@ -145,6 +150,11 @@ export default function MatchRecapCard({ match: m, isOpen, onToggle }: Props) {
             <p style={{ fontSize: "0.86rem", lineHeight: 1.7, color: "var(--text-sub)", margin: "0 0 0.9rem" }}>
               {m.matchSummary}
             </p>
+            {m.narrationStatus === "pending" && (
+              <p style={{ fontSize: "0.78rem", lineHeight: 1.6, color: "var(--text-muted)", margin: "-0.5rem 0 0.9rem" }}>
+                配信映像の解析と解説文は現在作成中です。完成までは公式記録から組み立てた要約を表示しています。
+              </p>
+            )}
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", margin: "0.9rem 0 0.2rem" }}>
               {m.matchVideoUrl && (
@@ -405,6 +415,11 @@ function BoutBlock({ bout: b, match: m }: { bout: RecentBoutRecap; match: Recent
         )}
 
         {/* 解説 */}
+        {b.videoStatus === "pending" && (
+          <div style={{ marginBottom: "0.35rem" }}>
+            <InProgressNotice>映像解析中（決着方法・見どころは作成中）</InProgressNotice>
+          </div>
+        )}
         <p style={{ fontSize: "0.86rem", lineHeight: 1.7, color: "var(--text-main)", margin: 0 }}>{b.analysis.summary}</p>
         {b.analysis.keyPoints.length > 0 && (
           <ul style={{ margin: "0.4rem 0 0", paddingLeft: "1.2rem", fontSize: "0.84rem", lineHeight: 1.7, color: "var(--text-sub)" }}>
@@ -440,6 +455,29 @@ function PlayerLabel({
       </div>
       <div style={{ fontSize: "0.74rem", color: "var(--text-muted)" }}>{chara}</div>
     </div>
+  );
+}
+
+/** 映像解析・解説文がまだできていない部分の「作成中」表示 (スコアは公式記録から常に表示) */
+function InProgressNotice({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "0.3rem",
+        fontSize: "0.72rem",
+        fontWeight: 800,
+        padding: "0.1rem 0.5rem",
+        borderRadius: "999px",
+        border: "1px dashed var(--warning-border)",
+        background: "var(--warning-bg)",
+        color: "var(--warning)",
+      }}
+    >
+      <span aria-hidden="true">⏳</span>
+      {children}
+    </span>
   );
 }
 

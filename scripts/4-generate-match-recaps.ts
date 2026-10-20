@@ -429,6 +429,16 @@ export async function generateAndSaveMatchRecaps(
           saveVideoFacts(videoFacts);
         }
         const visualRuns = visual?.runs ?? [];
+        // 映像解析の進み具合 (編集解説があれば完了扱い)
+        const videoStatus: "complete" | "pending" | "unavailable" = editorial.bouts[ctx.boutId]
+          ? "complete"
+          : !videoId || !window
+            ? "unavailable"
+            : facts?.status === "pending" || visual?.status === "pending"
+              ? "pending"
+              : facts?.status === "complete" || visual?.status === "complete"
+                ? "complete"
+                : "unavailable";
 
         boutInputs.push({ ctx, games, facts });
         boutRecaps.push({
@@ -448,6 +458,7 @@ export async function generateAndSaveMatchRecaps(
           analysis: buildOfficialDataAnalysis({ ctx, games }),
           games: buildVerifiedGames(games, visualRuns),
           tags: buildVerifiedTags(games, visualRuns),
+          videoStatus,
         });
       }
 
@@ -503,6 +514,14 @@ export async function generateAndSaveMatchRecaps(
         saveVideoFacts(videoFacts);
       }
       const narrativeUsable = narrative && narrative.inputHash === inputHash;
+      // 解説文の進み具合: 動画がある試合で、解析待ち・解説の持ち越し中なら「作成中」
+      const narrationStatus: "complete" | "pending" | "unavailable" =
+        editorial.matches[matchId] || narrativeUsable || !needsNarration
+          ? "complete"
+          : videoId &&
+              (!allSettled || anyComplete || videoFacts.pendingNarrations.includes(matchId))
+            ? "pending"
+            : "unavailable";
 
       // 動画由来の解説は、2回の解析で一致した要点が1件以上あるBoutだけに採用
       boutRecaps.forEach((recap, idx) => {
@@ -574,6 +593,7 @@ export async function generateAndSaveMatchRecaps(
           editorial.matches[matchId]?.summary ??
           (narrativeUsable ? narrative!.matchSummary : fallbackSummary),
         bouts: boutRecaps,
+        narrationStatus,
       };
       resultRecaps.recentSections[div].push(recentMatch);
     }
