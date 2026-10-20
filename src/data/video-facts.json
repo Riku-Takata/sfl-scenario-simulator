@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T15:59:13.424Z",
+  "updatedAt": "2026-10-20T16:08:54.090Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -1652,8 +1652,59 @@
       "videoId": "OvwqJkBiJqw",
       "startSec": 10753,
       "endSec": 11310,
-      "status": "pending",
-      "runs": []
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-20T16:02:20.345Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "Seiyaは、第1ゲームおよび第3ゲームにおいて、Mizuhaの飛び道具や接近を対空技で的確に迎撃し、相手の攻めを封じ込めた。",
+              "evidence": "両方"
+            },
+            {
+              "topic": "Mizuhaは、第2ゲームにおいて、Seiyaの立ちコパンに対するカウンターや、ドライブゲージを削る立ち回りで主導権を握り、ラウンドを奪取した。",
+              "evidence": "両方"
+            },
+            {
+              "topic": "Seiyaは、第3ゲームの終盤、Mizuhaのドライブインパクトを冷静にガードし、その後の反撃でSA3（クリティカルアーツ）を叩き込み、試合を決めた。",
+              "evidence": "両方"
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-20T16:04:41.358Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "Seiyaは、第1ゲームおよび第3ゲームにおいて、中距離での立ち回りでドライブゲージを温存し、Mizuhaの攻めに対してドライブパリィや対空技を的確に使い分けることで、バーンアウトを回避しつつ守り切った。",
+              "evidence": "両方"
+            },
+            {
+              "topic": "Mizuhaは、第2ゲームにおいて、Seiyaの立ち回りの癖を読み切り、ドライブインパクトをパニッシュカウンターでヒットさせることで、一気に攻勢を強め、Seiyaをバーンアウト状態に追い込んで勝利した。",
+              "evidence": "両方"
+            },
+            {
+              "topic": "Seiyaは、第3ゲームの終盤、Mizuhaの攻めに対して、SA3（クリティカルアーツ）をリバーサルで発動し、確実なダメージと状況有利を確保して勝利を決定づけた。",
+              "evidence": "両方"
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec4-m3-b2": {
       "videoId": "OvwqJkBiJqw",

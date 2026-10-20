@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T15:58:03.250Z",
+  "updatedAt": "2026-10-20T16:08:54.085Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 4,
@@ -1160,8 +1160,8 @@
         "awayPoint": 20,
         "winner": "home",
         "isTiebreaker": true,
-        "matchHeadline": "DetonatioN FocusMeが延長戦を制し勝ち点30",
-        "matchSummary": "第2試合【REJECT vs DetonatioN FocusMe】は20-30でDetonatioN FocusMeの勝利。延長戦はナウマン選手が制した。",
+        "matchHeadline": "板橋ザンギエフとナウマンが勝利しDFMが逆転勝利",
+        "matchSummary": "先鋒戦をYAS、中堅戦をふ～どが制してREJECTがリードするも、大将戦で板橋ザンギエフが勝利し試合は延長戦へ。延長戦でナウマンがウメハラを2-0で破り、DetonatioN FocusMeが30-20で勝利を収めた。",
         "bouts": [
           {
             "status": 0,
@@ -1181,11 +1181,10 @@
               "Game 2: [2-1] YAS選手がフルラウンド勝利"
             ],
             "analysis": {
-              "source": "official-data",
+              "source": "gemini-video",
               "summary": "YAS選手（リュウ）が竹内ジョン選手（ジェイミー）を2-0で下した。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームYAS→第2ゲームYAS",
-                "YAS選手がゲームを1つも落とさずに勝利した。"
+                "YASは波動拳による牽制で竹内ジョンのジェイミーの攻めを抑制した。"
               ]
             },
             "games": [
@@ -1249,12 +1248,10 @@
               "Game 2: [2-1] ふ～ど選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "analysis": {
-              "source": "official-data",
+              "source": "gemini-video",
               "summary": "ふ～ど選手（C.ヴァイパー）がKEI.B選手（不知火舞）を2-0で下した。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームふ～ど→第2ゲームふ～ど",
-                "ふ～ど選手がゲームを1つも落とさずに勝利した。",
-                "第2ゲームはふ～ど選手が1ラウンド目を落としてから逆転。"
+                "ふ～どは第1ゲームでCAをヒットさせてラウンドを制した。"
               ]
             },
             "games": [
@@ -1435,7 +1432,7 @@
             "videoStatus": "unavailable"
           }
         ],
-        "narrationStatus": "pending"
+        "narrationStatus": "complete"
       },
       {
         "matchId": "div-f-sec4-m3",
