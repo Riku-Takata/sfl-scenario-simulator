@@ -288,6 +288,8 @@ export async function generateAndSaveMatchRecaps(
     maxVideoSeconds: Number(process.env.GEMINI_VIDEO_MAX_SECONDS || String(7 * 3600)),
     calls: 0,
     videoSeconds: 0,
+    // 新しい動画解析を始めてよい時間 (既定20分)。無料枠切れ・503が続く日もここで打ち切って持ち越す
+    deadlineMs: Date.now() + Number(process.env.GEMINI_VIDEO_TIME_BUDGET_MIN || "20") * 60_000,
   };
 
   const videoFacts = loadVideoFacts();
