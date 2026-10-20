@@ -17,6 +17,12 @@ const USER_AGENT =
 export class BucklerAuthError extends Error {}
 export class BucklerBlockedError extends Error {}
 export class BucklerBudgetError extends Error {}
+export class BucklerPlayerNotFoundError extends Error {
+  constructor(message: string, readonly status: number) {
+    super(message);
+    this.name = "BucklerPlayerNotFoundError";
+  }
+}
 
 export interface PacingOptions {
   /** リクエスト間の最小間隔 */
@@ -118,6 +124,9 @@ export class BucklerClient {
         // Capcom 側のデプロイで buildId が変わった
         this.buildId = null;
         continue;
+      }
+      if (res.status === 400 || res.status === 404) {
+        throw new BucklerPlayerNotFoundError(`HTTP ${res.status} for ${relativePath}`, res.status);
       }
       if (!res.ok) throw new BucklerBlockedError(`HTTP ${res.status} for ${relativePath}`);
       if (!(res.headers.get("content-type") ?? "").includes("json")) {
