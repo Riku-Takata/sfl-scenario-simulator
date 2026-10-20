@@ -853,6 +853,22 @@ const BucklerActivityWindowSchema = z.object({
   byMode: z.object({ rank: z.number(), casual: z.number(), hub: z.number(), custom: z.number() }),
 });
 
+const BucklerActSummarySchema = z.object({
+  seasonId: z.number(),
+  rankBattles: z.number(),
+  rankWins: z.number(),
+  chars: z.array(
+    z.object({
+      char: z.string(),
+      n: z.number(),
+      w: z.number(),
+      mr: z.number().nullable(),
+      lp: z.number().nullable(),
+      mrRanking: z.number().nullable(),
+    })
+  ),
+});
+
 export const BucklerPlayerProfileSchema = z.object({
   sflKey: z.string(),
   asOf: z.string(),
@@ -895,6 +911,12 @@ export const BucklerPlayerProfileSchema = z.object({
       roundsLost: z.number(),
     })
   ),
+  acts: z
+    .object({
+      current: BucklerActSummarySchema.nullable(),
+      previous: BucklerActSummarySchema.nullable(),
+    })
+    .default({ current: null, previous: null }),
   storedMatches: z.number(),
   storedSince: z.string().nullable(),
 });

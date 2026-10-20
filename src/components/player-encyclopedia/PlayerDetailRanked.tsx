@@ -132,6 +132,56 @@ export function PlayerDetailRanked({ ranked }: PlayerDetailRankedProps) {
           <Window title="直近30日" w={ranked.last30Days} />
         </div>
 
+        {(ranked.acts?.current || ranked.acts?.previous) && (
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "0.6rem",
+            }}
+          >
+            {[
+              { label: "今のAct", act: ranked.acts.current },
+              { label: "1つ前のAct", act: ranked.acts.previous },
+            ]
+              .filter((x) => x.act)
+              .map(({ label, act }) => (
+                <div key={label} style={boxStyle}>
+                  <div style={{ fontSize: "0.85rem", fontWeight: 800, marginBottom: "0.35rem" }}>
+                    {label}（Act {act!.seasonId}）ランクマ {act!.rankBattles.toLocaleString()}戦・勝率 {rate(act!.rankWins, act!.rankBattles)}
+                  </div>
+                  <div className="table-scroll">
+                    <table className="standings-table">
+                      <thead>
+                        <tr>
+                          <th>キャラ</th>
+                          <th>対戦</th>
+                          <th>勝率</th>
+                          <th>MR</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {act!.chars.map((c) => (
+                          <tr key={c.char}>
+                            <td style={{ fontWeight: 700 }}>{formatCharName(c.char)}</td>
+                            <td>{c.n.toLocaleString()}戦</td>
+                            <td>{rate(c.w, c.n)}</td>
+                            <td>
+                              {c.mr && c.mr > 0 ? c.mr : "-"}
+                              {c.mrRanking && c.mrRanking > 0 ? (
+                                <span style={{ color: "var(--text-muted)" }}> （{c.mrRanking}位）</span>
+                              ) : null}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ))}
+          </div>
+        )}
+
         {ranked.characters.length > 0 && (
           <div className="table-scroll">
             <table className="standings-table">

@@ -68,19 +68,26 @@ export class BucklerClient {
   private async request(
     url: string,
     accept: "json" | "html",
-    opts: { allow403?: boolean } = {}
+    opts: { allow403?: boolean; postJson?: unknown } = {}
   ): Promise<Response> {
     for (let attempt = 0; ; attempt++) {
       await this.pace();
+      const isPost = opts.postJson !== undefined;
       const res = await fetch(url, {
+        method: isPost ? "POST" : "GET",
         headers: {
           Accept: accept === "json" ? "application/json, text/plain, */*" : "text/html,application/xhtml+xml",
           "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
           Referer: `${BASE}/${LOCALE}/`,
           "User-Agent": USER_AGENT,
           Cookie: this.cookie,
-          ...(accept === "json" ? { "x-nextjs-data": "1" } : {}),
+          ...(isPost
+            ? { "Content-Type": "application/json", Origin: ORIGIN }
+            : accept === "json"
+              ? { "x-nextjs-data": "1" }
+              : {}),
         },
+        body: isPost ? JSON.stringify(opts.postJson) : undefined,
         redirect: "manual",
       });
       if (res.status === 403 && opts.allow403) return res;
@@ -149,6 +156,26 @@ export class BucklerClient {
       return pp as T;
     }
     throw new BucklerBlockedError(`page-data route not found: ${relativePath}`);
+  }
+
+  /**
+   * プロフィール PLAY 画面の Act 切り替えで使われる API (POST)
+   *   characterwinrate: { targetShortId, targetSeasonId, targetModeId } → キャラ別の対戦数・勝利数
+   *   leagueinfo:       { targetShortId, targetSeasonId }               → キャラ別 LP・MR
+   * targetModeId: 1 すべて / 2 ランクマッチ / 3 カジュアル / 4 ルームマッチ / 5 バトルハブ
+   */
+  async act<T = unknown>(endpoint: "characterwinrate" | "leagueinfo", body: Record<string, number>): Promise<T> {
+    const res = await this.request(`${BASE}/api/profile/play/act/${endpoint}`, "json", { postJson: body });
+    if (res.status === 400 || res.status === 404) {
+      throw new BucklerPlayerNotFoundError(`HTTP ${res.status} for act/${endpoint}`, res.status);
+    }
+    if (!res.ok) throw new BucklerBlockedError(`HTTP ${res.status} for act/${endpoint}`);
+    if (!(res.headers.get("content-type") ?? "").includes("json")) {
+      throw new BucklerAuthError(`non-JSON response for act/${endpoint} (login page?)`);
+    }
+    const json = (await res.json()) as { response?: T };
+    if (json.response == null) throw new BucklerBlockedError(`unexpected body for act/${endpoint}`);
+    return json.response;
   }
 
   /** `api/en/stats/{variant}/{YYYYMM}`。未公開の月 (403) ・存在しない月 (404) は null */

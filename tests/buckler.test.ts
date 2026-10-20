@@ -237,3 +237,36 @@ test("BucklerClient: buildId の再取得・未ログイン検知・未公開月
   }
   assert.throws(() => new BucklerClient("", FAST), BucklerAuthError);
 });
+
+test("normalizeAct / summarizeAct: Act のキャラ別戦績と MR をまとめる", async () => {
+  const { normalizeAct } = await import("../src/lib/buckler/records");
+  const { summarizeAct } = await import("../src/lib/buckler/aggregate");
+  const rec = normalizeAct(
+    12,
+    {
+      character_win_rates: [
+        { character_tool_name: "all", battle_count: 927, win_count: 611 },
+        { character_tool_name: "ed", battle_count: 391, win_count: 277 },
+        { character_tool_name: "cviper", battle_count: 502, win_count: 307 },
+        { character_tool_name: "ryu", battle_count: 0, win_count: 0 },
+        { character_tool_name: "deejay", battle_count: 34, win_count: 27 },
+      ],
+    },
+    {
+      character_league_infos: [
+        { character_tool_name: "cviper", is_played: true, league_info: { league_point: 100, master_rating: 2108 } },
+        { character_tool_name: "ed", is_played: true, league_info: { league_point: 200, master_rating: 2313 } },
+        { character_tool_name: "ryu", is_played: true, league_info: { league_point: -1, master_rating: 0 } },
+      ],
+    },
+    "2026-10-20T00:00:00Z"
+  );
+  assert.deepEqual(rec.rank.map((r) => r.char), ["cviper", "ed", "dee_jay"], "all・0戦は除外、対戦数順");
+  assert.deepEqual(rec.league.map((l) => l.char), ["ed", "cviper"], "未プレイ (LP -1) は除外");
+  const s = summarizeAct(rec);
+  assert.ok(s);
+  assert.equal(s.rankBattles, 927);
+  assert.equal(s.rankWins, 611);
+  assert.equal(s.chars[0].mr, 2108);
+  assert.equal(summarizeAct(undefined), null);
+});

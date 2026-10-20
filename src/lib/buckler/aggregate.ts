@@ -4,7 +4,7 @@
  * 公開するのはプロ本人のキャラ別成績・活動量・行動傾向と、公式ダイアグラムのみ。
  * 対戦相手の情報 (名前・ID・SFL選手同士の練習相手) は含めない。
  */
-import type { BucklerDiaMonth, BucklerMatch, BucklerSnapshot } from "./records";
+import type { BucklerActRecord, BucklerDiaMonth, BucklerMatch, BucklerSnapshot } from "./records";
 import { BUCKLER_MODES } from "./records";
 
 const DAY = 86_400;
@@ -54,6 +54,32 @@ export interface ActivityWindow {
   byMode: Record<"rank" | "casual" | "hub" | "custom", number>;
 }
 
+/** Act (シーズン) 単位のランクマ集計 */
+export interface ActSummary {
+  seasonId: number;
+  rankBattles: number;
+  rankWins: number;
+  /** キャラ別: ランクマ対戦数・勝利数と、その Act の MR/LP */
+  chars: Array<{ char: string; n: number; w: number; mr: number | null; lp: number | null; mrRanking: number | null }>;
+}
+
+export function summarizeAct(record: BucklerActRecord | undefined): ActSummary | null {
+  if (!record) return null;
+  const league = new Map(record.league.map((l) => [l.char, l]));
+  const chars = record.rank.map((r) => ({
+    ...r,
+    mr: league.get(r.char)?.mr ?? null,
+    lp: league.get(r.char)?.lp ?? null,
+    mrRanking: league.get(r.char)?.mrRanking ?? null,
+  }));
+  return {
+    seasonId: record.seasonId,
+    rankBattles: chars.reduce((s, c) => s + c.n, 0),
+    rankWins: chars.reduce((s, c) => s + c.w, 0),
+    chars: chars.slice(0, 6),
+  };
+}
+
 export interface BucklerPlayerProfile {
   sflKey: string;
   asOf: string;
@@ -81,6 +107,8 @@ export interface BucklerPlayerProfile {
     roundsWon: number;
     roundsLost: number;
   }>;
+  /** 今の Act と1つ前の Act のランクマ集計 (キャラ別の戦績・MR) */
+  acts: { current: ActSummary | null; previous: ActSummary | null };
   /** 蓄積済みの対戦ログ件数と最古の日付 */
   storedMatches: number;
   storedSince: string | null;
@@ -120,7 +148,8 @@ export function buildBucklerProfile(
   sflKey: string,
   matches: BucklerMatch[],
   snapshots: BucklerSnapshot[],
-  nowSec = Math.floor(Date.now() / 1000)
+  nowSec = Math.floor(Date.now() / 1000),
+  acts: Record<string, BucklerActRecord> = {}
 ): BucklerPlayerProfile | null {
   const snap = [...snapshots].sort((a, b) => a.date.localeCompare(b.date)).at(-1);
   if (!snap && matches.length === 0) return null;
@@ -130,9 +159,18 @@ export function buildBucklerProfile(
   const last7 = within(7);
   const last30 = within(30);
 
+  const currentSeason = snap?.seasonId ?? null;
+  const currentAct = currentSeason != null ? summarizeAct(acts[String(currentSeason)]) : null;
+  const previousAct = currentSeason != null ? summarizeAct(acts[String(currentSeason - 1)]) : null;
+
+  // メインキャラは今 Act のランクマ対戦数が最多のキャラ (直近100戦は新キャラの試し打ちなどに偏るため補助に使う)
   const rank30 = last30.filter((m) => BUCKLER_MODES[m.mode] === "rank");
   const mainChar =
-    countByChar(rank30)[0]?.char ?? snap?.characters[0]?.char ?? snap?.favoriteChar ?? null;
+    currentAct?.chars[0]?.char ??
+    countByChar(rank30)[0]?.char ??
+    snap?.characters[0]?.char ??
+    snap?.favoriteChar ??
+    null;
 
   const mrByDate = new Map<string, number>();
   for (const m of [...rank30].sort((a, b) => a.t - b.t)) {
@@ -193,6 +231,7 @@ export function buildBucklerProfile(
         roundsWon: x.roundsWon,
         roundsLost: x.roundsLost,
       })),
+    acts: { current: currentAct, previous: previousAct },
     storedMatches: matches.length,
     storedSince: sorted[0] ? jstDate(sorted[0].t) : null,
   };

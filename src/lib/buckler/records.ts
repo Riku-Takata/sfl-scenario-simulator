@@ -199,6 +199,48 @@ export function normalizePlay(
   };
 }
 
+/** Act (シーズン) 単位のランクマ集計 */
+export interface BucklerActRecord {
+  seasonId: number;
+  fetchedAt: string;
+  /** ランクマッチのキャラ別戦績 (対戦のあったキャラのみ) */
+  rank: Array<{ char: string; n: number; w: number }>;
+  /** そのActのキャラ別 LP・MR (プレイ実績のあるキャラのみ) */
+  league: Array<{ char: string; lp: number | null; mr: number | null; mrRanking: number | null; leagueRank: number | null }>;
+}
+
+export function normalizeAct(
+  seasonId: number,
+  winRates: { character_win_rates?: Array<{ character_tool_name?: string; battle_count?: number; win_count?: number }> },
+  league: {
+    character_league_infos?: Array<{
+      character_tool_name?: string;
+      is_played?: boolean;
+      league_info?: { league_point?: number; master_rating?: number; master_rating_ranking?: number; league_rank?: number };
+    }>;
+  },
+  fetchedAt: string
+): BucklerActRecord {
+  return {
+    seasonId,
+    fetchedAt,
+    rank: (winRates.character_win_rates ?? [])
+      .filter((c) => c.character_tool_name && c.character_tool_name !== "all" && (c.battle_count ?? 0) > 0)
+      .map((c) => ({ char: normalizeSflCharKey(c.character_tool_name), n: c.battle_count ?? 0, w: c.win_count ?? 0 }))
+      .sort((a, b) => b.n - a.n),
+    league: (league.character_league_infos ?? [])
+      .filter((c) => c.is_played && c.character_tool_name && (c.league_info?.league_point ?? -1) >= 0)
+      .map((c) => ({
+        char: normalizeSflCharKey(c.character_tool_name),
+        lp: num(c.league_info?.league_point),
+        mr: num(c.league_info?.master_rating),
+        mrRanking: num(c.league_info?.master_rating_ranking),
+        leagueRank: num(c.league_info?.league_rank),
+      }))
+      .sort((a, b) => (b.lp ?? 0) - (a.lp ?? 0)),
+  };
+}
+
 export interface BucklerDiaMonth {
   month: string;
   variant: string;
