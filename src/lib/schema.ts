@@ -292,6 +292,39 @@ export const NextMatchOrderRecommendationSchema = z.object({
   tacticalSummary: z.string(),
 });
 
+export const LineupSlotAppearanceSchema = z.object({
+  home: z.array(z.record(z.string(), z.number())),
+  away: z.array(z.record(z.string(), z.number())),
+});
+
+export const TopLineupComboSchema = z.object({
+  away: z.tuple([z.string(), z.string(), z.string()]),
+  home: z.tuple([z.string(), z.string(), z.string()]),
+  prob: z.number(),
+  boutHomeWin: z.tuple([z.number(), z.number(), z.number()]),
+});
+
+export const LineupBreakdownSchema = z.object({
+  slotAppearance: LineupSlotAppearanceSchema,
+  topLineups: z.array(TopLineupComboSchema),
+  tiebreakHomeWin: z.number(),
+});
+
+export const RemainingMatchPredictionSchema = z.object({
+  matchId: z.string(),
+  sectionNumber: z.number(),
+  sectionTitle: z.string(),
+  scheduledAt: z.string(),
+  opponentKey: z.string(),
+  opponentName: z.string(),
+  side: z.enum(["home", "away"]),
+  winProbability: z.number(),
+  expectedPoints: z.number(),
+  mostLikelyScore: z.string(),
+  orderRecommendation: NextMatchOrderRecommendationSchema,
+  lineupBreakdown: LineupBreakdownSchema.nullable().optional(),
+});
+
 export const TargetMatchPlanSchema = z.object({
   matchId: z.string(),
   sectionNumber: z.number(),
@@ -390,6 +423,7 @@ export const TeamScenarioAnalysisSchema = z.object({
   }),
   nextSectionCheeringGuide: z.array(CheeringMatchGuideSchema),
   nextMatchPrediction: NextMatchOrderRecommendationSchema.optional(),
+  remainingMatchPredictions: z.array(RemainingMatchPredictionSchema).optional(),
 });
 
 export const ScenariosDataSchema = z.object({

@@ -297,6 +297,189 @@ const routeList = [
       </div>
     )}
 
+  <!-- 残り試合の勝率予測 ＆ 出場モデル内訳（確率の根拠） -->
+  {analysis.remainingMatchPredictions &&
+    analysis.remainingMatchPredictions.length > 0 && (
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title">
+              {meta.shortName} の残り試合勝率予想 ＆ 出場選手モデルの内訳
+            </h2>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.2rem;">
+              過去の起用実績に基づく出場選手モデル（576通りの組み合わせ推計）と、CPT/SFLの実績レーティングから算出した残り試合ごとの勝率・期待ポイント・確率の内訳です。
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          {analysis.remainingMatchPredictions.map((pred) => {
+            const oppMeta = TEAM_META_MAP[pred.opponentKey];
+            const isHome = pred.side === "home";
+            const breakdown = pred.lineupBreakdown;
+            const mySlotApps = breakdown ? (isHome ? breakdown.slotAppearance.home : breakdown.slotAppearance.away) : null;
+            const oppSlotApps = breakdown ? (isHome ? breakdown.slotAppearance.away : breakdown.slotAppearance.home) : null;
+
+            return (
+              <div
+                style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem;"
+              >
+                <!-- カードヘッダー -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                  <div>
+                    <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin-right: 0.5rem;">
+                      {pred.sectionTitle} ({pred.scheduledAt.slice(0, 10)})
+                    </span>
+                    <span
+                      class={`badge ${
+                        isHome ? "badge-home" : "badge-away"
+                      }`}
+                      style="font-size: 0.75rem;"
+                    >
+                      {isHome ? "HOME (後出し)" : "AWAY (先出し)"}
+                    </span>
+                  </div>
+
+                  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+                    <span
+                      class="badge"
+                      style={`font-size: 0.9rem; font-weight: 800; background: ${pred.winProbability >= 50 ? "var(--success-bg)" : "var(--danger-bg)"}; color: ${pred.winProbability >= 50 ? "var(--success)" : "var(--danger)"};`}
+                    >
+                      予想勝率 {pred.winProbability.toFixed(1)}%
+                    </span>
+                    <span class="badge" style="background: var(--bg-card); border: 1px solid var(--border-color); font-weight: 700;">
+                      期待獲得 {pred.expectedPoints.toFixed(1)}pt
+                    </span>
+                    <span class="badge" style="background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-sub);">
+                      最有力: {pred.mostLikelyScore}
+                    </span>
+                  </div>
+                </div>
+
+                <div style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;">
+                  vs <a href={`/team/${pred.opponentKey}`} style="color: var(--primary);">{oppMeta?.name ?? pred.opponentName}</a>
+                </div>
+
+                <p style="font-size: 0.88rem; color: var(--text-sub); margin-bottom: 0.85rem; line-height: 1.5;">
+                  {pred.orderRecommendation.tacticalSummary}
+                </p>
+
+                <!-- 最有力オーダー（3ボウト） -->
+                <div style="margin-bottom: 0.85rem;">
+                  <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.4rem;">
+                    【最も起こりやすい対戦カード ＆ 各ボウトの勝率推計】
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    {pred.orderRecommendation.recommendedLineup.map((bout) => (
+                      <div
+                        style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.6rem 0.85rem; font-size: 0.85rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem;"
+                      >
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                          <strong style="color: var(--primary);">{bout.roleName}</strong>
+                          <span style="font-weight: 700;">{bout.playerAName} ({bout.charA})</span>
+                          <span style="color: var(--text-muted);">vs</span>
+                          <span>{bout.playerBName} ({bout.charB})</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                          <strong style={`color: ${bout.expectedWinRateA >= 50 ? "var(--success)" : "var(--danger)"};`}>
+                            勝率 {bout.expectedWinRateA.toFixed(1)}%
+                          </strong>
+                          <span style="font-size: 0.78rem; color: var(--text-muted);">
+                            ({bout.rationale})
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <!-- 内訳アコーディオン（起こりやすい組み合わせ ＆ 出場確率） -->
+                {breakdown && (
+                  <details style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem; margin-top: 0.5rem;">
+                    <summary style="font-size: 0.84rem; font-weight: 700; color: var(--primary); cursor: pointer; user-select: none;">
+                      ▼ この試合の確率内訳を見る（組み合わせTop3 ＆ 各選手のポジション別出場確率）
+                    </summary>
+
+                    <div style="margin-top: 0.85rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                      <!-- 組み合わせ Top 3 -->
+                      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem;">
+                        <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem;">
+                          起用実績から起こりやすい上位の組み合わせ
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.82rem;">
+                          {breakdown.topLineups.map((combo, idx) => {
+                            const myLineup = isHome ? combo.home : combo.away;
+                            const oppLineup = isHome ? combo.away : combo.home;
+                            return (
+                              <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.4rem;">
+                                <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 0.2rem;">
+                                  <span>パターン #{idx + 1}</span>
+                                  <span style="color: var(--primary);">発生確率 {(combo.prob * 100).toFixed(1)}%</span>
+                                </div>
+                                <div style="color: var(--text-sub); font-size: 0.78rem;">
+                                  先鋒: {PLAYER_NAME_MAP[myLineup[0]] || myLineup[0]} vs {PLAYER_NAME_MAP[oppLineup[0]] || oppLineup[0]} (HOME勝率 {(combo.boutHomeWin[0] * 100).toFixed(0)}%)<br/>
+                                  中堅: {PLAYER_NAME_MAP[myLineup[1]] || myLineup[1]} vs {PLAYER_NAME_MAP[oppLineup[1]] || oppLineup[1]} (HOME勝率 {(combo.boutHomeWin[1] * 100).toFixed(0)}%)<br/>
+                                  大将: {PLAYER_NAME_MAP[myLineup[2]] || myLineup[2]} vs {PLAYER_NAME_MAP[oppLineup[2]] || oppLineup[2]} (HOME勝率 {(combo.boutHomeWin[2] * 100).toFixed(0)}%)
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      <!-- 各選手の出場確率 -->
+                      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem;">
+                        <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem;">
+                          各選手のポジション別出場確率推計
+                        </div>
+                        <div style="font-size: 0.8rem;">
+                          <div style="font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">{meta.shortName} (自チーム):</div>
+                          <div style="display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 0.6rem;">
+                            {mySlotApps && meta.players.filter((p) => p !== "keib_oja").map((p) => {
+                              const s0 = ((mySlotApps[0]?.[p] ?? 0) * 100).toFixed(0);
+                              const s1 = ((mySlotApps[1]?.[p] ?? 0) * 100).toFixed(0);
+                              const s2 = ((mySlotApps[2]?.[p] ?? 0) * 100).toFixed(0);
+                              const total = (((mySlotApps[0]?.[p] ?? 0) + (mySlotApps[1]?.[p] ?? 0) + (mySlotApps[2]?.[p] ?? 0)) * 100).toFixed(0);
+                              return (
+                                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-sub);">
+                                  <span style="font-weight: 600;">{PLAYER_NAME_MAP[p] || p}</span>
+                                  <span>出場 {total}% (先鋒 {s0}% / 中堅 {s1}% / 大将 {s2}%)</span>
+                                </div>
+                              );
+                            })}
+                          </div>
+
+                          {oppMeta && (
+                            <>
+                              <div style="font-weight: 700; margin-bottom: 0.3rem; color: var(--text-main);">{oppMeta.shortName} (対戦相手):</div>
+                              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                {oppSlotApps && oppMeta.players.filter((p) => p !== "keib_oja").map((p) => {
+                                  const s0 = ((oppSlotApps[0]?.[p] ?? 0) * 100).toFixed(0);
+                                  const s1 = ((oppSlotApps[1]?.[p] ?? 0) * 100).toFixed(0);
+                                  const s2 = ((oppSlotApps[2]?.[p] ?? 0) * 100).toFixed(0);
+                                  const total = (((oppSlotApps[0]?.[p] ?? 0) + (oppSlotApps[1]?.[p] ?? 0) + (oppSlotApps[2]?.[p] ?? 0)) * 100).toFixed(0);
+                                  return (
+                                    <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-sub);">
+                                      <span style="font-weight: 600;">{PLAYER_NAME_MAP[p] || p}</span>
+                                      <span>出場 {total}% (先鋒 {s0}% / 中堅 {s1}% / 大将 {s2}%)</span>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </details>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    )}
+
   <!-- 消化済み試合の結果 -->
   <div class="panel">
     <div class="panel-header">

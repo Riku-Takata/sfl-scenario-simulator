@@ -10,6 +10,10 @@ import {
   MatchesDataSchema,
   MatchRecordSchema,
   NextMatchOrderRecommendationSchema,
+  LineupSlotAppearanceSchema,
+  TopLineupComboSchema,
+  LineupBreakdownSchema,
+  RemainingMatchPredictionSchema,
   PlayerCharVsRecordSchema,
   PlayerH2HRecordSchema,
   PlayerMatchupPredictionSchema,
@@ -90,6 +94,10 @@ export type PlayerMatchupPrediction = z.infer<
 export type NextMatchOrderRecommendation = z.infer<
   typeof NextMatchOrderRecommendationSchema
 >;
+export type LineupSlotAppearance = z.infer<typeof LineupSlotAppearanceSchema>;
+export type TopLineupCombo = z.infer<typeof TopLineupComboSchema>;
+export type LineupBreakdown = z.infer<typeof LineupBreakdownSchema>;
+export type RemainingMatchPrediction = z.infer<typeof RemainingMatchPredictionSchema>;
 export type TargetMatchPlan = z.infer<typeof TargetMatchPlanSchema>;
 export type CheeringMatchGuide = z.infer<typeof CheeringMatchGuideSchema>;
 export type ScenarioRouteDetail = z.infer<typeof ScenarioRouteDetailSchema>;

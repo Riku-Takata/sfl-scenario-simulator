@@ -11,8 +11,15 @@ import type {
   TeamScenarioAnalysis,
   TeamStanding,
   TargetMatchPlan,
+  RemainingMatchPrediction,
 } from "./types";
-import { predictTeamMatchOutcomeDistribution } from "./predictor";
+import {
+  predictTeamMatchOutcomeDistribution,
+  predictTeamMatchOutcomeWeights,
+} from "./predictor";
+import type { ProductionModel } from "./model/production";
+import { sampleRatingWorlds } from "./model/uncertainty";
+import rawModelV2 from "../data/model-v2.json";
 
 export const TEAM_META_MAP: Record<string, TeamMeta> = {
   // Division S
@@ -464,6 +471,7 @@ export function analyzeDivisionScenarios(
   predictorData?: {
     cptMatchups: CptMatchupsTop96Data;
     playerStats: PlayerStatsData;
+    model?: ProductionModel;
   }
 ): DivisionSimulationSummary {
   const currentStandings = calculateStandings(division, matches);
@@ -480,13 +488,42 @@ export function analyzeDivisionScenarios(
     string,
     ReturnType<typeof predictTeamMatchOutcomeDistribution>
   > = {};
+  const model = predictorData?.model ?? (rawModelV2 as unknown as ProductionModel);
+  const uncertainty = model?.uncertainty;
+  const useUncertainty = Boolean(
+    predictorData && uncertainty && uncertainty.sigma0 > 0 && model.ratings && model.games
+  );
+  const K = useUncertainty ? 200 : 1;
+  const worldsSeed = division === "s" ? 20261021 : 20261022;
+  const worlds = useUncertainty
+    ? sampleRatingWorlds(model.ratings, model.games, K, worldsSeed, uncertainty)
+    : [model.ratings];
+
+  // 各世界 k における未消化試合のスコア確率分布を事前計算
+  const worldOutcomeWeights: Array<Record<string, Record<ScorePatternId, number>>> = [];
+
   if (predictorData) {
     for (const m of unplayedMatches) {
       matchPredictionsMap[m.id] = predictTeamMatchOutcomeDistribution(
         m,
         predictorData.cptMatchups,
-        predictorData.playerStats
+        predictorData.playerStats,
+        model
       );
+    }
+    for (let k = 0; k < K; k++) {
+      const worldRatings = worlds[k];
+      const worldModel: ProductionModel = { ...model, ratings: worldRatings };
+      const weightsMap: Record<string, Record<ScorePatternId, number>> = {};
+      for (const m of unplayedMatches) {
+        weightsMap[m.id] = predictTeamMatchOutcomeWeights(
+          m,
+          predictorData.cptMatchups,
+          predictorData.playerStats,
+          worldModel
+        );
+      }
+      worldOutcomeWeights.push(weightsMap);
     }
   }
 
@@ -551,6 +588,9 @@ export function analyzeDivisionScenarios(
   }
 
   for (let i = 0; i < iterations; i++) {
+    const worldIndex = useUncertainty ? Math.floor(i / (iterations / K)) % K : 0;
+    const currentWorldWeights = worldOutcomeWeights[worldIndex];
+
     const simState: Record<
       string,
       { key: string; point: number; battleDiff: number; roundDiff: number; name: string }
@@ -568,7 +608,9 @@ export function analyzeDivisionScenarios(
     const chosenNextSectionOutcomes: Record<string, ScorePatternId> = {};
 
     for (const m of unplayedMatches) {
-      const predWeights = matchPredictionsMap[m.id]?.outcomeWeights;
+      const predWeights = currentWorldWeights
+        ? currentWorldWeights[m.id]
+        : matchPredictionsMap[m.id]?.outcomeWeights;
       const out = pickWeightedOutcome(rng, predWeights);
       if (m.sectionNumber === nextSectionNumber) {
         chosenNextSectionOutcomes[m.id] = out.id;
@@ -670,6 +712,32 @@ export function analyzeDivisionScenarios(
         myNextMatch.home === key
           ? mPred.homeOrderRecommendation
           : mPred.awayOrderRecommendation;
+    }
+
+    const remainingMatchPredictions: RemainingMatchPrediction[] = [];
+    if (predictorData) {
+      for (const m of teamRemainingMatches) {
+        const mPred = matchPredictionsMap[m.id];
+        if (!mPred) continue;
+        const isHome = m.home === key;
+        const oppKey = isHome ? m.away : m.home;
+        const oppMeta = TEAM_META_MAP[oppKey];
+        const rec = isHome ? mPred.homeOrderRecommendation : mPred.awayOrderRecommendation;
+        remainingMatchPredictions.push({
+          matchId: m.id,
+          sectionNumber: m.sectionNumber,
+          sectionTitle: m.sectionTitle,
+          scheduledAt: m.scheduledAt,
+          opponentKey: oppKey,
+          opponentName: oppMeta?.shortName ?? oppKey,
+          side: isHome ? "home" : "away",
+          winProbability: isHome ? mPred.homeWinProbability : mPred.awayWinProbability,
+          expectedPoints: rec.expectedTeamPoints,
+          mostLikelyScore: rec.mostLikelyScore,
+          orderRecommendation: rec,
+          lineupBreakdown: mPred.lineupBreakdown,
+        });
+      }
     }
 
     const buildTargetSchedule = (
@@ -961,6 +1029,7 @@ export function analyzeDivisionScenarios(
       },
       nextSectionCheeringGuide: cheeringGuide,
       nextMatchPrediction,
+      remainingMatchPredictions,
     };
   }
 

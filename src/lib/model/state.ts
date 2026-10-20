@@ -54,6 +54,8 @@ function expected(ra: number, rb: number): number {
 
 export class FeatureState {
   private ratings = new Map<string, number>();
+  /** 実力値の更新に使ったゲーム数 (情報源の重み付き)。不確実性の算出に使う */
+  private games = new Map<string, number>();
   /** player -> oppChar -> {w, n} (ゲーム単位) */
   private vsChar = new Map<string, Map<string, { w: number; n: number }>>();
   /** "a|b" (a<b) -> a 視点の {w, n} (ボウト・セット単位) */
@@ -107,6 +109,14 @@ export class FeatureState {
     return this.ratings.get(player) ?? this.params.initial;
   }
 
+  gameCount(player: string): number {
+    return this.games.get(player) ?? 0;
+  }
+
+  private addGames(player: string, n: number): void {
+    this.games.set(player, this.gameCount(player) + n);
+  }
+
   vsCharRecord(player: string, oppChar: string): { w: number; n: number } {
     return this.vsChar.get(player)?.get(oppChar) ?? { w: 0, n: 0 };
   }
@@ -143,6 +153,8 @@ export class FeatureState {
     const delta = this.params.k * weight * (aWins - n * expected(ra, rb));
     this.ratings.set(a, ra + delta);
     this.ratings.set(b, rb - delta);
+    this.addGames(a, n * weight);
+    this.addGames(b, n * weight);
   }
 
   private apply(e: Event): void {
@@ -165,6 +177,7 @@ export class FeatureState {
         e.player,
         r + this.params.k * weight * (e.won - n * expected(r, seedToRating(e.oppSeed)))
       );
+      this.addGames(e.player, n * weight);
     }
     for (const g of e.games) {
       if (g.oppChar) this.addVsChar(e.player, g.oppChar, g.won ? 1 : 0, 1);

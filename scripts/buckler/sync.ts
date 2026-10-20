@@ -14,6 +14,7 @@ import {
   BucklerAuthError,
   BucklerBlockedError,
   BucklerBudgetError,
+  BucklerPlayerNotFoundError,
   BucklerClient,
   DAILY_PACING,
 } from "./client";
@@ -164,15 +165,27 @@ export async function runSync(argv = process.argv.slice(2)): Promise<number> {
   state.lastError = null;
   state.lastErrorMessage = null;
   try {
-    for (const [sflKey, { cfnId }] of targets) {
-      const result = await syncPlayer(client, store, sflKey, cfnId, sflKeyByCfn, mode);
-      state.players[sflKey] = result;
-      store.saveState(state);
-      console.log(
-        `[buckler]   ${sflKey}: +${result.newMatches} matches${result.gap ? " (gap: 未取得の試合がある可能性)" : ""} [${client.requestCount} req]`
-      );
-    }
+    // 公式ダイアグラム（相性表）はリクエスト数が少ないため先に取得して確実に保存
     if (!only) await syncDia(client, store, mode);
+
+    for (const [sflKey, { cfnId }] of targets) {
+      try {
+        const result = await syncPlayer(client, store, sflKey, cfnId, sflKeyByCfn, mode);
+        state.players[sflKey] = result;
+        store.saveState(state);
+        console.log(
+          `[buckler]   ${sflKey}: +${result.newMatches} matches${result.gap ? " (gap: 未取得の試合がある可能性)" : ""} [${client.requestCount} req]`
+        );
+      } catch (err) {
+        if (err instanceof BucklerPlayerNotFoundError) {
+          console.warn(
+            `[buckler]   ${sflKey}: スキップ (${err.message}) - CFN ID (${cfnId}) が存在しないか非公開の可能性があります`
+          );
+          continue;
+        }
+        throw err;
+      }
+    }
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     if (err instanceof BucklerBudgetError) {
