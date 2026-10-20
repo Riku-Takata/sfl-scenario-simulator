@@ -1,4 +1,5 @@
 import test from "node:test";
+import { SF6_CHARACTERS } from "../src/lib/characters";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
@@ -68,7 +69,7 @@ test("Zod schemas validate all 8 generated JSON datasets cleanly", () => {
   assert.equal(standingsData.divisions.s.length, 6);
   assert.equal(standingsData.divisions.f.length, 6);
   assert.equal(Object.keys(masterPlayersData.players).length, 48);
-  assert.equal(cptMatchupsData.characters.length, 28);
+  assert.equal(cptMatchupsData.characters.length, SF6_CHARACTERS.length);
   assert.equal(Object.keys(playerStatsData.players).length, 48);
   assert.equal(Object.keys(scenariosData.teams).length, 12);
   assert.equal(Object.keys(sf6TournamentData.players).length, 48);
@@ -297,7 +298,7 @@ test("predictTeamMatchOutcomeDistribution and analyzeDivisionScenarios integrate
 
 import { buildPlayerEncyclopedia } from "../src/lib/player-encyclopedia";
 
-test("buildPlayerEncyclopedia builds 48 objective player profiles with 6-axis parameters, 28 vs-character stats, and SF6 tournament history", () => {
+test("buildPlayerEncyclopedia builds 48 objective player profiles with 6-axis parameters, all vs-character stats, and SF6 tournament history", () => {
   const encyclopedia = buildPlayerEncyclopedia(
     playerStatsData,
     matchesData,
@@ -310,8 +311,8 @@ test("buildPlayerEncyclopedia builds 48 objective player profiles with 6-axis pa
     assert.ok(
       p.parameters.overallScore >= 35 && p.parameters.overallScore <= 99
     );
-    assert.equal(p.vsCharacters.length, 28);
-    assert.equal(p.tournamentVsCharacters.length, 28);
+    assert.equal(p.vsCharacters.length, SF6_CHARACTERS.length);
+    assert.equal(p.tournamentVsCharacters.length, SF6_CHARACTERS.length);
     assert.ok(p.strongestMatchups.length <= 5);
     assert.ok(p.closestMatchups.length <= 5);
     assert.ok(p.tournamentStrongestMatchups.length <= 5);

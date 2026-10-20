@@ -128,14 +128,6 @@ const PLAYER_SF6_CHARS: Record<string, { main: string; pastMains: string[] }> = 
   hikaru: { main: "aki", pastMains: ["chunli"] },
 };
 
-// SF6全28キャラクター
-const ALL_SF6_CHARS = [
-  "ryu", "luke", "jamie", "chunli", "guile", "kimberly", "juri", "ken",
-  "blanka", "dhalsim", "ehonda", "dee_jay", "manon", "marisa", "jp",
-  "zangief", "lily", "cammy", "rashid", "aki", "ed", "gouki_akuma",
-  "vega_mbison", "terry", "mai", "elena", "sagat", "cviper"
-];
-
 // 代表的な対戦相手プール（SF6の各キャラを代表する有名プレイヤー）
 const CHAR_REPRESENTATIVE_PLAYERS: Record<string, Array<{ key: string; name: string }>> = {
   ryu: [{ key: "shuto", name: "Shuto" }, { key: "machabo", name: "まちゃぼー" }, { key: "paladin", name: "Paladin" }],

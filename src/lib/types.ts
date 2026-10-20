@@ -46,6 +46,16 @@ import {
   BoutTagIdSchema,
   VisualRunSchema,
   BoutVisualFactsSchema,
+  StartggIdentitiesDataSchema,
+  PremierCategorySchema,
+  StartggEventSchema,
+  StartggGameSchema,
+  StartggSetSchema,
+  StartggPlacementSchema,
+  StartggPremierResultsDataSchema,
+  SflPlayStatsMetricKeySchema,
+  SflPlayStatsSeasonSchema,
+  SflPlayStatsDataSchema,
 } from "./schema";
 
 export type DivisionId = z.infer<typeof DivisionIdSchema>;
@@ -107,3 +117,15 @@ export type BoutTag = z.infer<typeof BoutTagSchema>;
 export type BoutTagId = z.infer<typeof BoutTagIdSchema>;
 export type VisualRun = z.infer<typeof VisualRunSchema>;
 export type BoutVisualFacts = z.infer<typeof BoutVisualFactsSchema>;
+
+export type StartggIdentitiesData = z.infer<typeof StartggIdentitiesDataSchema>;
+export type PremierCategory = z.infer<typeof PremierCategorySchema>;
+export type StartggEvent = z.infer<typeof StartggEventSchema>;
+export type StartggGame = z.infer<typeof StartggGameSchema>;
+export type StartggSet = z.infer<typeof StartggSetSchema>;
+export type StartggPlacement = z.infer<typeof StartggPlacementSchema>;
+export type StartggPremierResultsData = z.infer<typeof StartggPremierResultsDataSchema>;
+
+export type SflPlayStatsMetricKey = z.infer<typeof SflPlayStatsMetricKeySchema>;
+export type SflPlayStatsSeason = z.infer<typeof SflPlayStatsSeasonSchema>;
+export type SflPlayStatsData = z.infer<typeof SflPlayStatsDataSchema>;

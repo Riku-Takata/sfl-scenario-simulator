@@ -17,6 +17,8 @@ import type {
   PlayerBoutLog,
   PlayerEncyclopediaEntry,
   PlayerSnsLinks,
+  PlayerPlayStyleProfile,
+  PlayerTournamentProfile,
   PositionRecord,
   VsCharDetail,
 } from "./types";
@@ -29,7 +31,9 @@ export function buildPlayerEncyclopedia(
   playerStatsData: PlayerStatsData,
   matchesData: MatchesData,
   _cptMatchupsData?: CptMatchupsTop96Data,
-  sf6TournamentData?: Sf6TournamentMatchupsData
+  sf6TournamentData?: Sf6TournamentMatchupsData,
+  tournamentProfiles: Record<string, PlayerTournamentProfile> = {},
+  playStyles: Record<string, PlayerPlayStyleProfile> = {}
 ): PlayerEncyclopediaEntry[] {
   const sf6Tournaments: Sf6TournamentMatchupsData =
     sf6TournamentData ||
@@ -483,6 +487,8 @@ export function buildPlayerEncyclopedia(
       tournamentClosestMatchups,
       tournamentSummary,
       boutLogs,
+      tournamentProfile: tournamentProfiles[pKey] ?? null,
+      playStyle: playStyles[pKey] ?? null,
     });
   }
 

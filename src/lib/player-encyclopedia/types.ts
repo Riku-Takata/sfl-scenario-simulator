@@ -1,4 +1,10 @@
 import type { DivisionId, Sf6TournamentBout } from "../types";
+import type { PlayerTournamentProfile } from "../startgg/profile";
+
+export type { PlayerTournamentProfile } from "../startgg/profile";
+import type { PlayerPlayStyleProfile } from "../sfl/play-style";
+
+export type { PlayerPlayStyleProfile } from "../sfl/play-style";
 
 export interface PositionRecord {
   entries: number;
@@ -145,4 +151,8 @@ export interface PlayerEncyclopediaEntry {
     tournamentsCount: number;
   };
   boutLogs: PlayerBoutLog[];
+  /** start.gg 直近1年のプレミア大会プロファイル (対応付けが無い選手は null) */
+  tournamentProfile: PlayerTournamentProfile | null;
+  /** SFL公式の試合内プレイ統計から見た傾向 (今季データが無い選手は null) */
+  playStyle: PlayerPlayStyleProfile | null;
 }

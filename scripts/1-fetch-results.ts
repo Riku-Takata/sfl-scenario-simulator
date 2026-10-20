@@ -12,6 +12,7 @@ import type {
   StandingsData,
 } from "../src/lib/types";
 import { calculateStandings } from "../src/lib/simulator";
+import { normalizeSflCharKey } from "../src/lib/characters";
 
 const DEFAULT_API_URL =
   process.env.SFL_API_RESULTS_URL ||
@@ -78,8 +79,8 @@ function extractBouts(slot: CapcomMatchSlot): MatchBoutSummary[] | undefined {
   for (let i = 0; i < count; i++) {
     const homeP = p1[i]; // Capcom API: 1P側がHOMEチーム
     const awayP = p2[i]; // Capcom API: 2P側がAWAYチーム
-    const homeChara = Object.keys(homeP.use_chara || {})[0] || "";
-    const awayChara = Object.keys(awayP.use_chara || {})[0] || "";
+    const homeChara = normalizeSflCharKey(Object.keys(homeP.use_chara || {})[0]);
+    const awayChara = normalizeSflCharKey(Object.keys(awayP.use_chara || {})[0]);
     bouts.push({
       status: homeP.status,
       statusName: homeP.status_name,

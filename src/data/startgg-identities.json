@@ -1,0 +1,294 @@
+{
+  "note": "SFL選手キー → start.gg player id の確定対応表。scripts/startgg/resolve-identities.ts の候補を人が確認して編集する。",
+  "updatedAt": "2026-10-20",
+  "players": {
+    "2bassa": {
+      "startggPlayerId": 3944042,
+      "gamerTag": "2BASSA",
+      "userSlug": "user/d8c5c1e8",
+      "evidence": "tag+team-prefix"
+    },
+    "acqua": {
+      "startggPlayerId": 338696,
+      "gamerTag": "ACQUA",
+      "userSlug": "user/20f90017",
+      "evidence": "tag+team-prefix"
+    },
+    "adelie": {
+      "startggPlayerId": 3577649,
+      "gamerTag": "あでりい",
+      "userSlug": "user/b10fd170",
+      "evidence": "tag+team-prefix"
+    },
+    "akira": {
+      "startggPlayerId": 557482,
+      "gamerTag": "Akira",
+      "userSlug": "user/ea580e86",
+      "evidence": "tag+team-prefix"
+    },
+    "bonchan": {
+      "startggPlayerId": 232824,
+      "gamerTag": "Bonchan",
+      "userSlug": "user/c69131b6",
+      "evidence": "tag+prefix:Red Bull | CR"
+    },
+    "cosa": {
+      "startggPlayerId": 2237431,
+      "gamerTag": "cosa",
+      "userSlug": "user/2e561d93",
+      "evidence": "tag+prefix:SS熊本"
+    },
+    "daigo": {
+      "startggPlayerId": 135910,
+      "gamerTag": "DAIGO",
+      "userSlug": "user/7f5507aa",
+      "evidence": "tag+team-prefix"
+    },
+    "dogura": {
+      "startggPlayerId": 266493,
+      "gamerTag": "Dogura",
+      "userSlug": "user/2464d654",
+      "evidence": "tag+team-prefix"
+    },
+    "fujimura": {
+      "startggPlayerId": 616064,
+      "gamerTag": "Fujimura",
+      "userSlug": "user/d83e268d",
+      "evidence": "tag+team-prefix"
+    },
+    "fuudo": {
+      "startggPlayerId": 565873,
+      "gamerTag": "Fuudo",
+      "userSlug": "user/173c6283",
+      "evidence": "tag+team-prefix"
+    },
+    "gachikun": {
+      "startggPlayerId": 356363,
+      "gamerTag": "gachikun",
+      "userSlug": "user/7fc0306f",
+      "evidence": "tag+team-prefix"
+    },
+    "hibiki": {
+      "startggPlayerId": 1228359,
+      "gamerTag": "Hibiki",
+      "userSlug": "user/362536f6",
+      "evidence": "tag+prefix:SBI"
+    },
+    "higuchi": {
+      "startggPlayerId": 632437,
+      "gamerTag": "Higuchi",
+      "userSlug": "user/fee94c73",
+      "evidence": "tag+team-prefix"
+    },
+    "hikaru": {
+      "startggPlayerId": 1791717,
+      "gamerTag": "Hikaru",
+      "userSlug": "user/4965ba08",
+      "evidence": "tag+team-prefix"
+    },
+    "hinao": {
+      "startggPlayerId": 5091007,
+      "gamerTag": "ひなお/Hinao",
+      "userSlug": "user/1e05762a",
+      "evidence": "participant-search+REJECT-prefix"
+    },
+    "itazan": {
+      "startggPlayerId": 314715,
+      "gamerTag": "Itabashi Zangief",
+      "userSlug": "user/c46d6f76",
+      "evidence": "tag+team-prefix"
+    },
+    "johnny": {
+      "startggPlayerId": 616069,
+      "gamerTag": "Johnny",
+      "userSlug": "user/18f9cd76",
+      "evidence": "tag+team-prefix"
+    },
+    "jr": {
+      "startggPlayerId": 2243649,
+      "gamerTag": "Jr.",
+      "userSlug": "user/126a661a",
+      "evidence": "tag+team-prefix"
+    },
+    "kawano": {
+      "startggPlayerId": 1154814,
+      "gamerTag": "Kawano",
+      "userSlug": "user/84491299",
+      "evidence": "tag+team-prefix"
+    },
+    "kazunoko": {
+      "startggPlayerId": 382483,
+      "gamerTag": "Kazunoko",
+      "userSlug": "user/52cd5765",
+      "evidence": "tag+team-prefix"
+    },
+    "keib": {
+      "startggPlayerId": 633048,
+      "gamerTag": "KEI.B",
+      "userSlug": "user/36b29fd8",
+      "evidence": "tag+team-prefix"
+    },
+    "kincho": {
+      "startggPlayerId": 2615047,
+      "gamerTag": "kincho",
+      "userSlug": "user/c5bc27ca",
+      "evidence": "tag+prefix:SCARZ"
+    },
+    "kobayan": {
+      "startggPlayerId": 1231457,
+      "gamerTag": "kobayan",
+      "userSlug": "user/ef64257e",
+      "evidence": "tag+prefix:SS熊本"
+    },
+    "machabo": {
+      "startggPlayerId": 405023,
+      "gamerTag": "Machabo",
+      "userSlug": "user/acbbf204",
+      "evidence": "tag+prefix:SS熊本"
+    },
+    "mago": {
+      "startggPlayerId": 138015,
+      "gamerTag": "Mago",
+      "userSlug": "user/980ad764",
+      "evidence": "tag+team-prefix"
+    },
+    "mena": {
+      "startggPlayerId": 224650,
+      "gamerTag": "MenaRD",
+      "userSlug": "user/31a13177",
+      "evidence": "tag+prefix:WBG RB"
+    },
+    "mizuha": {
+      "startggPlayerId": 415068,
+      "gamerTag": "Mizuha",
+      "userSlug": "user/ed773e44",
+      "evidence": "tag+team-prefix"
+    },
+    "mocchi": {
+      "startggPlayerId": 567007,
+      "gamerTag": "MOCCHI",
+      "userSlug": "user/5b3a072e",
+      "evidence": "tag+prefix:JOZ"
+    },
+    "moke": {
+      "startggPlayerId": 395486,
+      "gamerTag": "moke",
+      "userSlug": "user/47e6da2a",
+      "evidence": "tag+team-prefix"
+    },
+    "momochi": {
+      "startggPlayerId": 277358,
+      "gamerTag": "Momochi",
+      "userSlug": "user/7b2d35d2",
+      "evidence": "tag+team-prefix"
+    },
+    "nauman": {
+      "startggPlayerId": 567852,
+      "gamerTag": "Nauman",
+      "userSlug": "user/245de7b9",
+      "evidence": "tag+team-prefix"
+    },
+    "otani": {
+      "startggPlayerId": 623094,
+      "gamerTag": "Otani",
+      "userSlug": "user/9a7fe756",
+      "evidence": "tag+prefix:BCT"
+    },
+    "pugera": {
+      "startggPlayerId": 487424,
+      "gamerTag": "pugera",
+      "userSlug": "user/9594efe4",
+      "evidence": "tag+team-prefix"
+    },
+    "raoyamu": {
+      "startggPlayerId": 4438825,
+      "gamerTag": "らおやむ",
+      "userSlug": "user/39f0e566",
+      "evidence": "tag+team-prefix"
+    },
+    "ryukichi": {
+      "startggPlayerId": 2441054,
+      "gamerTag": "Ryukichi",
+      "userSlug": "user/9f36f82b",
+      "evidence": "tag+team-prefix"
+    },
+    "sahara": {
+      "startggPlayerId": 3935651,
+      "gamerTag": "Sahara.",
+      "userSlug": "user/a0062bed",
+      "evidence": "tag+team-prefix"
+    },
+    "sako": {
+      "startggPlayerId": 327575,
+      "gamerTag": "sako",
+      "userSlug": "user/c6bd2580",
+      "evidence": "tag+team-prefix"
+    },
+    "seiya": {
+      "startggPlayerId": 830613,
+      "gamerTag": "Seiya",
+      "userSlug": "user/bf1fa486",
+      "evidence": "tag+team-prefix"
+    },
+    "shuto": {
+      "startggPlayerId": 486860,
+      "gamerTag": "Shuto",
+      "userSlug": "user/b66813f3",
+      "evidence": "tag+prefix:CR/PWS"
+    },
+    "takagi": {
+      "startggPlayerId": 3857845,
+      "gamerTag": "高木",
+      "userSlug": "user/a6f5628d",
+      "evidence": "tag+team-prefix"
+    },
+    "takepi": {
+      "startggPlayerId": 4262345,
+      "gamerTag": "takepi",
+      "userSlug": "user/ab8d7476",
+      "evidence": "tag+team-prefix"
+    },
+    "takeuchi": {
+      "startggPlayerId": 404377,
+      "gamerTag": "John Takeuchi",
+      "userSlug": "user/ec195ece",
+      "evidence": "tag+team-prefix"
+    },
+    "tokido": {
+      "startggPlayerId": 148527,
+      "gamerTag": "Tokido",
+      "userSlug": "user/a4c7c2d4",
+      "evidence": "tag+team-prefix"
+    },
+    "torimeshi": {
+      "startggPlayerId": 1257257,
+      "gamerTag": "Torimeshi",
+      "userSlug": "user/5be8e15c",
+      "evidence": "tag+team-prefix"
+    },
+    "wabiichi": {
+      "startggPlayerId": 3631257,
+      "gamerTag": "Wabiichi",
+      "userSlug": "user/e14bf28c",
+      "evidence": "tag+team-prefix"
+    },
+    "yamaguchi": {
+      "startggPlayerId": 2360463,
+      "gamerTag": "Yamaguchi",
+      "userSlug": "user/6bfc4c78",
+      "evidence": "tag+team-prefix"
+    },
+    "yanai": {
+      "startggPlayerId": 1228620,
+      "gamerTag": "Yanai",
+      "userSlug": "user/0b55a51c",
+      "evidence": "tag+team-prefix"
+    },
+    "yas": {
+      "startggPlayerId": 4373839,
+      "gamerTag": "YAS",
+      "userSlug": "user/fabefccb",
+      "evidence": "tag+team-prefix"
+    }
+  }
+}

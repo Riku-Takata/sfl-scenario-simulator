@@ -91,7 +91,7 @@ export function predictBoutWinRate(
     h2hAndHomeRate: h2hPct,
     expectedWinRateA: totalPct,
     isHomeCounterPick: isPlayerAHome,
-    rationale: `CPT Top96相性(${charA.toUpperCase()} vs ${charB.toUpperCase()}): ${macroPct}% / ${nameA}の対${charB.toUpperCase()}熟練度: ${vsCharPct}% / H2H・Elo・${isPlayerAHome ? "HOME後出し被せ補正" : "AWAY先出し"}: ${h2hPct}% → 総合期待勝率 ${totalPct}%`,
+    rationale: `キャラ相性(${charA.toUpperCase()} vs ${charB.toUpperCase()}): ${macroPct}% / ${nameA}の対${charB.toUpperCase()}熟練度: ${vsCharPct}% / H2H・Elo・${isPlayerAHome ? "HOME後出し被せ補正" : "AWAY先出し"}: ${h2hPct}% → 総合期待勝率 ${totalPct}%`,
   };
 }
 
@@ -239,7 +239,7 @@ export function predictTeamMatchOutcomeDistribution(
     h2hAndHomeRate: Math.round((100 - b.h2hAndHomeRate) * 10) / 10,
     expectedWinRateA: Math.round((100 - b.expectedWinRateA) * 10) / 10,
     isHomeCounterPick: false,
-    rationale: `CPT Top96相性(${b.charB} vs ${b.charA}): ${Math.round((100 - b.macroMatchupTop96) * 10) / 10}% / AWAY先出し時の対${b.playerAName}予測勝率: ${Math.round((100 - b.expectedWinRateA) * 10) / 10}%`,
+    rationale: `キャラ相性(${b.charB} vs ${b.charA}): ${Math.round((100 - b.macroMatchupTop96) * 10) / 10}% / AWAY先出し時の対${b.playerAName}予測勝率: ${Math.round((100 - b.expectedWinRateA) * 10) / 10}%`,
   }));
 
   const homeOrderRecommendation: NextMatchOrderRecommendation = {
@@ -267,7 +267,7 @@ export function predictTeamMatchOutcomeDistribution(
     expectedTeamPoints: Math.round(expectedAwayPts * 10) / 10,
     mostLikelyScore: `${awayMeta?.shortName ?? match.away} ${mostLikelyOut.awayPoint} - ${mostLikelyOut.homePoint} ${homeMeta?.shortName ?? match.home}`,
     recommendedLineup: awayLineup,
-    tacticalSummary: `AWAY（先出し）のハンデを克服するため、CPT Top96相性で不利がつきにくい${awayLineup[2].playerAName}(${awayLineup[2].charA})を大将に据え、先鋒・中堅で最低1勝をもぎ取って大将戦または延長戦へ持ち込むプラン（チーム期待勝率${awayWinProb}% / 期待獲得 ${Math.round(expectedAwayPts * 10) / 10}pt）が最有力です。`,
+    tacticalSummary: `AWAY（先出し）のハンデを克服するため、キャラ相性で不利がつきにくい${awayLineup[2].playerAName}(${awayLineup[2].charA})を大将に据え、先鋒・中堅で最低1勝をもぎ取って大将戦または延長戦へ持ち込むプラン（チーム期待勝率${awayWinProb}% / 期待獲得 ${Math.round(expectedAwayPts * 10) / 10}pt）が最有力です。`,
   };
 
   return {
