@@ -11,7 +11,7 @@
     "build": "astro build",
     "preview": "astro preview --port 3000 --host 0.0.0.0",
     "start": "node scripts/serve-static.mjs",
-    "test": "node --import tsx --test tests/simulator.test.ts tests/match-recap.test.ts tests/startgg.test.ts tests/sfl-play-style.test.ts tests/buckler.test.ts tests/encyclopedia-v2.test.ts tests/model.test.ts",
+    "test": "node --import tsx --test tests/simulator.test.ts tests/match-recap.test.ts tests/startgg.test.ts tests/sfl-play-style.test.ts tests/buckler.test.ts tests/encyclopedia-v2.test.ts tests/model.test.ts tests/youtube-archive.test.ts",
     "pipeline": "tsx scripts/run-pipeline.ts",
     "pipeline:force": "tsx scripts/run-pipeline.ts --force",
     "fetch-startgg": "tsx scripts/0a-fetch-startgg.ts",

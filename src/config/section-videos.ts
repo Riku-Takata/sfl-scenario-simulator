@@ -1,5 +1,7 @@
 /**
- * 各節の公式YouTubeアーカイブ (CAPCOM公式APIの links.live.url が空のため手動で登録)。
+ * 各節の公式YouTubeアーカイブの手動指定。
+ * 通常は公式チャンネルの配信一覧から自動検出する (scripts/recap/youtube-archive.ts) ので登録不要。
+ * 自動検出が誤る・取れない節だけここに書けば、検出結果より優先される。
  * Bout区間は概要欄の公式チャプターから自動取得する。
  */
 export const SECTION_VIDEO_IDS: Record<string, string> = {
