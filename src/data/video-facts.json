@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T18:48:28.805Z",
+  "updatedAt": "2026-10-20T19:56:30.619Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -1931,6 +1931,33 @@
           "keyPoints": [
             "最終第5ゲーム第3ラウンドで、Jr.がCAを決めてKOし勝利を収めた。"
           ]
+        }
+      ]
+    },
+    "div-f-sec4-m3": {
+      "inputHash": "4e6ca753a27f6f01",
+      "model": "gemini-3.8-flash",
+      "generatedAt": "2026-10-20T19:56:30.616Z",
+      "matchHeadline": "名古屋NTPOJAが30-10でVARRELに勝利",
+      "matchSummary": "VARRELと名古屋NTPOJAの対戦は、先鋒戦でSeiya、大将戦でらおやむが勝利を収めた名古屋NTPOJAが30-10で試合を制した。VARRELは中堅戦でわびいちが勝利したものの及ばなかった。",
+      "bouts": [
+        {
+          "boutId": "div-f-sec4-m3-b0",
+          "summary": "Seiyaが水派との対戦を2-1で制して勝利した。",
+          "keyPoints": [
+            "Seiyaは第1ゲームおよび第3ゲームにおいて、水派の攻めに対空技を的確に合わせて迎撃した。",
+            "Seiyaは第3ゲーム終盤にSA3（クリティカルアーツ）を決めて勝利した。"
+          ]
+        },
+        {
+          "boutId": "div-f-sec4-m3-b1",
+          "summary": "わびいちが大谷に2-0のストレートで勝利した。",
+          "keyPoints": []
+        },
+        {
+          "boutId": "div-f-sec4-m3-b2",
+          "summary": "らおやむがときどを3-1で下し、大将戦を制した。",
+          "keyPoints": []
         }
       ]
     }
@@ -7661,7 +7688,5 @@
       ]
     }
   },
-  "pendingNarrations": [
-    "div-f-sec4-m3"
-  ]
+  "pendingNarrations": []
 }

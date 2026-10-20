@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T18:47:31.415Z",
+  "updatedAt": "2026-10-20T19:55:39.845Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 4,
@@ -1447,8 +1447,8 @@
         "awayPoint": 10,
         "winner": "home",
         "isTiebreaker": false,
-        "matchHeadline": "名古屋NTPOJAが30-10で勝利",
-        "matchSummary": "第3試合【VARREL vs 名古屋NTPOJA】は10-30で名古屋NTPOJAの勝利。大将戦はらおやむ選手が制した。",
+        "matchHeadline": "名古屋NTPOJAが30-10でVARRELに勝利",
+        "matchSummary": "VARRELと名古屋NTPOJAの対戦は、先鋒戦でSeiya、大将戦でらおやむが勝利を収めた名古屋NTPOJAが30-10で試合を制した。VARRELは中堅戦でわびいちが勝利したものの及ばなかった。",
         "bouts": [
           {
             "status": 0,
@@ -1469,12 +1469,11 @@
               "Game 3: [0-2] Seiya選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
+              "source": "gemini-video",
               "summary": "Seiya選手（春麗）が水派選手（キャミィ）を2-1で下した。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームSeiya→第2ゲーム水派→第3ゲームSeiya",
-                "最終ゲームまでもつれたフルセットをSeiya選手が制した。",
-                "第2ゲームは水派選手が1ラウンド目を落としてから逆転。"
+                "Seiyaは第1ゲームおよび第3ゲームにおいて、水派の攻めに対空技を的確に合わせて迎撃した。",
+                "Seiyaは第3ゲーム終盤にSA3（クリティカルアーツ）を決めて勝利した。"
               ]
             },
             "games": [
@@ -1666,7 +1665,7 @@
             "videoStatus": "complete"
           }
         ],
-        "narrationStatus": "pending"
+        "narrationStatus": "complete"
       }
     ]
   },
