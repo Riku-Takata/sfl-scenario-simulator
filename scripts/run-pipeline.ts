@@ -1,6 +1,7 @@
 import { spawnSync } from "node:child_process";
 import { fetchStartggPremierResults } from "./0a-fetch-startgg";
 import { fetchSflPlayStats } from "./0b-fetch-sfl-play-stats";
+import { fetchSflHistory } from "./eval/fetch-sfl-history";
 import { fetchAndBuildCptData } from "./0-fetch-cpt-data";
 import { fetchAndSaveResults } from "./1-fetch-results";
 import { calculateAndSaveScenarios } from "./2-calc-scenarios";
@@ -42,6 +43,10 @@ async function main() {
     // SFL公式の試合内プレイ統計 (失敗しても既存データで続行)
     await fetchSflPlayStats().catch((err) => {
       console.warn("[Step 0b] SFL play stats fetch failed, using cached data:", err);
+    });
+    // 予測モデル v2 の学習用ボウト履歴 (今季分は Step 1 の結果から作り直す)
+    await fetchSflHistory().catch((err) => {
+      console.warn("[Step 0c] SFL bout history update failed, using cached data:", err);
     });
     await fetchAndBuildCptData();
     calculateAndSaveScenarios(10000);

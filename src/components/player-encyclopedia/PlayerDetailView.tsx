@@ -4,6 +4,9 @@ import { PlayerDetailBoutLogs } from "./PlayerDetailBoutLogs";
 import { PlayerDetailHeader } from "./PlayerDetailHeader";
 import { PlayerDetailStats } from "./PlayerDetailStats";
 import { PlayerDetailPlayStyle } from "./PlayerDetailPlayStyle";
+import { PlayerDetailRanked } from "./PlayerDetailRanked";
+import { PlayerDetailCommentary } from "./PlayerDetailCommentary";
+import { PlayerDetailMatchData } from "./PlayerDetailMatchData";
 import { PlayerDetailTournamentProfile } from "./PlayerDetailTournamentProfile";
 // import { VsCharCard } from "./VsCharCard";
 // import { VsCharDetailModal } from "./VsCharDetailModal";
@@ -53,12 +56,26 @@ export function PlayerDetailView({
         {/* 6角形パラメーター ＆ ポジション別起用実績 */}
         <PlayerDetailStats selectedPlayer={selectedPlayer} />
 
+        {/* 追加データに基づく選手特徴の解説 */}
+        <PlayerDetailCommentary name={selectedPlayer.name} commentary={selectedPlayer.commentary} />
+
         {/* SFL公式の試合内プレイ統計から見た傾向 */}
         <PlayerDetailPlayStyle playStyle={selectedPlayer.playStyle} />
+
+        {/* Buckler (ランクマ) のキャラ別成績・活動量・行動傾向 */}
+        <PlayerDetailRanked ranked={selectedPlayer.rankedProfile} />
 
         {/* start.gg 直近1年のプレミア大会プロファイル */}
         <PlayerDetailTournamentProfile
           profile={selectedPlayer.tournamentProfile}
+          players={players}
+          onSelectPlayer={onSelectPlayer}
+        />
+
+        {/* 取得した対戦データの明細 (start.gg セット・ランクマ直近戦) */}
+        <PlayerDetailMatchData
+          playerKey={selectedPlayer.playerKey}
+          ranked={selectedPlayer.rankedProfile}
           players={players}
           onSelectPlayer={onSelectPlayer}
         />

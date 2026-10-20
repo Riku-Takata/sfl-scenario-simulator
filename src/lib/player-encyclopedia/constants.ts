@@ -5,6 +5,8 @@ export const CHAR_NAME_JP_MAP: Record<string, string> = {
   // 旧データ・表記揺れ
   honda: "E.本田",
   ibuki: "いぶき",
+  // Buckler にのみ存在する新キャラ (SFLの31キャラ定義には未収録)
+  arjun: "アルジュン",
 };
 
 export const ALL_SF6_CHARS = SF6_CHARACTER_KEYS;

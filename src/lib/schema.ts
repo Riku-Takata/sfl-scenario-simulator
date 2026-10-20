@@ -794,3 +794,82 @@ export const SflPlayStatsDataSchema = z.object({
   source: z.string(),
   seasons: z.record(z.string(), SflPlayStatsSeasonSchema),
 });
+
+// ============================================================================
+// Buckler (ランクマ) 集計スキーマ — 自宅サーバーで集計し、公開するのはこの集計のみ
+// ============================================================================
+
+const BucklerCharCountSchema = z.object({ char: z.string(), n: z.number(), w: z.number() });
+
+const BucklerActivityWindowSchema = z.object({
+  matches: z.number(),
+  wins: z.number(),
+  activeDays: z.number(),
+  byChar: z.array(BucklerCharCountSchema),
+  byMode: z.object({ rank: z.number(), casual: z.number(), hub: z.number(), custom: z.number() }),
+});
+
+export const BucklerPlayerProfileSchema = z.object({
+  sflKey: z.string(),
+  asOf: z.string(),
+  seasonId: z.number().nullable(),
+  mainChar: z.string().nullable(),
+  characters: z.array(
+    z.object({
+      char: z.string(),
+      leagueRank: z.number().nullable(),
+      lp: z.number().nullable(),
+      mr: z.number().nullable(),
+      mrRanking: z.number().nullable(),
+      battles: z.number(),
+      wins: z.number(),
+    })
+  ),
+  last7Days: BucklerActivityWindowSchema,
+  last30Days: BucklerActivityWindowSchema,
+  mrTrend: z.array(z.object({ date: z.string(), mr: z.number() })),
+  risingChars: z.array(
+    z.object({
+      char: z.string(),
+      recentShare: z.number(),
+      priorShare: z.number(),
+      recentMatches: z.number(),
+    })
+  ),
+  mainVsChar: z.array(BucklerCharCountSchema),
+  battleStats: z.record(z.string(), z.number()),
+  recentMatches: z.array(
+    z.object({
+      t: z.number(),
+      mode: z.string(),
+      myChar: z.string(),
+      myMr: z.number().nullable(),
+      oppChar: z.string(),
+      oppMr: z.number().nullable(),
+      won: z.boolean().nullable(),
+      roundsWon: z.number(),
+      roundsLost: z.number(),
+    })
+  ),
+  storedMatches: z.number(),
+  storedSince: z.string().nullable(),
+});
+
+export const BucklerProfilesDataSchema = z.object({
+  updatedAt: z.string(),
+  source: z.string(),
+  players: z.record(z.string(), BucklerPlayerProfileSchema),
+});
+
+export const BucklerDiaDataSchema = z.object({
+  updatedAt: z.string(),
+  source: z.string(),
+  /** YYYYMM */
+  month: z.string(),
+  variant: z.string(),
+  /** Buckler のリーグ帯キー */
+  block: z.string(),
+  chars: z.array(z.string()),
+  /** 行キャラ視点の勝率 (0..1)。null はデータなし */
+  matrix: z.array(z.array(z.number().nullable())),
+});

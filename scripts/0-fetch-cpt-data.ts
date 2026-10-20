@@ -13,6 +13,7 @@ import {
   PlayerStatsDataSchema,
   StartggIdentitiesDataSchema,
   StartggPremierResultsDataSchema,
+  BucklerDiaDataSchema,
 } from "../src/lib/schema";
 import type {
   CptCharMatchupCell,
@@ -29,6 +30,7 @@ import {
   buildTournamentProfiles,
   type PlayerTournamentProfile,
 } from "../src/lib/startgg/profile";
+import { buildProductionModel } from "../src/lib/model/production";
 
 const DATA_DIR = path.resolve(process.cwd(), "src/data");
 const MASTER_PLAYERS_FILE = path.join(DATA_DIR, "master-players.json");
@@ -37,6 +39,9 @@ const PLAYER_STATS_FILE = path.join(DATA_DIR, "player-stats.json");
 const SEED_CAPCOM_FILE = path.join(DATA_DIR, "raw-capcom-seed.json");
 const STARTGG_RESULTS_FILE = path.join(DATA_DIR, "startgg-premier-results.json");
 const STARTGG_IDENTITIES_FILE = path.join(DATA_DIR, "startgg-identities.json");
+const BUCKLER_DIA_FILE = path.join(DATA_DIR, "buckler-dia.json");
+const SFL_HISTORY_FILE = path.join(DATA_DIR, "sfl-bout-history.json");
+const MODEL_V2_FILE = path.join(DATA_DIR, "model-v2.json");
 
 export const SF6_CHARACTERS: Array<{ key: string; name: string }> = ALL_CHARACTERS.map(
   ({ key, name }) => ({ key, name })
@@ -113,9 +118,9 @@ export function bayesianSmooth(
 }
 
 /**
- * CPT Top 96 競技シーンのキャラ相性傾向シード（弾キャラ vs コマ投げ、長リーチ vs 突進等）
+ * 手設定のキャラ相性傾向（弾キャラ vs コマ投げ、長リーチ vs 突進等）
  */
-function getCompetitiveArchetypeBias(charA: string, charB: string): number {
+export function getCompetitiveArchetypeBias(charA: string, charB: string): number {
   if (charA === charB) return 0.5;
   const advantages: Record<string, Record<string, number>> = {
     guile: { zangief: 0.57, lily: 0.54, ryu: 0.53, jamie: 0.55, jp: 0.45, blanka: 0.47, cammy: 0.46 },
@@ -208,6 +213,26 @@ function loadStartggContext(): StartggContext | null {
 }
 
 /**
+ * 自宅サーバーが集計した Capcom 公式ダイアグラム (src/data/buckler-dia.json) を読み込む
+ */
+function loadOfficialDia(): {
+  lookup: ((a: string, b: string) => number | null) | null;
+  label: string | null;
+} {
+  if (!fs.existsSync(BUCKLER_DIA_FILE)) return { lookup: null, label: null };
+  const dia = BucklerDiaDataSchema.parse(JSON.parse(fs.readFileSync(BUCKLER_DIA_FILE, "utf8")));
+  const index = new Map(dia.chars.map((c, i) => [c, i]));
+  return {
+    lookup: (a, b) => {
+      const i = index.get(a);
+      const j = index.get(b);
+      return i == null || j == null ? null : dia.matrix[i]?.[j] ?? null;
+    },
+    label: `Capcom公式ダイアグラム (${dia.month}, Master帯)`,
+  };
+}
+
+/**
  * start.gg パフォーマンスレーティングを手設定Eloの尺度に合わせて事前Eloと合成
  * (シード由来の相手強度は絶対値に意味がないため、SFL選手全体の平均を手設定Eloの平均に揃える)
  */
@@ -237,6 +262,7 @@ export async function fetchAndBuildCptData(): Promise<{
   fs.mkdirSync(DATA_DIR, { recursive: true });
 
   const startgg = loadStartggContext();
+  const { lookup: officialDia, label: officialDiaLabel } = loadOfficialDia();
   const calibrateElo = startgg
     ? buildEloCalibration(startgg.profiles)
     : (_key: string, prior: number) => prior;
@@ -322,9 +348,11 @@ export async function fetchAndBuildCptData(): Promise<{
         continue;
       }
 
-      const baseRate = getCompetitiveArchetypeBias(cA.key, cB.key);
-      // 手設定の相性傾向は40ゲーム相当の事前分布として扱う
-      const priorSampleGames = 40;
+      // 事前分布: Capcom 公式ダイアグラム (Master帯・母数が大きいため120ゲーム相当) があれば優先し、
+      // 無い組み合わせは手設定の相性傾向 (40ゲーム相当)
+      const official = officialDia?.(cA.key, cB.key) ?? null;
+      const baseRate = official ?? getCompetitiveArchetypeBias(cA.key, cB.key);
+      const priorSampleGames = official != null ? 120 : 40;
       const sflObserved = sflCharWins[cA.key]?.[cB.key] || { w: 0, n: 0 };
       const sggObserved = sggCharWins[cA.key]?.[cB.key] || { w: 0, n: 0 };
       const rawTotal = priorSampleGames + sflObserved.n * 3 + sggObserved.n;
@@ -348,9 +376,15 @@ export async function fetchAndBuildCptData(): Promise<{
   const nowIso = new Date().toISOString();
   const cptMatchups: CptMatchupsTop96Data = CptMatchupsTop96DataSchema.parse({
     updatedAt: nowIso,
-    source: startgg
-      ? `手設定の相性事前分布 + SFL 2026 公式戦 + start.gg プレミア大会 (${startgg.windowStart}〜, キャラ登録${startgg.charGames.length}ゲーム)`
-      : "手設定の相性事前分布 + SFL 2026 公式戦",
+    source: [
+      officialDiaLabel ?? "手設定の相性事前分布",
+      "SFL 2026 公式戦",
+      startgg
+        ? `start.gg プレミア大会 (${startgg.windowStart}〜, キャラ登録${startgg.charGames.length}ゲーム)`
+        : null,
+    ]
+      .filter(Boolean)
+      .join(" + "),
     topPlacementThreshold: 96,
     bayesianPriorAlpha: PRIOR_ALPHA,
     characters: SF6_CHARACTERS,
@@ -629,6 +663,28 @@ export async function fetchAndBuildCptData(): Promise<{
   console.log(
     `[Step 0] Validated with Zod & saved: master-players.json (${masterPlayers.totalPlayers} players), cpt-matchups-top96.json (${SF6_CHARACTERS.length}×${SF6_CHARACTERS.length} matrix), player-stats.json.`
   );
+
+  // 予測モデル v2: SFL 全履歴 + start.gg から実力値を算出し、パラメータを学習し直す
+  if (fs.existsSync(SFL_HISTORY_FILE)) {
+    const history = JSON.parse(fs.readFileSync(SFL_HISTORY_FILE, "utf8"));
+    const results = fs.existsSync(STARTGG_RESULTS_FILE)
+      ? StartggPremierResultsDataSchema.parse(JSON.parse(fs.readFileSync(STARTGG_RESULTS_FILE, "utf8")))
+      : null;
+    const identities = fs.existsSync(STARTGG_IDENTITIES_FILE)
+      ? StartggIdentitiesDataSchema.parse(JSON.parse(fs.readFileSync(STARTGG_IDENTITIES_FILE, "utf8")))
+      : null;
+    const model = buildProductionModel(
+      history.bouts,
+      results,
+      identities,
+      (a, b) => officialDia?.(a, b) ?? getCompetitiveArchetypeBias(a, b),
+      Object.keys(playerStatsMap)
+    );
+    fs.writeFileSync(MODEL_V2_FILE, JSON.stringify(model, null, 2) + "\n", "utf8");
+    console.log(
+      `[Step 0] Saved model-v2.json (trained on ${model.trainBouts} SFL bouts; rating ${model.params.rating.toFixed(3)}, matchup ${model.params.matchup.toFixed(3)}, home ${model.params.home.toFixed(3)}).`
+    );
+  }
 
   return { masterPlayers, cptMatchups, playerStats };
 }

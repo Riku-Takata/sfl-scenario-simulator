@@ -11,7 +11,7 @@
     "build": "astro build",
     "preview": "astro preview --port 3000 --host 0.0.0.0",
     "start": "node scripts/serve-static.mjs",
-    "test": "node --import tsx --test tests/simulator.test.ts tests/match-recap.test.ts tests/startgg.test.ts tests/sfl-play-style.test.ts",
+    "test": "node --import tsx --test tests/simulator.test.ts tests/match-recap.test.ts tests/startgg.test.ts tests/sfl-play-style.test.ts tests/buckler.test.ts tests/encyclopedia-v2.test.ts tests/model.test.ts",
     "pipeline": "tsx scripts/run-pipeline.ts",
     "pipeline:force": "tsx scripts/run-pipeline.ts --force",
     "fetch-startgg": "tsx scripts/0a-fetch-startgg.ts",
@@ -22,7 +22,10 @@
     "calc-scenarios": "tsx scripts/2-calc-scenarios.ts",
     "generate-narratives": "tsx scripts/3-generate-narratives.ts",
     "generate-recaps": "tsx scripts/4-generate-match-recaps.ts",
-    "generate-tournaments": "tsx scripts/generate-sf6-tournaments.ts"
+    "generate-tournaments": "tsx scripts/generate-sf6-tournaments.ts",
+    "buckler:resolve-cfn": "tsx scripts/buckler/resolve-cfn-ids.ts",
+    "buckler:sync": "tsx scripts/buckler/sync.ts",
+    "buckler:aggregate": "tsx scripts/buckler/aggregate.ts"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.1",

@@ -11,8 +11,10 @@
    - すべてのJSONデータ（試合結果・順位表・選手マスタ・キャラ相性行列・start.gg プレミア大会実戦・選手戦績・シナリオ推計）を **`src/lib/schema.ts` の Zod スキーマ** でパイプライン生成時およびビルド時に厳密検証します。
    - **Vercel** へそのままゼロコンフィグで静的デプロイ可能でありつつ、**HomeServer (`D:\HomeServer`)** の Docker Compose (`normal` プロファイル, `127.0.0.1:3002`) でも軽量Node静的サーバー (`scripts/serve-static.mjs`) として常時稼働します。
 
-2. **キャラ相性 × 選手対キャラ戦績 × H2H・Elo 勝敗予測エンジン (`src/lib/predictor.ts`)**
-   - **① マクロ相性 ($\text{Matchup}(X, Y)$)**: 手設定の相性傾向（40ゲーム相当の事前分布）に、SFL公式戦と start.gg プレミア大会でキャラが登録されたゲームを加えてベイズ平滑化（$\alpha = 20, p_0 = 0.50$）した $28 \times 28$ キャラ相性マトリクス (`src/data/cpt-matchups-top96.json`。ファイル名は互換のため据え置き)。
+2. **勝敗予測エンジン (`src/lib/predictor.ts`)**
+   - **v2（既定）**: 1ゲーム勝率を `logit p = a·実力差 + b·logit(キャラ相性) ± c(HOME/AWAY)` で出し、大将戦は3本先取・それ以外は2本先取でボウト勝率に換算します。実力値は SFL 2025・2026 と start.gg プレミア大会の全結果から時系列で推定し、パラメータも Step 0 が毎回学習し直します（`src/data/model-v2.json`）。設計は [docs/prediction-model-v2.md](docs/prediction-model-v2.md)、検証結果は [docs/model-eval-report.md](docs/model-eval-report.md)（`npx tsx scripts/eval/backtest.ts` / `backtest-team.ts` で再実行）。
+   - 以下は v1（実力値が無い選手のフォールバック）。
+   - **① マクロ相性 ($\text{Matchup}(X, Y)$)**: 公式ダイアグラム（Buckler 取得時）または手設定の相性傾向を事前分布に、SFL公式戦と start.gg プレミア大会でキャラが登録されたゲームを加えてベイズ平滑化（$\alpha = 20, p_0 = 0.50$）した 31×31 キャラ相性マトリクス (`src/data/cpt-matchups-top96.json`。ファイル名は互換のため据え置き)。
    - **② 選手固有の対キャラ熟練度 ($\text{PlayerVsChar}(A, Y)_{\text{All}}$)**: SFL公式APIの選手別 `vs_char` / `use_char` 戦績と start.gg の対キャラ実戦を統合した全48選手の対キャラデータ (`src/data/player-stats.json`)。
    - **③ 直接対決・Elo・HOME後出し被せ補正 ($\text{H2H}(A, B)$)**: SFL公式戦と start.gg プレミア大会での選手間の直接対決・Eloレーティング（手設定の事前値を start.gg のパフォーマンスレーティングで更新）・SFL特有の「HOME側（後出しカウンターピック）アドバンテージ」を統合。
    - これらを重み付け合算（$w_1 = 0.40, w_2 = 0.35, w_3 = 0.25$）し、未消化カードの先鋒(10pt)・中堅(10pt)・大将(20pt)・延長(10pt)の最適被せオーダーと8通りのスコア確率分布を算出してモンテカルロ5,000回試行へ反映します。
@@ -104,3 +106,24 @@ npm.cmd run build
 - **指標（18項目）**: ドライブラッシュ（生／キャンセル）、ドライブインパクト（使用／成功／返し／パリィ受け）、ドライブパリィ、ジャストパリィ（暗転／飛び道具）、ドライブリバーサル、OD技、ゲージ使用本数、バーンアウト、対空・投げ抜け・無敵技暴れの成功率、HOME/AWAY勝率。列の意味は公式サイトの統計定義から確認したもので、2025・2026シーズンで同じ並びです。2024シーズン以前は列定義が公開されていないため対象外です。
 - **プロファイル**（`src/lib/sfl/play-style.ts`）: 回数系は、stats の集計時点の節までに出場したバトル数で割って1バトルあたりに換算します。6バトル以上出場した選手の中で順位を付け、上位/下位20%の項目を傾向タグにします。昨季と比べて順位が大きく動いた項目も表示します。
 - **キャラ定義**: `src/lib/characters.ts` が唯一の定義元です（公式の31キャラ）。SFL公式のキー表記の揺れ（`deejay`、`ken(m)` など）は `normalizeSflCharKey` で吸収します。
+
+---
+
+## Buckler (ランクマ) 連携 — 自宅サーバーのみ
+
+Buckler's Boot Camp の非公開 Web データルートを、オーナー自身のログインセッション（Cookie）で読み取ります。公式に公開された API ではないため、Capcom 側の変更で動かなくなる可能性があります。
+
+- **実行場所**: 自宅サーバー（`D:\HomeServer\scripts\update-sfl-buckler.ps1`）。GitHub Actions では実行しません（Cookie を置かない・クラウドからのアクセスは弾かれやすいため）。
+- **選手の特定**: CFN ID は start.gg のオンライン大会の参加登録（`connectedAccounts.capcom`）から解決します（`npm.cmd run buckler:resolve-cfn`）。名前検索は似た名前のアカウントが大量に混ざるため使いません。
+- **取得内容**: プロフィール（キャラ別 LP/MR・今季のキャラ別／対キャラ別勝率・行動傾向）の日次スナップショット、対戦ログ、Capcom 公式ダイアグラム（Master 帯・月次）。
+- **蓄積**: 対戦ログは公開範囲が直近約100戦のため、毎日前回以降の分だけを取得して `D:\HomeServer\data\app-data\sfl-buckler` に追記します。相手プレイヤーの名前・ID は保存しません（相手が SFL 選手の場合のみ選手キーを記録）。
+- **負荷への配慮**: 常に1並列で、間隔は日次4〜7秒・初回一括6〜10秒（ランダムな揺らぎ付き）、1回あたりの上限は日次400件・一括1,200件です。429/5xx は長めに待って3回まで再試行し、続けばその日は中止します。認証切れは即中止します（終了コード 2）。
+- **公開**: 集計結果（`src/data/buckler-profiles.json`・`src/data/buckler-dia.json`）だけを、`data\app-data\sfl-buckler\publish-repo` の専用クローンから push します。生データ・CFN ID・Cookie はリポジトリに入りません。
+- **予測への反映**: `buckler-dia.json` がある場合、キャラ相性の事前分布を手設定値から公式ダイアグラムに置き換えます。
+
+```powershell
+# 初回: 公開されている範囲を一括取得 (約70分)
+.\scripts\update-sfl-buckler.ps1 -Mode backfill
+# 毎日: 前回以降の差分 (タスクスケジューラから実行)
+.\scripts\update-sfl-buckler.ps1
+```

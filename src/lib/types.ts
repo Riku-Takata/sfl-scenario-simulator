@@ -56,6 +56,9 @@ import {
   SflPlayStatsMetricKeySchema,
   SflPlayStatsSeasonSchema,
   SflPlayStatsDataSchema,
+  BucklerPlayerProfileSchema,
+  BucklerProfilesDataSchema,
+  BucklerDiaDataSchema,
 } from "./schema";
 
 export type DivisionId = z.infer<typeof DivisionIdSchema>;
@@ -129,3 +132,6 @@ export type StartggPremierResultsData = z.infer<typeof StartggPremierResultsData
 export type SflPlayStatsMetricKey = z.infer<typeof SflPlayStatsMetricKeySchema>;
 export type SflPlayStatsSeason = z.infer<typeof SflPlayStatsSeasonSchema>;
 export type SflPlayStatsData = z.infer<typeof SflPlayStatsDataSchema>;
+export type BucklerPlayerProfileData = z.infer<typeof BucklerPlayerProfileSchema>;
+export type BucklerProfilesData = z.infer<typeof BucklerProfilesDataSchema>;
+export type BucklerDiaData = z.infer<typeof BucklerDiaDataSchema>;

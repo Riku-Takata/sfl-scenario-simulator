@@ -60,5 +60,7 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "chore(data): auto-update SFL 2026 match results and CPT scenarios"
+            # 自宅サーバーの Buckler 集計 (src/data/buckler-*.json) の push と競合しないよう取り込んでから push
+            git pull --rebase origin main
             git push
           fi

@@ -5,6 +5,12 @@ export type { PlayerTournamentProfile } from "../startgg/profile";
 import type { PlayerPlayStyleProfile } from "../sfl/play-style";
 
 export type { PlayerPlayStyleProfile } from "../sfl/play-style";
+import type { BucklerPlayerProfile } from "../buckler/aggregate";
+
+export type { BucklerPlayerProfile } from "../buckler/aggregate";
+import type { CommentarySection } from "./commentary";
+
+export type { CommentarySection } from "./commentary";
 
 export interface PositionRecord {
   entries: number;
@@ -155,4 +161,8 @@ export interface PlayerEncyclopediaEntry {
   tournamentProfile: PlayerTournamentProfile | null;
   /** SFL公式の試合内プレイ統計から見た傾向 (今季データが無い選手は null) */
   playStyle: PlayerPlayStyleProfile | null;
+  /** Buckler (ランクマ) の集計 (未取得の選手は null) */
+  rankedProfile: BucklerPlayerProfile | null;
+  /** 追加データに基づく選手特徴の解説 */
+  commentary: CommentarySection[];
 }
