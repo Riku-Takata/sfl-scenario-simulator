@@ -23,7 +23,7 @@ const isRecap = pathname.startsWith("/recap");
 const isAbout = pathname.startsWith("/about");
 const isHome = !isSimulator && !isPlayers && !isRecap && !isAbout;
 
-const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, "") : "https://sfl-scenario-simulator.vercel.app";
+const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, "") : "https://sfl-simulator.vercel.app";
 const canonicalURL = new URL(pathname, siteUrl).href;
 const ogpImageURL = new URL(image, siteUrl).href;
 

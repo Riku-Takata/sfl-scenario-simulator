@@ -15,6 +15,11 @@ import {
   dedupeAnalyses,
 } from "../scripts/recap/narration";
 import { toGameDetails } from "../scripts/4-generate-match-recaps";
+import {
+  buildVerifiedGames,
+  buildVerifiedTags,
+  normalizeVisualRun,
+} from "../scripts/recap/visual-facts";
 import { MatchRecapsDataSchema } from "../src/lib/schema";
 
 const DESCRIPTION = `▼タイムスタンプ
@@ -168,4 +173,80 @@ test("vacuous key points that only restate the matchup are dropped", () => {
   assert.equal(isVacuousKeyPoint("ヤマグチとテリーの対戦となった。"), true);
   assert.equal(isVacuousKeyPoint("ひぐちが勝利した。"), true);
   assert.equal(isVacuousKeyPoint("ACQUAはジャストパリィを成功させて主導権を維持した。"), false);
+});
+
+test("visual facts are used only for games whose round winners match the official log", () => {
+  // 公式: 第1ゲーム A,A / 第2ゲーム A,B,B
+  const official = [
+    { winner: "A" as const, rounds: ["A", "A"] as Array<"A" | "B"> },
+    { winner: "B" as const, rounds: ["A", "B", "B"] as Array<"A" | "B"> },
+  ];
+  const good = (model: string, finish2: string) =>
+    normalizeVisualRun(
+      {
+        games: [
+          { rounds: [{ winner: "A", finish: "NORMAL" }, { winner: "A", finish: "SA3", perfect: true }], burnout: ["B"] },
+          { rounds: [{ winner: "A", finish: "CA" }, { winner: "B", finish: "DI" }, { winner: "B", finish: finish2 }], burnout: [] },
+        ],
+        tags: [{ id: "just_parry", side: "A" }, { id: "anti_air", side: "B" }],
+      },
+      official,
+      model
+    );
+  const run1 = good("m1", "SA2");
+  const run2 = good("m2", "SA1");
+  // 第2ゲームの勝者を取り違えた解析（照合で第2ゲームは除外）
+  const wrong = normalizeVisualRun(
+    {
+      games: [
+        { rounds: [{ winner: "A", finish: "TIME" }, { winner: "A", finish: "TIME" }], burnout: [] },
+        { rounds: [{ winner: "B", finish: "CA" }, { winner: "A" }, { winner: "A" }], burnout: ["A"] },
+      ],
+      tags: [{ id: "throw", side: "A" }],
+    },
+    official,
+    "m3"
+  );
+  assert.deepEqual(run1.matchedGames, [0, 1]);
+  assert.deepEqual(wrong.matchedGames, [0]);
+
+  const games = buildVerifiedGames(official, [run1, run2, wrong]);
+  // 第1ゲーム: 3解析とも照合済み。SA3・PERFECT・Bのバーンアウトは2票以上で採用、TIMEは1票なので不採用
+  assert.deepEqual(games[0], {
+    winner: "away",
+    rounds: [
+      { winner: "away", finish: "NORMAL" },
+      { winner: "away", finish: "SA3", perfect: true },
+    ],
+    burnout: ["home"],
+  });
+  // 第2ゲーム: 照合済みは2解析。最終ラウンドは SA2 / SA1 で割れたので決着方法なし
+  assert.deepEqual(games[1].rounds, [
+    { winner: "away", finish: "CA" },
+    { winner: "home", finish: "DI" },
+    { winner: "home" },
+  ]);
+  assert.equal(games[1].burnout, undefined);
+
+  // タグは全ゲーム照合済みの解析2回で一致したものだけ
+  assert.deepEqual(
+    buildVerifiedTags(official, [run1, run2, wrong]).sort((a, b) => a.id.localeCompare(b.id)),
+    [
+      { id: "anti_air", side: "home" },
+      { id: "just_parry", side: "away" },
+    ]
+  );
+});
+
+test("a single matching analysis is not enough to show visual facts", () => {
+  const official = [{ winner: "A" as const, rounds: ["A", "A"] as Array<"A" | "B"> }];
+  const run = normalizeVisualRun(
+    { games: [{ rounds: [{ winner: "A", finish: "CA" }, { winner: "A", finish: "CA", perfect: true }], burnout: ["B"] }], tags: [{ id: "throw", side: "A" }] },
+    official,
+    "m1"
+  );
+  assert.deepEqual(buildVerifiedGames(official, [run]), [
+    { winner: "away", rounds: [{ winner: "away" }, { winner: "away" }] },
+  ]);
+  assert.deepEqual(buildVerifiedTags(official, [run]), []);
 });

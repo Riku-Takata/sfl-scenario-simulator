@@ -886,7 +886,7 @@ export function MatchPredictionModal({
           >
             <span>SFL 2026 順位・突破条件シミュレーター (ファンツール)</span>
             <span style={{ fontFamily: "monospace", color: "#64748b" }}>
-              sfl-scenario-simulator.vercel.app
+              sfl-simulator.vercel.app
             </span>
           </div>
         </div>

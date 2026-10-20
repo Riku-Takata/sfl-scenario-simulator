@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T23:20:08.007Z",
+  "updatedAt": "2026-10-20T00:01:04.294Z",
   "generatorMode": "editorial",
   "latestSection": {
     "s": 4,
@@ -53,7 +53,56 @@
                 "2BASSAは試合中ほぼずっとSAゲージ3本を抱えていたが、ACQUAが反撃を許さない立ち位置を保ち続けたため、なかなか使い切る場面を作れなかった。",
                 "最終ゲームは第1ラウンドを落とし、第2ラウンドも体力ドットまで追い詰められたACQUAがそこから逆転。最終ラウンドもSA3を残す2BASSAの切り返しを警戒して距離を取り、勝ち切った。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "SA2"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  }
+                ],
+                "burnout": [
+                  "away"
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 1,
@@ -81,7 +130,57 @@
                 "流れを変えたのはヤナイの大ダメージ。SA3本を吐いてでもラウンドを確実に取り切り、序盤は通っていたあきらのジャンプも中盤以降は対空で落とすようになった。",
                 "最終ゲームは第1ラウンドを取ったあきらがマッチポイントまで迫ったが、ヤナイが2ラウンド連取。最後はOD無敵技での切り返しが決まり手となった。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "CA"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ],
+                "burnout": [
+                  "home"
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "CA"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 2,
@@ -111,7 +210,73 @@
                 "ひびきは前歩きで間合いを詰め、伸びた手足の先端を立ち技で差し返す精度の高さで第2・第3ゲームを連取。風のストックを溜め込む場面も作った。",
                 "第4・第5ゲームは鶏めしが差し返しを読んで技を振らない駆け引きで流れを奪い返し、最終ゲームのマッチポイントでは“裏切り”のODヨガファイアを差し込んでKO。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "CA"
+                  }
+                ],
+                "burnout": [
+                  "away"
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           }
         ]
       },
@@ -160,7 +325,46 @@
                 "ボンちゃんを近距離まで招き入れながらも押し返しがうまく、リソースを使わずに触れる展開を作り続けたことを解説は勝因に挙げた。",
                 "第2ゲームはボンちゃんが第1ラウンドを先取したが、もけが中攻撃のヒットからのラッシュや起き攻めの投げを素直に重ねて2ラウンドを取り返した。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "CA"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "CA"
+                  }
+                ],
+                "burnout": [
+                  "away"
+                ]
+              }
+            ],
+            "tags": [
+              {
+                "id": "drive_rush",
+                "side": "home"
+              }
+            ]
           },
           {
             "status": 1,
@@ -187,7 +391,40 @@
                 "ディレイをかけたバーニングキックにまでジャストパリィを合わせる場面もあり、解説陣は「初めて見た」「かずのこ対策が完璧」と評した。",
                 "ドライブゲージを削り切る攻めでかずのこをバーンアウトに追い込み、ゲームを1つも落とさずに勝ち切った。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "CA"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ],
+                "burnout": [
+                  "away",
+                  "home"
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 2,
@@ -215,7 +452,63 @@
                 "第1ゲームは第1ラウンドを落としたが、藤村がSAを使い切った後に巻き返して逆転。第2ゲームは真・昇龍拳まで走り切ってラウンドを取った。",
                 "解説陣は「見事なバイパー対策」と評価。チーム内にバイパー使いを2人抱えるFAV相手に、事前の準備が光った一戦だった。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "CA"
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  }
+                ],
+                "burnout": [
+                  "away",
+                  "home"
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ],
+                "burnout": [
+                  "away",
+                  "home"
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 3,
@@ -242,7 +535,34 @@
                 "第1ゲーム第1ラウンドでは、エレナ同士だからこそ分かる不利フレームの状況で歩き投げを通してラウンドを先取した。",
                 "ゲージ消費量はどぐら39本に対しsako19本。自分から仕掛けて相手に牽制を振らせる戦略が機能し、ゲームを落とさず勝ち切った。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "CA"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           }
         ]
       },
@@ -292,7 +612,49 @@
                 "第2ゲームはきんちょが画面端での入れ替えを許さない立ち回りに切り替え、ヤマグチのカウンターを封じてストレートで取り返した。",
                 "最終ゲームは両者バーンアウトにもつれる展開。最終ラウンド、下がれば画面端、止まればバーンナックルという状況でヤマグチが踏み込んで足払いを通し、そのまま勝ち切った。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 1,
@@ -319,7 +681,40 @@
                 "立ち中Kの牽制が高いストッピング効果を発揮し、リュウが火力の出る技を当てる機会をほとんど作らせなかった。",
                 "SA2をダメージ源ではなく立ち回りを有利にするために使い、画面端に追い込んだまちゃぼーをバーンアウトさせる場面も。解説陣は「さすがのレジェンド」と称えた。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "CA"
+                  }
+                ],
+                "burnout": [
+                  "home"
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 2,
@@ -348,7 +743,58 @@
                 "第2ゲームは一転して前に出る攻めに切り替え、バーンアウトしたこばやんを起き攻めで仕留めてストレートで連取した。",
                 "第3ゲームはこばやんが飛び道具へのジャストパリィを決めてストレートで1ゲームを返したが、第4ゲームの最終ラウンドはMenaRDがDDTを決めて決着した。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           }
         ]
       }
@@ -400,7 +846,52 @@
                 "それでもときどは、追い込まれた画面端からジャンプで飛び越えて脱出し、そこからリターンを取る形を何度も作って流れを渡さなかった。",
                 "第2・第3ゲームはいずれもフルラウンドの接戦。最終ゲームは第1ラウンドを落としてから2ラウンドを取り返して勝ち切った。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 1,
@@ -427,7 +918,52 @@
                 "わびいちはバーンアウト中でも攻め守りの圧を落とさない得意の展開に持ち込み、解説陣は「実質ドライブ12本使える男」「バーンアウト中にむしろダメージを取っていた」と評した。",
                 "ドライブゲージ消費量はKEI.Bの26本に対してわびいちは50本。ドライブを使い倒した側が押し切る形となった。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ],
+                "burnout": [
+                  "home"
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ],
+                "burnout": [
+                  "home"
+                ]
+              }
+            ],
+            "tags": [
+              {
+                "id": "drive_rush",
+                "side": "home"
+              },
+              {
+                "id": "punish_counter",
+                "side": "home"
+              }
+            ]
           },
           {
             "status": 2,
@@ -456,7 +992,61 @@
                 "インターバルを挟んだマゴが第2ゲームをストレートで取り返したが、第3ゲームは竹内が置き攻めから飲酒レベルを上げて崩し、再びリード。",
                 "第4ゲームは体力差をつけられた場面から、竹内がSAを使わずに1ゲージでリーサルを取り切り、最後は3ゲージの大技で締めた。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL",
+                    "perfect": true
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "CA"
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 3,
@@ -483,7 +1073,38 @@
                 "水派も第2ゲームの第1ラウンドで先に板橋にゲージを使わせて取り返し、粘りを見せた。",
                 "最終ラウンドで水派のドライブゲージが尽きると、板橋が一気に削り切って決着。試合前の「ぐちゃぐちゃにする」宣言を実現する形となった。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           }
         ]
       },
@@ -533,7 +1154,65 @@
                 "第2ゲームも大谷がマッチポイントまで迫ったが、あでりいは歩きながらのジャストパリィでサンドブラストを打ちづらくさせ、ラッシュにはしゃがみ中Kを置くなど、試合中に一つずつ対応して2ラウンドを取り返した。",
                 "最終ゲームはあでりいがストレートで勝ち切り、解説陣は「昨年度MVPの実力」と称えた。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  }
+                ],
+                "burnout": [
+                  "home"
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "CA"
+                  }
+                ],
+                "burnout": [
+                  "away"
+                ]
+              }
+            ],
+            "tags": [
+              {
+                "id": "drive_rush",
+                "side": "home"
+              },
+              {
+                "id": "corner",
+                "side": "home"
+              }
+            ]
           },
           {
             "status": 1,
@@ -561,7 +1240,51 @@
                 "第2ゲームはらおやむがSAを使い切ってJr.の上からの攻めに対応し始め、第1ラウンドを落としてから2ラウンドを取り返した。",
                 "最終ゲームは体力リードを取ったJr.が押し切り、パーフェクトKOで勝負を決めた。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL",
+                    "perfect": true
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 2,
@@ -591,7 +1314,72 @@
                 "高木はインターバルを挟んだ第3ゲームでもっちーの無敵技を凌ぎ、以降は真っ直ぐ攻める姿勢を貫いた。解説は「第3ゲームで無敵技の打ち合いをやり過ごしたのが大きかった」と分析した。",
                 "最終ゲームはキャンセルラッシュを絡めたブランカの崩しでもっちーにODも投げ抜けも選ばせにくくし、最後は投げで決着。もっちーは終盤、高木の飛びへの対空にも苦しんだ。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           }
         ]
       },
@@ -640,7 +1428,32 @@
                 "飛びからの攻めで揺さぶり、ODの空中技でタイミングをずらすなど、空中からの選択肢を見せることでガチくんの対空とドライブにプレッシャーをかけ続けた。",
                 "解説陣は「全くペースを渡さなかった」と評し、最後も波動拳を当てて締めくくった。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 1,
@@ -667,7 +1480,38 @@
                 "ぷげらはじっくり戦うタイプのバイパー。YASがしゃがみ中Kを当てに行く動きに対して、下がりながらの差し返しで中攻撃を通し、バイパーが一番当てたい技から展開を作った。",
                 "第2ゲームも長いしゃがみ中Kからリーサルを取る形で押し切り、解説は「立ち回りを決めてから火力でリードを広げる展開」と評した。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           },
           {
             "status": 2,
@@ -696,7 +1540,60 @@
                 "第2ゲームはふ～どがストレートで取り返したが、第3・第4ゲームはいずれも第1ラウンドを落としたさはらが2ラウンドを取り返す展開。",
                 "最終ゲームはリーチを生かした地上戦で主導権を取り、最後は小技のヒット確認から勝負を決めた。"
               ]
-            }
+            },
+            "games": [
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              }
+            ],
+            "tags": []
           }
         ]
       }

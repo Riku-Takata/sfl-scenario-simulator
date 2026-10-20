@@ -626,3 +626,16 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* 戦況レポート: 狭い画面ではチーム名を略称で表示 */
+.recap-team-short {
+  display: none;
+}
+@media (max-width: 560px) {
+  .recap-team-full {
+    display: none;
+  }
+  .recap-team-short {
+    display: inline;
+  }
+}

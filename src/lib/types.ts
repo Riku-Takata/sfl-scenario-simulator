@@ -40,6 +40,12 @@ import {
   VideoChapterSchema,
   MatchNarrativeSchema,
   EditorialRecapsDataSchema,
+  RoundFinishSchema,
+  BoutGameDetailSchema,
+  BoutTagSchema,
+  BoutTagIdSchema,
+  VisualRunSchema,
+  BoutVisualFactsSchema,
 } from "./schema";
 
 export type DivisionId = z.infer<typeof DivisionIdSchema>;
@@ -95,3 +101,9 @@ export type BoutVideoRun = z.infer<typeof BoutVideoRunSchema>;
 export type BoutVideoFacts = z.infer<typeof BoutVideoFactsSchema>;
 export type MatchNarrative = z.infer<typeof MatchNarrativeSchema>;
 export type EditorialRecapsData = z.infer<typeof EditorialRecapsDataSchema>;
+export type RoundFinish = z.infer<typeof RoundFinishSchema>;
+export type BoutGameDetailView = z.infer<typeof BoutGameDetailSchema>;
+export type BoutTag = z.infer<typeof BoutTagSchema>;
+export type BoutTagId = z.infer<typeof BoutTagIdSchema>;
+export type VisualRun = z.infer<typeof VisualRunSchema>;
+export type BoutVisualFacts = z.infer<typeof BoutVisualFactsSchema>;

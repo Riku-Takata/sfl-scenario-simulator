@@ -16,13 +16,22 @@ const recapsData = MatchRecapsDataSchema.parse(rawRecaps);
       <div>
         <h1 class="page-title">SFL 2026 試合結果・戦況詳細レポート</h1>
         <p class="page-desc">
-          直近節の試合展開やラウンドの攻防・決着シーンを動画解析に基づき詳細にレポート。過去節の公式配信アーカイブもまとめて確認できます。
+          直近節の試合結果と、各Boutのラウンド推移・決着方法・勝負を分けた攻防をまとめてチェック。過去節の公式配信アーカイブもまとめて確認できます。
         </p>
       </div>
       <a href="/" class="btn btn-outline">
         ← 現在の順位表・突破条件を見る
       </a>
     </div>
+  </div>
+
+  <div
+    style="display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.82rem; line-height: 1.6; color: var(--text-sub); background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1.25rem;"
+  >
+    <span aria-hidden="true">ℹ️</span>
+    <span>
+      このページの解説は AI が作成しています。ラウンド推移は公式記録、決着方法（SA/CA/PERFECT など）・バーンアウト・攻防タグは公式配信の映像解析（公式記録と照合して一致したもののみ）、試合展開の解説は公式配信の実況・解説と公式記録をもとにしています。
+    </span>
   </div>
 
   <MatchRecapDashboard client:load recapsData={recapsData} />

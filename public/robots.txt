@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sfl-scenario-simulator.vercel.app/sitemap-index.xml
+Sitemap: https://sfl-simulator.vercel.app/sitemap-index.xml

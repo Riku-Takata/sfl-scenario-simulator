@@ -430,6 +430,44 @@ export const RecentBoutAnalysisSchema = z.object({
   keyPoints: z.array(z.string()),
 });
 
+
+/**
+ * 映像解析で抽出する画面上の事実（決着方法・PERFECT・バーンアウト・タグ）。
+ * ラウンド勝者が公式ログと一致したゲームの値だけを採用する。
+ */
+export const RoundFinishSchema = z.enum(["SA1", "SA2", "SA3", "CA", "DI", "NORMAL", "TIME"]);
+
+export const BOUT_TAG_IDS = [
+  "just_parry",
+  "anti_air",
+  "whiff_punish",
+  "drive_impact",
+  "drive_rush",
+  "corner",
+  "throw",
+  "projectile",
+  "punish_counter",
+  "reversal",
+] as const;
+export const BoutTagIdSchema = z.enum(BOUT_TAG_IDS);
+
+export const BoutGameDetailSchema = z.object({
+  winner: z.enum(["home", "away"]),
+  rounds: z.array(
+    z.object({
+      winner: z.enum(["home", "away"]),
+      finish: RoundFinishSchema.optional(),
+      perfect: z.boolean().optional(),
+    })
+  ),
+  burnout: z.array(z.enum(["home", "away"])).optional(),
+});
+
+export const BoutTagSchema = z.object({
+  id: BoutTagIdSchema,
+  side: z.enum(["home", "away"]),
+});
+
 export const RecentBoutRecapSchema = z.object({
   status: z.number(),
   statusName: z.string(),
@@ -445,6 +483,8 @@ export const RecentBoutRecapSchema = z.object({
   isFullSet: z.boolean(),
   roundFlow: z.array(z.string()).optional(),
   analysis: RecentBoutAnalysisSchema,
+  games: z.array(BoutGameDetailSchema).optional(),
+  tags: z.array(BoutTagSchema).optional(),
   highlight: VideoHighlightMomentSchema.optional(),
 });
 
@@ -552,6 +592,35 @@ export const MatchNarrativeSchema = z.object({
   ),
 });
 
+export const VisualRunSchema = z.object({
+  model: z.string(),
+  analyzedAt: z.string(),
+  games: z.array(
+    z.object({
+      rounds: z.array(
+        z.object({
+          winner: z.enum(["A", "B", "不明"]),
+          finish: z.union([RoundFinishSchema, z.literal("不明")]),
+          perfect: z.boolean(),
+        })
+      ),
+      burnout: z.array(z.enum(["A", "B"])),
+    })
+  ),
+  tags: z.array(z.object({ id: BoutTagIdSchema, side: z.enum(["A", "B"]) })),
+  /** 公式ログとラウンド勝者が完全一致したゲームの添字 */
+  matchedGames: z.array(z.number()),
+  error: z.string().optional(),
+});
+
+export const BoutVisualFactsSchema = z.object({
+  videoId: z.string(),
+  startSec: z.number(),
+  endSec: z.number(),
+  status: z.enum(["pending", "complete"]),
+  runs: z.array(VisualRunSchema),
+});
+
 export const VideoFactsDataSchema = z.object({
   updatedAt: z.string(),
   videos: z.record(
@@ -560,6 +629,7 @@ export const VideoFactsDataSchema = z.object({
   ),
   bouts: z.record(z.string(), BoutVideoFactsSchema),
   narratives: z.record(z.string(), MatchNarrativeSchema),
+  visual: z.record(z.string(), BoutVisualFactsSchema).default({}),
 });
 
 /**

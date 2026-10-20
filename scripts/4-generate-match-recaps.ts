@@ -46,6 +46,11 @@ import {
   type NarrationBoutInput,
   type NarrationMatchInput,
 } from "./recap/narration";
+import {
+  advanceVisualAnalysis,
+  buildVerifiedGames,
+  buildVerifiedTags,
+} from "./recap/visual-facts";
 
 const DATA_DIR = path.resolve(process.cwd(), "src/data");
 const SEED_FILE = path.join(DATA_DIR, "raw-capcom-seed.json");
@@ -172,7 +177,7 @@ function formatSecondsToTimestamp(sec: number): string {
 
 function loadVideoFacts(): VideoFactsData {
   if (!fs.existsSync(VIDEO_FACTS_FILE)) {
-    return { updatedAt: new Date().toISOString(), videos: {}, bouts: {}, narratives: {} };
+    return { updatedAt: new Date().toISOString(), videos: {}, bouts: {}, narratives: {}, visual: {} };
   }
   return VideoFactsDataSchema.parse(JSON.parse(fs.readFileSync(VIDEO_FACTS_FILE, "utf8")));
 }
@@ -242,10 +247,13 @@ export function hasPendingVideoWork(): boolean {
       b.status === "pending" &&
       !editorial.bouts[id]
   );
+  const pendingVisual = Object.entries(facts.visual).some(
+    ([id, v]) => latestSlugs.some((slug) => id.startsWith(`${slug}-`)) && v.status === "pending"
+  );
   const unseenSection = latestSlugs.some(
     (slug) => SECTION_VIDEO_IDS[slug] && !Object.keys(facts.bouts).some((id) => id.startsWith(`${slug}-`))
   );
-  return pendingBout || unseenSection;
+  return pendingBout || pendingVisual || unseenSection;
 }
 
 export async function generateAndSaveMatchRecaps(
@@ -395,6 +403,26 @@ export async function generateAndSaveMatchRecaps(
           saveVideoFacts(videoFacts); // 途中で止まっても解析済み分は残す
         }
 
+        // 映像からの画面上の事実（決着方法・PERFECT・バーンアウト・タグ）は編集解説の有無に関わらず抽出
+        let visual = videoFacts.visual[ctx.boutId];
+        if (!visual && videoId && window) {
+          visual = { videoId, ...window, status: "pending", runs: [] };
+          videoFacts.visual[ctx.boutId] = visual;
+        }
+        if (visual && videoWorkAllowed && visual.status === "pending") {
+          await advanceVisualAnalysis({
+            apiKey,
+            models: videoModels,
+            ctx,
+            officialGames: games,
+            facts: visual,
+            budget,
+            fps,
+          });
+          saveVideoFacts(videoFacts);
+        }
+        const visualRuns = visual?.runs ?? [];
+
         boutInputs.push({ ctx, games, facts });
         boutRecaps.push({
           status: hp.status,
@@ -411,6 +439,8 @@ export async function generateAndSaveMatchRecaps(
           isFullSet: ap.battle + hp.battle === bestOf,
           roundFlow: buildRoundFlowTexts(games, awayPlayerDisp, homePlayerDisp),
           analysis: buildOfficialDataAnalysis({ ctx, games }),
+          games: buildVerifiedGames(games, visualRuns),
+          tags: buildVerifiedTags(games, visualRuns),
         });
       }
 
