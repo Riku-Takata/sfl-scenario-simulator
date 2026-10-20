@@ -8,10 +8,20 @@ import type {
   ScorePatternId,
 } from "./types";
 import { PLAYER_NAME_MAP, SCORE_OUTCOMES, TEAM_META_MAP } from "./simulator";
+import rawModelV2 from "../data/model-v2.json";
+import { seriesWinProb } from "./model/series";
+import type { ProductionModel } from "./model/production";
+
+const MODEL_V2 = rawModelV2 as ProductionModel;
 
 /**
- * 統合予測モデル (Predictor Engine)
- * P(A) = w1 * Matchup(X, Y)_Top96 + w2 * PlayerVsChar(A, Y)_All + w3 * H2H(A, B)
+ * 予測モデル v2 (既定): 1ゲーム勝率をロジスティックモデルで出し、先取本数でボウト勝率に換算
+ *   logit p_game = a·(実力差·ln10/400) + b·logit(キャラ相性) ± c (HOME/AWAY)
+ * 実力値・パラメータは Step 0 が SFL 全履歴 + start.gg から学習 (src/data/model-v2.json)。
+ * 2026年の68ボウトのバックテストで v1 より対数損失・Brier が良かった (docs/model-eval-report.md)。
+ *
+ * v1 (実力値が無い選手のフォールバック):
+ * P(A) = w1 * Matchup(X, Y) + w2 * PlayerVsChar(A, Y) + w3 * H2H(A, B)
  */
 export const PREDICTOR_WEIGHTS = {
   w1MacroTop96: 0.4,
@@ -27,13 +37,34 @@ export function predictBoutWinRate(
   cptMatchups: CptMatchupsTop96Data,
   playerStats: PlayerStatsData,
   overrideCharA?: string,
-  overrideCharB?: string
+  overrideCharB?: string,
+  /** n本先取 (大将戦は3、それ以外は2) */
+  firstTo = 2,
+  model: ProductionModel | null = MODEL_V2
 ): PlayerMatchupPrediction {
   const statA = playerStats.players[playerAKey];
   const statB = playerStats.players[playerBKey];
 
   const charA = overrideCharA || statA?.mainChar || "ken";
   const charB = overrideCharB || statB?.mainChar || "ryu";
+
+  const ratingA = model?.ratings[playerAKey];
+  const ratingB = model?.ratings[playerBKey];
+  if (model && ratingA != null && ratingB != null) {
+    return predictBoutWinRateV2(
+      playerAKey,
+      playerBKey,
+      isPlayerAHome,
+      cptMatchups,
+      playerStats,
+      charA,
+      charB,
+      firstTo,
+      model,
+      ratingA,
+      ratingB
+    );
+  }
 
   // 1. Macro Matchup (CPT Top 96 ベイズ平滑化済み相性)
   const macroRate =
@@ -95,6 +126,55 @@ export function predictBoutWinRate(
   };
 }
 
+const logit = (p: number) => {
+  const q = Math.max(1e-4, Math.min(1 - 1e-4, p));
+  return Math.log(q / (1 - q));
+};
+
+function predictBoutWinRateV2(
+  playerAKey: string,
+  playerBKey: string,
+  isPlayerAHome: boolean,
+  cptMatchups: CptMatchupsTop96Data,
+  playerStats: PlayerStatsData,
+  charA: string,
+  charB: string,
+  firstTo: number,
+  model: ProductionModel,
+  ratingA: number,
+  ratingB: number
+): PlayerMatchupPrediction {
+  const w = model.params;
+  const mu = cptMatchups.matrix[charA]?.[charB]?.smoothedWinRate ?? 0.5;
+  const ratingTerm = w.rating * (((ratingA - ratingB) * Math.LN10) / 400);
+  const homeTerm = isPlayerAHome ? w.home : -w.home;
+  const gameProb = 1 / (1 + Math.exp(-(ratingTerm + w.matchup * logit(mu) + homeTerm)));
+  const skillProb = 1 / (1 + Math.exp(-(ratingTerm + homeTerm)));
+  const boutProb = seriesWinProb(gameProb, firstTo);
+  const vsChar = playerStats.players[playerAKey]?.vsCharStats?.[charB]?.smoothedWinRate ?? mu;
+
+  const nameA = playerStats.players[playerAKey]?.name || PLAYER_NAME_MAP[playerAKey] || playerAKey;
+  const nameB = playerStats.players[playerBKey]?.name || PLAYER_NAME_MAP[playerBKey] || playerBKey;
+  const pct = (v: number) => Math.round(v * 1000) / 10;
+  const diff = Math.round(ratingA - ratingB);
+
+  return {
+    roleName: "シングル戦",
+    playerAKey,
+    playerAName: nameA,
+    charA: charA.toUpperCase(),
+    playerBKey,
+    playerBName: nameB,
+    charB: charB.toUpperCase(),
+    macroMatchupTop96: pct(mu),
+    playerVsCharRate: pct(vsChar),
+    h2hAndHomeRate: pct(skillProb),
+    expectedWinRateA: pct(boutProb),
+    isHomeCounterPick: isPlayerAHome,
+    rationale: `実力差 ${diff >= 0 ? "+" : ""}${diff}（実力のみの1ゲーム勝率 ${pct(skillProb)}%） / キャラ相性(${charA.toUpperCase()} vs ${charB.toUpperCase()}): ${pct(mu)}% / ${isPlayerAHome ? "HOME後出し" : "AWAY先出し"} → 1ゲーム勝率 ${pct(gameProb)}% → ${firstTo}本先取 ${pct(boutProb)}%`,
+  };
+}
+
 /**
  * チーム間対戦カード (MatchRecord) に対する先鋒・中堅・大将・延長の最適被せオーダーと
  * SFL8通りのスコアパターン確率分布を算出する
@@ -102,7 +182,8 @@ export function predictBoutWinRate(
 export function predictTeamMatchOutcomeDistribution(
   match: MatchRecord,
   cptMatchups: CptMatchupsTop96Data,
-  playerStats: PlayerStatsData
+  playerStats: PlayerStatsData,
+  model: ProductionModel | null = MODEL_V2
 ): {
   outcomeWeights: Record<ScorePatternId, number>;
   homeWinProbability: number;
@@ -121,11 +202,9 @@ export function predictTeamMatchOutcomeDistribution(
   );
 
   // AWAY側の想定標準ラインナップ (出場数・Elo順で先鋒・中堅・大将・リザーブを選定)
-  const sortedAway = [...awayRoster].sort(
-    (a, b) =>
-      (playerStats.players[b]?.eloRating ?? 1900) -
-      (playerStats.players[a]?.eloRating ?? 1900)
-  );
+  const strength = (p: string) =>
+    model?.ratings[p] ?? playerStats.players[p]?.eloRating ?? 1900;
+  const sortedAway = [...awayRoster].sort((a, b) => strength(b) - strength(a));
   // 大将にエース(0番目)、中堅に2番手、先鋒に3番手、延長に4番手
   const awayAnchor = sortedAway[0] || awayRoster[0] || "ryukichi";
   const awayMiddle = sortedAway[1] || awayRoster[1] || awayAnchor;
@@ -134,7 +213,11 @@ export function predictTeamMatchOutcomeDistribution(
 
   // HOME側は相手の先出しを見て期待勝率が最大になる選手を貪欲に被せる（大将戦20ptを最優先）
   const usedHome = new Set<string>();
-  const pickBestHomeCounter = (targetAwayPlayer: string, roleLabel: string): PlayerMatchupPrediction => {
+  const pickBestHomeCounter = (
+    targetAwayPlayer: string,
+    roleLabel: string,
+    firstTo: number
+  ): PlayerMatchupPrediction => {
     let bestPred: PlayerMatchupPrediction | null = null;
     for (const hPlayer of homeRoster) {
       if (usedHome.has(hPlayer) && usedHome.size < homeRoster.length) continue;
@@ -143,7 +226,11 @@ export function predictTeamMatchOutcomeDistribution(
         targetAwayPlayer,
         true,
         cptMatchups,
-        playerStats
+        playerStats,
+        undefined,
+        undefined,
+        firstTo,
+        model
       );
       if (!bestPred || pred.expectedWinRateA > bestPred.expectedWinRateA) {
         bestPred = { ...pred, roleName: roleLabel };
@@ -158,14 +245,19 @@ export function predictTeamMatchOutcomeDistribution(
       targetAwayPlayer,
       true,
       cptMatchups,
-      playerStats
+      playerStats,
+      undefined,
+      undefined,
+      firstTo,
+      model
     );
   };
 
-  const anchorBout = pickBestHomeCounter(awayAnchor, "大将戦 (20pt)");
-  const middleBout = pickBestHomeCounter(awayMiddle, "中堅戦 (10pt)");
-  const vanguardBout = pickBestHomeCounter(awayVanguard, "先鋒戦 (10pt)");
-  const tiebreakerBout = pickBestHomeCounter(awayReserve, "延長戦 (10pt)");
+  // 大将戦は3本先取、先鋒・中堅・延長は2本先取
+  const anchorBout = pickBestHomeCounter(awayAnchor, "大将戦 (20pt)", 3);
+  const middleBout = pickBestHomeCounter(awayMiddle, "中堅戦 (10pt)", 2);
+  const vanguardBout = pickBestHomeCounter(awayVanguard, "先鋒戦 (10pt)", 2);
+  const tiebreakerBout = pickBestHomeCounter(awayReserve, "延長戦 (10pt)", 2);
 
   const pV = vanguardBout.expectedWinRateA / 100; // 先鋒(10pt) HOME勝率
   const pM = middleBout.expectedWinRateA / 100;   // 中堅(10pt) HOME勝率

@@ -61,8 +61,8 @@ function slot(p1: string, b1: number, p2: string, b2: number) {
 }
 
 test("countBattlesUpTo / buildSeason: stats の集計時点までのバトル数で揃える", () => {
-  const schedules = [
-    { post_name: "div-s-sec1", fields: { section: { match1: slot("a", 2, "b", 1), match2: { result: "" as const } } } },
+  const schedules: Parameters<typeof countBattlesUpTo>[0] = [
+    { post_name: "div-s-sec1", fields: { section: { match1: slot("a", 2, "b", 1), match2: { result: "" } } } },
     { post_name: "div-s-sec2", fields: { section: { match1: slot("a", 0, "c", 2) } } },
   ];
   assert.deepEqual(countBattlesUpTo(schedules, new Set(["div-s-sec1"])), { a: 3, b: 3 });

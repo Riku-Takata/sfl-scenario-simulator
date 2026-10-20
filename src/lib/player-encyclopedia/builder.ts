@@ -13,7 +13,9 @@ import {
   generateObjectiveSummary,
 } from "./parameters";
 import { PLAYER_SNS_MAP } from "./sns-data";
+import { buildCommentary } from "./commentary";
 import type {
+  BucklerPlayerProfile,
   PlayerBoutLog,
   PlayerEncyclopediaEntry,
   PlayerSnsLinks,
@@ -33,7 +35,8 @@ export function buildPlayerEncyclopedia(
   _cptMatchupsData?: CptMatchupsTop96Data,
   sf6TournamentData?: Sf6TournamentMatchupsData,
   tournamentProfiles: Record<string, PlayerTournamentProfile> = {},
-  playStyles: Record<string, PlayerPlayStyleProfile> = {}
+  playStyles: Record<string, PlayerPlayStyleProfile> = {},
+  rankedProfiles: Record<string, BucklerPlayerProfile> = {}
 ): PlayerEncyclopediaEntry[] {
   const sf6Tournaments: Sf6TournamentMatchupsData =
     sf6TournamentData ||
@@ -489,7 +492,14 @@ export function buildPlayerEncyclopedia(
       boutLogs,
       tournamentProfile: tournamentProfiles[pKey] ?? null,
       playStyle: playStyles[pKey] ?? null,
+      rankedProfile: rankedProfiles[pKey] ?? null,
+      commentary: [],
     });
+  }
+
+  // 解説は全選手の中での順位を使うため、全員分を組み立てた後に生成する
+  for (const entry of entries) {
+    entry.commentary = buildCommentary(entry, entries);
   }
 
   entries.sort(

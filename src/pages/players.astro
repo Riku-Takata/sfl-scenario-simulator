@@ -8,7 +8,9 @@ import rawSf6Tournaments from "@/data/sf6-tournament-matchups.json";
 import rawStartggResults from "@/data/startgg-premier-results.json";
 import rawStartggIdentities from "@/data/startgg-identities.json";
 import rawSflPlayStats from "@/data/sfl-play-stats.json";
+import rawBucklerProfiles from "@/data/buckler-profiles.json";
 import {
+  BucklerProfilesDataSchema,
   CptMatchupsTop96DataSchema,
   MatchesDataSchema,
   PlayerStatsDataSchema,
@@ -50,7 +52,8 @@ const players = buildPlayerEncyclopedia(
   cptMatchupsData,
   sf6TournamentData,
   tournamentProfiles,
-  playStyles
+  playStyles,
+  BucklerProfilesDataSchema.parse(rawBucklerProfiles).players
 );
 ---
 

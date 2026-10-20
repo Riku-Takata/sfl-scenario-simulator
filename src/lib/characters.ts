@@ -60,7 +60,8 @@ const SFL_KEY_ALIASES: Record<string, string> = {
 };
 
 /**
- * SFL公式APIのキャラキー → 内部キー
+ * SFL公式API / Buckler の character_tool_name → 内部キー
+ * (Buckler は gouki / deejay / honda 表記。SFL未対応の新キャラは公式キーのまま返す)
  * 公式は操作タイプを "ken(m)" のように括弧で付けることがあるため除去する
  */
 export function normalizeSflCharKey(raw: string | null | undefined): string {
