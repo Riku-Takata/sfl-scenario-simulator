@@ -111,9 +111,15 @@ export interface VideoBudget {
   maxVideoSeconds: number;
   calls: number;
   videoSeconds: number;
+  /**
+   * この時刻 (epoch ms) 以降は新しい動画解析を始めない。無料枠切れや 503 が続く日に
+   * パイプライン全体が長時間止まらないようにするため。残りは翌日以降の実行に持ち越す。
+   */
+  deadlineMs?: number;
 }
 
 export function budgetAllows(budget: VideoBudget, seconds: number): boolean {
+  if (budget.deadlineMs !== undefined && Date.now() >= budget.deadlineMs) return false;
   return budget.calls < budget.maxCalls && budget.videoSeconds + seconds <= budget.maxVideoSeconds;
 }
 
