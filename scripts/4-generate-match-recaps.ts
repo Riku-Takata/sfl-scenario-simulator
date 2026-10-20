@@ -65,12 +65,9 @@ const DEFAULT_VIDEO_MODELS = [
   "gemini-3.7-flash",
   "gemini-3.1-flash-lite",
 ];
-const DEFAULT_TEXT_MODELS = [
-  "gemini-3.8-flash",
-  "gemini-3.6-flash",
-  "gemini-3.5-flash-lite",
-  "gemini-3.1-flash-lite",
-];
+// 解説生成は品質を優先して lite モデルを使わない（3.8-flash と lite の比較で、lite は根拠の薄い要点や
+// 飾り言葉が混ざった）。両方とも使えない日は pendingNarrations に記録し、翌日以降の実行で生成する
+const DEFAULT_TEXT_MODELS = ["gemini-3.8-flash", "gemini-3.6-flash"];
 
 interface RawGameLog {
   "1p_character": string;
@@ -177,7 +174,14 @@ function formatSecondsToTimestamp(sec: number): string {
 
 function loadVideoFacts(): VideoFactsData {
   if (!fs.existsSync(VIDEO_FACTS_FILE)) {
-    return { updatedAt: new Date().toISOString(), videos: {}, bouts: {}, narratives: {}, visual: {} };
+    return {
+      updatedAt: new Date().toISOString(),
+      videos: {},
+      bouts: {},
+      narratives: {},
+      visual: {},
+      pendingNarrations: [],
+    };
   }
   return VideoFactsDataSchema.parse(JSON.parse(fs.readFileSync(VIDEO_FACTS_FILE, "utf8")));
 }
@@ -253,7 +257,10 @@ export function hasPendingVideoWork(): boolean {
   const unseenSection = latestSlugs.some(
     (slug) => SECTION_VIDEO_IDS[slug] && !Object.keys(facts.bouts).some((id) => id.startsWith(`${slug}-`))
   );
-  return pendingBout || pendingVisual || unseenSection;
+  const pendingNarration = facts.pendingNarrations.some((id) =>
+    latestSlugs.some((slug) => id.startsWith(`${slug}-`))
+  );
+  return pendingBout || pendingVisual || pendingNarration || unseenSection;
 }
 
 export async function generateAndSaveMatchRecaps(
@@ -464,8 +471,16 @@ export async function generateAndSaveMatchRecaps(
       const anyComplete = boutInputs.some((b) => b.facts?.status === "complete");
       const inputHash = narrationInputHash(narrationInput);
       let narrative = videoFacts.narratives[matchId];
+      // 全Boutに編集解説がある試合は自動生成しない（無料枠の節約）
+      const needsNarration = boutInputs.some((b) => !editorial.bouts[b.ctx.boutId]);
+      const markPending = (pending: boolean) => {
+        const list = videoFacts.pendingNarrations.filter((id) => id !== matchId);
+        videoFacts.pendingNarrations = pending ? [...list, matchId] : list;
+      };
+      if (!needsNarration) markPending(false);
       if (
         apiKey &&
+        needsNarration &&
         allSettled &&
         anyComplete &&
         (!narrative || narrative.inputHash !== inputHash) &&
@@ -480,8 +495,12 @@ export async function generateAndSaveMatchRecaps(
         if (generated) {
           videoFacts.narratives[matchId] = generated;
           narrative = generated;
-          saveVideoFacts(videoFacts);
+          markPending(false);
+        } else {
+          console.warn(`[Narration] ${matchId}: no narration model available today; deferred to the next run.`);
+          markPending(true);
         }
+        saveVideoFacts(videoFacts);
       }
       const narrativeUsable = narrative && narrative.inputHash === inputHash;
 

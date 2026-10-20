@@ -630,6 +630,8 @@ export const VideoFactsDataSchema = z.object({
   bouts: z.record(z.string(), BoutVideoFactsSchema),
   narratives: z.record(z.string(), MatchNarrativeSchema),
   visual: z.record(z.string(), BoutVisualFactsSchema).default({}),
+  /** 解説生成モデルが使えず翌日以降に持ち越した試合 */
+  pendingNarrations: z.array(z.string()).default([]),
 });
 
 /**

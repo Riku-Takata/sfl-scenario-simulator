@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T00:08:04.877Z",
+  "updatedAt": "2026-10-20T08:26:37.395Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -1113,96 +1113,87 @@
   "narratives": {
     "div-s-sec4-m1": {
       "inputHash": "12493e5dc4534cb4",
-      "model": "gemini-3.5-flash-lite",
-      "generatedAt": "2026-10-19T18:25:54.416Z",
-      "matchHeadline": "FUKUSHIMA IBUSHIGINが熱戦を制し勝利",
-      "matchSummary": "FUKUSHIMA IBUSHIGINが10-30で広島 TEAM iXAを下した。先鋒戦はACQUAが勝利したものの、中堅戦でヤナイが、大将戦で鶏めしがそれぞれ競り勝ってチームを勝利に導いた。",
+      "model": "gemini-3.8-flash",
+      "generatedAt": "2026-10-20T07:07:09.275Z",
+      "matchHeadline": "ヤナイと鶏めしが連勝しIBUSHIGINが逆転勝利",
+      "matchSummary": "先鋒戦で広島 TEAM iXAのACQUAが先制するも、中堅戦でFUKUSHIMA IBUSHIGINのヤナイがCAを絡めた攻めで逆転勝利。大将戦では鶏めしがフルセットの接戦を3-2で制し、FUKUSHIMA IBUSHIGINが10-30で勝利を収めた。",
       "bouts": [
         {
           "boutId": "div-s-sec4-m1-b0",
-          "summary": "ACQUAが2-1で勝利した。",
+          "summary": "ACQUAが2-1で2BASSAに勝利し、広島 TEAM iXAが先鋒戦を制した。",
           "keyPoints": [
-            "ACQUAはジャストパリィを成功させて相手の攻撃に対応した。",
-            "2BASSAはスーパーアートを直撃させてラウンドを奪った。"
+            "ACQUAはジャストパリィを成功させて主導権を維持した。"
           ]
         },
         {
           "boutId": "div-s-sec4-m1-b1",
-          "summary": "ヤナイが2-1で勝利した。",
+          "summary": "",
           "keyPoints": [
-            "ヤナイはODタイガープレッシャーやODタイガーアッパーカットなどの必殺技で相手の攻めを切り返した。",
-            "ヤナイは要所でクリティカルアーツを絡めた攻撃を決めた。"
+            "ヤナイはCA（クリティカルアーツ）を絡めたコンボを決め、逆転に繋げた。"
           ]
         },
         {
           "boutId": "div-s-sec4-m1-b2",
-          "summary": "鶏めしが3-2で勝利した。",
-          "keyPoints": [
-            "鶏めしは技をヒットさせて相手の接近を阻んだ。",
-            "鶏めしは最終盤にクリティカルアートを決めてラウンドを取り切った。"
-          ]
+          "summary": "大将戦はフルセットの激戦となり、鶏めしが3-2でひびきに勝利した。",
+          "keyPoints": []
         }
       ]
     },
     "div-s-sec4-m2": {
       "inputHash": "2ced49753313dddf",
-      "model": "gemini-3.5-flash-lite",
-      "generatedAt": "2026-10-19T18:25:56.911Z",
-      "matchHeadline": "Crazy Raccoonが延長戦を制し勝利",
-      "matchSummary": "KADOKAWA FAV gamingとの対戦は、先鋒・中堅をFAVが連取するも、大将戦でCrazy RaccoonのShutoが勝利して追いつき、最後は延長戦でどぐらが制してCrazy Raccoonが30-20で勝利した。",
+      "model": "gemini-3.8-flash",
+      "generatedAt": "2026-10-20T07:09:59.115Z",
+      "matchHeadline": "Shutoの大将戦勝利から延長戦でどぐらが制しCRが逆転勝利",
+      "matchSummary": "先鋒戦でもけ、中堅戦でりゅうきちが勝利しKADOKAWA FAV gamingがリードするも、大将戦でCrazy RaccoonのShutoが藤村を3-0で破り同点に追いつく。延長戦ではエレナ対決をどぐらが制し、Crazy Raccoonが30-20で勝利を収めた。",
       "bouts": [
         {
           "boutId": "div-s-sec4-m2-b0",
-          "summary": "先鋒戦は、もけがボンちゃん相手にSA1やCAを絡めたコンボを決めて2-0で勝利した。",
-          "keyPoints": [
-            "もけは差し返しやヒット確認からSAを絡めたコンボを決めてラウンドを制した。"
-          ]
+          "summary": "KADOKAWA FAV gamingのもけがCrazy Raccoonのボンちゃんを2-0で破り勝利した。",
+          "keyPoints": []
         },
         {
           "boutId": "div-s-sec4-m2-b1",
-          "summary": "中堅戦は、りゅうきことがずのこを相手にジャンプ攻撃やCAなどを決めて2-0で勝利した。",
+          "summary": "KADOKAWA FAV gamingのりゅうきちがかずのこに2-0で勝利した。",
           "keyPoints": [
-            "りゅうきちはジャンプ攻撃からラッシュやドライブインパクトを絡めた連続技でダメージを与えKOした。"
+            "りゅうきちはかずのこがバーンアウトした状況からSA3（CA）に繋げてラウンドを制した。"
           ]
         },
         {
           "boutId": "div-s-sec4-m2-b2",
-          "summary": "大将戦は、Shutoのリュウが藤村のC.ヴァイパーを相手に差し合いを制し3-0で勝利した。",
+          "summary": "Crazy RaccoonのShutoが藤村を相手に3-0で勝利を収めた。",
           "keyPoints": [
-            "Shutoのリュウは中遠距離の差し合いや対空迎撃を機能させ、相手をバーンアウト状態に追い込んだ。"
+            "Shutoは立ち回りで藤村のドライブゲージを削り、バーンアウトに追い込んだ。"
           ]
         },
         {
           "boutId": "div-s-sec4-m2-b3",
-          "summary": "延長戦は、どぐらがsakoとの同キャラクター戦を制して2-0で勝利した。",
-          "keyPoints": [
-            "どぐらはバーンアウト中の相手にドライブインパクトをヒットさせたり、スーパーアーツを経由したコンボを決めて勝利した。"
-          ]
+          "summary": "Crazy Raccoonのどぐらがエレナ同士の同キャラ戦を制し、sakoに2-0で勝利した。",
+          "keyPoints": []
         }
       ]
     },
     "div-s-sec4-m3": {
       "inputHash": "5a5f5e7e61deda96",
-      "model": "gemini-3.5-flash-lite",
-      "generatedAt": "2026-10-19T18:25:59.039Z",
-      "matchHeadline": "ZETAが40-0でSaishunkan Sol 熊本を下す",
-      "matchSummary": "ZETA DIVISION GeeklyがSaishunkan Sol 熊本を相手に40-0のストレート勝利を収めた。先鋒戦から大将戦まで手堅い立ち回りと的確な攻防でポイントをもぎ取り、チームの勝利に貢献した。",
+      "model": "gemini-3.8-flash",
+      "generatedAt": "2026-10-20T07:14:22.346Z",
+      "matchHeadline": "ZETAが完封勝利、大将戦でMenaRDがこばやんを撃破",
+      "matchSummary": "ZETA DIVISION GeeklyがSaishunkan Sol 熊本を40-0で下した。先鋒戦でヤマグチがきんちょとのフルセットを制すと、中堅戦ではひぐちがまちゃぼーにストレート勝ち。大将戦でもMenaRDがこばやんを3-1で退け、ZETA DIVISION Geeklyが全勝を飾った。",
       "bouts": [
         {
           "boutId": "div-s-sec4-m3-b0",
-          "summary": "先鋒戦はヤマグチがテリーのドライブゲージを管理・削り合う展開を制し、2-1で勝利した。",
+          "summary": "ヤマグチがきんちょとのフルセットを2-1で制し、ZETA DIVISION Geeklyが先制した。",
           "keyPoints": [
-            "ヤマグチはきんちょのテリーに対してドライブゲージを削る立ち回りで優位に立った。"
+            "第2ゲームにて、きんちょはクリティカルアーツを決めて勝利した。"
           ]
         },
         {
           "boutId": "div-s-sec4-m3-b1",
-          "summary": "中堅戦はひぐちがガイルの堅い守りと的確な反撃でまちゃぼーのリュウを圧倒し、2-0で勝利した。",
+          "summary": "ひぐちがまちゃぼーに2-0のストレートで勝利した。",
           "keyPoints": []
         },
         {
           "boutId": "div-s-sec4-m3-b2",
-          "summary": "大将戦はMenaRDが3-1でこばやんを下し、チームの完全勝利を決定づけた。",
+          "summary": "MenaRDがこばやんに3-1で勝利した。",
           "keyPoints": []
         }
       ]
@@ -5106,5 +5097,6 @@
       "status": "pending",
       "runs": []
     }
-  }
+  },
+  "pendingNarrations": []
 }
