@@ -1,42 +1,13 @@
+import { SF6_CHARACTERS, SF6_CHARACTER_KEYS } from "../characters";
+
 export const CHAR_NAME_JP_MAP: Record<string, string> = {
-  ryu: "リュウ",
-  luke: "ルーク",
-  jamie: "ジェイミー",
-  chunli: "春麗",
-  guile: "ガイル",
-  kimberly: "キンバリー",
-  juri: "ジュリ",
-  ken: "ケン",
-  blanka: "ブランカ",
-  dhalsim: "ダルシム",
-  ehonda: "E.本田",
-  dee_jay: "ディージェイ",
-  manon: "マノン",
-  marisa: "マリーザ",
-  jp: "JP",
-  zangief: "ザンギエフ",
-  lily: "リリー",
-  cammy: "キャミィ",
-  rashid: "ラシード",
-  aki: "A.K.I.",
-  ed: "エド",
-  gouki_akuma: "豪鬼",
-  vega_mbison: "ベガ",
-  terry: "テリー",
-  mai: "不知火舞",
-  elena: "エレナ",
-  sagat: "サガット",
-  cviper: "C.ヴァイパー",
+  ...Object.fromEntries(SF6_CHARACTERS.map((c) => [c.key, c.nameJp])),
+  // 旧データ・表記揺れ
   honda: "E.本田",
   ibuki: "いぶき",
 };
 
-export const ALL_SF6_CHARS = [
-  "ryu", "luke", "jamie", "chunli", "guile", "kimberly", "juri", "ken",
-  "blanka", "dhalsim", "ehonda", "dee_jay", "manon", "marisa", "jp",
-  "zangief", "lily", "cammy", "rashid", "aki", "ed", "gouki_akuma",
-  "vega_mbison", "terry", "mai", "elena", "sagat", "cviper",
-];
+export const ALL_SF6_CHARS = SF6_CHARACTER_KEYS;
 
 export function formatCharName(charKey: string): string {
   if (!charKey) return "不明";

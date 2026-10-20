@@ -5,13 +5,26 @@ import rawPlayerStats from "@/data/player-stats.json";
 import rawMatches from "@/data/matches.json";
 import rawCptMatchups from "@/data/cpt-matchups-top96.json";
 import rawSf6Tournaments from "@/data/sf6-tournament-matchups.json";
+import rawStartggResults from "@/data/startgg-premier-results.json";
+import rawStartggIdentities from "@/data/startgg-identities.json";
+import rawSflPlayStats from "@/data/sfl-play-stats.json";
 import {
   CptMatchupsTop96DataSchema,
   MatchesDataSchema,
   PlayerStatsDataSchema,
   Sf6TournamentMatchupsDataSchema,
+  StartggIdentitiesDataSchema,
+  StartggPremierResultsDataSchema,
+  SflPlayStatsDataSchema,
 } from "@/lib/schema";
 import { buildPlayerEncyclopedia } from "@/lib/player-encyclopedia";
+import { buildTournamentProfiles } from "@/lib/startgg/profile";
+import {
+  buildPlayStyleProfiles,
+  SFL_CURRENT_SEASON,
+  SFL_PREVIOUS_SEASON,
+} from "@/lib/sfl/play-style";
+import { PLAYER_NAME_MAP } from "@/lib/simulator";
 
 const playerStatsData = PlayerStatsDataSchema.parse(rawPlayerStats);
 const matchesData = MatchesDataSchema.parse(rawMatches);
@@ -19,11 +32,25 @@ const cptMatchupsData = CptMatchupsTop96DataSchema.parse(rawCptMatchups);
 const sf6TournamentData =
   Sf6TournamentMatchupsDataSchema.parse(rawSf6Tournaments);
 
+const tournamentProfiles = buildTournamentProfiles(
+  StartggPremierResultsDataSchema.parse(rawStartggResults),
+  StartggIdentitiesDataSchema.parse(rawStartggIdentities),
+  PLAYER_NAME_MAP
+);
+
+const playStyles = buildPlayStyleProfiles(
+  SflPlayStatsDataSchema.parse(rawSflPlayStats),
+  SFL_CURRENT_SEASON,
+  SFL_PREVIOUS_SEASON
+);
+
 const players = buildPlayerEncyclopedia(
   playerStatsData,
   matchesData,
   cptMatchupsData,
-  sf6TournamentData
+  sf6TournamentData,
+  tournamentProfiles,
+  playStyles
 );
 ---
 
@@ -33,7 +60,7 @@ const players = buildPlayerEncyclopedia(
       <div>
         <h1 class="page-title">SFL 2026 全48選手 データ図鑑・対キャラ相性分析</h1>
         <p class="page-desc">
-          SFL公式戦および過去の公式大会の戦績データから算出した「各選手の6角形パラメーター」「起用傾向・特徴」「各キャラクターに対する相性・勝率データ」を網羅しています。
+          SFL公式戦の戦績と、start.ggに記録された直近1年のプレミア大会（CPT Premier / World Warrior / EVO 等）の実戦データから算出した「各選手の6角形パラメーター」「起用傾向・特徴」「各キャラクターに対する相性・勝率データ」を網羅しています。
         </p>
       </div>
     </div>

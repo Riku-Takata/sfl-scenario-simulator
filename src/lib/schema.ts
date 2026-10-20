@@ -202,6 +202,9 @@ export const PlayerStatEntrySchema = z.object({
     awayWinRate: z.number(),
   }),
   cptStats: z.object({
+    /** startgg: start.gg プレミア大会実績 / estimated: Elo からの推定値 */
+    source: z.enum(["startgg", "estimated"]).default("estimated"),
+    performanceRating: z.number().nullable().default(null),
     tournamentsCount: z.number(),
     top96Count: z.number(),
     totalSetsWon: z.number(),
@@ -653,4 +656,141 @@ export const EditorialRecapsDataSchema = z.object({
       summary: z.string(),
     })
   ),
+});
+
+// ============================================================================
+// start.gg プレミア大会 実戦データ スキーマ
+// ============================================================================
+
+export const StartggIdentitiesDataSchema = z.object({
+  note: z.string().optional(),
+  updatedAt: z.string(),
+  players: z.record(
+    z.string(),
+    z.object({
+      startggPlayerId: z.number(),
+      gamerTag: z.string(),
+      userSlug: z.string().nullable(),
+      /** 対応付けの根拠 (tag+team-prefix / participant-search など) */
+      evidence: z.string(),
+    })
+  ),
+});
+
+export const PremierCategorySchema = z.enum([
+  "Capcom Cup",
+  "CPT Premier",
+  "CPT WW",
+  "EVO",
+  "Major",
+]);
+
+export const StartggEventSchema = z.object({
+  id: z.string(),
+  slug: z.string(),
+  tournamentName: z.string(),
+  eventName: z.string(),
+  /** YYYY-MM-DD */
+  startDate: z.string(),
+  numEntrants: z.number().nullable(),
+  isOnline: z.boolean().nullable(),
+  countryCode: z.string().nullable(),
+  /** null はプレミア対象外 (取得済みとしてキャッシュするために保持) */
+  category: PremierCategorySchema.nullable(),
+});
+
+export const StartggGameSchema = z.object({
+  won: z.boolean(),
+  myChar: z.string().nullable(),
+  oppChar: z.string().nullable(),
+});
+
+export const StartggSetSchema = z.object({
+  id: z.string(),
+  eventId: z.string(),
+  /** UNIX秒 */
+  completedAt: z.number(),
+  /** 負数はルーザーズ側 */
+  round: z.number().nullable(),
+  roundText: z.string(),
+  phaseName: z.string().nullable(),
+  mySeed: z.number().nullable(),
+  oppSeed: z.number().nullable(),
+  oppPlayerId: z.number().nullable(),
+  oppTag: z.string(),
+  myScore: z.number(),
+  oppScore: z.number(),
+  won: z.boolean(),
+  games: z.array(StartggGameSchema),
+});
+
+export const StartggPlacementSchema = z.object({
+  eventId: z.string(),
+  placement: z.number(),
+  seed: z.number().nullable(),
+});
+
+export const StartggPremierResultsDataSchema = z.object({
+  updatedAt: z.string(),
+  source: z.string(),
+  windowDays: z.number(),
+  /** YYYY-MM-DD */
+  windowStart: z.string(),
+  events: z.record(z.string(), StartggEventSchema),
+  players: z.record(
+    z.string(),
+    z.object({
+      startggPlayerId: z.number(),
+      gamerTag: z.string(),
+      fetchedAt: z.string(),
+      placements: z.array(StartggPlacementSchema),
+      sets: z.array(StartggSetSchema),
+    })
+  ),
+});
+
+// ============================================================================
+// SFL公式 試合内プレイ統計 (api/sfl20xx/?data=stats) スキーマ
+// ============================================================================
+
+export const SflPlayStatsMetricKeySchema = z.enum([
+  "dr",
+  "drc",
+  "di",
+  "dis",
+  "dir",
+  "dip",
+  "dp",
+  "jp",
+  "jpp",
+  "dre",
+  "ov",
+  "udn",
+  "bn",
+  "air",
+  "tt",
+  "wuds",
+  "hwin",
+  "awin",
+]);
+
+export const SflPlayStatsSeasonSchema = z.object({
+  /** 集計時点の節 (公式は節ごとの累積値を返すため、空でない最新の節を採用) */
+  asOfSection: z.string(),
+  asOfTitle: z.string(),
+  players: z.record(
+    z.string(),
+    z.object({
+      name: z.string(),
+      /** そのシーズンの出場バトル数 (公式 battle_entry) */
+      battles: z.number(),
+      metrics: z.record(SflPlayStatsMetricKeySchema, z.number()),
+    })
+  ),
+});
+
+export const SflPlayStatsDataSchema = z.object({
+  updatedAt: z.string(),
+  source: z.string(),
+  seasons: z.record(z.string(), SflPlayStatsSeasonSchema),
 });

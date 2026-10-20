@@ -3,6 +3,8 @@ import type { PlayerEncyclopediaEntry } from "@/lib/player-encyclopedia";
 import { PlayerDetailBoutLogs } from "./PlayerDetailBoutLogs";
 import { PlayerDetailHeader } from "./PlayerDetailHeader";
 import { PlayerDetailStats } from "./PlayerDetailStats";
+import { PlayerDetailPlayStyle } from "./PlayerDetailPlayStyle";
+import { PlayerDetailTournamentProfile } from "./PlayerDetailTournamentProfile";
 // import { VsCharCard } from "./VsCharCard";
 // import { VsCharDetailModal } from "./VsCharDetailModal";
 
@@ -50,6 +52,16 @@ export function PlayerDetailView({
       >
         {/* 6角形パラメーター ＆ ポジション別起用実績 */}
         <PlayerDetailStats selectedPlayer={selectedPlayer} />
+
+        {/* SFL公式の試合内プレイ統計から見た傾向 */}
+        <PlayerDetailPlayStyle playStyle={selectedPlayer.playStyle} />
+
+        {/* start.gg 直近1年のプレミア大会プロファイル */}
+        <PlayerDetailTournamentProfile
+          profile={selectedPlayer.tournamentProfile}
+          players={players}
+          onSelectPlayer={onSelectPlayer}
+        />
 
         {/* 
           【非表示化】対キャラクター相性セクション

@@ -59,7 +59,7 @@ export default function PlayerEncyclopedia({ players }: Props) {
     }
   };
 
-  // 全28キャラクター選択肢
+  // 全キャラクター選択肢
   const allCharacters = useMemo(() => {
     const first = players[0];
     if (!first) return [];

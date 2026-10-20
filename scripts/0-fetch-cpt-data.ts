@@ -11,6 +11,8 @@ import {
   CptMatchupsTop96DataSchema,
   MasterPlayersDataSchema,
   PlayerStatsDataSchema,
+  StartggIdentitiesDataSchema,
+  StartggPremierResultsDataSchema,
 } from "../src/lib/schema";
 import type {
   CptCharMatchupCell,
@@ -22,45 +24,25 @@ import type {
   PlayerStatsData,
 } from "../src/lib/types";
 import { PLAYER_NAME_MAP, TEAM_META_MAP } from "../src/lib/simulator";
+import { SF6_CHARACTERS as ALL_CHARACTERS, normalizeSflCharKey } from "../src/lib/characters";
+import {
+  buildTournamentProfiles,
+  type PlayerTournamentProfile,
+} from "../src/lib/startgg/profile";
 
 const DATA_DIR = path.resolve(process.cwd(), "src/data");
 const MASTER_PLAYERS_FILE = path.join(DATA_DIR, "master-players.json");
 const CPT_MATCHUPS_FILE = path.join(DATA_DIR, "cpt-matchups-top96.json");
 const PLAYER_STATS_FILE = path.join(DATA_DIR, "player-stats.json");
 const SEED_CAPCOM_FILE = path.join(DATA_DIR, "raw-capcom-seed.json");
+const STARTGG_RESULTS_FILE = path.join(DATA_DIR, "startgg-premier-results.json");
+const STARTGG_IDENTITIES_FILE = path.join(DATA_DIR, "startgg-identities.json");
 
-export const SF6_CHARACTERS: Array<{ key: string; name: string }> = [
-  { key: "ryu", name: "RYU" },
-  { key: "luke", name: "LUKE" },
-  { key: "jamie", name: "JAMIE" },
-  { key: "chunli", name: "CHUN-LI" },
-  { key: "guile", name: "GUILE" },
-  { key: "kimberly", name: "KIMBERLY" },
-  { key: "juri", name: "JURI" },
-  { key: "ken", name: "KEN" },
-  { key: "blanka", name: "BLANKA" },
-  { key: "dhalsim", name: "DHALSIM" },
-  { key: "ehonda", name: "E.HONDA" },
-  { key: "dee_jay", name: "DEE JAY" },
-  { key: "manon", name: "MANON" },
-  { key: "marisa", name: "MARISA" },
-  { key: "jp", name: "JP" },
-  { key: "zangief", name: "ZANGIEF" },
-  { key: "lily", name: "LILY" },
-  { key: "cammy", name: "CAMMY" },
-  { key: "rashid", name: "RASHID" },
-  { key: "aki", name: "A.K.I." },
-  { key: "ed", name: "ED" },
-  { key: "gouki_akuma", name: "GOUKI (AKUMA)" },
-  { key: "vega_mbison", name: "VEGA (M.BISON)" },
-  { key: "terry", name: "TERRY" },
-  { key: "mai", name: "MAI" },
-  { key: "elena", name: "ELENA" },
-  { key: "sagat", name: "SAGAT" },
-  { key: "cviper", name: "C.VIPER" },
-];
+export const SF6_CHARACTERS: Array<{ key: string; name: string }> = ALL_CHARACTERS.map(
+  ({ key, name }) => ({ key, name })
+);
 
-// 各選手のフォールバック主要使用キャラ・CPTベースElo
+// 各選手のフォールバック主要使用キャラ・手設定の事前Elo (start.gg 実績が少ない選手ほどこの値に寄る)
 const PLAYER_DEFAULT_CHAR_ELO: Record<
   string,
   { mainChar: string; subChars: string[]; elo: number; startggSlug: string }
@@ -170,28 +152,81 @@ function getCompetitiveArchetypeBias(charA: string, charB: string): number {
 }
 
 /**
- * start.gg GraphQL API から CPT Top 96 データを取得（トークン設定時）
+ * SFL公式の use_char / vs_char をキャラ内部キーで集約 ("ken(m)" と "ken" は同一キャラとして合算)
  */
-async function tryFetchStartGgTop96(): Promise<boolean> {
-  const token = process.env.STARTGG_API_TOKEN;
-  if (!token) return false;
-
-  const apiUrl = process.env.STARTGG_API_URL || "https://api.start.gg/gql/alpha";
-  try {
-    const res = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        query: `query CptCheck { currentUser { id } }`,
-      }),
-    });
-    return res.ok;
-  } catch {
-    return false;
+function normalizeCharRecords(
+  raw: Record<string, { entry?: number; win?: number; lose?: number }> | undefined
+): Record<string, { entry: number; win: number; lose: number }> {
+  const out: Record<string, { entry: number; win: number; lose: number }> = {};
+  for (const [rawKey, v] of Object.entries(raw ?? {})) {
+    const key = normalizeSflCharKey(rawKey);
+    if (!key) continue;
+    out[key] ??= { entry: 0, win: 0, lose: 0 };
+    out[key].entry += Number(v?.entry || 0);
+    out[key].win += Number(v?.win || 0);
+    out[key].lose += Number(v?.lose || 0);
   }
+  return out;
+}
+
+interface StartggContext {
+  profiles: Record<string, PlayerTournamentProfile>;
+  /** 両キャラが登録されたゲーム (SFL選手同士のセットは1回だけ数える) */
+  charGames: Array<{ myChar: string; oppChar: string; won: boolean }>;
+  windowStart: string;
+}
+
+/**
+ * Step 0a が保存した start.gg プレミア大会データを読み込み、選手プロファイルを構築
+ */
+function loadStartggContext(): StartggContext | null {
+  if (!fs.existsSync(STARTGG_RESULTS_FILE) || !fs.existsSync(STARTGG_IDENTITIES_FILE)) {
+    return null;
+  }
+  const results = StartggPremierResultsDataSchema.parse(
+    JSON.parse(fs.readFileSync(STARTGG_RESULTS_FILE, "utf8"))
+  );
+  const identities = StartggIdentitiesDataSchema.parse(
+    JSON.parse(fs.readFileSync(STARTGG_IDENTITIES_FILE, "utf8"))
+  );
+  const profiles = buildTournamentProfiles(results, identities, PLAYER_NAME_MAP);
+
+  const seenSetIds = new Set<string>();
+  const charGames: StartggContext["charGames"] = [];
+  for (const p of Object.values(results.players)) {
+    for (const set of p.sets) {
+      if (!results.events[set.eventId]?.category || seenSetIds.has(set.id)) continue;
+      seenSetIds.add(set.id);
+      for (const g of set.games) {
+        if (g.myChar && g.oppChar) {
+          charGames.push({ myChar: g.myChar, oppChar: g.oppChar, won: g.won });
+        }
+      }
+    }
+  }
+  return { profiles, charGames, windowStart: results.windowStart };
+}
+
+/**
+ * start.gg パフォーマンスレーティングを手設定Eloの尺度に合わせて事前Eloと合成
+ * (シード由来の相手強度は絶対値に意味がないため、SFL選手全体の平均を手設定Eloの平均に揃える)
+ */
+function buildEloCalibration(
+  profiles: Record<string, PlayerTournamentProfile>
+): (playerKey: string, priorElo: number) => number {
+  const rated = Object.values(profiles).filter((p) => p.performanceRating != null);
+  if (rated.length === 0) return (_key, prior) => prior;
+  const priors = rated.map((p) => PLAYER_DEFAULT_CHAR_ELO[p.sflKey]?.elo ?? 1930);
+  const shift =
+    priors.reduce((a, b) => a + b, 0) / priors.length -
+    rated.reduce((a, p) => a + (p.performanceRating ?? 0), 0) / rated.length;
+  const PRIOR_SETS = 40;
+  return (playerKey, priorElo) => {
+    const p = profiles[playerKey];
+    if (!p || p.performanceRating == null) return priorElo;
+    const w = p.ratingSampleSets / (p.ratingSampleSets + PRIOR_SETS);
+    return Math.round(priorElo * (1 - w) + (p.performanceRating + shift) * w);
+  };
 }
 
 export async function fetchAndBuildCptData(): Promise<{
@@ -201,10 +236,15 @@ export async function fetchAndBuildCptData(): Promise<{
 }> {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 
-  const startggLive = await tryFetchStartGgTop96();
+  const startgg = loadStartggContext();
+  const calibrateElo = startgg
+    ? buildEloCalibration(startgg.profiles)
+    : (_key: string, prior: number) => prior;
   console.log(
-    `[Step 0] Building CPT Top 96 Matchup Matrix & SFL 48-Player Stats (start.gg live token: ${
-      startggLive ? "ACTIVE" : "SEED+SFL_OFFICIAL_HYBRID"
+    `[Step 0] Building matchup matrix & SFL 48-player stats (start.gg premier data: ${
+      startgg
+        ? `${Object.keys(startgg.profiles).length} players / ${startgg.charGames.length} char-reported games since ${startgg.windowStart}`
+        : "NOT AVAILABLE (prior + SFL only)"
     })...`
   );
 
@@ -234,8 +274,8 @@ export async function fetchAndBuildCptData(): Promise<{
       const p2List = m.result["2p"] || [];
       const len = Math.min(p1List.length, p2List.length);
       for (let i = 0; i < len; i++) {
-        const c1 = Object.keys(p1List[i].use_chara || {})[0];
-        const c2 = Object.keys(p2List[i].use_chara || {})[0];
+        const c1 = normalizeSflCharKey(Object.keys(p1List[i].use_chara || {})[0]);
+        const c2 = normalizeSflCharKey(Object.keys(p2List[i].use_chara || {})[0]);
         const b1 = Number(p1List[i].battle || 0);
         const b2 = Number(p2List[i].battle || 0);
         if (c1 && c2 && sflCharWins[c1]?.[c2]) {
@@ -250,7 +290,20 @@ export async function fetchAndBuildCptData(): Promise<{
     }
   }
 
-  // 2. CPT Top 96 キャラ相性マトリクスの構築 (ベイズ平滑化 alpha=20)
+  // 1b. start.gg プレミア大会でキャラが登録されたゲームを集計
+  const sggCharWins: Record<string, Record<string, { w: number; n: number }>> = {};
+  const addSggGame = (a: string, b: string, won: boolean) => {
+    sggCharWins[a] ??= {};
+    sggCharWins[a][b] ??= { w: 0, n: 0 };
+    sggCharWins[a][b].n++;
+    if (won) sggCharWins[a][b].w++;
+  };
+  for (const g of startgg?.charGames ?? []) {
+    addSggGame(g.myChar, g.oppChar, g.won);
+    if (g.myChar !== g.oppChar) addSggGame(g.oppChar, g.myChar, !g.won);
+  }
+
+  // 2. キャラ相性マトリクスの構築 (手設定の事前分布 + SFL実戦 + start.gg実戦、ベイズ平滑化 alpha=20)
   const PRIOR_ALPHA = 20;
   const matrix: Record<string, Record<string, CptCharMatchupCell>> = {};
 
@@ -270,10 +323,13 @@ export async function fetchAndBuildCptData(): Promise<{
       }
 
       const baseRate = getCompetitiveArchetypeBias(cA.key, cB.key);
-      const cptSampleGames = 80;
+      // 手設定の相性傾向は40ゲーム相当の事前分布として扱う
+      const priorSampleGames = 40;
       const sflObserved = sflCharWins[cA.key]?.[cB.key] || { w: 0, n: 0 };
-      const rawTotal = cptSampleGames + sflObserved.n * 3;
-      const rawWins = Math.round(cptSampleGames * baseRate) + sflObserved.w * 3;
+      const sggObserved = sggCharWins[cA.key]?.[cB.key] || { w: 0, n: 0 };
+      const rawTotal = priorSampleGames + sflObserved.n * 3 + sggObserved.n;
+      const rawWins =
+        Math.round(priorSampleGames * baseRate) + sflObserved.w * 3 + sggObserved.w;
       const rawWinRate =
         rawTotal > 0 ? Math.round((rawWins / rawTotal) * 10000) / 10000 : 0.5;
       const smoothedWinRate = bayesianSmooth(rawWins, rawTotal, PRIOR_ALPHA, 0.5);
@@ -292,9 +348,9 @@ export async function fetchAndBuildCptData(): Promise<{
   const nowIso = new Date().toISOString();
   const cptMatchups: CptMatchupsTop96Data = CptMatchupsTop96DataSchema.parse({
     updatedAt: nowIso,
-    source: startggLive
-      ? "start.gg GraphQL API (CPT Premier / WW Top 96) + SFL 2026"
-      : "CPT 2025-2026 Top 96 Statistical Aggregate + SFL 2026 Official Logs",
+    source: startgg
+      ? `手設定の相性事前分布 + SFL 2026 公式戦 + start.gg プレミア大会 (${startgg.windowStart}〜, キャラ登録${startgg.charGames.length}ゲーム)`
+      : "手設定の相性事前分布 + SFL 2026 公式戦",
     topPlacementThreshold: 96,
     bayesianPriorAlpha: PRIOR_ALPHA,
     characters: SF6_CHARACTERS,
@@ -319,7 +375,7 @@ export async function fetchAndBuildCptData(): Promise<{
       };
 
       // 今シーズンのSFL実戦での使用キャラ集計から最多使用キャラをメイン、他に使用実績があるキャラのみをサブに設定
-      const useCharRaw: Record<string, any> = rawP?.use_char || {};
+      const useCharRaw = normalizeCharRecords(rawP?.use_char);
       const sortedUsedChars = Object.entries(useCharRaw)
         .filter(([, cObj]) => Number(cObj?.entry || 0) > 0)
         .sort(
@@ -350,9 +406,10 @@ export async function fetchAndBuildCptData(): Promise<{
       const entryAway = Number(rawP?.entry_away || 0);
       const victoryAway = Number(rawP?.victory_away || 0);
 
-      // SFL実戦成績によるElo微調整
+      // start.gg 実績で事前Eloを更新し、SFL実戦成績で微調整
+      const sgg = startgg?.profiles[normalizedKey];
       const dynamicElo =
-        def.elo +
+        calibrateElo(normalizedKey, def.elo) +
         (sflVictory - (sflEntry - sflVictory)) * 12 +
         (battleWon - (battlePlayed - battleWon)) * 4;
 
@@ -364,7 +421,7 @@ export async function fetchAndBuildCptData(): Promise<{
         division: teamMeta.division as DivisionId,
         mainChar,
         subChars,
-        startggSlug: def.startggSlug,
+        startggSlug: sgg?.userSlug ?? def.startggSlug,
         eloRating: dynamicElo,
       };
 
@@ -390,33 +447,32 @@ export async function fetchAndBuildCptData(): Promise<{
         };
       }
 
-      // 対キャラ別戦績 (PlayerVsChar(A, Y)) : CPT直近1年ベース + SFL 2026実戦ログ統合
-      const vsCharRaw: Record<string, any> = rawP?.vs_char || {};
+      // 対キャラ別戦績 (PlayerVsChar(A, Y)) : SFL 2026実戦 (2倍重み) + start.gg プレミア大会実戦
+      // 実戦が無いキャラはマクロ相性＋Elo補正の事前値に寄る
+      const vsCharRaw = normalizeCharRecords(rawP?.vs_char);
+      const sggVsChar = new Map((sgg?.characters.vs ?? []).map((v) => [v.charKey, v]));
       const vsCharStats: PlayerStatEntry["vsCharStats"] = {};
       for (const c of SF6_CHARACTERS) {
         const obs = vsCharRaw[c.key];
         const sflW = Number(obs?.win || 0);
         const sflL = Number(obs?.lose || 0);
-        // CPT直近1年の対キャラ基礎戦績をマクロ相性＋Elo補正から合成
+        const sggObs = sggVsChar.get(c.key);
         const macroBase =
           matrix[mainChar]?.[c.key]?.smoothedWinRate ?? 0.5;
         const eloBonus = (dynamicElo - 1930) / 2500;
-        const cptPriorRate = Math.max(
+        const priorRate = Math.max(
           0.35,
           Math.min(0.68, macroBase + eloBonus)
         );
-        const cptGames = 14;
-        const cptW = Math.round(cptGames * cptPriorRate);
-        const cptL = cptGames - cptW;
 
-        const totalW = cptW + sflW * 2;
-        const totalL = cptL + sflL * 2;
+        const totalW = sflW * 2 + (sggObs?.won ?? 0);
+        const totalL = sflL * 2 + (sggObs?.lost ?? 0);
         vsCharStats[c.key] = {
           vsChar: c.key,
           wins: totalW,
           losses: totalL,
           entries: totalW + totalL,
-          smoothedWinRate: bayesianSmooth(totalW, totalW + totalL, 8, cptPriorRate),
+          smoothedWinRate: bayesianSmooth(totalW, totalW + totalL, 14, priorRate),
         };
       }
 
@@ -439,6 +495,17 @@ export async function fetchAndBuildCptData(): Promise<{
         } else if (hItem.result === "lose") {
           h2hStats[partner].losses += 1;
         }
+      }
+      // start.gg プレミア大会での SFL選手同士の対戦 (セット単位)
+      for (const h of Object.values(sgg?.h2h ?? {})) {
+        h2hStats[h.opponentKey] ??= {
+          opponentKey: h.opponentKey,
+          wins: 0,
+          losses: 0,
+          smoothedWinRate: 0.5,
+        };
+        h2hStats[h.opponentKey].wins += h.won;
+        h2hStats[h.opponentKey].losses += h.lost;
       }
       for (const rec of Object.values(h2hStats)) {
         rec.smoothedWinRate = bayesianSmooth(
@@ -477,14 +544,30 @@ export async function fetchAndBuildCptData(): Promise<{
           homeWinRate: bayesianSmooth(victoryHome, entryHome, 3, 0.55),
           awayWinRate: bayesianSmooth(victoryAway, entryAway, 3, 0.45),
         },
-        cptStats: {
-          tournamentsCount: 9,
-          top96Count: dynamicElo >= 1950 ? 8 : 6,
-          totalSetsWon: Math.round(42 * (0.5 + (dynamicElo - 1900) / 1000)),
-          totalSetsPlayed: 55,
-          overallWinRate:
-            Math.round((0.5 + (dynamicElo - 1900) / 1000) * 1000) / 1000,
-        },
+        cptStats: sgg
+          ? {
+              source: "startgg",
+              tournamentsCount: sgg.eventsCount,
+              top96Count: sgg.results.filter(
+                (r) => r.placement != null && r.placement <= 96
+              ).length,
+              totalSetsWon: sgg.sets.won,
+              totalSetsPlayed: sgg.sets.total,
+              overallWinRate:
+                Math.round(((sgg.sets.rate ?? 50) / 100) * 1000) / 1000,
+              performanceRating: sgg.performanceRating,
+            }
+          : {
+              // start.gg 実績が無い場合は Elo からの推定値
+              source: "estimated",
+              tournamentsCount: 0,
+              top96Count: 0,
+              totalSetsWon: 0,
+              totalSetsPlayed: 0,
+              overallWinRate:
+                Math.round((0.5 + (dynamicElo - 1900) / 1000) * 1000) / 1000,
+              performanceRating: null,
+            },
         useCharStats,
         vsCharStats,
         h2hStats,
@@ -511,7 +594,7 @@ export async function fetchAndBuildCptData(): Promise<{
       division: div,
       mainChar: def.mainChar,
       subChars: def.subChars,
-      startggSlug: def.startggSlug,
+      startggSlug: startgg?.profiles[pKey]?.userSlug ?? def.startggSlug,
       eloRating: def.elo,
     };
   }
