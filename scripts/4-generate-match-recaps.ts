@@ -25,6 +25,8 @@ import type {
 import { PLAYER_NAME_MAP, TEAM_META_MAP } from "../src/lib/simulator";
 import { formatCharName } from "../src/lib/player-encyclopedia";
 import { SECTION_VIDEO_IDS } from "../src/config/section-videos";
+import { fetchSectionVideos } from "./recap/youtube-archive";
+import { SFL_CURRENT_SEASON } from "../src/lib/sfl/play-style";
 import {
   extractYoutubeVideoId,
   fetchYoutubeChapters,
@@ -243,8 +245,7 @@ export function hasPendingVideoWork(): boolean {
   const latestSlugs = [completed.s.at(-1)?.post_name, completed.f.at(-1)?.post_name].filter(
     Boolean
   ) as string[];
-  const slugHasVideo = latestSlugs.some((slug) => SECTION_VIDEO_IDS[slug]);
-  if (!slugHasVideo) return false;
+  if (latestSlugs.length === 0) return false;
   const pendingBout = Object.entries(facts.bouts).some(
     ([id, b]) =>
       latestSlugs.some((slug) => id.startsWith(`${slug}-`)) &&
@@ -254,8 +255,12 @@ export function hasPendingVideoWork(): boolean {
   const pendingVisual = Object.entries(facts.visual).some(
     ([id, v]) => latestSlugs.some((slug) => id.startsWith(`${slug}-`)) && v.status === "pending"
   );
+  // アーカイブ (チャプター付き) がまだ見つかっていない最新節。
+  // アーカイブは生成時に公式チャンネルから自動検出するため、見つかるまで毎回確認する
   const unseenSection = latestSlugs.some(
-    (slug) => SECTION_VIDEO_IDS[slug] && !Object.keys(facts.bouts).some((id) => id.startsWith(`${slug}-`))
+    (slug) =>
+      !(facts.videos[slug]?.chapters?.length) &&
+      !Object.keys(facts.bouts).some((id) => id.startsWith(`${slug}-`))
   );
   const pendingNarration = facts.pendingNarrations.some((id) =>
     latestSlugs.some((slug) => id.startsWith(`${slug}-`))
@@ -295,6 +300,11 @@ export async function generateAndSaveMatchRecaps(
   const videoFacts = loadVideoFacts();
   const editorial = loadEditorial();
 
+  // 節の配信アーカイブ: 手動登録 > 公式チャンネルから自動検出 > 以前に検出してキャッシュ済み
+  const detectedVideos = await fetchSectionVideos(SFL_CURRENT_SEASON);
+  const resolveVideoId = (slug: string): string | undefined =>
+    SECTION_VIDEO_IDS[slug] ?? detectedVideos[slug] ?? videoFacts.videos[slug]?.videoId;
+
   const resultRecaps: MatchRecapsData = {
     updatedAt: new Date().toISOString(),
     generatorMode: "deterministic-rules",
@@ -311,7 +321,7 @@ export async function generateAndSaveMatchRecaps(
     // 過去節のアーカイブ
     for (const entry of completed.slice(0, -1)) {
       const sec = entry.fields.section;
-      const videoId = SECTION_VIDEO_IDS[entry.post_name];
+      const videoId = resolveVideoId(entry.post_name);
       const matchesArchive: PastSectionArchive["matches"] = activeSlots(sec)
         .filter(({ num }) => num <= 3)
         .map(({ slot }) => {
@@ -341,7 +351,7 @@ export async function generateAndSaveMatchRecaps(
     const slug = latestEntry.post_name;
     const sec = latestEntry.fields.section;
     const videoId =
-      SECTION_VIDEO_IDS[slug] || extractYoutubeVideoId(sec.links?.live?.url || "") || null;
+      resolveVideoId(slug) || extractYoutubeVideoId(sec.links?.live?.url || "") || null;
     const youtubeUrl = videoId
       ? `https://www.youtube.com/watch?v=${videoId}`
       : "https://www.youtube.com/@CapcomFightersJP";
@@ -434,8 +444,13 @@ export async function generateAndSaveMatchRecaps(
         // 映像解析の進み具合 (編集解説があれば完了扱い)
         const videoStatus: "complete" | "pending" | "unavailable" = editorial.bouts[ctx.boutId]
           ? "complete"
-          : !videoId || !window
+          : !videoId
             ? "unavailable"
+            : !window
+              ? // 配信直後でアーカイブのチャプターがまだ付いていない場合は解析待ち
+                chapters.length === 0
+                ? "pending"
+                : "unavailable"
             : facts?.status === "pending" || visual?.status === "pending"
               ? "pending"
               : facts?.status === "complete" || visual?.status === "complete"
@@ -521,7 +536,10 @@ export async function generateAndSaveMatchRecaps(
         editorial.matches[matchId] || narrativeUsable || !needsNarration
           ? "complete"
           : videoId &&
-              (!allSettled || anyComplete || videoFacts.pendingNarrations.includes(matchId))
+              (!allSettled ||
+                anyComplete ||
+                chapters.length === 0 ||
+                videoFacts.pendingNarrations.includes(matchId))
             ? "pending"
             : "unavailable";
 
