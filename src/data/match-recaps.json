@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T14:32:35.083Z",
+  "updatedAt": "2026-10-20T14:36:51.803Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 4,
@@ -807,8 +807,10 @@
         "sectionTitle": "Division F 第4節",
         "matchNumber": 1,
         "scheduledAt": "2026-10-20 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/@CapcomFightersJP",
-        "matchVideoUrl": "https://www.youtube.com/@CapcomFightersJP",
+        "youtubeUrl": "https://www.youtube.com/watch?v=OvwqJkBiJqw",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=OvwqJkBiJqw&t=2190s",
+        "matchStartTime": 2190,
+        "matchStartLabel": "36:30",
         "home": "rid",
         "away": "good8",
         "homePoint": 40,
@@ -849,43 +851,70 @@
                 "winner": "away",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "CA"
                   }
+                ],
+                "burnout": [
+                  "home"
                 ]
               },
               {
                 "winner": "home",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL",
+                    "perfect": true
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               },
               {
                 "winner": "home",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "id": "reversal",
+                "side": "home"
+              },
+              {
+                "id": "corner",
+                "side": "home"
+              }
+            ]
           },
           {
             "status": 1,
@@ -919,13 +948,16 @@
                 "winner": "away",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "perfect": true
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   }
                 ]
               },
@@ -939,7 +971,8 @@
                     "winner": "away"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "SA3"
                   }
                 ]
               },
@@ -950,15 +983,29 @@
                     "winner": "home"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "SA2"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "id": "reversal",
+                "side": "home"
+              },
+              {
+                "id": "corner",
+                "side": "away"
+              }
+            ]
           },
           {
             "status": 2,
@@ -994,13 +1041,16 @@
                 "winner": "home",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "CA"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "perfect": true
                   }
                 ]
               },
@@ -1008,10 +1058,12 @@
                 "winner": "home",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "CA"
                   }
                 ]
               },
@@ -1019,10 +1071,12 @@
                 "winner": "away",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "perfect": true
                   }
                 ]
               },
@@ -1030,10 +1084,12 @@
                 "winner": "away",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "SA3"
                   }
                 ]
               },
@@ -1044,15 +1100,29 @@
                     "winner": "away"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "CA"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "id": "throw",
+                "side": "home"
+              },
+              {
+                "id": "anti_air",
+                "side": "away"
+              }
+            ]
           }
         ]
       },
@@ -1063,8 +1133,10 @@
         "sectionTitle": "Division F 第4節",
         "matchNumber": 2,
         "scheduledAt": "2026-10-20 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/@CapcomFightersJP",
-        "matchVideoUrl": "https://www.youtube.com/@CapcomFightersJP",
+        "youtubeUrl": "https://www.youtube.com/watch?v=OvwqJkBiJqw",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=OvwqJkBiJqw&t=6174s",
+        "matchStartTime": 6174,
+        "matchStartLabel": "1:42:54",
         "home": "dng",
         "away": "rc",
         "homePoint": 30,
@@ -1104,29 +1176,42 @@
                 "winner": "away",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "SA3"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               },
               {
                 "winner": "away",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   }
                 ]
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "id": "projectile",
+                "side": "away"
+              }
+            ]
           },
           {
             "status": 1,
@@ -1309,8 +1394,10 @@
         "sectionTitle": "Division F 第4節",
         "matchNumber": 3,
         "scheduledAt": "2026-10-20 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/@CapcomFightersJP",
-        "matchVideoUrl": "https://www.youtube.com/@CapcomFightersJP",
+        "youtubeUrl": "https://www.youtube.com/watch?v=OvwqJkBiJqw",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=OvwqJkBiJqw&t=10343s",
+        "matchStartTime": 10343,
+        "matchStartLabel": "2:52:23",
         "home": "oja",
         "away": "varrel",
         "homePoint": 30,
