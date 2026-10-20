@@ -108,11 +108,33 @@ function characters(p: PlayerEncyclopediaEntry): CommentarySection | null {
   }
   const r = p.rankedProfile;
   if (r) {
-    const mains = r.characters
-      .filter((c) => c.battles > 0)
-      .slice(0, 3)
-      .map((c) => `${formatCharName(c.char)}${c.mr && c.mr > 0 ? ` MR${c.mr}` : ""}（今季${c.battles}戦）`);
-    if (mains.length) parts.push(`ランクマでは${mains.join("、")}。`);
+    const actLine = (act: NonNullable<typeof r.acts.current>) =>
+      act.chars
+        .slice(0, 3)
+        .map(
+          (c) =>
+            `${formatCharName(c.char)} ${c.n.toLocaleString()}戦（勝率${pct(c.w, c.n)}${c.mr && c.mr > 0 ? `・MR${c.mr}` : ""}）`
+        )
+        .join("、");
+    const cur = r.acts?.current;
+    const prev = r.acts?.previous;
+    if (cur && cur.chars.length) {
+      parts.push(`今のAct（Act ${cur.seasonId}）のランクマは${actLine(cur)}。`);
+      if (prev && prev.chars.length) {
+        const prevMain = prev.chars[0].char;
+        parts.push(
+          prevMain === cur.chars[0].char
+            ? `1つ前のAct ${prev.seasonId} も${formatCharName(prevMain)}が中心（${prev.chars[0].n.toLocaleString()}戦）で、メインは変わっていません。`
+            : `1つ前のAct ${prev.seasonId} は${actLine(prev)}で、メインが${formatCharName(prevMain)}から${formatCharName(cur.chars[0].char)}に移っています。`
+        );
+      }
+    } else {
+      const mains = r.characters
+        .filter((c) => c.battles > 0)
+        .slice(0, 3)
+        .map((c) => `${formatCharName(c.char)}${c.mr && c.mr > 0 ? ` MR${c.mr}` : ""}（今季${c.battles}戦）`);
+      if (mains.length) parts.push(`ランクマでは${mains.join("、")}。`);
+    }
     if (r.risingChars.length) {
       parts.push(
         `直近14日は${r.risingChars.map((c) => `${formatCharName(c.char)}の割合が${c.priorShare}%→${c.recentShare}%`).join("、")}と増えており、SFLでの起用候補になり得ます。`

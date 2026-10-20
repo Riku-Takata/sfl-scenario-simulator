@@ -2,8 +2,7 @@
  * Buckler 同期 (自宅サーバーで実行)
  *
  *   npx tsx scripts/buckler/sync.ts --mode daily      # 毎日: 前回以降の対戦ログ + 当日のスナップショット
- *   npx tsx scripts/buckler/sync.ts --mode backfill   # 初回: 公開されている範囲 (直近約100戦 × 選手, 公式ダイアグラム12か月) を取得
- *   --players fuudo,kawano   対象を絞る (試走用)
+ *   npx tsx scripts/buckler/sync.ts --mode backfill   # 初回: 公開されている範囲 (直近約100戦 × 選手, 公式ダイアグラム12か月) を取得 *   --players fuudo,kawano   対象を絞る (試走用)
  *
  * 終了コード: 0 正常 (上限到達で打ち切った場合も含む) / 2 認証切れ (Cookie の再設定が必要) / 3 アクセス拒否・混雑の継続
  * どの段階で止まっても取得済みの分は保存され、次回は続きから再開する。
@@ -20,6 +19,7 @@ import {
 } from "./client";
 import { BucklerStore, type SyncState } from "./store";
 import {
+  normalizeAct,
   normalizeDia,
   normalizePlay,
   normalizeReplay,
@@ -36,7 +36,13 @@ if (typeof process.loadEnvFile === "function") {
 const MAX_BATTLELOG_PAGES = 10; // Buckler が公開するのは直近約100戦 (10ページ)
 const DIA_VARIANT = "dia_master";
 
+/**
+ * daily: 対戦ログの差分 + 当日のスナップショット + 今の Act / 1つ前の Act の集計
+ * backfill: 対戦ログを公開範囲すべて + 公式ダイアグラム12か月 (+ Act 集計)
+ */
 type Mode = "daily" | "backfill";
+
+const RANK_MODE_ID = 2;
 
 /** JST の日付 (YYYY-MM-DD) */
 export function jstDate(ms = Date.now()): string {
@@ -68,9 +74,40 @@ function parseArgs(argv: string[]): { mode: Mode; players: string[] | null } {
     const i = argv.indexOf(`--${name}`);
     return i >= 0 ? argv[i + 1] : undefined;
   };
-  const mode = get("mode") === "backfill" ? "backfill" : "daily";
+  const mode: Mode = get("mode") === "backfill" ? "backfill" : "daily";
   const players = get("players")?.split(",").map((s) => s.trim()).filter(Boolean) ?? null;
   return { mode, players };
+}
+
+/**
+ * Act 単位の集計を取得 (1 Act あたり2リクエスト)
+ * 今の Act は毎回更新し、1つ前の Act は確定済みなので未取得のときだけ取る
+ */
+async function syncActs(
+  client: BucklerClient,
+  store: BucklerStore,
+  sflKey: string,
+  sid: string
+): Promise<number> {
+  const current = store.snapshots(sflKey).at(-1)?.seasonId;
+  if (current == null) return 0;
+  const stored = store.acts(sflKey);
+  const targets = [current];
+  if (current > 0 && !stored[String(current - 1)]) targets.push(current - 1);
+  for (const seasonId of targets) {
+    const targetShortId = Number(sid);
+    const winRates = await client.act<Parameters<typeof normalizeAct>[1]>("characterwinrate", {
+      targetShortId,
+      targetSeasonId: seasonId,
+      targetModeId: RANK_MODE_ID,
+    });
+    const league = await client.act<Parameters<typeof normalizeAct>[2]>("leagueinfo", {
+      targetShortId,
+      targetSeasonId: seasonId,
+    });
+    store.saveAct(sflKey, normalizeAct(seasonId, winRates, league, new Date().toISOString()));
+  }
+  return targets.length;
 }
 
 async function syncPlayer(
@@ -86,6 +123,9 @@ async function syncPlayer(
     const pp = await client.pageProps(`profile/${sid}/play`);
     store.appendSnapshot(sflKey, normalizePlay(pp, today, new Date().toISOString()));
   }
+
+  // 今の Act (毎日) と1つ前の Act (初回のみ) のキャラ別戦績・LP/MR
+  const acts = await syncActs(client, store, sflKey, sid);
 
   const knownIds = new Set(store.matches(sflKey).map((m) => m.id));
   const fresh: BucklerMatch[] = [];
@@ -120,6 +160,7 @@ async function syncPlayer(
     lastSyncAt: new Date().toISOString(),
     newMatches: fresh.length,
     gap: mode === "daily" && hadHistory && !reachedKnown && pagesRead >= MAX_BATTLELOG_PAGES,
+    acts,
   };
 }
 

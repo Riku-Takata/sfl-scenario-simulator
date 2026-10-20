@@ -10,7 +10,12 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import type { BucklerDiaMonth, BucklerMatch, BucklerSnapshot } from "../../src/lib/buckler/records";
+import type {
+  BucklerActRecord,
+  BucklerDiaMonth,
+  BucklerMatch,
+  BucklerSnapshot,
+} from "../../src/lib/buckler/records";
 
 export function bucklerDataDir(): string {
   return path.resolve(
@@ -37,13 +42,15 @@ export interface SyncState {
       newMatches: number;
       /** 日次取得で10ページ遡っても既知の試合に届かなかった (取りこぼしの可能性) */
       gap: boolean;
+      /** 今回取得した Act の数 */
+      acts?: number;
     }
   >;
 }
 
 export class BucklerStore {
   constructor(readonly dir = bucklerDataDir()) {
-    for (const sub of ["matches", "snapshots", "stats"]) {
+    for (const sub of ["matches", "snapshots", "stats", "acts"]) {
       fs.mkdirSync(path.join(dir, sub), { recursive: true });
     }
   }
@@ -116,6 +123,17 @@ export class BucklerStore {
 
   appendSnapshot(sflKey: string, snap: BucklerSnapshot): void {
     this.appendJsonl(`snapshots/${sflKey}.jsonl`, [snap]);
+  }
+
+  /** Act (シーズン) 単位の集計: seasonId → レコード */
+  acts(sflKey: string): Record<string, BucklerActRecord> {
+    return this.readJson<Record<string, BucklerActRecord>>(`acts/${sflKey}.json`, {});
+  }
+
+  saveAct(sflKey: string, record: BucklerActRecord): void {
+    const all = this.acts(sflKey);
+    all[String(record.seasonId)] = record;
+    this.writeJson(`acts/${sflKey}.json`, all);
   }
 
   dia(variant: string, month: string): BucklerDiaMonth | null {

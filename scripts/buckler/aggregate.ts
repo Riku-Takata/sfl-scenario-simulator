@@ -23,7 +23,13 @@ export function runAggregate(argv = process.argv.slice(2)): void {
 
   const players: BucklerProfilesData["players"] = {};
   for (const sflKey of Object.keys(store.cfnIds().players).sort()) {
-    const profile = buildBucklerProfile(sflKey, store.matches(sflKey), store.snapshots(sflKey));
+    const profile = buildBucklerProfile(
+      sflKey,
+      store.matches(sflKey),
+      store.snapshots(sflKey),
+      Math.floor(Date.now() / 1000),
+      store.acts(sflKey)
+    );
     if (profile) players[sflKey] = profile;
   }
   const profiles = BucklerProfilesDataSchema.parse({
