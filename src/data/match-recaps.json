@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T14:36:51.803Z",
+  "updatedAt": "2026-10-20T15:58:03.250Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 4,
@@ -102,7 +102,8 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -180,7 +181,8 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -276,9 +278,11 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           }
-        ]
+        ],
+        "narrationStatus": "complete"
       },
       {
         "matchId": "div-s-sec4-m2",
@@ -364,7 +368,8 @@
                 "id": "drive_rush",
                 "side": "home"
               }
-            ]
+            ],
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -424,7 +429,8 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -508,7 +514,8 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           },
           {
             "status": 3,
@@ -562,9 +569,11 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           }
-        ]
+        ],
+        "narrationStatus": "complete"
       },
       {
         "matchId": "div-s-sec4-m3",
@@ -654,7 +663,8 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -714,7 +724,8 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -794,9 +805,11 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           }
-        ]
+        ],
+        "narrationStatus": "complete"
       }
     ],
     "f": [
@@ -914,7 +927,8 @@
                 "id": "corner",
                 "side": "home"
               }
-            ]
+            ],
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -1005,7 +1019,8 @@
                 "id": "corner",
                 "side": "away"
               }
-            ]
+            ],
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -1122,9 +1137,11 @@
                 "id": "anti_air",
                 "side": "away"
               }
-            ]
+            ],
+            "videoStatus": "complete"
           }
-        ]
+        ],
+        "narrationStatus": "pending"
       },
       {
         "matchId": "div-f-sec4-m2",
@@ -1211,7 +1228,8 @@
                 "id": "projectile",
                 "side": "away"
               }
-            ]
+            ],
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -1244,10 +1262,13 @@
                 "winner": "away",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "CA"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "CA",
+                    "perfect": true
                   }
                 ]
               },
@@ -1255,18 +1276,34 @@
                 "winner": "away",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "CA"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               }
             ],
-            "tags": []
+            "tags": [
+              {
+                "id": "whiff_punish",
+                "side": "away"
+              },
+              {
+                "id": "reversal",
+                "side": "away"
+              }
+            ],
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -1299,11 +1336,16 @@
                 "winner": "home",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "CA"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               },
               {
@@ -1324,15 +1366,21 @@
                 "winner": "home",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "CA"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "complete"
           },
           {
             "status": 3,
@@ -1383,9 +1431,11 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "unavailable"
           }
-        ]
+        ],
+        "narrationStatus": "pending"
       },
       {
         "matchId": "div-f-sec4-m3",
@@ -1472,7 +1522,8 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "pending"
           },
           {
             "status": 1,
@@ -1526,7 +1577,8 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "unavailable"
           },
           {
             "status": 2,
@@ -1606,9 +1658,11 @@
                 ]
               }
             ],
-            "tags": []
+            "tags": [],
+            "videoStatus": "pending"
           }
-        ]
+        ],
+        "narrationStatus": "pending"
       }
     ]
   },
