@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-10-17T08:04:06.186Z",
+  "updatedAt": "2026-10-20T14:32:27.892Z",
   "sourceUrl": "https://sf.esports.capcom.com/api/sfl2026/?data=results",
   "completedSectionCount": {
     "s": 4,
-    "f": 3
+    "f": 4
   },
   "matches": [
     {
@@ -1312,15 +1312,53 @@
       "scheduledAt": "2026-10-20 00:00:00",
       "home": "rid",
       "away": "good8",
-      "played": false,
-      "homePoint": 0,
+      "played": true,
+      "homePoint": 40,
       "awayPoint": 0,
-      "homeBattleDiff": 0,
-      "awayBattleDiff": 0,
-      "homeRoundDiff": 0,
-      "awayRoundDiff": 0,
-      "winner": null,
-      "isTiebreaker": false
+      "homeBattleDiff": 3,
+      "awayBattleDiff": -3,
+      "homeRoundDiff": 3,
+      "awayRoundDiff": -3,
+      "winner": "home",
+      "isTiebreaker": false,
+      "bouts": [
+        {
+          "status": 0,
+          "statusName": "先鋒戦",
+          "homePlayer": "adelie",
+          "awayPlayer": "sahara",
+          "homeChara": "ed",
+          "awayChara": "ed",
+          "homePoint": 10,
+          "awayPoint": 0,
+          "homeBattle": 2,
+          "awayBattle": 1
+        },
+        {
+          "status": 1,
+          "statusName": "中堅戦",
+          "homePlayer": "hikaru",
+          "awayPlayer": "gachikun",
+          "homeChara": "aki",
+          "awayChara": "rashid",
+          "homePoint": 10,
+          "awayPoint": 0,
+          "homeBattle": 2,
+          "awayBattle": 1
+        },
+        {
+          "status": 2,
+          "statusName": "大将戦",
+          "homePlayer": "jr",
+          "awayPlayer": "kawano",
+          "homeChara": "zangief",
+          "awayChara": "luke",
+          "homePoint": 20,
+          "awayPoint": 0,
+          "homeBattle": 3,
+          "awayBattle": 2
+        }
+      ]
     },
     {
       "id": "div-f-sec4-m2",
@@ -1332,15 +1370,65 @@
       "scheduledAt": "2026-10-20 00:00:00",
       "home": "dng",
       "away": "rc",
-      "played": false,
-      "homePoint": 0,
-      "awayPoint": 0,
-      "homeBattleDiff": 0,
-      "awayBattleDiff": 0,
-      "homeRoundDiff": 0,
-      "awayRoundDiff": 0,
-      "winner": null,
-      "isTiebreaker": false
+      "played": true,
+      "homePoint": 30,
+      "awayPoint": 20,
+      "homeBattleDiff": 1,
+      "awayBattleDiff": -1,
+      "homeRoundDiff": 3,
+      "awayRoundDiff": -3,
+      "winner": "home",
+      "isTiebreaker": true,
+      "bouts": [
+        {
+          "status": 0,
+          "statusName": "先鋒戦",
+          "homePlayer": "takeuchi",
+          "awayPlayer": "yas",
+          "homeChara": "jamie",
+          "awayChara": "ryu",
+          "homePoint": 0,
+          "awayPoint": 10,
+          "homeBattle": 0,
+          "awayBattle": 2
+        },
+        {
+          "status": 1,
+          "statusName": "中堅戦",
+          "homePlayer": "keib",
+          "awayPlayer": "fuudo",
+          "homeChara": "mai",
+          "awayChara": "cviper",
+          "homePoint": 0,
+          "awayPoint": 10,
+          "homeBattle": 0,
+          "awayBattle": 2
+        },
+        {
+          "status": 2,
+          "statusName": "大将戦",
+          "homePlayer": "itazan",
+          "awayPlayer": "hinao",
+          "homeChara": "zangief",
+          "awayChara": "sagat",
+          "homePoint": 20,
+          "awayPoint": 0,
+          "homeBattle": 3,
+          "awayBattle": 0
+        },
+        {
+          "status": 3,
+          "statusName": "延長戦",
+          "homePlayer": "nauman",
+          "awayPlayer": "daigo",
+          "homeChara": "mai",
+          "awayChara": "gouki_akuma",
+          "homePoint": 10,
+          "awayPoint": 0,
+          "homeBattle": 2,
+          "awayBattle": 0
+        }
+      ]
     },
     {
       "id": "div-f-sec4-m3",
@@ -1352,15 +1440,53 @@
       "scheduledAt": "2026-10-20 00:00:00",
       "home": "oja",
       "away": "varrel",
-      "played": false,
-      "homePoint": 0,
-      "awayPoint": 0,
-      "homeBattleDiff": 0,
-      "awayBattleDiff": 0,
-      "homeRoundDiff": 0,
-      "awayRoundDiff": 0,
-      "winner": null,
-      "isTiebreaker": false
+      "played": true,
+      "homePoint": 30,
+      "awayPoint": 10,
+      "homeBattleDiff": 1,
+      "awayBattleDiff": -1,
+      "homeRoundDiff": 2,
+      "awayRoundDiff": -2,
+      "winner": "home",
+      "isTiebreaker": false,
+      "bouts": [
+        {
+          "status": 0,
+          "statusName": "先鋒戦",
+          "homePlayer": "seiya",
+          "awayPlayer": "mizuha",
+          "homeChara": "chunli",
+          "awayChara": "cammy",
+          "homePoint": 10,
+          "awayPoint": 0,
+          "homeBattle": 2,
+          "awayBattle": 1
+        },
+        {
+          "status": 1,
+          "statusName": "中堅戦",
+          "homePlayer": "otani",
+          "awayPlayer": "wabiichi",
+          "homeChara": "luke",
+          "awayChara": "terry",
+          "homePoint": 0,
+          "awayPoint": 10,
+          "homeBattle": 0,
+          "awayBattle": 2
+        },
+        {
+          "status": 2,
+          "statusName": "大将戦",
+          "homePlayer": "raoyamu",
+          "awayPlayer": "tokido",
+          "homeChara": "vega_mbison",
+          "awayChara": "jp",
+          "homePoint": 20,
+          "awayPoint": 0,
+          "homeBattle": 3,
+          "awayBattle": 1
+        }
+      ]
     },
     {
       "id": "div-s-sec5-m1",

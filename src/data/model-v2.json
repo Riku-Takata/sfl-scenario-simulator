@@ -1,10 +1,10 @@
 {
-  "fittedAt": "2026-10-20T13:06:30.525Z",
-  "trainBouts": 301,
+  "fittedAt": "2026-10-20T14:32:29.039Z",
+  "trainBouts": 311,
   "params": {
-    "rating": 0.875686678446316,
-    "matchup": 0.8568402980324961,
-    "home": 0.014009264796911959,
+    "rating": 0.8094212307291138,
+    "matchup": 0.8558290955976444,
+    "home": 0.03861730214949024,
     "vsChar": 0,
     "h2h": 0
   },
@@ -33,30 +33,30 @@
     "johnny": 1477,
     "torimeshi": 1620.9,
     "2bassa": 1630.9,
-    "tokido": 1697.4,
+    "tokido": 1668.3,
     "mago": 1529.2,
-    "mizuha": 1542.8,
-    "wabiichi": 1668.6,
-    "gachikun": 1657.7,
-    "kawano": 1696.7,
+    "mizuha": 1536.5,
+    "wabiichi": 1678.6,
+    "gachikun": 1649.9,
+    "kawano": 1680.7,
     "pugera": 1614.4,
-    "sahara": 1613,
-    "itazan": 1615,
-    "nauman": 1533.4,
-    "takeuchi": 1599.7,
-    "keib": 1553.8,
-    "seiya": 1568.3,
-    "otani": 1530.1,
+    "sahara": 1607.6,
+    "itazan": 1644,
+    "nauman": 1553.6,
+    "takeuchi": 1583.8,
+    "keib": 1539.5,
+    "seiya": 1574.6,
+    "otani": 1520.2,
     "mocchi": 1474.9,
-    "raoyamu": 1546.1,
-    "daigo": 1628.2,
-    "fuudo": 1590.6,
-    "yas": 1601.6,
-    "hinao": 1688.8,
-    "jr": 1625.9,
+    "raoyamu": 1575.3,
+    "daigo": 1607.9,
+    "fuudo": 1604.9,
+    "yas": 1617.5,
+    "hinao": 1659.8,
+    "jr": 1642,
     "takagi": 1548.6,
-    "adelie": 1650.4,
-    "hikaru": 1659.9
+    "adelie": 1655.8,
+    "hikaru": 1667.7
   },
   "games": {
     "sako": 98.8,
@@ -83,30 +83,30 @@
     "johnny": 107.4,
     "torimeshi": 187.4,
     "2bassa": 130,
-    "tokido": 278.8,
+    "tokido": 282.8,
     "mago": 163.8,
-    "mizuha": 171.8,
-    "wabiichi": 182.2,
-    "gachikun": 252.4,
-    "kawano": 219.4,
+    "mizuha": 174.8,
+    "wabiichi": 184.2,
+    "gachikun": 255.4,
+    "kawano": 224.4,
     "pugera": 185.8,
-    "sahara": 219.8,
-    "itazan": 146.6,
-    "nauman": 150,
-    "takeuchi": 118.2,
-    "keib": 187.2,
-    "seiya": 146.4,
-    "otani": 152.4,
+    "sahara": 222.8,
+    "itazan": 149.6,
+    "nauman": 152,
+    "takeuchi": 120.2,
+    "keib": 189.2,
+    "seiya": 149.4,
+    "otani": 154.4,
     "mocchi": 103.6,
-    "raoyamu": 101.6,
-    "daigo": 88.2,
-    "fuudo": 154.8,
-    "yas": 150.8,
-    "hinao": 179.4,
-    "jr": 240.8,
+    "raoyamu": 105.6,
+    "daigo": 90.2,
+    "fuudo": 156.8,
+    "yas": 152.8,
+    "hinao": 182.4,
+    "jr": 245.8,
     "takagi": 140.2,
-    "adelie": 185.4,
-    "hikaru": 203.4
+    "adelie": 188.4,
+    "hikaru": 206.4
   },
   "propensities": {
     "sako": {
@@ -326,7 +326,7 @@
       "tiebreak": 0.5
     },
     "tokido": {
-      "participation": 0.8,
+      "participation": 0.8181818181818182,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -335,7 +335,7 @@
       "tiebreak": 0.5
     },
     "mago": {
-      "participation": 0.65,
+      "participation": 0.5909090909090909,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -344,7 +344,7 @@
       "tiebreak": 2
     },
     "mizuha": {
-      "participation": 0.75,
+      "participation": 0.7727272727272727,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -353,7 +353,7 @@
       "tiebreak": 1.5
     },
     "wabiichi": {
-      "participation": 0.9,
+      "participation": 0.9166666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -362,7 +362,7 @@
       "tiebreak": 0.5
     },
     "gachikun": {
-      "participation": 0.85,
+      "participation": 0.8636363636363636,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -371,7 +371,7 @@
       "tiebreak": 0.5
     },
     "kawano": {
-      "participation": 0.7,
+      "participation": 0.7272727272727273,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -380,7 +380,7 @@
       "tiebreak": 0.5
     },
     "pugera": {
-      "participation": 0.65,
+      "participation": 0.5909090909090909,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -389,7 +389,7 @@
       "tiebreak": 1
     },
     "sahara": {
-      "participation": 0.8,
+      "participation": 0.8181818181818182,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -398,7 +398,7 @@
       "tiebreak": 2
     },
     "itazan": {
-      "participation": 0.6,
+      "participation": 0.6363636363636364,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -407,16 +407,16 @@
       "tiebreak": 1.5
     },
     "nauman": {
-      "participation": 0.75,
+      "participation": 0.6818181818181818,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
         0.3333333333333333
       ],
-      "tiebreak": 0.5
+      "tiebreak": 1.5
     },
     "takeuchi": {
-      "participation": 0.85,
+      "participation": 0.8636363636363636,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -425,7 +425,7 @@
       "tiebreak": 0.5
     },
     "keib": {
-      "participation": 0.85,
+      "participation": 0.8636363636363636,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -434,7 +434,7 @@
       "tiebreak": 0.5
     },
     "seiya": {
-      "participation": 0.6,
+      "participation": 0.6363636363636364,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -443,7 +443,7 @@
       "tiebreak": 1
     },
     "otani": {
-      "participation": 0.8,
+      "participation": 0.8181818181818182,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -452,7 +452,7 @@
       "tiebreak": 1
     },
     "mocchi": {
-      "participation": 0.75,
+      "participation": 0.6818181818181818,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -461,7 +461,7 @@
       "tiebreak": 1
     },
     "raoyamu": {
-      "participation": 0.7,
+      "participation": 0.75,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -470,16 +470,16 @@
       "tiebreak": 0.5
     },
     "daigo": {
-      "participation": 0.55,
+      "participation": 0.5,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
         0.3333333333333333
       ],
-      "tiebreak": 1
+      "tiebreak": 2
     },
     "fuudo": {
-      "participation": 0.85,
+      "participation": 0.8636363636363636,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -488,7 +488,7 @@
       "tiebreak": 0.5
     },
     "yas": {
-      "participation": 0.9,
+      "participation": 0.9166666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -497,7 +497,7 @@
       "tiebreak": 0.5
     },
     "hinao": {
-      "participation": 0.7,
+      "participation": 0.75,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -506,7 +506,7 @@
       "tiebreak": 0.5
     },
     "jr": {
-      "participation": 0.9,
+      "participation": 0.9166666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -515,7 +515,7 @@
       "tiebreak": 0.5
     },
     "takagi": {
-      "participation": 0.65,
+      "participation": 0.5909090909090909,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -524,7 +524,7 @@
       "tiebreak": 1
     },
     "adelie": {
-      "participation": 0.8,
+      "participation": 0.8181818181818182,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -533,7 +533,7 @@
       "tiebreak": 0.5
     },
     "hikaru": {
-      "participation": 0.85,
+      "participation": 0.8636363636363636,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
