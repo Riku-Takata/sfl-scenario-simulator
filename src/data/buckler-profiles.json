@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-20T16:03:05.572Z",
+ "updatedAt": "2026-10-20T19:46:31.359Z",
  "source": "Buckler's Boot Camp (CAPCOM) のプロフィール・対戦ログを自宅サーバーで日次集計",
  "players": {
   "2bassa": {
@@ -82,14 +82,14 @@
     }
    ],
    "last7Days": {
-    "matches": 100,
-    "wins": 64,
-    "activeDays": 2,
+    "matches": 119,
+    "wins": 73,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "juri",
-      "n": 43,
-      "w": 30
+      "n": 62,
+      "w": 39
      },
      {
       "char": "cviper",
@@ -108,21 +108,21 @@
      }
     ],
     "byMode": {
-     "rank": 82,
+     "rank": 92,
      "casual": 0,
      "hub": 0,
-     "custom": 18
+     "custom": 27
     }
    },
    "last30Days": {
-    "matches": 100,
-    "wins": 64,
-    "activeDays": 2,
+    "matches": 119,
+    "wins": 73,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "juri",
-      "n": 43,
-      "w": 30
+      "n": 62,
+      "w": 39
      },
      {
       "char": "cviper",
@@ -141,10 +141,10 @@
      }
     ],
     "byMode": {
-     "rank": 82,
+     "rank": 92,
      "casual": 0,
      "hub": 0,
-     "custom": 18
+     "custom": 27
     }
    },
    "mrTrend": [
@@ -155,24 +155,28 @@
     {
      "date": "2026-10-20",
      "mr": 2378
+    },
+    {
+     "date": "2026-10-21",
+     "mr": 2372
     }
    ],
    "risingChars": [
     {
      "char": "juri",
-     "recentShare": 43,
+     "recentShare": 52.1,
      "priorShare": 0,
-     "recentMatches": 43
+     "recentMatches": 62
     },
     {
      "char": "cviper",
-     "recentShare": 33,
+     "recentShare": 27.7,
      "priorShare": 0,
      "recentMatches": 33
     },
     {
      "char": "cammy",
-     "recentShare": 19,
+     "recentShare": 16,
      "priorShare": 0,
      "recentMatches": 19
     }
@@ -364,6 +368,215 @@
    },
    "recentMatches": [
     {
+     "t": 1792517416,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2372,
+     "oppChar": "dhalsim",
+     "oppMr": 2249,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792517279,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2383,
+     "oppChar": "dhalsim",
+     "oppMr": 2238,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792517089,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2378,
+     "oppChar": "dhalsim",
+     "oppMr": 2243,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792516934,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2371,
+     "oppChar": "cammy",
+     "oppMr": 2311,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792516813,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2364,
+     "oppChar": "cammy",
+     "oppMr": 2318,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792516711,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "cammy",
+     "oppMr": 2308,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516526,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "guile",
+     "oppMr": 2264,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516250,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "guile",
+     "oppMr": 2264,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516134,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "guile",
+     "oppMr": 2264,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516026,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "guile",
+     "oppMr": 2264,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515889,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "guile",
+     "oppMr": 2264,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515778,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "mai",
+     "oppMr": 2215,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792515632,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "mai",
+     "oppMr": 2215,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792515543,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "mai",
+     "oppMr": 2215,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515436,
+     "mode": "custom",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "mai",
+     "oppMr": 2215,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792515188,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2370,
+     "oppChar": "yasmine",
+     "oppMr": 2162,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515065,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2366,
+     "oppChar": "yasmine",
+     "oppMr": 2166,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792514810,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2374,
+     "oppChar": "cviper",
+     "oppMr": 2369,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792514695,
+     "mode": "rank",
+     "myChar": "juri",
+     "myMr": 2382,
+     "oppChar": "cviper",
+     "oppMr": 2361,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
      "t": 1792498793,
      "mode": "rank",
      "myChar": "juri",
@@ -483,230 +696,21 @@
      "won": true,
      "roundsWon": 2,
      "roundsLost": 1
-    },
-    {
-     "t": 1792495714,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2163,
-     "oppChar": "aki",
-     "oppMr": 2127,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792495537,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2156,
-     "oppChar": "aki",
-     "oppMr": 2134,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792488906,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2149,
-     "oppChar": "luke",
-     "oppMr": 2122,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792488788,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2141,
-     "oppChar": "luke",
-     "oppMr": 2130,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792488724,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2150,
-     "oppChar": "luke",
-     "oppMr": 2121,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792488550,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2157,
-     "oppChar": "ed",
-     "oppMr": 2179,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792488467,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2165,
-     "oppChar": "ed",
-     "oppMr": 2171,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792488299,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2156,
-     "oppChar": "guile",
-     "oppMr": 2186,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792488174,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2164,
-     "oppChar": "guile",
-     "oppMr": 2178,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792488058,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2155,
-     "oppChar": "guile",
-     "oppMr": 2187,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792487883,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2148,
-     "oppChar": "jamie",
-     "oppMr": 2088,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792487722,
-     "mode": "rank",
-     "myChar": "cammy",
-     "myMr": 2141,
-     "oppChar": "jamie",
-     "oppMr": 2095,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792416723,
-     "mode": "custom",
-     "myChar": "juri",
-     "myMr": 2362,
-     "oppChar": "rashid",
-     "oppMr": 2314,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792416452,
-     "mode": "custom",
-     "myChar": "juri",
-     "myMr": 2362,
-     "oppChar": "rashid",
-     "oppMr": 2314,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792416319,
-     "mode": "custom",
-     "myChar": "juri",
-     "myMr": 2362,
-     "oppChar": "rashid",
-     "oppMr": 2314,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792415149,
-     "mode": "custom",
-     "myChar": "juri",
-     "myMr": 2362,
-     "oppChar": "cammy",
-     "oppMr": 2421,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792414945,
-     "mode": "custom",
-     "myChar": "juri",
-     "myMr": 2362,
-     "oppChar": "cammy",
-     "oppMr": 2421,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792414794,
-     "mode": "custom",
-     "myChar": "juri",
-     "myMr": 2362,
-     "oppChar": "cammy",
-     "oppMr": 2421,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792414654,
-     "mode": "custom",
-     "myChar": "juri",
-     "myMr": 2362,
-     "oppChar": "cammy",
-     "oppMr": 2421,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
     }
    ],
    "acts": {
     "current": {
      "seasonId": 13,
-     "rankBattles": 4978,
-     "rankWins": 3111,
+     "rankBattles": 4988,
+     "rankWins": 3117,
      "chars": [
       {
        "char": "juri",
-       "n": 2312,
-       "w": 1465,
-       "mr": 2382,
-       "lp": 987916,
-       "mrRanking": 21
+       "n": 2322,
+       "w": 1471,
+       "mr": 2377,
+       "lp": 988056,
+       "mrRanking": 22
       },
       {
        "char": "cammy",
@@ -714,7 +718,7 @@
        "w": 993,
        "mr": 2151,
        "lp": 947354,
-       "mrRanking": 740
+       "mrRanking": 742
       },
       {
        "char": "mai",
@@ -722,7 +726,7 @@
        "w": 263,
        "mr": 2196,
        "lp": 739700,
-       "mrRanking": 514
+       "mrRanking": 526
       },
       {
        "char": "ryu",
@@ -730,7 +734,7 @@
        "w": 124,
        "mr": 2036,
        "lp": 649853,
-       "mrRanking": 1945
+       "mrRanking": 1949
       },
       {
        "char": "elena",
@@ -738,7 +742,7 @@
        "w": 90,
        "mr": 1922,
        "lp": 44379,
-       "mrRanking": 5434
+       "mrRanking": 5438
       },
       {
        "char": "yasmine",
@@ -746,7 +750,7 @@
        "w": 81,
        "mr": 1787,
        "lp": 41408,
-       "mrRanking": 24593
+       "mrRanking": 24647
       }
      ]
     },
@@ -806,7 +810,7 @@
      ]
     }
    },
-   "storedMatches": 100,
+   "storedMatches": 119,
    "storedSince": "2026-10-19"
   },
   "acqua": {
@@ -1491,7 +1495,7 @@
        "w": 227,
        "mr": 2211,
        "lp": 67539,
-       "mrRanking": 377
+       "mrRanking": 383
       },
       {
        "char": "jp",
@@ -1499,7 +1503,7 @@
        "w": 144,
        "mr": 2060,
        "lp": 765978,
-       "mrRanking": 1614
+       "mrRanking": 1621
       },
       {
        "char": "yasmine",
@@ -1507,7 +1511,7 @@
        "w": 78,
        "mr": 1766,
        "lp": 40030,
-       "mrRanking": 26600
+       "mrRanking": 26640
       },
       {
        "char": "jamie",
@@ -1515,7 +1519,7 @@
        "w": 31,
        "mr": 1664,
        "lp": 32128,
-       "mrRanking": 64232
+       "mrRanking": 64290
       },
       {
        "char": "lily",
@@ -1523,7 +1527,7 @@
        "w": 21,
        "mr": 1629,
        "lp": 110335,
-       "mrRanking": 82835
+       "mrRanking": 82907
       }
      ]
     },
@@ -2204,7 +2208,7 @@
        "w": 213,
        "mr": 2347,
        "lp": 773218,
-       "mrRanking": 46
+       "mrRanking": 45
       },
       {
        "char": "luke",
@@ -2212,7 +2216,7 @@
        "w": 122,
        "mr": 2160,
        "lp": 138651,
-       "mrRanking": 672
+       "mrRanking": 678
       },
       {
        "char": "aki",
@@ -2220,7 +2224,7 @@
        "w": 109,
        "mr": 2080,
        "lp": 95355,
-       "mrRanking": 1418
+       "mrRanking": 1424
       },
       {
        "char": "jp",
@@ -2228,7 +2232,7 @@
        "w": 79,
        "mr": 2014,
        "lp": 246484,
-       "mrRanking": 2367
+       "mrRanking": 2378
       },
       {
        "char": "alex",
@@ -2236,7 +2240,7 @@
        "w": 69,
        "mr": 1826,
        "lp": 102480,
-       "mrRanking": 12587
+       "mrRanking": 12606
       },
       {
        "char": "sagat",
@@ -2244,7 +2248,7 @@
        "w": 30,
        "mr": 1801,
        "lp": 109453,
-       "mrRanking": 21508
+       "mrRanking": 21584
       }
      ]
     },
@@ -2387,36 +2391,46 @@
     }
    ],
    "last7Days": {
-    "matches": 103,
-    "wins": 63,
-    "activeDays": 2,
+    "matches": 125,
+    "wins": 81,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "cviper",
-      "n": 103,
-      "w": 63
+      "n": 123,
+      "w": 80
+     },
+     {
+      "char": "cammy",
+      "n": 2,
+      "w": 1
      }
     ],
     "byMode": {
-     "rank": 91,
+     "rank": 113,
      "casual": 0,
      "hub": 0,
      "custom": 12
     }
    },
    "last30Days": {
-    "matches": 103,
-    "wins": 63,
-    "activeDays": 2,
+    "matches": 125,
+    "wins": 81,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "cviper",
-      "n": 103,
-      "w": 63
+      "n": 123,
+      "w": 80
+     },
+     {
+      "char": "cammy",
+      "n": 2,
+      "w": 1
      }
     ],
     "byMode": {
-     "rank": 91,
+     "rank": 113,
      "casual": 0,
      "hub": 0,
      "custom": 12
@@ -2430,14 +2444,18 @@
     {
      "date": "2026-10-20",
      "mr": 2375
+    },
+    {
+     "date": "2026-10-21",
+     "mr": 2409
     }
    ],
    "risingChars": [
     {
      "char": "cviper",
-     "recentShare": 100,
+     "recentShare": 98.4,
      "priorShare": 0,
-     "recentMatches": 103
+     "recentMatches": 123
     }
    ],
    "mainVsChar": [
@@ -2632,6 +2650,248 @@
    },
    "recentMatches": [
     {
+     "t": 1792525050,
+     "mode": "rank",
+     "myChar": "cammy",
+     "myMr": 2181,
+     "oppChar": "ryu",
+     "oppMr": 2056,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792524948,
+     "mode": "rank",
+     "myChar": "cammy",
+     "myMr": 2176,
+     "oppChar": "ryu",
+     "oppMr": 2061,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792516484,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2409,
+     "oppChar": "mai",
+     "oppMr": 2283,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792516380,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2404,
+     "oppChar": "mai",
+     "oppMr": 2288,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792516036,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2400,
+     "oppChar": "arjun",
+     "oppMr": 2194,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792515872,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2396,
+     "oppChar": "arjun",
+     "oppMr": 2198,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515738,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2391,
+     "oppChar": "dee_jay",
+     "oppMr": 2264,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515659,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2386,
+     "oppChar": "dee_jay",
+     "oppMr": 2269,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792515460,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2383,
+     "oppChar": "yasmine",
+     "oppMr": 2154,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515378,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2379,
+     "oppChar": "yasmine",
+     "oppMr": 2158,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792515176,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2378,
+     "oppChar": "gouki_akuma",
+     "oppMr": 1870,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792515003,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2377,
+     "oppChar": "gouki_akuma",
+     "oppMr": 1871,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792514810,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2369,
+     "oppChar": "juri",
+     "oppMr": 2374,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792514695,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2361,
+     "oppChar": "juri",
+     "oppMr": 2382,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792514470,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2356,
+     "oppChar": "cviper",
+     "oppMr": 2225,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792514381,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2351,
+     "oppChar": "cviper",
+     "oppMr": 2230,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792514262,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2344,
+     "oppChar": "mai",
+     "oppMr": 2317,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792514119,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2336,
+     "oppChar": "mai",
+     "oppMr": 2325,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792513944,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2345,
+     "oppChar": "dee_jay",
+     "oppMr": 2312,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792513778,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2357,
+     "oppChar": "jp",
+     "oppMr": 2177,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792513581,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2369,
+     "oppChar": "jp",
+     "oppMr": 2165,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792513479,
+     "mode": "rank",
+     "myChar": "cviper",
+     "myMr": 2365,
+     "oppChar": "jp",
+     "oppMr": 2169,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
      "t": 1792502429,
      "mode": "rank",
      "myChar": "cviper",
@@ -2718,263 +2978,21 @@
      "won": true,
      "roundsWon": 2,
      "roundsLost": 0
-    },
-    {
-     "t": 1792490392,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2377,
-     "oppChar": "terry",
-     "oppMr": 2223,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792490181,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2373,
-     "oppChar": "elena",
-     "oppMr": 2194,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792490117,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2369,
-     "oppChar": "elena",
-     "oppMr": 2198,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792489960,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2378,
-     "oppChar": "alex",
-     "oppMr": 2318,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792489844,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2371,
-     "oppChar": "alex",
-     "oppMr": 2325,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792489723,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2381,
-     "oppChar": "alex",
-     "oppMr": 2315,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792489372,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2378,
-     "oppChar": "arjun",
-     "oppMr": 2106,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792489279,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2375,
-     "oppChar": "arjun",
-     "oppMr": 2109,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792489089,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2369,
-     "oppChar": "arjun",
-     "oppMr": 2286,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792488947,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2363,
-     "oppChar": "arjun",
-     "oppMr": 2292,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792488559,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2359,
-     "oppChar": "chunli",
-     "oppMr": 2189,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792488470,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2371,
-     "oppChar": "chunli",
-     "oppMr": 2177,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792488373,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2367,
-     "oppChar": "chunli",
-     "oppMr": 2181,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792488133,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2379,
-     "oppChar": "cammy",
-     "oppMr": 2191,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792488031,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2375,
-     "oppChar": "cammy",
-     "oppMr": 2195,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792487864,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2366,
-     "oppChar": "luke",
-     "oppMr": 2389,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792487765,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2357,
-     "oppChar": "luke",
-     "oppMr": 2398,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792487626,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2351,
-     "oppChar": "terry",
-     "oppMr": 2242,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792487444,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2345,
-     "oppChar": "terry",
-     "oppMr": 2248,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792487322,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2338,
-     "oppChar": "ken",
-     "oppMr": 2308,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792487183,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2330,
-     "oppChar": "ken",
-     "oppMr": 2316,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792486940,
-     "mode": "rank",
-     "myChar": "cviper",
-     "myMr": 2340,
-     "oppChar": "chunli",
-     "oppMr": 2271,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
     }
    ],
    "acts": {
     "current": {
      "seasonId": 13,
-     "rankBattles": 3383,
-     "rankWins": 1995,
+     "rankBattles": 3405,
+     "rankWins": 2013,
      "chars": [
       {
        "char": "cviper",
-       "n": 1802,
-       "w": 1048,
-       "mr": 2365,
-       "lp": 521862,
-       "mrRanking": 30
+       "n": 1822,
+       "w": 1065,
+       "mr": 2414,
+       "lp": 524792,
+       "mrRanking": 7
       },
       {
        "char": "terry",
@@ -2982,15 +3000,15 @@
        "w": 361,
        "mr": 2104,
        "lp": 191185,
-       "mrRanking": 1150
+       "mrRanking": 1153
       },
       {
        "char": "cammy",
-       "n": 422,
-       "w": 255,
-       "mr": 2176,
-       "lp": 911631,
-       "mrRanking": 595
+       "n": 424,
+       "w": 256,
+       "mr": 2170,
+       "lp": 911641,
+       "mrRanking": 625
       },
       {
        "char": "jamie",
@@ -2998,7 +3016,7 @@
        "w": 162,
        "mr": 1892,
        "lp": 74105,
-       "mrRanking": 7963
+       "mrRanking": 7991
       },
       {
        "char": "elena",
@@ -3006,7 +3024,7 @@
        "w": 54,
        "mr": 1836,
        "lp": 90393,
-       "mrRanking": 11617
+       "mrRanking": 11630
       },
       {
        "char": "mai",
@@ -3014,7 +3032,7 @@
        "w": 50,
        "mr": 1891,
        "lp": 359340,
-       "mrRanking": 7996
+       "mrRanking": 8023
       }
      ]
     },
@@ -3074,7 +3092,7 @@
      ]
     }
    },
-   "storedMatches": 103,
+   "storedMatches": 125,
    "storedSince": "2026-10-19"
   },
   "bonchan": {
@@ -3157,14 +3175,14 @@
     }
    ],
    "last7Days": {
-    "matches": 128,
-    "wins": 80,
+    "matches": 131,
+    "wins": 81,
     "activeDays": 3,
     "byChar": [
      {
       "char": "sagat",
-      "n": 88,
-      "w": 55
+      "n": 91,
+      "w": 56
      },
      {
       "char": "gouki_akuma",
@@ -3176,18 +3194,18 @@
      "rank": 21,
      "casual": 0,
      "hub": 0,
-     "custom": 107
+     "custom": 110
     }
    },
    "last30Days": {
-    "matches": 128,
-    "wins": 80,
+    "matches": 131,
+    "wins": 81,
     "activeDays": 3,
     "byChar": [
      {
       "char": "sagat",
-      "n": 88,
-      "w": 55
+      "n": 91,
+      "w": 56
      },
      {
       "char": "gouki_akuma",
@@ -3199,7 +3217,7 @@
      "rank": 21,
      "casual": 0,
      "hub": 0,
-     "custom": 107
+     "custom": 110
     }
    },
    "mrTrend": [
@@ -3211,13 +3229,13 @@
    "risingChars": [
     {
      "char": "sagat",
-     "recentShare": 68.8,
+     "recentShare": 69.5,
      "priorShare": 0,
-     "recentMatches": 88
+     "recentMatches": 91
     },
     {
      "char": "gouki_akuma",
-     "recentShare": 31.3,
+     "recentShare": 30.5,
      "priorShare": 0,
      "recentMatches": 40
     }
@@ -3408,6 +3426,39 @@
     "gauge_rate_ca": 0.0875
    },
    "recentMatches": [
+    {
+     "t": 1792510834,
+     "mode": "custom",
+     "myChar": "sagat",
+     "myMr": 2359,
+     "oppChar": "juri",
+     "oppMr": 2206,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792510720,
+     "mode": "custom",
+     "myChar": "sagat",
+     "myMr": 2359,
+     "oppChar": "juri",
+     "oppMr": 2206,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792510514,
+     "mode": "custom",
+     "myChar": "sagat",
+     "myMr": 2359,
+     "oppChar": "juri",
+     "oppMr": 2206,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
     {
      "t": 1792508887,
      "mode": "custom",
@@ -3704,39 +3755,6 @@
      "won": false,
      "roundsWon": 1,
      "roundsLost": 2
-    },
-    {
-     "t": 1792498830,
-     "mode": "rank",
-     "myChar": "gouki_akuma",
-     "myMr": 2302,
-     "oppChar": "lily",
-     "oppMr": 2283,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792490073,
-     "mode": "custom",
-     "myChar": "sagat",
-     "myMr": 2337,
-     "oppChar": "arjun",
-     "oppMr": 1819,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792489963,
-     "mode": "custom",
-     "myChar": "sagat",
-     "myMr": 2337,
-     "oppChar": "arjun",
-     "oppMr": 1819,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
     }
    ],
    "acts": {
@@ -3751,7 +3769,7 @@
        "w": 721,
        "mr": 2359,
        "lp": 726926,
-       "mrRanking": 33
+       "mrRanking": 32
       },
       {
        "char": "luke",
@@ -3759,7 +3777,7 @@
        "w": 432,
        "mr": 2101,
        "lp": 485380,
-       "mrRanking": 1229
+       "mrRanking": 1232
       },
       {
        "char": "gouki_akuma",
@@ -3775,7 +3793,7 @@
        "w": 31,
        "mr": 1631,
        "lp": 122014,
-       "mrRanking": 81457
+       "mrRanking": 81541
       }
      ]
     },
@@ -3811,12 +3829,12 @@
      ]
     }
    },
-   "storedMatches": 128,
+   "storedMatches": 131,
    "storedSince": "2026-10-19"
   },
   "cosa": {
    "sflKey": "cosa",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "gouki_akuma",
    "characters": [
@@ -3825,7 +3843,7 @@
      "leagueRank": 36,
      "lp": 414620,
      "mr": 2320,
-     "mrRanking": 76,
+     "mrRanking": 79,
      "battles": 1383,
      "wins": 743
     },
@@ -3834,7 +3852,7 @@
      "leagueRank": 36,
      "lp": 667071,
      "mr": 2303,
-     "mrRanking": 119,
+     "mrRanking": 118,
      "battles": 493,
      "wins": 316
     },
@@ -3843,7 +3861,7 @@
      "leagueRank": 36,
      "lp": 104952,
      "mr": 2139,
-     "mrRanking": 811,
+     "mrRanking": 813,
      "battles": 213,
      "wins": 148
     },
@@ -3852,7 +3870,7 @@
      "leagueRank": 36,
      "lp": 80393,
      "mr": 1966,
-     "mrRanking": 3947,
+     "mrRanking": 3968,
      "battles": 139,
      "wins": 97
     },
@@ -3861,7 +3879,7 @@
      "leagueRank": 36,
      "lp": 167216,
      "mr": 1515,
-     "mrRanking": 254750,
+     "mrRanking": 255224,
      "battles": 3,
      "wins": 3
     },
@@ -4207,7 +4225,7 @@
        "w": 615,
        "mr": 2320,
        "lp": 414620,
-       "mrRanking": 78
+       "mrRanking": 79
       },
       {
        "char": "ken",
@@ -4223,7 +4241,7 @@
        "w": 148,
        "mr": 2139,
        "lp": 104952,
-       "mrRanking": 812
+       "mrRanking": 813
       },
       {
        "char": "luke",
@@ -4231,7 +4249,7 @@
        "w": 97,
        "mr": 1966,
        "lp": 80393,
-       "mrRanking": 3955
+       "mrRanking": 3968
       },
       {
        "char": "terry",
@@ -4239,7 +4257,7 @@
        "w": 3,
        "mr": 1515,
        "lp": 167216,
-       "mrRanking": 254987
+       "mrRanking": 255225
       }
      ]
     },
@@ -4949,7 +4967,7 @@
        "w": 1863,
        "mr": 2408,
        "lp": 998228,
-       "mrRanking": 10
+       "mrRanking": 11
       },
       {
        "char": "jamie",
@@ -4957,7 +4975,7 @@
        "w": 475,
        "mr": 1906,
        "lp": 242090,
-       "mrRanking": 6467
+       "mrRanking": 6480
       },
       {
        "char": "mai",
@@ -4965,7 +4983,7 @@
        "w": 304,
        "mr": 1908,
        "lp": 121558,
-       "mrRanking": 6264
+       "mrRanking": 6268
       },
       {
        "char": "alex",
@@ -4973,7 +4991,7 @@
        "w": 33,
        "mr": 1564,
        "lp": 32189,
-       "mrRanking": 166876
+       "mrRanking": 166987
       }
      ]
     },
@@ -5084,9 +5102,9 @@
     }
    ],
    "last7Days": {
-    "matches": 104,
-    "wins": 51,
-    "activeDays": 2,
+    "matches": 109,
+    "wins": 53,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "vega_mbison",
@@ -5095,21 +5113,21 @@
      },
      {
       "char": "elena",
-      "n": 44,
-      "w": 23
+      "n": 49,
+      "w": 25
      }
     ],
     "byMode": {
      "rank": 100,
      "casual": 0,
      "hub": 0,
-     "custom": 4
+     "custom": 9
     }
    },
    "last30Days": {
-    "matches": 104,
-    "wins": 51,
-    "activeDays": 2,
+    "matches": 109,
+    "wins": 53,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "vega_mbison",
@@ -5118,15 +5136,15 @@
      },
      {
       "char": "elena",
-      "n": 44,
-      "w": 23
+      "n": 49,
+      "w": 25
      }
     ],
     "byMode": {
      "rank": 100,
      "casual": 0,
      "hub": 0,
-     "custom": 4
+     "custom": 9
     }
    },
    "mrTrend": [
@@ -5138,15 +5156,15 @@
    "risingChars": [
     {
      "char": "vega_mbison",
-     "recentShare": 57.7,
+     "recentShare": 55,
      "priorShare": 0,
      "recentMatches": 60
     },
     {
      "char": "elena",
-     "recentShare": 42.3,
+     "recentShare": 45,
      "priorShare": 0,
-     "recentMatches": 44
+     "recentMatches": 49
     }
    ],
    "mainVsChar": [
@@ -5290,6 +5308,61 @@
     "gauge_rate_ca": 0.0697
    },
    "recentMatches": [
+    {
+     "t": 1792512841,
+     "mode": "custom",
+     "myChar": "elena",
+     "myMr": 2377,
+     "oppChar": "juri",
+     "oppMr": 2206,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792512661,
+     "mode": "custom",
+     "myChar": "elena",
+     "myMr": 2377,
+     "oppChar": "juri",
+     "oppMr": 2206,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792512491,
+     "mode": "custom",
+     "myChar": "elena",
+     "myMr": 2377,
+     "oppChar": "juri",
+     "oppMr": 2206,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792511241,
+     "mode": "custom",
+     "myChar": "elena",
+     "myMr": 2377,
+     "oppChar": "guile",
+     "oppMr": 2264,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792511056,
+     "mode": "custom",
+     "myChar": "elena",
+     "myMr": 2377,
+     "oppChar": "guile",
+     "oppMr": 2264,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
     {
      "t": 1792508005,
      "mode": "custom",
@@ -5564,61 +5637,6 @@
      "won": false,
      "roundsWon": 1,
      "roundsLost": 2
-    },
-    {
-     "t": 1792328326,
-     "mode": "rank",
-     "myChar": "vega_mbison",
-     "myMr": 2281,
-     "oppChar": "gouki_akuma",
-     "oppMr": 2270,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792328121,
-     "mode": "rank",
-     "myChar": "vega_mbison",
-     "myMr": 2290,
-     "oppChar": "jp",
-     "oppMr": 2248,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792327957,
-     "mode": "rank",
-     "myChar": "vega_mbison",
-     "myMr": 2283,
-     "oppChar": "jp",
-     "oppMr": 2255,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792327770,
-     "mode": "rank",
-     "myChar": "vega_mbison",
-     "myMr": 2292,
-     "oppChar": "jp",
-     "oppMr": 2246,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792327654,
-     "mode": "rank",
-     "myChar": "vega_mbison",
-     "myMr": 2300,
-     "oppChar": "dee_jay",
-     "oppMr": 2320,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
     }
    ],
    "acts": {
@@ -5633,7 +5651,7 @@
        "w": 322,
        "mr": 2377,
        "lp": 494429,
-       "mrRanking": 24
+       "mrRanking": 22
       },
       {
        "char": "vega_mbison",
@@ -5641,7 +5659,7 @@
        "w": 257,
        "mr": 2208,
        "lp": 727343,
-       "mrRanking": 400
+       "mrRanking": 405
       },
       {
        "char": "alex",
@@ -5649,7 +5667,7 @@
        "w": 221,
        "mr": 2097,
        "lp": 216643,
-       "mrRanking": 1303
+       "mrRanking": 1311
       },
       {
        "char": "yasmine",
@@ -5657,7 +5675,7 @@
        "w": 161,
        "mr": 1954,
        "lp": 56856,
-       "mrRanking": 4302
+       "mrRanking": 4307
       },
       {
        "char": "arjun",
@@ -5665,7 +5683,7 @@
        "w": 50,
        "mr": 1744,
        "lp": 33799,
-       "mrRanking": 30269
+       "mrRanking": 30319
       },
       {
        "char": "terry",
@@ -5673,7 +5691,7 @@
        "w": 31,
        "mr": 1694,
        "lp": 64112,
-       "mrRanking": 56205
+       "mrRanking": 56281
       }
      ]
     },
@@ -5725,7 +5743,7 @@
      ]
     }
    },
-   "storedMatches": 104,
+   "storedMatches": 109,
    "storedSince": "2026-10-18"
   },
   "fujimura": {
@@ -6317,7 +6335,7 @@
        "w": 156,
        "mr": 2264,
        "lp": 193623,
-       "mrRanking": 189
+       "mrRanking": 190
       },
       {
        "char": "luke",
@@ -6325,7 +6343,7 @@
        "w": 88,
        "mr": 1702,
        "lp": 42215,
-       "mrRanking": 49282
+       "mrRanking": 49371
       },
       {
        "char": "mai",
@@ -6333,7 +6351,7 @@
        "w": 81,
        "mr": 1829,
        "lp": 416351,
-       "mrRanking": 12269
+       "mrRanking": 12283
       },
       {
        "char": "chunli",
@@ -6341,7 +6359,7 @@
        "w": 90,
        "mr": 1825,
        "lp": 138470,
-       "mrRanking": 12716
+       "mrRanking": 12738
       },
       {
        "char": "terry",
@@ -6349,7 +6367,7 @@
        "w": 20,
        "mr": 1621,
        "lp": 58838,
-       "mrRanking": 88462
+       "mrRanking": 88520
       }
      ]
     },
@@ -7060,7 +7078,7 @@
        "w": 926,
        "mr": 2367,
        "lp": 289305,
-       "mrRanking": 27
+       "mrRanking": 26
       },
       {
        "char": "dee_jay",
@@ -7068,7 +7086,7 @@
        "w": 46,
        "mr": 1766,
        "lp": 394139,
-       "mrRanking": 26593
+       "mrRanking": 26637
       },
       {
        "char": "ed",
@@ -7076,7 +7094,7 @@
        "w": 16,
        "mr": 1837,
        "lp": 778610,
-       "mrRanking": 11533
+       "mrRanking": 11540
       },
       {
        "char": "dhalsim",
@@ -7084,7 +7102,7 @@
        "w": 0,
        "mr": 1500,
        "lp": 70588,
-       "mrRanking": 320829
+       "mrRanking": 321052
       }
      ]
     },
@@ -7203,14 +7221,14 @@
     }
    ],
    "last7Days": {
-    "matches": 107,
-    "wins": 63,
-    "activeDays": 5,
+    "matches": 119,
+    "wins": 70,
+    "activeDays": 6,
     "byChar": [
      {
       "char": "rashid",
-      "n": 106,
-      "w": 63
+      "n": 118,
+      "w": 70
      },
      {
       "char": "manon",
@@ -7219,21 +7237,21 @@
      }
     ],
     "byMode": {
-     "rank": 68,
+     "rank": 80,
      "casual": 0,
      "hub": 0,
      "custom": 39
     }
    },
    "last30Days": {
-    "matches": 107,
-    "wins": 63,
-    "activeDays": 5,
+    "matches": 119,
+    "wins": 70,
+    "activeDays": 6,
     "byChar": [
      {
       "char": "rashid",
-      "n": 106,
-      "w": 63
+      "n": 118,
+      "w": 70
      },
      {
       "char": "manon",
@@ -7242,7 +7260,7 @@
      }
     ],
     "byMode": {
-     "rank": 68,
+     "rank": 80,
      "casual": 0,
      "hub": 0,
      "custom": 39
@@ -7264,14 +7282,18 @@
     {
      "date": "2026-10-20",
      "mr": 2375
+    },
+    {
+     "date": "2026-10-21",
+     "mr": 2355
     }
    ],
    "risingChars": [
     {
      "char": "rashid",
-     "recentShare": 99.1,
+     "recentShare": 99.2,
      "priorShare": 0,
-     "recentMatches": 106
+     "recentMatches": 118
     }
    ],
    "mainVsChar": [
@@ -7460,6 +7482,138 @@
     "gauge_rate_ca": 0.0079
    },
    "recentMatches": [
+    {
+     "t": 1792521334,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2355,
+     "oppChar": "marisa",
+     "oppMr": 1893,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792521195,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2354,
+     "oppChar": "marisa",
+     "oppMr": 1894,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792520855,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2348,
+     "oppChar": "luke",
+     "oppMr": 2277,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792520733,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2358,
+     "oppChar": "luke",
+     "oppMr": 2267,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792520622,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2352,
+     "oppChar": "luke",
+     "oppMr": 2273,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792520475,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2349,
+     "oppChar": "ryu",
+     "oppMr": 2081,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792520349,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2346,
+     "oppChar": "ryu",
+     "oppMr": 2084,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792519849,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2356,
+     "oppChar": "zangief",
+     "oppMr": 2265,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792519693,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2366,
+     "oppChar": "zangief",
+     "oppMr": 2255,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792519588,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2360,
+     "oppChar": "zangief",
+     "oppMr": 2261,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792519420,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2370,
+     "oppChar": "alex",
+     "oppMr": 2258,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792519246,
+     "mode": "rank",
+     "myChar": "rashid",
+     "myMr": 2381,
+     "oppChar": "alex",
+     "oppMr": 2247,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
     {
      "t": 1792501464,
      "mode": "rank",
@@ -7657,153 +7811,21 @@
      "won": true,
      "roundsWon": 2,
      "roundsLost": 1
-    },
-    {
-     "t": 1792302649,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2345,
-     "oppChar": "kimberly",
-     "oppMr": 2384,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792302540,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2352,
-     "oppChar": "kimberly",
-     "oppMr": 2377,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792302404,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2347,
-     "oppChar": "blanka",
-     "oppMr": 2234,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792302256,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2358,
-     "oppChar": "blanka",
-     "oppMr": 2223,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792302118,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2353,
-     "oppChar": "blanka",
-     "oppMr": 2228,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792301939,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2347,
-     "oppChar": "chunli",
-     "oppMr": 2259,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792301821,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2341,
-     "oppChar": "chunli",
-     "oppMr": 2265,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792301681,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2349,
-     "oppChar": "ken",
-     "oppMr": 2347,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792301576,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2341,
-     "oppChar": "ken",
-     "oppMr": 2355,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792301461,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2349,
-     "oppChar": "ken",
-     "oppMr": 2347,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792301280,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2344,
-     "oppChar": "blanka",
-     "oppMr": 2202,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792301167,
-     "mode": "rank",
-     "myChar": "rashid",
-     "myMr": 2339,
-     "oppChar": "blanka",
-     "oppMr": 2207,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
     }
    ],
    "acts": {
     "current": {
      "seasonId": 13,
-     "rankBattles": 1393,
-     "rankWins": 914,
+     "rankBattles": 1405,
+     "rankWins": 921,
      "chars": [
       {
        "char": "rashid",
-       "n": 1364,
-       "w": 890,
-       "mr": 2381,
-       "lp": 938231,
-       "mrRanking": 22
+       "n": 1376,
+       "w": 897,
+       "mr": 2356,
+       "lp": 938381,
+       "mrRanking": 34
       },
       {
        "char": "luke",
@@ -7855,7 +7877,7 @@
      ]
     }
    },
-   "storedMatches": 107,
+   "storedMatches": 119,
    "storedSince": "2026-10-16"
   },
   "hibiki": {
@@ -7938,39 +7960,39 @@
     }
    ],
    "last7Days": {
-    "matches": 116,
-    "wins": 68,
+    "matches": 125,
+    "wins": 75,
     "activeDays": 4,
     "byChar": [
      {
       "char": "lily",
-      "n": 116,
-      "w": 68
+      "n": 125,
+      "w": 75
      }
     ],
     "byMode": {
      "rank": 37,
      "casual": 0,
      "hub": 0,
-     "custom": 79
+     "custom": 88
     }
    },
    "last30Days": {
-    "matches": 116,
-    "wins": 68,
+    "matches": 125,
+    "wins": 75,
     "activeDays": 4,
     "byChar": [
      {
       "char": "lily",
-      "n": 116,
-      "w": 68
+      "n": 125,
+      "w": 75
      }
     ],
     "byMode": {
      "rank": 37,
      "casual": 0,
      "hub": 0,
-     "custom": 79
+     "custom": 88
     }
    },
    "mrTrend": [
@@ -7988,7 +8010,7 @@
      "char": "lily",
      "recentShare": 100,
      "priorShare": 0,
-     "recentMatches": 116
+     "recentMatches": 125
     }
    ],
    "mainVsChar": [
@@ -8157,6 +8179,105 @@
     "gauge_rate_ca": 0.0652
    },
    "recentMatches": [
+    {
+     "t": 1792512191,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792512122,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792511960,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792511820,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792511678,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792511569,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792511428,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792511343,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792511224,
+     "mode": "custom",
+     "myChar": "lily",
+     "myMr": 2375,
+     "oppChar": "luke",
+     "oppMr": 2312,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
     {
      "t": 1792511113,
      "mode": "custom",
@@ -8387,105 +8508,6 @@
      "won": false,
      "roundsWon": 0,
      "roundsLost": 2
-    },
-    {
-     "t": 1792491785,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2306,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792491685,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2306,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792491597,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2306,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792491435,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2306,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792491295,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2306,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792491234,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2306,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792491137,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2306,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792490959,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2306,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792490303,
-     "mode": "custom",
-     "myChar": "lily",
-     "myMr": 2375,
-     "oppChar": "luke",
-     "oppMr": 2272,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
     }
    ],
    "acts": {
@@ -8500,7 +8522,7 @@
        "w": 511,
        "mr": 2375,
        "lp": 937458,
-       "mrRanking": 25
+       "mrRanking": 24
       },
       {
        "char": "cammy",
@@ -8508,7 +8530,7 @@
        "w": 149,
        "mr": 2015,
        "lp": 91036,
-       "mrRanking": 2336
+       "mrRanking": 2344
       },
       {
        "char": "arjun",
@@ -8516,7 +8538,7 @@
        "w": 116,
        "mr": 1985,
        "lp": 49175,
-       "mrRanking": 3584
+       "mrRanking": 3600
       },
       {
        "char": "alex",
@@ -8524,7 +8546,7 @@
        "w": 36,
        "mr": 1673,
        "lp": 115855,
-       "mrRanking": 61106
+       "mrRanking": 61158
       },
       {
        "char": "luke",
@@ -8532,7 +8554,7 @@
        "w": 8,
        "mr": 1573,
        "lp": 61847,
-       "mrRanking": 157611
+       "mrRanking": 157703
       }
      ]
     },
@@ -8592,30 +8614,30 @@
      ]
     }
    },
-   "storedMatches": 116,
+   "storedMatches": 125,
    "storedSince": "2026-10-18"
   },
   "higuchi": {
    "sflKey": "higuchi",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "guile",
    "characters": [
     {
      "char": "guile",
      "leagueRank": 36,
-     "lp": 895828,
-     "mr": 2348,
-     "mrRanking": 41,
-     "battles": 791,
-     "wins": 532
+     "lp": 896248,
+     "mr": 2343,
+     "mrRanking": 46,
+     "battles": 795,
+     "wins": 534
     },
     {
      "char": "arjun",
      "leagueRank": 36,
      "lp": 38676,
      "mr": 1888,
-     "mrRanking": 8056,
+     "mrRanking": 8115,
      "battles": 88,
      "wins": 75
     },
@@ -8624,7 +8646,7 @@
      "leagueRank": 36,
      "lp": 33853,
      "mr": 1714,
-     "mrRanking": 37467,
+     "mrRanking": 37591,
      "battles": 56,
      "wins": 48
     },
@@ -8633,7 +8655,7 @@
      "leagueRank": 36,
      "lp": 72794,
      "mr": 1605,
-     "mrRanking": 111596,
+     "mrRanking": 111978,
      "battles": 50,
      "wins": 40
     },
@@ -8642,7 +8664,7 @@
      "leagueRank": 36,
      "lp": 77513,
      "mr": 1548,
-     "mrRanking": 188504,
+     "mrRanking": 188910,
      "battles": 29,
      "wins": 21
     },
@@ -8669,7 +8691,7 @@
      "leagueRank": 36,
      "lp": 26003,
      "mr": 1500,
-     "mrRanking": 320368,
+     "mrRanking": 321060,
      "battles": 5,
      "wins": 5
     }
@@ -8735,7 +8757,7 @@
    "mainVsChar": [
     {
      "char": "luke",
-     "n": 58,
+     "n": 59,
      "w": 40
     },
     {
@@ -8834,6 +8856,11 @@
      "w": 17
     },
     {
+     "char": "lily",
+     "n": 19,
+     "w": 16
+    },
+    {
      "char": "ingrid",
      "n": 19,
      "w": 12
@@ -8852,21 +8879,16 @@
      "char": "ed",
      "n": 17,
      "w": 10
-    },
-    {
-     "char": "lily",
-     "n": 16,
-     "w": 14
     }
    ],
    "battleStats": {
-    "rank_match_play_count": 18724,
+    "rank_match_play_count": 18728,
     "casual_match_play_count": 21,
     "battle_hub_match_play_count": 1605,
     "custom_room_match_play_count": 16078,
     "drive_parry": 1.4,
     "just_parry": 0.7,
-    "drive_impact": 0.1,
+    "drive_impact": 0.2,
     "received_drive_impact": 0,
     "drive_reversal": 0.2,
     "throw_count": 1.2,
@@ -8875,17 +8897,17 @@
     "punish_counter": 0.1,
     "received_punish_counter": 0,
     "corner_time": 9.2,
-    "cornered_time": 11.6,
-    "gauge_rate_drive_arts": 0.1064,
+    "cornered_time": 11.7,
+    "gauge_rate_drive_arts": 0.1087,
     "gauge_rate_drive_guard": 0.1716,
-    "gauge_rate_drive_impact": 0.012,
-    "gauge_rate_drive_reversal": 0.0138,
-    "gauge_rate_drive_rush_from_parry": 0.1247,
-    "gauge_rate_drive_rush_from_cancel": 0.3271,
-    "gauge_rate_sa_lv1": 0.5,
-    "gauge_rate_sa_lv2": 0.386,
-    "gauge_rate_sa_lv3": 0.0822,
-    "gauge_rate_ca": 0.0316
+    "gauge_rate_drive_impact": 0.0124,
+    "gauge_rate_drive_reversal": 0.0167,
+    "gauge_rate_drive_rush_from_parry": 0.1249,
+    "gauge_rate_drive_rush_from_cancel": 0.3207,
+    "gauge_rate_sa_lv1": 0.4904,
+    "gauge_rate_sa_lv2": 0.4012,
+    "gauge_rate_sa_lv3": 0.0828,
+    "gauge_rate_ca": 0.0254
    },
    "recentMatches": [
     {
@@ -9231,7 +9253,7 @@
        "w": 355,
        "mr": 2343,
        "lp": 896248,
-       "mrRanking": 47
+       "mrRanking": 46
       },
       {
        "char": "arjun",
@@ -9239,7 +9261,7 @@
        "w": 75,
        "mr": 1888,
        "lp": 38676,
-       "mrRanking": 8094
+       "mrRanking": 8114
       },
       {
        "char": "yasmine",
@@ -9247,7 +9269,7 @@
        "w": 48,
        "mr": 1714,
        "lp": 33853,
-       "mrRanking": 37534
+       "mrRanking": 37591
       },
       {
        "char": "gouki_akuma",
@@ -9255,7 +9277,7 @@
        "w": 16,
        "mr": 1605,
        "lp": 72794,
-       "mrRanking": 111782
+       "mrRanking": 111978
       },
       {
        "char": "vega_mbison",
@@ -9263,7 +9285,7 @@
        "w": 9,
        "mr": 1548,
        "lp": 77513,
-       "mrRanking": 188739
+       "mrRanking": 188911
       },
       {
        "char": "jamie",
@@ -9271,7 +9293,7 @@
        "w": 5,
        "mr": 1500,
        "lp": 26003,
-       "mrRanking": 320715
+       "mrRanking": 321060
       }
      ]
     },
@@ -9328,7 +9350,7 @@
   },
   "hikaru": {
    "sflKey": "hikaru",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "aki",
    "characters": [
@@ -9337,7 +9359,7 @@
      "leagueRank": 36,
      "lp": 977202,
      "mr": 2408,
-     "mrRanking": 9,
+     "mrRanking": 11,
      "battles": 3233,
      "wins": 2016
     },
@@ -9346,7 +9368,7 @@
      "leagueRank": 36,
      "lp": 78152,
      "mr": 2331,
-     "mrRanking": 53,
+     "mrRanking": 55,
      "battles": 498,
      "wins": 311
     },
@@ -9355,7 +9377,7 @@
      "leagueRank": 36,
      "lp": 52737,
      "mr": 1813,
-     "mrRanking": 14348,
+     "mrRanking": 14429,
      "battles": 249,
      "wins": 147
     },
@@ -9364,7 +9386,7 @@
      "leagueRank": 36,
      "lp": 102826,
      "mr": 1868,
-     "mrRanking": 9018,
+     "mrRanking": 9057,
      "battles": 193,
      "wins": 119
     },
@@ -9373,7 +9395,7 @@
      "leagueRank": 36,
      "lp": 133696,
      "mr": 1840,
-     "mrRanking": 11224,
+     "mrRanking": 11276,
      "battles": 116,
      "wins": 80
     },
@@ -9382,7 +9404,7 @@
      "leagueRank": 36,
      "lp": 78458,
      "mr": 1729,
-     "mrRanking": 33276,
+     "mrRanking": 33385,
      "battles": 92,
      "wins": 51
     },
@@ -9391,7 +9413,7 @@
      "leagueRank": 36,
      "lp": 55653,
      "mr": 1703,
-     "mrRanking": 47332,
+     "mrRanking": 47509,
      "battles": 60,
      "wins": 34
     },
@@ -9400,7 +9422,7 @@
      "leagueRank": 36,
      "lp": 125912,
      "mr": 1713,
-     "mrRanking": 37909,
+     "mrRanking": 38018,
      "battles": 45,
      "wins": 26
     }
@@ -10005,7 +10027,7 @@
        "w": 1280,
        "mr": 2408,
        "lp": 977202,
-       "mrRanking": 10
+       "mrRanking": 11
       },
       {
        "char": "arjun",
@@ -10021,7 +10043,7 @@
        "w": 139,
        "mr": 1813,
        "lp": 52737,
-       "mrRanking": 14402
+       "mrRanking": 14430
       },
       {
        "char": "cviper",
@@ -10029,7 +10051,7 @@
        "w": 117,
        "mr": 1868,
        "lp": 102826,
-       "mrRanking": 9043
+       "mrRanking": 9057
       },
       {
        "char": "elena",
@@ -10037,7 +10059,7 @@
        "w": 76,
        "mr": 1840,
        "lp": 133696,
-       "mrRanking": 11252
+       "mrRanking": 11275
       },
       {
        "char": "alex",
@@ -10045,7 +10067,7 @@
        "w": 43,
        "mr": 1729,
        "lp": 78458,
-       "mrRanking": 33341
+       "mrRanking": 33384
       }
      ]
     },
@@ -10110,7 +10132,7 @@
   },
   "hinao": {
    "sflKey": "hinao",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "sagat",
    "characters": [
@@ -10119,7 +10141,7 @@
      "leagueRank": 36,
      "lp": 788953,
      "mr": 2250,
-     "mrRanking": 219,
+     "mrRanking": 226,
      "battles": 2063,
      "wins": 1272
     },
@@ -10128,7 +10150,7 @@
      "leagueRank": 36,
      "lp": 936432,
      "mr": 2229,
-     "mrRanking": 279,
+     "mrRanking": 291,
      "battles": 1347,
      "wins": 811
     },
@@ -10137,7 +10159,7 @@
      "leagueRank": 36,
      "lp": 174002,
      "mr": 2110,
-     "mrRanking": 1047,
+     "mrRanking": 1044,
      "battles": 442,
      "wins": 265
     },
@@ -10146,7 +10168,7 @@
      "leagueRank": 36,
      "lp": 135570,
      "mr": 2083,
-     "mrRanking": 1380,
+     "mrRanking": 1397,
      "battles": 253,
      "wins": 161
     },
@@ -10155,7 +10177,7 @@
      "leagueRank": 36,
      "lp": 844357,
      "mr": 1900,
-     "mrRanking": 7551,
+     "mrRanking": 7609,
      "battles": 212,
      "wins": 140
     },
@@ -10164,7 +10186,7 @@
      "leagueRank": 36,
      "lp": 47748,
      "mr": 1830,
-     "mrRanking": 12123,
+     "mrRanking": 12164,
      "battles": 177,
      "wins": 105
     },
@@ -10173,7 +10195,7 @@
      "leagueRank": 36,
      "lp": 604227,
      "mr": 1902,
-     "mrRanking": 7136,
+     "mrRanking": 7189,
      "battles": 112,
      "wins": 79
     },
@@ -10807,7 +10829,7 @@
        "w": 906,
        "mr": 2250,
        "lp": 788953,
-       "mrRanking": 224
+       "mrRanking": 227
       },
       {
        "char": "ryu",
@@ -10815,7 +10837,7 @@
        "w": 520,
        "mr": 2229,
        "lp": 936432,
-       "mrRanking": 286
+       "mrRanking": 291
       },
       {
        "char": "ed",
@@ -10823,7 +10845,7 @@
        "w": 248,
        "mr": 2110,
        "lp": 174002,
-       "mrRanking": 1038
+       "mrRanking": 1044
       },
       {
        "char": "jp",
@@ -10831,7 +10853,7 @@
        "w": 156,
        "mr": 2083,
        "lp": 135570,
-       "mrRanking": 1390
+       "mrRanking": 1397
       },
       {
        "char": "alex",
@@ -10839,7 +10861,7 @@
        "w": 83,
        "mr": 1830,
        "lp": 47748,
-       "mrRanking": 12151
+       "mrRanking": 12164
       },
       {
        "char": "gouki_akuma",
@@ -10847,7 +10869,7 @@
        "w": 75,
        "mr": 1902,
        "lp": 604227,
-       "mrRanking": 7162
+       "mrRanking": 7189
       }
      ]
     },
@@ -10912,7 +10934,7 @@
   },
   "itazan": {
    "sflKey": "itazan",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "lily",
    "characters": [
@@ -10921,7 +10943,7 @@
      "leagueRank": 36,
      "lp": 910249,
      "mr": 2230,
-     "mrRanking": 277,
+     "mrRanking": 287,
      "battles": 1558,
      "wins": 942
     },
@@ -10939,7 +10961,7 @@
      "leagueRank": 36,
      "lp": 843082,
      "mr": 2224,
-     "mrRanking": 300,
+     "mrRanking": 310,
      "battles": 691,
      "wins": 415
     },
@@ -10948,7 +10970,7 @@
      "leagueRank": 36,
      "lp": 83928,
      "mr": 2182,
-     "mrRanking": 563,
+     "mrRanking": 573,
      "battles": 484,
      "wins": 297
     },
@@ -10957,7 +10979,7 @@
      "leagueRank": 36,
      "lp": 274726,
      "mr": 1820,
-     "mrRanking": 13313,
+     "mrRanking": 13338,
      "battles": 64,
      "wins": 44
     },
@@ -11568,7 +11590,7 @@
        "w": 592,
        "mr": 2133,
        "lp": 153911,
-       "mrRanking": 860
+       "mrRanking": 863
       },
       {
        "char": "marisa",
@@ -11576,7 +11598,7 @@
        "w": 316,
        "mr": 2224,
        "lp": 843082,
-       "mrRanking": 303
+       "mrRanking": 310
       },
       {
        "char": "zangief",
@@ -11584,7 +11606,7 @@
        "w": 283,
        "mr": 2230,
        "lp": 910249,
-       "mrRanking": 279
+       "mrRanking": 287
       },
       {
        "char": "arjun",
@@ -11592,7 +11614,7 @@
        "w": 295,
        "mr": 2182,
        "lp": 83928,
-       "mrRanking": 564
+       "mrRanking": 573
       },
       {
        "char": "alex",
@@ -11600,7 +11622,7 @@
        "w": 43,
        "mr": 1820,
        "lp": 274726,
-       "mrRanking": 13324
+       "mrRanking": 13338
       }
      ]
     },
@@ -11641,7 +11663,7 @@
   },
   "johnny": {
    "sflKey": "johnny",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "elena",
    "characters": [
@@ -11650,7 +11672,7 @@
      "leagueRank": 36,
      "lp": 335881,
      "mr": 2194,
-     "mrRanking": 509,
+     "mrRanking": 532,
      "battles": 2670,
      "wins": 1451
     },
@@ -11659,7 +11681,7 @@
      "leagueRank": 36,
      "lp": 106004,
      "mr": 1750,
-     "mrRanking": 29086,
+     "mrRanking": 29239,
      "battles": 192,
      "wins": 115
     },
@@ -11677,7 +11699,7 @@
      "leagueRank": 36,
      "lp": 32151,
      "mr": 1636,
-     "mrRanking": 78149,
+     "mrRanking": 78381,
      "battles": 58,
      "wins": 43
     },
@@ -11686,7 +11708,7 @@
      "leagueRank": 36,
      "lp": 262068,
      "mr": 1637,
-     "mrRanking": 77538,
+     "mrRanking": 77771,
      "battles": 26,
      "wins": 17
     },
@@ -11695,7 +11717,7 @@
      "leagueRank": 36,
      "lp": 95745,
      "mr": 1577,
-     "mrRanking": 153702,
+     "mrRanking": 154085,
      "battles": 7,
      "wins": 7
     },
@@ -11704,7 +11726,7 @@
      "leagueRank": 36,
      "lp": 43798,
      "mr": 1508,
-     "mrRanking": 277772,
+     "mrRanking": 278342,
      "battles": 5,
      "wins": 2
     },
@@ -12303,7 +12325,7 @@
        "w": 291,
        "mr": 2194,
        "lp": 335881,
-       "mrRanking": 518
+       "mrRanking": 532
       },
       {
        "char": "luke",
@@ -12311,7 +12333,7 @@
        "w": 115,
        "mr": 1750,
        "lp": 106004,
-       "mrRanking": 29167
+       "mrRanking": 29239
       },
       {
        "char": "arjun",
@@ -12327,7 +12349,7 @@
        "w": 43,
        "mr": 1636,
        "lp": 32151,
-       "mrRanking": 78264
+       "mrRanking": 78382
       },
       {
        "char": "ryu",
@@ -12335,7 +12357,7 @@
        "w": 17,
        "mr": 1637,
        "lp": 262068,
-       "mrRanking": 77647
+       "mrRanking": 77772
       },
       {
        "char": "mai",
@@ -12343,7 +12365,7 @@
        "w": 7,
        "mr": 1577,
        "lp": 95745,
-       "mrRanking": 153875
+       "mrRanking": 154085
       }
      ]
     },
@@ -12408,7 +12430,7 @@
   },
   "jr": {
    "sflKey": "jr",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "alex",
    "characters": [
@@ -12417,7 +12439,7 @@
      "leagueRank": 36,
      "lp": 414817,
      "mr": 2205,
-     "mrRanking": 418,
+     "mrRanking": 433,
      "battles": 2330,
      "wins": 1244
     },
@@ -12426,7 +12448,7 @@
      "leagueRank": 36,
      "lp": 906420,
      "mr": 2401,
-     "mrRanking": 16,
+     "mrRanking": 17,
      "battles": 1532,
      "wins": 963
     },
@@ -12435,7 +12457,7 @@
      "leagueRank": 36,
      "lp": 53355,
      "mr": 1963,
-     "mrRanking": 4003,
+     "mrRanking": 4019,
      "battles": 253,
      "wins": 164
     },
@@ -12444,7 +12466,7 @@
      "leagueRank": 36,
      "lp": 291821,
      "mr": 1853,
-     "mrRanking": 10131,
+     "mrRanking": 10147,
      "battles": 168,
      "wins": 101
     },
@@ -12453,7 +12475,7 @@
      "leagueRank": 36,
      "lp": 173295,
      "mr": 1805,
-     "mrRanking": 17452,
+     "mrRanking": 17554,
      "battles": 136,
      "wins": 81
     },
@@ -12462,7 +12484,7 @@
      "leagueRank": 36,
      "lp": 133273,
      "mr": 1725,
-     "mrRanking": 34223,
+     "mrRanking": 34356,
      "battles": 121,
      "wins": 72
     },
@@ -12471,7 +12493,7 @@
      "leagueRank": 36,
      "lp": 110617,
      "mr": 1809,
-     "mrRanking": 15317,
+     "mrRanking": 15404,
      "battles": 88,
      "wins": 64
     },
@@ -12480,7 +12502,7 @@
      "leagueRank": 36,
      "lp": 198277,
      "mr": 1720,
-     "mrRanking": 35537,
+     "mrRanking": 35659,
      "battles": 84,
      "wins": 49
     }
@@ -13122,7 +13144,7 @@
        "w": 901,
        "mr": 2205,
        "lp": 414817,
-       "mrRanking": 424
+       "mrRanking": 433
       },
       {
        "char": "zangief",
@@ -13138,7 +13160,7 @@
        "w": 158,
        "mr": 1963,
        "lp": 53355,
-       "mrRanking": 4016
+       "mrRanking": 4019
       },
       {
        "char": "dee_jay",
@@ -13146,7 +13168,7 @@
        "w": 99,
        "mr": 1853,
        "lp": 291821,
-       "mrRanking": 10129
+       "mrRanking": 10146
       },
       {
        "char": "gouki_akuma",
@@ -13154,7 +13176,7 @@
        "w": 81,
        "mr": 1805,
        "lp": 173295,
-       "mrRanking": 17501
+       "mrRanking": 17552
       },
       {
        "char": "luke",
@@ -13162,7 +13184,7 @@
        "w": 71,
        "mr": 1725,
        "lp": 133273,
-       "mrRanking": 34289
+       "mrRanking": 34357
       }
      ]
     },
@@ -13227,7 +13249,7 @@
   },
   "kawano": {
    "sflKey": "kawano",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "luke",
    "characters": [
@@ -13236,7 +13258,7 @@
      "leagueRank": 36,
      "lp": 629950,
      "mr": 2162,
-     "mrRanking": 657,
+     "mrRanking": 668,
      "battles": 2410,
      "wins": 1394
     },
@@ -13245,7 +13267,7 @@
      "leagueRank": 36,
      "lp": 923042,
      "mr": 2207,
-     "mrRanking": 395,
+     "mrRanking": 415,
      "battles": 710,
      "wins": 447
     },
@@ -13254,7 +13276,7 @@
      "leagueRank": 36,
      "lp": 71920,
      "mr": 2228,
-     "mrRanking": 284,
+     "mrRanking": 297,
      "battles": 351,
      "wins": 235
     },
@@ -13263,7 +13285,7 @@
      "leagueRank": 36,
      "lp": 51876,
      "mr": 1676,
-     "mrRanking": 60087,
+     "mrRanking": 60264,
      "battles": 47,
      "wins": 27
     },
@@ -13272,7 +13294,7 @@
      "leagueRank": 36,
      "lp": 51432,
      "mr": 1563,
-     "mrRanking": 167837,
+     "mrRanking": 168172,
      "battles": 17,
      "wins": 13
     },
@@ -13913,7 +13935,7 @@
        "w": 1215,
        "mr": 2162,
        "lp": 629950,
-       "mrRanking": 662
+       "mrRanking": 668
       },
       {
        "char": "gouki_akuma",
@@ -13921,7 +13943,7 @@
        "w": 418,
        "mr": 2207,
        "lp": 923042,
-       "mrRanking": 411
+       "mrRanking": 415
       },
       {
        "char": "arjun",
@@ -13929,7 +13951,7 @@
        "w": 235,
        "mr": 2228,
        "lp": 71920,
-       "mrRanking": 290
+       "mrRanking": 297
       },
       {
        "char": "elena",
@@ -13937,7 +13959,7 @@
        "w": 27,
        "mr": 1676,
        "lp": 51876,
-       "mrRanking": 60207
+       "mrRanking": 60265
       },
       {
        "char": "blanka",
@@ -13945,7 +13967,7 @@
        "w": 13,
        "mr": 1563,
        "lp": 51432,
-       "mrRanking": 168021
+       "mrRanking": 168170
       }
      ]
     },
@@ -14677,7 +14699,7 @@
        "w": 763,
        "mr": 2317,
        "lp": 757717,
-       "mrRanking": 87
+       "mrRanking": 84
       },
       {
        "char": "jamie",
@@ -14685,7 +14707,7 @@
        "w": 329,
        "mr": 2245,
        "lp": 771719,
-       "mrRanking": 235
+       "mrRanking": 239
       },
       {
        "char": "yasmine",
@@ -14693,7 +14715,7 @@
        "w": 328,
        "mr": 2078,
        "lp": 93431,
-       "mrRanking": 1433
+       "mrRanking": 1441
       },
       {
        "char": "arjun",
@@ -14701,7 +14723,7 @@
        "w": 302,
        "mr": 2225,
        "lp": 85366,
-       "mrRanking": 300
+       "mrRanking": 304
       },
       {
        "char": "cammy",
@@ -14709,7 +14731,7 @@
        "w": 162,
        "mr": 2116,
        "lp": 830904,
-       "mrRanking": 986
+       "mrRanking": 984
       },
       {
        "char": "luke",
@@ -14717,7 +14739,7 @@
        "w": 74,
        "mr": 1877,
        "lp": 57259,
-       "mrRanking": 8563
+       "mrRanking": 8588
       }
      ]
     },
@@ -14860,9 +14882,9 @@
     }
    ],
    "last7Days": {
-    "matches": 100,
-    "wins": 58,
-    "activeDays": 4,
+    "matches": 101,
+    "wins": 59,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "arjun",
@@ -14871,21 +14893,21 @@
      },
      {
       "char": "mai",
-      "n": 31,
-      "w": 19
+      "n": 32,
+      "w": 20
      }
     ],
     "byMode": {
-     "rank": 69,
+     "rank": 70,
      "casual": 0,
      "hub": 0,
      "custom": 31
     }
    },
    "last30Days": {
-    "matches": 100,
-    "wins": 58,
-    "activeDays": 4,
+    "matches": 101,
+    "wins": 59,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "arjun",
@@ -14894,12 +14916,12 @@
      },
      {
       "char": "mai",
-      "n": 31,
-      "w": 19
+      "n": 32,
+      "w": 20
      }
     ],
     "byMode": {
-     "rank": 69,
+     "rank": 70,
      "casual": 0,
      "hub": 0,
      "custom": 31
@@ -14909,15 +14931,15 @@
    "risingChars": [
     {
      "char": "arjun",
-     "recentShare": 69,
+     "recentShare": 68.3,
      "priorShare": 0,
      "recentMatches": 69
     },
     {
      "char": "mai",
-     "recentShare": 31,
+     "recentShare": 31.7,
      "priorShare": 0,
-     "recentMatches": 31
+     "recentMatches": 32
     }
    ],
    "mainVsChar": [
@@ -14996,6 +15018,17 @@
     "gauge_rate_ca": 0.0214
    },
    "recentMatches": [
+    {
+     "t": 1792512008,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2209,
+     "oppChar": "cviper",
+     "oppMr": 2223,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
     {
      "t": 1792496226,
      "mode": "custom",
@@ -15314,24 +15347,13 @@
      "won": true,
      "roundsWon": 2,
      "roundsLost": 0
-    },
-    {
-     "t": 1792299534,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2209,
-     "oppChar": "guile",
-     "oppMr": 2348,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
     }
    ],
    "acts": {
     "current": {
      "seasonId": 13,
-     "rankBattles": 1112,
-     "rankWins": 704,
+     "rankBattles": 1113,
+     "rankWins": 705,
      "chars": [
       {
        "char": "yasmine",
@@ -15339,7 +15361,7 @@
        "w": 228,
        "mr": 1838,
        "lp": 70401,
-       "mrRanking": 11432
+       "mrRanking": 11445
       },
       {
        "char": "arjun",
@@ -15347,7 +15369,7 @@
        "w": 178,
        "mr": 2062,
        "lp": 60882,
-       "mrRanking": 1599
+       "mrRanking": 1600
       },
       {
        "char": "elena",
@@ -15355,15 +15377,15 @@
        "w": 134,
        "mr": 1908,
        "lp": 241311,
-       "mrRanking": 6265
+       "mrRanking": 6268
       },
       {
        "char": "mai",
-       "n": 210,
-       "w": 138,
-       "mr": 2209,
-       "lp": 765044,
-       "mrRanking": 397
+       "n": 211,
+       "w": 139,
+       "mr": 2217,
+       "lp": 765294,
+       "mrRanking": 347
       },
       {
        "char": "jp",
@@ -15371,7 +15393,7 @@
        "w": 8,
        "mr": 1676,
        "lp": 489942,
-       "mrRanking": 60211
+       "mrRanking": 60267
       },
       {
        "char": "dee_jay",
@@ -15431,7 +15453,7 @@
      ]
     }
    },
-   "storedMatches": 100,
+   "storedMatches": 101,
    "storedSince": "2026-10-15"
   },
   "kincho": {
@@ -16141,7 +16163,7 @@
        "w": 1850,
        "mr": 2362,
        "lp": 992255,
-       "mrRanking": 33
+       "mrRanking": 30
       },
       {
        "char": "cviper",
@@ -16149,7 +16171,7 @@
        "w": 310,
        "mr": 2099,
        "lp": 240526,
-       "mrRanking": 1290
+       "mrRanking": 1298
       },
       {
        "char": "arjun",
@@ -16157,7 +16179,7 @@
        "w": 219,
        "mr": 2197,
        "lp": 68148,
-       "mrRanking": 505
+       "mrRanking": 520
       },
       {
        "char": "jamie",
@@ -16165,7 +16187,7 @@
        "w": 144,
        "mr": 1851,
        "lp": 61860,
-       "mrRanking": 10319
+       "mrRanking": 10328
       },
       {
        "char": "yasmine",
@@ -16173,7 +16195,7 @@
        "w": 103,
        "mr": 1740,
        "lp": 43465,
-       "mrRanking": 31045
+       "mrRanking": 31089
       },
       {
        "char": "luke",
@@ -16181,7 +16203,7 @@
        "w": 65,
        "mr": 1745,
        "lp": 92315,
-       "mrRanking": 30100
+       "mrRanking": 30155
       }
      ]
     },
@@ -16246,7 +16268,7 @@
   },
   "kobayan": {
    "sflKey": "kobayan",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "zangief",
    "characters": [
@@ -16255,7 +16277,7 @@
      "leagueRank": 36,
      "lp": 955201,
      "mr": 2235,
-     "mrRanking": 256,
+     "mrRanking": 266,
      "battles": 663,
      "wins": 395
     },
@@ -16264,7 +16286,7 @@
      "leagueRank": 36,
      "lp": 164132,
      "mr": 1701,
-     "mrRanking": 51109,
+     "mrRanking": 51300,
      "battles": 30,
      "wins": 20
     },
@@ -16273,7 +16295,7 @@
      "leagueRank": 36,
      "lp": 222526,
      "mr": 1568,
-     "mrRanking": 162439,
+     "mrRanking": 162760,
      "battles": 9,
      "wins": 3
     },
@@ -16598,7 +16620,7 @@
        "w": 317,
        "mr": 2235,
        "lp": 955201,
-       "mrRanking": 257
+       "mrRanking": 266
       },
       {
        "char": "alex",
@@ -16606,7 +16628,7 @@
        "w": 20,
        "mr": 1701,
        "lp": 164132,
-       "mrRanking": 51180
+       "mrRanking": 51299
       },
       {
        "char": "gouki_akuma",
@@ -16614,7 +16636,7 @@
        "w": 3,
        "mr": 1568,
        "lp": 222526,
-       "mrRanking": 162575
+       "mrRanking": 162759
       }
      ]
     },
@@ -17247,7 +17269,7 @@
        "w": 156,
        "mr": 2219,
        "lp": 379943,
-       "mrRanking": 331
+       "mrRanking": 332
       },
       {
        "char": "jamie",
@@ -17255,7 +17277,7 @@
        "w": 112,
        "mr": 2124,
        "lp": 102959,
-       "mrRanking": 918
+       "mrRanking": 922
       },
       {
        "char": "mai",
@@ -17263,7 +17285,7 @@
        "w": 73,
        "mr": 1978,
        "lp": 117016,
-       "mrRanking": 3712
+       "mrRanking": 3718
       },
       {
        "char": "vega_mbison",
@@ -17271,7 +17293,7 @@
        "w": 65,
        "mr": 1923,
        "lp": 150726,
-       "mrRanking": 5381
+       "mrRanking": 5386
       },
       {
        "char": "luke",
@@ -17279,7 +17301,7 @@
        "w": 63,
        "mr": 1837,
        "lp": 80851,
-       "mrRanking": 11535
+       "mrRanking": 11544
       },
       {
        "char": "ken",
@@ -17287,7 +17309,7 @@
        "w": 60,
        "mr": 1849,
        "lp": 206562,
-       "mrRanking": 10546
+       "mrRanking": 10559
       }
      ]
     },
@@ -17352,25 +17374,25 @@
   },
   "mago": {
    "sflKey": "mago",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "mai",
    "characters": [
     {
      "char": "mai",
      "leagueRank": 36,
-     "lp": 523344,
-     "mr": 2310,
-     "mrRanking": 102,
-     "battles": 1371,
-     "wins": 765
+     "lp": 528504,
+     "mr": 2276,
+     "mrRanking": 160,
+     "battles": 1416,
+     "wins": 789
     },
     {
      "char": "arjun",
      "leagueRank": 36,
      "lp": 46434,
      "mr": 1921,
-     "mrRanking": 5471,
+     "mrRanking": 5484,
      "battles": 194,
      "wins": 138
     },
@@ -17379,7 +17401,7 @@
      "leagueRank": 36,
      "lp": 44931,
      "mr": 1785,
-     "mrRanking": 24666,
+     "mrRanking": 24786,
      "battles": 171,
      "wins": 112
     },
@@ -17388,7 +17410,7 @@
      "leagueRank": 36,
      "lp": 102914,
      "mr": 1567,
-     "mrRanking": 163455,
+     "mrRanking": 163789,
      "battles": 21,
      "wins": 15
     },
@@ -17430,19 +17452,19 @@
     }
    ],
    "last7Days": {
-    "matches": 100,
-    "wins": 65,
-    "activeDays": 2,
+    "matches": 145,
+    "wins": 89,
+    "activeDays": 3,
     "byChar": [
+     {
+      "char": "mai",
+      "n": 94,
+      "w": 54
+     },
      {
       "char": "arjun",
       "n": 49,
       "w": 35
-     },
-     {
-      "char": "mai",
-      "n": 49,
-      "w": 30
      },
      {
       "char": "juri",
@@ -17451,26 +17473,26 @@
      }
     ],
     "byMode": {
-     "rank": 66,
+     "rank": 111,
      "casual": 0,
      "hub": 0,
      "custom": 34
     }
    },
    "last30Days": {
-    "matches": 100,
-    "wins": 65,
-    "activeDays": 2,
+    "matches": 145,
+    "wins": 89,
+    "activeDays": 3,
     "byChar": [
+     {
+      "char": "mai",
+      "n": 94,
+      "w": 54
+     },
      {
       "char": "arjun",
       "n": 49,
       "w": 35
-     },
-     {
-      "char": "mai",
-      "n": 49,
-      "w": 30
      },
      {
       "char": "juri",
@@ -17479,7 +17501,7 @@
      }
     ],
     "byMode": {
-     "rank": 66,
+     "rank": 111,
      "casual": 0,
      "hub": 0,
      "custom": 34
@@ -17489,18 +17511,22 @@
     {
      "date": "2026-10-18",
      "mr": 2302
+    },
+    {
+     "date": "2026-10-21",
+     "mr": 2286
     }
    ],
    "risingChars": [
     {
-     "char": "arjun",
-     "recentShare": 49,
+     "char": "mai",
+     "recentShare": 64.8,
      "priorShare": 0,
-     "recentMatches": 49
+     "recentMatches": 94
     },
     {
-     "char": "mai",
-     "recentShare": 49,
+     "char": "arjun",
+     "recentShare": 33.8,
      "priorShare": 0,
      "recentMatches": 49
     }
@@ -17508,18 +17534,18 @@
    "mainVsChar": [
     {
      "char": "luke",
-     "n": 124,
-     "w": 69
+     "n": 134,
+     "w": 74
+    },
+    {
+     "char": "kimberly",
+     "n": 122,
+     "w": 66
     },
     {
      "char": "ryu",
      "n": 119,
      "w": 69
-    },
-    {
-     "char": "kimberly",
-     "n": 111,
-     "w": 61
     },
     {
      "char": "ken",
@@ -17528,8 +17554,8 @@
     },
     {
      "char": "dee_jay",
-     "n": 75,
-     "w": 48
+     "n": 79,
+     "w": 51
     },
     {
      "char": "marisa",
@@ -17542,29 +17568,29 @@
      "w": 34
     },
     {
+     "char": "mai",
+     "n": 55,
+     "w": 26
+    },
+    {
+     "char": "jp",
+     "n": 52,
+     "w": 26
+    },
+    {
      "char": "cviper",
      "n": 51,
      "w": 28
     },
     {
-     "char": "jp",
-     "n": 49,
-     "w": 24
-    },
-    {
-     "char": "mai",
-     "n": 49,
-     "w": 23
+     "char": "cammy",
+     "n": 50,
+     "w": 32
     },
     {
      "char": "terry",
      "n": 47,
      "w": 24
-    },
-    {
-     "char": "cammy",
-     "n": 45,
-     "w": 29
     },
     {
      "char": "dhalsim",
@@ -17622,13 +17648,13 @@
      "w": 18
     },
     {
-     "char": "elena",
-     "n": 22,
-     "w": 12
+     "char": "zangief",
+     "n": 23,
+     "w": 14
     },
     {
-     "char": "zangief",
-     "n": 20,
+     "char": "elena",
+     "n": 22,
      "w": 12
     },
     {
@@ -17648,360 +17674,360 @@
     }
    ],
    "battleStats": {
-    "rank_match_play_count": 23455,
+    "rank_match_play_count": 23500,
     "casual_match_play_count": 3,
     "battle_hub_match_play_count": 236,
     "custom_room_match_play_count": 28065,
-    "drive_parry": 1.9,
-    "just_parry": 0.7,
-    "drive_impact": 0.1,
+    "drive_parry": 1.8,
+    "just_parry": 0.8,
+    "drive_impact": 0,
     "received_drive_impact": 0.1,
     "drive_reversal": 0.2,
-    "throw_count": 2.4,
-    "received_throw_count": 2.2,
-    "throw_tech": 0.6,
-    "punish_counter": 0.1,
+    "throw_count": 2.9,
+    "received_throw_count": 2.6,
+    "throw_tech": 0.7,
+    "punish_counter": 0,
     "received_punish_counter": 0,
-    "corner_time": 13.8,
-    "cornered_time": 8.5,
-    "gauge_rate_drive_arts": 0.2756,
-    "gauge_rate_drive_guard": 0.1387,
-    "gauge_rate_drive_impact": 0.0051,
-    "gauge_rate_drive_reversal": 0.0146,
-    "gauge_rate_drive_rush_from_parry": 0.0721,
-    "gauge_rate_drive_rush_from_cancel": 0.2216,
-    "gauge_rate_sa_lv1": 0.6324,
-    "gauge_rate_sa_lv2": 0.1623,
-    "gauge_rate_sa_lv3": 0.188,
-    "gauge_rate_ca": 0.017
+    "corner_time": 14.6,
+    "cornered_time": 10.7,
+    "gauge_rate_drive_arts": 0.2401,
+    "gauge_rate_drive_guard": 0.1256,
+    "gauge_rate_drive_impact": 0.0034,
+    "gauge_rate_drive_reversal": 0.0122,
+    "gauge_rate_drive_rush_from_parry": 0.0657,
+    "gauge_rate_drive_rush_from_cancel": 0.3028,
+    "gauge_rate_sa_lv1": 0.7567,
+    "gauge_rate_sa_lv2": 0.1351,
+    "gauge_rate_sa_lv3": 0.0608,
+    "gauge_rate_ca": 0.0472
    },
    "recentMatches": [
     {
-     "t": 1792334764,
+     "t": 1792520018,
      "mode": "rank",
      "myChar": "mai",
-     "myMr": 2302,
-     "oppChar": "ken",
+     "myMr": 2286,
+     "oppChar": "mai",
+     "oppMr": 2210,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792519897,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2296,
+     "oppChar": "mai",
+     "oppMr": 2200,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792519731,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2290,
+     "oppChar": "mai",
+     "oppMr": 2206,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792519517,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2298,
+     "oppChar": "luke",
+     "oppMr": 2281,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792519392,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2307,
+     "oppChar": "luke",
+     "oppMr": 2272,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516791,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2301,
+     "oppChar": "zangief",
+     "oppMr": 2235,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792516622,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2294,
+     "oppChar": "zangief",
+     "oppMr": 2242,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792516499,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2304,
+     "oppChar": "zangief",
+     "oppMr": 2232,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516316,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2312,
+     "oppChar": "cammy",
+     "oppMr": 2300,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516126,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2304,
+     "oppChar": "cammy",
+     "oppMr": 2308,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792515940,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2312,
+     "oppChar": "cammy",
+     "oppMr": 2300,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792515771,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2304,
+     "oppChar": "dee_jay",
+     "oppMr": 2312,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515679,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2295,
+     "oppChar": "dee_jay",
+     "oppMr": 2321,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792515576,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2303,
+     "oppChar": "dee_jay",
+     "oppMr": 2313,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792515386,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2296,
+     "oppChar": "kimberly",
+     "oppMr": 2274,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792515227,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2288,
+     "oppChar": "kimberly",
+     "oppMr": 2282,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792515064,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2297,
+     "oppChar": "kimberly",
+     "oppMr": 2273,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792514930,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2308,
+     "oppChar": "kimberly",
+     "oppMr": 2149,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792514824,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2320,
+     "oppChar": "kimberly",
+     "oppMr": 2137,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792514648,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2332,
+     "oppChar": "manon",
+     "oppMr": 2152,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792514510,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2344,
+     "oppChar": "manon",
+     "oppMr": 2140,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792514356,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2340,
+     "oppChar": "manon",
+     "oppMr": 2144,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792514098,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2333,
+     "oppChar": "luke",
+     "oppMr": 2278,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792513942,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2326,
+     "oppChar": "luke",
+     "oppMr": 2285,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792513728,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2319,
+     "oppChar": "luke",
      "oppMr": 2295,
      "won": true,
      "roundsWon": 2,
      "roundsLost": 0
     },
     {
-     "t": 1792334672,
+     "t": 1792513562,
      "mode": "rank",
      "myChar": "mai",
-     "myMr": 2294,
-     "oppChar": "ken",
-     "oppMr": 2303,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792334493,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2287,
-     "oppChar": "dee_jay",
-     "oppMr": 2223,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792334337,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2280,
-     "oppChar": "dee_jay",
-     "oppMr": 2230,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792334198,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2290,
-     "oppChar": "dee_jay",
-     "oppMr": 2220,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792334000,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2283,
-     "oppChar": "sagat",
-     "oppMr": 2244,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792333877,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2276,
-     "oppChar": "sagat",
-     "oppMr": 2251,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792333640,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2269,
+     "myMr": 2328,
      "oppChar": "luke",
-     "oppMr": 2221,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792333546,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2279,
-     "oppChar": "luke",
-     "oppMr": 2211,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792333379,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "luke",
-     "oppMr": 2218,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792330832,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792330634,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792330531,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792330356,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792330140,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "sagat",
-     "oppMr": 2307,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792330014,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "sagat",
-     "oppMr": 2307,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792329847,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "sagat",
-     "oppMr": 2307,
+     "oppMr": 2286,
      "won": false,
      "roundsWon": 0,
      "roundsLost": 2
     },
     {
-     "t": 1792329739,
-     "mode": "custom",
+     "t": 1792513421,
+     "mode": "rank",
      "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "sagat",
-     "oppMr": 2307,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792329599,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792329407,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792329317,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792329200,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792329041,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "terry",
-     "oppMr": 0,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792328889,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "kimberly",
-     "oppMr": 1985,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792328809,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "kimberly",
-     "oppMr": 1985,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792328649,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "kimberly",
-     "oppMr": 1985,
+     "myMr": 2321,
+     "oppChar": "luke",
+     "oppMr": 2293,
      "won": true,
      "roundsWon": 2,
      "roundsLost": 1
     },
     {
-     "t": 1792328486,
-     "mode": "custom",
+     "t": 1792513218,
+     "mode": "rank",
      "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "kimberly",
-     "oppMr": 1985,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792328368,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
+     "myMr": 2330,
      "oppChar": "luke",
-     "oppMr": 2305,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792328264,
-     "mode": "custom",
-     "myChar": "mai",
-     "myMr": 2272,
-     "oppChar": "luke",
-     "oppMr": 2305,
+     "oppMr": 2271,
      "won": false,
      "roundsWon": 1,
      "roundsLost": 2
     },
     {
-     "t": 1792328117,
-     "mode": "custom",
+     "t": 1792513087,
+     "mode": "rank",
      "myChar": "mai",
-     "myMr": 2272,
+     "myMr": 2323,
      "oppChar": "luke",
-     "oppMr": 2305,
+     "oppMr": 2278,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792512985,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2332,
+     "oppChar": "luke",
+     "oppMr": 2269,
      "won": false,
      "roundsWon": 0,
      "roundsLost": 2
@@ -18010,16 +18036,16 @@
    "acts": {
     "current": {
      "seasonId": 13,
-     "rankBattles": 1493,
-     "rankWins": 906,
+     "rankBattles": 1538,
+     "rankWins": 930,
      "chars": [
       {
        "char": "mai",
-       "n": 1107,
-       "w": 641,
-       "mr": 2310,
-       "lp": 523344,
-       "mrRanking": 98
+       "n": 1152,
+       "w": 665,
+       "mr": 2276,
+       "lp": 528504,
+       "mrRanking": 160
       },
       {
        "char": "arjun",
@@ -18027,7 +18053,7 @@
        "w": 138,
        "mr": 1921,
        "lp": 46434,
-       "mrRanking": 5479
+       "mrRanking": 5484
       },
       {
        "char": "yasmine",
@@ -18035,7 +18061,7 @@
        "w": 112,
        "mr": 1785,
        "lp": 44931,
-       "mrRanking": 24702
+       "mrRanking": 24786
       },
       {
        "char": "luke",
@@ -18043,7 +18069,7 @@
        "w": 15,
        "mr": 1567,
        "lp": 102914,
-       "mrRanking": 163625
+       "mrRanking": 163788
       }
      ]
     },
@@ -18079,7 +18105,7 @@
      ]
     }
    },
-   "storedMatches": 100,
+   "storedMatches": 145,
    "storedSince": "2026-10-15"
   },
   "mena": {
@@ -18654,7 +18680,7 @@
        "w": 74,
        "mr": 1999,
        "lp": 155545,
-       "mrRanking": 3453
+       "mrRanking": 3469
       }
      ]
     },
@@ -19047,7 +19073,7 @@
        "w": 63,
        "mr": 1849,
        "lp": 276540,
-       "mrRanking": 10545
+       "mrRanking": 10563
       },
       {
        "char": "cammy",
@@ -19055,7 +19081,7 @@
        "w": 76,
        "mr": 2014,
        "lp": 665123,
-       "mrRanking": 2372
+       "mrRanking": 2379
       }
      ]
     },
@@ -19724,7 +19750,7 @@
        "w": 400,
        "mr": 2223,
        "lp": 918191,
-       "mrRanking": 311
+       "mrRanking": 315
       },
       {
        "char": "luke",
@@ -19732,7 +19758,7 @@
        "w": 116,
        "mr": 1910,
        "lp": 305808,
-       "mrRanking": 6101
+       "mrRanking": 6099
       }
      ]
     },
@@ -19765,34 +19791,34 @@
   },
   "moke": {
    "sflKey": "moke",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "mai",
    "characters": [
     {
      "char": "mai",
      "leagueRank": 36,
-     "lp": 902501,
-     "mr": 2372,
-     "mrRanking": 23,
-     "battles": 2302,
-     "wins": 1289
+     "lp": 907792,
+     "mr": 2325,
+     "mrRanking": 69,
+     "battles": 2396,
+     "wins": 1338
     },
     {
      "char": "chunli",
      "leagueRank": 36,
-     "lp": 906555,
-     "mr": 2281,
-     "mrRanking": 149,
-     "battles": 1254,
-     "wins": 696
+     "lp": 908455,
+     "mr": 2260,
+     "mrRanking": 205,
+     "battles": 1274,
+     "wins": 706
     },
     {
      "char": "terry",
      "leagueRank": 36,
      "lp": 87913,
      "mr": 1944,
-     "mrRanking": 4587,
+     "mrRanking": 4624,
      "battles": 289,
      "wins": 169
     },
@@ -19843,46 +19869,46 @@
     }
    ],
    "last7Days": {
-    "matches": 160,
-    "wins": 92,
-    "activeDays": 4,
+    "matches": 214,
+    "wins": 122,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "mai",
-      "n": 152,
-      "w": 86
+      "n": 186,
+      "w": 106
      },
      {
       "char": "chunli",
-      "n": 8,
-      "w": 6
+      "n": 28,
+      "w": 16
      }
     ],
     "byMode": {
-     "rank": 126,
+     "rank": 180,
      "casual": 0,
      "hub": 0,
      "custom": 34
     }
    },
    "last30Days": {
-    "matches": 160,
-    "wins": 92,
-    "activeDays": 4,
+    "matches": 214,
+    "wins": 122,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "mai",
-      "n": 152,
-      "w": 86
+      "n": 186,
+      "w": 106
      },
      {
       "char": "chunli",
-      "n": 8,
-      "w": 6
+      "n": 28,
+      "w": 16
      }
     ],
     "byMode": {
-     "rank": 126,
+     "rank": 180,
      "casual": 0,
      "hub": 0,
      "custom": 34
@@ -19903,32 +19929,42 @@
     },
     {
      "date": "2026-10-20",
-     "mr": 2298
+     "mr": 2304
+    },
+    {
+     "date": "2026-10-21",
+     "mr": 2319
     }
    ],
    "risingChars": [
     {
      "char": "mai",
-     "recentShare": 95,
+     "recentShare": 86.9,
      "priorShare": 0,
-     "recentMatches": 152
+     "recentMatches": 186
+    },
+    {
+     "char": "chunli",
+     "recentShare": 13.1,
+     "priorShare": 0,
+     "recentMatches": 28
     }
    ],
    "mainVsChar": [
     {
      "char": "luke",
-     "n": 210,
-     "w": 115
+     "n": 221,
+     "w": 120
     },
     {
      "char": "cviper",
-     "n": 162,
-     "w": 96
+     "n": 165,
+     "w": 98
     },
     {
      "char": "dhalsim",
-     "n": 151,
-     "w": 95
+     "n": 154,
+     "w": 97
     },
     {
      "char": "elena",
@@ -19937,8 +19973,8 @@
     },
     {
      "char": "dee_jay",
-     "n": 117,
-     "w": 66
+     "n": 120,
+     "w": 67
     },
     {
      "char": "ingrid",
@@ -19946,9 +19982,19 @@
      "w": 48
     },
     {
+     "char": "mai",
+     "n": 93,
+     "w": 50
+    },
+    {
      "char": "vega_mbison",
-     "n": 89,
-     "w": 57
+     "n": 92,
+     "w": 58
+    },
+    {
+     "char": "alex",
+     "n": 91,
+     "w": 49
     },
     {
      "char": "cammy",
@@ -19956,13 +20002,8 @@
      "w": 51
     },
     {
-     "char": "mai",
-     "n": 86,
-     "w": 45
-    },
-    {
-     "char": "alex",
-     "n": 80,
+     "char": "guile",
+     "n": 82,
      "w": 43
     },
     {
@@ -19971,19 +20012,19 @@
      "w": 44
     },
     {
+     "char": "ken",
+     "n": 74,
+     "w": 41
+    },
+    {
      "char": "jp",
      "n": 72,
      "w": 42
     },
     {
-     "char": "ken",
-     "n": 72,
-     "w": 39
-    },
-    {
-     "char": "guile",
-     "n": 68,
-     "w": 37
+     "char": "yasmine",
+     "n": 67,
+     "w": 34
     },
     {
      "char": "aki",
@@ -19991,19 +20032,19 @@
      "w": 41
     },
     {
-     "char": "yasmine",
-     "n": 64,
-     "w": 32
-    },
-    {
      "char": "kimberly",
-     "n": 60,
-     "w": 29
+     "n": 65,
+     "w": 33
     },
     {
      "char": "blanka",
+     "n": 64,
+     "w": 39
+    },
+    {
+     "char": "gouki_akuma",
      "n": 58,
-     "w": 35
+     "w": 36
     },
     {
      "char": "jamie",
@@ -20011,9 +20052,9 @@
      "w": 33
     },
     {
-     "char": "gouki_akuma",
-     "n": 55,
-     "w": 34
+     "char": "ehonda",
+     "n": 53,
+     "w": 23
     },
     {
      "char": "marisa",
@@ -20027,28 +20068,23 @@
     },
     {
      "char": "terry",
-     "n": 49,
+     "n": 51,
      "w": 28
     },
     {
-     "char": "ehonda",
-     "n": 48,
+     "char": "zangief",
+     "n": 46,
      "w": 22
     },
     {
      "char": "juri",
-     "n": 44,
+     "n": 46,
      "w": 22
-    },
-    {
-     "char": "zangief",
-     "n": 43,
-     "w": 21
     },
     {
      "char": "lily",
-     "n": 42,
-     "w": 22
+     "n": 45,
+     "w": 23
     },
     {
      "char": "chunli",
@@ -20064,389 +20100,394 @@
      "char": "rashid",
      "n": 22,
      "w": 8
+    },
+    {
+     "char": "arjun",
+     "n": 15,
+     "w": 8
     }
    ],
    "battleStats": {
-    "rank_match_play_count": 38940,
+    "rank_match_play_count": 39043,
     "casual_match_play_count": 0,
     "battle_hub_match_play_count": 166,
-    "custom_room_match_play_count": 25900,
-    "drive_parry": 1.1,
-    "just_parry": 0.6,
-    "drive_impact": 0.1,
-    "received_drive_impact": 0.1,
-    "drive_reversal": 0,
-    "throw_count": 3.2,
-    "received_throw_count": 2.1,
-    "throw_tech": 0.6,
+    "custom_room_match_play_count": 25911,
+    "drive_parry": 1.4,
+    "just_parry": 0.5,
+    "drive_impact": 0,
+    "received_drive_impact": 0,
+    "drive_reversal": 0.1,
+    "throw_count": 2.2,
+    "received_throw_count": 2.8,
+    "throw_tech": 0.8,
     "punish_counter": 0,
     "received_punish_counter": 0,
-    "corner_time": 15.4,
-    "cornered_time": 8.3,
-    "gauge_rate_drive_arts": 0.2259,
-    "gauge_rate_drive_guard": 0.1153,
-    "gauge_rate_drive_impact": 0.004,
-    "gauge_rate_drive_reversal": 0.0029,
-    "gauge_rate_drive_rush_from_parry": 0.0768,
-    "gauge_rate_drive_rush_from_cancel": 0.2788,
-    "gauge_rate_sa_lv1": 0.6809,
-    "gauge_rate_sa_lv2": 0.1411,
-    "gauge_rate_sa_lv3": 0.1226,
-    "gauge_rate_ca": 0.0552
+    "corner_time": 12.8,
+    "cornered_time": 10.2,
+    "gauge_rate_drive_arts": 0.2314,
+    "gauge_rate_drive_guard": 0.1009,
+    "gauge_rate_drive_impact": 0.0058,
+    "gauge_rate_drive_reversal": 0.0093,
+    "gauge_rate_drive_rush_from_parry": 0.0549,
+    "gauge_rate_drive_rush_from_cancel": 0.2376,
+    "gauge_rate_sa_lv1": 0.5725,
+    "gauge_rate_sa_lv2": 0.29,
+    "gauge_rate_sa_lv3": 0.0916,
+    "gauge_rate_ca": 0.0458
    },
    "recentMatches": [
     {
-     "t": 1792508057,
+     "t": 1792519447,
      "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2298,
-     "oppChar": "guile",
-     "oppMr": 2215,
+     "myChar": "chunli",
+     "myMr": 2254,
+     "oppChar": "luke",
+     "oppMr": 2186,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792519274,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2247,
+     "oppChar": "luke",
+     "oppMr": 2193,
      "won": true,
      "roundsWon": 2,
      "roundsLost": 0
     },
     {
-     "t": 1792507918,
+     "t": 1792519055,
      "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2307,
-     "oppChar": "dee_jay",
-     "oppMr": 2275,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792507720,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2316,
-     "oppChar": "dee_jay",
-     "oppMr": 2266,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792507531,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2323,
-     "oppChar": "juri",
-     "oppMr": 2360,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792507339,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2330,
-     "oppChar": "juri",
-     "oppMr": 2353,
+     "myChar": "chunli",
+     "myMr": 2255,
+     "oppChar": "alex",
+     "oppMr": 2239,
      "won": false,
      "roundsWon": 0,
      "roundsLost": 2
     },
     {
-     "t": 1792507189,
+     "t": 1792518945,
      "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2325,
-     "oppChar": "guile",
-     "oppMr": 2207,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
+     "myChar": "chunli",
+     "myMr": 2264,
+     "oppChar": "alex",
+     "oppMr": 2230,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
     },
     {
-     "t": 1792507057,
+     "t": 1792518830,
      "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2319,
-     "oppChar": "guile",
-     "oppMr": 2213,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
+     "myChar": "chunli",
+     "myMr": 2272,
+     "oppChar": "blanka",
+     "oppMr": 2265,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
     },
     {
-     "t": 1792506985,
+     "t": 1792518757,
      "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2330,
-     "oppChar": "guile",
-     "oppMr": 2202,
+     "myChar": "chunli",
+     "myMr": 2264,
+     "oppChar": "blanka",
+     "oppMr": 2273,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792518545,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2272,
+     "oppChar": "blanka",
+     "oppMr": 2265,
      "won": false,
      "roundsWon": 1,
      "roundsLost": 2
     },
     {
-     "t": 1792506757,
+     "t": 1792518123,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2283,
+     "oppChar": "yasmine",
+     "oppMr": 2141,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792517928,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2278,
+     "oppChar": "yasmine",
+     "oppMr": 2146,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792517719,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2287,
+     "oppChar": "dhalsim",
+     "oppMr": 2246,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792517629,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2280,
+     "oppChar": "dhalsim",
+     "oppMr": 2253,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792517553,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2289,
+     "oppChar": "dhalsim",
+     "oppMr": 2244,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792517406,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2282,
+     "oppChar": "blanka",
+     "oppMr": 2249,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792517284,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2274,
+     "oppChar": "blanka",
+     "oppMr": 2257,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792517183,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2283,
+     "oppChar": "blanka",
+     "oppMr": 2248,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792517024,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2278,
+     "oppChar": "cammy",
+     "oppMr": 2153,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792516910,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2273,
+     "oppChar": "cammy",
+     "oppMr": 2158,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792516721,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2281,
+     "oppChar": "kimberly",
+     "oppMr": 2280,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516618,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2273,
+     "oppChar": "kimberly",
+     "oppMr": 2288,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792516417,
+     "mode": "rank",
+     "myChar": "chunli",
+     "myMr": 2281,
+     "oppChar": "kimberly",
+     "oppMr": 2280,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792516271,
      "mode": "rank",
      "myChar": "mai",
-     "myMr": 2322,
-     "oppChar": "cviper",
+     "myMr": 2319,
+     "oppChar": "arjun",
+     "oppMr": 2222,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792516159,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2313,
+     "oppChar": "arjun",
+     "oppMr": 2228,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792516056,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2323,
+     "oppChar": "arjun",
+     "oppMr": 2218,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792512790,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2317,
+     "oppChar": "dhalsim",
+     "oppMr": 2231,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792512605,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2311,
+     "oppChar": "dhalsim",
+     "oppMr": 2237,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792512440,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2321,
+     "oppChar": "dhalsim",
+     "oppMr": 2227,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792512239,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2316,
+     "oppChar": "luke",
+     "oppMr": 2189,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792512081,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2311,
+     "oppChar": "luke",
+     "oppMr": 2194,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792511877,
+     "mode": "rank",
+     "myChar": "mai",
+     "myMr": 2303,
+     "oppChar": "mai",
      "oppMr": 2301,
      "won": true,
      "roundsWon": 2,
      "roundsLost": 0
     },
     {
-     "t": 1792506675,
+     "t": 1792511794,
      "mode": "rank",
      "myChar": "mai",
-     "myMr": 2314,
-     "oppChar": "cviper",
+     "myMr": 2295,
+     "oppChar": "mai",
      "oppMr": 2309,
      "won": true,
      "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792506528,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2323,
-     "oppChar": "cviper",
-     "oppMr": 2300,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792506427,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2332,
-     "oppChar": "alex",
-     "oppMr": 2270,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792506332,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2342,
-     "oppChar": "alex",
-     "oppMr": 2260,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792506165,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2336,
-     "oppChar": "alex",
-     "oppMr": 2266,
-     "won": true,
-     "roundsWon": 2,
      "roundsLost": 0
-    },
-    {
-     "t": 1792506058,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2345,
-     "oppChar": "lily",
-     "oppMr": 2310,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792505908,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2337,
-     "oppChar": "lily",
-     "oppMr": 2318,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792505798,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2346,
-     "oppChar": "lily",
-     "oppMr": 2309,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792505677,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2352,
-     "oppChar": "luke",
-     "oppMr": 2430,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792505590,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2358,
-     "oppChar": "luke",
-     "oppMr": 2424,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792505271,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2352,
-     "oppChar": "yasmine",
-     "oppMr": 2263,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792505168,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2362,
-     "oppChar": "yasmine",
-     "oppMr": 2253,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792505033,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2356,
-     "oppChar": "yasmine",
-     "oppMr": 2259,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792504897,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2364,
-     "oppChar": "terry",
-     "oppMr": 2359,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792504733,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2373,
-     "oppChar": "terry",
-     "oppMr": 2350,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792504031,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2366,
-     "oppChar": "kimberly",
-     "oppMr": 2310,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792503886,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2359,
-     "oppChar": "kimberly",
-     "oppMr": 2317,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792503734,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2351,
-     "oppChar": "blanka",
-     "oppMr": 2357,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792503609,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2342,
-     "oppChar": "blanka",
-     "oppMr": 2366,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792503434,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2350,
-     "oppChar": "blanka",
-     "oppMr": 2358,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792503309,
-     "mode": "rank",
-     "myChar": "mai",
-     "myMr": 2358,
-     "oppChar": "alex",
-     "oppMr": 2337,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
     }
    ],
    "acts": {
     "current": {
      "seasonId": 13,
-     "rankBattles": 3488,
-     "rankWins": 1987,
+     "rankBattles": 3542,
+     "rankWins": 2017,
      "chars": [
       {
        "char": "mai",
-       "n": 2107,
-       "w": 1190,
-       "mr": 2304,
-       "lp": 905152,
-       "mrRanking": 116
+       "n": 2141,
+       "w": 1210,
+       "mr": 2325,
+       "lp": 907792,
+       "mrRanking": 69
       },
       {
        "char": "chunli",
-       "n": 1052,
-       "w": 597,
-       "mr": 2281,
-       "lp": 906555,
-       "mrRanking": 154
+       "n": 1072,
+       "w": 607,
+       "mr": 2260,
+       "lp": 908455,
+       "mrRanking": 205
       },
       {
        "char": "terry",
@@ -20454,7 +20495,7 @@
        "w": 169,
        "mr": 1944,
        "lp": 87913,
-       "mrRanking": 4611
+       "mrRanking": 4624
       },
       {
        "char": "elena",
@@ -20490,7 +20531,7 @@
      ]
     }
    },
-   "storedMatches": 160,
+   "storedMatches": 214,
    "storedSince": "2026-10-17"
   },
   "momochi": {
@@ -21691,7 +21732,7 @@
        "w": 247,
        "mr": 1843,
        "lp": 73906,
-       "mrRanking": 11005
+       "mrRanking": 11013
       },
       {
        "char": "mai",
@@ -21699,7 +21740,7 @@
        "w": 234,
        "mr": 2149,
        "lp": 805532,
-       "mrRanking": 756
+       "mrRanking": 759
       },
       {
        "char": "ken",
@@ -21707,7 +21748,7 @@
        "w": 149,
        "mr": 2045,
        "lp": 603055,
-       "mrRanking": 1835
+       "mrRanking": 1833
       },
       {
        "char": "luke",
@@ -21715,7 +21756,7 @@
        "w": 89,
        "mr": 1954,
        "lp": 54999,
-       "mrRanking": 4299
+       "mrRanking": 4306
       },
       {
        "char": "arjun",
@@ -21723,7 +21764,7 @@
        "w": 27,
        "mr": 1500,
        "lp": 25618,
-       "mrRanking": 320790
+       "mrRanking": 321054
       }
      ]
     },
@@ -21780,7 +21821,7 @@
   },
   "otani": {
    "sflKey": "otani",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "luke",
    "characters": [
@@ -21789,9 +21830,9 @@
      "leagueRank": 36,
      "lp": 571288,
      "mr": 2071,
-     "mrRanking": 1499,
-     "battles": 560,
-     "wins": 330
+     "mrRanking": 1510,
+     "battles": 564,
+     "wins": 331
     },
     {
      "char": "alex",
@@ -21807,7 +21848,7 @@
      "leagueRank": 36,
      "lp": 818952,
      "mr": 2181,
-     "mrRanking": 559,
+     "mrRanking": 579,
      "battles": 322,
      "wins": 193
     },
@@ -21816,7 +21857,7 @@
      "leagueRank": 36,
      "lp": 188325,
      "mr": 2110,
-     "mrRanking": 1046,
+     "mrRanking": 1043,
      "battles": 145,
      "wins": 101
     },
@@ -21825,7 +21866,7 @@
      "leagueRank": 36,
      "lp": 38761,
      "mr": 1833,
-     "mrRanking": 11849,
+     "mrRanking": 11895,
      "battles": 116,
      "wins": 83
     },
@@ -21834,7 +21875,7 @@
      "leagueRank": 36,
      "lp": 176176,
      "mr": 1618,
-     "mrRanking": 90767,
+     "mrRanking": 90989,
      "battles": 34,
      "wins": 23
     },
@@ -21843,7 +21884,7 @@
      "leagueRank": 36,
      "lp": 461672,
      "mr": 1775,
-     "mrRanking": 25521,
+     "mrRanking": 25638,
      "battles": 30,
      "wins": 22
     },
@@ -21852,7 +21893,7 @@
      "leagueRank": 36,
      "lp": 108518,
      "mr": 1516,
-     "mrRanking": 251279,
+     "mrRanking": 251724,
      "battles": 2,
      "wins": 2
     }
@@ -21961,6 +22002,11 @@
      "w": 14
     },
     {
+     "char": "terry",
+     "n": 28,
+     "w": 16
+    },
+    {
      "char": "yasmine",
      "n": 28,
      "w": 15
@@ -21984,11 +22030,6 @@
      "char": "elena",
      "n": 26,
      "w": 22
-    },
-    {
-     "char": "terry",
-     "n": 24,
-     "w": 15
     },
     {
      "char": "ken",
@@ -22020,29 +22061,29 @@
     "rank_match_play_count": 36045,
     "casual_match_play_count": 0,
     "battle_hub_match_play_count": 1480,
-    "custom_room_match_play_count": 13139,
-    "drive_parry": 1,
-    "just_parry": 0.3,
+    "custom_room_match_play_count": 13143,
+    "drive_parry": 1.1,
+    "just_parry": 0.4,
     "drive_impact": 0.2,
     "received_drive_impact": 0.2,
     "drive_reversal": 0.4,
     "throw_count": 2.7,
-    "received_throw_count": 2,
+    "received_throw_count": 1.9,
     "throw_tech": 0.5,
     "punish_counter": 0.2,
     "received_punish_counter": 0.1,
-    "corner_time": 11.7,
-    "cornered_time": 10.2,
-    "gauge_rate_drive_arts": 0.1622,
-    "gauge_rate_drive_guard": 0.0843,
-    "gauge_rate_drive_impact": 0.0226,
-    "gauge_rate_drive_reversal": 0.0413,
-    "gauge_rate_drive_rush_from_parry": 0.0428,
-    "gauge_rate_drive_rush_from_cancel": 0.343,
-    "gauge_rate_sa_lv1": 0.4259,
-    "gauge_rate_sa_lv2": 0.2314,
-    "gauge_rate_sa_lv3": 0.324,
-    "gauge_rate_ca": 0.0185
+    "corner_time": 11.5,
+    "cornered_time": 10.5,
+    "gauge_rate_drive_arts": 0.1556,
+    "gauge_rate_drive_guard": 0.088,
+    "gauge_rate_drive_impact": 0.02,
+    "gauge_rate_drive_reversal": 0.0421,
+    "gauge_rate_drive_rush_from_parry": 0.0441,
+    "gauge_rate_drive_rush_from_cancel": 0.3554,
+    "gauge_rate_sa_lv1": 0.415,
+    "gauge_rate_sa_lv2": 0.2547,
+    "gauge_rate_sa_lv3": 0.3113,
+    "gauge_rate_ca": 0.0188
    },
    "recentMatches": [
     {
@@ -22388,7 +22429,7 @@
        "w": 293,
        "mr": 2071,
        "lp": 571288,
-       "mrRanking": 1508
+       "mrRanking": 1510
       },
       {
        "char": "alex",
@@ -22396,7 +22437,7 @@
        "w": 233,
        "mr": 2139,
        "lp": 328895,
-       "mrRanking": 814
+       "mrRanking": 813
       },
       {
        "char": "ken",
@@ -22404,7 +22445,7 @@
        "w": 155,
        "mr": 2181,
        "lp": 818952,
-       "mrRanking": 564
+       "mrRanking": 579
       },
       {
        "char": "elena",
@@ -22412,7 +22453,7 @@
        "w": 86,
        "mr": 2110,
        "lp": 188325,
-       "mrRanking": 1040
+       "mrRanking": 1043
       },
       {
        "char": "arjun",
@@ -22420,7 +22461,7 @@
        "w": 73,
        "mr": 1833,
        "lp": 38761,
-       "mrRanking": 11882
+       "mrRanking": 11896
       },
       {
        "char": "gouki_akuma",
@@ -22428,7 +22469,7 @@
        "w": 23,
        "mr": 1618,
        "lp": 176176,
-       "mrRanking": 90831
+       "mrRanking": 90988
       }
      ]
     },
@@ -23100,7 +23141,7 @@
        "w": 309,
        "mr": 2177,
        "lp": 89878,
-       "mrRanking": 589
+       "mrRanking": 593
       },
       {
        "char": "cviper",
@@ -23108,7 +23149,7 @@
        "w": 241,
        "mr": 2166,
        "lp": 181125,
-       "mrRanking": 645
+       "mrRanking": 650
       },
       {
        "char": "ryu",
@@ -23116,7 +23157,7 @@
        "w": 231,
        "mr": 2097,
        "lp": 132880,
-       "mrRanking": 1307
+       "mrRanking": 1310
       },
       {
        "char": "arjun",
@@ -23124,7 +23165,7 @@
        "w": 223,
        "mr": 2219,
        "lp": 70555,
-       "mrRanking": 330
+       "mrRanking": 333
       },
       {
        "char": "vega_mbison",
@@ -23132,7 +23173,7 @@
        "w": 132,
        "mr": 2177,
        "lp": 200098,
-       "mrRanking": 589
+       "mrRanking": 593
       },
       {
        "char": "juri",
@@ -23140,7 +23181,7 @@
        "w": 104,
        "mr": 2221,
        "lp": 254904,
-       "mrRanking": 324
+       "mrRanking": 325
       }
      ]
     },
@@ -23934,7 +23975,7 @@
        "w": 788,
        "mr": 2311,
        "lp": 960202,
-       "mrRanking": 97
+       "mrRanking": 95
       },
       {
        "char": "alex",
@@ -23942,7 +23983,7 @@
        "w": 739,
        "mr": 1988,
        "lp": 188690,
-       "mrRanking": 3550
+       "mrRanking": 3562
       },
       {
        "char": "luke",
@@ -23950,7 +23991,7 @@
        "w": 149,
        "mr": 1793,
        "lp": 119739,
-       "mrRanking": 24272
+       "mrRanking": 24334
       },
       {
        "char": "jamie",
@@ -23958,7 +23999,7 @@
        "w": 60,
        "mr": 1744,
        "lp": 117549,
-       "mrRanking": 30269
+       "mrRanking": 30325
       },
       {
        "char": "marisa",
@@ -23966,7 +24007,7 @@
        "w": 48,
        "mr": 1782,
        "lp": 460690,
-       "mrRanking": 24956
+       "mrRanking": 25002
       },
       {
        "char": "dee_jay",
@@ -23974,7 +24015,7 @@
        "w": 36,
        "mr": 1650,
        "lp": 41737,
-       "mrRanking": 70740
+       "mrRanking": 70828
       }
      ]
     },
@@ -24727,7 +24768,7 @@
        "w": 612,
        "mr": 2326,
        "lp": 861856,
-       "mrRanking": 66
+       "mrRanking": 65
       },
       {
        "char": "ryu",
@@ -24735,7 +24776,7 @@
        "w": 345,
        "mr": 1968,
        "lp": 229556,
-       "mrRanking": 3925
+       "mrRanking": 3931
       },
       {
        "char": "mai",
@@ -24751,7 +24792,7 @@
        "w": 253,
        "mr": 2077,
        "lp": 407504,
-       "mrRanking": 1446
+       "mrRanking": 1451
       },
       {
        "char": "cammy",
@@ -24767,7 +24808,7 @@
        "w": 193,
        "mr": 1910,
        "lp": 178147,
-       "mrRanking": 6091
+       "mrRanking": 6099
       }
      ]
     },
@@ -24832,25 +24873,25 @@
   },
   "sahara": {
    "sflKey": "sahara",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "ryu",
    "characters": [
     {
      "char": "ryu",
      "leagueRank": 36,
-     "lp": 681242,
-     "mr": 2326,
-     "mrRanking": 59,
-     "battles": 2426,
-     "wins": 1572
+     "lp": 684882,
+     "mr": 2282,
+     "mrRanking": 148,
+     "battles": 2460,
+     "wins": 1592
     },
     {
      "char": "luke",
      "leagueRank": 36,
      "lp": 647753,
      "mr": 2409,
-     "mrRanking": 8,
+     "mrRanking": 10,
      "battles": 985,
      "wins": 654
     },
@@ -24859,25 +24900,25 @@
      "leagueRank": 36,
      "lp": 879802,
      "mr": 2196,
-     "mrRanking": 496,
+     "mrRanking": 526,
      "battles": 651,
      "wins": 416
     },
     {
      "char": "ed",
      "leagueRank": 36,
-     "lp": 917324,
-     "mr": 2349,
-     "mrRanking": 40,
-     "battles": 611,
-     "wins": 420
+     "lp": 917754,
+     "mr": 2331,
+     "mrRanking": 55,
+     "battles": 617,
+     "wins": 423
     },
     {
      "char": "terry",
      "leagueRank": 36,
      "lp": 254302,
      "mr": 1977,
-     "mrRanking": 3710,
+     "mrRanking": 3733,
      "battles": 395,
      "wins": 249
     },
@@ -24886,7 +24927,7 @@
      "leagueRank": 36,
      "lp": 486380,
      "mr": 2185,
-     "mrRanking": 543,
+     "mrRanking": 557,
      "battles": 269,
      "wins": 181
     },
@@ -24895,7 +24936,7 @@
      "leagueRank": 36,
      "lp": 469386,
      "mr": 2005,
-     "mrRanking": 2786,
+     "mrRanking": 2787,
      "battles": 120,
      "wins": 97
     },
@@ -24910,9 +24951,9 @@
     }
    ],
    "last7Days": {
-    "matches": 114,
-    "wins": 71,
-    "activeDays": 3,
+    "matches": 133,
+    "wins": 84,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "luke",
@@ -24920,27 +24961,27 @@
       "w": 58
      },
      {
+      "char": "ryu",
+      "n": 28,
+      "w": 19
+     },
+     {
       "char": "ed",
       "n": 13,
       "w": 7
-     },
-     {
-      "char": "ryu",
-      "n": 9,
-      "w": 6
      }
     ],
     "byMode": {
-     "rank": 101,
+     "rank": 120,
      "casual": 0,
      "hub": 0,
      "custom": 13
     }
    },
    "last30Days": {
-    "matches": 114,
-    "wins": 71,
-    "activeDays": 3,
+    "matches": 133,
+    "wins": 84,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "luke",
@@ -24948,18 +24989,18 @@
       "w": 58
      },
      {
+      "char": "ryu",
+      "n": 28,
+      "w": 19
+     },
+     {
       "char": "ed",
       "n": 13,
       "w": 7
-     },
-     {
-      "char": "ryu",
-      "n": 9,
-      "w": 6
      }
     ],
     "byMode": {
-     "rank": 101,
+     "rank": 120,
      "casual": 0,
      "hub": 0,
      "custom": 13
@@ -24969,27 +25010,31 @@
     {
      "date": "2026-10-20",
      "mr": 2329
+    },
+    {
+     "date": "2026-10-21",
+     "mr": 2278
     }
    ],
    "risingChars": [
     {
      "char": "luke",
-     "recentShare": 80.7,
+     "recentShare": 69.2,
      "priorShare": 0,
      "recentMatches": 92
     },
     {
-     "char": "ed",
-     "recentShare": 11.4,
+     "char": "ryu",
+     "recentShare": 21.1,
      "priorShare": 0,
-     "recentMatches": 13
+     "recentMatches": 28
     }
    ],
    "mainVsChar": [
     {
      "char": "luke",
-     "n": 273,
-     "w": 175
+     "n": 282,
+     "w": 180
     },
     {
      "char": "vega_mbison",
@@ -25037,19 +25082,19 @@
      "w": 55
     },
     {
-     "char": "terry",
-     "n": 80,
-     "w": 56
-    },
-    {
-     "char": "mai",
-     "n": 78,
+     "char": "ryu",
+     "n": 81,
      "w": 51
     },
     {
-     "char": "ryu",
-     "n": 76,
-     "w": 47
+     "char": "mai",
+     "n": 81,
+     "w": 52
+    },
+    {
+     "char": "terry",
+     "n": 80,
+     "w": 56
     },
     {
      "char": "alex",
@@ -25058,8 +25103,8 @@
     },
     {
      "char": "jamie",
-     "n": 72,
-     "w": 54
+     "n": 75,
+     "w": 56
     },
     {
      "char": "yasmine",
@@ -25072,13 +25117,13 @@
      "w": 36
     },
     {
-     "char": "kimberly",
-     "n": 59,
-     "w": 34
+     "char": "guile",
+     "n": 61,
+     "w": 37
     },
     {
-     "char": "guile",
-     "n": 56,
+     "char": "kimberly",
+     "n": 59,
      "w": 34
     },
     {
@@ -25092,6 +25137,11 @@
      "w": 39
     },
     {
+     "char": "blanka",
+     "n": 55,
+     "w": 39
+    },
+    {
      "char": "marisa",
      "n": 54,
      "w": 36
@@ -25099,11 +25149,6 @@
     {
      "char": "juri",
      "n": 50,
-     "w": 36
-    },
-    {
-     "char": "blanka",
-     "n": 49,
      "w": 36
     },
     {
@@ -25143,34 +25188,243 @@
     }
    ],
    "battleStats": {
-    "rank_match_play_count": 59828,
+    "rank_match_play_count": 59868,
     "casual_match_play_count": 251,
     "battle_hub_match_play_count": 2217,
     "custom_room_match_play_count": 32441,
-    "drive_parry": 1.5,
-    "just_parry": 1.1,
-    "drive_impact": 0.1,
+    "drive_parry": 2,
+    "just_parry": 1.6,
+    "drive_impact": 0.2,
     "received_drive_impact": 0.1,
-    "drive_reversal": 0.1,
-    "throw_count": 3.6,
-    "received_throw_count": 2.2,
-    "throw_tech": 0.4,
+    "drive_reversal": 0.2,
+    "throw_count": 3.1,
+    "received_throw_count": 2.1,
+    "throw_tech": 0.5,
     "punish_counter": 0,
     "received_punish_counter": 0.1,
-    "corner_time": 15.3,
-    "cornered_time": 9.4,
-    "gauge_rate_drive_arts": 0.1451,
-    "gauge_rate_drive_guard": 0.1271,
-    "gauge_rate_drive_impact": 0.0044,
-    "gauge_rate_drive_reversal": 0.0095,
-    "gauge_rate_drive_rush_from_parry": 0.0732,
-    "gauge_rate_drive_rush_from_cancel": 0.402,
-    "gauge_rate_sa_lv1": 0.3673,
-    "gauge_rate_sa_lv2": 0.3265,
-    "gauge_rate_sa_lv3": 0.2142,
-    "gauge_rate_ca": 0.0918
+    "corner_time": 13.6,
+    "cornered_time": 9.3,
+    "gauge_rate_drive_arts": 0.1673,
+    "gauge_rate_drive_guard": 0.135,
+    "gauge_rate_drive_impact": 0.0079,
+    "gauge_rate_drive_reversal": 0.0123,
+    "gauge_rate_drive_rush_from_parry": 0.0661,
+    "gauge_rate_drive_rush_from_cancel": 0.3532,
+    "gauge_rate_sa_lv1": 0.3571,
+    "gauge_rate_sa_lv2": 0.2959,
+    "gauge_rate_sa_lv3": 0.204,
+    "gauge_rate_ca": 0.1428
    },
    "recentMatches": [
+    {
+     "t": 1792525075,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2278,
+     "oppChar": "ryu",
+     "oppMr": 2072,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792525005,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2291,
+     "oppChar": "ryu",
+     "oppMr": 2059,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792524843,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2288,
+     "oppChar": "ryu",
+     "oppMr": 2062,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792524703,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2287,
+     "oppChar": "ryu",
+     "oppMr": 1852,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792524497,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2286,
+     "oppChar": "ryu",
+     "oppMr": 1853,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792524241,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2279,
+     "oppChar": "luke",
+     "oppMr": 2240,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792524159,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2288,
+     "oppChar": "luke",
+     "oppMr": 2231,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792524024,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2281,
+     "oppChar": "luke",
+     "oppMr": 2238,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792523876,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2277,
+     "oppChar": "jamie",
+     "oppMr": 2058,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792523767,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2273,
+     "oppChar": "jamie",
+     "oppMr": 2062,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792523659,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2286,
+     "oppChar": "jamie",
+     "oppMr": 2049,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792523457,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2295,
+     "oppChar": "luke",
+     "oppMr": 2246,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792523357,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2305,
+     "oppChar": "luke",
+     "oppMr": 2236,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792523220,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2298,
+     "oppChar": "luke",
+     "oppMr": 2243,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792522425,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2296,
+     "oppChar": "arjun",
+     "oppMr": 1967,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 0
+    },
+    {
+     "t": 1792522331,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2294,
+     "oppChar": "arjun",
+     "oppMr": 1969,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792522167,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2308,
+     "oppChar": "arjun",
+     "oppMr": 1955,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792521380,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2303,
+     "oppChar": "luke",
+     "oppMr": 2190,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792521186,
+     "mode": "rank",
+     "myChar": "ryu",
+     "myMr": 2297,
+     "oppChar": "luke",
+     "oppMr": 2196,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
     {
      "t": 1792506741,
      "mode": "rank",
@@ -25291,230 +25545,21 @@
      "won": true,
      "roundsWon": 2,
      "roundsLost": 1
-    },
-    {
-     "t": 1792498366,
-     "mode": "rank",
-     "myChar": "ed",
-     "myMr": 2346,
-     "oppChar": "lily",
-     "oppMr": 2285,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792498206,
-     "mode": "rank",
-     "myChar": "ed",
-     "myMr": 2339,
-     "oppChar": "lily",
-     "oppMr": 2292,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792498032,
-     "mode": "rank",
-     "myChar": "ed",
-     "myMr": 2349,
-     "oppChar": "lily",
-     "oppMr": 2282,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792491696,
-     "mode": "custom",
-     "myChar": "ed",
-     "myMr": 2349,
-     "oppChar": "ed",
-     "oppMr": 2347,
-     "won": false,
-     "roundsWon": 0,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792491521,
-     "mode": "custom",
-     "myChar": "ed",
-     "myMr": 2349,
-     "oppChar": "ed",
-     "oppMr": 2347,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792491390,
-     "mode": "custom",
-     "myChar": "ed",
-     "myMr": 2349,
-     "oppChar": "ed",
-     "oppMr": 2347,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792491218,
-     "mode": "custom",
-     "myChar": "ed",
-     "myMr": 2349,
-     "oppChar": "ed",
-     "oppMr": 2347,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792481192,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2404,
-     "oppChar": "sagat",
-     "oppMr": 2280,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792481035,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2399,
-     "oppChar": "sagat",
-     "oppMr": 2285,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792480907,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2393,
-     "oppChar": "mai",
-     "oppMr": 2314,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792480816,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2386,
-     "oppChar": "mai",
-     "oppMr": 2321,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792477054,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2382,
-     "oppChar": "jamie",
-     "oppMr": 2167,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792476945,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2378,
-     "oppChar": "jamie",
-     "oppMr": 2171,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792476714,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2372,
-     "oppChar": "cviper",
-     "oppMr": 2266,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792476570,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2366,
-     "oppChar": "cviper",
-     "oppMr": 2272,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792417796,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2357,
-     "oppChar": "mai",
-     "oppMr": 2393,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792417675,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2364,
-     "oppChar": "mai",
-     "oppMr": 2386,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792417487,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2355,
-     "oppChar": "mai",
-     "oppMr": 2395,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
-    },
-    {
-     "t": 1792417101,
-     "mode": "rank",
-     "myChar": "luke",
-     "myMr": 2349,
-     "oppChar": "ingrid",
-     "oppMr": 2255,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 0
     }
    ],
    "acts": {
     "current": {
      "seasonId": 13,
-     "rankBattles": 4639,
-     "rankWins": 3071,
+     "rankBattles": 4665,
+     "rankWins": 3086,
      "chars": [
       {
        "char": "ryu",
-       "n": 1870,
-       "w": 1231,
-       "mr": 2334,
-       "lp": 682372,
-       "mrRanking": 52
+       "n": 1896,
+       "w": 1246,
+       "mr": 2282,
+       "lp": 684882,
+       "mrRanking": 148
       },
       {
        "char": "luke",
@@ -25522,7 +25567,7 @@
        "w": 619,
        "mr": 2409,
        "lp": 647753,
-       "mrRanking": 9
+       "mrRanking": 10
       },
       {
        "char": "gouki_akuma",
@@ -25530,7 +25575,7 @@
        "w": 410,
        "mr": 2196,
        "lp": 879802,
-       "mrRanking": 508
+       "mrRanking": 526
       },
       {
        "char": "ed",
@@ -25538,7 +25583,7 @@
        "w": 324,
        "mr": 2331,
        "lp": 917754,
-       "mrRanking": 54
+       "mrRanking": 55
       },
       {
        "char": "terry",
@@ -25546,7 +25591,7 @@
        "w": 230,
        "mr": 1977,
        "lp": 254302,
-       "mrRanking": 3725
+       "mrRanking": 3733
       },
       {
        "char": "sagat",
@@ -25554,7 +25599,7 @@
        "w": 142,
        "mr": 2185,
        "lp": 486380,
-       "mrRanking": 549
+       "mrRanking": 557
       }
      ]
     },
@@ -25614,7 +25659,7 @@
      ]
     }
    },
-   "storedMatches": 114,
+   "storedMatches": 133,
    "storedSince": "2026-10-18"
   },
   "sako": {
@@ -26284,7 +26329,7 @@
        "w": 992,
        "mr": 2357,
        "lp": 429961,
-       "mrRanking": 34
+       "mrRanking": 33
       },
       {
        "char": "aki",
@@ -26292,7 +26337,7 @@
        "w": 151,
        "mr": 1929,
        "lp": 263073,
-       "mrRanking": 5135
+       "mrRanking": 5127
       },
       {
        "char": "arjun",
@@ -26300,7 +26345,7 @@
        "w": 106,
        "mr": 1730,
        "lp": 36746,
-       "mrRanking": 33092
+       "mrRanking": 33126
       }
      ]
     },
@@ -26349,7 +26394,7 @@
   },
   "seiya": {
    "sflKey": "seiya",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "chunli",
    "characters": [
@@ -26358,16 +26403,16 @@
      "leagueRank": 36,
      "lp": 975772,
      "mr": 2334,
-     "mrRanking": 52,
-     "battles": 2596,
-     "wins": 1577
+     "mrRanking": 53,
+     "battles": 2600,
+     "wins": 1579
     },
     {
      "char": "cviper",
      "leagueRank": 36,
      "lp": 56649,
      "mr": 1769,
-     "mrRanking": 26182,
+     "mrRanking": 26315,
      "battles": 133,
      "wins": 85
     },
@@ -26531,14 +26576,14 @@
      "w": 77
     },
     {
+     "char": "cammy",
+     "n": 91,
+     "w": 65
+    },
+    {
      "char": "jp",
      "n": 89,
      "w": 57
-    },
-    {
-     "char": "cammy",
-     "n": 87,
-     "w": 63
     },
     {
      "char": "terry",
@@ -26645,8 +26690,8 @@
     "rank_match_play_count": 33413,
     "casual_match_play_count": 21,
     "battle_hub_match_play_count": 7872,
-    "custom_room_match_play_count": 12511,
-    "drive_parry": 1.4,
+    "custom_room_match_play_count": 12515,
+    "drive_parry": 1.3,
     "just_parry": 0.8,
     "drive_impact": 0.1,
     "received_drive_impact": 0.1,
@@ -26656,18 +26701,18 @@
     "throw_tech": 0.2,
     "punish_counter": 0.1,
     "received_punish_counter": 0,
-    "corner_time": 10.9,
-    "cornered_time": 9.2,
-    "gauge_rate_drive_arts": 0.1407,
-    "gauge_rate_drive_guard": 0.1091,
-    "gauge_rate_drive_impact": 0.0041,
+    "corner_time": 10.8,
+    "cornered_time": 9.3,
+    "gauge_rate_drive_arts": 0.1444,
+    "gauge_rate_drive_guard": 0.1073,
+    "gauge_rate_drive_impact": 0.0045,
     "gauge_rate_drive_reversal": 0.0152,
-    "gauge_rate_drive_rush_from_parry": 0.0625,
-    "gauge_rate_drive_rush_from_cancel": 0.3868,
-    "gauge_rate_sa_lv1": 0.3263,
-    "gauge_rate_sa_lv2": 0.2947,
+    "gauge_rate_drive_rush_from_parry": 0.062,
+    "gauge_rate_drive_rush_from_cancel": 0.3828,
+    "gauge_rate_sa_lv1": 0.2947,
+    "gauge_rate_sa_lv2": 0.3052,
     "gauge_rate_sa_lv3": 0.2947,
-    "gauge_rate_ca": 0.0842
+    "gauge_rate_ca": 0.1052
    },
    "recentMatches": [
     {
@@ -27013,7 +27058,7 @@
        "w": 1291,
        "mr": 2334,
        "lp": 975772,
-       "mrRanking": 52
+       "mrRanking": 53
       },
       {
        "char": "cviper",
@@ -27021,7 +27066,7 @@
        "w": 85,
        "mr": 1769,
        "lp": 56649,
-       "mrRanking": 26250
+       "mrRanking": 26315
       }
      ]
     },
@@ -27132,8 +27177,8 @@
     }
    ],
    "last7Days": {
-    "matches": 108,
-    "wins": 76,
+    "matches": 113,
+    "wins": 79,
     "activeDays": 3,
     "byChar": [
      {
@@ -27153,20 +27198,20 @@
      },
      {
       "char": "ryu",
-      "n": 6,
-      "w": 4
+      "n": 11,
+      "w": 7
      }
     ],
     "byMode": {
      "rank": 82,
      "casual": 0,
      "hub": 0,
-     "custom": 26
+     "custom": 31
     }
    },
    "last30Days": {
-    "matches": 108,
-    "wins": 76,
+    "matches": 113,
+    "wins": 79,
     "activeDays": 3,
     "byChar": [
      {
@@ -27186,34 +27231,34 @@
      },
      {
       "char": "ryu",
-      "n": 6,
-      "w": 4
+      "n": 11,
+      "w": 7
      }
     ],
     "byMode": {
      "rank": 82,
      "casual": 0,
      "hub": 0,
-     "custom": 26
+     "custom": 31
     }
    },
    "mrTrend": [],
    "risingChars": [
     {
      "char": "cammy",
-     "recentShare": 62,
+     "recentShare": 59.3,
      "priorShare": 0,
      "recentMatches": 67
     },
     {
      "char": "luke",
-     "recentShare": 18.5,
+     "recentShare": 17.7,
      "priorShare": 0,
      "recentMatches": 20
     },
     {
      "char": "ken",
-     "recentShare": 13.9,
+     "recentShare": 13.3,
      "priorShare": 0,
      "recentMatches": 15
     }
@@ -27404,6 +27449,61 @@
     "gauge_rate_ca": 0.1068
    },
    "recentMatches": [
+    {
+     "t": 1792512355,
+     "mode": "custom",
+     "myChar": "ryu",
+     "myMr": 2432,
+     "oppChar": "cammy",
+     "oppMr": 2456,
+     "won": false,
+     "roundsWon": 0,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792512241,
+     "mode": "custom",
+     "myChar": "ryu",
+     "myMr": 2432,
+     "oppChar": "cammy",
+     "oppMr": 2456,
+     "won": false,
+     "roundsWon": 1,
+     "roundsLost": 2
+    },
+    {
+     "t": 1792511842,
+     "mode": "custom",
+     "myChar": "ryu",
+     "myMr": 2432,
+     "oppChar": "rashid",
+     "oppMr": 2313,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792511661,
+     "mode": "custom",
+     "myChar": "ryu",
+     "myMr": 2432,
+     "oppChar": "rashid",
+     "oppMr": 2313,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
+    {
+     "t": 1792511456,
+     "mode": "custom",
+     "myChar": "ryu",
+     "myMr": 2432,
+     "oppChar": "rashid",
+     "oppMr": 2313,
+     "won": true,
+     "roundsWon": 2,
+     "roundsLost": 1
+    },
     {
      "t": 1792508511,
      "mode": "custom",
@@ -27678,61 +27778,6 @@
      "won": true,
      "roundsWon": 2,
      "roundsLost": 1
-    },
-    {
-     "t": 1792482518,
-     "mode": "rank",
-     "myChar": "ken",
-     "myMr": 2187,
-     "oppChar": "juri",
-     "oppMr": 2159,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792482357,
-     "mode": "rank",
-     "myChar": "ken",
-     "myMr": 2196,
-     "oppChar": "juri",
-     "oppMr": 2150,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792482217,
-     "mode": "rank",
-     "myChar": "ken",
-     "myMr": 2189,
-     "oppChar": "juri",
-     "oppMr": 2157,
-     "won": true,
-     "roundsWon": 2,
-     "roundsLost": 1
-    },
-    {
-     "t": 1792482020,
-     "mode": "rank",
-     "myChar": "ken",
-     "myMr": 2196,
-     "oppChar": "lily",
-     "oppMr": 2247,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
-    },
-    {
-     "t": 1792481890,
-     "mode": "rank",
-     "myChar": "ken",
-     "myMr": 2203,
-     "oppChar": "lily",
-     "oppMr": 2240,
-     "won": false,
-     "roundsWon": 1,
-     "roundsLost": 2
     }
    ],
    "acts": {
@@ -27747,7 +27792,7 @@
        "w": 893,
        "mr": 2368,
        "lp": 292858,
-       "mrRanking": 26
+       "mrRanking": 25
       },
       {
        "char": "ryu",
@@ -27763,7 +27808,7 @@
        "w": 339,
        "mr": 2228,
        "lp": 210556,
-       "mrRanking": 291
+       "mrRanking": 297
       },
       {
        "char": "marisa",
@@ -27771,7 +27816,7 @@
        "w": 261,
        "mr": 2084,
        "lp": 523789,
-       "mrRanking": 1382
+       "mrRanking": 1391
       },
       {
        "char": "mai",
@@ -27779,7 +27824,7 @@
        "w": 210,
        "mr": 2066,
        "lp": 163993,
-       "mrRanking": 1548
+       "mrRanking": 1552
       },
       {
        "char": "cammy",
@@ -27847,12 +27892,12 @@
      ]
     }
    },
-   "storedMatches": 108,
+   "storedMatches": 113,
    "storedSince": "2026-10-19"
   },
   "takagi": {
    "sflKey": "takagi",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "blanka",
    "characters": [
@@ -27861,7 +27906,7 @@
      "leagueRank": 36,
      "lp": 813774,
      "mr": 2320,
-     "mrRanking": 74,
+     "mrRanking": 79,
      "battles": 1912,
      "wins": 1173
     },
@@ -27870,7 +27915,7 @@
      "leagueRank": 36,
      "lp": 311997,
      "mr": 1907,
-     "mrRanking": 6330,
+     "mrRanking": 6356,
      "battles": 173,
      "wins": 107
     },
@@ -27879,7 +27924,7 @@
      "leagueRank": 36,
      "lp": 83116,
      "mr": 1806,
-     "mrRanking": 16673,
+     "mrRanking": 16769,
      "battles": 150,
      "wins": 96
     },
@@ -27888,7 +27933,7 @@
      "leagueRank": 36,
      "lp": 212849,
      "mr": 1950,
-     "mrRanking": 4416,
+     "mrRanking": 4457,
      "battles": 147,
      "wins": 96
     },
@@ -27897,7 +27942,7 @@
      "leagueRank": 36,
      "lp": 30020,
      "mr": 1622,
-     "mrRanking": 87558,
+     "mrRanking": 87770,
      "battles": 108,
      "wins": 84
     },
@@ -27906,7 +27951,7 @@
      "leagueRank": 36,
      "lp": 165522,
      "mr": 1785,
-     "mrRanking": 24662,
+     "mrRanking": 24784,
      "battles": 75,
      "wins": 46
     },
@@ -27915,7 +27960,7 @@
      "leagueRank": 36,
      "lp": 31925,
      "mr": 1715,
-     "mrRanking": 37069,
+     "mrRanking": 37197,
      "battles": 67,
      "wins": 58
     },
@@ -27924,7 +27969,7 @@
      "leagueRank": 36,
      "lp": 388570,
      "mr": 1718,
-     "mrRanking": 36114,
+     "mrRanking": 36236,
      "battles": 59,
      "wins": 40
     }
@@ -28544,7 +28589,7 @@
        "w": 581,
        "mr": 2320,
        "lp": 813774,
-       "mrRanking": 77
+       "mrRanking": 79
       },
       {
        "char": "ryu",
@@ -28552,7 +28597,7 @@
        "w": 97,
        "mr": 1907,
        "lp": 311997,
-       "mrRanking": 6338
+       "mrRanking": 6356
       },
       {
        "char": "alex",
@@ -28560,7 +28605,7 @@
        "w": 94,
        "mr": 1806,
        "lp": 83116,
-       "mrRanking": 16712
+       "mrRanking": 16769
       },
       {
        "char": "gouki_akuma",
@@ -28568,7 +28613,7 @@
        "w": 93,
        "mr": 1950,
        "lp": 212849,
-       "mrRanking": 4449
+       "mrRanking": 4457
       },
       {
        "char": "arjun",
@@ -28576,7 +28621,7 @@
        "w": 58,
        "mr": 1622,
        "lp": 30020,
-       "mrRanking": 87651
+       "mrRanking": 87771
       },
       {
        "char": "mai",
@@ -28584,7 +28629,7 @@
        "w": 45,
        "mr": 1785,
        "lp": 165522,
-       "mrRanking": 24694
+       "mrRanking": 24784
       }
      ]
     },
@@ -29325,7 +29370,7 @@
        "w": 2130,
        "mr": 2462,
        "lp": 1160601,
-       "mrRanking": 1
+       "mrRanking": 2
       },
       {
        "char": "arjun",
@@ -29333,7 +29378,7 @@
        "w": 187,
        "mr": 1951,
        "lp": 54798,
-       "mrRanking": 4427
+       "mrRanking": 4432
       },
       {
        "char": "dhalsim",
@@ -29341,7 +29386,7 @@
        "w": 142,
        "mr": 1803,
        "lp": 89536,
-       "mrRanking": 19446
+       "mrRanking": 19479
       },
       {
        "char": "alex",
@@ -29349,7 +29394,7 @@
        "w": 23,
        "mr": 1606,
        "lp": 43413,
-       "mrRanking": 108067
+       "mrRanking": 108178
       },
       {
        "char": "ingrid",
@@ -29357,7 +29402,7 @@
        "w": 18,
        "mr": 1657,
        "lp": 57368,
-       "mrRanking": 67071
+       "mrRanking": 67138
       },
       {
        "char": "sagat",
@@ -29365,7 +29410,7 @@
        "w": 4,
        "mr": 1654,
        "lp": 105968,
-       "mrRanking": 68557
+       "mrRanking": 68614
       }
      ]
     },
@@ -30076,7 +30121,7 @@
        "w": 521,
        "mr": 2170,
        "lp": 945131,
-       "mrRanking": 623
+       "mrRanking": 625
       },
       {
        "char": "arjun",
@@ -30084,7 +30129,7 @@
        "w": 195,
        "mr": 2262,
        "lp": 64338,
-       "mrRanking": 198
+       "mrRanking": 200
       },
       {
        "char": "rashid",
@@ -30092,7 +30137,7 @@
        "w": 32,
        "mr": 1737,
        "lp": 710943,
-       "mrRanking": 31615
+       "mrRanking": 31655
       },
       {
        "char": "luke",
@@ -30141,7 +30186,7 @@
   },
   "tokido": {
    "sflKey": "tokido",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "ken",
    "characters": [
@@ -30150,7 +30195,7 @@
      "leagueRank": 36,
      "lp": 644749,
      "mr": 2143,
-     "mrRanking": 787,
+     "mrRanking": 789,
      "battles": 223,
      "wins": 160
     },
@@ -30160,8 +30205,8 @@
      "lp": -1,
      "mr": 0,
      "mrRanking": 0,
-     "battles": 23,
-     "wins": 13
+     "battles": 29,
+     "wins": 16
     },
     {
      "char": "ryu",
@@ -30295,29 +30340,29 @@
     "rank_match_play_count": 30080,
     "casual_match_play_count": 0,
     "battle_hub_match_play_count": 10,
-    "custom_room_match_play_count": 25583,
+    "custom_room_match_play_count": 25589,
     "drive_parry": 1.3,
     "just_parry": 0.6,
-    "drive_impact": 0.3,
-    "received_drive_impact": 0.1,
+    "drive_impact": 0.2,
+    "received_drive_impact": 0,
     "drive_reversal": 0,
-    "throw_count": 3.9,
+    "throw_count": 3.8,
     "received_throw_count": 2.6,
     "throw_tech": 0.5,
     "punish_counter": 0.2,
     "received_punish_counter": 0,
-    "corner_time": 14.1,
-    "cornered_time": 9.8,
-    "gauge_rate_drive_arts": 0.1311,
-    "gauge_rate_drive_guard": 0.1211,
-    "gauge_rate_drive_impact": 0.017,
+    "corner_time": 13.8,
+    "cornered_time": 9.7,
+    "gauge_rate_drive_arts": 0.1563,
+    "gauge_rate_drive_guard": 0.1256,
+    "gauge_rate_drive_impact": 0.0151,
     "gauge_rate_drive_reversal": 0.0016,
-    "gauge_rate_drive_rush_from_parry": 0.0676,
-    "gauge_rate_drive_rush_from_cancel": 0.3586,
-    "gauge_rate_sa_lv1": 0.2156,
-    "gauge_rate_sa_lv2": 0.2647,
-    "gauge_rate_sa_lv3": 0.3725,
-    "gauge_rate_ca": 0.147
+    "gauge_rate_drive_rush_from_parry": 0.0708,
+    "gauge_rate_drive_rush_from_cancel": 0.3329,
+    "gauge_rate_sa_lv1": 0.2323,
+    "gauge_rate_sa_lv2": 0.2929,
+    "gauge_rate_sa_lv3": 0.3333,
+    "gauge_rate_ca": 0.1414
    },
    "recentMatches": [
     {
@@ -30575,7 +30620,7 @@
        "w": 136,
        "mr": 2143,
        "lp": 644749,
-       "mrRanking": 786
+       "mrRanking": 789
       }
      ]
     },
@@ -30600,7 +30645,7 @@
   },
   "torimeshi": {
    "sflKey": "torimeshi",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "dhalsim",
    "characters": [
@@ -30609,9 +30654,18 @@
      "leagueRank": 36,
      "lp": 971502,
      "mr": 2412,
-     "mrRanking": 6,
+     "mrRanking": 8,
      "battles": 2173,
      "wins": 1411
+    },
+    {
+     "char": "lily",
+     "leagueRank": 36,
+     "lp": 27908,
+     "mr": 1553,
+     "mrRanking": 181311,
+     "battles": 25,
+     "wins": 22
     },
     {
      "char": "arjun",
@@ -30660,15 +30714,6 @@
     },
     {
      "char": "jp",
-     "leagueRank": 39,
-     "lp": -1,
-     "mr": 0,
-     "mrRanking": 0,
-     "battles": 0,
-     "wins": 0
-    },
-    {
-     "char": "ken",
      "leagueRank": 39,
      "lp": -1,
      "mr": 0,
@@ -30921,32 +30966,32 @@
     }
    ],
    "battleStats": {
-    "rank_match_play_count": 30202,
+    "rank_match_play_count": 30227,
     "casual_match_play_count": 0,
     "battle_hub_match_play_count": 320,
     "custom_room_match_play_count": 13717,
-    "drive_parry": 1.4,
+    "drive_parry": 1.6,
     "just_parry": 0.7,
     "drive_impact": 0.3,
     "received_drive_impact": 0.1,
-    "drive_reversal": 0.6,
-    "throw_count": 2,
-    "received_throw_count": 2.2,
-    "throw_tech": 0.6,
+    "drive_reversal": 0.5,
+    "throw_count": 2.6,
+    "received_throw_count": 2,
+    "throw_tech": 0.5,
     "punish_counter": 0.2,
     "received_punish_counter": 0.1,
     "corner_time": 5.6,
-    "cornered_time": 12.4,
-    "gauge_rate_drive_arts": 0.2408,
-    "gauge_rate_drive_guard": 0.1466,
-    "gauge_rate_drive_impact": 0.0182,
-    "gauge_rate_drive_reversal": 0.0454,
-    "gauge_rate_drive_rush_from_parry": 0.0823,
-    "gauge_rate_drive_rush_from_cancel": 0.2469,
-    "gauge_rate_sa_lv1": 0.6082,
-    "gauge_rate_sa_lv2": 0.0824,
-    "gauge_rate_sa_lv3": 0.1958,
-    "gauge_rate_ca": 0.1134
+    "cornered_time": 12.1,
+    "gauge_rate_drive_arts": 0.2206,
+    "gauge_rate_drive_guard": 0.1485,
+    "gauge_rate_drive_impact": 0.0183,
+    "gauge_rate_drive_reversal": 0.0358,
+    "gauge_rate_drive_rush_from_parry": 0.0824,
+    "gauge_rate_drive_rush_from_cancel": 0.2819,
+    "gauge_rate_sa_lv1": 0.6741,
+    "gauge_rate_sa_lv2": 0.0449,
+    "gauge_rate_sa_lv3": 0.2134,
+    "gauge_rate_ca": 0.0674
    },
    "recentMatches": [
     {
@@ -31292,7 +31337,7 @@
        "w": 1046,
        "mr": 2412,
        "lp": 971502,
-       "mrRanking": 6
+       "mrRanking": 8
       },
       {
        "char": "lily",
@@ -31300,7 +31345,7 @@
        "w": 22,
        "mr": 1553,
        "lp": 27908,
-       "mrRanking": 181172
+       "mrRanking": 181313
       },
       {
        "char": "arjun",
@@ -31943,7 +31988,7 @@
        "w": 52,
        "mr": 1887,
        "lp": 389172,
-       "mrRanking": 8126
+       "mrRanking": 8147
       },
       {
        "char": "ryu",
@@ -31951,7 +31996,7 @@
        "w": 33,
        "mr": 1879,
        "lp": 727031,
-       "mrRanking": 8483
+       "mrRanking": 8503
       },
       {
        "char": "jamie",
@@ -31959,7 +32004,7 @@
        "w": 7,
        "mr": 1500,
        "lp": 31443,
-       "mrRanking": 320732
+       "mrRanking": 321053
       },
       {
        "char": "vega_mbison",
@@ -31967,7 +32012,7 @@
        "w": 6,
        "mr": 1561,
        "lp": 44283,
-       "mrRanking": 170505
+       "mrRanking": 170625
       },
       {
        "char": "luke",
@@ -31975,7 +32020,7 @@
        "w": 3,
        "mr": 1517,
        "lp": 218237,
-       "mrRanking": 248846
+       "mrRanking": 248959
       },
       {
        "char": "cammy",
@@ -31983,7 +32028,7 @@
        "w": 4,
        "mr": 1516,
        "lp": 119316,
-       "mrRanking": 251606
+       "mrRanking": 251725
       }
      ]
     },
@@ -32569,7 +32614,7 @@
        "w": 86,
        "mr": 1808,
        "lp": 131914,
-       "mrRanking": 15699
+       "mrRanking": 15726
       },
       {
        "char": "elena",
@@ -32577,7 +32622,7 @@
        "w": 93,
        "mr": 1825,
        "lp": 42308,
-       "mrRanking": 12724
+       "mrRanking": 12734
       },
       {
        "char": "cviper",
@@ -32585,7 +32630,7 @@
        "w": 70,
        "mr": 1952,
        "lp": 178526,
-       "mrRanking": 4377
+       "mrRanking": 4385
       },
       {
        "char": "arjun",
@@ -32593,7 +32638,7 @@
        "w": 59,
        "mr": 1705,
        "lp": 33113,
-       "mrRanking": 44059
+       "mrRanking": 44110
       },
       {
        "char": "yasmine",
@@ -32601,7 +32646,7 @@
        "w": 32,
        "mr": 1620,
        "lp": 30880,
-       "mrRanking": 89268
+       "mrRanking": 89339
       },
       {
        "char": "ryu",
@@ -32609,7 +32654,7 @@
        "w": 2,
        "mr": 1500,
        "lp": 46727,
-       "mrRanking": 320779
+       "mrRanking": 321056
       }
      ]
     },
@@ -32650,7 +32695,7 @@
   },
   "yanai": {
    "sflKey": "yanai",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "sagat",
    "characters": [
@@ -32659,7 +32704,7 @@
      "leagueRank": 36,
      "lp": 947601,
      "mr": 2224,
-     "mrRanking": 297,
+     "mrRanking": 309,
      "battles": 2460,
      "wins": 1388
     },
@@ -32668,7 +32713,7 @@
      "leagueRank": 36,
      "lp": 948259,
      "mr": 2310,
-     "mrRanking": 102,
+     "mrRanking": 99,
      "battles": 2234,
      "wins": 1267
     },
@@ -32677,7 +32722,7 @@
      "leagueRank": 36,
      "lp": 93531,
      "mr": 1953,
-     "mrRanking": 4314,
+     "mrRanking": 4345,
      "battles": 166,
      "wins": 114
     },
@@ -32686,7 +32731,7 @@
      "leagueRank": 36,
      "lp": 104100,
      "mr": 1621,
-     "mrRanking": 88316,
+     "mrRanking": 88519,
      "battles": 63,
      "wins": 41
     },
@@ -33326,7 +33371,7 @@
        "w": 1013,
        "mr": 2224,
        "lp": 947601,
-       "mrRanking": 304
+       "mrRanking": 309
       },
       {
        "char": "vega_mbison",
@@ -33334,7 +33379,7 @@
        "w": 932,
        "mr": 2310,
        "lp": 948259,
-       "mrRanking": 100
+       "mrRanking": 99
       },
       {
        "char": "luke",
@@ -33342,7 +33387,7 @@
        "w": 114,
        "mr": 1953,
        "lp": 93531,
-       "mrRanking": 4332
+       "mrRanking": 4345
       },
       {
        "char": "ryu",
@@ -33350,7 +33395,7 @@
        "w": 41,
        "mr": 1621,
        "lp": 104100,
-       "mrRanking": 88429
+       "mrRanking": 88520
       }
      ]
     },
@@ -33391,7 +33436,7 @@
   },
   "yas": {
    "sflKey": "yas",
-   "asOf": "2026-10-20",
+   "asOf": "2026-10-21",
    "seasonId": 13,
    "mainChar": "ryu",
    "characters": [
@@ -33400,7 +33445,7 @@
      "leagueRank": 36,
      "lp": 899740,
      "mr": 2189,
-     "mrRanking": 528,
+     "mrRanking": 548,
      "battles": 599,
      "wins": 403
     },
@@ -33409,7 +33454,7 @@
      "leagueRank": 36,
      "lp": 42420,
      "mr": 1796,
-     "mrRanking": 24052,
+     "mrRanking": 24190,
      "battles": 154,
      "wins": 102
     },
@@ -33427,7 +33472,7 @@
      "leagueRank": 36,
      "lp": 90962,
      "mr": 1608,
-     "mrRanking": 102962,
+     "mrRanking": 103230,
      "battles": 30,
      "wins": 19
     },
@@ -33868,7 +33913,7 @@
        "w": 200,
        "mr": 2189,
        "lp": 899740,
-       "mrRanking": 534
+       "mrRanking": 548
       },
       {
        "char": "yasmine",
@@ -33876,7 +33921,7 @@
        "w": 101,
        "mr": 1796,
        "lp": 42420,
-       "mrRanking": 24069
+       "mrRanking": 24191
       },
       {
        "char": "vega_mbison",
@@ -33884,7 +33929,7 @@
        "w": 19,
        "mr": 1608,
        "lp": 90962,
-       "mrRanking": 103082
+       "mrRanking": 103231
       }
      ]
     },
