@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T16:36:33.523Z",
+  "updatedAt": "2026-10-20T17:48:23.068Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -1710,7 +1710,7 @@
       "videoId": "OvwqJkBiJqw",
       "startSec": 12292,
       "endSec": 13249,
-      "status": "pending",
+      "status": "complete",
       "runs": [
         {
           "model": "gemini-3.5-flash-lite",
@@ -1752,6 +1752,32 @@
             },
             {
               "topic": "第4ゲームでらおやむ（ベガ）がODサイコクラッシャーをパニッシュカウンターとしてヒットさせ、強気に押し切って勝利を決めた",
+              "evidence": "両方"
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-20T17:48:23.053Z",
+          "gameWinnersSeen": [
+            "B",
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第3ゲーム、ときどがドライブオーバードライブされた状態のらおやむに対し、オーバードライブサイコクラッシャーをパニッシュカウンターでヒットさせ、さらにそこからレベル3超必殺技（CA）を決めてラウンドを奪った。",
+              "evidence": "両方"
+            },
+            {
+              "topic": "第4ゲーム、ときどが画面端でオーバードライブサイコクラッシャーの連打を連続ガードさせ、らおやむをバーンアウト状態に追い込んだ。",
+              "evidence": "両方"
+            },
+            {
+              "topic": "第4ゲーム、らおやむがオーバードライブサイコクラッシャーの連続ガードを固めた後、飛び込んで投げを決め、そのままラウンドおよび試合を制した。",
               "evidence": "両方"
             }
           ]
@@ -7635,5 +7661,7 @@
       ]
     }
   },
-  "pendingNarrations": []
+  "pendingNarrations": [
+    "div-f-sec4-m3"
+  ]
 }

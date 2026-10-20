@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T16:19:31.549Z",
+  "updatedAt": "2026-10-20T17:45:53.865Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 4,
@@ -1663,7 +1663,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           }
         ],
         "narrationStatus": "pending"
