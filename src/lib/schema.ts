@@ -625,6 +625,10 @@ export const BoutVideoFactsSchema = z.object({
   startSec: z.number(),
   endSec: z.number(),
   status: z.enum(["pending", "complete", "failed"]),
+  /** Prompt, timestamp semantics, and extraction rules used to produce runs. */
+  analysisVersion: z.string().optional(),
+  /** Preserved when an older cache is reprocessed under a new analysis contract. */
+  staleRuns: z.array(BoutVideoRunSchema).default([]),
   runs: z.array(BoutVideoRunSchema),
 });
 
@@ -726,6 +730,7 @@ export const RecapEvidenceSchema = z.object({
   status: z.enum(["candidate", "verified", "rejected", "disputed"]),
   extractorVersion: z.string(),
   verifierVersion: z.string().optional(),
+  verificationObservation: z.string().optional(),
   sourceModels: z.array(z.string()).default([]),
   createdAt: z.string(),
 });
@@ -769,7 +774,7 @@ export const RecapJobSchema = z.object({
   matchId: z.string(),
   boutId: z.string().optional(),
   stage: z.enum(["queued", "waiting_video", "waiting_window", "extracting", "verifying", "writing", "reviewing", "retry_wait", "paused", "needs_review", "completed"]),
-  quality: z.enum(["not_evaluated", "insufficient", "passed", "invalid"]),
+  quality: z.enum(["not_evaluated", "insufficient", "candidate", "passed", "invalid"]),
   publication: z.enum(["results_only", "partial", "detailed"]),
   inputHash: z.string(),
   pipelineVersion: z.string(),

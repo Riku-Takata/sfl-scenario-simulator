@@ -5,9 +5,9 @@ import type { BoutGameDetail } from "./narration";
 import { callGemini, parseJsonLoose } from "./gemini-client";
 import { z } from "zod";
 
-export const EVIDENCE_EXTRACTOR_VERSION = "recap-evidence-v1";
-export const EVIDENCE_VERIFIER_VERSION = "independent-model-overlap-v1";
-const VerifierOutputSchema = z.object({ verdict: z.enum(["verified", "rejected", "uncertain"]), observation: z.string().optional() });
+export const EVIDENCE_EXTRACTOR_VERSION = "recap-evidence-v2";
+export const EVIDENCE_VERIFIER_VERSION = "independent-description-v2";
+const VerifierOutputSchema = z.object({ observation: z.string().min(8) });
 
 function stableId(value: string): string {
   return "ev-" + crypto.createHash("sha256").update(value).digest("hex").slice(0, 20);
@@ -69,19 +69,21 @@ export function buildBoutEvidence(options: {
       const startCandidates = [topic.startSec, confirmation?.startSec].filter((n): n is number => n !== undefined);
       const endCandidates = [topic.endSec, confirmation?.endSec].filter((n): n is number => n !== undefined);
       const preciseWindow = startCandidates.length > 0 && endCandidates.length > 0;
-      const startSec = preciseWindow ? Math.max(...startCandidates) : videoFacts.startSec;
-      const endSec = preciseWindow ? Math.min(...endCandidates) : videoFacts.endSec;
-      const validWindow = preciseWindow && endSec > startSec && startSec >= videoFacts.startSec && endSec <= videoFacts.endSec;
+      const startSec = preciseWindow ? Math.max(...startCandidates) : undefined;
+      const endSec = preciseWindow ? Math.min(...endCandidates) : undefined;
+      const validWindow = preciseWindow && endSec! > startSec! && startSec! >= videoFacts.startSec && endSec! <= videoFacts.endSec;
+      // Untimed topics cannot be independently re-opened and therefore stay out of the evidence ledger.
+      if (!validWindow) continue;
       evidence.push({
         id, sectionId, matchId, boutId,
         kind: topic.evidence === "実況" ? "commentary" : "visual",
-        videoId: videoFacts.videoId, ...(validWindow ? { startSec, endSec } : {}),
+        videoId: videoFacts.videoId, startSec, endSec,
         playerIds: [ctx.playerA.name, ctx.playerB.name], observation,
         officialRefs: [boutId + ":winner-order-reviewed"],
         // Two extractors nominate the same fact, but only a targeted review below can verify it.
         status: "candidate",
         extractorVersion: EVIDENCE_EXTRACTOR_VERSION,
-        ...(confirmation && validWindow ? { verifierVersion: "cross-model-candidate-v1" } : {}),
+        ...(confirmation ? { verifierVersion: "cross-model-candidate-v1" } : {}),
         sourceModels: confirmation ? [...new Set([runs[i].model, runs[matching].model])] : [runs[i].model],
         createdAt,
       });
@@ -99,25 +101,27 @@ export async function verifyEvidenceCandidate(options: {
   if (!candidate.videoId || candidate.startSec === undefined || candidate.endSec === undefined || candidate.endSec <= candidate.startSec) return candidate;
   const models = options.models.filter((model) => !candidate.sourceModels.includes(model));
   if (models.length === 0) return candidate;
+  // Blind pass: independently describe the clip before showing the model the claim.
   const result = await callGemini({
     apiKey,
     models,
     video: { youtubeUrl: "https://www.youtube.com/watch?v=" + candidate.videoId, startSec: candidate.startSec, endSec: candidate.endSec, fps: 2 },
-    prompt: `次の映像上の主張だけを指定区間で確認してください。主張: ${candidate.observation}\n\n動画で直接確認できるならverified、明確に誤りならrejected、判定できなければuncertain。説明は観測可能な範囲に限り、主張を補強するために推測しないでください。JSONのみ: {"verdict":"verified|rejected|uncertain","observation":"確認した短い事実"}`,
+    prompt: `この指定区間を独立に観察してください。誰が何をしたか、画面・音声から直接確認できた内容だけを短く記述してください。結果、勝敗、心理、意図を推測せず、特定できない場合はそのことを書いてください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observation":"観察内容"}`,
     temperature: 0,
   });
   if (!result) return candidate;
   try {
     const parsed = VerifierOutputSchema.parse(parseJsonLoose(result.text));
-    const compatibleObservation = !parsed.observation?.trim() || similarity(candidate.observation, parsed.observation) >= 0.35;
+    const compatibleObservation = similarity(candidate.observation, parsed.observation) >= 0.28;
     return {
       ...candidate,
-      status: parsed.verdict === "uncertain" || !compatibleObservation ? "disputed" : parsed.verdict,
-      verifierVersion: "targeted-video-review-v1",
+      status: compatibleObservation ? "verified" : "disputed",
+      verifierVersion: EVIDENCE_VERIFIER_VERSION,
+      verificationObservation: parsed.observation.trim(),
       sourceModels: [...new Set([...candidate.sourceModels, result.model])],
     };
   } catch {
-    return { ...candidate, status: "disputed", verifierVersion: "targeted-video-review-v1" };
+    return { ...candidate, status: "disputed", verifierVersion: EVIDENCE_VERIFIER_VERSION };
   }
 }
 

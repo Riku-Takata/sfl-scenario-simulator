@@ -9,6 +9,7 @@ export interface GeminiVideoInput {
   startSec: number;
   endSec: number;
   fps: number;
+  mode?: "static" | "agentic";
 }
 
 export interface GeminiCallResult {
@@ -39,35 +40,47 @@ export async function callGemini(options: {
 }): Promise<GeminiCallResult | null> {
   const { apiKey, models, prompt, video, temperature = 0.3 } = options;
 
-  const parts: unknown[] = [];
-  if (video) {
-    parts.push({
-      fileData: { fileUri: video.youtubeUrl },
-      videoMetadata: {
-        startOffset: `${video.startSec}s`,
-        endOffset: `${video.endSec}s`,
-        fps: video.fps,
-      },
-    });
-  }
-  parts.push({ text: prompt });
-
   for (const model of models) {
     if (exhaustedModels.has(model)) continue;
 
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
-        const res = await fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              contents: [{ parts }],
-              generationConfig: { responseMimeType: "application/json", temperature },
-            }),
-          }
-        );
+        const request = video
+          ? {
+              endpoint: "https://generativelanguage.googleapis.com/v1beta/interactions",
+              body: {
+                model,
+                input: [
+                  {
+                    type: "video",
+                    uri: video.youtubeUrl,
+                    ...(video.mode === "agentic"
+                      ? { processing: "agentic" }
+                      : { processing: {
+                          type: "static",
+                          start_offset: `${video.startSec}s`,
+                          end_offset: `${video.endSec}s`,
+                          fps: video.fps,
+                        } }),
+                  },
+                  { type: "text", text: video.mode === "agentic"
+                    ? `${prompt}\n\n対象は配信全体の${video.startSec}秒から${video.endSec}秒です。この区間だけを確認し、時刻は配信全体の先頭からの秒数で返してください。`
+                    : prompt },
+                ],
+              },
+            }
+          : {
+              endpoint: `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+              body: {
+                contents: [{ parts: [{ text: prompt }] }],
+                // Gemini 3.6+ ignores temperature; omit it rather than implying determinism.
+              },
+            };
+        const res = await fetch(request.endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
+          body: JSON.stringify(request.body),
+        });
 
         if (res.status === 429) {
           console.warn(`[Gemini ${model}] daily quota exhausted; skipping this model for the rest of the run.`);
@@ -87,8 +100,15 @@ export async function callGemini(options: {
 
         const data = (await res.json()) as {
           candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+          output_text?: string;
+          steps?: Array<{ type?: string; content?: Array<{ type?: string; text?: string }> }>;
         };
-        const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text ?? "").join("");
+        const interactionText = data.steps?.filter((step) => step.type === "model_output")
+          .flatMap((step) => step.content ?? []).filter((part) => part.type === "text")
+          .map((part) => part.text ?? "").join("");
+        const text = video
+          ? data.output_text || interactionText
+          : data.candidates?.[0]?.content?.parts?.map((p) => p.text ?? "").join("");
         if (!text) {
           console.warn(`[Gemini ${model}] empty response`);
           break;

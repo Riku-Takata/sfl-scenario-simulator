@@ -37,11 +37,13 @@ import { parseModelList } from "./recap/gemini-client";
 import {
   advanceBoutAnalysis,
   budgetAllows,
+  isBoutVideoCacheStale,
+  videoAnalysisFingerprint,
   type BoutContext,
   type VideoBudget,
 } from "./recap/bout-video-facts";
 import { buildBoutEvidence, verifyEvidenceCandidate } from "./recap/evidence-ledger";
-import { evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
+import { applyPublicationMode, evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
 import {
   currentPassedArticle, currentPassedMatchArticle, latestArticle, latestMatchArticle, evidenceForBout, loadRecapArticles, loadRecapEvidence, loadRecapJobs, recapInputHash,
   putArticle, saveRecapArticles, saveRecapEvidence, saveRecapJobs, upsertJob, upsertMatchJob,
@@ -329,6 +331,8 @@ export async function generateAndSaveMatchRecaps(
   const videoModels = parseModelList(process.env.GEMINI_VIDEO_MODELS, DEFAULT_VIDEO_MODELS);
   const textModels = parseModelList(process.env.GEMINI_TEXT_MODELS, DEFAULT_TEXT_MODELS);
   const fps = Number(process.env.GEMINI_VIDEO_FPS || "1");
+  const analysisVersion = videoAnalysisFingerprint(videoModels, fps);
+  const publicationMode = process.env.RECAP_PUBLICATION_MODE === "auto" ? "auto" : "shadow";
   const budget: VideoBudget = {
     maxCalls: Number(process.env.GEMINI_VIDEO_MAX_CALLS || "24"),
     // 無料枠のYouTube入力は1日8時間まで。他の利用分を残して7時間で打ち切る
@@ -461,10 +465,22 @@ export async function generateAndSaveMatchRecaps(
         };
 
         // 動画解析（チャプターでBout区間が取れたものだけ）
-        let facts = videoFacts.bouts[ctx.boutId];
         const window = findBoutWindow(chapters, num, hp.status);
+        let facts = videoFacts.bouts[ctx.boutId];
+        const cacheStale = isBoutVideoCacheStale(facts, { videoId, window, analysisVersion });
+        if (facts && cacheStale) {
+          facts = {
+            videoId: videoId ?? facts.videoId,
+            ...(window ?? { startSec: facts.startSec, endSec: facts.endSec }),
+            status: "pending",
+            analysisVersion,
+            staleRuns: [...(facts.staleRuns ?? []), ...facts.runs],
+            runs: [],
+          };
+          videoFacts.bouts[ctx.boutId] = facts;
+        }
         if (!facts && videoId && window) {
-          facts = { videoId, ...window, status: "pending", runs: [] };
+          facts = { videoId, ...window, status: "pending", analysisVersion, staleRuns: [], runs: [] };
           videoFacts.bouts[ctx.boutId] = facts;
         }
         // 編集解説があるBoutは動画解析しない（無料枠の節約）
@@ -473,7 +489,7 @@ export async function generateAndSaveMatchRecaps(
           saveVideoFacts(videoFacts); // 途中で止まっても解析済み分は残す
         }
 
-        const officialInput = { ctx, games, videoId };
+        const officialInput = { ctx, games, videoId, window, analysisVersion, publicationMode };
         const priorJob = jobsData.jobs[ctx.boutId];
         if (priorJob && priorJob.inputHash !== recapInputHash(officialInput)) {
           for (const article of Object.values(articlesData.articles)) {
@@ -492,14 +508,14 @@ export async function generateAndSaveMatchRecaps(
         const boutEvidence = buildBoutEvidence({ sectionId: slug, matchId, boutId: ctx.boutId, videoFacts: facts, ctx, games });
         for (const item of boutEvidence) {
           const prior = evidenceData.evidence[item.id];
-          const targetedDecision = prior?.verifierVersion === "targeted-video-review-v1";
-          evidenceData.evidence[item.id] = prior && (prior.status === "verified" || targetedDecision)
+          const currentDecision = prior?.verifierVersion === "independent-description-v2";
+          evidenceData.evidence[item.id] = prior && currentDecision
             ? prior
             : { ...item, createdAt: prior?.createdAt ?? item.createdAt };
         }
         if (videoWorkAllowed && facts && budgetAllows(budget, 0)) {
           const candidates = boutEvidence.filter((item) => item.status === "candidate" &&
-            item.verifierVersion !== "targeted-video-review-v1" && item.startSec !== undefined && item.endSec !== undefined)
+            item.verifierVersion !== "independent-description-v2" && item.startSec !== undefined && item.endSec !== undefined)
             .slice(0, 2);
           for (const candidate of candidates) {
             if (!budgetAllows(budget, candidate.endSec! - candidate.startSec!)) break;
@@ -580,6 +596,10 @@ export async function generateAndSaveMatchRecaps(
         winnerTeam: matchWinnerTeam,
         isTiebreaker,
         bouts: boutInputs,
+        styleExamples: (["s", "f"] as const).flatMap((division) => Object.entries(editorial.bouts)
+          .filter(([boutId]) => boutId.startsWith(`div-${division}-`))
+          .slice(0, 2)
+          .map(([, item]) => ({ division: division.toUpperCase() as "S" | "F", summary: item.summary, keyPoints: item.keyPoints }))),
         qualityFeedback: Object.fromEntries([
           ...boutInputs.flatMap((input) => {
           const previous = latestArticle(articlesData, input.ctx.boutId);
@@ -648,11 +668,11 @@ export async function generateAndSaveMatchRecaps(
           const keyPoints = boutNarrative.keyPoints.map((point) => typeof point === "string"
             ? { text: point, evidenceIds: [] }
             : point);
-          const article = evaluateBoutArticle({
+          const article = applyPublicationMode(evaluateBoutArticle({
             matchId, boutId: input.ctx.boutId, summary: boutNarrative.summary,
             summaryEvidenceIds: boutNarrative.summaryEvidenceIds ?? [], keyPoints,
             evidence: evidenceForBout(evidenceData, input.ctx.boutId), games: input.games,
-          });
+          }), publicationMode);
           putArticle(articlesData, article);
           articleByBout.set(input.ctx.boutId, article);
         }
@@ -661,13 +681,19 @@ export async function generateAndSaveMatchRecaps(
         const candidate = articleByBout.get(input.ctx.boutId);
         return candidate?.status === "passed" ? candidate : currentPassedArticle(articlesData, input.ctx.boutId);
       }).filter((article) => article !== undefined);
+      const qualityPassedBoutArticles = boutInputs.map((input) => {
+        const candidate = articleByBout.get(input.ctx.boutId);
+        const article = candidate ?? currentPassedArticle(articlesData, input.ctx.boutId);
+        return article?.status === "candidate" ? { ...article, status: "passed" as const } : article;
+      }).filter((article): article is NonNullable<typeof article> =>
+        article !== undefined && article.quality.reasons.length === 0);
       const matchEvidence = Object.values(evidenceData.evidence).filter((item) => item.matchId === matchId);
       const matchArticle = narrativeUsable
-        ? evaluateMatchArticle({
+        ? applyPublicationMode(evaluateMatchArticle({
             matchId, headline: narrative!.matchHeadline, summary: narrative!.matchSummary,
-            evidenceIds: narrative!.matchEvidenceIds ?? [], boutArticles: passedBoutArticles,
+            evidenceIds: narrative!.matchEvidenceIds ?? [], boutArticles: qualityPassedBoutArticles,
             evidence: matchEvidence,
-          })
+          }), publicationMode)
         : undefined;
       if (matchArticle) putArticle(articlesData, matchArticle);
       const publishedMatchArticle = matchArticle?.status === "passed" ? matchArticle : currentPassedMatchArticle(articlesData, matchId);
@@ -697,7 +723,7 @@ export async function generateAndSaveMatchRecaps(
         const recapJob = jobsData.jobs[input.ctx.boutId];
         recap.videoStatus = editorial.bouts[input.ctx.boutId] || candidate?.status === "passed"
           ? "complete"
-          : recapJob?.stage === "needs_review" || recapJob?.stage === "paused"
+          : recapJob?.stage === "needs_review" || recapJob?.stage === "paused" || recapJob?.stage === "reviewing"
             ? "unavailable" : "pending";
       }
       const narrativeCoversAllBouts = Boolean(publishedMatchArticle?.status === "passed" && passedBoutArticles.length === boutInputs.length);
@@ -705,7 +731,7 @@ export async function generateAndSaveMatchRecaps(
       const narrationStatus: "complete" | "pending" | "unavailable" =
         editorial.matches[matchId] || narrativeCoversAllBouts || !needsNarration
           ? "complete"
-          : matchJob?.stage === "needs_review" || matchJob?.stage === "paused"
+          : matchJob?.stage === "needs_review" || matchJob?.stage === "paused" || matchJob?.stage === "reviewing"
             ? "unavailable"
             : videoId && (options.resultsOnly || matchJob?.stage !== "completed" || !allSettled ||
                 videoFacts.pendingNarrations.includes(matchId) || boutRecaps.some((bout) => bout.videoStatus === "pending"))
