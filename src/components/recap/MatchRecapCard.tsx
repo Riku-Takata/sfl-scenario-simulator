@@ -377,6 +377,16 @@ function BoutBlock({ bout: b, match: m }: { bout: RecentBoutRecap; match: Recent
                   </span>
                   <span style={{ fontWeight: 700, color: "var(--text-main)", marginLeft: "0.2rem" }}>{nameOf(g.winner)}</span>
                   {comeback && <span style={{ color: "var(--text-muted)", fontSize: "0.74rem" }}>↺ 逆転</span>}
+                  {g.awayChara && g.awayChara !== b.awayChara && (
+                    <span style={{ color: "var(--text-muted)", fontSize: "0.72rem" }}>
+                      {awayName}: {formatCharName(g.awayChara)}
+                    </span>
+                  )}
+                  {g.homeChara && g.homeChara !== b.homeChara && (
+                    <span style={{ color: "var(--text-muted)", fontSize: "0.72rem" }}>
+                      {homeName}: {formatCharName(g.homeChara)}
+                    </span>
+                  )}
                   {g.burnout?.map((s) => (
                     <span
                       key={s}

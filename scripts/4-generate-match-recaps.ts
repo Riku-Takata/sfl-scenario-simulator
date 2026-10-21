@@ -143,7 +143,12 @@ export function toGameDetails(gameLogs: RawGameLog[] = []): BoutGameDetail[] {
       .map((r) => (r === "1" ? "B" : "A") as "A" | "B");
     const a = rounds.filter((r) => r === "A").length;
     const b = rounds.filter((r) => r === "B").length;
-    return { winner: a > b ? "A" : "B", rounds };
+    return {
+      winner: a > b ? "A" : "B",
+      homeChara: g["1p_character"],
+      awayChara: g["2p_character"],
+      rounds,
+    };
   });
 }
 

@@ -78,8 +78,8 @@ test("official round log maps 1P to HOME (B) and 2P to AWAY (A)", () => {
     { "1p_character": "juri", "1p_mode": "", "2p_character": "blanka", "2p_mode": "", r1: "2", r2: "1", r3: "1", status: 0, status_name: "" },
   ]);
   assert.deepEqual(games, [
-    { winner: "A", rounds: ["A", "A"] },
-    { winner: "B", rounds: ["A", "B", "B"] },
+    { winner: "A", homeChara: "juri", awayChara: "blanka", rounds: ["A", "A"] },
+    { winner: "B", homeChara: "juri", awayChara: "blanka", rounds: ["A", "B", "B"] },
   ]);
 });
 

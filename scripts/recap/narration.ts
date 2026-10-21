@@ -8,6 +8,8 @@ import { callGemini, parseJsonLoose } from "./gemini-client";
 export interface BoutGameDetail {
   winner: "A" | "B";
   rounds: Array<"A" | "B">;
+  homeChara?: string;
+  awayChara?: string;
 }
 
 export interface NarrationBoutInput {
