@@ -490,6 +490,8 @@ export const BoutTagIdSchema = z.enum(BOUT_TAG_IDS);
 
 export const BoutGameDetailSchema = z.object({
   winner: z.enum(["home", "away"]),
+  homeChara: z.string().optional(),
+  awayChara: z.string().optional(),
   rounds: z.array(
     z.object({
       winner: z.enum(["home", "away"]),

@@ -5,22 +5,62 @@ import { EditorialRecapsDataSchema, MatchRecapsDataSchema } from "../src/lib/sch
 const DATA_DIR = path.resolve(process.cwd(), "src/data");
 const recapsPath = path.join(DATA_DIR, "match-recaps.json");
 const editorialPath = path.join(DATA_DIR, "editorial-recaps.json");
+const seedPath = path.join(DATA_DIR, "raw-capcom-seed.json");
 const sectionArg = process.argv.find((arg) => arg.startsWith("--section="));
 const onlySection = sectionArg?.slice("--section=".length);
+
+interface RawGameLog {
+  "1p_character": string;
+  "2p_character": string;
+}
+
+interface RawBoutLog {
+  status: number;
+}
+
+interface RawMatchResult {
+  "1p"?: RawBoutLog[];
+  log?: RawGameLog[][];
+}
+
+interface RawSchedule {
+  post_name: string;
+  fields: {
+    section: Record<string, { result?: RawMatchResult }>;
+  };
+}
 
 const recaps = MatchRecapsDataSchema.parse(JSON.parse(fs.readFileSync(recapsPath, "utf8")));
 const editorial = EditorialRecapsDataSchema.parse(
   JSON.parse(fs.readFileSync(editorialPath, "utf8"))
 );
+const seed = JSON.parse(fs.readFileSync(seedPath, "utf8")) as {
+  data?: { schedules?: RawSchedule[] };
+};
 
 let renderedMatches = 0;
 let renderedBouts = 0;
 for (const division of ["s", "f"] as const) {
   for (const match of recaps.recentSections[division]) {
     if (onlySection && !match.matchId.startsWith(`${onlySection}-m`)) continue;
+    const sectionSlug = match.matchId.replace(/-m\d+$/, "");
+    const schedule = seed.data?.schedules?.find((entry) => entry.post_name === sectionSlug);
+    const result = schedule?.fields.section[`match${match.matchNumber}`]?.result;
     const matchEditorial = editorial.matches[match.matchId];
     let matchHasEditorial = false;
     for (const bout of match.bouts) {
+      const rawBoutIndex = result?.["1p"]?.findIndex((entry) => entry.status === bout.status) ?? -1;
+      const rawGames = rawBoutIndex >= 0 ? result?.log?.[rawBoutIndex] : undefined;
+      if (rawGames && bout.games) {
+        bout.games = bout.games.map((game, index) => {
+          const withCharacters = { ...game };
+          const homeChara = rawGames[index]?.["1p_character"] || game.homeChara;
+          const awayChara = rawGames[index]?.["2p_character"] || game.awayChara;
+          if (homeChara) withCharacters.homeChara = homeChara;
+          if (awayChara) withCharacters.awayChara = awayChara;
+          return withCharacters;
+        });
+      }
       const boutId = `${match.matchId}-b${bout.status}`;
       const boutEditorial = editorial.bouts[boutId];
       if (!boutEditorial) {

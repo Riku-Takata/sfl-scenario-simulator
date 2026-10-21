@@ -158,7 +158,12 @@ export function buildVerifiedGames(
       return round;
     });
 
-    const game: BoutGameDetailView = { winner: sideToTeam(og.winner), rounds };
+    const game: BoutGameDetailView = {
+      winner: sideToTeam(og.winner),
+      rounds,
+    };
+    if (og.homeChara) game.homeChara = og.homeChara;
+    if (og.awayChara) game.awayChara = og.awayChara;
     if (agreed) {
       const burnout = (["A", "B"] as const).filter(
         (s) => matched.filter((g) => g.burnout.includes(s)).length >= VISUAL_REQUIRED_RUNS
