@@ -1,8 +1,7 @@
 import crypto from "node:crypto";
 import { z } from "zod";
-import type { BoutVideoFacts, MatchNarrative, RecentBoutAnalysis } from "../../src/lib/types";
+import type { BoutVideoFacts, MatchNarrative, RecentBoutAnalysis, RecapEvidence } from "../../src/lib/types";
 import type { BoutContext } from "./bout-video-facts";
-import { passedRuns } from "./bout-video-facts";
 import { callGemini, parseJsonLoose } from "./gemini-client";
 
 export interface BoutGameDetail {
@@ -16,6 +15,7 @@ export interface NarrationBoutInput {
   ctx: BoutContext;
   games: BoutGameDetail[];
   facts?: BoutVideoFacts;
+  evidence?: RecapEvidence[];
 }
 
 export interface NarrationMatchInput {
@@ -27,6 +27,7 @@ export interface NarrationMatchInput {
   winnerTeam: string;
   isTiebreaker: boolean;
   bouts: NarrationBoutInput[];
+  qualityFeedback?: Record<string, string[]>;
 }
 
 /* ------------------------------------------------------------------ */
@@ -89,19 +90,21 @@ export function buildOfficialDataAnalysis(input: NarrationBoutInput): RecentBout
 const NarrationOutputSchema = z.object({
   matchHeadline: z.string(),
   matchSummary: z.string(),
+  matchEvidenceIds: z.array(z.string()).default([]),
   bouts: z.array(
     z.object({
       boutId: z.string(),
       summary: z.string(),
+      summaryEvidenceIds: z.array(z.string()).default([]),
       keyPoints: z
-        .array(z.object({ text: z.string(), supportedBy: z.array(z.string()) }))
+        .array(z.object({ text: z.string(), evidenceIds: z.array(z.string()) }))
         .default([]),
     })
   ),
 });
 
 function boutPayload(b: NarrationBoutInput) {
-  const runs = b.facts && b.facts.status === "complete" ? passedRuns(b.facts).slice(0, 2) : [];
+  const evidence = (b.evidence || []).filter((item) => item.status === "verified");
   return {
     boutId: b.ctx.boutId,
     bout: b.ctx.statusName,
@@ -113,15 +116,12 @@ function boutPayload(b: NarrationBoutInput) {
     officialRounds: b.games.map(
       (g, i) => `第${i + 1}ゲーム: ${g.rounds.map((r) => nameOf(b.ctx, r)).join("→")}`
     ),
-    videoAnalysis:
-      runs.length === 2
-        ? { run1: runs[0].topics, run2: runs[1].topics }
-        : "なし（公式結果のみ使用。展開を創作しないこと）",
+    verifiedEvidence: evidence.map(({ id, kind, startSec, endSec, observation }) => ({ id, kind, startSec, endSec, observation })),
   };
 }
 
 export function narrationInputHash(match: NarrationMatchInput): string {
-  const payload = JSON.stringify({ v: 3, m: match.matchId, b: match.bouts.map(boutPayload) });
+  const payload = JSON.stringify({ v: 5, m: match.matchId, b: match.bouts.map(boutPayload), q: match.qualityFeedback ?? {} });
   return crypto.createHash("sha256").update(payload).digest("hex").slice(0, 16);
 }
 
@@ -130,22 +130,25 @@ export function buildNarrationPrompt(match: NarrationMatchInput): string {
 
 【試合】${match.awayTeam}（AWAY）vs ${match.homeTeam}（HOME）→ ${match.awayPoint}-${match.homePoint} で ${match.winnerTeam} の勝利${match.isTiebreaker ? "（延長戦で決着）" : ""}
 
-【Bout情報】各Boutの videoAnalysis.run1 / run2 は、同じ映像を独立に2回解析した観測結果です。
+【Bout情報】verifiedEvidence にある事実だけを記事の根拠に使ってください。各根拠IDを文章に対応付けて返します。
 ${JSON.stringify(match.bouts.map(boutPayload), null, 1)}
 
+【前回の品質判定】
+${JSON.stringify(match.qualityFeedback ?? {}, null, 1)}
+
 ルール:
-- keyPoints には run1 と run2 の両方で裏付けられた事実だけを書く（表現が違っても同じ出来事を指していれば一致とみなす）。片方にしか無い内容・観測に無い内容は書かない。
-- 1つの keyPoint には両方のrunに共通する部分だけを書く。片方のrunにしか無い細部（技名・ゲーム番号・決着方法など）は付け足さず削る。2つのrunの記述を足し合わせて1文にしてはいけない。
+- 各 summary / keyPoint / matchSummary に、根拠として実際に使った verifiedEvidence のIDを付ける。根拠の無い具体的な記述は出力しない。
+- keyPoints は2〜3件を目標にするが、使える根拠がなければ少なくしてよい。ひとつの文章の根拠を別の対戦から借りない。
 - officialRounds（公式ラウンド推移）と矛盾する記述は禁止。特に「逆転」「ストレート」「フルセット」「第Nゲーム」は officialRounds で確認できる場合だけ書く。
-- 各 keyPoint の supportedBy に裏付けたrunを ["run1","run2"] のように列挙する。
 - 具体的な出来事（技名・システム名・状況）を含まない要点は書かない。「対戦となった」「攻防を制した」「要所で技を当てた」のような中身の無い文を入れるくらいなら keyPoints を減らす（0件も可）。
 - 動画解析が「なし」のBoutは keyPoints を空にし、summary は公式結果だけで1文。
 - 一般論、キャラ性能の説明、「圧巻」「劇的」など根拠のない誇張、他のBoutと同じ言い回しの使い回しは禁止。
 - summary は1〜2文、keyPoints は最大3件、各1文。
+- 前回の品質判定に不足点がある場合は、その項目を直す。ただし根拠がない内容を加えて合格させようとしない。
 - matchHeadline は30文字以内。matchSummary は試合の流れ（先鋒から大将/延長への転換）と勝敗を分けた確認済みの出来事をつなぎ、180〜350字を目安にする。材料が足りない場合は無理に水増しせず、公式記録だけの短い速報にする。
 
 JSONのみで出力:
-{"matchHeadline":"","matchSummary":"","bouts":[{"boutId":"","summary":"","keyPoints":[{"text":"","supportedBy":["run1","run2"]}]}]}`;
+{"matchHeadline":"","matchSummary":"","matchEvidenceIds":[],"bouts":[{"boutId":"","summary":"","summaryEvidenceIds":[],"keyPoints":[{"text":"","evidenceIds":[]}]}]}`;
 }
 
 /** 対戦カードの言い直しなど、事実を何も含まない要点を除く。 */
@@ -200,22 +203,26 @@ export async function generateMatchNarrative(options: {
 
   try {
     const parsed = NarrationOutputSchema.parse(parseJsonLoose(result.text));
+    const validEvidence = new Set(match.bouts.flatMap((bout) =>
+      (bout.evidence || []).filter((item) => item.status === "verified").map((item) => item.id)));
     return {
       inputHash: narrationInputHash(match),
       model: result.model,
       generatedAt: new Date().toISOString(),
       matchHeadline: parsed.matchHeadline.trim(),
       matchSummary: parsed.matchSummary.trim(),
+      matchEvidenceIds: parsed.matchEvidenceIds.filter((id) => validEvidence.has(id)),
       bouts: parsed.bouts.map((b) => {
-        const games = match.bouts.find((x) => x.ctx.boutId === b.boutId)?.games ?? [];
+        const input = match.bouts.find((x) => x.ctx.boutId === b.boutId);
+        const games = input?.games ?? [];
+        const boutEvidence = new Set((input?.evidence || []).filter((item) => item.status === "verified").map((item) => item.id));
         return {
           boutId: b.boutId,
           summary: contradictsOfficialRounds(b.summary, games) ? "" : b.summary.trim(),
-          // 2回の解析の両方に裏付けられ、公式ラウンド推移と矛盾しないものだけ残す
+          summaryEvidenceIds: b.summaryEvidenceIds.filter((id) => boutEvidence.has(id)),
           keyPoints: b.keyPoints
-            .filter((k) => k.supportedBy.includes("run1") && k.supportedBy.includes("run2"))
-            .map((k) => k.text.trim())
-            .filter((k) => k.length > 0 && !isVacuousKeyPoint(k) && !contradictsOfficialRounds(k, games)),
+            .map((k) => ({ text: k.text.trim(), evidenceIds: k.evidenceIds.filter((id) => boutEvidence.has(id)) }))
+            .filter((k) => k.text.length > 0 && k.evidenceIds.length > 0 && !isVacuousKeyPoint(k.text) && !contradictsOfficialRounds(k.text, games)),
         };
       }),
     };

@@ -22,6 +22,7 @@
     "calc-scenarios": "tsx scripts/2-calc-scenarios.ts",
     "generate-narratives": "tsx scripts/3-generate-narratives.ts",
     "generate-recaps": "tsx scripts/4-generate-match-recaps.ts",
+    "recap-worker": "tsx scripts/run-recap-worker.ts",
     "render-recaps": "tsx scripts/render-editorial-recaps.ts",
     "generate-tournaments": "tsx scripts/generate-sf6-tournaments.ts",
     "buckler:resolve-cfn": "tsx scripts/buckler/resolve-cfn-ids.ts",
