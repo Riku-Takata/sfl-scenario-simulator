@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev --port 3002",
-    "build": "astro build",
+    "build": "node scripts/write-build-info.mjs && astro build",
     "preview": "astro preview --port 3000 --host 0.0.0.0",
     "start": "node scripts/serve-static.mjs",
     "test": "node --import tsx --test tests/simulator.test.ts tests/match-recap.test.ts tests/startgg.test.ts tests/sfl-play-style.test.ts tests/buckler.test.ts tests/encyclopedia-v2.test.ts tests/model.test.ts tests/youtube-archive.test.ts",
@@ -22,6 +22,7 @@
     "calc-scenarios": "tsx scripts/2-calc-scenarios.ts",
     "generate-narratives": "tsx scripts/3-generate-narratives.ts",
     "generate-recaps": "tsx scripts/4-generate-match-recaps.ts",
+    "render-recaps": "tsx scripts/render-editorial-recaps.ts",
     "generate-tournaments": "tsx scripts/generate-sf6-tournaments.ts",
     "buckler:resolve-cfn": "tsx scripts/buckler/resolve-cfn-ids.ts",
     "buckler:sync": "tsx scripts/buckler/sync.ts",

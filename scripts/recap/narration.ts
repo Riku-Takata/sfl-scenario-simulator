@@ -140,7 +140,7 @@ ${JSON.stringify(match.bouts.map(boutPayload), null, 1)}
 - 動画解析が「なし」のBoutは keyPoints を空にし、summary は公式結果だけで1文。
 - 一般論、キャラ性能の説明、「圧巻」「劇的」など根拠のない誇張、他のBoutと同じ言い回しの使い回しは禁止。
 - summary は1〜2文、keyPoints は最大3件、各1文。
-- matchHeadline は30文字以内、matchSummary は150文字以内。スコアだけの見出しは禁止し、勝敗を分けたBoutや確認できた出来事を入れる。
+- matchHeadline は30文字以内。matchSummary は試合の流れ（先鋒から大将/延長への転換）と勝敗を分けた確認済みの出来事をつなぎ、180〜350字を目安にする。材料が足りない場合は無理に水増しせず、公式記録だけの短い速報にする。
 
 JSONのみで出力:
 {"matchHeadline":"","matchSummary":"","bouts":[{"boutId":"","summary":"","keyPoints":[{"text":"","supportedBy":["run1","run2"]}]}]}`;

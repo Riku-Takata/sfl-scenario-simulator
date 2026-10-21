@@ -135,7 +135,12 @@ export default function MatchRecapCard({ match: m, isOpen, onToggle }: Props) {
           </div>
           {m.narrationStatus === "pending" && (
             <div style={{ marginTop: "0.35rem" }}>
-              <InProgressNotice>試合レポート作成中（スコアは公式記録を反映済み）</InProgressNotice>
+              <InProgressNotice>詳細な解説記事を作成中です</InProgressNotice>
+            </div>
+          )}
+          {m.narrationStatus === "unavailable" && (
+            <div style={{ marginTop: "0.35rem" }}>
+              <InProgressNotice>公式記録を掲載中 · 詳細解説は確認待ちです</InProgressNotice>
             </div>
           )}
 
@@ -152,7 +157,7 @@ export default function MatchRecapCard({ match: m, isOpen, onToggle }: Props) {
             </p>
             {m.narrationStatus === "pending" && (
               <p style={{ fontSize: "0.78rem", lineHeight: 1.6, color: "var(--text-muted)", margin: "-0.5rem 0 0.9rem" }}>
-                配信映像の解析と解説文は現在作成中です。完成までは公式記録から組み立てた要約を表示しています。
+                配信映像の解析と詳細な解説記事を作成中です。現在は公式記録に基づく速報を表示しています。
               </p>
             )}
 

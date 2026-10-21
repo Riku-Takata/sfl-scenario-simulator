@@ -257,15 +257,34 @@ export function hasPendingVideoWork(): boolean {
   );
   // アーカイブ (チャプター付き) がまだ見つかっていない最新節。
   // アーカイブは生成時に公式チャンネルから自動検出するため、見つかるまで毎回確認する
-  const unseenSection = latestSlugs.some(
-    (slug) =>
-      !(facts.videos[slug]?.chapters?.length) &&
-      !Object.keys(facts.bouts).some((id) => id.startsWith(`${slug}-`))
-  );
+  const unseenSection = latestSlugs.some((slug) => {
+    if (facts.videos[slug]?.chapters?.length) return false;
+    const entry = completed.s.concat(completed.f).find((section) => section.post_name === slug);
+    if (!entry) return false;
+    const hasUncoveredBout = activeSlots(entry.fields.section).some(({ num, slot }) => {
+      const result = slot.result as Exclude<RawMatchSlot["result"], "">;
+      return (result["1p"] || []).some(
+        (bout) => !editorial.bouts[`${slug}-m${num}-b${bout.status}`]
+      );
+    });
+    return hasUncoveredBout && !Object.keys(facts.bouts).some((id) => id.startsWith(`${slug}-`));
+  });
   const pendingNarration = facts.pendingNarrations.some((id) =>
     latestSlugs.some((slug) => id.startsWith(`${slug}-`))
   );
-  return pendingBout || pendingVisual || pendingNarration || unseenSection;
+  const missingBoutWindow = latestSlugs.some((slug) => {
+    const video = facts.videos[slug];
+    const entry = completed.s.concat(completed.f).find((section) => section.post_name === slug);
+    if (!entry) return false;
+    return activeSlots(entry.fields.section).some(({ num, slot }) => {
+      const result = slot.result as Exclude<RawMatchSlot["result"], "">;
+      return (result["1p"] || []).some((bout) => {
+        if (editorial.bouts[`${slug}-m${num}-b${bout.status}`]) return false;
+        return !video?.chapters.length || !findBoutWindow(video.chapters, num, bout.status);
+      });
+    });
+  });
+  return pendingBout || pendingVisual || pendingNarration || unseenSection || missingBoutWindow;
 }
 
 export async function generateAndSaveMatchRecaps(
@@ -361,11 +380,18 @@ export async function generateAndSaveMatchRecaps(
 
     // 公式チャプター（キャッシュ優先）
     let chapters = videoFacts.videos[slug]?.chapters ?? [];
-    if (videoId && chapters.length === 0) {
+    const requiredWindowsMissing = activeSlots(sec).some(({ num, slot }) => {
+      const result = slot.result as Exclude<RawMatchSlot["result"], "">;
+      return (result["1p"] || []).some((bout) => !findBoutWindow(chapters, num, bout.status));
+    });
+    if (videoId && (chapters.length === 0 || requiredWindowsMissing)) {
       try {
-        chapters = await fetchYoutubeChapters(videoId);
-        videoFacts.videos[slug] = { videoId, chapters };
-        console.log(`[Chapters] ${slug}: ${chapters.length} chapters from YouTube description`);
+        const refreshed = await fetchYoutubeChapters(videoId);
+        if (refreshed.length > 0) {
+          chapters = refreshed;
+          videoFacts.videos[slug] = { videoId, chapters };
+          console.log(`[Chapters] ${slug}: refreshed ${chapters.length} chapters from YouTube description`);
+        }
       } catch (err) {
         console.warn(`[Chapters] ${slug}: ${(err as Error).message}`);
       }
@@ -447,10 +473,8 @@ export async function generateAndSaveMatchRecaps(
           : !videoId
             ? "unavailable"
             : !window
-              ? // 配信直後でアーカイブのチャプターがまだ付いていない場合は解析待ち
-                chapters.length === 0
-                ? "pending"
-                : "unavailable"
+              ? // チャプターが不完全でもアーカイブがあれば次回に再探索する。
+                videoId ? "pending" : "unavailable"
             : facts?.status === "pending" || visual?.status === "pending"
               ? "pending"
               : facts?.status === "complete" || visual?.status === "complete"
@@ -532,14 +556,18 @@ export async function generateAndSaveMatchRecaps(
       }
       const narrativeUsable = narrative && narrative.inputHash === inputHash;
       // 解説文の進み具合: 動画がある試合で、解析待ち・解説の持ち越し中なら「作成中」
+      const narrativeCoversAllBouts = narrativeUsable && boutInputs.every((input) => {
+        if (editorial.bouts[input.ctx.boutId]) return true;
+        const boutNarrative = narrative!.bouts.find((bout) => bout.boutId === input.ctx.boutId);
+        return input.facts?.status === "complete" && Boolean(
+          boutNarrative && (boutNarrative.keyPoints.length > 0 || boutNarrative.summary.trim().length >= 60)
+        );
+      });
       const narrationStatus: "complete" | "pending" | "unavailable" =
-        editorial.matches[matchId] || narrativeUsable || !needsNarration
+        editorial.matches[matchId] || narrativeCoversAllBouts || !needsNarration
           ? "complete"
-          : videoId &&
-              (!allSettled ||
-                anyComplete ||
-                chapters.length === 0 ||
-                videoFacts.pendingNarrations.includes(matchId))
+          : videoId && (chapters.length === 0 || !allSettled || anyComplete ||
+              videoFacts.pendingNarrations.includes(matchId) || boutRecaps.some((bout) => bout.videoStatus === "pending"))
             ? "pending"
             : "unavailable";
 
@@ -549,11 +577,12 @@ export async function generateAndSaveMatchRecaps(
         const nb = narrativeUsable
           ? narrative!.bouts.find((b) => b.boutId === input.ctx.boutId)
           : undefined;
-        // 要約文は2回一致のチェックを通らないため公式データ由来のまま使い、動画由来は要点だけにする
-        if (input.facts?.status === "complete" && nb && nb.keyPoints.length > 0) {
+        // 映像観測を使った生成文は公式ログ整合性を通したうえで、内容のある文だけ採用する。
+        if (input.facts?.status === "complete" && nb &&
+          (nb.keyPoints.length > 0 || nb.summary.trim().length >= 60)) {
           recap.analysis = {
             source: "gemini-video",
-            summary: recap.analysis.summary,
+            summary: nb.summary.trim() || recap.analysis.summary,
             keyPoints: nb.keyPoints,
           };
         }
@@ -611,7 +640,9 @@ export async function generateAndSaveMatchRecaps(
           (narrativeUsable ? narrative!.matchHeadline : fallbackHeadline),
         matchSummary:
           editorial.matches[matchId]?.summary ??
-          (narrativeUsable ? narrative!.matchSummary : fallbackSummary),
+          (narrativeUsable && narrative!.matchSummary.trim().length >= 80
+            ? narrative!.matchSummary
+            : fallbackSummary),
         bouts: boutRecaps,
         narrationStatus,
       };
