@@ -12,6 +12,7 @@ import { generateSf6Tournaments } from "./generate-sf6-tournaments";
 async function main() {
   const args = process.argv.slice(2);
   const force = args.includes("--force");
+  const resultsOnly = args.includes("--results-only");
   const commit = args.includes("--commit");
   const push = args.includes("--push");
 
@@ -32,7 +33,11 @@ async function main() {
     }
     // 無料枠の日次上限で残った動画解析を、結果更新が無い日にも少しずつ進める
     console.log("=== No new match results, but video analysis is pending. Resuming match recaps only. ===");
-    await generateAndSaveMatchRecaps();
+    if (resultsOnly) {
+      console.log("=== Durable recap worker will resume pending analysis after the official result update. ===");
+    } else {
+      await generateAndSaveMatchRecaps();
+    }
   } else if (!updated && !force) {
     // start.gg のみ更新: 選手統計とシナリオ確率だけ再計算 (LLM解説は次回のSFL結果更新時に再生成)
     console.log("=== start.gg premier data updated. Recalculating player stats & scenarios only. ===");
@@ -51,7 +56,7 @@ async function main() {
     await fetchAndBuildCptData();
     calculateAndSaveScenarios(10000);
     await generateAndSaveNarratives();
-    await generateAndSaveMatchRecaps();
+    await generateAndSaveMatchRecaps({ resultsOnly });
     await generateSf6Tournaments();
   }
 

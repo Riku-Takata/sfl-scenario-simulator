@@ -34,6 +34,8 @@ const RunOutputSchema = z.object({
       z.object({
         topic: z.string(),
         evidence: z.string(),
+        startSec: z.number().optional(),
+        endSec: z.number().optional(),
       })
     )
     .default([]),
@@ -51,7 +53,7 @@ export function buildBoutPrompt(ctx: BoutContext): string {
 - 確実に確認できたことだけを書く。キャラクターの一般的な性能説明・推測・定型的な褒め言葉は禁止。
 - 「第Nゲームは誰が勝った」だけのトピックは不要（勝敗は別途把握済み）。
 - 網羅は不要。重要度の高い順に2〜4件。確信が持てなければ少なくてよい（0件も可）。
-- タイムスタンプは不要。
+- 各トピックに映像全体の先頭からの時刻を秒で付ける。短く特定できない場合だけ省略する。
 - 各トピックに根拠を付ける: "映像" / "実況" / "両方"。
 - 自己チェック: 各ゲームの勝者を映像から "A" / "B" / "不明" で答える。公式結果から推測して埋めないこと。
 
@@ -59,7 +61,7 @@ export function buildBoutPrompt(ctx: BoutContext): string {
 ゲーム間の待機画面・リプレイ・解説席カット・インタビューは無視する。
 
 JSONのみで出力:
-{"gameWinnersSeen":["A|B|不明"],"topics":[{"topic":"一文で具体的に（選手名を主語に）","evidence":"映像|実況|両方"}]}`;
+{"gameWinnersSeen":["A|B|不明"],"topics":[{"topic":"一文で具体的に（選手名を主語に）","evidence":"映像|実況|両方","startSec":動画全体の先頭からの秒数,"endSec":動画全体の先頭からの秒数}]}`;
 }
 
 /** 映像から読んだゲーム勝者が公式ログと矛盾しないか。不明は Bout のゲーム数の1/3まで許容。 */
@@ -93,7 +95,9 @@ function normalizeEvidence(e: string): "映像" | "実況" | "両方" {
 }
 
 export function passedRuns(facts: BoutVideoFacts): BoutVideoRun[] {
-  return facts.runs.filter((r) => r.gatePassed);
+  const byModel = new Map<string, BoutVideoRun>();
+  for (const run of facts.runs) if (run.gatePassed && !byModel.has(run.model)) byModel.set(run.model, run);
+  return [...byModel.values()];
 }
 
 /** 合格済みの解析と別のモデルを優先し、2回の解析を独立させる。 */
@@ -172,7 +176,14 @@ export async function advanceBoutAnalysis(options: {
         gatePassed: gate.passed,
         gateReason: gate.reason,
         topics: parsed.topics
-          .map((t) => ({ topic: t.topic.trim(), evidence: normalizeEvidence(t.evidence) }))
+          .map((t) => ({
+            topic: t.topic.trim(), evidence: normalizeEvidence(t.evidence),
+            ...(Number.isFinite(t.startSec) ? { startSec: t.startSec } : {}),
+            ...(Number.isFinite(t.endSec) ? { endSec: t.endSec } : {}),
+          }))
+          .filter((t) => (t.startSec === undefined || (t.startSec >= facts.startSec && t.startSec <= facts.endSec)) &&
+            (t.endSec === undefined || (t.endSec >= facts.startSec && t.endSec <= facts.endSec)) &&
+            (t.startSec === undefined || t.endSec === undefined || t.endSec >= t.startSec))
           .filter((t) => t.topic.length > 0),
       };
     } catch (err) {

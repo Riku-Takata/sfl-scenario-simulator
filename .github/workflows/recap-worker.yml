@@ -1,0 +1,71 @@
+name: SFL Recap Evidence & Article Worker
+
+on:
+  workflow_run:
+    workflows: ["SFL 2026 Auto Result Fetch & Scenario Update"]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+    inputs:
+      section:
+        description: "Optional section slug to resume"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sfl-recap-worker
+  cancel-in-progress: false
+
+jobs:
+  advance-recap-jobs:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Advance one durable recap section
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_VIDEO_MODELS: ${{ vars.GEMINI_VIDEO_MODELS }}
+          GEMINI_TEXT_MODELS: ${{ vars.GEMINI_TEXT_MODELS }}
+          GEMINI_VIDEO_MAX_CALLS: "24"
+          GEMINI_VIDEO_MAX_SECONDS: "25200"
+          GEMINI_VIDEO_TIME_BUDGET_MIN: "20"
+          RECAP_WORKER_SECTION: ${{ inputs.section }}
+        run: |
+          if [ -n "$RECAP_WORKER_SECTION" ]; then
+            npm run recap-worker -- --section="$RECAP_WORKER_SECTION"
+          else
+            npm run recap-worker
+          fi
+
+      - name: Commit durable evidence, articles, and job state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/recap-evidence.json src/data/recap-articles.json src/data/recap-jobs.json src/data/video-facts.json src/data/match-recaps.json
+          if git diff --cached --quiet; then
+            echo "No recap state changed."
+          else
+            git commit -m "chore(recap): advance evidence-backed article jobs"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

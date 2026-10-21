@@ -63,6 +63,12 @@ import {
   BucklerPlayerProfileSchema,
   BucklerProfilesDataSchema,
   BucklerDiaDataSchema,
+  RecapEvidenceSchema,
+  RecapEvidenceDataSchema,
+  RecapArticleSchema,
+  RecapArticlesDataSchema,
+  RecapJobSchema,
+  RecapJobsDataSchema,
 } from "./schema";
 
 export type DivisionId = z.infer<typeof DivisionIdSchema>;
@@ -128,6 +134,12 @@ export type BoutTag = z.infer<typeof BoutTagSchema>;
 export type BoutTagId = z.infer<typeof BoutTagIdSchema>;
 export type VisualRun = z.infer<typeof VisualRunSchema>;
 export type BoutVisualFacts = z.infer<typeof BoutVisualFactsSchema>;
+export type RecapEvidence = z.infer<typeof RecapEvidenceSchema>;
+export type RecapEvidenceData = z.infer<typeof RecapEvidenceDataSchema>;
+export type RecapArticle = z.infer<typeof RecapArticleSchema>;
+export type RecapArticlesData = z.infer<typeof RecapArticlesDataSchema>;
+export type RecapJob = z.infer<typeof RecapJobSchema>;
+export type RecapJobsData = z.infer<typeof RecapJobsDataSchema>;
 
 export type StartggIdentitiesData = z.infer<typeof StartggIdentitiesDataSchema>;
 export type PremierCategory = z.infer<typeof PremierCategorySchema>;

@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
+    # 結果の速報更新とworker起動を15分ごとに確認する
+    - cron: "7,22,37,52 * * * *"
     # SFL 2026 放送当夜 (火・金 22:00 / 23:00 / 23:55 JST = UTC 13:00 / 14:00 / 14:55)
     - cron: "0 13,14 * * 2,5"
     - cron: "55 14 * * 2,5"
@@ -52,9 +54,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            npm run pipeline:force
+            npm run pipeline:force -- --results-only
           else
-            npm run pipeline
+            npm run pipeline -- --results-only
           fi
 
       - name: Run Zod & Simulator Unit Tests

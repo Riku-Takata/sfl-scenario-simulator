@@ -36,9 +36,16 @@ import {
 import { parseModelList } from "./recap/gemini-client";
 import {
   advanceBoutAnalysis,
+  budgetAllows,
   type BoutContext,
   type VideoBudget,
 } from "./recap/bout-video-facts";
+import { buildBoutEvidence, verifyEvidenceCandidate } from "./recap/evidence-ledger";
+import { evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
+import {
+  currentPassedArticle, currentPassedMatchArticle, latestArticle, latestMatchArticle, evidenceForBout, loadRecapArticles, loadRecapEvidence, loadRecapJobs, recapInputHash,
+  putArticle, saveRecapArticles, saveRecapEvidence, saveRecapJobs, upsertJob, upsertMatchJob,
+} from "./recap/recap-state";
 import {
   buildOfficialDataAnalysis,
   dedupeAnalyses,
@@ -194,12 +201,17 @@ function loadVideoFacts(): VideoFactsData {
 }
 
 function saveVideoFacts(data: VideoFactsData): void {
-  data.updatedAt = new Date().toISOString();
-  fs.writeFileSync(
-    VIDEO_FACTS_FILE,
-    JSON.stringify(VideoFactsDataSchema.parse(data), null, 2),
-    "utf8"
-  );
+  const parsed = VideoFactsDataSchema.parse(data);
+  if (fs.existsSync(VIDEO_FACTS_FILE)) {
+    const prior = VideoFactsDataSchema.parse(JSON.parse(fs.readFileSync(VIDEO_FACTS_FILE, "utf8")));
+    const content = (value: VideoFactsData) => {
+      const { updatedAt: _updatedAt, ...rest } = value;
+      return JSON.stringify(rest);
+    };
+    if (content(parsed) === content(prior)) return;
+  }
+  parsed.updatedAt = new Date().toISOString();
+  fs.writeFileSync(VIDEO_FACTS_FILE, JSON.stringify(parsed, null, 2), "utf8");
 }
 
 function loadEditorial(): EditorialRecapsData {
@@ -289,11 +301,17 @@ export function hasPendingVideoWork(): boolean {
       });
     });
   });
-  return pendingBout || pendingVisual || pendingNarration || unseenSection || missingBoutWindow;
+  const now = Date.now();
+  const queued = Object.values(loadRecapJobs().jobs).some((job) =>
+    ["queued", "waiting_video", "waiting_window", "extracting", "verifying", "writing", "retry_wait"].includes(job.stage) &&
+    (!job.nextAttemptAt || Date.parse(job.nextAttemptAt) <= now) &&
+    (!job.leaseUntil || Date.parse(job.leaseUntil) <= now)
+  );
+  return pendingBout || pendingVisual || pendingNarration || unseenSection || missingBoutWindow || queued;
 }
 
 export async function generateAndSaveMatchRecaps(
-  options: { onlySection?: string } = {}
+  options: { onlySection?: string; resultsOnly?: boolean } = {}
 ): Promise<MatchRecapsData> {
   console.log("=== SFL 2026 Match Recaps (Gemini video facts) Generator Start ===");
 
@@ -323,6 +341,9 @@ export async function generateAndSaveMatchRecaps(
 
   const videoFacts = loadVideoFacts();
   const editorial = loadEditorial();
+  const evidenceData = loadRecapEvidence();
+  const articlesData = loadRecapArticles();
+  const jobsData = loadRecapJobs();
 
   // 節の配信アーカイブ: 手動登録 > 公式チャンネルから自動検出 > 以前に検出してキャッシュ済み
   const detectedVideos = await fetchSectionVideos(SFL_CURRENT_SEASON);
@@ -371,7 +392,7 @@ export async function generateAndSaveMatchRecaps(
     }
 
     // 最新節の詳細
-    const latestEntry = completed.at(-1)!;
+    const latestEntry = (options.onlySection && completed.find((entry) => entry.post_name === options.onlySection)) || completed.at(-1)!;
     const slug = latestEntry.post_name;
     const sec = latestEntry.fields.section;
     const videoId =
@@ -380,8 +401,7 @@ export async function generateAndSaveMatchRecaps(
       ? `https://www.youtube.com/watch?v=${videoId}`
       : "https://www.youtube.com/@CapcomFightersJP";
     const divisionLabel = `Division ${div.toUpperCase()}`;
-    const videoWorkAllowed =
-      Boolean(apiKey && videoId) && (!options.onlySection || options.onlySection === slug);
+    const videoWorkAllowed = !options.resultsOnly && Boolean(apiKey && videoId) && (!options.onlySection || options.onlySection === slug);
 
     // 公式チャプター（キャッシュ優先）
     let chapters = videoFacts.videos[slug]?.chapters ?? [];
@@ -453,6 +473,45 @@ export async function generateAndSaveMatchRecaps(
           saveVideoFacts(videoFacts); // 途中で止まっても解析済み分は残す
         }
 
+        const officialInput = { ctx, games, videoId };
+        const priorJob = jobsData.jobs[ctx.boutId];
+        if (priorJob && priorJob.inputHash !== recapInputHash(officialInput)) {
+          for (const article of Object.values(articlesData.articles)) {
+            if (article.boutId === ctx.boutId) delete articlesData.articles[article.articleId];
+          }
+          for (const item of Object.values(evidenceData.evidence)) {
+            if (item.boutId === ctx.boutId) {
+              item.status = "disputed";
+              item.verifierVersion = "invalidated-by-official-update";
+            }
+          }
+          for (const article of Object.values(articlesData.articles)) {
+            if (article.matchId === matchId && !article.boutId) delete articlesData.articles[article.articleId];
+          }
+        }
+        const boutEvidence = buildBoutEvidence({ sectionId: slug, matchId, boutId: ctx.boutId, videoFacts: facts, ctx, games });
+        for (const item of boutEvidence) {
+          const prior = evidenceData.evidence[item.id];
+          const targetedDecision = prior?.verifierVersion === "targeted-video-review-v1";
+          evidenceData.evidence[item.id] = prior && (prior.status === "verified" || targetedDecision)
+            ? prior
+            : { ...item, createdAt: prior?.createdAt ?? item.createdAt };
+        }
+        if (videoWorkAllowed && facts && budgetAllows(budget, 0)) {
+          const candidates = boutEvidence.filter((item) => item.status === "candidate" &&
+            item.verifierVersion !== "targeted-video-review-v1" && item.startSec !== undefined && item.endSec !== undefined)
+            .slice(0, 2);
+          for (const candidate of candidates) {
+            if (!budgetAllows(budget, candidate.endSec! - candidate.startSec!)) break;
+            budget.calls += 1;
+            budget.videoSeconds += candidate.endSec! - candidate.startSec!;
+            const verified = await verifyEvidenceCandidate({ apiKey, models: videoModels, candidate });
+            evidenceData.evidence[verified.id] = verified;
+            saveRecapEvidence(evidenceData);
+          }
+        }
+        const verifiedBoutEvidence = evidenceForBout(evidenceData, ctx.boutId);
+
         // 映像からの画面上の事実（決着方法・PERFECT・バーンアウト・タグ）は編集解説の有無に関わらず抽出
         let visual = videoFacts.visual[ctx.boutId];
         if (!visual && videoId && window) {
@@ -486,7 +545,7 @@ export async function generateAndSaveMatchRecaps(
                 ? "complete"
                 : "unavailable";
 
-        boutInputs.push({ ctx, games, facts });
+        boutInputs.push({ ctx, games, facts, evidence: verifiedBoutEvidence });
         boutRecaps.push({
           status: hp.status,
           statusName: hp.status_name,
@@ -521,12 +580,31 @@ export async function generateAndSaveMatchRecaps(
         winnerTeam: matchWinnerTeam,
         isTiebreaker,
         bouts: boutInputs,
+        qualityFeedback: Object.fromEntries([
+          ...boutInputs.flatMap((input) => {
+          const previous = latestArticle(articlesData, input.ctx.boutId);
+          const job = jobsData.jobs[input.ctx.boutId];
+          return previous?.status === "insufficient" ? [[input.ctx.boutId, [...previous.quality.reasons, "retry " + (job?.attempts ?? 0)]]] : [];
+          }),
+          ...(() => {
+            const previous = latestMatchArticle(articlesData, matchId);
+            const job = jobsData.jobs[matchId + ":article"];
+            return previous?.status === "insufficient"
+              ? [[matchId + ":article", [...previous.quality.reasons, "retry " + (job?.attempts ?? 0)]]]
+              : [];
+          })(),
+        ]),
       };
 
       // 全Boutの動画解析が決着（complete/failed/区間なし）したら解説を1回だけ生成
       const allSettled = boutInputs.every((b) => !b.facts || b.facts.status !== "pending");
       const anyComplete = boutInputs.some((b) => b.facts?.status === "complete");
       const inputHash = narrationInputHash(narrationInput);
+      const matchSourceHash = recapInputHash({
+        matchId, awayTeam: awayName, homeTeam: homeName,
+        awayPoint: result.total.point.away, homePoint: result.total.point.home,
+        bouts: boutInputs.map((input) => ({ ctx: input.ctx, games: input.games, videoId })),
+      });
       let narrative = videoFacts.narratives[matchId];
       // 全Boutに編集解説がある試合は自動生成しない（無料枠の節約）
       const needsNarration = boutInputs.some((b) => !editorial.bouts[b.ctx.boutId]);
@@ -536,7 +614,7 @@ export async function generateAndSaveMatchRecaps(
       };
       if (!needsNarration) markPending(false);
       if (
-        apiKey &&
+        !options.resultsOnly && apiKey &&
         needsNarration &&
         allSettled &&
         anyComplete &&
@@ -561,20 +639,78 @@ export async function generateAndSaveMatchRecaps(
       }
       const narrativeUsable = narrative && narrative.inputHash === inputHash;
       // 解説文の進み具合: 動画がある試合で、解析待ち・解説の持ち越し中なら「作成中」
-      const narrativeCoversAllBouts = narrativeUsable && boutInputs.every((input) => {
-        if (editorial.bouts[input.ctx.boutId]) return true;
-        const boutNarrative = narrative!.bouts.find((bout) => bout.boutId === input.ctx.boutId);
-        return input.facts?.status === "complete" && Boolean(
-          boutNarrative && (boutNarrative.keyPoints.length > 0 || boutNarrative.summary.trim().length >= 60)
-        );
+      const articleByBout = new Map<string, ReturnType<typeof evaluateBoutArticle>>();
+      if (narrativeUsable) {
+        for (const input of boutInputs) {
+          if (editorial.bouts[input.ctx.boutId]) continue;
+          const boutNarrative = narrative!.bouts.find((bout) => bout.boutId === input.ctx.boutId);
+          if (!boutNarrative) continue;
+          const keyPoints = boutNarrative.keyPoints.map((point) => typeof point === "string"
+            ? { text: point, evidenceIds: [] }
+            : point);
+          const article = evaluateBoutArticle({
+            matchId, boutId: input.ctx.boutId, summary: boutNarrative.summary,
+            summaryEvidenceIds: boutNarrative.summaryEvidenceIds ?? [], keyPoints,
+            evidence: evidenceForBout(evidenceData, input.ctx.boutId), games: input.games,
+          });
+          putArticle(articlesData, article);
+          articleByBout.set(input.ctx.boutId, article);
+        }
+      }
+      const passedBoutArticles = boutInputs.map((input) => {
+        const candidate = articleByBout.get(input.ctx.boutId);
+        return candidate?.status === "passed" ? candidate : currentPassedArticle(articlesData, input.ctx.boutId);
+      }).filter((article) => article !== undefined);
+      const matchEvidence = Object.values(evidenceData.evidence).filter((item) => item.matchId === matchId);
+      const matchArticle = narrativeUsable
+        ? evaluateMatchArticle({
+            matchId, headline: narrative!.matchHeadline, summary: narrative!.matchSummary,
+            evidenceIds: narrative!.matchEvidenceIds ?? [], boutArticles: passedBoutArticles,
+            evidence: matchEvidence,
+          })
+        : undefined;
+      if (matchArticle) putArticle(articlesData, matchArticle);
+      const publishedMatchArticle = matchArticle?.status === "passed" ? matchArticle : currentPassedMatchArticle(articlesData, matchId);
+      const editorialCoversBouts = boutInputs.every((input) => Boolean(editorial.bouts[input.ctx.boutId]));
+      const videoPending = boutInputs.some((input) => input.facts?.status === "pending" || (videoId && !findBoutWindow(chapters, num,
+        input.ctx.statusName.includes("延長") ? 3 : input.ctx.statusName.includes("大将") ? 2 : input.ctx.statusName.includes("中堅") ? 1 : 0)));
+      upsertMatchJob({
+        jobs: jobsData, sectionId: slug, matchId, inputHash: matchSourceHash,
+        hasVideo: Boolean(videoId), videoPending,
+        apiAvailable: Boolean(apiKey),
+        article: matchArticle, editorial: Boolean(editorial.matches[matchId]) || editorialCoversBouts,
+        someBoutPassed: passedBoutArticles.length > 0,
       });
+      for (let idx = 0; idx < boutInputs.length; idx++) {
+        const input = boutInputs[idx];
+        const recap = boutRecaps[idx];
+        const window = findBoutWindow(chapters, num, input.ctx.boutId.endsWith("-b3") ? 3 : input.ctx.boutId.endsWith("-b2") ? 2 : input.ctx.boutId.endsWith("-b1") ? 1 : 0);
+        const candidateDraft = articleByBout.get(input.ctx.boutId);
+        const candidate = candidateDraft?.status === "passed" ? candidateDraft : currentPassedArticle(articlesData, input.ctx.boutId);
+        upsertJob({
+          jobs: jobsData, sectionId: slug, matchId, boutId: input.ctx.boutId,
+          officialInput: { ctx: input.ctx, games: input.games, videoId },
+          hasVideo: Boolean(videoId), hasWindow: Boolean(window), videoStatus: recap.videoStatus,
+          apiAvailable: Boolean(apiKey),
+          article: candidate, editorial: Boolean(editorial.bouts[input.ctx.boutId]),
+        });
+        const recapJob = jobsData.jobs[input.ctx.boutId];
+        recap.videoStatus = editorial.bouts[input.ctx.boutId] || candidate?.status === "passed"
+          ? "complete"
+          : recapJob?.stage === "needs_review" || recapJob?.stage === "paused"
+            ? "unavailable" : "pending";
+      }
+      const narrativeCoversAllBouts = Boolean(publishedMatchArticle?.status === "passed" && passedBoutArticles.length === boutInputs.length);
+      const matchJob = jobsData.jobs[matchId + ":article"];
       const narrationStatus: "complete" | "pending" | "unavailable" =
         editorial.matches[matchId] || narrativeCoversAllBouts || !needsNarration
           ? "complete"
-          : videoId && (chapters.length === 0 || !allSettled || anyComplete ||
-              videoFacts.pendingNarrations.includes(matchId) || boutRecaps.some((bout) => bout.videoStatus === "pending"))
-            ? "pending"
-            : "unavailable";
+          : matchJob?.stage === "needs_review" || matchJob?.stage === "paused"
+            ? "unavailable"
+            : videoId && (options.resultsOnly || matchJob?.stage !== "completed" || !allSettled ||
+                videoFacts.pendingNarrations.includes(matchId) || boutRecaps.some((bout) => bout.videoStatus === "pending"))
+              ? "pending"
+              : "unavailable";
 
       // 動画由来の解説は、2回の解析で一致した要点が1件以上あるBoutだけに採用
       boutRecaps.forEach((recap, idx) => {
@@ -583,12 +719,13 @@ export async function generateAndSaveMatchRecaps(
           ? narrative!.bouts.find((b) => b.boutId === input.ctx.boutId)
           : undefined;
         // 映像観測を使った生成文は公式ログ整合性を通したうえで、内容のある文だけ採用する。
-        if (input.facts?.status === "complete" && nb &&
-          (nb.keyPoints.length > 0 || nb.summary.trim().length >= 60)) {
+        const articleDraft = articleByBout.get(input.ctx.boutId);
+        const article = articleDraft?.status === "passed" ? articleDraft : currentPassedArticle(articlesData, input.ctx.boutId);
+        if (article?.status === "passed" && nb) {
           recap.analysis = {
             source: "gemini-video",
-            summary: nb.summary.trim() || recap.analysis.summary,
-            keyPoints: nb.keyPoints,
+            summary: article.summary,
+            keyPoints: article.keyPoints.map((point) => point.text),
           };
         }
         // 編集解説があれば最優先
@@ -641,13 +778,11 @@ export async function generateAndSaveMatchRecaps(
         winner: result.winner,
         isTiebreaker,
         matchHeadline:
-          editorial.matches[matchId]?.headline ??
-          (narrativeUsable ? narrative!.matchHeadline : fallbackHeadline),
+        editorial.matches[matchId]?.headline ??
+          (publishedMatchArticle?.status === "passed" ? publishedMatchArticle.headline ?? fallbackHeadline : fallbackHeadline),
         matchSummary:
           editorial.matches[matchId]?.summary ??
-          (narrativeUsable && narrative!.matchSummary.trim().length >= 80
-            ? narrative!.matchSummary
-            : fallbackSummary),
+          (publishedMatchArticle?.status === "passed" ? publishedMatchArticle.summary : fallbackSummary),
         bouts: boutRecaps,
         narrationStatus,
       };
@@ -669,9 +804,30 @@ export async function generateAndSaveMatchRecaps(
           : "deterministic-rules";
 
   saveVideoFacts(videoFacts);
+  saveRecapEvidence(evidenceData);
+  saveRecapArticles(articlesData);
+  saveRecapJobs(jobsData);
   const validated = MatchRecapsDataSchema.parse(resultRecaps);
-  fs.writeFileSync(RECAPS_FILE, JSON.stringify(validated, null, 2), "utf8");
-  console.log(`[Step 4b] Match recaps saved: ${RECAPS_FILE}`);
+  const targetIsVisibleLatest = !options.onlySection || [...completedDivSections.s, ...completedDivSections.f]
+    .filter((entry) => [completedDivSections.s.at(-1)?.post_name, completedDivSections.f.at(-1)?.post_name].includes(entry.post_name))
+    .some((entry) => entry.post_name === options.onlySection);
+  if (targetIsVisibleLatest) {
+    let changed = true;
+    if (fs.existsSync(RECAPS_FILE)) {
+      const previous = MatchRecapsDataSchema.parse(JSON.parse(fs.readFileSync(RECAPS_FILE, "utf8")));
+      const content = (value: MatchRecapsData) => {
+        const { updatedAt: _updatedAt, ...rest } = value;
+        return JSON.stringify(rest);
+      };
+      changed = content(previous) !== content(validated);
+    }
+    if (changed) {
+      fs.writeFileSync(RECAPS_FILE, JSON.stringify(validated, null, 2), "utf8");
+      console.log(`[Step 4b] Match recaps saved: ${RECAPS_FILE}`);
+    } else console.log("[Step 4b] Visible recap snapshot is unchanged.");
+  } else {
+    console.log(`[Step 4b] Processed ${options.onlySection} in the durable job ledger; kept current visible recap snapshot.`);
+  }
   console.log(
     `[Step 4b] Mode: ${validated.generatorMode} (editorial ${editorialCount}, video facts ${videoCount} / ${allAnalyses.length} bouts), video calls this run: ${budget.calls}, video seconds: ${budget.videoSeconds}`
   );
@@ -681,7 +837,8 @@ export async function generateAndSaveMatchRecaps(
 // 直接実行時のエントリポイント: tsx scripts/4-generate-match-recaps.ts [--only=div-s-sec4]
 if (process.argv[1] && process.argv[1].endsWith("4-generate-match-recaps.ts")) {
   const only = process.argv.find((a) => a.startsWith("--only="))?.slice("--only=".length);
-  generateAndSaveMatchRecaps({ onlySection: only }).catch((err) => {
+  const resultsOnly = process.argv.includes("--results-only");
+  generateAndSaveMatchRecaps({ onlySection: only, resultsOnly }).catch((err) => {
     console.error("Match recap generation failed:", err);
     process.exit(1);
   });

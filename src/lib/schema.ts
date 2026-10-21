@@ -607,6 +607,8 @@ export const VideoChapterSchema = z.object({
 export const BoutVideoTopicSchema = z.object({
   topic: z.string(),
   evidence: z.enum(["映像", "実況", "両方"]),
+  startSec: z.number().optional(),
+  endSec: z.number().optional(),
 });
 
 export const BoutVideoRunSchema = z.object({
@@ -632,11 +634,13 @@ export const MatchNarrativeSchema = z.object({
   generatedAt: z.string(),
   matchHeadline: z.string(),
   matchSummary: z.string(),
+  matchEvidenceIds: z.array(z.string()).default([]),
   bouts: z.array(
     z.object({
       boutId: z.string(),
       summary: z.string(),
-      keyPoints: z.array(z.string()),
+      summaryEvidenceIds: z.array(z.string()).default([]),
+      keyPoints: z.array(z.union([z.string(), z.object({ text: z.string(), evidenceIds: z.array(z.string()) })])),
     })
   ),
 });
@@ -702,6 +706,87 @@ export const EditorialRecapsDataSchema = z.object({
       summary: z.string(),
     })
   ),
+});
+
+// 自動解説用の根拠台帳。記事の公開データとは分離し、dist には含めない。
+export const RecapEvidenceSchema = z.object({
+  id: z.string(),
+  sectionId: z.string(),
+  matchId: z.string(),
+  boutId: z.string().optional(),
+  kind: z.enum(["official", "visual", "commentary", "derived"]),
+  videoId: z.string().optional(),
+  startSec: z.number().optional(),
+  endSec: z.number().optional(),
+  gameIndex: z.number().int().nonnegative().optional(),
+  roundIndex: z.number().int().nonnegative().optional(),
+  playerIds: z.array(z.string()),
+  observation: z.string(),
+  officialRefs: z.array(z.string()),
+  status: z.enum(["candidate", "verified", "rejected", "disputed"]),
+  extractorVersion: z.string(),
+  verifierVersion: z.string().optional(),
+  sourceModels: z.array(z.string()).default([]),
+  createdAt: z.string(),
+});
+
+export const RecapEvidenceDataSchema = z.object({
+  schemaVersion: z.literal(1),
+  updatedAt: z.string(),
+  evidence: z.record(z.string(), RecapEvidenceSchema),
+});
+
+export const RecapArticleSchema = z.object({
+  articleId: z.string(),
+  matchId: z.string(),
+  boutId: z.string().optional(),
+  revision: z.string(),
+  status: z.enum(["candidate", "passed", "insufficient", "invalid"]),
+  headline: z.string().optional(),
+  summary: z.string(),
+  summaryEvidenceIds: z.array(z.string()).default([]),
+  keyPoints: z.array(z.object({ text: z.string(), evidenceIds: z.array(z.string()) })),
+  evidenceIds: z.array(z.string()),
+  quality: z.object({
+    score: z.number().min(0).max(1),
+    checks: z.record(z.string(), z.boolean()),
+    reasons: z.array(z.string()),
+    evaluatedAt: z.string(),
+    evaluatorVersion: z.string(),
+  }),
+  createdAt: z.string(),
+});
+
+export const RecapArticlesDataSchema = z.object({
+  schemaVersion: z.literal(1),
+  updatedAt: z.string(),
+  articles: z.record(z.string(), RecapArticleSchema),
+});
+
+export const RecapJobSchema = z.object({
+  jobId: z.string(),
+  sectionId: z.string(),
+  matchId: z.string(),
+  boutId: z.string().optional(),
+  stage: z.enum(["queued", "waiting_video", "waiting_window", "extracting", "verifying", "writing", "reviewing", "retry_wait", "paused", "needs_review", "completed"]),
+  quality: z.enum(["not_evaluated", "insufficient", "passed", "invalid"]),
+  publication: z.enum(["results_only", "partial", "detailed"]),
+  inputHash: z.string(),
+  pipelineVersion: z.string(),
+  attempts: z.number().int().nonnegative(),
+  nextAttemptAt: z.string().optional(),
+  leaseUntil: z.string().optional(),
+  failureReason: z.string().optional(),
+  evidenceIds: z.array(z.string()).default([]),
+  publishedRevision: z.string().optional(),
+  candidateRevision: z.string().optional(),
+  updatedAt: z.string(),
+});
+
+export const RecapJobsDataSchema = z.object({
+  schemaVersion: z.literal(1),
+  updatedAt: z.string(),
+  jobs: z.record(z.string(), RecapJobSchema),
 });
 
 // ============================================================================
