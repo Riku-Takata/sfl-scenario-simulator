@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T19:56:30.619Z",
+  "updatedAt": "2026-10-21T15:41:14.457Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -494,8 +494,9 @@
       "videoId": "WfaUMDDZ6Es",
       "startSec": 2632,
       "endSec": 3289,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:05:44.782Z",
@@ -562,14 +563,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m1-b1": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 3486,
       "endSec": 4192,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:08:16.221Z",
@@ -637,14 +640,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m1-b2": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 4399,
       "endSec": 5311,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:09:15.700Z",
@@ -753,14 +758,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m2-b0": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 6887,
       "endSec": 7258,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:10:20.810Z",
@@ -805,14 +812,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m2-b1": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 7470,
       "endSec": 7920,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:11:17.437Z",
@@ -857,14 +866,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m2-b2": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 8110,
       "endSec": 8664,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:11:54.728Z",
@@ -932,14 +943,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m2-b3": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 8844,
       "endSec": 9195,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:14:06.603Z",
@@ -984,14 +997,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m3-b0": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 10812,
       "endSec": 11403,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:15:48.544Z",
@@ -1038,14 +1053,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m3-b1": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 11596,
       "endSec": 12163,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:18:04.671Z",
@@ -1090,14 +1107,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-s-sec4-m3-b2": {
       "videoId": "WfaUMDDZ6Es",
       "startSec": 12364,
       "endSec": 13314,
-      "status": "failed",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-19T18:22:34.472Z",
@@ -1198,13 +1217,15 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-f-sec3-m1-b0": {
       "videoId": "3X1zd27viu0",
       "startSec": 2663,
       "endSec": 3382,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m1-b1": {
@@ -1212,6 +1233,7 @@
       "startSec": 3580,
       "endSec": 3945,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m1-b2": {
@@ -1219,6 +1241,7 @@
       "startSec": 4189,
       "endSec": 4968,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m1-b3": {
@@ -1226,6 +1249,7 @@
       "startSec": 5124,
       "endSec": 5585,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m2-b0": {
@@ -1233,6 +1257,7 @@
       "startSec": 7127,
       "endSec": 7745,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m2-b1": {
@@ -1240,6 +1265,7 @@
       "startSec": 7949,
       "endSec": 8495,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m2-b2": {
@@ -1247,6 +1273,7 @@
       "startSec": 8747,
       "endSec": 9793,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m3-b0": {
@@ -1254,6 +1281,7 @@
       "startSec": 11257,
       "endSec": 11569,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m3-b1": {
@@ -1261,6 +1289,7 @@
       "startSec": 11791,
       "endSec": 12277,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec3-m3-b2": {
@@ -1268,14 +1297,16 @@
       "startSec": 12445,
       "endSec": 13326,
       "status": "pending",
+      "staleRuns": [],
       "runs": []
     },
     "div-f-sec4-m1-b0": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 2612,
       "endSec": 3196,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.8-flash",
           "analyzedAt": "2026-10-20T14:40:01.407Z",
@@ -1376,14 +1407,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-f-sec4-m1-b1": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 3401,
       "endSec": 4064,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.6-flash",
           "analyzedAt": "2026-10-20T14:54:11.421Z",
@@ -1430,14 +1463,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-f-sec4-m1-b2": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 4253,
       "endSec": 5075,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.8-flash",
           "analyzedAt": "2026-10-20T15:05:27.903Z",
@@ -1492,14 +1527,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-f-sec4-m2-b0": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 6607,
       "endSec": 7040,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-20T15:20:51.858Z",
@@ -1540,14 +1577,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-f-sec4-m2-b1": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 7268,
       "endSec": 7712,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-20T15:27:04.128Z",
@@ -1592,14 +1631,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-f-sec4-m2-b2": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 7994,
       "endSec": 8697,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-20T15:54:39.528Z",
@@ -1646,14 +1687,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-f-sec4-m3-b0": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 10753,
       "endSec": 11310,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.1-flash-lite",
           "analyzedAt": "2026-10-20T16:02:20.345Z",
@@ -1704,14 +1747,16 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
     },
     "div-f-sec4-m3-b2": {
       "videoId": "OvwqJkBiJqw",
       "startSec": 12292,
       "endSec": 13249,
-      "status": "complete",
-      "runs": [
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [
         {
           "model": "gemini-3.5-flash-lite",
           "analyzedAt": "2026-10-20T16:27:54.693Z",
@@ -1782,7 +1827,26 @@
             }
           ]
         }
-      ]
+      ],
+      "runs": []
+    },
+    "div-f-sec4-m2-b3": {
+      "videoId": "OvwqJkBiJqw",
+      "startSec": 8911,
+      "endSec": 9226,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec4-m3-b1": {
+      "videoId": "OvwqJkBiJqw",
+      "startSec": 11310,
+      "endSec": 12077,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
     }
   },
   "narratives": {
@@ -1792,10 +1856,12 @@
       "generatedAt": "2026-10-20T07:07:09.275Z",
       "matchHeadline": "ヤナイと鶏めしが連勝しIBUSHIGINが逆転勝利",
       "matchSummary": "先鋒戦で広島 TEAM iXAのACQUAが先制するも、中堅戦でFUKUSHIMA IBUSHIGINのヤナイがCAを絡めた攻めで逆転勝利。大将戦では鶏めしがフルセットの接戦を3-2で制し、FUKUSHIMA IBUSHIGINが10-30で勝利を収めた。",
+      "matchEvidenceIds": [],
       "bouts": [
         {
           "boutId": "div-s-sec4-m1-b0",
           "summary": "ACQUAが2-1で2BASSAに勝利し、広島 TEAM iXAが先鋒戦を制した。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "ACQUAはジャストパリィを成功させて主導権を維持した。"
           ]
@@ -1803,6 +1869,7 @@
         {
           "boutId": "div-s-sec4-m1-b1",
           "summary": "",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "ヤナイはCA（クリティカルアーツ）を絡めたコンボを決め、逆転に繋げた。"
           ]
@@ -1810,6 +1877,7 @@
         {
           "boutId": "div-s-sec4-m1-b2",
           "summary": "大将戦はフルセットの激戦となり、鶏めしが3-2でひびきに勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         }
       ]
@@ -1820,15 +1888,18 @@
       "generatedAt": "2026-10-20T07:09:59.115Z",
       "matchHeadline": "Shutoの大将戦勝利から延長戦でどぐらが制しCRが逆転勝利",
       "matchSummary": "先鋒戦でもけ、中堅戦でりゅうきちが勝利しKADOKAWA FAV gamingがリードするも、大将戦でCrazy RaccoonのShutoが藤村を3-0で破り同点に追いつく。延長戦ではエレナ対決をどぐらが制し、Crazy Raccoonが30-20で勝利を収めた。",
+      "matchEvidenceIds": [],
       "bouts": [
         {
           "boutId": "div-s-sec4-m2-b0",
           "summary": "KADOKAWA FAV gamingのもけがCrazy Raccoonのボンちゃんを2-0で破り勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         },
         {
           "boutId": "div-s-sec4-m2-b1",
           "summary": "KADOKAWA FAV gamingのりゅうきちがかずのこに2-0で勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "りゅうきちはかずのこがバーンアウトした状況からSA3（CA）に繋げてラウンドを制した。"
           ]
@@ -1836,6 +1907,7 @@
         {
           "boutId": "div-s-sec4-m2-b2",
           "summary": "Crazy RaccoonのShutoが藤村を相手に3-0で勝利を収めた。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "Shutoは立ち回りで藤村のドライブゲージを削り、バーンアウトに追い込んだ。"
           ]
@@ -1843,6 +1915,7 @@
         {
           "boutId": "div-s-sec4-m2-b3",
           "summary": "Crazy Raccoonのどぐらがエレナ同士の同キャラ戦を制し、sakoに2-0で勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         }
       ]
@@ -1853,10 +1926,12 @@
       "generatedAt": "2026-10-20T07:14:22.346Z",
       "matchHeadline": "ZETAが完封勝利、大将戦でMenaRDがこばやんを撃破",
       "matchSummary": "ZETA DIVISION GeeklyがSaishunkan Sol 熊本を40-0で下した。先鋒戦でヤマグチがきんちょとのフルセットを制すと、中堅戦ではひぐちがまちゃぼーにストレート勝ち。大将戦でもMenaRDがこばやんを3-1で退け、ZETA DIVISION Geeklyが全勝を飾った。",
+      "matchEvidenceIds": [],
       "bouts": [
         {
           "boutId": "div-s-sec4-m3-b0",
           "summary": "ヤマグチがきんちょとのフルセットを2-1で制し、ZETA DIVISION Geeklyが先制した。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "第2ゲームにて、きんちょはクリティカルアーツを決めて勝利した。"
           ]
@@ -1864,11 +1939,13 @@
         {
           "boutId": "div-s-sec4-m3-b1",
           "summary": "ひぐちがまちゃぼーに2-0のストレートで勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         },
         {
           "boutId": "div-s-sec4-m3-b2",
           "summary": "MenaRDがこばやんに3-1で勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         }
       ]
@@ -1879,10 +1956,12 @@
       "generatedAt": "2026-10-20T15:59:13.424Z",
       "matchHeadline": "板橋ザンギエフとナウマンが勝利しDFMが逆転勝利",
       "matchSummary": "先鋒戦をYAS、中堅戦をふ～どが制してREJECTがリードするも、大将戦で板橋ザンギエフが勝利し試合は延長戦へ。延長戦でナウマンがウメハラを2-0で破り、DetonatioN FocusMeが30-20で勝利を収めた。",
+      "matchEvidenceIds": [],
       "bouts": [
         {
           "boutId": "div-f-sec4-m2-b0",
           "summary": "YASが竹内ジョンに2-0で勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "YASは波動拳による牽制で竹内ジョンのジェイミーの攻めを抑制した。"
           ]
@@ -1890,6 +1969,7 @@
         {
           "boutId": "div-f-sec4-m2-b1",
           "summary": "ふ～どがKEI.Bに2-0で勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "ふ～どは第1ゲームでCAをヒットさせてラウンドを制した。"
           ]
@@ -1897,11 +1977,13 @@
         {
           "boutId": "div-f-sec4-m2-b2",
           "summary": "板橋ザンギエフがひなおに3-0で勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         },
         {
           "boutId": "div-f-sec4-m2-b3",
           "summary": "ナウマンがウメハラに2-0で勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         }
       ]
@@ -1912,15 +1994,18 @@
       "generatedAt": "2026-10-20T16:21:55.402Z",
       "matchHeadline": "Jr.がフルセットをCAで制しRIDDLE ORDERが勝利",
       "matchSummary": "RIDDLE ORDERがGood 8 Squadを相手に勝利した。先鋒戦であでりい、中堅戦でひかるが連勝して王手をかける。大将戦ではJr.がカワノにフルセットまで迫られる激戦となったが、最終第5ゲーム第3ラウンドをCAで制して勝利を掴んだ。",
+      "matchEvidenceIds": [],
       "bouts": [
         {
           "boutId": "div-f-sec4-m1-b0",
           "summary": "あでりいがさはらとのエド同キャラ戦を2-1で制し、RIDDLE ORDERが先手を取った。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         },
         {
           "boutId": "div-f-sec4-m1-b1",
           "summary": "ひかるがガチくんとの接戦を2-1で制し、RIDDLE ORDERが連勝を飾った。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "第1ゲーム第2ラウンドで、ガチくんがSA2「イウサール」を起点にパーフェクトK.O.を達成した。"
           ]
@@ -1928,6 +2013,7 @@
         {
           "boutId": "div-f-sec4-m1-b2",
           "summary": "Jr.がカワノの追い上げを退けて3-2でフルセットを制し、大将戦で勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "最終第5ゲーム第3ラウンドで、Jr.がCAを決めてKOし勝利を収めた。"
           ]
@@ -1940,10 +2026,12 @@
       "generatedAt": "2026-10-20T19:56:30.616Z",
       "matchHeadline": "名古屋NTPOJAが30-10でVARRELに勝利",
       "matchSummary": "VARRELと名古屋NTPOJAの対戦は、先鋒戦でSeiya、大将戦でらおやむが勝利を収めた名古屋NTPOJAが30-10で試合を制した。VARRELは中堅戦でわびいちが勝利したものの及ばなかった。",
+      "matchEvidenceIds": [],
       "bouts": [
         {
           "boutId": "div-f-sec4-m3-b0",
           "summary": "Seiyaが水派との対戦を2-1で制して勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": [
             "Seiyaは第1ゲームおよび第3ゲームにおいて、水派の攻めに対空技を的確に合わせて迎撃した。",
             "Seiyaは第3ゲーム終盤にSA3（クリティカルアーツ）を決めて勝利した。"
@@ -1952,11 +2040,13 @@
         {
           "boutId": "div-f-sec4-m3-b1",
           "summary": "わびいちが大谷に2-0のストレートで勝利した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         },
         {
           "boutId": "div-f-sec4-m3-b2",
           "summary": "らおやむがときどを3-1で下し、大将戦を制した。",
+          "summaryEvidenceIds": [],
           "keyPoints": []
         }
       ]
@@ -7681,6 +7771,288 @@
               "side": "B"
             }
           ],
+          "matchedGames": [
+            1
+          ]
+        }
+      ]
+    },
+    "div-f-sec4-m2-b3": {
+      "videoId": "OvwqJkBiJqw",
+      "startSec": 8911,
+      "endSec": 9226,
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-21T15:34:22.764Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "SA3",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": true
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "projectile",
+              "side": "A"
+            },
+            {
+              "id": "corner",
+              "side": "B"
+            },
+            {
+              "id": "throw",
+              "side": "B"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            1
+          ]
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-21T15:36:49.203Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [],
+          "matchedGames": []
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-21T15:38:35.221Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [],
+          "matchedGames": []
+        }
+      ]
+    },
+    "div-f-sec4-m3-b1": {
+      "videoId": "OvwqJkBiJqw",
+      "startSec": 11310,
+      "endSec": 12077,
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-21T15:39:31.684Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A",
+                "B"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "drive_rush",
+              "side": "A"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            1
+          ]
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-21T15:40:20.945Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "DI",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "SA3",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A",
+                "B"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "SA3",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "DI",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A",
+                "B"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "drive_rush",
+              "side": "A"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            },
+            {
+              "id": "throw",
+              "side": "A"
+            },
+            {
+              "id": "throw",
+              "side": "B"
+            }
+          ],
+          "matchedGames": []
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-21T15:41:14.433Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "不明",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "不明",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "不明",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [],
           "matchedGames": [
             1
           ]

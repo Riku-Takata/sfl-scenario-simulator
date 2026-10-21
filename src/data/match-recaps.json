@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T09:47:28.220Z",
+  "updatedAt": "2026-10-21T15:31:43.068Z",
   "generatorMode": "editorial",
   "latestSection": {
     "s": 4,
@@ -57,6 +57,8 @@
             "games": [
               {
                 "winner": "away",
+                "homeChara": "juri",
+                "awayChara": "blanka",
                 "rounds": [
                   {
                     "winner": "away",
@@ -70,6 +72,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "juri",
+                "awayChara": "blanka",
                 "rounds": [
                   {
                     "winner": "away",
@@ -89,6 +93,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "juri",
+                "awayChara": "blanka",
                 "rounds": [
                   {
                     "winner": "home"
@@ -135,6 +141,8 @@
             "games": [
               {
                 "winner": "away",
+                "homeChara": "sagat",
+                "awayChara": "cammy",
                 "rounds": [
                   {
                     "winner": "away"
@@ -146,6 +154,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "sagat",
+                "awayChara": "cammy",
                 "rounds": [
                   {
                     "winner": "away",
@@ -165,6 +175,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "sagat",
+                "awayChara": "cammy",
                 "rounds": [
                   {
                     "winner": "away",
@@ -216,6 +228,8 @@
             "games": [
               {
                 "winner": "home",
+                "homeChara": "dhalsim",
+                "awayChara": "lily",
                 "rounds": [
                   {
                     "winner": "home",
@@ -229,6 +243,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "dhalsim",
+                "awayChara": "lily",
                 "rounds": [
                   {
                     "winner": "away",
@@ -245,6 +261,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "dhalsim",
+                "awayChara": "lily",
                 "rounds": [
                   {
                     "winner": "away"
@@ -256,6 +274,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "dhalsim",
+                "awayChara": "lily",
                 "rounds": [
                   {
                     "winner": "home",
@@ -268,6 +288,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "dhalsim",
+                "awayChara": "lily",
                 "rounds": [
                   {
                     "winner": "home"
@@ -333,6 +355,8 @@
             "games": [
               {
                 "winner": "home",
+                "homeChara": "mai",
+                "awayChara": "sagat",
                 "rounds": [
                   {
                     "winner": "home"
@@ -345,6 +369,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "mai",
+                "awayChara": "sagat",
                 "rounds": [
                   {
                     "winner": "away",
@@ -400,6 +426,8 @@
             "games": [
               {
                 "winner": "home",
+                "homeChara": "mai",
+                "awayChara": "cviper",
                 "rounds": [
                   {
                     "winner": "home",
@@ -419,6 +447,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "mai",
+                "awayChara": "cviper",
                 "rounds": [
                   {
                     "winner": "home"
@@ -462,6 +492,8 @@
             "games": [
               {
                 "winner": "away",
+                "homeChara": "cviper",
+                "awayChara": "ryu",
                 "rounds": [
                   {
                     "winner": "home",
@@ -483,6 +515,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "cviper",
+                "awayChara": "ryu",
                 "rounds": [
                   {
                     "winner": "away"
@@ -501,6 +535,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "cviper",
+                "awayChara": "ryu",
                 "rounds": [
                   {
                     "winner": "away"
@@ -546,6 +582,8 @@
             "games": [
               {
                 "winner": "away",
+                "homeChara": "elena",
+                "awayChara": "elena",
                 "rounds": [
                   {
                     "winner": "away",
@@ -559,6 +597,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "elena",
+                "awayChara": "elena",
                 "rounds": [
                   {
                     "winner": "away"
@@ -625,6 +665,8 @@
             "games": [
               {
                 "winner": "away",
+                "homeChara": "terry",
+                "awayChara": "mai",
                 "rounds": [
                   {
                     "winner": "away"
@@ -639,6 +681,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "terry",
+                "awayChara": "mai",
                 "rounds": [
                   {
                     "winner": "home"
@@ -650,6 +694,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "terry",
+                "awayChara": "mai",
                 "rounds": [
                   {
                     "winner": "away"
@@ -695,6 +741,8 @@
             "games": [
               {
                 "winner": "away",
+                "homeChara": "ryu",
+                "awayChara": "guile",
                 "rounds": [
                   {
                     "winner": "away",
@@ -711,6 +759,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "ryu",
+                "awayChara": "guile",
                 "rounds": [
                   {
                     "winner": "away"
@@ -758,6 +808,8 @@
             "games": [
               {
                 "winner": "away",
+                "homeChara": "zangief",
+                "awayChara": "luke",
                 "rounds": [
                   {
                     "winner": "away",
@@ -770,6 +822,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "zangief",
+                "awayChara": "luke",
                 "rounds": [
                   {
                     "winner": "away"
@@ -781,6 +835,8 @@
               },
               {
                 "winner": "home",
+                "homeChara": "zangief",
+                "awayChara": "luke",
                 "rounds": [
                   {
                     "winner": "home"
@@ -792,6 +848,8 @@
               },
               {
                 "winner": "away",
+                "homeChara": "zangief",
+                "awayChara": "luke",
                 "rounds": [
                   {
                     "winner": "away"
