@@ -1,6 +1,8 @@
 name: SFL 2026 Auto Result Fetch & Scenario Update
 
 on:
+  push:
+    branches: [main]
   schedule:
     # SFL 2026 放送当夜 (火・金 22:00 / 23:00 / 23:55 JST = UTC 13:00 / 14:00 / 14:55)
     - cron: "0 13,14 * * 2,5"
@@ -71,3 +73,85 @@ jobs:
             git pull --rebase origin main
             git push
           fi
+
+      - name: Build canonical static site
+        env:
+          SITE_URL: https://sfl-simulator.vercel.app
+        run: |
+          npm run build
+
+      - name: Package immutable Home Server release
+        run: |
+          mkdir -p release/runtime
+          cp -R dist release/dist
+          cp scripts/serve-static.mjs release/runtime/serve-static.mjs
+          cp .github/workflows/release.Dockerfile release/runtime/Dockerfile
+          python3 - <<'PY'
+          import hashlib, json, pathlib
+          root = pathlib.Path('release')
+          files = {}
+          for path in sorted(p for p in root.rglob('*') if p.is_file()):
+              files[path.relative_to(root).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+          info = json.loads((root / 'dist/build-info.json').read_text())
+          (root / 'release-manifest.json').write_text(json.dumps({
+              'schemaVersion': 1,
+              'service': 'sfl-scenario-simulator',
+              'buildId': info['buildId'],
+              'sourceCommit': info['sourceCommit'],
+              'contentHash': info['contentHash'],
+              'files': files,
+          }, indent=2) + '\n')
+          PY
+          cd release && zip -qr ../sfl-site.zip .
+
+      - name: Verify Vercel serves byte-identical build
+        env:
+          PRODUCTION_URL: https://sfl-simulator.vercel.app
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, time, urllib.error, urllib.request
+          base = __import__('os').environ['PRODUCTION_URL'].rstrip('/')
+          manifest = json.load(open('release/release-manifest.json', encoding='utf-8'))
+          expected = manifest['buildId']
+          deadline = time.monotonic() + 900
+          while time.monotonic() < deadline:
+              try:
+                  with urllib.request.urlopen(base + '/build-info.json', timeout=20) as response:
+                      info = json.load(response)
+                  if info.get('service') == manifest['service'] and info.get('buildId') == expected:
+                      if info.get('contentHash') != manifest['contentHash']:
+                          raise RuntimeError('Vercel build-info content hash differs from release manifest')
+                      for relative, digest in manifest['files'].items():
+                          if not relative.startswith('dist/'):
+                              continue
+                          url_path = relative[len('dist/'):]
+                          request = urllib.request.Request(base + '/' + url_path, headers={'Accept-Encoding': 'identity'})
+                          try:
+                              with urllib.request.urlopen(request, timeout=30) as response:
+                                  body = response.read()
+                          except urllib.error.HTTPError as error:
+                              if url_path != '404.html' or error.code != 404:
+                                  raise
+                              body = error.read()
+                          actual = hashlib.sha256(body).hexdigest()
+                          if actual != digest:
+                              raise RuntimeError(f'Vercel file differs from canonical build: {url_path}')
+                      print(f'Verified {expected}: every published dist file matches Vercel byte for byte')
+                      break
+              except urllib.error.URLError as error:
+                  print(f'Waiting for Vercel deployment: {error}')
+              time.sleep(15)
+          else:
+              raise RuntimeError(f'Vercel did not serve canonical build {expected} within 15 minutes')
+          PY
+
+      - name: Publish immutable site release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          build_id=$(node -e "console.log(JSON.parse(require('fs').readFileSync('public/build-info.json')).buildId)")
+          tag="sfl-site-$build_id"
+          gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || \
+            gh release create "$tag" sfl-site.zip --repo "$GITHUB_REPOSITORY" \
+              --title "$tag" --notes "Canonical SFL static build for $GITHUB_SHA"
+          gh release upload "$tag" sfl-site.zip --repo "$GITHUB_REPOSITORY" --clobber

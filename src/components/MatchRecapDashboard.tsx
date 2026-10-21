@@ -18,6 +18,8 @@ export default function MatchRecapDashboard({ recapsData }: Props) {
   const latestSecNum = recapsData.latestSection[division];
   const recentMatches: RecentMatchRecap[] = recapsData.recentSections[division] || [];
   const pastSections = recapsData.pastSections[division] || [];
+  const pendingArticleCount = recentMatches.filter((match) => match.narrationStatus === "pending").length;
+  const reviewArticleCount = recentMatches.filter((match) => match.narrationStatus === "unavailable").length;
 
   const toggleMatch = (matchId: string) => {
     setOpenMatches((prev) => ({ ...prev, [matchId]: !prev[matchId] }));
@@ -134,6 +136,22 @@ export default function MatchRecapDashboard({ recapsData }: Props) {
             >
               公式アーカイブ動画・ラウンド詳細ログに基づく試合展開と名場面ハイライト
             </p>
+            {(pendingArticleCount > 0 || reviewArticleCount > 0) && (
+              <p
+                role="status"
+                style={{
+                  fontSize: "0.84rem",
+                  color: "var(--warning)",
+                  marginTop: "0.55rem",
+                  marginBottom: 0,
+                  fontWeight: 700,
+                }}
+              >
+                {pendingArticleCount > 0 && `現在、詳細な解説記事を作成中です（${pendingArticleCount}試合）。`}
+                {reviewArticleCount > 0 && ` ${reviewArticleCount}試合は映像・資料の確認待ちです。`}
+                公式記録は先行して掲載しています。
+              </p>
+            )}
           </div>
 
           {recentMatches[0]?.youtubeUrl && (

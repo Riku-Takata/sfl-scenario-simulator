@@ -38,11 +38,40 @@ export function findBoutWindow(
 ): { startSec: number; endSec: number } | null {
   const label = BOUT_LABELS[status];
   if (!label) return null;
-  const pattern = new RegExp(`TEAM\\s*MATCH\\s*${matchNumber}\\s*${label}`);
-  const idx = chapters.findIndex((c) => pattern.test(c.title));
-  if (idx < 0) return null;
-  const startSec = chapters[idx].startSec;
-  const endSec = chapters[idx + 1]?.startSec ?? startSec + 30 * 60;
+  const matchStart = chapters.findIndex((c) =>
+    new RegExp(`TEAM\\s*MATCH\\s*${matchNumber}\\s*選手入場`).test(c.title)
+  );
+  if (matchStart < 0 && status !== 3) return null;
+  const nextMatchStart = matchStart < 0 ? -1 : chapters.findIndex(
+    (c, i) => i > matchStart && /TEAM\s*MATCH\s*\d+\s*選手入場/.test(c.title)
+  );
+  const scopeStart = matchStart >= 0 ? matchStart : 0;
+  const scopeEnd = nextMatchStart >= 0 ? nextMatchStart : chapters.length;
+  const inScope = chapters
+    .map((chapter, index) => ({ chapter, index }))
+    .filter(({ index }) => index >= scopeStart && index < scopeEnd);
+
+  // Numbered stage headings are often mistyped in the official description (notably an
+  // extension labeled as the next match). The match-entry chapters establish the scope;
+  // within that scope, the stage label is more reliable than the repeated match number.
+  const direct = inScope.find(
+    ({ chapter }) =>
+      chapter.title.includes(label) && !/(?:オーダー|発表)/.test(chapter.title)
+  );
+  let chapterIndex = direct?.index;
+
+  // Some archives omit the bout heading but retain the order announcement.
+  // Use it only as a fallback, since it normally appears before the actual bout.
+  if (chapterIndex === undefined) {
+    chapterIndex = inScope.find(({ chapter }) =>
+      chapter.title.includes(label) && /(?:オーダー|発表)/.test(chapter.title)
+    )?.index;
+  }
+  if (chapterIndex === undefined) return null;
+
+  const startSec = chapters[chapterIndex].startSec;
+  const endSec = chapters[chapterIndex + 1]?.startSec ?? startSec + 30 * 60;
+  if (endSec <= startSec) return null;
   return { startSec, endSec };
 }
 
