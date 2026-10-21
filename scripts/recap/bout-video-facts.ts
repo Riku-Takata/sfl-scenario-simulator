@@ -10,6 +10,21 @@ import { callGemini, isModelExhausted, parseJsonLoose } from "./gemini-client";
 
 export const REQUIRED_PASSED_RUNS = 2;
 export const MAX_RUNS_PER_BOUT = 4;
+export const BOUT_VIDEO_ANALYSIS_VERSION = "bout-video-relative-time-v2";
+
+export function videoAnalysisFingerprint(models: string[], fps: number): string {
+  return `${BOUT_VIDEO_ANALYSIS_VERSION}:${models.join(",")}:fps${fps}`;
+}
+
+export function isBoutVideoCacheStale(
+  facts: Pick<BoutVideoFacts, "videoId" | "startSec" | "endSec" | "analysisVersion"> | undefined,
+  source: { videoId: string | null | undefined; window: { startSec: number; endSec: number } | null; analysisVersion: string }
+): boolean {
+  return Boolean(facts && source.window && (
+    facts.analysisVersion !== source.analysisVersion || facts.videoId !== source.videoId ||
+    facts.startSec !== source.window.startSec || facts.endSec !== source.window.endSec
+  ));
+}
 
 export interface BoutContext {
   boutId: string;
@@ -53,7 +68,7 @@ export function buildBoutPrompt(ctx: BoutContext): string {
 - 確実に確認できたことだけを書く。キャラクターの一般的な性能説明・推測・定型的な褒め言葉は禁止。
 - 「第Nゲームは誰が勝った」だけのトピックは不要（勝敗は別途把握済み）。
 - 網羅は不要。重要度の高い順に2〜4件。確信が持てなければ少なくてよい（0件も可）。
-- 各トピックに映像全体の先頭からの時刻を秒で付ける。短く特定できない場合だけ省略する。
+- 各トピックに、入力された対戦クリップの先頭からの相対時刻を秒で付ける。両方の時刻を確認できない話題は出力しない。
 - 各トピックに根拠を付ける: "映像" / "実況" / "両方"。
 - 自己チェック: 各ゲームの勝者を映像から "A" / "B" / "不明" で答える。公式結果から推測して埋めないこと。
 
@@ -61,7 +76,23 @@ export function buildBoutPrompt(ctx: BoutContext): string {
 ゲーム間の待機画面・リプレイ・解説席カット・インタビューは無視する。
 
 JSONのみで出力:
-{"gameWinnersSeen":["A|B|不明"],"topics":[{"topic":"一文で具体的に（選手名を主語に）","evidence":"映像|実況|両方","startSec":動画全体の先頭からの秒数,"endSec":動画全体の先頭からの秒数}]}`;
+{"gameWinnersSeen":["A|B|不明"],"topics":[{"topic":"一文で具体的に（選手名を主語に）","evidence":"映像|実況|両方","startSec":クリップ先頭からの秒数,"endSec":クリップ先頭からの秒数}]}`;
+}
+
+/** Gemini timestamps describe the supplied clip. Convert them to archive-global seconds. */
+export function normalizeTopicWindow(
+  topic: { startSec?: number; endSec?: number },
+  clip: { startSec: number; endSec: number }
+): { startSec: number; endSec: number } | null {
+  if (topic.startSec === undefined || topic.endSec === undefined ||
+      !Number.isFinite(topic.startSec) || !Number.isFinite(topic.endSec)) return null;
+  const duration = clip.endSec - clip.startSec;
+  if (duration <= 0) return null;
+  const isClipRelative = topic.startSec >= 0 && topic.endSec <= duration;
+  const startSec = isClipRelative ? clip.startSec + topic.startSec : topic.startSec;
+  const endSec = isClipRelative ? clip.startSec + topic.endSec : topic.endSec;
+  if (startSec < clip.startSec || endSec > clip.endSec || endSec <= startSec) return null;
+  return { startSec, endSec };
 }
 
 /** 映像から読んだゲーム勝者が公式ログと矛盾しないか。不明は Bout のゲーム数の1/3まで許容。 */
@@ -88,10 +119,11 @@ function normalizeWinner(w: string): "A" | "B" | "不明" {
   return "不明";
 }
 
-function normalizeEvidence(e: string): "映像" | "実況" | "両方" {
+function normalizeEvidence(e: string): "映像" | "実況" | "両方" | null {
   if (e.includes("両")) return "両方";
   if (e.includes("実況") || e.includes("音声")) return "実況";
-  return "映像";
+  if (e.includes("映像") || e.includes("画面")) return "映像";
+  return null;
 }
 
 export function passedRuns(facts: BoutVideoFacts): BoutVideoRun[] {
@@ -176,15 +208,19 @@ export async function advanceBoutAnalysis(options: {
         gatePassed: gate.passed,
         gateReason: gate.reason,
         topics: parsed.topics
-          .map((t) => ({
-            topic: t.topic.trim(), evidence: normalizeEvidence(t.evidence),
-            ...(Number.isFinite(t.startSec) ? { startSec: t.startSec } : {}),
-            ...(Number.isFinite(t.endSec) ? { endSec: t.endSec } : {}),
-          }))
-          .filter((t) => (t.startSec === undefined || (t.startSec >= facts.startSec && t.startSec <= facts.endSec)) &&
-            (t.endSec === undefined || (t.endSec >= facts.startSec && t.endSec <= facts.endSec)) &&
-            (t.startSec === undefined || t.endSec === undefined || t.endSec >= t.startSec))
-          .filter((t) => t.topic.length > 0),
+          .map((t) => {
+            const window = normalizeTopicWindow(t, facts);
+            const evidence = normalizeEvidence(t.evidence);
+            return {
+              topic: t.topic.trim(), evidence,
+              ...(window ?? {}),
+            };
+          })
+          .filter((t): t is typeof t & {
+            evidence: "映像" | "実況" | "両方";
+            startSec: number;
+            endSec: number;
+          } => t.topic.length > 0 && t.evidence !== null && t.startSec !== undefined && t.endSec !== undefined),
       };
     } catch (err) {
       run = {

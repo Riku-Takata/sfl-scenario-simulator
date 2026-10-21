@@ -27,7 +27,7 @@ permissions:
 
 # 定期実行と HomeServer からの手動起動が重なっても、同時に走らせず順番に処理する
 concurrency:
-  group: auto-update
+  group: sfl-recap-data-writer
   cancel-in-progress: false
 
 jobs:

@@ -28,6 +28,7 @@ export interface NarrationMatchInput {
   isTiebreaker: boolean;
   bouts: NarrationBoutInput[];
   qualityFeedback?: Record<string, string[]>;
+  styleExamples?: Array<{ division: "S" | "F"; summary: string; keyPoints: string[] }>;
 }
 
 /* ------------------------------------------------------------------ */
@@ -116,12 +117,14 @@ function boutPayload(b: NarrationBoutInput) {
     officialRounds: b.games.map(
       (g, i) => `第${i + 1}ゲーム: ${g.rounds.map((r) => nameOf(b.ctx, r)).join("→")}`
     ),
-    verifiedEvidence: evidence.map(({ id, kind, startSec, endSec, observation }) => ({ id, kind, startSec, endSec, observation })),
+    verifiedEvidence: evidence.map(({ id, kind, startSec, endSec, observation, verificationObservation }) => ({
+      id, kind, startSec, endSec, observation, verificationObservation,
+    })),
   };
 }
 
 export function narrationInputHash(match: NarrationMatchInput): string {
-  const payload = JSON.stringify({ v: 5, m: match.matchId, b: match.bouts.map(boutPayload), q: match.qualityFeedback ?? {} });
+  const payload = JSON.stringify({ v: 7, m: match.matchId, b: match.bouts.map(boutPayload), q: match.qualityFeedback ?? {}, s: match.styleExamples ?? [] });
   return crypto.createHash("sha256").update(payload).digest("hex").slice(0, 16);
 }
 
@@ -136,8 +139,12 @@ ${JSON.stringify(match.bouts.map(boutPayload), null, 1)}
 【前回の品質判定】
 ${JSON.stringify(match.qualityFeedback ?? {}, null, 1)}
 
+【編集原稿の文体見本（事実の根拠として使用禁止）】
+${JSON.stringify(match.styleExamples ?? [], null, 1)}
+
 ルール:
 - 各 summary / keyPoint / matchSummary に、根拠として実際に使った verifiedEvidence のIDを付ける。根拠の無い具体的な記述は出力しない。
+- 文体見本から引用・固有名詞・試合展開を流用しない。段落の組み立てと具体性の程度だけを参考にする。
 - keyPoints は2〜3件を目標にするが、使える根拠がなければ少なくしてよい。ひとつの文章の根拠を別の対戦から借りない。
 - officialRounds（公式ラウンド推移）と矛盾する記述は禁止。特に「逆転」「ストレート」「フルセット」「第Nゲーム」は officialRounds で確認できる場合だけ書く。
 - 具体的な出来事（技名・システム名・状況）を含まない要点は書かない。「対戦となった」「攻防を制した」「要所で技を当てた」のような中身の無い文を入れるくらいなら keyPoints を減らす（0件も可）。

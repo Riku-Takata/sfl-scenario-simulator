@@ -3,7 +3,34 @@ import type { BoutGameDetail } from "./narration";
 import type { RecapArticle, RecapEvidence } from "../../src/lib/types";
 import { contradictsOfficialRounds, isVacuousKeyPoint } from "./narration";
 
-export const ARTICLE_QUALITY_VERSION = "recap-quality-v1";
+export const ARTICLE_QUALITY_VERSION = "recap-quality-v2";
+
+export function applyPublicationMode(article: RecapArticle, mode: "shadow" | "auto"): RecapArticle {
+  if (mode === "auto" || article.status !== "passed") return article;
+  return { ...article, articleId: article.articleId.replace(/:published$/, ":candidate"), status: "candidate" };
+}
+
+function normalizeText(text: string): string {
+  return text.normalize("NFKC").toLocaleLowerCase().replace(/[\s、。，．・「」『』【】（）()!?！？:：]/g, "");
+}
+
+function diceSimilarity(a: string, b: string): number {
+  const left = normalizeText(a);
+  const right = normalizeText(b);
+  if (!left || !right) return 0;
+  if (left.includes(right) || right.includes(left)) return Math.min(left.length, right.length) / Math.max(left.length, right.length);
+  const bigrams = (value: string) => new Set(Array.from({ length: Math.max(0, value.length - 1) }, (_, i) => value.slice(i, i + 2)));
+  const aGrams = bigrams(left);
+  const bGrams = bigrams(right);
+  if (!aGrams.size || !bGrams.size) return 0;
+  let overlap = 0;
+  for (const gram of aGrams) if (bGrams.has(gram)) overlap++;
+  return (2 * overlap) / (aGrams.size + bGrams.size);
+}
+
+function sentences(text: string): string[] {
+  return text.split(/(?<=[。！？!?])\s*|\r?\n+/).map((part) => part.trim()).filter(Boolean);
+}
 
 function revision(text: string): string {
   return crypto.createHash("sha256").update(text).digest("hex").slice(0, 16);
@@ -25,6 +52,13 @@ export function evaluateBoutArticle(input: {
     evidenceIds: point.evidenceIds.filter((id) => allowed.has(id)),
   }));
   const cited = [...new Set([...validSummaryRefs, ...keyPoints.flatMap((point) => point.evidenceIds)])];
+  const claimMappings = [
+    ...sentences(input.summary).map((text) => ({ text, refs: validSummaryRefs })),
+    ...keyPoints.flatMap((point) => sentences(point.text).map((text) => ({ text, refs: point.evidenceIds }))),
+  ];
+  const claimsHaveEvidenceOverlap = claimMappings.length > 0 && claimMappings.every(({ text, refs }) =>
+    refs.some((id) => diceSimilarity(text, allowed.get(id)?.observation ?? "") >= 0.12 ||
+      diceSimilarity(text, allowed.get(id)?.verificationObservation ?? "") >= 0.12));
   const videoEvidencePoints = keyPoints.filter((point) => point.evidenceIds.some((id) => {
     const kind = allowed.get(id)?.kind;
     return kind === "visual" || kind === "commentary";
@@ -39,6 +73,7 @@ export function evaluateBoutArticle(input: {
     enoughSpecificPoints: keyPoints.length >= 2 && keyPoints.every((point) => point.text.length >= 24 && !isVacuousKeyPoint(point.text)),
     multipleVideoBackedPoints: videoEvidencePoints >= 2,
     noRepeatedPoints: new Set(keyPoints.map((point) => point.text.replace(/\s/g, ""))).size === keyPoints.length,
+    everyClaimOverlapsCitedEvidence: claimsHaveEvidenceOverlap,
   };
   const passed = Object.values(checks).every(Boolean);
   const reasons = Object.entries(checks).filter(([, ok]) => !ok).map(([key]) => key);
