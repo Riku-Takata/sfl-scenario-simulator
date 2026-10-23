@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-23T20:16:43.458Z",
+  "updatedAt": "2026-10-23T23:11:28.697Z",
   "jobs": {
     "div-s-sec4-m1:article": {
       "jobId": "div-s-sec4-m1:article",
@@ -203,10 +203,10 @@
       "publication": "detailed",
       "inputHash": "bf5a1d781aa9d682dc0b5833c7abfbedf01b3c6db3f50df3f08506e424ee4c2d",
       "pipelineVersion": "recap-pipeline-v3",
-      "attempts": 3,
+      "attempts": 4,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.445Z"
+      "updatedAt": "2026-10-23T23:11:28.661Z"
     },
     "div-f-sec4-m1-b0": {
       "jobId": "div-f-sec4-m1-b0",
@@ -221,7 +221,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.445Z"
+      "updatedAt": "2026-10-23T23:11:28.661Z"
     },
     "div-f-sec4-m1-b1": {
       "jobId": "div-f-sec4-m1-b1",
@@ -236,7 +236,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.445Z"
+      "updatedAt": "2026-10-23T23:11:28.661Z"
     },
     "div-f-sec4-m1-b2": {
       "jobId": "div-f-sec4-m1-b2",
@@ -251,7 +251,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.445Z"
+      "updatedAt": "2026-10-23T23:11:28.661Z"
     },
     "div-f-sec4-m2:article": {
       "jobId": "div-f-sec4-m2:article",
@@ -262,10 +262,10 @@
       "publication": "detailed",
       "inputHash": "fc130512cd9e24c1b210a27f8c556b08cb9b77121eceb5a5639e0da3259d8787",
       "pipelineVersion": "recap-pipeline-v3",
-      "attempts": 3,
+      "attempts": 4,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.662Z"
     },
     "div-f-sec4-m2-b0": {
       "jobId": "div-f-sec4-m2-b0",
@@ -280,7 +280,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.662Z"
     },
     "div-f-sec4-m2-b1": {
       "jobId": "div-f-sec4-m2-b1",
@@ -295,7 +295,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.662Z"
     },
     "div-f-sec4-m2-b2": {
       "jobId": "div-f-sec4-m2-b2",
@@ -310,7 +310,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.662Z"
     },
     "div-f-sec4-m2-b3": {
       "jobId": "div-f-sec4-m2-b3",
@@ -325,7 +325,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.662Z"
     },
     "div-f-sec4-m3:article": {
       "jobId": "div-f-sec4-m3:article",
@@ -336,10 +336,10 @@
       "publication": "detailed",
       "inputHash": "b1bc4dfd237a2a19f4701efdf2caae2633e52b9b3a20bf151a07b5d934c83abe",
       "pipelineVersion": "recap-pipeline-v3",
-      "attempts": 3,
+      "attempts": 4,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.663Z"
     },
     "div-f-sec4-m3-b0": {
       "jobId": "div-f-sec4-m3-b0",
@@ -354,7 +354,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.663Z"
     },
     "div-f-sec4-m3-b1": {
       "jobId": "div-f-sec4-m3-b1",
@@ -369,7 +369,7 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.663Z"
     },
     "div-f-sec4-m3-b2": {
       "jobId": "div-f-sec4-m3-b2",
@@ -384,21 +384,20 @@
       "attempts": 0,
       "evidenceIds": [],
       "publishedRevision": "editorial",
-      "updatedAt": "2026-10-23T20:16:43.446Z"
+      "updatedAt": "2026-10-23T23:11:28.663Z"
     },
     "div-s-sec5-m1:article": {
       "jobId": "div-s-sec5-m1:article",
       "sectionId": "div-s-sec5",
       "matchId": "div-s-sec5-m1",
-      "stage": "extracting",
+      "stage": "needs_review",
       "quality": "not_evaluated",
       "publication": "results_only",
       "inputHash": "ac949aede15a35686f5f479529710cf12b8606d1f28dc89b01828cca997adcfb",
       "pipelineVersion": "recap-pipeline-v3",
-      "attempts": 2,
-      "nextAttemptAt": "2026-10-23T20:46:43.443Z",
+      "attempts": 3,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.443Z"
+      "updatedAt": "2026-10-23T23:11:28.656Z"
     },
     "div-s-sec5-m1-b0": {
       "jobId": "div-s-sec5-m1-b0",
@@ -412,7 +411,7 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.443Z"
+      "updatedAt": "2026-10-23T23:11:28.656Z"
     },
     "div-s-sec5-m1-b1": {
       "jobId": "div-s-sec5-m1-b1",
@@ -426,7 +425,7 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.443Z"
+      "updatedAt": "2026-10-23T23:11:28.656Z"
     },
     "div-s-sec5-m1-b2": {
       "jobId": "div-s-sec5-m1-b2",
@@ -440,21 +439,20 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.443Z"
+      "updatedAt": "2026-10-23T23:11:28.656Z"
     },
     "div-s-sec5-m2:article": {
       "jobId": "div-s-sec5-m2:article",
       "sectionId": "div-s-sec5",
       "matchId": "div-s-sec5-m2",
-      "stage": "extracting",
+      "stage": "needs_review",
       "quality": "not_evaluated",
       "publication": "results_only",
       "inputHash": "1133b24f1e0e379289c91db117946fea025c281149c1d9d46ce4b8d8f3e9bfd4",
       "pipelineVersion": "recap-pipeline-v3",
-      "attempts": 2,
-      "nextAttemptAt": "2026-10-23T20:46:43.444Z",
+      "attempts": 3,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.657Z"
     },
     "div-s-sec5-m2-b0": {
       "jobId": "div-s-sec5-m2-b0",
@@ -468,7 +466,7 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.657Z"
     },
     "div-s-sec5-m2-b1": {
       "jobId": "div-s-sec5-m2-b1",
@@ -482,7 +480,7 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.657Z"
     },
     "div-s-sec5-m2-b2": {
       "jobId": "div-s-sec5-m2-b2",
@@ -496,7 +494,7 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.657Z"
     },
     "div-s-sec5-m2-b3": {
       "jobId": "div-s-sec5-m2-b3",
@@ -510,21 +508,20 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.658Z"
     },
     "div-s-sec5-m3:article": {
       "jobId": "div-s-sec5-m3:article",
       "sectionId": "div-s-sec5",
       "matchId": "div-s-sec5-m3",
-      "stage": "extracting",
+      "stage": "needs_review",
       "quality": "not_evaluated",
       "publication": "results_only",
       "inputHash": "0ef5cc16612f1187875a77ffafe29ba9c899297539d172a7483fa4091319ba27",
       "pipelineVersion": "recap-pipeline-v3",
-      "attempts": 2,
-      "nextAttemptAt": "2026-10-23T20:46:43.444Z",
+      "attempts": 3,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.659Z"
     },
     "div-s-sec5-m3-b0": {
       "jobId": "div-s-sec5-m3-b0",
@@ -538,7 +535,7 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.659Z"
     },
     "div-s-sec5-m3-b1": {
       "jobId": "div-s-sec5-m3-b1",
@@ -552,7 +549,7 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.659Z"
     },
     "div-s-sec5-m3-b2": {
       "jobId": "div-s-sec5-m3-b2",
@@ -566,7 +563,7 @@
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
       "evidenceIds": [],
-      "updatedAt": "2026-10-23T20:16:43.444Z"
+      "updatedAt": "2026-10-23T23:11:28.659Z"
     }
   }
 }
