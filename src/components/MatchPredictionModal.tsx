@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { toBlob, toPng } from "html-to-image";
+import { createPredictionCardExporter } from "@/lib/prediction-card-export";
 import { DONATION_CONFIG } from "@/config/donation";
 import type { DivisionId, MatchRecord, ScorePatternId } from "@/lib/types";
 import { SCORE_OUTCOME_MAP, TEAM_META_MAP } from "@/lib/simulator";
@@ -48,6 +48,8 @@ export function MatchPredictionModal({
   shareUrl,
 }: MatchPredictionModalProps) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const exporterRef = useRef<ReturnType<typeof createPredictionCardExporter> | null>(null);
+  if (!exporterRef.current) exporterRef.current = createPredictionCardExporter();
   const [generating, setGenerating] = useState(false);
   const [copyStatus, setCopyStatus] = useState<string | null>(null);
 
@@ -114,15 +116,13 @@ export function MatchPredictionModal({
     if (!cardRef.current) return;
     setGenerating(true);
     try {
-      const dataUrl = await toPng(cardRef.current, {
-        cacheBust: true,
-        pixelRatio: 2,
-        backgroundColor: "#090d16",
-      });
+      const blob = await exporterRef.current!(cardRef.current);
+      const imageUrl = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.download = getDownloadFileName();
-      link.href = dataUrl;
+      link.href = imageUrl;
       link.click();
+      setTimeout(() => URL.revokeObjectURL(imageUrl), 10_000);
     } catch (err) {
       console.error("画像生成に失敗しました", err);
       alert("画像の生成に失敗しました。もう一度お試しください。");
@@ -136,21 +136,13 @@ export function MatchPredictionModal({
     setGenerating(true);
     setCopyStatus(null);
     try {
-      // Generate the Blob directly so copying does not fetch a CSP-blocked data URL.
-      const blob = await toBlob(cardRef.current, {
-        cacheBust: true,
-        pixelRatio: 2,
-        backgroundColor: "#090d16",
-      });
-      if (!blob) {
-        throw new Error("画像の生成に失敗しました");
-      }
       if (
-        navigator.clipboard &&
+        navigator.clipboard?.write &&
         typeof window.ClipboardItem !== "undefined"
       ) {
         await navigator.clipboard.write([
-          new window.ClipboardItem({ "image/png": blob }),
+          // Start the clipboard write during the click, even while rendering.
+          new window.ClipboardItem({ "image/png": exporterRef.current!(cardRef.current) }),
         ]);
         setCopyStatus("✓ クリップボードに画像をコピーしました！Xに直接ペーストできます");
       } else {
@@ -271,6 +263,7 @@ export function MatchPredictionModal({
               <button
                 key={sec}
                 type="button"
+                disabled={generating}
                 onClick={() => {
                   setSelectedSection(sec);
                   setSelectedMatchMode("all");
@@ -315,6 +308,7 @@ export function MatchPredictionModal({
         >
           <button
             type="button"
+            disabled={generating}
             onClick={() => setSelectedMatchMode("all")}
             style={{
               padding: "0.4rem 0.85rem",
@@ -340,6 +334,7 @@ export function MatchPredictionModal({
               <button
                 key={p.matchId}
                 type="button"
+                disabled={generating}
                 onClick={() => setSelectedMatchMode(p.matchId)}
                 style={{
                   padding: "0.4rem 0.8rem",
