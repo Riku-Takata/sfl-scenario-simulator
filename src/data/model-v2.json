@@ -1,38 +1,38 @@
 {
-  "fittedAt": "2026-10-23T01:43:57.636Z",
-  "trainBouts": 311,
+  "fittedAt": "2026-10-23T14:00:21.987Z",
+  "trainBouts": 321,
   "params": {
-    "rating": 0.8094212307291138,
-    "matchup": 0.8558290955976444,
-    "home": 0.03861730214949024,
+    "rating": 0.7672717853489945,
+    "matchup": 0.8596371542968884,
+    "home": 0.01207184207794192,
     "vsChar": 0,
     "h2h": 0
   },
   "ratings": {
     "sako": 1475.7,
-    "fujimura": 1570.1,
-    "moke": 1598.5,
-    "ryukichi": 1620.9,
-    "dogura": 1700.2,
-    "shuto": 1629.9,
+    "fujimura": 1597.3,
+    "moke": 1606.2,
+    "ryukichi": 1638.6,
+    "dogura": 1709.7,
+    "shuto": 1616.5,
     "bonchan": 1569.5,
-    "kazunoko": 1615.7,
-    "machabo": 1592.3,
-    "kobayan": 1691.5,
-    "cosa": 1672.5,
-    "kincho": 1618.8,
-    "momochi": 1595.3,
-    "higuchi": 1656.9,
+    "kazunoko": 1597,
+    "machabo": 1609.6,
+    "kobayan": 1698.8,
+    "cosa": 1681.5,
+    "kincho": 1595.7,
+    "momochi": 1587.6,
+    "higuchi": 1639.3,
     "yamaguchi": 1689.6,
-    "mena": 1752.3,
-    "acqua": 1551.3,
-    "hibiki": 1582.8,
+    "mena": 1725.1,
+    "acqua": 1541.7,
+    "hibiki": 1596.2,
     "akira": 1501.3,
-    "takepi": 1557.4,
-    "yanai": 1510.6,
-    "johnny": 1477,
-    "torimeshi": 1620.9,
-    "2bassa": 1630.9,
+    "takepi": 1576.1,
+    "yanai": 1501.6,
+    "johnny": 1469.8,
+    "torimeshi": 1603.6,
+    "2bassa": 1654.1,
     "tokido": 1668.3,
     "mago": 1529.2,
     "mizuha": 1536.5,
@@ -60,29 +60,29 @@
   },
   "games": {
     "sako": 98.8,
-    "fujimura": 142,
-    "moke": 236.2,
-    "ryukichi": 228.2,
-    "dogura": 218.8,
-    "shuto": 244.6,
+    "fujimura": 147,
+    "moke": 239.2,
+    "ryukichi": 230.2,
+    "dogura": 220.8,
+    "shuto": 249.6,
     "bonchan": 210.4,
-    "kazunoko": 161.4,
-    "machabo": 158.6,
-    "kobayan": 334,
-    "cosa": 276.2,
-    "kincho": 196.4,
-    "momochi": 160.2,
-    "higuchi": 271.4,
+    "kazunoko": 163.4,
+    "machabo": 160.6,
+    "kobayan": 336,
+    "cosa": 278.2,
+    "kincho": 199.4,
+    "momochi": 163.2,
+    "higuchi": 273.4,
     "yamaguchi": 144.4,
-    "mena": 104.4,
-    "acqua": 157.6,
-    "hibiki": 163.2,
+    "mena": 109.4,
+    "acqua": 159.6,
+    "hibiki": 168.2,
     "akira": 159,
-    "takepi": 150.6,
-    "yanai": 145.4,
-    "johnny": 107.4,
-    "torimeshi": 187.4,
-    "2bassa": 130,
+    "takepi": 152.6,
+    "yanai": 147.4,
+    "johnny": 109.4,
+    "torimeshi": 189.4,
+    "2bassa": 133,
     "tokido": 282.8,
     "mago": 163.8,
     "mizuha": 174.8,
@@ -110,7 +110,7 @@
   },
   "propensities": {
     "sako": {
-      "participation": 0.3181818181818182,
+      "participation": 0.2916666666666667,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -119,7 +119,7 @@
       "tiebreak": 3
     },
     "fujimura": {
-      "participation": 0.9090909090909091,
+      "participation": 0.9166666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -128,7 +128,7 @@
       "tiebreak": 0.5
     },
     "moke": {
-      "participation": 0.8636363636363636,
+      "participation": 0.875,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -137,7 +137,7 @@
       "tiebreak": 1
     },
     "ryukichi": {
-      "participation": 0.9090909090909091,
+      "participation": 0.9166666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -146,7 +146,7 @@
       "tiebreak": 0.5
     },
     "dogura": {
-      "participation": 0.7272727272727273,
+      "participation": 0.75,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -155,7 +155,7 @@
       "tiebreak": 2
     },
     "shuto": {
-      "participation": 0.7727272727272727,
+      "participation": 0.7916666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -164,7 +164,7 @@
       "tiebreak": 0.5
     },
     "bonchan": {
-      "participation": 0.7272727272727273,
+      "participation": 0.6666666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -173,7 +173,7 @@
       "tiebreak": 2
     },
     "kazunoko": {
-      "participation": 0.7727272727272727,
+      "participation": 0.7916666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -182,7 +182,7 @@
       "tiebreak": 0.5
     },
     "machabo": {
-      "participation": 0.9090909090909091,
+      "participation": 0.9166666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -191,16 +191,16 @@
       "tiebreak": 1
     },
     "kobayan": {
-      "participation": 0.7272727272727273,
+      "participation": 0.6666666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
         0.3333333333333333
       ],
-      "tiebreak": 1
+      "tiebreak": 2
     },
     "cosa": {
-      "participation": 0.6363636363636364,
+      "participation": 0.6666666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -209,7 +209,7 @@
       "tiebreak": 1
     },
     "kincho": {
-      "participation": 0.9166666666666666,
+      "participation": 0.9285714285714286,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -218,7 +218,7 @@
       "tiebreak": 0.5
     },
     "momochi": {
-      "participation": 0.6818181818181818,
+      "participation": 0.7083333333333334,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -227,7 +227,7 @@
       "tiebreak": 0.5
     },
     "higuchi": {
-      "participation": 0.9545454545454546,
+      "participation": 0.9583333333333334,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -236,7 +236,7 @@
       "tiebreak": 0.5
     },
     "yamaguchi": {
-      "participation": 0.75,
+      "participation": 0.6428571428571429,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -245,7 +245,7 @@
       "tiebreak": 0.5
     },
     "mena": {
-      "participation": 0.9166666666666666,
+      "participation": 0.9285714285714286,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -254,7 +254,7 @@
       "tiebreak": 0.5
     },
     "acqua": {
-      "participation": 0.6363636363636364,
+      "participation": 0.6666666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -263,7 +263,7 @@
       "tiebreak": 1
     },
     "hibiki": {
-      "participation": 0.7727272727272727,
+      "participation": 0.7916666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -272,7 +272,7 @@
       "tiebreak": 0.5
     },
     "akira": {
-      "participation": 0.8636363636363636,
+      "participation": 0.7916666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -281,7 +281,7 @@
       "tiebreak": 0.5
     },
     "takepi": {
-      "participation": 0.5833333333333334,
+      "participation": 0.6428571428571429,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -290,7 +290,7 @@
       "tiebreak": 0.5
     },
     "yanai": {
-      "participation": 0.8181818181818182,
+      "participation": 0.8333333333333334,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -299,16 +299,16 @@
       "tiebreak": 1
     },
     "johnny": {
-      "participation": 0.4090909090909091,
+      "participation": 0.375,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
         0.3333333333333333
       ],
-      "tiebreak": 2.5
+      "tiebreak": 3.5
     },
     "torimeshi": {
-      "participation": 0.9090909090909091,
+      "participation": 0.9166666666666666,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
@@ -317,7 +317,7 @@
       "tiebreak": 0.5
     },
     "2bassa": {
-      "participation": 0.8636363636363636,
+      "participation": 0.875,
       "position": [
         0.3333333333333333,
         0.3333333333333333,
