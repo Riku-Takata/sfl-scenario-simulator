@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { toPng } from "html-to-image";
+import { toBlob, toPng } from "html-to-image";
 import { DONATION_CONFIG } from "@/config/donation";
 import type { DivisionId, MatchRecord, ScorePatternId } from "@/lib/types";
 import { SCORE_OUTCOME_MAP, TEAM_META_MAP } from "@/lib/simulator";
@@ -136,13 +136,15 @@ export function MatchPredictionModal({
     setGenerating(true);
     setCopyStatus(null);
     try {
-      const dataUrl = await toPng(cardRef.current, {
+      // Generate the Blob directly so copying does not fetch a CSP-blocked data URL.
+      const blob = await toBlob(cardRef.current, {
         cacheBust: true,
         pixelRatio: 2,
         backgroundColor: "#090d16",
       });
-      const res = await fetch(dataUrl);
-      const blob = await res.blob();
+      if (!blob) {
+        throw new Error("画像の生成に失敗しました");
+      }
       if (
         navigator.clipboard &&
         typeof window.ClipboardItem !== "undefined"
