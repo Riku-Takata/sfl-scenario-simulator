@@ -25,7 +25,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://cdnjs.buymeacoffee.com https://cdn.buymeacoffee.com https://www.buymeacoffee.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.buymeacoffee.com; font-src 'self' https://fonts.gstatic.com https://cdn.buymeacoffee.com; img-src 'self' data: https:; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.buymeacoffee.com https://cdn.buymeacoffee.com https://*.buymeacoffee.com; frame-src https://www.buymeacoffee.com https://buymeacoffee.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://cdnjs.buymeacoffee.com https://cdn.buymeacoffee.com https://www.buymeacoffee.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.buymeacoffee.com; font-src 'self' https://fonts.gstatic.com https://cdn.buymeacoffee.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.buymeacoffee.com https://cdn.buymeacoffee.com https://*.buymeacoffee.com; frame-src https://www.buymeacoffee.com https://buymeacoffee.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none';"
         }
       ]
     }
