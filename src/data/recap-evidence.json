@@ -1275,12 +1275,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T14:27:24.758Z"
+      "createdAt": "2026-10-24T14:27:24.758Z",
+      "verifiedAt": "2026-10-24T19:54:30.246Z"
     },
     "ev-8e42fa2f4688c273965d": {
       "id": "ev-8e42fa2f4688c273965d",
@@ -1299,12 +1300,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T14:27:24.758Z"
+      "createdAt": "2026-10-24T14:27:24.758Z",
+      "verifiedAt": "2026-10-24T19:54:30.246Z"
     },
     "ev-47f540269636fb89a1c1": {
       "id": "ev-47f540269636fb89a1c1",
@@ -1547,12 +1549,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T15:03:55.845Z"
+      "createdAt": "2026-10-24T15:03:55.845Z",
+      "verifiedAt": "2026-10-24T19:54:30.246Z"
     },
     "ev-c2dcd52052cd4d4a30a7": {
       "id": "ev-c2dcd52052cd4d4a30a7",
@@ -1595,12 +1598,51 @@
       "officialRefs": [
         "div-s-sec5-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T15:03:55.845Z"
+      "createdAt": "2026-10-24T15:03:55.845Z",
+      "verifiedAt": "2026-10-24T19:54:30.246Z"
+    },
+    "ev-m2b1-vis-01": {
+      "id": "ev-m2b1-vis-01",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b1",
+      "kind": "visual",
+      "status": "verified",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7202,
+      "endSec": 7500,
+      "playerIds": [
+        "machabo",
+        "torimeshi"
+      ],
+      "observation": "まちゃぼーは第1ゲーム、鶏めしのダルシムによる遠距離牽制を冷静に捌き、飛び込みや前歩きで間合いを詰めてフルラウンドの接戦を競り勝った。",
+      "verificationObservation": "まちゃぼー（リュウ）が鶏めし（ダルシム）の牽制を潜り抜け、第1ゲームのフルラウンドを制して先制。",
+      "extractedAt": "2026-10-24T19:54:30.246Z",
+      "verifiedAt": "2026-10-24T19:54:30.246Z"
+    },
+    "ev-m2b1-vis-02": {
+      "id": "ev-m2b1-vis-02",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b1",
+      "kind": "visual",
+      "status": "verified",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7500,
+      "endSec": 7750,
+      "playerIds": [
+        "machabo",
+        "torimeshi"
+      ],
+      "observation": "第2ゲームもフルラウンドにもつれ込む中、まちゃぼーは要所での対空と近距離の攻めを徹底して取り切り、2-0のストレート勝利を飾った。",
+      "verificationObservation": "第2ゲーム、まちゃぼーが対空迎撃から攻めを継続し、2-0で勝利を決めた。",
+      "extractedAt": "2026-10-24T19:54:30.246Z",
+      "verifiedAt": "2026-10-24T19:54:30.246Z"
     }
   }
 }
