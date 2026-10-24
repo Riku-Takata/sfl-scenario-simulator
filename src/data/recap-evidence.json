@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T17:38:18.609Z",
+  "updatedAt": "2026-10-24T18:25:50.634Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1146,10 +1146,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P側のケン（COSA）と2P側の豪鬼（YANAI）の対戦。ケンが豪鬼を吹き飛ばしてダウンさせた後、ドライブラッシュで起き上がりに攻め込み、カウンターヒット（COUNTER表示）から連続技を繋ぐ。ケンはドライブラッシュキャンセルを絡めた地上コンボからSAゲージを3本消費してSA3（神龍拳）を発動。神龍拳の演出がヒットし続け、豪鬼の体力を削り切ってK.O.となる。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T13:58:32.595Z"
     },
@@ -1170,10 +1173,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ケン（1P・Cosa）と豪鬼（2P・Yanai）の対戦。ケンがしゃがみ中キックからのコンボで豪鬼をダウンさせ、ドライブラッシュを絡めた攻めで続けてダメージを与える。中距離で豪鬼がジャンプしたところをケンが対空迎撃し、パニッシュカウンターからコンボを決めて豪鬼を画面端に追い詰める。ケンは画面端で通常投げを決めて豪鬼をダウンさせた後、起き上がりにリバーサル行動を取ろうとした豪鬼にさらに通常投げをパニッシュカウンターで決め、豪鬼の体力を削り切ってケンがダメージを一切受けずに「PERFECT K.O.」でラウンドを勝利する。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T13:58:32.595Z"
     },
@@ -1194,10 +1200,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ストリートファイター6の対戦画面（COSA選手豪鬼 vs YANAI選手ケン）。1P側の豪鬼はバーンアウト状態で体力が残りわずか、2P側のケンが画面右端付近で豪鬼を通常投げでダウンさせます。豪鬼の起き上がりに対し、ケンが前ジャンプからのめくり攻撃（CROSS UP、COUNTER表示）をヒットさせ、続けてコンボ攻撃（3 HITS）を繋いで豪鬼の体力を削りきり、K.O.となってラウンドが終了します。その後、画面が切り替わりチームブースのワイプ映像が表示されます。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T06:49:04.450Z"
     },

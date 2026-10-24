@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:45:37.803Z",
+  "updatedAt": "2026-10-24T18:16:04.279Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 5,
@@ -24,8 +24,8 @@
         "awayPoint": 40,
         "winner": "away",
         "isTiebreaker": false,
-        "matchHeadline": "KADOKAWA FAV gamingが40-0で勝利",
-        "matchSummary": "第1試合【KADOKAWA FAV gaming vs ZETA DIVISION Geekly】は40-0でKADOKAWA FAV gamingの勝利。大将戦は藤村選手が制した。",
+        "matchHeadline": "FAVが40-0でZETAに完封勝利",
+        "matchSummary": "先鋒戦でもけ選手がももち選手に第1ゲームを奪われながらも、第3ゲーム第2ラウンドでパーフェクトK.O.を奪って逆転勝利し先制した。続く中堅戦ではりゅうきち選手が相手のソニックブームを至近距離のSA2で弾抜けする対応を見せ、ひぐち選手を2-0で下してリードを広げた。大将戦はフルセットにもつれ込んだが、藤村選手が第5ゲーム第3ラウンドで飛び込みに対空からSA3を叩き込み、起き上がりの投げを決めてMenaRD選手に3-2で競り勝った。これによりKADOKAWA FAV gamingが40-0の完全勝利を収めた。",
         "bouts": [
           {
             "status": 0,
@@ -118,11 +118,11 @@
               "Game 2: [2-0] りゅうきち選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "りゅうきち選手（不知火舞）がひぐち選手（ガイル）を2-0で下した。",
+              "source": "gemini-video",
+              "summary": "りゅうきち選手がひぐち選手を2-0のストレートで破り、KADOKAWA FAV gamingがリードを広げて勝利に王手をかけた。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームりゅうきち→第2ゲームりゅうきち",
-                "りゅうきち選手が1ラウンドも落とさず全ゲームをストレートで取り切った。"
+                "第1ゲーム第2ラウンド終盤、りゅうきち選手はひぐち選手のソニックブームを至近距離のSA2で弾抜けしてパニッシュカウンターを取り、第1ゲームを先取した。",
+                "第2ゲーム第1ラウンド終盤には、ひぐち選手のSA2発動に対して遅らせキャンセルによるムササビの舞でタイミングをずらしてかわし、パニッシュカウンターを決めてラウンドを奪った。"
               ]
             },
             "games": [
@@ -164,7 +164,7 @@
                 "side": "home"
               }
             ],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -187,11 +187,11 @@
               "Game 5: [2-1] 藤村選手がフルラウンド勝利"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）を3-2で下した。",
+              "source": "gemini-video",
+              "summary": "藤村選手がMenaRD選手とのフルセットに及ぶ激闘を3-2で制し、KADOKAWA FAV gamingが40-0の完封勝利を達成した。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲーム藤村→第2ゲームMenaRD→第3ゲームMenaRD→第4ゲーム藤村→第5ゲーム藤村",
-                "最終ゲームまでもつれたフルセットを藤村選手が制した。"
+                "第2ゲームでは、MenaRD選手のブランカがしゃがみ中Kから電撃オディオティをヒットさせ、そのままパーフェクトKOを奪った。",
+                "第5ゲーム第3ラウンド、藤村選手はMenaRD選手の飛び込みを迎撃してSA3を叩き込み、起き上がりの暴れを後ろ下がりでスカして投げを決め勝利を決定づけた。"
               ]
             },
             "games": [
@@ -308,7 +308,7 @@
                 "side": "away"
               }
             ],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           }
         ],
         "narrationStatus": "pending"
