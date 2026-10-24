@@ -1,5 +1,42 @@
 {
   "schemaVersion": 1,
-  "days": {},
+  "days": {
+    "2026-10-25": {
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 2626,
+          "cachedInputTokens": 0,
+          "outputTokens": 151,
+          "thoughtTokens": 1578,
+          "totalTokens": 4355
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      },
+      "gemini:verify:gemini-3.7-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 429,
+          "cachedInputTokens": 0,
+          "outputTokens": 97,
+          "thoughtTokens": 1173,
+          "totalTokens": 1699
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      }
+    }
+  },
   "seenIds": []
 }

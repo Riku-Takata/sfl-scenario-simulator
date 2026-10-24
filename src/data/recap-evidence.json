@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T15:03:55.848Z",
+  "updatedAt": "2026-10-24T17:17:41.612Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1011,10 +1011,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P側の藤村（豪鬼）と2P側のMenaRD（ルーク）の対戦。豪鬼が画面左端（画面端）付近にいる状態で、ルークの攻撃がパニッシュカウンター（Punish Counter）でヒットし、豪鬼が吹き飛んでコンボ（2 HITSから3 HITS）を受けている。残り時間は45秒から44秒付近。",
       "sourceModels": [
-        "gemini-3.5-flash-lite"
+        "gemini-3.5-flash-lite",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T06:44:20.243Z"
     },
@@ -1334,10 +1337,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ストリートファイター6の試合映像（1P側：もけ／春麗、2P側：ももち／エド）。両者ともに体力が残りわずかな状況で、53:30頃にももちのエドがODサイコアッパーをヒットさせて春麗をダウンさせます。起き上がり後の立ち回りで、53:40頃にももちのエドがしゃがみ中Kからドライブラッシュで接近を試みますが、もけの春麗がこれに合わせてOD天昇脚をカウンターヒット（画面にREVERSAL・COUNTER表示）させ、エドの体力を削りきってK.O.勝利します。",
       "sourceModels": [
-        "gemini-3.7-flash"
+        "gemini-3.7-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T14:50:15.893Z"
     },
