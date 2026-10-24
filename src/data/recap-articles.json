@@ -1,5 +1,156 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-21T00:00:00.000Z",
-  "articles": {}
+  "updatedAt": "2026-10-24T06:49:11.169Z",
+  "articles": {
+    "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
+      "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "revision": "bb88511ce563110b",
+      "status": "insufficient",
+      "summary": "",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "quality": {
+        "score": 0.4444444444444444,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": false
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints",
+          "everyClaimOverlapsCitedEvidence"
+        ],
+        "evaluatedAt": "2026-10-24T06:47:57.980Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T06:47:57.980Z"
+    },
+    "div-s-sec5-m1-b1:4c321f6966c5f2e8:candidate": {
+      "articleId": "div-s-sec5-m1-b1:4c321f6966c5f2e8:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "revision": "4c321f6966c5f2e8",
+      "status": "insufficient",
+      "summary": "りゅうきち選手（不知火舞）がひぐち選手（ガイル）を2-0のストレートで下した。",
+      "summaryEvidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T06:47:57.981Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T06:47:57.981Z"
+    },
+    "div-s-sec5-m1-b2:8173a37efeb4afc1:candidate": {
+      "articleId": "div-s-sec5-m1-b2:8173a37efeb4afc1:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "revision": "8173a37efeb4afc1",
+      "status": "insufficient",
+      "summary": "藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）とのフルセットの接戦を3-2で制した。",
+      "summaryEvidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T06:47:57.981Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T06:47:57.981Z"
+    },
+    "div-s-sec5-m1:1390688b498699c8:candidate": {
+      "articleId": "div-s-sec5-m1:1390688b498699c8:candidate",
+      "matchId": "div-s-sec5-m1",
+      "revision": "1390688b498699c8",
+      "status": "insufficient",
+      "headline": "FAV gamingが40-0でZETAに完勝",
+      "summary": "KADOKAWA FAV gamingが40-0でZETA DIVISION Geeklyに勝利した。先鋒戦ではもけ選手（不知火舞）がももち選手（ジェイミー）に第1ゲームを先取されながらも2-1で逆転勝ち。続く中堅戦はりゅうきち選手（不知火舞）がひぐち選手（ガイル）を2-0のストレートで破った。大将戦では藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）に第2・第3ゲームを連取される展開から巻き返し、3-2のフルセットを制してチームの全勝を確定させた。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.8,
+        "checks": {
+          "allBoutsPassed": false,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [
+          "allBoutsPassed"
+        ],
+        "evaluatedAt": "2026-10-24T06:47:57.981Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T06:47:57.981Z"
+    }
+  }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T06:27:24.833Z",
+  "updatedAt": "2026-10-24T06:49:11.034Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -777,6 +777,438 @@
       "verifierVersion": "official-source-v1",
       "sourceModels": [],
       "createdAt": "2026-10-23T14:00:32.071Z"
+    },
+    "ev-d0a04b150ea36c589380": {
+      "id": "ev-d0a04b150ea36c589380",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 2903,
+      "endSec": 2927,
+      "playerIds": [
+        "もけ",
+        "ももち"
+      ],
+      "observation": "ももちが画面端で不知火舞をバーンアウトからスタンに追い込み、一気に酒レベル4まで引き上げて第1ゲームを優位に進めた。",
+      "officialRefs": [
+        "div-s-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v2",
+      "verificationObservation": "ファイターズの試合中、緑の衣装のキャラクターが連続攻撃を行い、相手をKOする。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:34:05.364Z"
+    },
+    "ev-59861cfdbe442f24e3c9": {
+      "id": "ev-59861cfdbe442f24e3c9",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3135,
+      "endSec": 3146,
+      "playerIds": [
+        "もけ",
+        "ももち"
+      ],
+      "observation": "もけが第2ゲーム第2ラウンド終盤にももちの無敵技による暴れを冷静に防ぎ、パニッシュカウンターからK.O.して勝敗をタイに戻した。",
+      "officialRefs": [
+        "div-s-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v2",
+      "verificationObservation": "画面左側のキャラクターが緑色のキャラクターを攻撃し、ノックアウトした。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:34:05.364Z"
+    },
+    "ev-d1821140d32529f0c00f": {
+      "id": "ev-d1821140d32529f0c00f",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3267,
+      "endSec": 3297,
+      "playerIds": [
+        "もけ",
+        "ももち"
+      ],
+      "observation": "もけが第3ゲーム第2ラウンドでももちを画面端に追い詰めて一切の被弾を許さず、パーフェクトK.O.を奪って逆転勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T06:34:05.364Z"
+    },
+    "ev-d72684ae9287c40c10ca": {
+      "id": "ev-d72684ae9287c40c10ca",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3666,
+      "endSec": 3675,
+      "playerIds": [
+        "りゅうきち",
+        "ひぐち"
+      ],
+      "observation": "りゅうきちは第1ゲーム第2ラウンド終盤、ひぐちのソニックブームを至近距離のSA2で弾抜けしてパニッシュカウンターを取り、そのままラウンドを連取して第1ゲームを先取した。",
+      "officialRefs": [
+        "div-s-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v2",
+      "verificationObservation": "画面左側のキャラクターが右側のキャラクターに攻撃を行った。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:38:10.112Z"
+    },
+    "ev-3003ec21bd72fd9612bc": {
+      "id": "ev-3003ec21bd72fd9612bc",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3756,
+      "endSec": 3768,
+      "playerIds": [
+        "りゅうきち",
+        "ひぐち"
+      ],
+      "observation": "りゅうきちは第2ゲーム第1ラウンド終盤、バーンアウト寸前でドライブリバーサルをヒットさせた直後にひぐちが発動したSA2を、遅らせキャンセル必殺技でずらして反撃しラウンドを先取した。",
+      "officialRefs": [
+        "div-s-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v2",
+      "verificationObservation": "格闘ゲームのプレイ画面において、キャラクター同士が攻撃を交わし合う様子が映されている。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:38:10.112Z"
+    },
+    "ev-8f5d23fde6e691a2cdf5": {
+      "id": "ev-8f5d23fde6e691a2cdf5",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3796,
+      "endSec": 3815,
+      "playerIds": [
+        "りゅうきち",
+        "ひぐち"
+      ],
+      "observation": "りゅうきちは第2ゲーム第2ラウンド、ひぐちの体力を残りドットまで追い込んだ後、最後はめくりジャンプ攻撃からの小パンチでガードを崩して勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T06:38:10.112Z"
+    },
+    "ev-7baf66f34115a6f92834": {
+      "id": "ev-7baf66f34115a6f92834",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 4240,
+      "endSec": 4242,
+      "playerIds": [
+        "藤村",
+        "MenaRD"
+      ],
+      "observation": "第1ゲーム開始直後、MenaRD選手がブランカボールで攻め込み、藤村選手のヴァイパーのドライブゲージを削ってバーンアウトさせた。",
+      "officialRefs": [
+        "div-s-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v2",
+      "verificationObservation": "ブランカがケンに対してパニッシュカウンターとなる投げ技をヒットさせ、相手を地面に叩きつけています。",
+      "sourceModels": [
+        "gemini-3.5-flash-lite",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T06:44:20.243Z"
+    },
+    "ev-36a0679ebad98ed00512": {
+      "id": "ev-36a0679ebad98ed00512",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 4241,
+      "endSec": 4242,
+      "playerIds": [
+        "藤村",
+        "MenaRD"
+      ],
+      "observation": "第2ゲーム、MenaRD選手のブランカがしゃがみ中Kから電撃オディオティをヒットさせ、そのままパーフェクトKOを奪った。",
+      "officialRefs": [
+        "div-s-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v2",
+      "verificationObservation": "ブランカがキャミィを掴んで地面に叩きつける投げ技の動作を行っており、画面には「PUNISH COUNTER」「2 HITS」と表示されています。実況音声では「で、これギャンブルバウンド」と発話されています。",
+      "sourceModels": [
+        "gemini-3.5-flash-lite",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T06:44:20.243Z"
+    },
+    "ev-0e303a861556a6d6c284": {
+      "id": "ev-0e303a861556a6d6c284",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 4246,
+      "endSec": 4248,
+      "playerIds": [
+        "藤村",
+        "MenaRD"
+      ],
+      "observation": "第3ゲーム、MenaRD選手のブランカがライトニングビースト発動からラッシュを仕掛け、バーストで切り返そうとした藤村選手のヴァイパーをKOした。",
+      "officialRefs": [
+        "div-s-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:44:20.243Z"
+    },
+    "ev-e658a1ac99728849b556": {
+      "id": "ev-e658a1ac99728849b556",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 4252,
+      "endSec": 4254,
+      "playerIds": [
+        "藤村",
+        "MenaRD"
+      ],
+      "observation": "第5ゲーム、藤村選手のヴァイパーが立ち中Kパニッシュカウンターからドライブアッパーを当て、最後はSA2からフィニッシュした。",
+      "officialRefs": [
+        "div-s-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:44:20.243Z"
+    },
+    "ev-b92fa1bb9cfd4350193f": {
+      "id": "ev-b92fa1bb9cfd4350193f",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 4943,
+      "endSec": 4963,
+      "playerIds": [
+        "藤村",
+        "MenaRD"
+      ],
+      "observation": "第5ゲーム第3ラウンド、藤村がMenaRDの飛び込みを迎撃してSA3を叩き込んで大ダメージを与え、起き上がりの暴れを後ろ下がりでスカして投げを決め勝利を決定づけた。",
+      "officialRefs": [
+        "div-s-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T06:44:20.243Z"
+    },
+    "ev-b9e5f51d741a33bf18f6": {
+      "id": "ev-b9e5f51d741a33bf18f6",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 4671,
+      "endSec": 4688,
+      "playerIds": [
+        "藤村",
+        "MenaRD"
+      ],
+      "observation": "第3ゲーム第2ラウンド、MenaRDがバーンアウト中の藤村に対してドライブインパクトをパニッシュカウンターでヒットさせ、そのままCAを決めて2ゲーム連取の逆転に成功した。",
+      "officialRefs": [
+        "div-s-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T06:44:20.243Z"
+    },
+    "ev-e1ff59925d651963ea24": {
+      "id": "ev-e1ff59925d651963ea24",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 4791,
+      "endSec": 4804,
+      "playerIds": [
+        "藤村",
+        "MenaRD"
+      ],
+      "observation": "第4ゲーム第2ラウンド、追い詰められた藤村がMenaRDの空中攻撃を対空で迎撃し、SA2を叩き込んでフルセットへ持ち込んだ。",
+      "officialRefs": [
+        "div-s-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T06:44:20.243Z"
+    },
+    "ev-aff6a8c7f92e31b968ae": {
+      "id": "ev-aff6a8c7f92e31b968ae",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 6764,
+      "endSec": 6778,
+      "playerIds": [
+        "cosa",
+        "ヤナイ"
+      ],
+      "observation": "cosaは第1ゲーム第2ラウンド終盤、立ち弱キックからのヒット確認でCAを確実に叩き込んでKOし、第1ゲームを先取した。",
+      "officialRefs": [
+        "div-s-sec5-m2-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v2",
+      "verificationObservation": "格闘ゲームの対戦で、画面左のキャラクターが連続攻撃を決め、相手をKOしたシーン。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:49:04.450Z"
+    },
+    "ev-1243c70ed38678d136de": {
+      "id": "ev-1243c70ed38678d136de",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 6801,
+      "endSec": 6828,
+      "playerIds": [
+        "cosa",
+        "ヤナイ"
+      ],
+      "observation": "cosaは第2ゲーム第1ラウンド、卓越した間合い管理と差し返しからヤナイを画面端に追い詰め、一度も被弾することなくパーフェクトKOを達成した。",
+      "officialRefs": [
+        "div-s-sec5-m2-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v2",
+      "verificationObservation": "ケンがマリーザを攻撃してKOし、パーフェクト勝利した。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:49:04.450Z"
+    },
+    "ev-e79df3fcf3faf037089b": {
+      "id": "ev-e79df3fcf3faf037089b",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 6882,
+      "endSec": 6888,
+      "playerIds": [
+        "cosa",
+        "ヤナイ"
+      ],
+      "observation": "cosaは第2ゲーム第2ラウンドの終盤、ヤナイの守りを崩すめくりジャンプ攻撃（クロスアップ）を通してKOを奪い、ストレート勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec5-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T06:49:04.450Z"
+    },
+    "ev-a16c780e5729e9b85302": {
+      "id": "ev-a16c780e5729e9b85302",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 6717,
+      "endSec": 6718,
+      "playerIds": [
+        "cosa",
+        "ヤナイ"
+      ],
+      "observation": "cosaのケンが第1ゲーム終盤にリバーサル中パンチからのSAを使って逆転した",
+      "officialRefs": [
+        "div-s-sec5-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T06:49:04.450Z"
     }
   }
 }

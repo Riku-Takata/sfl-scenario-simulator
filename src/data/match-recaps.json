@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T06:27:24.812Z",
+  "updatedAt": "2026-10-24T06:32:16.761Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 5,
@@ -132,7 +132,8 @@
                 "awayChara": "mai",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
                     "winner": "away"
@@ -148,12 +149,21 @@
                     "winner": "away"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               }
             ],
-            "tags": [],
+            "tags": [
+              {
+                "id": "projectile",
+                "side": "home"
+              }
+            ],
             "videoStatus": "pending"
           },
           {
@@ -191,13 +201,36 @@
                 "awayChara": "cviper",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL",
+                    "perfect": true
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
+                  }
+                ],
+                "burnout": [
+                  "away"
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "blanka",
+                "awayChara": "cviper",
+                "rounds": [
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL"
+                  },
+                  {
+                    "winner": "home",
+                    "finish": "NORMAL",
+                    "perfect": true
                   }
                 ]
               },
@@ -207,24 +240,16 @@
                 "awayChara": "cviper",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "CA"
                   }
-                ]
-              },
-              {
-                "winner": "home",
-                "homeChara": "blanka",
-                "awayChara": "cviper",
-                "rounds": [
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "home"
-                  }
+                ],
+                "burnout": [
+                  "away"
                 ]
               },
               {
@@ -233,11 +258,16 @@
                 "awayChara": "cviper",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "SA1"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "SA2"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               },
               {
@@ -246,18 +276,38 @@
                 "awayChara": "cviper",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL",
+                    "perfect": true
                   },
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   }
+                ],
+                "burnout": [
+                  "away"
                 ]
               }
             ],
-            "tags": [],
+            "tags": [
+              {
+                "id": "anti_air",
+                "side": "away"
+              },
+              {
+                "id": "whiff_punish",
+                "side": "away"
+              },
+              {
+                "id": "corner",
+                "side": "away"
+              }
+            ],
             "videoStatus": "pending"
           }
         ],
