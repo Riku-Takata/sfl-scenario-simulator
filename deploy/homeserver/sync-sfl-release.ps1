@@ -8,15 +8,14 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$script:ProjectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
+$homeServerRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-$projectRoot = Join-Path $script:ProjectRoot "apps\sfl-scenario-simulator"
-$stateRoot = Join-Path $script:ProjectRoot "data\app-data\sfl-deploy"
+$stateRoot = Join-Path $homeServerRoot "data\app-data\sfl-deploy"
 $releaseRoot = Join-Path $stateRoot "releases"
 $stateFile = Join-Path $stateRoot "current.json"
-$logFile = Join-Path $script:ProjectRoot "logs\sfl-release-sync.log"
-$composeFile = Join-Path $script:ProjectRoot "compose.yaml"
+$logFile = Join-Path $homeServerRoot "logs\sfl-release-sync.log"
+$composeFile = Join-Path $homeServerRoot "compose.yaml"
 $mutex = [Threading.Mutex]::new($false, "Global\HomeServer-SFL-Release-Sync")
 
 function Write-SyncLog([string]$Message) {
