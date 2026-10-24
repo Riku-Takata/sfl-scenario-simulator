@@ -65,11 +65,17 @@ export function buildBoutPrompt(ctx: BoutContext): string {
 選手B: ${ctx.playerB.name}（${ctx.playerB.chara}／${ctx.playerB.team}）
 公式結果: ${winnerName} が ${Math.max(ctx.scoreA, ctx.scoreB)}-${Math.min(ctx.scoreA, ctx.scoreB)} で勝利
 
-ゲーム画面（HUD・演出）と実況音声の両方から、この対戦の「勝敗を分けた重要なトピック」だけを抽出してください。
+ゲーム画面（HUD・演出）と実況音声の両方から、この対戦の試合展開や勝敗の分岐点を詳しく観察し、「勝敗を分けた重要なトピック」を抽出してください。
+重点的に捉える観点:
+1. 立ち上がり・主導権争い（牽制、ラッシュの通し合い、飛び道具、開幕ペースの掌握）
+2. ドライブゲージ状況（バーンアウトの発生・追い込み、画面端でのプレッシャー、インパクトやジャストパリィ）
+3. 勝負のターニングポイント（対空迎撃、パニッシュカウンターからの高火力コンボ、無敵技切り返し、逆転のきっかけ）
+4. 決着・リーサル局面（SA3/CAでの確定KO、ミリ耐えからの逆転、最終ラウンドの読み合い）
+
 ルール:
 - 確実に確認できたことだけを書く。キャラクターの一般的な性能説明・推測・定型的な褒め言葉は禁止。
-- 「第Nゲームは誰が勝った」だけのトピックは不要（勝敗は別途把握済み）。
-- 網羅は不要。重要度の高い順に2〜4件。確信が持てなければ少なくてよい（0件も可）。
+- 「第Nゲームは誰が勝った」だけのトピックは不要（勝敗は別途把握済み）。試合の具体的な攻防・展開を書く。
+- 重要度の高い順に3〜6件（確信の持てる事実をできるだけ詳しく把握する。確信がなければ少なくてよい）。
 - 各トピックに、入力された対戦クリップの先頭からの相対時刻を秒で付ける。両方の時刻を確認できない話題は出力しない。
 - 各トピックに根拠を付ける: "映像" / "実況" / "両方"。
 - 自己チェック: 各ゲームの勝者を映像から "A" / "B" / "不明" で答える。公式結果から推測して埋めないこと。
@@ -78,10 +84,9 @@ export function buildBoutPrompt(ctx: BoutContext): string {
 ゲーム間の待機画面・リプレイ・解説席カット・インタビューは無視する。
 
 JSONのみで出力:
-{"gameWinnersSeen":["A|B|不明"],"topics":[{"topic":"一文で具体的に（選手名を主語に）","evidence":"映像|実況|両方","startSec":クリップ先頭からの秒数,"endSec":クリップ先頭からの秒数}]}`;
+{"gameWinnersSeen":["A|B|不明"],"topics":[{"topic":"一文で具体的に（選手名を主語に、技名・ゲージ状況・試合展開を含めて記述）","evidence":"映像|実況|両方","startSec":クリップ先頭からの秒数,"endSec":クリップ先頭からの秒数}]}`;
 }
 
-/** Gemini timestamps describe the supplied clip. Convert them to archive-global seconds. */
 export function normalizeTopicWindow(
   topic: { startSec?: number; endSec?: number },
   clip: { startSec: number; endSec: number }

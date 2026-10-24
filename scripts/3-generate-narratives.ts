@@ -158,12 +158,15 @@ function generateRichDataDrivenNarrative(
     `残り${team.remainingMatches}試合（HOME ${team.remainingHome}戦・AWAY ${team.remainingAway}戦）を踏まえた現在のプレイオフ進出確率は${team.probabilities.playoffTop3}%、2位以内確率は${team.probabilities.top2HomeAdvantage}%、1位突破確率は${team.probabilities.firstPlace}%となっています。`,
   ].join("");
 
+  const isMiracle = team.probabilities.playoffTop3 < 10;
   const playoffOutlook =
     standing.rank === 1
-      ? `現在2位${second.shortName}（${second.point}pt）に${standing.point - second.point}pt差、4位${fourth.shortName}（${fourth.point}pt）に${standing.point - fourth.point}pt差をつけて首位を走っています。このまま1位で突破すれば、プレイオフ準決勝が免除され決勝へHOME側としてシード直行できます。`
+      ? `現在2位${second.shortName}（${second.point}pt）に${standing.point - second.point}pt差をつけ首位を走っています。チームの最重要ターゲットは「追撃を完封して1位突破を果たし、プレイオフFINALへのHOMEシード直行を決めること」です。`
       : standing.rank <= 3
-        ? `現在プレイオフ圏内の${standing.rank}位。4位${fourth.shortName}（${fourth.point}pt）との差は${standing.point - fourth.point}pt、首位${leader.shortName}（${leader.point}pt）との差は${leader.point - standing.point}ptです。2位以上で通過すればプレイオフでのHOME優先権を確保できます。`
-        : `現在${standing.rank}位ですが、3位ボーダーの${third.shortName}（${third.point}pt）とは${third.point - standing.point}pt差です。SFLは1節で最大40pt獲得できるため、直接対決での30pt〜40pt勝利で一気にプレイオフ圏内へ浮上可能です。`;
+        ? `現在プレイオフ圏内の${standing.rank}位。4位${fourth.shortName}（${fourth.point}pt）との差は${standing.point - fourth.point}pt、首位${leader.shortName}（${leader.point}pt）との差は${leader.point - standing.point}ptです。2位以上を死守してプレイオフ準決勝のHOME優先権を掴み取ることが現実的なターゲットとなります。`
+        : isMiracle
+          ? `現在${standing.rank}位（${standing.point}pt）、3位ボーダー${third.shortName}（${third.point}pt）とは${third.point - standing.point}pt差の極めて厳しい崖っぷちです。1位・2位通過は絶望的であり、残された道は「残り試合ほぼ全勝（40-0推奨）＋上位ライバルの総崩れ」を祈る奇跡の3位滑り込みのみです。`
+          : `現在${standing.rank}位ですが、3位ボーダーの${third.shortName}（${third.point}pt）とは${third.point - standing.point}pt差です。直接対決での30pt〜40pt勝利を挙げられれば自力で順位を逆転し、3位滑り込みを果たすチャンスが十分にあります。`;
 
   const r1 = team.routes.route1First;
   const route1Narrative = [

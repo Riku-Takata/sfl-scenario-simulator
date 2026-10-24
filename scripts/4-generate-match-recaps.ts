@@ -337,7 +337,7 @@ export async function generateAndSaveMatchRecaps(
   const apiKey = process.env.GEMINI_API_KEY || "";
   const videoModels = parseModelList(process.env.GEMINI_VIDEO_MODELS, DEFAULT_VIDEO_MODELS);
   const textModels = parseModelList(process.env.GEMINI_TEXT_MODELS, DEFAULT_TEXT_MODELS);
-  const textBackend = process.env.RECAP_TEXT_BACKEND === "gemini" ? "gemini" : "codex";
+  const textBackend = (process.env.RECAP_TEXT_BACKEND as import("./recap/writer-manager").TextBackendType) || "codex";
   const fullVisualAnalysis = process.env.RECAP_ENABLE_FULL_VISUAL_ANALYSIS === "true";
   const fps = Number(process.env.GEMINI_VIDEO_FPS || "1");
   const analysisVersion = videoAnalysisFingerprint(videoModels, fps);
@@ -706,13 +706,13 @@ export async function generateAndSaveMatchRecaps(
             console.warn(`[Narration] ${matchId}: rejected prepared draft: ${(error as Error).message}`);
             finishWriteRequest(writeRequests, matchId, inputHash, false);
           }
-        } else if (textBackend === "codex") {
+        } else if (textBackend !== "gemini") {
           queueWriteRequest(writeRequests, { matchId, sectionId: slug, inputHash,
             sourceHash: writerSourceHash,
             prompt: buildNarrationPrompt(narrationInput),
           });
           saveWriteRequests(writeRequests);
-          console.log(`[Narration] ${matchId}: queued verified materials for the local Codex writer.`);
+          console.log(`[Narration] ${matchId}: queued verified materials for the local LLM writer (${textBackend}).`);
         } else {
           console.log(`[Narration] ${matchId}: generating with the explicitly selected Gemini text backend...`);
           narrationAttempted = true;

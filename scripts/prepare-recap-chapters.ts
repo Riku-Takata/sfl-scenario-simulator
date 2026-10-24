@@ -5,6 +5,7 @@ import { MatchesDataSchema, RecapJobsDataSchema, VideoFactsDataSchema } from "..
 import { selectAutomaticSection } from "./recap/automation";
 import { RecapUsageSchema, remainingDailyUsage } from "./recap/usage";
 import { WriteRequestsSchema } from "./recap/writer-state";
+import { executeWriter, type TextBackendType } from "./recap/writer-manager";
 import { writeWithCodex } from "./recap/codex-writer";
 import path from "node:path";
 import type { MatchesData, VideoFactsData } from "../src/lib/types";
@@ -68,10 +69,19 @@ async function main(): Promise<void> {
   if (!readyOnly) await prepareChapters(matches, facts);
   const jobs = RecapJobsDataSchema.parse(decode(read("recap-jobs")));
   const requests = WriteRequestsSchema.parse(optionalData("recap-write-requests", { schemaVersion: 1, requests: {} }));
-  const requestToWrite = process.argv.includes("--write-with-codex") ? Object.values(requests.requests)
+  const writeBackendArg = process.argv.find((arg) => arg.startsWith("--write-backend="))?.split("=")[1] as TextBackendType | undefined;
+  const shouldWrite = process.argv.includes("--write-with-codex") || Boolean(writeBackendArg) || Boolean(process.env.SFL_WRITER_BACKEND);
+  const selectedBackend: TextBackendType = writeBackendArg || (process.env.SFL_WRITER_BACKEND as TextBackendType) || (process.argv.includes("--write-with-codex") ? "codex" : "auto");
+  const requestToWrite = shouldWrite ? Object.values(requests.requests)
     .filter((request) => request.stage === "queued")
     .sort((a, b) => a.updatedAt.localeCompare(b.updatedAt))[0] : undefined;
-  const prepared = requestToWrite ? writeWithCodex(requestToWrite, process.env.SFL_WRITER_CACHE_DIR ?? path.resolve("../../data/app-data/sfl-recap/writer")) : undefined;
+  const writerCacheDir = process.env.SFL_WRITER_CACHE_DIR ?? path.resolve("../../data/app-data/sfl-recap/writer");
+  const prepared = requestToWrite ? await executeWriter({
+    backend: selectedBackend,
+    request: requestToWrite,
+    root: writerCacheDir,
+    apiKey: process.env.GEMINI_API_KEY,
+  }) : undefined;
   const remaining = remainingDailyUsage(RecapUsageSchema.parse(decode(read("recap-usage"))));
   const section = prepared ? requestToWrite!.sectionId : remaining.calls && remaining.videoSeconds
     ? selectAutomaticSection({ jobs, facts, matches, apiAvailable: true, allowArchiveCheck: !readyOnly }) : undefined;
