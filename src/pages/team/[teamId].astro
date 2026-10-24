@@ -177,151 +177,58 @@ const targetRouteForSchedule =
         </div>
       </div>
 
-      <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; margin-bottom: 0.85rem; line-height: 1.65; font-size: 0.93rem; color: var(--text-sub);">
+      <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; line-height: 1.65; font-size: 0.93rem; color: var(--text-sub);">
         <p style="margin: 0;">{pOutlook.coreNarrative}</p>
       </div>
 
-      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; font-weight: 700; color: var(--text-main);">
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 1.15rem;">
         <span style="color: var(--primary);">🎯 最重要クリア条件:</span>
         <span>{pOutlook.primaryConditionSummary}</span>
       </div>
-    </div>
-  )}
 
-  <!-- 突破ルート現実度・可能性比較 -->
-  <div style="margin: 2rem 0 1rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem;">
-    <div>
-      <h2 style="font-size: 1.25rem; font-weight: 800; margin: 0;">
-        {meta.shortName} の各順位突破ルート ＆ 現実度評価
-      </h2>
-      <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0.25rem 0 0;">
-        モンテカルロシミュレーション（1万回）から導出した各順位の到達可能性と必要条件です。
-      </p>
-    </div>
-  </div>
-
-  <div class="scenario-grid">
-    {routeList.map((route, i) => {
-      const isRecommended = route.isRecommendedTarget;
-      const rankNum = i === 0 ? "first" : i === 1 ? "second" : "third";
-      const evalInfo = pOutlook?.rankEvaluations?.[rankNum];
-      const feasibility = evalInfo?.feasibility ?? route.feasibility ?? "realistic";
-      const isImpossible = feasibility === "impossible";
-
-      const cardClass = isRecommended
-        ? "route-card route-highlight"
-        : i === 0
-          ? "route-card route-1"
-          : i === 1
-            ? "route-card route-2"
-            : "route-card route-3";
-
-      return (
-        <div class={cardClass} style={isImpossible ? "opacity: 0.7; border-style: dashed;" : ""}>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-            <span class="route-subtitle" style="margin: 0;">
-              {route.subtitle}
-            </span>
-            <span class="badge" style={`font-size: 0.72rem; padding: 0.2rem 0.5rem; font-weight: 700; ${
-              feasibility === 'favorite' ? 'background: rgba(16, 185, 129, 0.15); color: #059669;' :
-              feasibility === 'realistic' ? 'background: rgba(59, 130, 246, 0.15); color: #2563eb;' :
-              feasibility === 'challenging' ? 'background: rgba(245, 158, 11, 0.15); color: #d97706;' :
-              feasibility === 'miracle' ? 'background: rgba(239, 68, 68, 0.15); color: #dc2626;' :
-              'background: rgba(100, 116, 139, 0.15); color: #64748b;'
-            }`}>
-              {evalInfo?.feasibilityLabel ?? "評価"}
-            </span>
-          </div>
-
-          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem;">
-            <h3 style="margin: 0.2rem 0 0.5rem; font-size: 1.15rem;">{route.title}</h3>
-            {isRecommended && (
-              <span style="font-size: 0.72rem; font-weight: 800; background: var(--primary); color: #ffffff; padding: 0.15rem 0.45rem; border-radius: 4px;">
-                本命ターゲット
-              </span>
-            )}
-          </div>
-
-          {evalInfo?.note && (
-            <div style="font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">
-              💡 {evalInfo.note}
-            </div>
-          )}
-
-          <div
-            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; padding: 0.75rem; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; margin: 0.5rem 0 0.75rem; font-size: 0.82rem;"
-          >
-            <div>
-              <div style="color: var(--text-muted);">目標ポイント</div>
-              <div style="font-weight: 800; font-size: 1.05rem; color: var(--primary);">
-                {route.targetPoints}pt
-              </div>
-            </div>
-            <div>
-              <div style="color: var(--text-muted);">残り試合目安</div>
-              <div style="font-weight: 800;">
-                {route.requiredWins}勝{route.requiredLosses}敗
-              </div>
-            </div>
-            <div>
-              <div style="color: var(--text-muted);">到達確率</div>
-              <div style={`font-weight: 800; font-size: 1.05rem; color: ${route.probability >= 50 ? 'var(--success)' : route.probability >= 20 ? 'var(--text-main)' : 'var(--danger)'};`}>
-                {route.probability.toFixed(1)}%
-              </div>
-            </div>
-          </div>
-
-          <p style="font-size: 0.88rem; color: var(--text-sub); margin-bottom: 0.65rem;">
-            {route.narrative}
-          </p>
-
-          <ul class="bullet-list">
-            {route.keyConditions.map((cond) => (
-              <li>{cond}</li>
-            ))}
-          </ul>
+      <!-- 順位別ターゲット現実度（コンパクト比較） -->
+      <div style="border-top: 1px solid var(--border-color); padding-top: 0.85rem;">
+        <div style="font-size: 0.82rem; font-weight: 800; color: var(--text-muted); margin-bottom: 0.65rem;">
+          順位別ターゲット現実度（どの順位を目指すのが現実的か？）
         </div>
-      );
-    })}
-  </div>
-
-  <!-- 次節の他会場応援ガイド -->
-  <div class="panel">
-    <div class="panel-header">
-      <div>
-        <h2 class="panel-title">
-          次節の他会場カード：どちらを応援すると {meta.shortName} に有利か？
-        </h2>
-        <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.2rem;">
-          同ディビジョンの他チームの試合で、{meta.shortName} のプレイオフ進出率が最も高くなる理想の結果です。
-        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+          {[
+            { rank: 1, name: "1位突破（FINAL直行）", data: pOutlook.rankEvaluations.first },
+            { rank: 2, name: "2位確保（準決勝HOME権）", data: pOutlook.rankEvaluations.second },
+            { rank: 3, name: "3位滑り込み（PO進出）", data: pOutlook.rankEvaluations.third },
+          ].map(({ rank, name, data }) => {
+            const isTarget = pOutlook.realisticTargetRank === rank;
+            const isImpossible = data.feasibility === "impossible";
+            return (
+              <div style={`padding: 0.75rem 0.85rem; border-radius: 8px; border: ${isTarget ? '2px solid var(--primary)' : '1px solid var(--border-color)'}; background: ${isTarget ? 'var(--bg-card)' : 'var(--bg-subtle)'}; ${isImpossible ? 'opacity: 0.6;' : ''}`}>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.84rem; font-weight: 800; color: var(--text-main);">{name}</span>
+                  <span class="badge" style={`font-size: 0.7rem; padding: 0.15rem 0.45rem; font-weight: 700; ${
+                    data.feasibility === 'favorite' ? 'background: rgba(16, 185, 129, 0.15); color: #059669;' :
+                    data.feasibility === 'realistic' ? 'background: rgba(59, 130, 246, 0.15); color: #2563eb;' :
+                    data.feasibility === 'challenging' ? 'background: rgba(245, 158, 11, 0.15); color: #d97706;' :
+                    data.feasibility === 'miracle' ? 'background: rgba(239, 68, 68, 0.15); color: #dc2626;' :
+                    'background: rgba(100, 116, 139, 0.15); color: #64748b;'
+                  }`}>
+                    {data.feasibilityLabel}
+                  </span>
+                </div>
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                  <span style="font-size: 0.78rem; color: var(--text-muted);">目安: <strong>{data.targetPoints}pt</strong></span>
+                  <span style={`font-size: 0.95rem; font-weight: 800; color: ${data.probability >= 50 ? 'var(--success)' : data.probability >= 20 ? 'var(--text-main)' : 'var(--danger)'};`}>
+                    確率 {data.probability.toFixed(1)}%
+                  </span>
+                </div>
+                <div style="font-size: 0.76rem; color: var(--text-sub); line-height: 1.4;">
+                  {data.note}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
-      {analysis.nextSectionCheeringGuide.map((item) => (
-        <div
-          style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.15rem;"
-        >
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);">
-              {item.sectionTitle}: {item.awayName} vs {item.homeName}
-            </span>
-            <span class="badge" style="background: var(--success-bg); color: var(--success);">
-              進出率 +{item.playoffProbDelta.toFixed(1)}%
-            </span>
-          </div>
-
-          <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin-bottom: 0.35rem;">
-            {item.recommendedWinnerName} の勝利が有利（理想: {item.recommendedScoreLabel}）
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-sub);">
-            {item.reason}
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
+  )}
 
   <!-- 残り試合の目標星取表（現実的ターゲット連動） -->
   {targetRouteForSchedule.targetSchedule &&
@@ -390,6 +297,44 @@ const targetRouteForSchedule =
         </div>
       </div>
     )}
+
+  <!-- 次節の他会場応援ガイド -->
+  <div class="panel">
+    <div class="panel-header">
+      <div>
+        <h2 class="panel-title">
+          次節の他会場カード：どちらを応援すると {meta.shortName} に有利か？
+        </h2>
+        <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.2rem;">
+          同ディビジョンの他チームの試合で、{meta.shortName} のプレイオフ進出率が最も高くなる理想の結果です。
+        </p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+      {analysis.nextSectionCheeringGuide.map((item) => (
+        <div
+          style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.15rem;"
+        >
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);">
+              {item.sectionTitle}: {item.awayName} vs {item.homeName}
+            </span>
+            <span class="badge" style="background: var(--success-bg); color: var(--success);">
+              進出率 +{item.playoffProbDelta.toFixed(1)}%
+            </span>
+          </div>
+
+          <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary); margin-bottom: 0.35rem;">
+            {item.recommendedWinnerName} の勝利が有利（理想: {item.recommendedScoreLabel}）
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-sub);">
+            {item.reason}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
 
   <!-- 残り試合の勝率予測 ＆ 出場モデル内訳（確率の根拠） -->
   {analysis.remainingMatchPredictions &&
