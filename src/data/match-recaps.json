@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T13:45:34.630Z",
+  "updatedAt": "2026-10-24T14:45:37.803Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 5,
@@ -527,7 +527,8 @@
                 "awayChara": "terry",
                 "rounds": [
                   {
-                    "winner": "home"
+                    "winner": "home",
+                    "finish": "NORMAL"
                   },
                   {
                     "winner": "home"

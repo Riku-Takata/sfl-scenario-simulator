@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T14:27:24.848Z",
+  "updatedAt": "2026-10-24T15:03:55.848Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -957,10 +957,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "70:40.000〜70:41.500の区間では、1P側の豪鬼（プレイヤー：藤村）と2P側のブランカ（プレイヤー：MENARD）の対戦が確認できる。ブランカはSA2（ライトニングビースト）発動中の状態で、前進して豪鬼に打撃をヒットさせ「PUNISH COUNTER」が画面左に表示される。その後、コンボが繋がり「2 HITS PUNISH COUNTER」と表示され、さらにブランカが電撃エフェクトを伴う攻撃（エレクトリックサンダー系）を豪鬼に当てている。",
       "sourceModels": [
-        "gemini-3.5-flash-lite"
+        "gemini-3.5-flash-lite",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T13:46:38.715Z"
     },
@@ -981,10 +984,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ストリートファイター6の試合画面。左側にケン（プレイヤー：FUJIMURA）、右側にブランカ（プレイヤー：MENARD）が対戦中。ブランカがケンに対してパニッシュカウンター始動のコマンド投げ（ワイルドハント）を決めている最中で、画面左に『PUNISH COUNTER』および『2 HITS』が表示され、帯電したエフェクトとともにケンに追撃を加えている。ケンはバーンアウト状態（ドライブゲージが灰色で回復途中）、体力ゲージは約1割強まで減少。ブランカの体力ゲージは約半分、ドライブゲージは約3ブロック残存、SAゲージはレベル2。タイマーは47から46へ推移している。",
       "sourceModels": [
-        "gemini-3.5-flash-lite"
+        "gemini-3.5-flash-lite",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T13:46:38.715Z"
     },
@@ -1284,6 +1290,296 @@
         "gemini-3.1-flash-lite"
       ],
       "createdAt": "2026-10-24T14:27:24.758Z"
+    },
+    "ev-47f540269636fb89a1c1": {
+      "id": "ev-47f540269636fb89a1c1",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 2903,
+      "endSec": 2926,
+      "playerIds": [
+        "もけ",
+        "ももち"
+      ],
+      "observation": "ももちはもけを画面端に追い詰めてバーンアウトからスタンを奪い、一気に酒レベルを4まで引き上げて第1ゲームを先制した。",
+      "officialRefs": [
+        "div-s-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "cross-model-candidate-v1",
+      "sourceModels": [
+        "gemini-3.7-flash",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-24T14:50:15.893Z"
+    },
+    "ev-98979d89dec24bf95f54": {
+      "id": "ev-98979d89dec24bf95f54",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3210,
+      "endSec": 3226,
+      "playerIds": [
+        "もけ",
+        "ももち"
+      ],
+      "observation": "第2ゲームのファイナルラウンドで体力僅差に追い込まれたもけは、冷静に反撃をねじ込み流煙陣をヒットさせて逆転勝利しタイに戻した。",
+      "officialRefs": [
+        "div-s-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-24T14:50:15.893Z"
+    },
+    "ev-0fadfa095ba2ab55b140": {
+      "id": "ev-0fadfa095ba2ab55b140",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3254,
+      "endSec": 3297,
+      "playerIds": [
+        "もけ",
+        "ももち"
+      ],
+      "observation": "最終第3ゲームでもけは相手の動きを完全に封じ込め、2ラウンド連続のパーフェクトK.O.を達成して逆転勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-24T14:50:15.893Z"
+    },
+    "ev-5c99881b87b5c1e89067": {
+      "id": "ev-5c99881b87b5c1e89067",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3780,
+      "endSec": 3788,
+      "playerIds": [
+        "りゅうきち",
+        "ひぐち"
+      ],
+      "observation": "第2ゲーム第1ラウンド終盤、ひぐちのSA2発動に対してりゅうきちは遅らせキャンセルによるムササビの舞でタイミングをずらしてかわし、パニッシュカウンターを決めてラウンドを奪った。",
+      "officialRefs": [
+        "div-s-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-24T14:51:54.131Z"
+    },
+    "ev-61651b6bef2c49082137": {
+      "id": "ev-61651b6bef2c49082137",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3829,
+      "endSec": 3834,
+      "playerIds": [
+        "りゅうきち",
+        "ひぐち"
+      ],
+      "observation": "第2ゲーム第2ラウンド、りゅうきちがめくり飛び攻撃を通し、そこからの小技でKOして2-0の勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-24T14:51:54.131Z"
+    },
+    "ev-c8b476902396e45ebd02": {
+      "id": "ev-c8b476902396e45ebd02",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7930,
+      "endSec": 7935,
+      "playerIds": [
+        "きんちょ",
+        "2BASSA"
+      ],
+      "observation": "第1ゲームの1:31:34にて、2BASSAのキャミィが立ち中キックのパスカウンターからシャドウへとつなげ、テリーの体力を奪った。",
+      "officialRefs": [
+        "div-s-sec5-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T14:58:57.331Z"
+    },
+    "ev-6bfb94cf39437ab9435c": {
+      "id": "ev-6bfb94cf39437ab9435c",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7979,
+      "endSec": 7989,
+      "playerIds": [
+        "きんちょ",
+        "2BASSA"
+      ],
+      "observation": "第2ゲームの1:32:22にて、きんちょのテリーがライジングタックルやSA3（パワードゲイザー）を用いてコンボを決めた。",
+      "officialRefs": [
+        "div-s-sec5-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T14:58:57.331Z"
+    },
+    "ev-5d9c466805e87a7bc207": {
+      "id": "ev-5d9c466805e87a7bc207",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 8057,
+      "endSec": 8066,
+      "playerIds": [
+        "きんちょ",
+        "2BASSA"
+      ],
+      "observation": "第3ゲームの1:36:01にて、2BASSAのキャミィがドライブカウンターからSA3（スピンナックル～デルタレッドアサルト）をヒットさせ、そのまま勝利した。",
+      "officialRefs": [
+        "div-s-sec5-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T14:58:57.331Z"
+    },
+    "ev-67fb7c7d578fc9ac0c56": {
+      "id": "ev-67fb7c7d578fc9ac0c56",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b3",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 8933,
+      "endSec": 8934,
+      "playerIds": [
+        "こばやん",
+        "ジョニィ"
+      ],
+      "observation": "第1ゲームの2ラウンド目、ジョニィのエレナが画面端でのラッシュを重ねてこばやんを追い詰め、最後はスクリューパイルドライバーで勝利した。",
+      "officialRefs": [
+        "div-s-sec5-m2-b3:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.5-flash-lite"
+      ],
+      "createdAt": "2026-10-24T15:03:55.845Z"
+    },
+    "ev-8e4b588723f0f1486ea2": {
+      "id": "ev-8e4b588723f0f1486ea2",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b3",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 8932,
+      "endSec": 8933,
+      "playerIds": [
+        "こばやん",
+        "ジョニィ"
+      ],
+      "observation": "こばやん（ザンギエフ）が第1ゲームの終盤に、ドライブインパクトの応酬を制した直後に起き攻めを決め、ジョニィ（エレナ）をバーンアウト状態に追い込んで倒し切った。",
+      "officialRefs": [
+        "div-s-sec5-m2-b3:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.1-flash-lite"
+      ],
+      "createdAt": "2026-10-24T15:03:55.845Z"
+    },
+    "ev-c2dcd52052cd4d4a30a7": {
+      "id": "ev-c2dcd52052cd4d4a30a7",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b3",
+      "kind": "commentary",
+      "videoId": "OyvntovP-BI",
+      "startSec": 8938,
+      "endSec": 8939,
+      "playerIds": [
+        "こばやん",
+        "ジョニィ"
+      ],
+      "observation": "こばやん（ザンギエフ）が第2ゲームの終盤、ジョニィ（エレナ）のSA2に対して強引に近距離で立ち回るのではなく、投げの選択肢を見せて相手の動きを抑制した。",
+      "officialRefs": [
+        "div-s-sec5-m2-b3:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.1-flash-lite"
+      ],
+      "createdAt": "2026-10-24T15:03:55.845Z"
+    },
+    "ev-166eccb53792b1b0e185": {
+      "id": "ev-166eccb53792b1b0e185",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b3",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 8938,
+      "endSec": 8939,
+      "playerIds": [
+        "こばやん",
+        "ジョニィ"
+      ],
+      "observation": "こばやん（ザンギエフ）が第2ゲームの決着時、ジョニィ（エレナ）の起き上がりに合わせてSA2を放ち、相手の投げ抜けや暴れを咎める形で勝利した。",
+      "officialRefs": [
+        "div-s-sec5-m2-b3:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.1-flash-lite"
+      ],
+      "createdAt": "2026-10-24T15:03:55.845Z"
     }
   }
 }

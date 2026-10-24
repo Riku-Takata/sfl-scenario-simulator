@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:27:24.756Z",
+  "updatedAt": "2026-10-24T15:04:33.027Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2051,6 +2051,37 @@
           "gatePassed": true,
           "gateReason": "game winners match official log",
           "topics": []
+        },
+        {
+          "model": "gemini-3.7-flash",
+          "analyzedAt": "2026-10-24T14:50:15.892Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "ももちはもけを画面端に追い詰めてバーンアウトからスタンを奪い、一気に酒レベルを4まで引き上げて第1ゲームを先制した。",
+              "evidence": "両方",
+              "startSec": 2903,
+              "endSec": 2926
+            },
+            {
+              "topic": "第2ゲームのファイナルラウンドで体力僅差に追い込まれたもけは、冷静に反撃をねじ込み流煙陣をヒットさせて逆転勝利しタイに戻した。",
+              "evidence": "両方",
+              "startSec": 3210,
+              "endSec": 3226
+            },
+            {
+              "topic": "最終第3ゲームでもけは相手の動きを完全に封じ込め、2ラウンド連続のパーフェクトK.O.を達成して逆転勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 3254,
+              "endSec": 3297
+            }
+          ]
         }
       ]
     },
@@ -2102,6 +2133,36 @@
           "gatePassed": true,
           "gateReason": "game winners match official log",
           "topics": []
+        },
+        {
+          "model": "gemini-3.7-flash",
+          "analyzedAt": "2026-10-24T14:51:54.131Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド終盤、ひぐちのソニックブームに対してりゅうきちが至近距離からSA2を合わせて弾抜けパニッシュカウンターを決め、そのまま第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 3686,
+              "endSec": 3694
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド終盤、ひぐちのSA2発動に対してりゅうきちは遅らせキャンセルによるムササビの舞でタイミングをずらしてかわし、パニッシュカウンターを決めてラウンドを奪った。",
+              "evidence": "両方",
+              "startSec": 3780,
+              "endSec": 3788
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、りゅうきちがめくり飛び攻撃を通し、そこからの小技でKOして2-0の勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 3829,
+              "endSec": 3834
+            }
+          ]
         }
       ]
     },
@@ -2281,7 +2342,7 @@
       "videoId": "OyvntovP-BI",
       "startSec": 7837,
       "endSec": 8596,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
       "runs": [
@@ -2315,6 +2376,45 @@
               "endSec": 8485
             }
           ]
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-24T14:58:09.030Z",
+          "gameWinnersSeen": [],
+          "gatePassed": false,
+          "gateReason": "invalid output: Expected ',' or ']' after array element in JSON at position 151 (line 1 column 152)",
+          "topics": []
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T14:58:57.322Z",
+          "gameWinnersSeen": [
+            "B",
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲームの1:31:34にて、2BASSAのキャミィが立ち中キックのパスカウンターからシャドウへとつなげ、テリーの体力を奪った。",
+              "evidence": "両方",
+              "startSec": 7930,
+              "endSec": 7935
+            },
+            {
+              "topic": "第2ゲームの1:32:22にて、きんちょのテリーがライジングタックルやSA3（パワードゲイザー）を用いてコンボを決めた。",
+              "evidence": "両方",
+              "startSec": 7979,
+              "endSec": 7989
+            },
+            {
+              "topic": "第3ゲームの1:36:01にて、2BASSAのキャミィがドライブカウンターからSA3（スピンナックル～デルタレッドアサルト）をヒットさせ、そのまま勝利した。",
+              "evidence": "両方",
+              "startSec": 8057,
+              "endSec": 8066
+            }
+          ]
         }
       ]
     },
@@ -2322,10 +2422,59 @@
       "videoId": "OyvntovP-BI",
       "startSec": 8785,
       "endSec": 9321,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T15:02:30.837Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲームの2ラウンド目、ジョニィのエレナが画面端でのラッシュを重ねてこばやんを追い詰め、最後はスクリューパイルドライバーで勝利した。",
+              "evidence": "両方",
+              "startSec": 8933,
+              "endSec": 8934
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-24T15:03:55.837Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "こばやん（ザンギエフ）が第1ゲームの終盤に、ドライブインパクトの応酬を制した直後に起き攻めを決め、ジョニィ（エレナ）をバーンアウト状態に追い込んで倒し切った。",
+              "evidence": "両方",
+              "startSec": 8932,
+              "endSec": 8933
+            },
+            {
+              "topic": "こばやん（ザンギエフ）が第2ゲームの終盤、ジョニィ（エレナ）のSA2に対して強引に近距離で立ち回るのではなく、投げの選択肢を見せて相手の動きを抑制した。",
+              "evidence": "実況",
+              "startSec": 8938,
+              "endSec": 8939
+            },
+            {
+              "topic": "こばやん（ザンギエフ）が第2ゲームの決着時、ジョニィ（エレナ）の起き上がりに合わせてSA2を放ち、相手の投げ抜けや暴れを咎める形で勝利した。",
+              "evidence": "映像",
+              "startSec": 8938,
+              "endSec": 8939
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec5-m3-b0": {
       "videoId": "OyvntovP-BI",
@@ -9585,15 +9734,418 @@
       "videoId": "OyvntovP-BI",
       "startSec": 7837,
       "endSec": 8596,
-      "status": "pending",
-      "runs": []
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-24T15:00:17.366Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "corner",
+              "side": "B"
+            },
+            {
+              "id": "throw",
+              "side": "B"
+            },
+            {
+              "id": "punish_counter",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            2
+          ]
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-24T15:01:21.108Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "throw",
+              "side": "B"
+            },
+            {
+              "id": "corner",
+              "side": "B"
+            },
+            {
+              "id": "punish_counter",
+              "side": "B"
+            },
+            {
+              "id": "reversal",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            2
+          ]
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T15:02:09.593Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "SA3",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "whiff_punish",
+              "side": "B"
+            },
+            {
+              "id": "corner",
+              "side": "B"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            },
+            {
+              "id": "punish_counter",
+              "side": "A"
+            }
+          ],
+          "matchedGames": [
+            0,
+            2
+          ]
+        }
+      ]
     },
     "div-s-sec5-m2-b3": {
       "videoId": "OyvntovP-BI",
       "startSec": 8785,
       "endSec": 9321,
-      "status": "pending",
-      "runs": []
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T15:04:09.469Z",
+          "games": [],
+          "tags": [],
+          "matchedGames": [],
+          "error": "Expected double-quoted property name in JSON at position 162 (line 1 column 163)"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T15:04:20.731Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "SA1",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "SA3",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "SA2",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "B"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "punish_counter",
+              "side": "A"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            },
+            {
+              "id": "corner",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            0,
+            1
+          ]
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-24T15:04:33.019Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "corner",
+              "side": "A"
+            },
+            {
+              "id": "throw",
+              "side": "A"
+            },
+            {
+              "id": "punish_counter",
+              "side": "A"
+            },
+            {
+              "id": "reversal",
+              "side": "A"
+            }
+          ],
+          "matchedGames": [
+            1
+          ]
+        }
+      ]
     },
     "div-s-sec5-m3-b0": {
       "videoId": "OyvntovP-BI",

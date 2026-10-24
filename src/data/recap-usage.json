@@ -1,4 +1,9 @@
 {
   "schemaVersion": 1,
-  "days": {}
+  "days": {
+    "2026-10-24": {
+      "calls": 24,
+      "videoSeconds": 7506
+    }
+  }
 }
