@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:04:33.027Z",
+  "updatedAt": "2026-10-24T18:04:50.492Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2707,11 +2707,11 @@
       ]
     },
     "div-s-sec5-m1": {
-      "inputHash": "705b24ae5e43717a",
-      "model": "gemini-3.8-flash",
-      "generatedAt": "2026-10-24T13:58:32.581Z",
-      "matchHeadline": "FAVがZETAを40-0で破りストレート勝利",
-      "matchSummary": "KADOKAWA FAV gamingがZETA DIVISION Geeklyを相手に40-0で勝利した。先鋒戦ではもけが第1ゲームを取られながらも2-1でももちに勝利。続く中堅戦ではりゅうきちがひぐちを2-0で下した。大将戦は藤村がMenaRDとのフルセットを3-2で制し、KADOKAWA FAV gamingが40ポイントを獲得した。",
+      "inputHash": "d94978d83e992dcc",
+      "model": "gemini-3.6-flash",
+      "generatedAt": "2026-10-24T18:04:50.464Z",
+      "matchHeadline": "KADOKAWA FAVが40-0でZETAに勝利",
+      "matchSummary": "先鋒戦ではもけ選手がももち選手に2-1で逆転勝利を収めると、中堅戦でもりゅうきち選手がひぐち選手を2-0のストレートで破り、KADOKAWA FAV gamingが連勝を飾った。大将戦でも藤村選手がMenaRD選手とのフルセットに及ぶ激戦を3-2で制し、KADOKAWA FAV gamingが40-0のスコアでZETA DIVISION Geeklyに勝利を収めた。",
       "matchEvidenceIds": [
         "ev-86d3a474908cef95bf54",
         "ev-2b73f2666a3cfb01d3ac",
@@ -2720,27 +2720,67 @@
       "bouts": [
         {
           "boutId": "div-s-sec5-m1-b0",
-          "summary": "先鋒戦はもけ選手（不知火舞）が、第1ゲームを先取したももち選手（ジェイミー）に2-1で勝利した。",
+          "summary": "先鋒戦はもけ選手がももち選手に2-1で逆転勝利を収めた。",
           "summaryEvidenceIds": [
             "ev-86d3a474908cef95bf54"
           ],
-          "keyPoints": []
+          "keyPoints": [
+            {
+              "text": "第1ゲームはももち選手が画面端でスタンに追い込んで酒レベルを4まで引き上げ先取したが、第2ゲーム第2ラウンド終盤にもけ選手が無敵技の暴れを防ぎ、パニッシュカウンターからK.O.して勝敗をタイに戻した。",
+              "evidenceIds": [
+                "ev-d0a04b150ea36c589380",
+                "ev-59861cfdbe442f24e3c9"
+              ]
+            },
+            {
+              "text": "第3ゲーム第2ラウンドでは、もけ選手が画面端に追い詰めて一切の被弾を許さずパーフェクトK.O.を奪い勝利を決めた。",
+              "evidenceIds": [
+                "ev-d1821140d32529f0c00f"
+              ]
+            }
+          ]
         },
         {
           "boutId": "div-s-sec5-m1-b1",
-          "summary": "中堅戦はりゅうきち選手（不知火舞）がひぐち選手（ガイル）に2-0で勝利した。",
+          "summary": "中堅戦はりゅうきち選手がひぐち選手に2-0でストレート勝利した。",
           "summaryEvidenceIds": [
             "ev-2b73f2666a3cfb01d3ac"
           ],
-          "keyPoints": []
+          "keyPoints": [
+            {
+              "text": "第1ゲーム第2ラウンド終盤、りゅうきち選手は相手のソニックブームを至近距離のSA2で弾抜けしてパニッシュカウンターを取り、第1ゲームを先取した。",
+              "evidenceIds": [
+                "ev-d72684ae9287c40c10ca"
+              ]
+            },
+            {
+              "text": "第2ゲーム第1ラウンド終盤には、相手のSA2発動に対して遅らせキャンセルによるムササビの舞でタイミングをずらし、パニッシュカウンターを決めてラウンドを奪った。",
+              "evidenceIds": [
+                "ev-5c99881b87b5c1e89067"
+              ]
+            }
+          ]
         },
         {
           "boutId": "div-s-sec5-m1-b2",
-          "summary": "大将戦は藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）を3-2で破った。",
+          "summary": "大将戦は藤村選手がMenaRD選手とのフルセットを3-2で制した。",
           "summaryEvidenceIds": [
             "ev-d5f10d6c743c361ee4ce"
           ],
-          "keyPoints": []
+          "keyPoints": [
+            {
+              "text": "第2ゲームではMenaRD選手がしゃがみ中Kから電撃オディオティをヒットさせ、パーフェクトK.O.を奪った。",
+              "evidenceIds": [
+                "ev-36a0679ebad98ed00512"
+              ]
+            },
+            {
+              "text": "第5ゲーム第3ラウンド、藤村選手は飛び込みを迎撃してSA3を叩き込み、起き上がりの暴れを後ろ下がりでかわして投げを決め勝利を決定づけた。",
+              "evidenceIds": [
+                "ev-b92fa1bb9cfd4350193f"
+              ]
+            }
+          ]
         }
       ]
     }
@@ -10169,7 +10209,5 @@
       "runs": []
     }
   },
-  "pendingNarrations": [
-    "div-s-sec5-m1"
-  ]
+  "pendingNarrations": []
 }

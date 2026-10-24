@@ -35,6 +35,21 @@
           "thoughtTokens": 2,
           "totalTokens": 2
         }
+      },
+      "gemini:narration:gemini-3.6-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 4728,
+          "outputTokens": 1197,
+          "thoughtTokens": 3295,
+          "totalTokens": 9220
+        },
+        "observations": {
+          "inputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
       }
     }
   },
