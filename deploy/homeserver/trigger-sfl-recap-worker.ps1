@@ -46,7 +46,10 @@ try {
     # availability warnings must not abort the scheduled recheck.
     $ErrorActionPreference = "Continue"
     try {
-        $prepareArgs = @("--import", "tsx", "scripts/prepare-recap-chapters.ts", "--publish", "--write-with-codex")
+        $prepareArgs = @("--import", "tsx", "scripts/prepare-recap-chapters.ts", "--publish")
+        # Local writing follows the user's quiet maintenance hours; midnight
+        # and morning invocations only check official metadata and queue Actions.
+        if ($ResumeOnly) { $prepareArgs += "--write-with-codex" }
         if (-not $checkArchives) { $prepareArgs += "--ready-only" }
         $output = & node @prepareArgs 2>&1
         $prepareExit = $LASTEXITCODE
