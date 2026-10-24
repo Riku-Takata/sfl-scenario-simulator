@@ -85,15 +85,32 @@ export function extractYoutubeVideoId(url: string): string | null {
   return m ? m[1] : null;
 }
 
-/** 視聴ページHTMLの shortDescription からチャプターを取得する（APIキー不要）。 */
+export function chaptersFromWatchPage(html: string): VideoChapter[] {
+  const match = html.match(/"shortDescription":"((?:[^"\\]|\\.)*)"/);
+  if (match) return parseChaptersFromDescription(JSON.parse(`"${match[1]}"`));
+  // YouTube also serves the expanded description in ytInitialData.
+  const initial = html.match(/var ytInitialData = (\{.*?\});<\/script>/s);
+  let best: VideoChapter[] = [];
+  const walk = (value: any): void => {
+    if (!value || typeof value !== "object") return;
+    const description = value.attributedDescription?.content ?? value.description?.simpleText;
+    if (typeof description === "string") {
+      const chapters = parseChaptersFromDescription(description);
+      if (chapters.length > best.length) best = chapters;
+    }
+    Object.values(value).forEach(walk);
+  };
+  if (initial) walk(JSON.parse(initial[1]));
+  if (!best.length) throw new Error("YouTube description is not available in this response; retry at the next archive check");
+  return best;
+}
+
+/** 視聴ページからチャプターを取得する（APIキー不要）。 */
 export async function fetchYoutubeChapters(videoId: string): Promise<VideoChapter[]> {
   const res = await fetch(`https://www.youtube.com/watch?v=${videoId}`, {
     headers: { "User-Agent": "Mozilla/5.0", "Accept-Language": "ja" },
+    signal: AbortSignal.timeout(30_000),
   });
   if (!res.ok) throw new Error(`YouTube page HTTP ${res.status}`);
-  const html = await res.text();
-  const m = html.match(/"shortDescription":"((?:[^"\\]|\\.)*)"/);
-  if (!m) throw new Error("shortDescription not found in YouTube page");
-  const description = JSON.parse(`"${m[1]}"`) as string;
-  return parseChaptersFromDescription(description);
+  return chaptersFromWatchPage(await res.text());
 }

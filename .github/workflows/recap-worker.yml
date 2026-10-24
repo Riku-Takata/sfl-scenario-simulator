@@ -1,12 +1,10 @@
 name: SFL Recap Evidence & Article Worker
 
 on:
-  workflow_run:
-    workflows: ["SFL 2026 Auto Result Fetch & Scenario Update"]
-    types: [completed]
-    branches: [main]
   schedule:
-    - cron: "7,22,37,52 * * * *"
+    # JST 00:10 (試合当日24時すぎ) / 08:00。概要欄のタイムスタンプ追記を待つ。
+    - cron: "10 15 * * *"
+    - cron: "0 23 * * *"
   workflow_dispatch:
     inputs:
       section:
@@ -16,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: sfl-recap-data-writer
@@ -23,7 +22,6 @@ concurrency:
 
 jobs:
   advance-recap-jobs:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
@@ -49,6 +47,7 @@ jobs:
           GEMINI_VIDEO_MAX_CALLS: "24"
           GEMINI_VIDEO_MAX_SECONDS: "25200"
           GEMINI_VIDEO_TIME_BUDGET_MIN: "20"
+          RECAP_PUBLICATION_MODE: auto
           RECAP_WORKER_SECTION: ${{ inputs.section }}
         run: |
           if [ -n "$RECAP_WORKER_SECTION" ]; then
@@ -58,6 +57,7 @@ jobs:
           fi
 
       - name: Commit durable evidence, articles, and job state
+        id: recap-state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -68,4 +68,11 @@ jobs:
             git commit -m "chore(recap): advance evidence-backed article jobs"
             git pull --rebase origin main
             git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Publish updated article snapshot to both sites
+        if: steps.recap-state.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run auto-update.yml --ref main -f force=false
