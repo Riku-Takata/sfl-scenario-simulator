@@ -25,7 +25,7 @@ import type {
 import { PLAYER_NAME_MAP, TEAM_META_MAP } from "../src/lib/simulator";
 import { formatCharName } from "../src/lib/player-encyclopedia";
 import { SECTION_VIDEO_IDS } from "../src/config/section-videos";
-import { fetchSectionVideos } from "./recap/youtube-archive";
+import { fetchSectionPlaylists, fetchSectionVideos } from "./recap/youtube-archive";
 import { SFL_CURRENT_SEASON } from "../src/lib/sfl/play-style";
 import {
   extractYoutubeVideoId,
@@ -350,7 +350,16 @@ export async function generateAndSaveMatchRecaps(
   const jobsData = loadRecapJobs();
 
   // 節の配信アーカイブ: 手動登録 > 公式チャンネルから自動検出 > 以前に検出してキャッシュ済み
-  const detectedVideos = await fetchSectionVideos(SFL_CURRENT_SEASON);
+  const previousRecaps = fs.existsSync(RECAPS_FILE)
+    ? MatchRecapsDataSchema.parse(JSON.parse(fs.readFileSync(RECAPS_FILE, "utf8"))) : undefined;
+  const fallbackPlaylists = Object.fromEntries([...completedDivSections.s, ...completedDivSections.f]
+    .map((entry) => [entry.post_name, entry.fields.section.links?.playlist?.url || ""]));
+  for (const div of ["s", "f"] as const) for (const section of previousRecaps?.pastSections[div] ?? []) {
+    if (section.playlistUrl) fallbackPlaylists[`div-${div}-sec${section.sectionNumber}`] = section.playlistUrl;
+  }
+  const [detectedVideos, detectedPlaylists] = await Promise.all([
+    fetchSectionVideos(SFL_CURRENT_SEASON), fetchSectionPlaylists(SFL_CURRENT_SEASON, fallbackPlaylists),
+  ]);
   const resolveVideoId = (slug: string): string | undefined =>
     SECTION_VIDEO_IDS[slug] ?? detectedVideos[slug] ?? videoFacts.videos[slug]?.videoId;
 
@@ -390,7 +399,7 @@ export async function generateAndSaveMatchRecaps(
         youtubeUrl: videoId
           ? `https://www.youtube.com/watch?v=${videoId}`
           : sec.links?.live?.url || "https://www.youtube.com/@CapcomFightersJP",
-        playlistUrl: sec.links?.playlist?.url,
+        playlistUrl: entry.post_name in detectedPlaylists ? detectedPlaylists[entry.post_name] || undefined : fallbackPlaylists[entry.post_name] || undefined,
         matches: matchesArchive,
       });
     }

@@ -25,6 +25,12 @@ function Write-SyncLog([string]$Message) {
     Write-Host $line
 }
 
+function Assert-ReleaseDirectory([string]$Directory) {
+    $root = [IO.Path]::GetFullPath($releaseRoot).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
+    $targetPath = [IO.Path]::GetFullPath($Directory)
+    if (-not $targetPath.StartsWith($root, [StringComparison]::OrdinalIgnoreCase)) { throw "Release directory escapes release root: $targetPath" }
+}
+
 function Get-BuildInfo([string]$BaseUrl) {
     try {
         $info = Invoke-RestMethod -Uri "$($BaseUrl.TrimEnd('/'))/build-info.json" -TimeoutSec 12
@@ -95,7 +101,7 @@ try {
         if ($target.tag_name -ne "sfl-site-$($manifest.buildId)") { throw "Release tag and build id disagree." }
 
         $currentState = if (Test-Path -LiteralPath $stateFile) { Get-Content -LiteralPath $stateFile -Raw | ConvertFrom-Json } else { $null }
-        if (-not $Rollback -and $currentState.buildId -eq $manifest.buildId) {
+        if (-not $Rollback -and $currentState -and $currentState.buildId -eq $manifest.buildId) {
             $served = Get-BuildInfo $HealthUrl
             if ($served -and $served.buildId -eq $manifest.buildId) { Write-SyncLog "Already serving $($manifest.buildId)."; return }
         }
@@ -106,6 +112,8 @@ try {
         }
 
         $releaseDir = Join-Path $releaseRoot $manifest.buildId
+        Assert-ReleaseDirectory $releaseDir
+        Assert-ReleaseDirectory $expanded
         if (Test-Path -LiteralPath $releaseDir) { Remove-Item -LiteralPath $releaseDir -Recurse -Force }
         Move-Item -LiteralPath $expanded -Destination $releaseDir
         $image = "homeserver-sfl-release:$($manifest.buildId)"
@@ -152,6 +160,7 @@ try {
             throw
         } finally { Remove-Item Env:\SFL_SIMULATOR_IMAGE -ErrorAction SilentlyContinue }
     } finally {
+        Assert-ReleaseDirectory $work
         if (Test-Path -LiteralPath $work) { Remove-Item -LiteralPath $work -Recurse -Force }
     }
 } catch {

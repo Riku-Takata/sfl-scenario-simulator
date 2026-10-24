@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T23:11:27.630Z",
+  "updatedAt": "2026-10-24T03:54:58.569Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 5,
@@ -1789,7 +1789,7 @@
         "sectionTitle": "Division S 第3節",
         "scheduledAt": "2026-09-08 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=IffWcLB_XMo",
-        "playlistUrl": "",
+        "playlistUrl": "https://www.youtube.com/playlist?list=PLMOTKQbRRUD0",
         "matches": [
           {
             "home": "sol",
@@ -1819,7 +1819,7 @@
         "sectionTitle": "Division S 第4節",
         "scheduledAt": "2026-10-16 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=WfaUMDDZ6Es",
-        "playlistUrl": "",
+        "playlistUrl": "https://www.youtube.com/playlist?list=PLb7OMnGRiUrA",
         "matches": [
           {
             "home": "ibsg",
@@ -1881,7 +1881,6 @@
         "sectionTitle": "Division F 第2節",
         "scheduledAt": "2026-09-04 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=IrZHAeV6Cx4",
-        "playlistUrl": "https://www.youtube.com/playlist?list=PLj9YK9gsniloL6AIKe4b05iJlC-Z5BTiL",
         "matches": [
           {
             "home": "dng",
@@ -1911,7 +1910,7 @@
         "sectionTitle": "Division F 第3節",
         "scheduledAt": "2026-10-06 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=3X1zd27viu0",
-        "playlistUrl": "",
+        "playlistUrl": "https://www.youtube.com/playlist?list=PLaY6E0NZPmSg",
         "matches": [
           {
             "home": "varrel",
