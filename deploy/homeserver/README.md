@@ -14,6 +14,6 @@ services:
       - "127.0.0.1:3002:3000"
 ```
 
-Run `register-sfl-release-sync-task.ps1` from an elevated PowerShell session to register startup and five-minute polling. It writes release state under `data/app-data/sfl-deploy` and logs under `logs`. Pass `-PublicUrl` when the externally routed HomeServer URL should also be checked. The task is not registered automatically by this repository workflow.
+Run `register-sfl-release-sync-task.ps1` as the desktop user to register user-logon and five-minute polling. It uses the user's existing GitHub and Docker sessions without administrator privileges. It writes release state under `data/app-data/sfl-deploy` and logs under `logs`. Pass `-PublicUrl` when the externally routed HomeServer URL should also be checked. The task is not registered automatically by this repository workflow.
 
 `update-sfl-simulator.ps1` syncs the latest stable release by default. `-LocalBuild` opts into the development pipeline and optional local container build. Use `sync-sfl-release.ps1 -Rollback` for the prior stable release.
