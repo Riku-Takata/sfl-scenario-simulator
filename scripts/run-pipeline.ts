@@ -8,6 +8,7 @@ import { calculateAndSaveScenarios } from "./2-calc-scenarios";
 import { generateAndSaveNarratives } from "./3-generate-narratives";
 import { generateAndSaveMatchRecaps, hasPendingVideoWork } from "./4-generate-match-recaps";
 import { generateSf6Tournaments } from "./generate-sf6-tournaments";
+import { refreshArchiveLinks } from "./refresh-archive-links";
 
 async function main() {
   const args = process.argv.slice(2);
@@ -19,6 +20,8 @@ async function main() {
   console.log("=== SFL 2026 Scenario Simulator Pipeline (Astro + Zod + CPT Predictor) Start ===");
 
   const { updated } = await fetchAndSaveResults({ force });
+  // Official playlist/stream links can arrive days after the scores, even without a Gemini key.
+  await refreshArchiveLinks();
   // start.gg は約1日1回の差分取得。失敗しても既存キャッシュで続行する
   const startgg = await fetchStartggPremierResults({ force }).catch((err) => {
     console.warn("[Step 0a] start.gg fetch failed, using cached data:", err);
@@ -27,16 +30,16 @@ async function main() {
   if (!updated && !startgg.updated && !force) {
     if (!hasPendingVideoWork()) {
       console.log(
-        "=== No new match results found. Exiting pipeline (use --force to recalculate). ==="
+        "=== No new match results found. Archive metadata was refreshed; skipping recalculation. ==="
       );
-      return;
-    }
-    // 無料枠の日次上限で残った動画解析を、結果更新が無い日にも少しずつ進める
-    console.log("=== No new match results, but video analysis is pending. Resuming match recaps only. ===");
-    if (resultsOnly) {
-      console.log("=== Durable recap worker will resume pending analysis after the official result update. ===");
     } else {
-      await generateAndSaveMatchRecaps();
+      // 無料枠の日次上限で残った動画解析を、結果更新が無い日にも少しずつ進める
+      console.log("=== No new match results, but video analysis is pending. Resuming match recaps only. ===");
+      if (resultsOnly) {
+        console.log("=== Durable recap worker will resume pending analysis after the official result update. ===");
+      } else {
+        await generateAndSaveMatchRecaps();
+      }
     }
   } else if (!updated && !force) {
     // start.gg のみ更新: 選手統計とシナリオ確率だけ再計算 (LLM解説は次回のSFL結果更新時に再生成)

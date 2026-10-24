@@ -100,6 +100,12 @@ npm.cmd run build
 
 ---
 
+## 公式アーカイブ・再生リストの自動更新
+
+結果更新パイプラインは、スコアの変更・Gemini APIキーの有無にかかわらず、毎回公式YouTubeの配信一覧と再生リスト一覧を確認します。再生リストはシーズン・Division・節番号で照合し、ページ送りにも対応します。公式試合APIのリンクが空欄でも公式チャンネルから補完し、取得失敗時は保存済みリンクを維持します。リンクだけの再取得は `node --import tsx scripts/refresh-archive-links.ts` で実行できます。
+
+HomeServerリリースはVercelとの全ファイル照合後に公開します。両環境で標準の `/_vercel` 計測エンドポイントを使い、Vercel固有の計測用環境変数が静的ファイルの差異を生まないよう固定しています。
+
 ## SFL公式 試合内プレイ統計
 
 - **取得元**: `https://sf.esports.capcom.com/api/sfl20xx/?data=stats`（ログイン不要）。節ごとに全選手の**シーズン累積値**がCSVで返ります。`npm.cmd run fetch-sfl-play-stats` で取得し、`src/data/sfl-play-stats.json` に保存します（パイプラインではSFL結果の更新時に実行）。
