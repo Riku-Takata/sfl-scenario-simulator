@@ -3,20 +3,20 @@
   "days": {
     "2026-10-25": {
       "gemini:verify:gemini-3.8-flash": {
-        "responses": 1,
+        "responses": 2,
         "tokens": {
-          "inputTokens": 2626,
+          "inputTokens": 3995,
           "cachedInputTokens": 0,
-          "outputTokens": 151,
-          "thoughtTokens": 1578,
-          "totalTokens": 4355
+          "outputTokens": 270,
+          "thoughtTokens": 2200,
+          "totalTokens": 6465
         },
         "observations": {
-          "inputTokens": 1,
-          "cachedInputTokens": 1,
-          "outputTokens": 1,
-          "thoughtTokens": 1,
-          "totalTokens": 1
+          "inputTokens": 2,
+          "cachedInputTokens": 2,
+          "outputTokens": 2,
+          "thoughtTokens": 2,
+          "totalTokens": 2
         }
       },
       "gemini:verify:gemini-3.7-flash": {

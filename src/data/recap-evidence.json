@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T17:32:17.131Z",
+  "updatedAt": "2026-10-24T17:38:18.609Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1391,10 +1391,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P側のガイル（RYUKICHI）と2P側の春麗（HIGUCHI）の対戦。ガイルがSA2（ソリッドパンチャー）を発動し、発動後にソニックブレイクを放つ。それに対し、春麗が前方ジャンプで飛び道具を飛び越え、ガイルの硬直に対してジャンプ攻撃をパニッシュカウンター（PUNISH COUNTER）でヒットさせる。これによりガイルの体力がゼロになり、春麗のKO勝ちとなる。",
       "sourceModels": [
-        "gemini-3.7-flash"
+        "gemini-3.7-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T14:51:54.131Z"
     },
