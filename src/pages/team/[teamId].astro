@@ -43,6 +43,14 @@ const routeList = [
   analysis.routes.route2Second,
   analysis.routes.route3Third,
 ];
+const pOutlook = analysis.personalizedOutlook;
+const primaryTargetRank = pOutlook?.realisticTargetRank ?? 3;
+const targetRouteForSchedule =
+  primaryTargetRank === 1
+    ? analysis.routes.route1First
+    : primaryTargetRank === 2
+      ? analysis.routes.route2Second
+      : analysis.routes.route3Third;
 ---
 
 <BaseLayout title={`${meta.name} のプレイオフ突破条件 | SFL 2026`}>
@@ -141,29 +149,107 @@ const routeList = [
     </div>
   </section>
 
-  <!-- 1位〜3位 突破条件カード -->
-  <h2 style="font-size: 1.25rem; font-weight: 800; margin: 1.5rem 0 0.85rem;">
-    {meta.shortName} のプレイオフ突破条件（1位〜3位目安）
-  </h2>
+  <!-- パーソナライズ進出診断パネル -->
+  {pOutlook && (
+    <div class="panel" style={`border-left: 6px solid ${
+      pOutlook.feasibilityLevel === 'favorite' ? '#10b981' :
+      pOutlook.feasibilityLevel === 'realistic' ? '#3b82f6' :
+      pOutlook.feasibilityLevel === 'challenging' ? '#f59e0b' : '#ef4444'
+    }; margin-bottom: 1.5rem;`}>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem;">
+        <div>
+          <span class="badge" style={`font-size: 0.85rem; padding: 0.35rem 0.75rem; font-weight: 800; background: ${
+            pOutlook.feasibilityLevel === 'favorite' ? 'rgba(16, 185, 129, 0.15); color: #059669;' :
+            pOutlook.feasibilityLevel === 'realistic' ? 'rgba(59, 130, 246, 0.15); color: #2563eb;' :
+            pOutlook.feasibilityLevel === 'challenging' ? 'rgba(245, 158, 11, 0.15); color: #d97706;' : 'rgba(239, 68, 68, 0.15); color: #dc2626;'
+          }`}>
+            {pOutlook.feasibilityBadgeText}
+          </span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; margin: 0.5rem 0 0.2rem; color: var(--text-main);">
+            {pOutlook.realisticTargetTitle}
+          </h2>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 0.8rem; color: var(--text-muted);">現在のプレイオフ進出確率</div>
+          <div style={`font-size: 1.6rem; font-weight: 900; color: ${analysis.probabilities.playoffTop3 >= 50 ? 'var(--success)' : analysis.probabilities.playoffTop3 >= 20 ? 'var(--warning)' : 'var(--danger)'};`}>
+            {analysis.probabilities.playoffTop3.toFixed(1)}%
+          </div>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; margin-bottom: 0.85rem; line-height: 1.65; font-size: 0.93rem; color: var(--text-sub);">
+        <p style="margin: 0;">{pOutlook.coreNarrative}</p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; font-weight: 700; color: var(--text-main);">
+        <span style="color: var(--primary);">🎯 最重要クリア条件:</span>
+        <span>{pOutlook.primaryConditionSummary}</span>
+      </div>
+    </div>
+  )}
+
+  <!-- 突破ルート現実度・可能性比較 -->
+  <div style="margin: 2rem 0 1rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem;">
+    <div>
+      <h2 style="font-size: 1.25rem; font-weight: 800; margin: 0;">
+        {meta.shortName} の各順位突破ルート ＆ 現実度評価
+      </h2>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0.25rem 0 0;">
+        モンテカルロシミュレーション（1万回）から導出した各順位の到達可能性と必要条件です。
+      </p>
+    </div>
+  </div>
 
   <div class="scenario-grid">
     {routeList.map((route, i) => {
-      const cardClass =
-        i === 0
+      const isRecommended = route.isRecommendedTarget;
+      const rankNum = i === 0 ? "first" : i === 1 ? "second" : "third";
+      const evalInfo = pOutlook?.rankEvaluations?.[rankNum];
+      const feasibility = evalInfo?.feasibility ?? route.feasibility ?? "realistic";
+      const isImpossible = feasibility === "impossible";
+
+      const cardClass = isRecommended
+        ? "route-card route-highlight"
+        : i === 0
           ? "route-card route-1"
           : i === 1
             ? "route-card route-2"
             : "route-card route-3";
 
       return (
-        <div class={cardClass}>
-          <div class="route-subtitle">
-            {route.subtitle}
+        <div class={cardClass} style={isImpossible ? "opacity: 0.7; border-style: dashed;" : ""}>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span class="route-subtitle" style="margin: 0;">
+              {route.subtitle}
+            </span>
+            <span class="badge" style={`font-size: 0.72rem; padding: 0.2rem 0.5rem; font-weight: 700; ${
+              feasibility === 'favorite' ? 'background: rgba(16, 185, 129, 0.15); color: #059669;' :
+              feasibility === 'realistic' ? 'background: rgba(59, 130, 246, 0.15); color: #2563eb;' :
+              feasibility === 'challenging' ? 'background: rgba(245, 158, 11, 0.15); color: #d97706;' :
+              feasibility === 'miracle' ? 'background: rgba(239, 68, 68, 0.15); color: #dc2626;' :
+              'background: rgba(100, 116, 139, 0.15); color: #64748b;'
+            }`}>
+              {evalInfo?.feasibilityLabel ?? "評価"}
+            </span>
           </div>
-          <h3>{route.title}</h3>
+
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem;">
+            <h3 style="margin: 0.2rem 0 0.5rem; font-size: 1.15rem;">{route.title}</h3>
+            {isRecommended && (
+              <span style="font-size: 0.72rem; font-weight: 800; background: var(--primary); color: #ffffff; padding: 0.15rem 0.45rem; border-radius: 4px;">
+                本命ターゲット
+              </span>
+            )}
+          </div>
+
+          {evalInfo?.note && (
+            <div style="font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">
+              💡 {evalInfo.note}
+            </div>
+          )}
 
           <div
-            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; padding: 0.75rem; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; margin: 0.75rem 0; font-size: 0.82rem;"
+            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; padding: 0.75rem; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; margin: 0.5rem 0 0.75rem; font-size: 0.82rem;"
           >
             <div>
               <div style="color: var(--text-muted);">目標ポイント</div>
@@ -178,8 +264,10 @@ const routeList = [
               </div>
             </div>
             <div>
-              <div style="color: var(--text-muted);">達成確率</div>
-              <div style="font-weight: 800;">{route.probability.toFixed(1)}%</div>
+              <div style="color: var(--text-muted);">到達確率</div>
+              <div style={`font-weight: 800; font-size: 1.05rem; color: ${route.probability >= 50 ? 'var(--success)' : route.probability >= 20 ? 'var(--text-main)' : 'var(--danger)'};`}>
+                {route.probability.toFixed(1)}%
+              </div>
             </div>
           </div>
 
@@ -235,15 +323,21 @@ const routeList = [
     </div>
   </div>
 
-  <!-- 残り試合の目標星取表 -->
-  {analysis.routes.route1First.targetSchedule &&
-    analysis.routes.route1First.targetSchedule.length > 0 && (
+  <!-- 残り試合の目標星取表（現実的ターゲット連動） -->
+  {targetRouteForSchedule.targetSchedule &&
+    targetRouteForSchedule.targetSchedule.length > 0 && (
       <div class="panel">
         <div class="panel-header">
           <div>
+            <div style="font-size: 0.8rem; font-weight: 800; color: var(--primary); margin-bottom: 0.2rem;">
+              現実的ターゲット連動星取表（{targetRouteForSchedule.title}）
+            </div>
             <h2 class="panel-title">
-              {meta.shortName} の残り試合日程 ＆ 1位突破に向けた目標スコア目安
+              {meta.shortName} の残り試合日程 ＆ 目標スコア目安
             </h2>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">
+            目標合計: <strong style="color: var(--primary);">{targetRouteForSchedule.targetPoints}pt</strong>（目安: {targetRouteForSchedule.requiredWins}勝{targetRouteForSchedule.requiredLosses}敗）
           </div>
         </div>
 
@@ -260,7 +354,7 @@ const routeList = [
               </tr>
             </thead>
             <tbody>
-              {analysis.routes.route1First.targetSchedule.map((plan) => (
+              {targetRouteForSchedule.targetSchedule.map((plan) => (
                 <tr>
                   <td style="font-weight: 800;">{plan.sectionTitle}</td>
                   <td style="color: var(--text-muted); font-size: 0.85rem;">

@@ -270,9 +270,40 @@ export default function DivisionDashboard({
                         {firstProb.toFixed(1)}%
                       </td>
                       <td>
-                        <a href={`/team/${team.key}`} className="btn">
-                          突破条件を見る →
-                        </a>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", alignItems: "flex-start" }}>
+                          {sc?.personalizedOutlook && (
+                            <span
+                              style={{
+                                fontSize: "0.72rem",
+                                fontWeight: 700,
+                                padding: "0.15rem 0.45rem",
+                                borderRadius: "4px",
+                                background:
+                                  sc.personalizedOutlook.feasibilityLevel === "favorite"
+                                    ? "rgba(16, 185, 129, 0.15)"
+                                    : sc.personalizedOutlook.feasibilityLevel === "realistic"
+                                      ? "rgba(59, 130, 246, 0.15)"
+                                      : sc.personalizedOutlook.feasibilityLevel === "challenging"
+                                        ? "rgba(245, 158, 11, 0.15)"
+                                        : "rgba(239, 68, 68, 0.15)",
+                                color:
+                                  sc.personalizedOutlook.feasibilityLevel === "favorite"
+                                    ? "#059669"
+                                    : sc.personalizedOutlook.feasibilityLevel === "realistic"
+                                      ? "#2563eb"
+                                      : sc.personalizedOutlook.feasibilityLevel === "challenging"
+                                        ? "#d97706"
+                                        : "#dc2626",
+                                whiteSpace: "nowrap",
+                              }}
+                            >
+                              {sc.personalizedOutlook.feasibilityBadgeText}
+                            </span>
+                          )}
+                          <a href={`/team/${team.key}`} className="btn" style={{ fontSize: "0.78rem", padding: "0.3rem 0.6rem" }}>
+                            突破条件を見る →
+                          </a>
+                        </div>
                       </td>
                     </tr>
                     {idx === 2 && (

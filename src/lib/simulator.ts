@@ -464,6 +464,150 @@ export interface DivisionSimulationSummary {
  * ディビジョン内の全チームに対するモンテカルロ推計＆4大シナリオ逆算
  * CPT Top 96相性マトリクス & 48選手統計データが渡された場合は、試合ごとの選手・キャラ相性予測確率を適用する
  */
+
+function evaluateRankFeasibility(prob: number): { feasibility: TargetFeasibility; label: string } {
+  if (prob >= 60) return { feasibility: "favorite", label: "本命ターゲット" };
+  if (prob >= 35) return { feasibility: "realistic", label: "現実的な射程" };
+  if (prob >= 10) return { feasibility: "challenging", label: "厳しい挑戦" };
+  if (prob >= 0.3) return { feasibility: "miracle", label: "奇跡的・要他力" };
+  return { feasibility: "impossible", label: "絶望的（ほぼ不可能）" };
+}
+
+export function buildPersonalizedOutlook(params: {
+  st: TeamStanding;
+  division: DivisionId;
+  firstPlaceProb: number;
+  top2Prob: number;
+  top3Prob: number;
+  remCount: number;
+  leader: TeamStanding;
+  thirdTeam: TeamStanding;
+  route1TargetPts: number;
+  route2TargetPts: number;
+  route3TargetPts: number;
+}): PersonalizedOutlook {
+  const {
+    st,
+    division,
+    firstPlaceProb,
+    top2Prob,
+    top3Prob,
+    remCount,
+    leader,
+    thirdTeam,
+    route1TargetPts,
+    route2TargetPts,
+    route3TargetPts,
+  } = params;
+
+  const diffFromFirst = leader.point - st.point;
+  const diffFromThird = thirdTeam.point - st.point;
+
+  const firstEval = evaluateRankFeasibility(firstPlaceProb);
+  const secondEval = evaluateRankFeasibility(top2Prob);
+  const thirdEval = evaluateRankFeasibility(top3Prob);
+
+  let realisticTargetRank: 1 | 2 | 3 | "eliminated" = 3;
+  let feasibilityLevel: TargetFeasibility = "challenging";
+  let realisticTargetTitle = "";
+  let feasibilityBadgeText = "";
+  let coreNarrative = "";
+  let primaryConditionSummary = "";
+
+  if (st.rank === 1 || firstPlaceProb >= 40) {
+    realisticTargetRank = 1;
+    feasibilityLevel = firstPlaceProb >= 50 ? "favorite" : "realistic";
+    realisticTargetTitle = "首位防衛＆1位突破（FINALシード直行）が本命ターゲット";
+    feasibilityBadgeText = "本命ターゲット: 1位突破（FINAL直行）";
+    coreNarrative = `現在Division ${division.toUpperCase()} 首位を走り、プレイオフ進出確率も${top3Prob}%と盤石なポジションを築いています。チームの最大の目標は「追走する2位以下のライバルを振り切り、1位通過でプレイオフFINALへのHOMEシード直行を決めること」。残り${remCount}試合（うちHOME ${st.remainingHome}戦）で大将戦を手堅く制し、合計${route1TargetPts}ptへ到達すれば自力での首位通過が確定します。`;
+    primaryConditionSummary = `残りHOME戦（${st.remainingHome}試合）で確実に30pt以上を積み上げ、首位を自力防衛`;
+  } else if (top3Prob >= 65) {
+    realisticTargetRank = firstPlaceProb >= 25 ? 1 : 2;
+    feasibilityLevel = "realistic";
+    realisticTargetTitle = realisticTargetRank === 1
+      ? "1位逆転＆2位死守（準決勝HOME権）が現実的ターゲット"
+      : "2位確保（準決勝HOME優先権）が現実的本命ターゲット";
+    feasibilityBadgeText = realisticTargetRank === 1
+      ? "挑戦射程: 1位逆転 / 2位死守"
+      : "現実的本命: 2位確保（準決勝HOME権）";
+    coreNarrative = `プレイオフ進出確率${top3Prob}%とPO進出自体は視界良好です。現在の最大の焦点は「3位通過にとどまらず2位以上を死守して、準決勝の奇数巡目HOME優先権を確保できるか」、そして首位${leader.shortName}との${diffFromFirst}pt差を捉えて1位逆転を狙えるかです。直接対決での取りこぼしを防ぐことが最重要課題となります。`;
+    primaryConditionSummary = `上位直接対決で20〜30ptをもぎ取り、2位以上を確定させて首位逆転を伺う`;
+  } else if (top3Prob >= 15) {
+    realisticTargetRank = 3;
+    feasibilityLevel = "challenging";
+    realisticTargetTitle = "3位滑り込み（プレイオフ進出）が最大の挑戦ターゲット";
+    feasibilityBadgeText = "挑戦ターゲット: 3位滑り込み";
+    coreNarrative = `現在${st.rank}位。3位ボーダー（${thirdTeam.shortName}・${thirdTeam.point}pt）まで${Math.abs(diffFromThird)}pt差の白熱したボーダー争いです。SFLは1節で最大40pt動くため、直接対決で30pt〜40ptの本戦勝利を挙げれば一気に順位が入れ替わります。0-40の完封負けを徹底排除し、バトル得失差（現在${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff}）をプラスに保つことが明暗を分けます。`;
+    primaryConditionSummary = `ボーダー直接対決での30pt勝利＆得失点差の改善で逆転滑り込み`;
+  } else {
+    realisticTargetRank = 3;
+    feasibilityLevel = top3Prob >= 2 ? "challenging" : "miracle";
+    realisticTargetTitle = "奇跡の3位滑り込み（極めて厳しい崖っぷちからの逆転）";
+    feasibilityBadgeText = top3Prob >= 2 ? "要・大逆転: 3位滑り込み" : "奇跡の崖っぷち: 3位滑り込み";
+    coreNarrative = `プレイオフ進出確率${top3Prob}%と、極めて厳しい崖っぷちに立たされています。1位・2位突破は絶望的であり、残された道は「奇跡の3位滑り込み」のみです。自力での突破は不可能に近く、残り試合全勝（特に40-0の完勝）で駆け抜けつつ、3位〜5位の上位ライバルが総崩れ・大敗を重ねる他力本願が絶対条件となります。`;
+    primaryConditionSummary = `残り全勝（40-0推奨）＋上位ライバルの連続大敗・共倒れが絶対条件`;
+  }
+
+  const firstNote = st.rank === 1 || firstPlaceProb >= 40
+    ? "現在首位のアドバンテージを活かし、自力でFINAL直行を決める本命ルート"
+    : firstPlaceProb >= 20
+      ? `首位${leader.shortName}との直接対決を制せば十分逆転可能な射程圏内`
+      : firstPlaceProb >= 5
+        ? "上位が連敗し自チームが全勝ペースで初めて届く厳しい挑戦"
+        : "点数差および他チームの勝点推移から、現実的な到達はほぼ不可能";
+
+  const secondNote = top2Prob >= 60
+    ? "準決勝での奇数巡目HOME優先権をがっちり確保できる現実的本命ルート"
+    : top2Prob >= 25
+      ? "直接対決で30pt奪取できれば一気に浮上可能な現実的ターゲット"
+      : top2Prob >= 5
+        ? "残り試合での大量得点＋上位の失速が必要な高難度ルート"
+        : "計算上ほぼ絶望的。現実的なターゲット外";
+
+  const thirdNote = top3Prob >= 85
+    ? "最低防衛ライン。ここを下回る可能性は極めて低い安全圏"
+    : top3Prob >= 40
+      ? "ボーダー直接対決を制することで自力確保できる最重要ライン"
+      : top3Prob >= 15
+        ? "3位チームとの直接対決で30-40ptを奪い得失差で競り勝つ逆転ルート"
+        : "残り全勝が必須かつライバル総崩れを祈る奇跡のデッドライン";
+
+  return {
+    realisticTargetRank,
+    realisticTargetTitle,
+    feasibilityLevel,
+    feasibilityBadgeText,
+    coreNarrative,
+    primaryConditionSummary,
+    rankEvaluations: {
+      first: {
+        rank: 1,
+        targetPoints: route1TargetPts,
+        probability: firstPlaceProb,
+        feasibility: firstEval.feasibility,
+        feasibilityLabel: firstEval.label,
+        note: firstNote,
+      },
+      second: {
+        rank: 2,
+        targetPoints: route2TargetPts,
+        probability: top2Prob,
+        feasibility: secondEval.feasibility,
+        feasibilityLabel: secondEval.label,
+        note: secondNote,
+      },
+      third: {
+        rank: 3,
+        targetPoints: route3TargetPts,
+        probability: top3Prob,
+        feasibility: thirdEval.feasibility,
+        feasibilityLabel: thirdEval.label,
+        note: thirdNote,
+      },
+    },
+  };
+}
+
 export function analyzeDivisionScenarios(
   division: DivisionId,
   matches: MatchRecord[],
@@ -926,6 +1070,20 @@ export function analyzeDivisionScenarios(
           ? `現在プレイオフ圏内（${st.rank}位）。2位確保なら準決勝で奇数巡目HOME権を獲得、1位逆転ならFINALシード直行が見えてきます。`
           : `3位ボーダー（現在${thirdTeam.shortName}・${thirdTeam.point}pt）まで${diffFromThird}pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。`;
 
+    const personalizedOutlook = buildPersonalizedOutlook({
+      st,
+      division,
+      firstPlaceProb,
+      top2Prob,
+      top3Prob,
+      remCount,
+      leader,
+      thirdTeam,
+      route1TargetPts,
+      route2TargetPts,
+      route3TargetPts,
+    });
+
     teamsResult[key] = {
       teamKey: key,
       teamName: st.name,
@@ -956,6 +1114,7 @@ export function analyzeDivisionScenarios(
       },
       statusSummary,
       playoffOutlook,
+      personalizedOutlook,
       routes: {
         route1First: {
           routeId: "route1_first",
@@ -973,6 +1132,8 @@ export function analyzeDivisionScenarios(
             `上位直接対決で10pt以下に抑え込まれないこと（バトル得失差現在${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff}）`,
           ],
           targetSchedule: plan1.schedule,
+          feasibility: personalizedOutlook.rankEvaluations.first.feasibility,
+          isRecommendedTarget: personalizedOutlook.realisticTargetRank === 1,
         },
         route2Second: {
           routeId: "route2_second",
@@ -990,6 +1151,8 @@ export function analyzeDivisionScenarios(
             `AWAY戦（残り${st.remainingAway}試合）でも最低10〜20ptを持ち帰り大崩れしないこと`,
           ],
           targetSchedule: plan2.schedule,
+          feasibility: personalizedOutlook.rankEvaluations.second.feasibility,
+          isRecommendedTarget: personalizedOutlook.realisticTargetRank === 2,
         },
         route3Third: {
           routeId: "route3_third",
@@ -1007,6 +1170,8 @@ export function analyzeDivisionScenarios(
             `0-40のストレート被完封をゼロに抑え、バトル得失差（現在${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff}）を維持・改善すること`,
           ],
           targetSchedule: plan3.schedule,
+          feasibility: personalizedOutlook.rankEvaluations.third.feasibility,
+          isRecommendedTarget: personalizedOutlook.realisticTargetRank === 3,
         },
         route4Cheering: {
           routeId: "route4_cheering",

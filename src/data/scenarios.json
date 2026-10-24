@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T23:28:58.503Z",
+  "updatedAt": "2026-10-24T18:56:17.261Z",
   "simulationRuns": 10000,
   "generatorMode": "deterministic-engine",
   "predictorEnabled": true,
@@ -53,8 +53,42 @@
         "divisionSecondBorderAvg": 248.4,
         "divisionThirdBorderAvg": 230.1
       },
-      "statusSummary": "KADOKAWA FAV gamingは現在Division S 1位（140pt / バトル得失+9 / ラウンド得失+8）。残り5試合（HOME 2戦・AWAY 3戦）を残し、プレイオフ進出率は76.8%、1位突破率は25.6%です。",
-      "playoffOutlook": "現在首位のアドバンテージを維持して1位通過を果たせば、プレイオフFINALへシード直行（HOME権確定）となります。",
+      "statusSummary": "KADOKAWA FAV gamingは第5節終了時点で 3勝2敗・合計140pt（バトル得失+9 / ラウンド得失+8）でDivision S 現在1位です。残り5試合（HOME 2戦・AWAY 3戦）を踏まえた現在のプレイオフ進出確率は76.8%、2位以内確率は53%、1位突破確率は25.6%となっています。",
+      "playoffOutlook": "現在2位IBSG（130pt）に10pt差をつけ首位を走っています。チームの最重要ターゲットは「追撃を完封して1位突破を果たし、プレイオフFINALへのHOMEシード直行を決めること」です。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 1,
+        "realisticTargetTitle": "首位防衛＆1位突破（FINALシード直行）が本命ターゲット",
+        "feasibilityLevel": "realistic",
+        "feasibilityBadgeText": "本命ターゲット: 1位突破（FINAL直行）",
+        "coreNarrative": "現在Division S 首位を走り、プレイオフ進出確率も76.8%と盤石なポジションを築いています。チームの最大の目標は「追走する2位以下のライバルを振り切り、1位通過でプレイオフFINALへのHOMEシード直行を決めること」。残り5試合（うちHOME 2戦）で大将戦を手堅く制し、合計280ptへ到達すれば自力での首位通過が確定します。",
+        "primaryConditionSummary": "残りHOME戦（2試合）で確実に30pt以上を積み上げ、首位を自力防衛",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 280,
+            "probability": 25.6,
+            "feasibility": "challenging",
+            "feasibilityLabel": "厳しい挑戦",
+            "note": "現在首位のアドバンテージを活かし、自力でFINAL直行を決める本命ルート"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 53,
+            "feasibility": "realistic",
+            "feasibilityLabel": "現実的な射程",
+            "note": "直接対決で30pt奪取できれば一気に浮上可能な現実的ターゲット"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 230,
+            "probability": 76.8,
+            "feasibility": "favorite",
+            "feasibilityLabel": "本命ターゲット",
+            "note": "ボーダー直接対決を制することで自力確保できる最重要ライン"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -65,7 +99,7 @@
           "requiredLosses": 1,
           "probability": 25.6,
           "headline": "最終280pt到達（残り5戦で4勝1敗ペース）が1位突破のターゲットライン",
-          "narrative": "FAVがDivision S 1位突破（予想ボーダー平均 270.3pt）を果たすには、残り5試合で+140ptを上積みし合計280ptへ到達することが目標となります。特に残り2試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位FAV（現在140pt）との首位防衛戦を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計280pt（残り5試合で+140pt、目安4勝1敗）です。残り5戦のうちAWAY戦が3試合続きますが、先鋒・中堅で着実にポイントを確保し、上位チームとの直接対決で勝利を収めることで1位突破が視野に入ります。",
           "keyConditions": [
             "目標合計ポイント: 280pt以上（残り+140pt）",
             "残り5戦の目安戦績: 4勝1敗（HOME 2戦での大将戦勝利が鍵）",
@@ -147,7 +181,9 @@
               "keyMatchupNote": "大将推奨: りゅうきち(MAI) vs MenaRD(BLANKA) [勝率32.7%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "challenging",
+          "isRecommendedTarget": true
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -158,7 +194,7 @@
           "requiredLosses": 2,
           "probability": 53,
           "headline": "合計250pt確保（残り3勝2敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Sの2位予想ボーダーは平均248.4ptであり、FAVは残り試合で手堅く3勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在53%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【248.4pt】。FAVの2位確保ターゲットは合計【250pt】（残り+110pt、目安3勝2敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在53%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 248.4pt）",
             "残り5戦の目安戦績: 3勝2敗",
@@ -240,7 +276,9 @@
               "keyMatchupNote": "大将推奨: りゅうきち(MAI) vs MenaRD(BLANKA) [勝率32.7%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "realistic",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -251,7 +289,7 @@
           "requiredLosses": 2,
           "probability": 76.8,
           "headline": "PO進出デッドラインは230pt前後！同率時はバトル得失差（現在+9）が決着を分ける",
-          "narrative": "Division Sの3位プレイオフ進出ボーダーは平均230.1ptと推計されています。FAVがPO進出を果たすための最低デッドラインは合計230pt（残り+90pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在+9）」および「獲得ラウンド得失差（現在+8）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【230.1pt】。FAVがPO進出を果たすためのデッドラインは合計【230pt】（残り+90pt、最低3勝2敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（+9）・ラウンド得失差（+8）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計230pt（平均ボーダー 230.1pt）",
             "残り5戦での最低クリアライン: 3勝2敗ペース",
@@ -333,7 +371,9 @@
               "keyMatchupNote": "大将推奨: りゅうきち(MAI) vs MenaRD(BLANKA) [勝率32.7%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "favorite",
+          "isRecommendedTarget": false
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -344,7 +384,7 @@
           "requiredLosses": 0,
           "probability": 75.2,
           "headline": "次節は「CR勝利（理想: ZETA 0 - 40 CR） ＆ iXA勝利（理想: SOL 0 - 40 iXA）」を全力応援！",
-          "narrative": "次節（Division S 第6節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でFAVにとって最も有利になるスコアを算出しました。【ZETA vs CR】では「ZETA 0 - 40 CR」で決着するとPO進出率が75.2%（-1.6%変動）となります。【SOL vs iXA】では「SOL 0 - 40 iXA」で決着するとPO進出率が82.9%（+6.1%変動）となります。",
+          "narrative": "次節（Division S 第6節）において、FAVファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: ZETA vs CR】もっともFAVに有利な結果は「ZETA 0 - 40 CR（CR勝利）」です。現在3位（120pt）のZETAのポイント加算とバトル得失差を抑え込むことで、FAVの上位浮上・PO進出確率が最大+0.5%向上します。（このカードの結果次第でPO進出率は 75.2% 〜 75.2% の間で変動します）。 【注目カード2: SOL vs iXA】もっともFAVに有利な結果は「SOL 0 - 40 iXA（iXA勝利）」です。競合ライバルであるSOLの追い上げを阻止し、ボーダーラインを引き下げるためiXAの勝利（理想は0-40）が最も有利に働きます。（このカードの結果次第でPO進出率は 74.9% 〜 82.9% の間で変動します）。",
           "keyConditions": [
             "ZETA vs CR: 「ZETA 0 - 40 CR」を応援（PO進出率 75.2%〜75.2%の変動幅）",
             "SOL vs iXA: 「SOL 0 - 40 iXA」を応援（PO進出率 74.9%〜82.9%の変動幅）"
@@ -1344,8 +1384,42 @@
         "divisionSecondBorderAvg": 248.4,
         "divisionThirdBorderAvg": 230.1
       },
-      "statusSummary": "FUKUSHIMA IBUSHIGINは現在Division S 2位（130pt / バトル得失-2 / ラウンド得失-3）。残り5試合（HOME 2戦・AWAY 3戦）を残し、プレイオフ進出率は41.6%、1位突破率は7%です。",
-      "playoffOutlook": "現在プレイオフ圏内（2位）。2位確保なら準決勝で奇数巡目HOME権を獲得、1位逆転ならFINALシード直行が見えてきます。",
+      "statusSummary": "FUKUSHIMA IBUSHIGINは第5節終了時点で 2勝3敗・合計130pt（バトル得失-2 / ラウンド得失-3）でDivision S 現在2位です。残り5試合（HOME 2戦・AWAY 3戦）を踏まえた現在のプレイオフ進出確率は41.6%、2位以内確率は19.8%、1位突破確率は7%となっています。",
+      "playoffOutlook": "現在プレイオフ圏内の2位。4位SOL（120pt）との差は10pt、首位FAV（140pt）との差は10ptです。2位以上を死守してプレイオフ準決勝のHOME優先権を掴み取ることが現実的なターゲットとなります。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 3,
+        "realisticTargetTitle": "3位滑り込み（プレイオフ進出）が最大の挑戦ターゲット",
+        "feasibilityLevel": "challenging",
+        "feasibilityBadgeText": "挑戦ターゲット: 3位滑り込み",
+        "coreNarrative": "現在2位。3位ボーダー（ZETA・120pt）まで10pt差の白熱したボーダー争いです。SFLは1節で最大40pt動くため、直接対決で30pt〜40ptの本戦勝利を挙げれば一気に順位が入れ替わります。0-40の完封負けを徹底排除し、バトル得失差（現在-2）をプラスに保つことが明暗を分けます。",
+        "primaryConditionSummary": "ボーダー直接対決での30pt勝利＆得失点差の改善で逆転滑り込み",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 280,
+            "probability": 7,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "上位が連敗し自チームが全勝ペースで初めて届く厳しい挑戦"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 19.8,
+            "feasibility": "challenging",
+            "feasibilityLabel": "厳しい挑戦",
+            "note": "残り試合での大量得点＋上位の失速が必要な高難度ルート"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 230,
+            "probability": 41.6,
+            "feasibility": "realistic",
+            "feasibilityLabel": "現実的な射程",
+            "note": "ボーダー直接対決を制することで自力確保できる最重要ライン"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -1356,7 +1430,7 @@
           "requiredLosses": 1,
           "probability": 7,
           "headline": "最終280pt到達（残り5戦で4勝1敗ペース）が1位突破のターゲットライン",
-          "narrative": "IBSGがDivision S 1位突破（予想ボーダー平均 270.3pt）を果たすには、残り5試合で+150ptを上積みし合計280ptへ到達することが目標となります。特に残り2試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位FAV（現在140pt）との10pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計280pt（残り5試合で+150pt、目安4勝1敗）です。残り5戦のうちAWAY戦が3試合続きますが、先鋒・中堅で着実にポイントを確保し、上位チームとの直接対決で勝利を収めることで1位突破が視野に入ります。",
           "keyConditions": [
             "目標合計ポイント: 280pt以上（残り+150pt）",
             "残り5戦の目安戦績: 4勝1敗（HOME 2戦での大将戦勝利が鍵）",
@@ -1438,7 +1512,9 @@
               "keyMatchupNote": "大将推奨: 鶏めし(DHALSIM) vs きんちょ(TERRY) [勝率49.9%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -1449,7 +1525,7 @@
           "requiredLosses": 1,
           "probability": 19.8,
           "headline": "合計250pt確保（残り4勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Sの2位予想ボーダーは平均248.4ptであり、IBSGは残り試合で手堅く4勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在19.8%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【248.4pt】。IBSGの2位確保ターゲットは合計【250pt】（残り+120pt、目安4勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在19.8%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 248.4pt）",
             "残り5戦の目安戦績: 4勝1敗",
@@ -1531,7 +1607,9 @@
               "keyMatchupNote": "大将推奨: 鶏めし(DHALSIM) vs きんちょ(TERRY) [勝率49.9%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "challenging",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -1542,7 +1620,7 @@
           "requiredLosses": 2,
           "probability": 41.6,
           "headline": "PO進出デッドラインは230pt前後！同率時はバトル得失差（現在-2）が決着を分ける",
-          "narrative": "Division Sの3位プレイオフ進出ボーダーは平均230.1ptと推計されています。IBSGがPO進出を果たすための最低デッドラインは合計230pt（残り+100pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在-2）」および「獲得ラウンド得失差（現在-3）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【230.1pt】。IBSGがPO進出を果たすためのデッドラインは合計【230pt】（残り+100pt、最低3勝2敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（-2）・ラウンド得失差（-3）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計230pt（平均ボーダー 230.1pt）",
             "残り5戦での最低クリアライン: 3勝2敗ペース",
@@ -1624,7 +1702,9 @@
               "keyMatchupNote": "大将推奨: 鶏めし(DHALSIM) vs きんちょ(TERRY) [勝率49.9%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "realistic",
+          "isRecommendedTarget": true
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -1635,7 +1715,7 @@
           "requiredLosses": 0,
           "probability": 43,
           "headline": "次節は「CR勝利（理想: ZETA 10 - 30 CR） ＆ iXA勝利（理想: SOL 0 - 40 iXA）」を全力応援！",
-          "narrative": "次節（Division S 第6節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でIBSGにとって最も有利になるスコアを算出しました。【ZETA vs CR】では「ZETA 10 - 30 CR」で決着するとPO進出率が43%（+1.4%変動）となります。【SOL vs iXA】では「SOL 0 - 40 iXA」で決着するとPO進出率が52.6%（+11%変動）となります。",
+          "narrative": "次節（Division S 第6節）において、IBSGファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: ZETA vs CR】もっともIBSGに有利な結果は「ZETA 10 - 30 CR（CR勝利）」です。現在3位（120pt）のZETAのポイント加算とバトル得失差を抑え込むことで、IBSGの上位浮上・PO進出確率が最大+1.4%向上します。（このカードの結果次第でPO進出率は 40.1% 〜 43% の間で変動します）。 【注目カード2: SOL vs iXA】もっともIBSGに有利な結果は「SOL 0 - 40 iXA（iXA勝利）」です。競合ライバルであるSOLの追い上げを阻止し、ボーダーラインを引き下げるためiXAの勝利（理想は0-40）が最も有利に働きます。（このカードの結果次第でPO進出率は 38.3% 〜 52.6% の間で変動します）。",
           "keyConditions": [
             "ZETA vs CR: 「ZETA 10 - 30 CR」を応援（PO進出率 40.1%〜43%の変動幅）",
             "SOL vs iXA: 「SOL 0 - 40 iXA」を応援（PO進出率 38.3%〜52.6%の変動幅）"
@@ -2635,8 +2715,42 @@
         "divisionSecondBorderAvg": 248.4,
         "divisionThirdBorderAvg": 230.1
       },
-      "statusSummary": "ZETA DIVISION Geeklyは現在Division S 3位（120pt / バトル得失+6 / ラウンド得失+11）。残り5試合（HOME 2戦・AWAY 3戦）を残し、プレイオフ進出率は86%、1位突破率は41.6%です。",
-      "playoffOutlook": "現在プレイオフ圏内（3位）。2位確保なら準決勝で奇数巡目HOME権を獲得、1位逆転ならFINALシード直行が見えてきます。",
+      "statusSummary": "ZETA DIVISION Geeklyは第5節終了時点で 3勝2敗・合計120pt（バトル得失+6 / ラウンド得失+11）でDivision S 現在3位です。残り5試合（HOME 2戦・AWAY 3戦）を踏まえた現在のプレイオフ進出確率は86%、2位以内確率は68.1%、1位突破確率は41.6%となっています。",
+      "playoffOutlook": "現在プレイオフ圏内の3位。4位SOL（120pt）との差は0pt、首位FAV（140pt）との差は20ptです。2位以上を死守してプレイオフ準決勝のHOME優先権を掴み取ることが現実的なターゲットとなります。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 1,
+        "realisticTargetTitle": "首位防衛＆1位突破（FINALシード直行）が本命ターゲット",
+        "feasibilityLevel": "realistic",
+        "feasibilityBadgeText": "本命ターゲット: 1位突破（FINAL直行）",
+        "coreNarrative": "現在Division S 首位を走り、プレイオフ進出確率も86%と盤石なポジションを築いています。チームの最大の目標は「追走する2位以下のライバルを振り切り、1位通過でプレイオフFINALへのHOMEシード直行を決めること」。残り5試合（うちHOME 2戦）で大将戦を手堅く制し、合計280ptへ到達すれば自力での首位通過が確定します。",
+        "primaryConditionSummary": "残りHOME戦（2試合）で確実に30pt以上を積み上げ、首位を自力防衛",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 280,
+            "probability": 41.6,
+            "feasibility": "realistic",
+            "feasibilityLabel": "現実的な射程",
+            "note": "現在首位のアドバンテージを活かし、自力でFINAL直行を決める本命ルート"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 68.1,
+            "feasibility": "favorite",
+            "feasibilityLabel": "本命ターゲット",
+            "note": "準決勝での奇数巡目HOME優先権をがっちり確保できる現実的本命ルート"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 230,
+            "probability": 86,
+            "feasibility": "favorite",
+            "feasibilityLabel": "本命ターゲット",
+            "note": "最低防衛ライン。ここを下回る可能性は極めて低い安全圏"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -2647,7 +2761,7 @@
           "requiredLosses": 1,
           "probability": 41.6,
           "headline": "最終280pt到達（残り5戦で4勝1敗ペース）が1位突破のターゲットライン",
-          "narrative": "ZETAがDivision S 1位突破（予想ボーダー平均 270.3pt）を果たすには、残り5試合で+160ptを上積みし合計280ptへ到達することが目標となります。特に残り2試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位FAV（現在140pt）との20pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計280pt（残り5試合で+160pt、目安4勝1敗）です。残り5戦のうちAWAY戦が3試合続きますが、先鋒・中堅で着実にポイントを確保し、上位チームとの直接対決で勝利を収めることで1位突破が視野に入ります。",
           "keyConditions": [
             "目標合計ポイント: 280pt以上（残り+160pt）",
             "残り5戦の目安戦績: 4勝1敗（HOME 2戦での大将戦勝利が鍵）",
@@ -2729,7 +2843,9 @@
               "keyMatchupNote": "大将推奨: MenaRD(BLANKA) vs りゅうきち(MAI) [勝率67.3%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "realistic",
+          "isRecommendedTarget": true
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -2740,7 +2856,7 @@
           "requiredLosses": 1,
           "probability": 68.1,
           "headline": "合計250pt確保（残り4勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Sの2位予想ボーダーは平均248.4ptであり、ZETAは残り試合で手堅く4勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在68.1%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【248.4pt】。ZETAの2位確保ターゲットは合計【250pt】（残り+130pt、目安4勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在68.1%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 248.4pt）",
             "残り5戦の目安戦績: 4勝1敗",
@@ -2822,7 +2938,9 @@
               "keyMatchupNote": "大将推奨: MenaRD(BLANKA) vs りゅうきち(MAI) [勝率67.3%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "favorite",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -2833,7 +2951,7 @@
           "requiredLosses": 1,
           "probability": 86,
           "headline": "PO進出デッドラインは230pt前後！同率時はバトル得失差（現在+6）が決着を分ける",
-          "narrative": "Division Sの3位プレイオフ進出ボーダーは平均230.1ptと推計されています。ZETAがPO進出を果たすための最低デッドラインは合計230pt（残り+110pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在+6）」および「獲得ラウンド得失差（現在+11）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【230.1pt】。ZETAがPO進出を果たすためのデッドラインは合計【230pt】（残り+110pt、最低4勝1敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（+6）・ラウンド得失差（+11）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計230pt（平均ボーダー 230.1pt）",
             "残り5戦での最低クリアライン: 4勝1敗ペース",
@@ -2915,7 +3033,9 @@
               "keyMatchupNote": "大将推奨: MenaRD(BLANKA) vs りゅうきち(MAI) [勝率67.3%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "favorite",
+          "isRecommendedTarget": false
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -2926,7 +3046,7 @@
           "requiredLosses": 0,
           "probability": 89.4,
           "headline": "次節は「iXA勝利（理想: SOL 0 - 40 iXA） ＆ IBSG勝利（理想: IBSG 30 - 10 FAV）」を全力応援！",
-          "narrative": "次節（Division S 第6節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でZETAにとって最も有利になるスコアを算出しました。【SOL vs iXA】では「SOL 0 - 40 iXA」で決着するとPO進出率が89.4%（+3.4%変動）となります。【IBSG vs FAV】では「IBSG 30 - 10 FAV」で決着するとPO進出率が85.9%（-0.1%変動）となります。",
+          "narrative": "次節（Division S 第6節）において、ZETAファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: SOL vs iXA】もっともZETAに有利な結果は「SOL 0 - 40 iXA（iXA勝利）」です。競合ライバルであるSOLの追い上げを阻止し、ボーダーラインを引き下げるためiXAの勝利（理想は0-40）が最も有利に働きます。（このカードの結果次第でPO進出率は 84.1% 〜 89.4% の間で変動します）。 【注目カード2: IBSG vs FAV】もっともZETAに有利な結果は「IBSG 30 - 10 FAV（IBSG勝利）」です。現在1位（140pt）のFAVのポイント加算とバトル得失差を抑え込むことで、ZETAの上位浮上・PO進出確率が最大+0.5%向上します。（このカードの結果次第でPO進出率は 83.3% 〜 85.9% の間で変動します）。",
           "keyConditions": [
             "SOL vs iXA: 「SOL 0 - 40 iXA」を応援（PO進出率 84.1%〜89.4%の変動幅）",
             "IBSG vs FAV: 「IBSG 30 - 10 FAV」を応援（PO進出率 83.3%〜85.9%の変動幅）"
@@ -3926,8 +4046,42 @@
         "divisionSecondBorderAvg": 248.4,
         "divisionThirdBorderAvg": 230.1
       },
-      "statusSummary": "Saishunkan Sol 熊本は現在Division S 4位（120pt / バトル得失+2 / ラウンド得失+1）。残り5試合（HOME 3戦・AWAY 2戦）を残し、プレイオフ進出率は76.5%、1位突破率は24.1%です。",
-      "playoffOutlook": "3位ボーダー（現在ZETA・120pt）まで0pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。",
+      "statusSummary": "Saishunkan Sol 熊本は第5節終了時点で 4勝1敗・合計120pt（バトル得失+2 / ラウンド得失+1）でDivision S 現在4位です。残り5試合（HOME 3戦・AWAY 2戦）を踏まえた現在のプレイオフ進出確率は76.5%、2位以内確率は51.8%、1位突破確率は24.1%となっています。",
+      "playoffOutlook": "現在4位ですが、3位ボーダーのZETA（120pt）とは0pt差です。直接対決での30pt〜40pt勝利を挙げられれば自力で順位を逆転し、3位滑り込みを果たすチャンスが十分にあります。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 2,
+        "realisticTargetTitle": "2位確保（準決勝HOME優先権）が現実的本命ターゲット",
+        "feasibilityLevel": "realistic",
+        "feasibilityBadgeText": "現実的本命: 2位確保（準決勝HOME権）",
+        "coreNarrative": "プレイオフ進出確率76.5%とPO進出自体は視界良好です。現在の最大の焦点は「3位通過にとどまらず2位以上を死守して、準決勝の奇数巡目HOME優先権を確保できるか」、そして首位FAVとの20pt差を捉えて1位逆転を狙えるかです。直接対決での取りこぼしを防ぐことが最重要課題となります。",
+        "primaryConditionSummary": "上位直接対決で20〜30ptをもぎ取り、2位以上を確定させて首位逆転を伺う",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 280,
+            "probability": 24.1,
+            "feasibility": "challenging",
+            "feasibilityLabel": "厳しい挑戦",
+            "note": "首位FAVとの直接対決を制せば十分逆転可能な射程圏内"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 51.8,
+            "feasibility": "realistic",
+            "feasibilityLabel": "現実的な射程",
+            "note": "直接対決で30pt奪取できれば一気に浮上可能な現実的ターゲット"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 230,
+            "probability": 76.5,
+            "feasibility": "favorite",
+            "feasibilityLabel": "本命ターゲット",
+            "note": "ボーダー直接対決を制することで自力確保できる最重要ライン"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -3938,7 +4092,7 @@
           "requiredLosses": 1,
           "probability": 24.1,
           "headline": "最終280pt到達（残り5戦で4勝1敗ペース）が1位突破のターゲットライン",
-          "narrative": "SOLがDivision S 1位突破（予想ボーダー平均 270.3pt）を果たすには、残り5試合で+160ptを上積みし合計280ptへ到達することが目標となります。特に残り3試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位FAV（現在140pt）との20pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計280pt（残り5試合で+160pt、目安4勝1敗）です。残り5戦のうち後出し有利なHOME戦が3試合残っているため、HOME戦で大将戦（20pt）を含め確実に30pt〜40ptを積み上げることが1位突破への鍵となります。",
           "keyConditions": [
             "目標合計ポイント: 280pt以上（残り+160pt）",
             "残り5戦の目安戦績: 4勝1敗（HOME 3戦での大将戦勝利が鍵）",
@@ -4020,7 +4174,9 @@
               "keyMatchupNote": "大将推奨: きんちょ(TERRY) vs 鶏めし(DHALSIM) [勝率50.1%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "challenging",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -4031,7 +4187,7 @@
           "requiredLosses": 1,
           "probability": 51.8,
           "headline": "合計250pt確保（残り4勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Sの2位予想ボーダーは平均248.4ptであり、SOLは残り試合で手堅く4勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在51.8%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【248.4pt】。SOLの2位確保ターゲットは合計【250pt】（残り+130pt、目安4勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在51.8%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 248.4pt）",
             "残り5戦の目安戦績: 4勝1敗",
@@ -4113,7 +4269,9 @@
               "keyMatchupNote": "大将推奨: きんちょ(TERRY) vs 鶏めし(DHALSIM) [勝率50.1%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "realistic",
+          "isRecommendedTarget": true
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -4124,7 +4282,7 @@
           "requiredLosses": 2,
           "probability": 76.5,
           "headline": "PO進出デッドラインは230pt前後！同率時はバトル得失差（現在+2）が決着を分ける",
-          "narrative": "Division Sの3位プレイオフ進出ボーダーは平均230.1ptと推計されています。SOLがPO進出を果たすための最低デッドラインは合計230pt（残り+110pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在+2）」および「獲得ラウンド得失差（現在+1）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【230.1pt】。SOLがPO進出を果たすためのデッドラインは合計【230pt】（残り+110pt、最低3勝2敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（+2）・ラウンド得失差（+1）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計230pt（平均ボーダー 230.1pt）",
             "残り5戦での最低クリアライン: 3勝2敗ペース",
@@ -4206,7 +4364,9 @@
               "keyMatchupNote": "大将推奨: きんちょ(TERRY) vs 鶏めし(DHALSIM) [勝率50.1%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "favorite",
+          "isRecommendedTarget": false
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -4217,7 +4377,7 @@
           "requiredLosses": 0,
           "probability": 74.6,
           "headline": "次節は「CR勝利（理想: ZETA 0 - 40 CR） ＆ FAV勝利（理想: IBSG 0 - 40 FAV）」を全力応援！",
-          "narrative": "次節（Division S 第6節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でSOLにとって最も有利になるスコアを算出しました。【ZETA vs CR】では「ZETA 0 - 40 CR」で決着するとPO進出率が74.6%（-1.9%変動）となります。【IBSG vs FAV】では「IBSG 0 - 40 FAV」で決着するとPO進出率が80.6%（+4.1%変動）となります。",
+          "narrative": "次節（Division S 第6節）において、SOLファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: ZETA vs CR】もっともSOLに有利な結果は「ZETA 0 - 40 CR（CR勝利）」です。現在3位（120pt）のZETAのポイント加算とバトル得失差を抑え込むことで、SOLの上位浮上・PO進出確率が最大+0.5%向上します。（このカードの結果次第でPO進出率は 73.8% 〜 74.6% の間で変動します）。 【注目カード2: IBSG vs FAV】もっともSOLに有利な結果は「IBSG 0 - 40 FAV（FAV勝利）」です。現在2位（130pt）のIBSGのポイント加算とバトル得失差を抑え込むことで、SOLの上位浮上・PO進出確率が最大+4.1%向上します。（このカードの結果次第でPO進出率は 74.4% 〜 80.6% の間で変動します）。",
           "keyConditions": [
             "ZETA vs CR: 「ZETA 0 - 40 CR」を応援（PO進出率 73.8%〜74.6%の変動幅）",
             "IBSG vs FAV: 「IBSG 0 - 40 FAV」を応援（PO進出率 74.4%〜80.6%の変動幅）"
@@ -5217,8 +5377,42 @@
         "divisionSecondBorderAvg": 248.4,
         "divisionThirdBorderAvg": 230.1
       },
-      "statusSummary": "Crazy Raccoonは現在Division S 5位（80pt / バトル得失-5 / ラウンド得失-4）。残り5試合（HOME 3戦・AWAY 2戦）を残し、プレイオフ進出率は18.6%、1位突破率は1.7%です。",
-      "playoffOutlook": "3位ボーダー（現在ZETA・120pt）まで40pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。",
+      "statusSummary": "Crazy Raccoonは第5節終了時点で 2勝3敗・合計80pt（バトル得失-5 / ラウンド得失-4）でDivision S 現在5位です。残り5試合（HOME 3戦・AWAY 2戦）を踏まえた現在のプレイオフ進出確率は18.6%、2位以内確率は7.2%、1位突破確率は1.7%となっています。",
+      "playoffOutlook": "現在5位ですが、3位ボーダーのZETA（120pt）とは40pt差です。直接対決での30pt〜40pt勝利を挙げられれば自力で順位を逆転し、3位滑り込みを果たすチャンスが十分にあります。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 3,
+        "realisticTargetTitle": "3位滑り込み（プレイオフ進出）が最大の挑戦ターゲット",
+        "feasibilityLevel": "challenging",
+        "feasibilityBadgeText": "挑戦ターゲット: 3位滑り込み",
+        "coreNarrative": "現在5位。3位ボーダー（ZETA・120pt）まで40pt差の白熱したボーダー争いです。SFLは1節で最大40pt動くため、直接対決で30pt〜40ptの本戦勝利を挙げれば一気に順位が入れ替わります。0-40の完封負けを徹底排除し、バトル得失差（現在-5）をプラスに保つことが明暗を分けます。",
+        "primaryConditionSummary": "ボーダー直接対決での30pt勝利＆得失点差の改善で逆転滑り込み",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 280,
+            "probability": 1.7,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "点数差および他チームの勝点推移から、現実的な到達はほぼ不可能"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 7.2,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "残り試合での大量得点＋上位の失速が必要な高難度ルート"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 230,
+            "probability": 18.6,
+            "feasibility": "challenging",
+            "feasibilityLabel": "厳しい挑戦",
+            "note": "3位チームとの直接対決で30-40ptを奪い得失差で競り勝つ逆転ルート"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -5229,7 +5423,7 @@
           "requiredLosses": 0,
           "probability": 1.7,
           "headline": "最終280pt到達（残り5戦で5勝0敗ペース）が1位突破のターゲットライン",
-          "narrative": "CRがDivision S 1位突破（予想ボーダー平均 270.3pt）を果たすには、残り5試合で+200ptを上積みし合計280ptへ到達することが目標となります。特に残り3試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位FAV（現在140pt）との60pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計280pt（残り5試合で+200pt、目安5勝0敗）です。残り5戦のうち後出し有利なHOME戦が3試合残っているため、HOME戦で大将戦（20pt）を含め確実に30pt〜40ptを積み上げることが1位突破への鍵となります。",
           "keyConditions": [
             "目標合計ポイント: 280pt以上（残り+200pt）",
             "残り5戦の目安戦績: 5勝0敗（HOME 3戦での大将戦勝利が鍵）",
@@ -5311,7 +5505,9 @@
               "keyMatchupNote": "大将推奨: かずのこ(CVIPER) vs あきら(CAMMY) [勝率72.4%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -5322,7 +5518,7 @@
           "requiredLosses": 1,
           "probability": 7.2,
           "headline": "合計250pt確保（残り4勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Sの2位予想ボーダーは平均248.4ptであり、CRは残り試合で手堅く4勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在7.2%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【248.4pt】。CRの2位確保ターゲットは合計【250pt】（残り+170pt、目安4勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在7.2%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 248.4pt）",
             "残り5戦の目安戦績: 4勝1敗",
@@ -5404,7 +5600,9 @@
               "keyMatchupNote": "大将推奨: かずのこ(CVIPER) vs あきら(CAMMY) [勝率72.4%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -5415,7 +5613,7 @@
           "requiredLosses": 1,
           "probability": 18.6,
           "headline": "PO進出デッドラインは230pt前後！同率時はバトル得失差（現在-5）が決着を分ける",
-          "narrative": "Division Sの3位プレイオフ進出ボーダーは平均230.1ptと推計されています。CRがPO進出を果たすための最低デッドラインは合計230pt（残り+150pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在-5）」および「獲得ラウンド得失差（現在-4）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【230.1pt】。CRがPO進出を果たすためのデッドラインは合計【230pt】（残り+150pt、最低4勝1敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（-5）・ラウンド得失差（-4）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計230pt（平均ボーダー 230.1pt）",
             "残り5戦での最低クリアライン: 4勝1敗ペース",
@@ -5497,7 +5695,9 @@
               "keyMatchupNote": "大将推奨: かずのこ(CVIPER) vs あきら(CAMMY) [勝率72.4%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "challenging",
+          "isRecommendedTarget": true
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -5508,7 +5708,7 @@
           "requiredLosses": 0,
           "probability": 27.9,
           "headline": "次節は「iXA勝利（理想: SOL 0 - 40 iXA） ＆ FAV勝利（理想: IBSG 0 - 40 FAV）」を全力応援！",
-          "narrative": "次節（Division S 第6節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でCRにとって最も有利になるスコアを算出しました。【SOL vs iXA】では「SOL 0 - 40 iXA」で決着するとPO進出率が27.9%（+9.3%変動）となります。【IBSG vs FAV】では「IBSG 0 - 40 FAV」で決着するとPO進出率が19.8%（+1.2%変動）となります。",
+          "narrative": "次節（Division S 第6節）において、CRファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: SOL vs iXA】もっともCRに有利な結果は「SOL 0 - 40 iXA（iXA勝利）」です。競合ライバルであるSOLの追い上げを阻止し、ボーダーラインを引き下げるためiXAの勝利（理想は0-40）が最も有利に働きます。（このカードの結果次第でPO進出率は 15.3% 〜 27.9% の間で変動します）。 【注目カード2: IBSG vs FAV】もっともCRに有利な結果は「IBSG 0 - 40 FAV（FAV勝利）」です。現在2位（130pt）のIBSGのポイント加算とバトル得失差を抑え込むことで、CRの上位浮上・PO進出確率が最大+1.2%向上します。（このカードの結果次第でPO進出率は 17.1% 〜 19.8% の間で変動します）。",
           "keyConditions": [
             "SOL vs iXA: 「SOL 0 - 40 iXA」を応援（PO進出率 15.3%〜27.9%の変動幅）",
             "IBSG vs FAV: 「IBSG 0 - 40 FAV」を応援（PO進出率 17.1%〜19.8%の変動幅）"
@@ -6508,8 +6708,42 @@
         "divisionSecondBorderAvg": 248.4,
         "divisionThirdBorderAvg": 230.1
       },
-      "statusSummary": "広島 TEAM iXAは現在Division S 6位（50pt / バトル得失-10 / ラウンド得失-13）。残り5試合（HOME 3戦・AWAY 2戦）を残し、プレイオフ進出率は0.5%、1位突破率は0%です。",
-      "playoffOutlook": "3位ボーダー（現在ZETA・120pt）まで70pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。",
+      "statusSummary": "広島 TEAM iXAは第5節終了時点で 1勝4敗・合計50pt（バトル得失-10 / ラウンド得失-13）でDivision S 現在6位です。残り5試合（HOME 3戦・AWAY 2戦）を踏まえた現在のプレイオフ進出確率は0.5%、2位以内確率は0.1%、1位突破確率は0%となっています。",
+      "playoffOutlook": "現在6位（50pt）、3位ボーダーZETA（120pt）とは70pt差の極めて厳しい崖っぷちです。1位・2位通過は絶望的であり、残された道は「残り試合ほぼ全勝（40-0推奨）＋上位ライバルの総崩れ」を祈る奇跡の3位滑り込みのみです。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 3,
+        "realisticTargetTitle": "奇跡の3位滑り込み（極めて厳しい崖っぷちからの逆転）",
+        "feasibilityLevel": "miracle",
+        "feasibilityBadgeText": "奇跡の崖っぷち: 3位滑り込み",
+        "coreNarrative": "プレイオフ進出確率0.5%と、極めて厳しい崖っぷちに立たされています。1位・2位突破は絶望的であり、残された道は「奇跡の3位滑り込み」のみです。自力での突破は不可能に近く、残り試合全勝（特に40-0の完勝）で駆け抜けつつ、3位〜5位の上位ライバルが総崩れ・大敗を重ねる他力本願が絶対条件となります。",
+        "primaryConditionSummary": "残り全勝（40-0推奨）＋上位ライバルの連続大敗・共倒れが絶対条件",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 250,
+            "probability": 0,
+            "feasibility": "impossible",
+            "feasibilityLabel": "絶望的（ほぼ不可能）",
+            "note": "点数差および他チームの勝点推移から、現実的な到達はほぼ不可能"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 0.1,
+            "feasibility": "impossible",
+            "feasibilityLabel": "絶望的（ほぼ不可能）",
+            "note": "計算上ほぼ絶望的。現実的なターゲット外"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 230,
+            "probability": 0.5,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "残り全勝が必須かつライバル総崩れを祈る奇跡のデッドライン"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -6520,7 +6754,7 @@
           "requiredLosses": 0,
           "probability": 0,
           "headline": "最終250pt到達（残り5戦で5勝0敗ペース）が1位突破のターゲットライン",
-          "narrative": "iXAがDivision S 1位突破（予想ボーダー平均 270.3pt）を果たすには、残り5試合で+200ptを上積みし合計250ptへ到達することが目標となります。特に残り3試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位FAV（現在140pt）との90pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計250pt（残り5試合で+200pt、目安5勝0敗）です。残り5戦のうち後出し有利なHOME戦が3試合残っているため、HOME戦で大将戦（20pt）を含め確実に30pt〜40ptを積み上げることが1位突破への鍵となります。",
           "keyConditions": [
             "目標合計ポイント: 250pt以上（残り+200pt）",
             "残り5戦の目安戦績: 5勝0敗（HOME 3戦での大将戦勝利が鍵）",
@@ -6602,7 +6836,9 @@
               "keyMatchupNote": "大将推奨: あきら(CAMMY) vs かずのこ(CVIPER) [勝率27.6%]",
               "note": "HOME被せ有利（予測勝率31.9%）を活かし40pt完勝狙い"
             }
-          ]
+          ],
+          "feasibility": "impossible",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -6613,7 +6849,7 @@
           "requiredLosses": 0,
           "probability": 0.1,
           "headline": "合計250pt確保（残り5勝0敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Sの2位予想ボーダーは平均248.4ptであり、iXAは残り試合で手堅く5勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在0.1%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【248.4pt】。iXAの2位確保ターゲットは合計【250pt】（残り+200pt、目安5勝0敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在0.1%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 248.4pt）",
             "残り5戦の目安戦績: 5勝0敗",
@@ -6695,7 +6931,9 @@
               "keyMatchupNote": "大将推奨: あきら(CAMMY) vs かずのこ(CVIPER) [勝率27.6%]",
               "note": "HOME被せ有利（予測勝率31.9%）を活かし40pt完勝狙い"
             }
-          ]
+          ],
+          "feasibility": "impossible",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -6706,7 +6944,7 @@
           "requiredLosses": 0,
           "probability": 0.5,
           "headline": "PO進出デッドラインは230pt前後！同率時はバトル得失差（現在-10）が決着を分ける",
-          "narrative": "Division Sの3位プレイオフ進出ボーダーは平均230.1ptと推計されています。iXAがPO進出を果たすための最低デッドラインは合計230pt（残り+180pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在-10）」および「獲得ラウンド得失差（現在-13）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【230.1pt】。iXAがPO進出を果たすためのデッドラインは合計【230pt】（残り+180pt、最低5勝0敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（-10）・ラウンド得失差（-13）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計230pt（平均ボーダー 230.1pt）",
             "残り5戦での最低クリアライン: 5勝0敗ペース",
@@ -6788,7 +7026,9 @@
               "keyMatchupNote": "大将推奨: あきら(CAMMY) vs かずのこ(CVIPER) [勝率27.6%]",
               "note": "HOME被せ有利（予測勝率31.9%）を活かし40pt完勝狙い"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": true
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -6799,7 +7039,7 @@
           "requiredLosses": 0,
           "probability": 0.7,
           "headline": "次節は「CR勝利（理想: ZETA 0 - 40 CR） ＆ IBSG勝利（理想: IBSG 40 - 0 FAV）」を全力応援！",
-          "narrative": "次節（Division S 第6節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でiXAにとって最も有利になるスコアを算出しました。【ZETA vs CR】では「ZETA 0 - 40 CR」で決着するとPO進出率が0.7%（+0.2%変動）となります。【IBSG vs FAV】では「IBSG 40 - 0 FAV」で決着するとPO進出率が0.5%（+0%変動）となります。",
+          "narrative": "次節（Division S 第6節）において、iXAファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: ZETA vs CR】もっともiXAに有利な結果は「ZETA 0 - 40 CR（CR勝利）」です。現在3位（120pt）のZETAのポイント加算とバトル得失差を抑え込むことで、iXAの上位浮上・PO進出確率が最大+0.5%向上します。（このカードの結果次第でPO進出率は 0.4% 〜 0.7% の間で変動します）。 【注目カード2: IBSG vs FAV】もっともiXAに有利な結果は「IBSG 40 - 0 FAV（IBSG勝利）」です。現在1位（140pt）のFAVのポイント加算とバトル得失差を抑え込むことで、iXAの上位浮上・PO進出確率が最大+0.5%向上します。（このカードの結果次第でPO進出率は 0.3% 〜 0.5% の間で変動します）。",
           "keyConditions": [
             "ZETA vs CR: 「ZETA 0 - 40 CR」を応援（PO進出率 0.4%〜0.7%の変動幅）",
             "IBSG vs FAV: 「IBSG 40 - 0 FAV」を応援（PO進出率 0.3%〜0.5%の変動幅）"
@@ -7799,8 +8039,42 @@
         "divisionSecondBorderAvg": 249.1,
         "divisionThirdBorderAvg": 223.1
       },
-      "statusSummary": "RIDDLE ORDERは現在Division F 1位（140pt / バトル得失+9 / ラウンド得失+16）。残り6試合（HOME 2戦・AWAY 4戦）を残し、プレイオフ進出率は97.1%、1位突破率は72.1%です。",
-      "playoffOutlook": "現在首位のアドバンテージを維持して1位通過を果たせば、プレイオフFINALへシード直行（HOME権確定）となります。",
+      "statusSummary": "RIDDLE ORDERは第4節終了時点で 4勝0敗・合計140pt（バトル得失+9 / ラウンド得失+16）でDivision F 現在1位です。残り6試合（HOME 2戦・AWAY 4戦）を踏まえた現在のプレイオフ進出確率は97.1%、2位以内確率は91%、1位突破確率は72.1%となっています。",
+      "playoffOutlook": "現在2位DFM（100pt）に40pt差をつけ首位を走っています。チームの最重要ターゲットは「追撃を完封して1位突破を果たし、プレイオフFINALへのHOMEシード直行を決めること」です。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 1,
+        "realisticTargetTitle": "首位防衛＆1位突破（FINALシード直行）が本命ターゲット",
+        "feasibilityLevel": "favorite",
+        "feasibilityBadgeText": "本命ターゲット: 1位突破（FINAL直行）",
+        "coreNarrative": "現在Division F 首位を走り、プレイオフ進出確率も97.1%と盤石なポジションを築いています。チームの最大の目標は「追走する2位以下のライバルを振り切り、1位通過でプレイオフFINALへのHOMEシード直行を決めること」。残り6試合（うちHOME 2戦）で大将戦を手堅く制し、合計290ptへ到達すれば自力での首位通過が確定します。",
+        "primaryConditionSummary": "残りHOME戦（2試合）で確実に30pt以上を積み上げ、首位を自力防衛",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 290,
+            "probability": 72.1,
+            "feasibility": "favorite",
+            "feasibilityLabel": "本命ターゲット",
+            "note": "現在首位のアドバンテージを活かし、自力でFINAL直行を決める本命ルート"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 91,
+            "feasibility": "favorite",
+            "feasibilityLabel": "本命ターゲット",
+            "note": "準決勝での奇数巡目HOME優先権をがっちり確保できる現実的本命ルート"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 220,
+            "probability": 97.1,
+            "feasibility": "favorite",
+            "feasibilityLabel": "本命ターゲット",
+            "note": "最低防衛ライン。ここを下回る可能性は極めて低い安全圏"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -7811,7 +8085,7 @@
           "requiredLosses": 2,
           "probability": 72.1,
           "headline": "最終290pt到達（残り6戦で4勝2敗ペース）が1位突破のターゲットライン",
-          "narrative": "RIDがDivision F 1位突破（予想ボーダー平均 288.5pt）を果たすには、残り6試合で+150ptを上積みし合計290ptへ到達することが目標となります。特に残り2試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位RID（現在140pt）との首位防衛戦を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計290pt（残り6試合で+150pt、目安4勝2敗）です。残り6戦のうちAWAY戦が4試合続きますが、先鋒・中堅で着実にポイントを確保し、上位チームとの直接対決で勝利を収めることで1位突破が視野に入ります。",
           "keyConditions": [
             "目標合計ポイント: 290pt以上（残り+150pt）",
             "残り6戦の目安戦績: 4勝2敗（HOME 2戦での大将戦勝利が鍵）",
@@ -7908,7 +8182,9 @@
               "keyMatchupNote": "大将推奨: Jr.(ZANGIEF) vs 水派(CAMMY) [勝率74.7%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "favorite",
+          "isRecommendedTarget": true
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -7919,7 +8195,7 @@
           "requiredLosses": 2,
           "probability": 91,
           "headline": "合計250pt確保（残り4勝2敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均249.1ptであり、RIDは残り試合で手堅く4勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在91%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【249.1pt】。RIDの2位確保ターゲットは合計【250pt】（残り+110pt、目安4勝2敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在91%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 249.1pt）",
             "残り6戦の目安戦績: 4勝2敗",
@@ -8016,7 +8292,9 @@
               "keyMatchupNote": "大将推奨: Jr.(ZANGIEF) vs 水派(CAMMY) [勝率74.7%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "favorite",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -8027,7 +8305,7 @@
           "requiredLosses": 4,
           "probability": 97.1,
           "headline": "PO進出デッドラインは220pt前後！同率時はバトル得失差（現在+9）が決着を分ける",
-          "narrative": "Division Fの3位プレイオフ進出ボーダーは平均223.1ptと推計されています。RIDがPO進出を果たすための最低デッドラインは合計220pt（残り+80pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在+9）」および「獲得ラウンド得失差（現在+16）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【223.1pt】。RIDがPO進出を果たすためのデッドラインは合計【220pt】（残り+80pt、最低2勝4敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（+9）・ラウンド得失差（+16）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計220pt（平均ボーダー 223.1pt）",
             "残り6戦での最低クリアライン: 2勝4敗ペース",
@@ -8124,7 +8402,9 @@
               "keyMatchupNote": "大将推奨: Jr.(ZANGIEF) vs 水派(CAMMY) [勝率74.7%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "favorite",
+          "isRecommendedTarget": false
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -8135,7 +8415,7 @@
           "requiredLosses": 0,
           "probability": 98,
           "headline": "次節は「OJA勝利（理想: OJA 30 - 10 RC） ＆ DFM勝利（理想: G8S 10 - 30 DFM）」を全力応援！",
-          "narrative": "次節（Division F 第5節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でRIDにとって最も有利になるスコアを算出しました。【OJA vs RC】では「OJA 30 - 10 RC」で決着するとPO進出率が98%（+0.9%変動）となります。【G8S vs DFM】では「G8S 10 - 30 DFM」で決着するとPO進出率が96.8%（-0.3%変動）となります。",
+          "narrative": "次節（Division F 第5節）において、RIDファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: OJA vs RC】もっともRIDに有利な結果は「OJA 30 - 10 RC（OJA勝利）」です。競合ライバルであるRCの追い上げを阻止し、ボーダーラインを引き下げるためOJAの勝利（理想は30-10）が最も有利に働きます。（このカードの結果次第でPO進出率は 96.4% 〜 98% の間で変動します）。 【注目カード2: G8S vs DFM】もっともRIDに有利な結果は「G8S 10 - 30 DFM（DFM勝利）」です。現在3位（90pt）のG8Sのポイント加算とバトル得失差を抑え込むことで、RIDの上位浮上・PO進出確率が最大+0.5%向上します。（このカードの結果次第でPO進出率は 96.2% 〜 96.8% の間で変動します）。",
           "keyConditions": [
             "OJA vs RC: 「OJA 30 - 10 RC」を応援（PO進出率 96.4%〜98%の変動幅）",
             "G8S vs DFM: 「G8S 10 - 30 DFM」を応援（PO進出率 96.2%〜96.8%の変動幅）"
@@ -9307,8 +9587,42 @@
         "divisionSecondBorderAvg": 249.1,
         "divisionThirdBorderAvg": 223.1
       },
-      "statusSummary": "DetonatioN FocusMeは現在Division F 2位（100pt / バトル得失+4 / ラウンド得失+6）。残り6試合（HOME 2戦・AWAY 4戦）を残し、プレイオフ進出率は47.3%、1位突破率は4.9%です。",
-      "playoffOutlook": "現在プレイオフ圏内（2位）。2位確保なら準決勝で奇数巡目HOME権を獲得、1位逆転ならFINALシード直行が見えてきます。",
+      "statusSummary": "DetonatioN FocusMeは第4節終了時点で 3勝1敗・合計100pt（バトル得失+4 / ラウンド得失+6）でDivision F 現在2位です。残り6試合（HOME 2戦・AWAY 4戦）を踏まえた現在のプレイオフ進出確率は47.3%、2位以内確率は21.6%、1位突破確率は4.9%となっています。",
+      "playoffOutlook": "現在プレイオフ圏内の2位。4位RC（70pt）との差は30pt、首位RID（140pt）との差は40ptです。2位以上を死守してプレイオフ準決勝のHOME優先権を掴み取ることが現実的なターゲットとなります。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 3,
+        "realisticTargetTitle": "3位滑り込み（プレイオフ進出）が最大の挑戦ターゲット",
+        "feasibilityLevel": "challenging",
+        "feasibilityBadgeText": "挑戦ターゲット: 3位滑り込み",
+        "coreNarrative": "現在2位。3位ボーダー（G8S・90pt）まで10pt差の白熱したボーダー争いです。SFLは1節で最大40pt動くため、直接対決で30pt〜40ptの本戦勝利を挙げれば一気に順位が入れ替わります。0-40の完封負けを徹底排除し、バトル得失差（現在+4）をプラスに保つことが明暗を分けます。",
+        "primaryConditionSummary": "ボーダー直接対決での30pt勝利＆得失点差の改善で逆転滑り込み",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 290,
+            "probability": 4.9,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "点数差および他チームの勝点推移から、現実的な到達はほぼ不可能"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 21.6,
+            "feasibility": "challenging",
+            "feasibilityLabel": "厳しい挑戦",
+            "note": "残り試合での大量得点＋上位の失速が必要な高難度ルート"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 220,
+            "probability": 47.3,
+            "feasibility": "realistic",
+            "feasibilityLabel": "現実的な射程",
+            "note": "ボーダー直接対決を制することで自力確保できる最重要ライン"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -9319,7 +9633,7 @@
           "requiredLosses": 1,
           "probability": 4.9,
           "headline": "最終290pt到達（残り6戦で5勝1敗ペース）が1位突破のターゲットライン",
-          "narrative": "DFMがDivision F 1位突破（予想ボーダー平均 288.5pt）を果たすには、残り6試合で+190ptを上積みし合計290ptへ到達することが目標となります。特に残り2試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位RID（現在140pt）との40pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計290pt（残り6試合で+190pt、目安5勝1敗）です。残り6戦のうちAWAY戦が4試合続きますが、先鋒・中堅で着実にポイントを確保し、上位チームとの直接対決で勝利を収めることで1位突破が視野に入ります。",
           "keyConditions": [
             "目標合計ポイント: 290pt以上（残り+190pt）",
             "残り6戦の目安戦績: 5勝1敗（HOME 2戦での大将戦勝利が鍵）",
@@ -9416,7 +9730,9 @@
               "keyMatchupNote": "大将推奨: ナウマン(MAI) vs ガチくん(RASHID) [勝率29.5%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -9427,7 +9743,7 @@
           "requiredLosses": 1,
           "probability": 21.6,
           "headline": "合計250pt確保（残り5勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均249.1ptであり、DFMは残り試合で手堅く5勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在21.6%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【249.1pt】。DFMの2位確保ターゲットは合計【250pt】（残り+150pt、目安5勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在21.6%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 249.1pt）",
             "残り6戦の目安戦績: 5勝1敗",
@@ -9524,7 +9840,9 @@
               "keyMatchupNote": "大将推奨: ナウマン(MAI) vs ガチくん(RASHID) [勝率29.5%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "challenging",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -9535,7 +9853,7 @@
           "requiredLosses": 2,
           "probability": 47.3,
           "headline": "PO進出デッドラインは220pt前後！同率時はバトル得失差（現在+4）が決着を分ける",
-          "narrative": "Division Fの3位プレイオフ進出ボーダーは平均223.1ptと推計されています。DFMがPO進出を果たすための最低デッドラインは合計220pt（残り+120pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在+4）」および「獲得ラウンド得失差（現在+6）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【223.1pt】。DFMがPO進出を果たすためのデッドラインは合計【220pt】（残り+120pt、最低4勝2敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（+4）・ラウンド得失差（+6）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計220pt（平均ボーダー 223.1pt）",
             "残り6戦での最低クリアライン: 4勝2敗ペース",
@@ -9632,7 +9950,9 @@
               "keyMatchupNote": "大将推奨: ナウマン(MAI) vs ガチくん(RASHID) [勝率29.5%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "realistic",
+          "isRecommendedTarget": true
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -9643,7 +9963,7 @@
           "requiredLosses": 0,
           "probability": 56.1,
           "headline": "次節は「OJA勝利（理想: OJA 30 - 10 RC） ＆ RID勝利（理想: VARREL 0 - 40 RID）」を全力応援！",
-          "narrative": "次節（Division F 第5節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でDFMにとって最も有利になるスコアを算出しました。【OJA vs RC】では「OJA 30 - 10 RC」で決着するとPO進出率が56.1%（+8.8%変動）となります。【VARREL vs RID】では「VARREL 0 - 40 RID」で決着するとPO進出率が51.3%（+4%変動）となります。",
+          "narrative": "次節（Division F 第5節）において、DFMファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: OJA vs RC】もっともDFMに有利な結果は「OJA 30 - 10 RC（OJA勝利）」です。競合ライバルであるRCの追い上げを阻止し、ボーダーラインを引き下げるためOJAの勝利（理想は30-10）が最も有利に働きます。（このカードの結果次第でPO進出率は 40.6% 〜 56.1% の間で変動します）。 【注目カード2: VARREL vs RID】もっともDFMに有利な結果は「VARREL 0 - 40 RID（RID勝利）」です。競合ライバルであるVARRELの追い上げを阻止し、ボーダーラインを引き下げるためRIDの勝利（理想は0-40）が最も有利に働きます。（このカードの結果次第でPO進出率は 41.7% 〜 51.3% の間で変動します）。",
           "keyConditions": [
             "OJA vs RC: 「OJA 30 - 10 RC」を応援（PO進出率 40.6%〜56.1%の変動幅）",
             "VARREL vs RID: 「VARREL 0 - 40 RID」を応援（PO進出率 41.7%〜51.3%の変動幅）"
@@ -10815,8 +11135,42 @@
         "divisionSecondBorderAvg": 249.1,
         "divisionThirdBorderAvg": 223.1
       },
-      "statusSummary": "Good 8 Squadは現在Division F 3位（90pt / バトル得失+4 / ラウンド得失+4）。残り6試合（HOME 4戦・AWAY 2戦）を残し、プレイオフ進出率は80.4%、1位突破率は17.5%です。",
-      "playoffOutlook": "現在プレイオフ圏内（3位）。2位確保なら準決勝で奇数巡目HOME権を獲得、1位逆転ならFINALシード直行が見えてきます。",
+      "statusSummary": "Good 8 Squadは第4節終了時点で 3勝1敗・合計90pt（バトル得失+4 / ラウンド得失+4）でDivision F 現在3位です。残り6試合（HOME 4戦・AWAY 2戦）を踏まえた現在のプレイオフ進出確率は80.4%、2位以内確率は58.9%、1位突破確率は17.5%となっています。",
+      "playoffOutlook": "現在プレイオフ圏内の3位。4位RC（70pt）との差は20pt、首位RID（140pt）との差は50ptです。2位以上を死守してプレイオフ準決勝のHOME優先権を掴み取ることが現実的なターゲットとなります。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 2,
+        "realisticTargetTitle": "2位確保（準決勝HOME優先権）が現実的本命ターゲット",
+        "feasibilityLevel": "realistic",
+        "feasibilityBadgeText": "現実的本命: 2位確保（準決勝HOME権）",
+        "coreNarrative": "プレイオフ進出確率80.4%とPO進出自体は視界良好です。現在の最大の焦点は「3位通過にとどまらず2位以上を死守して、準決勝の奇数巡目HOME優先権を確保できるか」、そして首位RIDとの50pt差を捉えて1位逆転を狙えるかです。直接対決での取りこぼしを防ぐことが最重要課題となります。",
+        "primaryConditionSummary": "上位直接対決で20〜30ptをもぎ取り、2位以上を確定させて首位逆転を伺う",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 290,
+            "probability": 17.5,
+            "feasibility": "challenging",
+            "feasibilityLabel": "厳しい挑戦",
+            "note": "上位が連敗し自チームが全勝ペースで初めて届く厳しい挑戦"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 58.9,
+            "feasibility": "realistic",
+            "feasibilityLabel": "現実的な射程",
+            "note": "直接対決で30pt奪取できれば一気に浮上可能な現実的ターゲット"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 220,
+            "probability": 80.4,
+            "feasibility": "favorite",
+            "feasibilityLabel": "本命ターゲット",
+            "note": "ボーダー直接対決を制することで自力確保できる最重要ライン"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -10827,7 +11181,7 @@
           "requiredLosses": 1,
           "probability": 17.5,
           "headline": "最終290pt到達（残り6戦で5勝1敗ペース）が1位突破のターゲットライン",
-          "narrative": "G8SがDivision F 1位突破（予想ボーダー平均 288.5pt）を果たすには、残り6試合で+200ptを上積みし合計290ptへ到達することが目標となります。特に残り4試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位RID（現在140pt）との50pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計290pt（残り6試合で+200pt、目安5勝1敗）です。残り6戦のうち後出し有利なHOME戦が4試合残っているため、HOME戦で大将戦（20pt）を含め確実に30pt〜40ptを積み上げることが1位突破への鍵となります。",
           "keyConditions": [
             "目標合計ポイント: 290pt以上（残り+200pt）",
             "残り6戦の目安戦績: 5勝1敗（HOME 4戦での大将戦勝利が鍵）",
@@ -10924,7 +11278,9 @@
               "keyMatchupNote": "大将推奨: ガチくん(RASHID) vs ナウマン(MAI) [勝率70.5%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "challenging",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -10935,7 +11291,7 @@
           "requiredLosses": 1,
           "probability": 58.9,
           "headline": "合計250pt確保（残り5勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均249.1ptであり、G8Sは残り試合で手堅く5勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在58.9%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【249.1pt】。G8Sの2位確保ターゲットは合計【250pt】（残り+160pt、目安5勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在58.9%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 249.1pt）",
             "残り6戦の目安戦績: 5勝1敗",
@@ -11032,7 +11388,9 @@
               "keyMatchupNote": "大将推奨: ガチくん(RASHID) vs ナウマン(MAI) [勝率70.5%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "realistic",
+          "isRecommendedTarget": true
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -11043,7 +11401,7 @@
           "requiredLosses": 2,
           "probability": 80.4,
           "headline": "PO進出デッドラインは220pt前後！同率時はバトル得失差（現在+4）が決着を分ける",
-          "narrative": "Division Fの3位プレイオフ進出ボーダーは平均223.1ptと推計されています。G8SがPO進出を果たすための最低デッドラインは合計220pt（残り+130pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在+4）」および「獲得ラウンド得失差（現在+4）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【223.1pt】。G8SがPO進出を果たすためのデッドラインは合計【220pt】（残り+130pt、最低4勝2敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（+4）・ラウンド得失差（+4）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計220pt（平均ボーダー 223.1pt）",
             "残り6戦での最低クリアライン: 4勝2敗ペース",
@@ -11140,7 +11498,9 @@
               "keyMatchupNote": "大将推奨: ガチくん(RASHID) vs ナウマン(MAI) [勝率70.5%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "favorite",
+          "isRecommendedTarget": false
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -11151,7 +11511,7 @@
           "requiredLosses": 0,
           "probability": 85.4,
           "headline": "次節は「OJA勝利（理想: OJA 40 - 0 RC） ＆ VARREL勝利（理想: VARREL 40 - 0 RID）」を全力応援！",
-          "narrative": "次節（Division F 第5節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でG8Sにとって最も有利になるスコアを算出しました。【OJA vs RC】では「OJA 40 - 0 RC」で決着するとPO進出率が85.4%（+5%変動）となります。【VARREL vs RID】では「VARREL 40 - 0 RID」で決着するとPO進出率が79.1%（-1.3%変動）となります。",
+          "narrative": "次節（Division F 第5節）において、G8Sファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: OJA vs RC】もっともG8Sに有利な結果は「OJA 40 - 0 RC（OJA勝利）」です。競合ライバルであるRCの追い上げを阻止し、ボーダーラインを引き下げるためOJAの勝利（理想は40-0）が最も有利に働きます。（このカードの結果次第でPO進出率は 77.3% 〜 85.4% の間で変動します）。 【注目カード2: VARREL vs RID】もっともG8Sに有利な結果は「VARREL 40 - 0 RID（VARREL勝利）」です。現在1位（140pt）のRIDのポイント加算とバトル得失差を抑え込むことで、G8Sの上位浮上・PO進出確率が最大+0.5%向上します。（このカードの結果次第でPO進出率は 77.6% 〜 79.1% の間で変動します）。",
           "keyConditions": [
             "OJA vs RC: 「OJA 40 - 0 RC」を応援（PO進出率 77.3%〜85.4%の変動幅）",
             "VARREL vs RID: 「VARREL 40 - 0 RID」を応援（PO進出率 77.6%〜79.1%の変動幅）"
@@ -12323,8 +12683,42 @@
         "divisionSecondBorderAvg": 249.1,
         "divisionThirdBorderAvg": 223.1
       },
-      "statusSummary": "REJECTは現在Division F 4位（70pt / バトル得失-1 / ラウンド得失+0）。残り6試合（HOME 3戦・AWAY 3戦）を残し、プレイオフ進出率は55%、1位突破率は4.6%です。",
-      "playoffOutlook": "3位ボーダー（現在G8S・90pt）まで20pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。",
+      "statusSummary": "REJECTは第4節終了時点で 1勝3敗・合計70pt（バトル得失-1 / ラウンド得失+0）でDivision F 現在4位です。残り6試合（HOME 3戦・AWAY 3戦）を踏まえた現在のプレイオフ進出確率は55%、2位以内確率は22.7%、1位突破確率は4.6%となっています。",
+      "playoffOutlook": "現在4位ですが、3位ボーダーのG8S（90pt）とは20pt差です。直接対決での30pt〜40pt勝利を挙げられれば自力で順位を逆転し、3位滑り込みを果たすチャンスが十分にあります。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 3,
+        "realisticTargetTitle": "3位滑り込み（プレイオフ進出）が最大の挑戦ターゲット",
+        "feasibilityLevel": "challenging",
+        "feasibilityBadgeText": "挑戦ターゲット: 3位滑り込み",
+        "coreNarrative": "現在4位。3位ボーダー（G8S・90pt）まで20pt差の白熱したボーダー争いです。SFLは1節で最大40pt動くため、直接対決で30pt〜40ptの本戦勝利を挙げれば一気に順位が入れ替わります。0-40の完封負けを徹底排除し、バトル得失差（現在-1）をプラスに保つことが明暗を分けます。",
+        "primaryConditionSummary": "ボーダー直接対決での30pt勝利＆得失点差の改善で逆転滑り込み",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 290,
+            "probability": 4.6,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "点数差および他チームの勝点推移から、現実的な到達はほぼ不可能"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 22.7,
+            "feasibility": "challenging",
+            "feasibilityLabel": "厳しい挑戦",
+            "note": "残り試合での大量得点＋上位の失速が必要な高難度ルート"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 220,
+            "probability": 55,
+            "feasibility": "realistic",
+            "feasibilityLabel": "現実的な射程",
+            "note": "ボーダー直接対決を制することで自力確保できる最重要ライン"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -12335,7 +12729,7 @@
           "requiredLosses": 0,
           "probability": 4.6,
           "headline": "最終290pt到達（残り6戦で6勝0敗ペース）が1位突破のターゲットライン",
-          "narrative": "RCがDivision F 1位突破（予想ボーダー平均 288.5pt）を果たすには、残り6試合で+220ptを上積みし合計290ptへ到達することが目標となります。特に残り3試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位RID（現在140pt）との70pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計290pt（残り6試合で+220pt、目安6勝0敗）です。残り6戦のうち後出し有利なHOME戦が3試合残っているため、HOME戦で大将戦（20pt）を含め確実に30pt〜40ptを積み上げることが1位突破への鍵となります。",
           "keyConditions": [
             "目標合計ポイント: 290pt以上（残り+220pt）",
             "残り6戦の目安戦績: 6勝0敗（HOME 3戦での大将戦勝利が鍵）",
@@ -12432,7 +12826,9 @@
               "keyMatchupNote": "大将推奨: ひなお(SAGAT) vs らおやむ(VEGA_MBISON) [勝率68.4%]",
               "note": "HOME被せ有利（予測勝率73%）を活かし40pt完勝狙い"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -12443,7 +12839,7 @@
           "requiredLosses": 1,
           "probability": 22.7,
           "headline": "合計250pt確保（残り5勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均249.1ptであり、RCは残り試合で手堅く5勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在22.7%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【249.1pt】。RCの2位確保ターゲットは合計【250pt】（残り+180pt、目安5勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在22.7%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 249.1pt）",
             "残り6戦の目安戦績: 5勝1敗",
@@ -12540,7 +12936,9 @@
               "keyMatchupNote": "大将推奨: ひなお(SAGAT) vs らおやむ(VEGA_MBISON) [勝率68.4%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "challenging",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -12551,7 +12949,7 @@
           "requiredLosses": 1,
           "probability": 55,
           "headline": "PO進出デッドラインは220pt前後！同率時はバトル得失差（現在-1）が決着を分ける",
-          "narrative": "Division Fの3位プレイオフ進出ボーダーは平均223.1ptと推計されています。RCがPO進出を果たすための最低デッドラインは合計220pt（残り+150pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在-1）」および「獲得ラウンド得失差（現在+0）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【223.1pt】。RCがPO進出を果たすためのデッドラインは合計【220pt】（残り+150pt、最低5勝1敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（-1）・ラウンド得失差（+0）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計220pt（平均ボーダー 223.1pt）",
             "残り6戦での最低クリアライン: 5勝1敗ペース",
@@ -12648,7 +13046,9 @@
               "keyMatchupNote": "大将推奨: ひなお(SAGAT) vs らおやむ(VEGA_MBISON) [勝率68.4%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "realistic",
+          "isRecommendedTarget": true
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -12659,7 +13059,7 @@
           "requiredLosses": 0,
           "probability": 58.8,
           "headline": "次節は「RID勝利（理想: VARREL 0 - 40 RID） ＆ G8S勝利（理想: G8S 40 - 0 DFM）」を全力応援！",
-          "narrative": "次節（Division F 第5節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でRCにとって最も有利になるスコアを算出しました。【VARREL vs RID】では「VARREL 0 - 40 RID」で決着するとPO進出率が58.8%（+3.8%変動）となります。【G8S vs DFM】では「G8S 40 - 0 DFM」で決着するとPO進出率が59.3%（+4.3%変動）となります。",
+          "narrative": "次節（Division F 第5節）において、RCファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: VARREL vs RID】もっともRCに有利な結果は「VARREL 0 - 40 RID（RID勝利）」です。競合ライバルであるVARRELの追い上げを阻止し、ボーダーラインを引き下げるためRIDの勝利（理想は0-40）が最も有利に働きます。（このカードの結果次第でPO進出率は 50.1% 〜 58.8% の間で変動します）。 【注目カード2: G8S vs DFM】もっともRCに有利な結果は「G8S 40 - 0 DFM（G8S勝利）」です。現在2位（100pt）のDFMのポイント加算とバトル得失差を抑え込むことで、RCの上位浮上・PO進出確率が最大+4.3%向上します。（このカードの結果次第でPO進出率は 52% 〜 59.3% の間で変動します）。",
           "keyConditions": [
             "VARREL vs RID: 「VARREL 0 - 40 RID」を応援（PO進出率 50.1%〜58.8%の変動幅）",
             "G8S vs DFM: 「G8S 40 - 0 DFM」を応援（PO進出率 52%〜59.3%の変動幅）"
@@ -13831,8 +14231,42 @@
         "divisionSecondBorderAvg": 249.1,
         "divisionThirdBorderAvg": 223.1
       },
-      "statusSummary": "VARRELは現在Division F 5位（60pt / バトル得失-8 / ラウンド得失-13）。残り6試合（HOME 3戦・AWAY 3戦）を残し、プレイオフ進出率は17.7%、1位突破率は0.9%です。",
-      "playoffOutlook": "3位ボーダー（現在G8S・90pt）まで30pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。",
+      "statusSummary": "VARRELは第4節終了時点で 0勝4敗・合計60pt（バトル得失-8 / ラウンド得失-13）でDivision F 現在5位です。残り6試合（HOME 3戦・AWAY 3戦）を踏まえた現在のプレイオフ進出確率は17.7%、2位以内確率は5.4%、1位突破確率は0.9%となっています。",
+      "playoffOutlook": "現在5位ですが、3位ボーダーのG8S（90pt）とは30pt差です。直接対決での30pt〜40pt勝利を挙げられれば自力で順位を逆転し、3位滑り込みを果たすチャンスが十分にあります。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 3,
+        "realisticTargetTitle": "3位滑り込み（プレイオフ進出）が最大の挑戦ターゲット",
+        "feasibilityLevel": "challenging",
+        "feasibilityBadgeText": "挑戦ターゲット: 3位滑り込み",
+        "coreNarrative": "現在5位。3位ボーダー（G8S・90pt）まで30pt差の白熱したボーダー争いです。SFLは1節で最大40pt動くため、直接対決で30pt〜40ptの本戦勝利を挙げれば一気に順位が入れ替わります。0-40の完封負けを徹底排除し、バトル得失差（現在-8）をプラスに保つことが明暗を分けます。",
+        "primaryConditionSummary": "ボーダー直接対決での30pt勝利＆得失点差の改善で逆転滑り込み",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 290,
+            "probability": 0.9,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "点数差および他チームの勝点推移から、現実的な到達はほぼ不可能"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 5.4,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "残り試合での大量得点＋上位の失速が必要な高難度ルート"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 220,
+            "probability": 17.7,
+            "feasibility": "challenging",
+            "feasibilityLabel": "厳しい挑戦",
+            "note": "3位チームとの直接対決で30-40ptを奪い得失差で競り勝つ逆転ルート"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -13843,7 +14277,7 @@
           "requiredLosses": 0,
           "probability": 0.9,
           "headline": "最終290pt到達（残り6戦で6勝0敗ペース）が1位突破のターゲットライン",
-          "narrative": "VARRELがDivision F 1位突破（予想ボーダー平均 288.5pt）を果たすには、残り6試合で+230ptを上積みし合計290ptへ到達することが目標となります。特に残り3試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位RID（現在140pt）との80pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計290pt（残り6試合で+230pt、目安6勝0敗）です。残り6戦のうち後出し有利なHOME戦が3試合残っているため、HOME戦で大将戦（20pt）を含め確実に30pt〜40ptを積み上げることが1位突破への鍵となります。",
           "keyConditions": [
             "目標合計ポイント: 290pt以上（残り+230pt）",
             "残り6戦の目安戦績: 6勝0敗（HOME 3戦での大将戦勝利が鍵）",
@@ -13940,7 +14374,9 @@
               "keyMatchupNote": "大将推奨: 水派(CAMMY) vs Jr.(ZANGIEF) [勝率25.3%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -13951,7 +14387,7 @@
           "requiredLosses": 1,
           "probability": 5.4,
           "headline": "合計250pt確保（残り5勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均249.1ptであり、VARRELは残り試合で手堅く5勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在5.4%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【249.1pt】。VARRELの2位確保ターゲットは合計【250pt】（残り+190pt、目安5勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在5.4%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 249.1pt）",
             "残り6戦の目安戦績: 5勝1敗",
@@ -14048,7 +14484,9 @@
               "keyMatchupNote": "大将推奨: 水派(CAMMY) vs Jr.(ZANGIEF) [勝率25.3%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -14059,7 +14497,7 @@
           "requiredLosses": 1,
           "probability": 17.7,
           "headline": "PO進出デッドラインは220pt前後！同率時はバトル得失差（現在-8）が決着を分ける",
-          "narrative": "Division Fの3位プレイオフ進出ボーダーは平均223.1ptと推計されています。VARRELがPO進出を果たすための最低デッドラインは合計220pt（残り+160pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在-8）」および「獲得ラウンド得失差（現在-13）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【223.1pt】。VARRELがPO進出を果たすためのデッドラインは合計【220pt】（残り+160pt、最低5勝1敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（-8）・ラウンド得失差（-13）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計220pt（平均ボーダー 223.1pt）",
             "残り6戦での最低クリアライン: 5勝1敗ペース",
@@ -14156,7 +14594,9 @@
               "keyMatchupNote": "大将推奨: 水派(CAMMY) vs Jr.(ZANGIEF) [勝率25.3%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "challenging",
+          "isRecommendedTarget": true
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -14167,7 +14607,7 @@
           "requiredLosses": 0,
           "probability": 25.2,
           "headline": "次節は「OJA勝利（理想: OJA 40 - 0 RC） ＆ G8S勝利（理想: G8S 40 - 0 DFM）」を全力応援！",
-          "narrative": "次節（Division F 第5節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でVARRELにとって最も有利になるスコアを算出しました。【OJA vs RC】では「OJA 40 - 0 RC」で決着するとPO進出率が25.2%（+7.5%変動）となります。【G8S vs DFM】では「G8S 40 - 0 DFM」で決着するとPO進出率が20.7%（+3%変動）となります。",
+          "narrative": "次節（Division F 第5節）において、VARRELファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: OJA vs RC】もっともVARRELに有利な結果は「OJA 40 - 0 RC（OJA勝利）」です。競合ライバルであるRCの追い上げを阻止し、ボーダーラインを引き下げるためOJAの勝利（理想は40-0）が最も有利に働きます。（このカードの結果次第でPO進出率は 15.4% 〜 25.2% の間で変動します）。 【注目カード2: G8S vs DFM】もっともVARRELに有利な結果は「G8S 40 - 0 DFM（G8S勝利）」です。現在2位（100pt）のDFMのポイント加算とバトル得失差を抑え込むことで、VARRELの上位浮上・PO進出確率が最大+3%向上します。（このカードの結果次第でPO進出率は 12.8% 〜 20.7% の間で変動します）。",
           "keyConditions": [
             "OJA vs RC: 「OJA 40 - 0 RC」を応援（PO進出率 15.4%〜25.2%の変動幅）",
             "G8S vs DFM: 「G8S 40 - 0 DFM」を応援（PO進出率 12.8%〜20.7%の変動幅）"
@@ -15339,8 +15779,42 @@
         "divisionSecondBorderAvg": 249.1,
         "divisionThirdBorderAvg": 223.1
       },
-      "statusSummary": "名古屋NTPOJAは現在Division F 6位（50pt / バトル得失-8 / ラウンド得失-13）。残り6試合（HOME 4戦・AWAY 2戦）を残し、プレイオフ進出率は2.5%、1位突破率は0%です。",
-      "playoffOutlook": "3位ボーダー（現在G8S・90pt）まで40pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。",
+      "statusSummary": "名古屋NTPOJAは第4節終了時点で 1勝3敗・合計50pt（バトル得失-8 / ラウンド得失-13）でDivision F 現在6位です。残り6試合（HOME 4戦・AWAY 2戦）を踏まえた現在のプレイオフ進出確率は2.5%、2位以内確率は0.4%、1位突破確率は0%となっています。",
+      "playoffOutlook": "現在6位（50pt）、3位ボーダーG8S（90pt）とは40pt差の極めて厳しい崖っぷちです。1位・2位通過は絶望的であり、残された道は「残り試合ほぼ全勝（40-0推奨）＋上位ライバルの総崩れ」を祈る奇跡の3位滑り込みのみです。",
+      "personalizedOutlook": {
+        "realisticTargetRank": 3,
+        "realisticTargetTitle": "奇跡の3位滑り込み（極めて厳しい崖っぷちからの逆転）",
+        "feasibilityLevel": "challenging",
+        "feasibilityBadgeText": "要・大逆転: 3位滑り込み",
+        "coreNarrative": "プレイオフ進出確率2.5%と、極めて厳しい崖っぷちに立たされています。1位・2位突破は絶望的であり、残された道は「奇跡の3位滑り込み」のみです。自力での突破は不可能に近く、残り試合全勝（特に40-0の完勝）で駆け抜けつつ、3位〜5位の上位ライバルが総崩れ・大敗を重ねる他力本願が絶対条件となります。",
+        "primaryConditionSummary": "残り全勝（40-0推奨）＋上位ライバルの連続大敗・共倒れが絶対条件",
+        "rankEvaluations": {
+          "first": {
+            "rank": 1,
+            "targetPoints": 290,
+            "probability": 0,
+            "feasibility": "impossible",
+            "feasibilityLabel": "絶望的（ほぼ不可能）",
+            "note": "点数差および他チームの勝点推移から、現実的な到達はほぼ不可能"
+          },
+          "second": {
+            "rank": 2,
+            "targetPoints": 250,
+            "probability": 0.4,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "計算上ほぼ絶望的。現実的なターゲット外"
+          },
+          "third": {
+            "rank": 3,
+            "targetPoints": 220,
+            "probability": 2.5,
+            "feasibility": "miracle",
+            "feasibilityLabel": "奇跡的・要他力",
+            "note": "残り全勝が必須かつライバル総崩れを祈る奇跡のデッドライン"
+          }
+        }
+      },
       "routes": {
         "route1First": {
           "routeId": "route1_first",
@@ -15351,7 +15825,7 @@
           "requiredLosses": 0,
           "probability": 0,
           "headline": "最終290pt到達（残り6戦で6勝0敗ペース）が1位突破のターゲットライン",
-          "narrative": "OJAがDivision F 1位突破（予想ボーダー平均 288.5pt）を果たすには、残り6試合で+240ptを上積みし合計290ptへ到達することが目標となります。特に残り4試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位RID（現在140pt）との90pt差を制することが最短ルートです。",
+          "narrative": "1位突破（決勝シード直行）の予想目安は合計290pt（残り6試合で+240pt、目安6勝0敗）です。残り6戦のうち後出し有利なHOME戦が4試合残っているため、HOME戦で大将戦（20pt）を含め確実に30pt〜40ptを積み上げることが1位突破への鍵となります。",
           "keyConditions": [
             "目標合計ポイント: 290pt以上（残り+240pt）",
             "残り6戦の目安戦績: 6勝0敗（HOME 4戦での大将戦勝利が鍵）",
@@ -15448,7 +15922,9 @@
               "keyMatchupNote": "大将推奨: らおやむ(VEGA_MBISON) vs ひなお(SAGAT) [勝率31.6%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             }
-          ]
+          ],
+          "feasibility": "impossible",
+          "isRecommendedTarget": false
         },
         "route2Second": {
           "routeId": "route2_second",
@@ -15459,7 +15935,7 @@
           "requiredLosses": 1,
           "probability": 0.4,
           "headline": "合計250pt確保（残り5勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均249.1ptであり、OJAは残り試合で手堅く5勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在0.4%）を大きく引き上げられます。",
+          "narrative": "プレイオフ準決勝で「奇数セット目のHOME権」を確保できる2位通過の予想ボーダーは平均【249.1pt】。OJAの2位確保ターゲットは合計【250pt】（残り+200pt、目安5勝1敗）となります。SFLでは同じプレイオフ進出でも、2位通過と3位通過では準決勝の被せ権（HOME/AWAY）で勝率が大きく変わります。仮に苦しいAWAY戦で敗れる節があっても、0-40や10-30で終わらせず「20-30（延長戦突入）」で20ptを持ち帰る粘り強さを徹底できれば、2位以内確保率（現在0.4%）を盤石にできます。",
           "keyConditions": [
             "目標合計ポイント: 250pt（2位予想ボーダー平均 249.1pt）",
             "残り6戦の目安戦績: 5勝1敗",
@@ -15556,7 +16032,9 @@
               "keyMatchupNote": "大将推奨: らおやむ(VEGA_MBISON) vs ひなお(SAGAT) [勝率31.6%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": false
         },
         "route3Third": {
           "routeId": "route3_third",
@@ -15567,7 +16045,7 @@
           "requiredLosses": 1,
           "probability": 2.5,
           "headline": "PO進出デッドラインは220pt前後！同率時はバトル得失差（現在-8）が決着を分ける",
-          "narrative": "Division Fの3位プレイオフ進出ボーダーは平均223.1ptと推計されています。OJAがPO進出を果たすための最低デッドラインは合計220pt（残り+170pt）。最終節付近では10pt刻みのポイントが並ぶ可能性が高く、第2優先順位である「獲得バトル得失差（現在-8）」および「獲得ラウンド得失差（現在-13）」の1バトル・1ラウンドの重みが直結します。",
+          "narrative": "プレイオフ進出の最終防衛ラインとなる3位ボーダーは平均【223.1pt】。OJAがPO進出を果たすためのデッドラインは合計【220pt】（残り+170pt、最低5勝1敗ペース）です。全10節終了時には複数チームが10pt単位で同率に並ぶケースが多発します。その際のタイブレークは「①ポイント → ②獲得バトル得失差 → ③獲得ラウンド得失差」で決まるため、現在のバトル得失差（-8）・ラウンド得失差（-13）を1つでもプラスに保つことが生死を分けます。",
           "keyConditions": [
             "PO進出デッドライン目安: 合計220pt（平均ボーダー 223.1pt）",
             "残り6戦での最低クリアライン: 5勝1敗ペース",
@@ -15664,7 +16142,9 @@
               "keyMatchupNote": "大将推奨: らおやむ(VEGA_MBISON) vs ひなお(SAGAT) [勝率31.6%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
-          ]
+          ],
+          "feasibility": "miracle",
+          "isRecommendedTarget": true
         },
         "route4Cheering": {
           "routeId": "route4_cheering",
@@ -15675,7 +16155,7 @@
           "requiredLosses": 0,
           "probability": 3.1,
           "headline": "次節は「RID勝利（理想: VARREL 20 - 30 RID） ＆ G8S勝利（理想: G8S 40 - 0 DFM）」を全力応援！",
-          "narrative": "次節（Division F 第5節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でOJAにとって最も有利になるスコアを算出しました。【VARREL vs RID】では「VARREL 20 - 30 RID」で決着するとPO進出率が3.1%（+0.6%変動）となります。【G8S vs DFM】では「G8S 40 - 0 DFM」で決着するとPO進出率が2.9%（+0.4%変動）となります。",
+          "narrative": "次節（Division F 第5節）において、OJAファンが自チームの試合と並んで注目すべき「他力本願・応援ガイド」です。 【注目カード1: VARREL vs RID】もっともOJAに有利な結果は「VARREL 20 - 30 RID（RID勝利）」です。競合ライバルであるVARRELの追い上げを阻止し、ボーダーラインを引き下げるためRIDの勝利（理想は20-30）が最も有利に働きます。（このカードの結果次第でPO進出率は 2.1% 〜 3.1% の間で変動します）。 【注目カード2: G8S vs DFM】もっともOJAに有利な結果は「G8S 40 - 0 DFM（G8S勝利）」です。現在2位（100pt）のDFMのポイント加算とバトル得失差を抑え込むことで、OJAの上位浮上・PO進出確率が最大+0.5%向上します。（このカードの結果次第でPO進出率は 2% 〜 2.9% の間で変動します）。",
           "keyConditions": [
             "VARREL vs RID: 「VARREL 20 - 30 RID」を応援（PO進出率 2.1%〜3.1%の変動幅）",
             "G8S vs DFM: 「G8S 40 - 0 DFM」を応援（PO進出率 2%〜2.9%の変動幅）"

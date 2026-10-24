@@ -26,12 +26,15 @@ on:
         type: string
         required: false
       text_backend:
-        description: "Text generation backend (codex or gemini)"
+        description: "Text generation backend (codex, agy, ollama, gemini, or auto)"
         required: false
         type: choice
         options:
           - codex
+          - agy
+          - ollama
           - gemini
+          - auto
         default: codex
 
 permissions:

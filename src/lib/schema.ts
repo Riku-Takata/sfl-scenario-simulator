@@ -359,6 +359,37 @@ export const CheeringMatchGuideSchema = z.object({
   reason: z.string(),
 });
 
+export const TargetFeasibilitySchema = z.enum([
+  "favorite",
+  "realistic",
+  "challenging",
+  "miracle",
+  "impossible",
+]);
+
+export const RankFeasibilityEvaluationSchema = z.object({
+  rank: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+  targetPoints: z.number(),
+  probability: z.number(),
+  feasibility: TargetFeasibilitySchema,
+  feasibilityLabel: z.string(),
+  note: z.string(),
+});
+
+export const PersonalizedOutlookSchema = z.object({
+  realisticTargetRank: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal("eliminated")]),
+  realisticTargetTitle: z.string(),
+  feasibilityLevel: TargetFeasibilitySchema,
+  feasibilityBadgeText: z.string(),
+  coreNarrative: z.string(),
+  primaryConditionSummary: z.string(),
+  rankEvaluations: z.object({
+    first: RankFeasibilityEvaluationSchema,
+    second: RankFeasibilityEvaluationSchema,
+    third: RankFeasibilityEvaluationSchema,
+  }),
+});
+
 export const ScenarioRouteDetailSchema = z.object({
   routeId: z.enum([
     "route1_first",
@@ -376,6 +407,8 @@ export const ScenarioRouteDetailSchema = z.object({
   narrative: z.string(),
   keyConditions: z.array(z.string()),
   targetSchedule: z.array(TargetMatchPlanSchema).optional(),
+  feasibility: TargetFeasibilitySchema.optional(),
+  isRecommendedTarget: z.boolean().optional(),
 });
 
 export const TeamScenarioAnalysisSchema = z.object({
@@ -415,6 +448,7 @@ export const TeamScenarioAnalysisSchema = z.object({
   }),
   statusSummary: z.string(),
   playoffOutlook: z.string(),
+  personalizedOutlook: PersonalizedOutlookSchema.optional(),
   routes: z.object({
     route1First: ScenarioRouteDetailSchema,
     route2Second: ScenarioRouteDetailSchema,

@@ -333,3 +333,31 @@ test("buildPlayerEncyclopedia builds 48 objective player profiles with 6-axis pa
   }
 });
 
+test("analyzeDivisionScenarios generates rich personalizedPlayoffOutlook for all teams", () => {
+  const resultS = analyzeDivisionScenarios("s", matchesData.matches, 200);
+  assert.ok(resultS.teams.fav);
+  assert.ok(resultS.teams.ixa);
+
+  // FAV (Leader)
+  const favOutlook = resultS.teams.fav.personalizedOutlook;
+  assert.ok(favOutlook);
+  assert.equal(favOutlook.realisticTargetRank, 1);
+  assert.match(favOutlook.realisticTargetTitle, /1位突破/);
+  assert.equal(resultS.teams.fav.routes.route1First.isRecommendedTarget, true);
+  assert.equal(resultS.teams.fav.routes.route2Second.isRecommendedTarget, false);
+  assert.ok(favOutlook.coreNarrative.length > 20);
+  assert.ok(favOutlook.primaryConditionSummary.length > 10);
+
+  // iXA (Trailing / Miracle)
+  const ixaOutlook = resultS.teams.ixa.personalizedOutlook;
+  assert.ok(ixaOutlook);
+  assert.equal(ixaOutlook.realisticTargetRank, 3);
+  assert.match(ixaOutlook.realisticTargetTitle, /奇跡の3位滑り込み/);
+  assert.ok(["miracle", "challenging"].includes(ixaOutlook.feasibilityLevel));
+  assert.ok(["impossible", "miracle"].includes(ixaOutlook.rankEvaluations.first.feasibility));
+  assert.ok(["impossible", "miracle"].includes(ixaOutlook.rankEvaluations.second.feasibility));
+  assert.ok(["miracle", "challenging"].includes(ixaOutlook.rankEvaluations.third.feasibility));
+  assert.equal(resultS.teams.ixa.routes.route3Third.isRecommendedTarget, true);
+  assert.equal(resultS.teams.ixa.routes.route1First.isRecommendedTarget, false);
+  assert.match(ixaOutlook.coreNarrative, /崖っぷち/);
+});
