@@ -91,6 +91,18 @@ test("playlist discovery retains earlier pages when pagination fails", async (t)
   assert.deepEqual(await fetchSectionPlaylists("2026"), { "div-s-sec5": "https://www.youtube.com/playlist?list=PL5" });
 });
 
+test("fallback playlist validation rejects the previous season and retains a verified matching section", async (t) => {
+  t.mock.method(globalThis, "fetch", async (url: string) => {
+    if (url.includes("/playlists")) return new Response(html({}));
+    const title = url.includes("OLD") ? "Division F 第2節【ストリートファイターリーグ JAPAN 2025】" : "Division S 第2節【ストリートファイターリーグ JAPAN 2026】";
+    return new Response(html({ metadata: { playlistMetadataRenderer: { title } } }));
+  });
+  assert.deepEqual(await fetchSectionPlaylists("2026", {
+    "div-f-sec2": "https://www.youtube.com/playlist?list=OLD",
+    "div-s-sec2": "https://www.youtube.com/playlist?list=CURRENT",
+  }), { "div-f-sec2": "", "div-s-sec2": "https://www.youtube.com/playlist?list=CURRENT" });
+});
+
 test("metadata-only refresh repairs past links without changing scores or articles; outages preserve links", () => {
   const data = MatchRecapsDataSchema.parse({ updatedAt: "2026-10-24", generatorMode: "deterministic-rules", latestSection: { s: 5, f: 4 }, recentSections: { s: [], f: [] }, pastSections: { s: [
     { sectionNumber: 2, sectionTitle: "第2節", scheduledAt: "2026-09-01", youtubeUrl: "https://www.youtube.com/@CapcomFightersJP", playlistUrl: "https://www.youtube.com/playlist?list=OLD", matches: [{ home: "fav", away: "sol", homePoint: 10, awayPoint: 30, winner: "away" }] },
@@ -101,4 +113,6 @@ test("metadata-only refresh repairs past links without changing scores or articl
   assert.equal(JSON.stringify(data.pastSections.s[0].matches), matches);
   assert.equal(data.updatedAt, "2026-10-24");
   assert.equal(updateArchiveLinks(data, {}, {}), false);
+  assert.equal(updateArchiveLinks(data, {}, { "div-s-sec2": "" }), true);
+  assert.equal(data.pastSections.s[0].playlistUrl, undefined);
 });

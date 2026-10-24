@@ -106,7 +106,7 @@ function continuationToken(data: any): string | undefined {
 }
 
 /** Follow playlist pagination so earlier sections remain discoverable late in the season. */
-export async function fetchSectionPlaylists(season: string): Promise<Record<string, string>> {
+export async function fetchSectionPlaylists(season: string, fallbacks: Record<string, string> = {}): Promise<Record<string, string>> {
   const detected: Record<string, string> = {};
   try {
     const headers = { "User-Agent": USER_AGENT, "Accept-Language": "ja,en;q=0.8" };
@@ -134,6 +134,28 @@ export async function fetchSectionPlaylists(season: string): Promise<Record<stri
     console.log(`[Archive] detected ${Object.keys(detected).length} section playlists from the official channel`);
   } catch (error) {
     console.warn(`[Archive] could not finish reading official playlists: ${(error as Error).message}`);
+  }
+  // The official result API sometimes points at a previous season. Validate
+  // links absent from the channel listing; an empty value explicitly rejects one.
+  for (const [slug, url] of Object.entries(fallbacks)) {
+    if (slug in detected || !url) continue;
+    try {
+      const parsed = new URL(url);
+      if (!["www.youtube.com", "youtube.com"].includes(parsed.hostname) || parsed.pathname !== "/playlist" || !parsed.searchParams.get("list")) {
+        detected[slug] = "";
+        continue;
+      }
+      const response = await fetch(url, { signal: AbortSignal.timeout(30_000), headers: { "User-Agent": USER_AGENT, "Accept-Language": "ja,en;q=0.8" } });
+      if (!response.ok) continue;
+      const data = initialData(await response.text()) as any;
+      const title = data.metadata?.playlistMetadataRenderer?.title;
+      if (typeof title === "string") {
+        detected[slug] = sectionSlugFromTitle(title, season) === slug ? url : "";
+        if (!detected[slug]) console.warn(`[Archive] Rejected mismatched playlist for ${slug}: ${title}`);
+      }
+    } catch (error) {
+      console.warn(`[Archive] Could not validate ${slug}; preserving its cached link: ${(error as Error).message}`);
+    }
   }
   return detected;
 }
