@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T17:17:41.612Z",
+  "updatedAt": "2026-10-24T17:26:09.243Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1038,10 +1038,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ラウンド2の開始演出区間。1P側のJP（藤村）と2P側のブランカ（MenaRD）が対峙しており、画面中央に「ROUND 2」から「FIGHT」のコールが表示される。タイマーは99秒、体力ゲージおよびドライブゲージは両者満タン、SAゲージはJPが3本、ブランカが2本ストックされている。両キャラクターとも構えの姿勢で静止しており、まだ打撃等の接触や攻防の発生は見られない。",
       "sourceModels": [
-        "gemini-3.5-flash-lite"
+        "gemini-3.5-flash-lite",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T06:44:20.243Z"
     },
