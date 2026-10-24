@@ -1,7 +1,9 @@
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import { pathToFileURL } from "node:url";
-import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
+import { MatchesDataSchema, RecapJobsDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
+import { selectAutomaticSection } from "./recap/automation";
+import { RecapUsageSchema, remainingDailyUsage } from "./recap/usage";
 import type { MatchesData, VideoFactsData } from "../src/lib/types";
 import { SECTION_VIDEO_IDS } from "../src/config/section-videos";
 import { SFL_CURRENT_SEASON } from "../src/lib/sfl/play-style";
@@ -54,7 +56,8 @@ async function main(): Promise<void> {
     const matches = MatchesDataSchema.parse(decode(read("matches")));
     const remote = read("video-facts");
     const facts = VideoFactsDataSchema.parse(decode(remote));
-    if (await prepareChapters(matches, facts)) {
+    const readyOnly = process.argv.includes("--ready-only");
+    if (!readyOnly && await prepareChapters(matches, facts)) {
       try {
         request(["api", `repos/${repository}/contents/src/data/video-facts.json`, "--method", "PUT", "--input", "-"], {
           message: "chore(recap): cache official chapters after broadcast",
@@ -63,11 +66,11 @@ async function main(): Promise<void> {
         });
       } catch (error) { if (attempt < 2) continue; throw error; }
     }
-    const jobs = decode(read("recap-jobs")).jobs;
-    const sections = Object.values(jobs as Record<string, any>).filter((job) => job.stage !== "completed" &&
-      ["s", "f"].some((div) => job.sectionId === `div-${div}-sec${matches.completedSectionCount[div as "s" | "f"]}`))
-      .map((job: any) => job.sectionId);
-    console.log(`SFL_RECAP_SECTIONS=${[...new Set(sections)].join(",")}`);
+    const jobs = RecapJobsDataSchema.parse(decode(read("recap-jobs")));
+    const remaining = remainingDailyUsage(RecapUsageSchema.parse(decode(read("recap-usage"))));
+    const section = remaining.calls && remaining.videoSeconds
+      ? selectAutomaticSection({ jobs, facts, matches, apiAvailable: true, allowArchiveCheck: !readyOnly }) : undefined;
+    console.log(`SFL_RECAP_SECTIONS=${section ?? ""}`);
     return;
   }
 }

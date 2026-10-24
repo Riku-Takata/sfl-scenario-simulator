@@ -8,12 +8,17 @@ import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
 import { mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
+import { articleEvidenceReady, selectAutomaticSection } from "../scripts/recap/automation";
+import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
 import {
   isBoutVideoCacheStale,
   normalizeTopicWindow,
   videoAnalysisFingerprint,
+  budgetAllows,
+  advanceBoutAnalysis,
 } from "../scripts/recap/bout-video-facts";
 import type { RecapEvidence, RecapJobsData } from "../src/lib/types";
+import type { BoutVideoFacts } from "../src/lib/types";
 
 const clip = { startSec: 2632, endSec: 3289 };
 
@@ -115,6 +120,75 @@ const evidenceSet = [
   evidence("video-1", "visual", "ACQUA選手がブランカのローリングを画面端で2BASSA選手に当てる。"),
   evidence("video-2", "visual", "2BASSA選手の体力ゲージが残りわずかになった画面が映る。"),
 ];
+
+test("automatic lifecycle waits for video metadata, wakes on fresh chapters, and stops after publication", () => {
+  const matches = MatchesDataSchema.parse(JSON.parse(fs.readFileSync(new URL("../src/data/matches.json", import.meta.url), "utf8")));
+  const match = matches.matches.find((match) => match.sectionSlug === "div-s-sec1" && match.matchNumber === 1)!;
+  const facts = VideoFactsDataSchema.parse({ updatedAt: "2026-10-24T00:00:00Z", videos: {}, bouts: {}, visual: {}, narratives: {}, pendingNarrations: [] });
+  const jobs: RecapJobsData = { schemaVersion: 1, updatedAt: "2026-10-24T00:00:00Z", jobs: {} };
+  upsertMatchJob({ jobs, sectionId: match.sectionSlug, matchId: match.id, inputHash: "source", hasVideo: false, hasWindow: false, videoPending: true, apiAvailable: true, editorial: false, someBoutPassed: false });
+  const job = jobs.jobs[match.id + ":article"];
+  job.nextAttemptAt = "2026-10-24T23:00:00Z";
+  const context = { matches, facts, jobs, apiAvailable: true, now: Date.parse("2026-10-24T22:00:00Z"), allowArchiveCheck: false };
+  assert.equal(selectAutomaticSection(context), undefined);
+  assert.equal(selectAutomaticSection({ ...context, allowArchiveCheck: true }), undefined);
+  assert.equal(selectAutomaticSection({ ...context, allowArchiveCheck: true, now: Date.parse(job.nextAttemptAt) }), match.sectionSlug);
+  facts.videos[match.sectionSlug] = { videoId: "VIDEO", chapters: [
+    { startSec: 0, title: "TEAM MATCH 1 選手入場" },
+    ...(match.bouts ?? []).map((bout, index) => ({ startSec: (index + 1) * 60, title: `TEAM MATCH 1 ${bout.statusName}` })),
+  ] };
+  assert.equal(selectAutomaticSection(context), match.sectionSlug, "new chapters wake waiting jobs without waiting another day");
+  job.leaseUntil = "2026-10-25T00:00:00Z";
+  assert.equal(selectAutomaticSection(context), undefined, "active work is not duplicated");
+  delete job.leaseUntil;
+  job.stage = "completed";
+  job.quality = "passed";
+  job.publication = "detailed";
+  assert.equal(selectAutomaticSection({ ...context, allowArchiveCheck: true }), undefined);
+});
+
+test("writing waits for independently verified video evidence rather than generating a low-information draft", () => {
+  assert.equal(articleEvidenceReady(evidenceSet.map((item) => ({ ...item, status: item.kind === "official" ? "verified" : "candidate" }))), false);
+  assert.equal(articleEvidenceReady(evidenceSet), true);
+  assert.equal(articleEvidenceReady(evidenceSet.filter((item) => item.kind !== "official")), false);
+});
+
+test("continuations share a persisted daily budget and resume after the JST date changes", () => {
+  const day = usageDay();
+  const usage: RecapUsage = { schemaVersion: 1, days: { [day]: { calls: 90, videoSeconds: DAILY_VIDEO_LIMIT - 20 } } };
+  let saved: RecapUsage = structuredClone(usage);
+  const budget = persistentVideoBudget({ calls: 0, videoSeconds: 0, maxCalls: 24, maxVideoSeconds: DAILY_VIDEO_LIMIT }, usage, (value) => { saved = structuredClone(value); });
+  assert.equal(budget.maxCalls, 6);
+  assert.equal(budget.maxVideoSeconds, 20);
+  budget.calls += 1;
+  budget.videoSeconds += 12;
+  assert.deepEqual(saved.days[day], { calls: 91, videoSeconds: DAILY_VIDEO_LIMIT - 8 });
+  assert.equal(budgetAllows(budget, 9), false);
+  const resumed = persistentVideoBudget({ calls: 0, videoSeconds: 0, maxCalls: 24, maxVideoSeconds: DAILY_VIDEO_LIMIT }, saved, () => {});
+  assert.equal(resumed.maxCalls, 5);
+  assert.equal(resumed.maxVideoSeconds, 8);
+  const tomorrow = new Date(Date.parse(`${day}T12:00:00+09:00`) + 24 * 3600_000);
+  assert.deepEqual(remainingDailyUsage(saved, tomorrow), { calls: 96, videoSeconds: DAILY_VIDEO_LIMIT });
+});
+
+test("insufficient verified facts can collect one more observation without exceeding the bout analysis cap", async (t) => {
+  const facts: BoutVideoFacts = { videoId: "VIDEO", startSec: 100, endSec: 200, status: "complete", staleRuns: [], runs: ["model-a", "model-b"].map((model) => ({ model, analyzedAt: "2026-10-24T00:00:00Z", gameWinnersSeen: ["A", "A"], gatePassed: true, gateReason: "matched", topics: [] })) };
+  let calls = 0;
+  t.mock.method(globalThis, "fetch", async () => {
+    calls++;
+    return new Response(JSON.stringify({ output_text: JSON.stringify({ gameWinnersSeen: ["A", "A"], topics: [{ topic: "選手Aが画面端でドライブインパクトを当てた。", evidence: "映像", startSec: 10, endSec: 20 }] }) }));
+  });
+  const budget = { calls: 0, videoSeconds: 0, maxCalls: 8, maxVideoSeconds: 1000 };
+  const ctx = { boutId: "bout", divisionLabel: "Division S", sectionTitle: "第1節", matchNumber: 1, statusName: "先鋒戦", bestOf: 3, playerA: { name: "A", chara: "ケン", team: "A" }, playerB: { name: "B", chara: "リュウ", team: "B" }, officialGameWinners: ["A", "A"] as Array<"A" | "B">, boutWinner: "A" as const, scoreA: 2, scoreB: 0 };
+  await advanceBoutAnalysis({ apiKey: "test", models: ["model-c"], facts, ctx, budget, fps: 1, collectMoreEvidence: true });
+  assert.equal(calls, 1);
+  assert.equal(facts.runs.length, 3);
+  assert.equal(facts.status, "complete");
+  await advanceBoutAnalysis({ apiKey: "test", models: ["model-d"], facts, ctx, budget, fps: 1, collectMoreEvidence: true });
+  await advanceBoutAnalysis({ apiKey: "test", models: ["model-e"], facts, ctx, budget, fps: 1, collectMoreEvidence: true });
+  assert.equal(calls, 2);
+  assert.equal(facts.runs.length, 4);
+});
 
 test("evidence review advances past saved decisions instead of rechecking the first two candidates forever", () => {
   const candidates = ["one", "two", "three"].map((id) => ({ ...evidence(id, "visual", "画面端でブランカのローリングが相手にヒットした。"), status: "candidate" as const }));

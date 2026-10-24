@@ -39,10 +39,13 @@ import {
   budgetAllows,
   isBoutVideoCacheStale,
   videoAnalysisFingerprint,
+  MAX_RUNS_PER_BOUT,
   type BoutContext,
   type VideoBudget,
 } from "./recap/bout-video-facts";
 import { buildBoutEvidence, mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate } from "./recap/evidence-ledger";
+import { articleEvidenceReady } from "./recap/automation";
+import { persistentVideoBudget } from "./recap/usage";
 import { applyPublicationMode, evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
 import {
   currentPassedArticle, currentPassedMatchArticle, latestArticle, latestMatchArticle, evidenceForBout, loadRecapArticles, loadRecapEvidence, loadRecapJobs, recapInputHash,
@@ -313,7 +316,7 @@ export function hasPendingVideoWork(): boolean {
 }
 
 export async function generateAndSaveMatchRecaps(
-  options: { onlySection?: string; resultsOnly?: boolean } = {}
+  options: { onlySection?: string; resultsOnly?: boolean; refreshChapters?: boolean } = {}
 ): Promise<MatchRecapsData> {
   console.log("=== SFL 2026 Match Recaps (Gemini video facts) Generator Start ===");
 
@@ -333,7 +336,7 @@ export async function generateAndSaveMatchRecaps(
   const fps = Number(process.env.GEMINI_VIDEO_FPS || "1");
   const analysisVersion = videoAnalysisFingerprint(videoModels, fps);
   const publicationMode = process.env.RECAP_PUBLICATION_MODE === "auto" ? "auto" : "shadow";
-  const budget: VideoBudget = {
+  const budget: VideoBudget = persistentVideoBudget({
     maxCalls: Number(process.env.GEMINI_VIDEO_MAX_CALLS || "24"),
     // 無料枠のYouTube入力は1日8時間まで。他の利用分を残して7時間で打ち切る
     maxVideoSeconds: Number(process.env.GEMINI_VIDEO_MAX_SECONDS || String(7 * 3600)),
@@ -341,7 +344,7 @@ export async function generateAndSaveMatchRecaps(
     videoSeconds: 0,
     // 新しい動画解析を始めてよい時間 (既定20分)。無料枠切れ・503が続く日もここで打ち切って持ち越す
     deadlineMs: Date.now() + Number(process.env.GEMINI_VIDEO_TIME_BUDGET_MIN || "20") * 60_000,
-  };
+  });
 
   const videoFacts = loadVideoFacts();
   const editorial = loadEditorial();
@@ -422,7 +425,7 @@ export async function generateAndSaveMatchRecaps(
       const result = slot.result as Exclude<RawMatchSlot["result"], "">;
       return (result["1p"] || []).some((bout) => !findBoutWindow(chapters, num, bout.status));
     });
-    if (!options.resultsOnly && videoId && (chapters.length === 0 || requiredWindowsMissing)) {
+    if (!options.resultsOnly && options.refreshChapters !== false && videoId && (chapters.length === 0 || requiredWindowsMissing)) {
       try {
         const refreshed = await fetchYoutubeChapters(videoId);
         if (refreshed.length > 0) {
@@ -446,6 +449,7 @@ export async function generateAndSaveMatchRecaps(
 
       const boutInputs: NarrationBoutInput[] = [];
       const boutRecaps: RecentBoutRecap[] = [];
+      const evidenceExhaustedBouts = new Set<string>();
 
       for (let i = 0; i < Math.min(p1.length, p2.length); i++) {
         const hp = p1[i];
@@ -530,6 +534,22 @@ export async function generateAndSaveMatchRecaps(
             saveRecapEvidence(evidenceData);
           }
         }
+        // If the observed topics could not be independently verified, collect
+        // one additional observation on the next pass, within the existing cap.
+        if (videoWorkAllowed && facts && !editorial.bouts[ctx.boutId] &&
+            !articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId)) &&
+            pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId)).length === 0 &&
+            facts.runs.length < MAX_RUNS_PER_BOUT && facts.status === "complete") {
+          await advanceBoutAnalysis({ apiKey, models: videoModels.filter((model) => !/lite/i.test(model)), ctx, facts, budget, fps, collectMoreEvidence: true });
+          for (const item of buildBoutEvidence({ sectionId: slug, matchId, boutId: ctx.boutId, videoFacts: facts, ctx, games })) {
+            evidenceData.evidence[item.id] = mergeEvidenceCandidate(item, evidenceData.evidence[item.id]);
+          }
+          saveVideoFacts(videoFacts);
+          saveRecapEvidence(evidenceData);
+        }
+        if (facts && !editorial.bouts[ctx.boutId] && facts.runs.length >= MAX_RUNS_PER_BOUT &&
+            !articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId)) &&
+            pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId)).length === 0) evidenceExhaustedBouts.add(ctx.boutId);
         const verifiedBoutEvidence = evidenceForBout(evidenceData, ctx.boutId);
 
         // 映像からの画面上の事実（決着方法・PERFECT・バーンアウト・タグ）は編集解説の有無に関わらず抽出
@@ -633,6 +653,7 @@ export async function generateAndSaveMatchRecaps(
       let narrationAttempted = false;
       // 全Boutに編集解説がある試合は自動生成しない（無料枠の節約）
       const needsNarration = boutInputs.some((b) => !editorial.bouts[b.ctx.boutId]);
+      const evidenceReady = boutInputs.every((bout) => editorial.bouts[bout.ctx.boutId] || articleEvidenceReady(bout.evidence ?? []));
       const markPending = (pending: boolean) => {
         const list = videoFacts.pendingNarrations.filter((id) => id !== matchId);
         videoFacts.pendingNarrations = pending ? [...list, matchId] : list;
@@ -641,6 +662,7 @@ export async function generateAndSaveMatchRecaps(
       if (
         !options.resultsOnly && apiKey &&
         needsNarration &&
+        evidenceReady &&
         allSettled &&
         anyComplete &&
         (!narrative || narrative.inputHash !== inputHash) &&
@@ -711,6 +733,7 @@ export async function generateAndSaveMatchRecaps(
         hasVideo: Boolean(videoId), videoPending,
         hasWindow: boutInputs.every((input) => Boolean(findBoutWindow(chapters, num, Number(input.ctx.boutId.at(-1))))),
         attempted: narrationAttempted,
+        evidenceExhausted: evidenceExhaustedBouts.size > 0,
         apiAvailable: Boolean(apiKey),
         article: matchArticle, editorial: Boolean(editorial.matches[matchId]) || editorialCoversBouts,
         someBoutPassed: passedBoutArticles.length > 0,
@@ -727,6 +750,7 @@ export async function generateAndSaveMatchRecaps(
           hasVideo: Boolean(videoId), hasWindow: Boolean(window), videoStatus: recap.videoStatus,
           apiAvailable: Boolean(apiKey),
           attempted: narrationAttempted,
+          evidenceExhausted: evidenceExhaustedBouts.has(input.ctx.boutId),
           article: candidate, editorial: Boolean(editorial.bouts[input.ctx.boutId]),
         });
         const recapJob = jobsData.jobs[input.ctx.boutId];

@@ -5,12 +5,18 @@ on:
     # JST 00:10 (試合当日24時すぎ) / 08:00。概要欄のタイムスタンプ追記を待つ。
     - cron: "10 15 * * *"
     - cron: "0 23 * * *"
+    # Available videos continue through extraction, verification and writing.
+    - cron: "12,42 * * * *"
   workflow_dispatch:
     inputs:
       section:
         description: "Optional section slug to resume"
         required: false
         type: string
+      check_archives:
+        description: "Recheck unavailable official descriptions (normally 00:10/08:00 JST)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -49,6 +55,7 @@ jobs:
           GEMINI_VIDEO_TIME_BUDGET_MIN: "20"
           RECAP_PUBLICATION_MODE: auto
           RECAP_WORKER_SECTION: ${{ inputs.section }}
+          RECAP_CHECK_ARCHIVES: ${{ inputs.check_archives == true || github.event.schedule == '10 15 * * *' || github.event.schedule == '0 23 * * *' }}
         run: |
           if [ -n "$RECAP_WORKER_SECTION" ]; then
             npm run recap-worker -- --section="$RECAP_WORKER_SECTION"
@@ -58,10 +65,11 @@ jobs:
 
       - name: Commit durable evidence, articles, and job state
         id: recap-state
+        if: success() || failure()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/recap-evidence.json src/data/recap-articles.json src/data/recap-jobs.json src/data/video-facts.json src/data/match-recaps.json
+          git add src/data/recap-evidence.json src/data/recap-articles.json src/data/recap-jobs.json src/data/video-facts.json src/data/match-recaps.json src/data/recap-usage.json
           if git diff --cached --quiet; then
             echo "No recap state changed."
           else
@@ -72,7 +80,7 @@ jobs:
           fi
 
       - name: Publish updated article snapshot to both sites
-        if: steps.recap-state.outputs.changed == 'true'
+        if: always() && steps.recap-state.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run auto-update.yml --ref main -f force=false
