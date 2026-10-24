@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T06:49:04.448Z",
+  "updatedAt": "2026-10-24T14:05:44.617Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2503,11 +2503,11 @@
       ]
     },
     "div-s-sec5-m1": {
-      "inputHash": "e80aed00edf1703a",
+      "inputHash": "705b24ae5e43717a",
       "model": "gemini-3.8-flash",
-      "generatedAt": "2026-10-24T06:47:57.968Z",
-      "matchHeadline": "FAV gamingが40-0でZETAに完勝",
-      "matchSummary": "KADOKAWA FAV gamingが40-0でZETA DIVISION Geeklyに勝利した。先鋒戦ではもけ選手（不知火舞）がももち選手（ジェイミー）に第1ゲームを先取されながらも2-1で逆転勝ち。続く中堅戦はりゅうきち選手（不知火舞）がひぐち選手（ガイル）を2-0のストレートで破った。大将戦では藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）に第2・第3ゲームを連取される展開から巻き返し、3-2のフルセットを制してチームの全勝を確定させた。",
+      "generatedAt": "2026-10-24T13:58:32.581Z",
+      "matchHeadline": "FAVがZETAを40-0で破りストレート勝利",
+      "matchSummary": "KADOKAWA FAV gamingがZETA DIVISION Geeklyを相手に40-0で勝利した。先鋒戦ではもけが第1ゲームを取られながらも2-1でももちに勝利。続く中堅戦ではりゅうきちがひぐちを2-0で下した。大将戦は藤村がMenaRDとのフルセットを3-2で制し、KADOKAWA FAV gamingが40ポイントを獲得した。",
       "matchEvidenceIds": [
         "ev-86d3a474908cef95bf54",
         "ev-2b73f2666a3cfb01d3ac",
@@ -2516,7 +2516,7 @@
       "bouts": [
         {
           "boutId": "div-s-sec5-m1-b0",
-          "summary": "",
+          "summary": "先鋒戦はもけ選手（不知火舞）が、第1ゲームを先取したももち選手（ジェイミー）に2-1で勝利した。",
           "summaryEvidenceIds": [
             "ev-86d3a474908cef95bf54"
           ],
@@ -2524,7 +2524,7 @@
         },
         {
           "boutId": "div-s-sec5-m1-b1",
-          "summary": "りゅうきち選手（不知火舞）がひぐち選手（ガイル）を2-0のストレートで下した。",
+          "summary": "中堅戦はりゅうきち選手（不知火舞）がひぐち選手（ガイル）に2-0で勝利した。",
           "summaryEvidenceIds": [
             "ev-2b73f2666a3cfb01d3ac"
           ],
@@ -2532,7 +2532,7 @@
         },
         {
           "boutId": "div-s-sec5-m1-b2",
-          "summary": "藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）とのフルセットの接戦を3-2で制した。",
+          "summary": "大将戦は藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）を3-2で破った。",
           "summaryEvidenceIds": [
             "ev-d5f10d6c743c361ee4ce"
           ],
@@ -9212,8 +9212,182 @@
       "videoId": "OyvntovP-BI",
       "startSec": 6605,
       "endSec": 6969,
-      "status": "pending",
-      "runs": []
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T13:59:37.346Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "DI",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "A"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": true
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "whiff_punish",
+              "side": "A"
+            },
+            {
+              "id": "throw",
+              "side": "A"
+            },
+            {
+              "id": "drive_rush",
+              "side": "A"
+            },
+            {
+              "id": "anti_air",
+              "side": "A"
+            }
+          ],
+          "matchedGames": [
+            1
+          ]
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-24T14:02:34.483Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": true
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "whiff_punish",
+              "side": "A"
+            },
+            {
+              "id": "throw",
+              "side": "A"
+            },
+            {
+              "id": "reversal",
+              "side": "A"
+            },
+            {
+              "id": "drive_rush",
+              "side": "A"
+            }
+          ],
+          "matchedGames": [
+            0,
+            1
+          ]
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-10-24T14:05:44.609Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "B"
+              ]
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": true
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            }
+          ],
+          "tags": [
+            {
+              "id": "whiff_punish",
+              "side": "A"
+            },
+            {
+              "id": "punish_counter",
+              "side": "A"
+            },
+            {
+              "id": "corner",
+              "side": "A"
+            }
+          ],
+          "matchedGames": [
+            0,
+            1
+          ]
+        }
+      ]
     },
     "div-s-sec5-m2-b1": {
       "videoId": "OyvntovP-BI",

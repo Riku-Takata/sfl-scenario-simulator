@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T06:49:11.169Z",
+  "updatedAt": "2026-10-24T14:05:44.709Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -151,6 +151,156 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-10-24T06:47:57.981Z"
+    },
+    "div-s-sec5-m1-b0:b8328cb50d68bd43:candidate": {
+      "articleId": "div-s-sec5-m1-b0:b8328cb50d68bd43:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "revision": "b8328cb50d68bd43",
+      "status": "insufficient",
+      "summary": "先鋒戦はもけ選手（不知火舞）が、第1ゲームを先取したももち選手（ジェイミー）に2-1で勝利した。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T13:58:32.594Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T13:58:32.594Z"
+    },
+    "div-s-sec5-m1-b1:1c167c066e191929:candidate": {
+      "articleId": "div-s-sec5-m1-b1:1c167c066e191929:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "revision": "1c167c066e191929",
+      "status": "insufficient",
+      "summary": "中堅戦はりゅうきち選手（不知火舞）がひぐち選手（ガイル）に2-0で勝利した。",
+      "summaryEvidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T13:58:32.594Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T13:58:32.594Z"
+    },
+    "div-s-sec5-m1-b2:c8a9e750bac87a23:candidate": {
+      "articleId": "div-s-sec5-m1-b2:c8a9e750bac87a23:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "revision": "c8a9e750bac87a23",
+      "status": "insufficient",
+      "summary": "大将戦は藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）を3-2で破った。",
+      "summaryEvidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T13:58:32.594Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T13:58:32.594Z"
+    },
+    "div-s-sec5-m1:c673bae5ea85974d:candidate": {
+      "articleId": "div-s-sec5-m1:c673bae5ea85974d:candidate",
+      "matchId": "div-s-sec5-m1",
+      "revision": "c673bae5ea85974d",
+      "status": "insufficient",
+      "headline": "FAVがZETAを40-0で破りストレート勝利",
+      "summary": "KADOKAWA FAV gamingがZETA DIVISION Geeklyを相手に40-0で勝利した。先鋒戦ではもけが第1ゲームを取られながらも2-1でももちに勝利。続く中堅戦ではりゅうきちがひぐちを2-0で下した。大将戦は藤村がMenaRDとのフルセットを3-2で制し、KADOKAWA FAV gamingが40ポイントを獲得した。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.6,
+        "checks": {
+          "allBoutsPassed": false,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": false
+        },
+        "reasons": [
+          "allBoutsPassed",
+          "summaryHasSubstance"
+        ],
+        "evaluatedAt": "2026-10-24T13:58:32.595Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T13:58:32.595Z"
     }
   }
 }

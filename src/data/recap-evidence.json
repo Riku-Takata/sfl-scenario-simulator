@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T06:49:11.034Z",
+  "updatedAt": "2026-10-24T13:58:49.991Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -798,12 +798,12 @@
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v2",
-      "verificationObservation": "ファイターズの試合中、緑の衣装のキャラクターが連続攻撃を行い、相手をKOする。",
+      "verificationObservation": "二人のプレイヤーがストリートファイター6で対戦し、ラシードを使用するプレイヤーが勝利した。",
       "sourceModels": [
         "gemini-3.8-flash",
         "gemini-3.5-flash-lite"
       ],
-      "createdAt": "2026-10-24T06:34:05.364Z"
+      "createdAt": "2026-10-24T13:45:34.631Z"
     },
     "ev-59861cfdbe442f24e3c9": {
       "id": "ev-59861cfdbe442f24e3c9",
@@ -825,12 +825,12 @@
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v2",
-      "verificationObservation": "画面左側のキャラクターが緑色のキャラクターを攻撃し、ノックアウトした。",
+      "verificationObservation": "キャラクター同士が格闘ゲームで戦っている様子。左側のプレイヤーがラウンドに勝利した。",
       "sourceModels": [
         "gemini-3.8-flash",
         "gemini-3.5-flash-lite"
       ],
-      "createdAt": "2026-10-24T06:34:05.364Z"
+      "createdAt": "2026-10-24T13:45:34.631Z"
     },
     "ev-d1821140d32529f0c00f": {
       "id": "ev-d1821140d32529f0c00f",
@@ -876,12 +876,12 @@
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v2",
-      "verificationObservation": "画面左側のキャラクターが右側のキャラクターに攻撃を行った。",
+      "verificationObservation": "ファイター同士が攻撃を交わしている",
       "sourceModels": [
         "gemini-3.8-flash",
         "gemini-3.5-flash-lite"
       ],
-      "createdAt": "2026-10-24T06:38:10.112Z"
+      "createdAt": "2026-10-24T13:46:08.181Z"
     },
     "ev-3003ec21bd72fd9612bc": {
       "id": "ev-3003ec21bd72fd9612bc",
@@ -903,12 +903,12 @@
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v2",
-      "verificationObservation": "格闘ゲームのプレイ画面において、キャラクター同士が攻撃を交わし合う様子が映されている。",
+      "verificationObservation": "格闘ゲームの対戦画面において、キャラクター同士が攻撃を交差させ合っている様子が映されている。",
       "sourceModels": [
         "gemini-3.8-flash",
         "gemini-3.5-flash-lite"
       ],
-      "createdAt": "2026-10-24T06:38:10.112Z"
+      "createdAt": "2026-10-24T13:46:08.181Z"
     },
     "ev-8f5d23fde6e691a2cdf5": {
       "id": "ev-8f5d23fde6e691a2cdf5",
@@ -954,12 +954,12 @@
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v2",
-      "verificationObservation": "ブランカがケンに対してパニッシュカウンターとなる投げ技をヒットさせ、相手を地面に叩きつけています。",
+      "verificationObservation": "ブランカが青いオーラをまとってケンに接近し、技をヒットさせて「PUNISH COUNTER」が表示され、ケンを掴んで地面に叩きつける攻撃を行っています。",
       "sourceModels": [
         "gemini-3.5-flash-lite",
         "gemini-3.8-flash"
       ],
-      "createdAt": "2026-10-24T06:44:20.243Z"
+      "createdAt": "2026-10-24T13:46:38.715Z"
     },
     "ev-36a0679ebad98ed00512": {
       "id": "ev-36a0679ebad98ed00512",
@@ -981,12 +981,12 @@
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v2",
-      "verificationObservation": "ブランカがキャミィを掴んで地面に叩きつける投げ技の動作を行っており、画面には「PUNISH COUNTER」「2 HITS」と表示されています。実況音声では「で、これギャンブルバウンド」と発話されています。",
+      "verificationObservation": "画面右側のキャラクター（ブランカ）が、画面左側のキャラクター（ケン）に対して、突進する必殺技を当て、続けてパンチとキックのコンボを繰り出しました。その後、ケンが画面右端へと吹き飛ばされました。",
       "sourceModels": [
         "gemini-3.5-flash-lite",
-        "gemini-3.8-flash"
+        "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T06:44:20.243Z"
+      "createdAt": "2026-10-24T13:46:38.715Z"
     },
     "ev-0e303a861556a6d6c284": {
       "id": "ev-0e303a861556a6d6c284",
@@ -1128,12 +1128,12 @@
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v2",
-      "verificationObservation": "格闘ゲームの対戦で、画面左のキャラクターが連続攻撃を決め、相手をKOしたシーン。",
+      "verificationObservation": "格闘ゲームの画面でキャラクターが攻撃を行い、K.O.が決まる様子が映っている。",
       "sourceModels": [
         "gemini-3.8-flash",
         "gemini-3.5-flash-lite"
       ],
-      "createdAt": "2026-10-24T06:49:04.450Z"
+      "createdAt": "2026-10-24T13:58:32.595Z"
     },
     "ev-1243c70ed38678d136de": {
       "id": "ev-1243c70ed38678d136de",
@@ -1155,12 +1155,12 @@
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v2",
-      "verificationObservation": "ケンがマリーザを攻撃してKOし、パーフェクト勝利した。",
+      "verificationObservation": "画面左側のキャラクターが右側のキャラクターに対して打撃攻撃をヒットさせ、そのまま連続攻撃を加えてラウンドに勝利した。",
       "sourceModels": [
         "gemini-3.8-flash",
         "gemini-3.5-flash-lite"
       ],
-      "createdAt": "2026-10-24T06:49:04.450Z"
+      "createdAt": "2026-10-24T13:58:32.595Z"
     },
     "ev-e79df3fcf3faf037089b": {
       "id": "ev-e79df3fcf3faf037089b",

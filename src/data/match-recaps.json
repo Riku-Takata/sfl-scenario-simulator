@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T06:32:16.761Z",
+  "updatedAt": "2026-10-24T13:45:34.630Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 5,
@@ -365,10 +365,12 @@
                 "awayChara": "ken",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "CA"
                   }
                 ]
               },
@@ -378,15 +380,23 @@
                 "awayChara": "ken",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL",
+                    "perfect": true
                   },
                   {
-                    "winner": "away"
+                    "winner": "away",
+                    "finish": "NORMAL"
                   }
                 ]
               }
             ],
-            "tags": [],
+            "tags": [
+              {
+                "id": "whiff_punish",
+                "side": "away"
+              }
+            ],
             "videoStatus": "pending"
           },
           {
