@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T17:26:09.243Z",
+  "updatedAt": "2026-10-24T17:32:17.131Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -795,7 +795,7 @@
       "officialRefs": [
         "div-s-sec5-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v3",
       "verificationObservation": "春麗（1P：Moke）とジェイミー（2P：ももち）の対戦。48:23頃、ジェイミーが春麗の隙に対してパニッシュカウンターを決め、コンボで画面左端側へ追い込んでダウンを奪う。続いて画面端でジェイミーが攻めを継続し、ドライブインパクトなどをヒットさせて春麗をスタン（STUN）状態にする。春麗がスタンで動けない間にジェイミーは「薬湯（酒）」を2度飲んで飲酒レベルを2に上げ、そこからスタン中の春麗へコンボを開始する。コンボ中にさらに飲酒レベルを4まで引き上げ、立ち回り・連続技（屈中足からの必殺技など）で畳み掛けてそのまま春麗をK.O.する。",
@@ -822,7 +822,7 @@
       "officialRefs": [
         "div-s-sec5-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v3",
       "verificationObservation": "ストリートファイター6の試合で、1P側の春麗（Moke）と2P側のエド（MOMOCHI）が対戦しています。52:16頃、春麗がOD天昇脚をヒットさせて「REVERSAL」「PUNISH COUNTER」が成立し、エドが吹き飛んでダウンしドライブゲージがエンプティ（バーンアウト状態）になります。起き上がり後、エドが技を出したところに春麗がドライブインパクトを繰り出し、パニッシュカウンターでヒットします。そこから春麗が連続技で追撃し、52:23頃にエドの体力を削りきって「K.O.」となります。",
@@ -849,7 +849,7 @@
       "officialRefs": [
         "div-s-sec5-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v3",
       "verificationObservation": "『ストリートファイター6』の試合（Mokeの春麗 vs Momochiのジェイミー）の第2ラウンド。春麗がジェイミーに開幕からペースを握り、打撃のカウンターヒットや空中コンボ・空中投げ等で画面端へ追い詰める。ジェイミーは酒が飲めないまま防戦一方となり、春麗が下段始動のコンボから起き攻めでパニッシュカウンターを奪い、OD技を絡めた連続技でジェイミーの体力を削り切る。春麗がノーダメージのまま「PERFECT K.O.」でラウンドを取得し、チームブースの選手たちが拍手で喜ぶ。",
@@ -876,7 +876,7 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v3",
       "verificationObservation": "1P側のケンと2P側のガイルによる対戦。中距離でお互いに飛び道具（ケンの波動拳、ガイルのソニックブーム）を撃ち合って牽制する。ガイルが前ジャンプしたのに対し、ケンがドライブラッシュで下をくぐるように前進して着地に接近し、通常投げを決めてカウンター（COUNTER表示）を取り、ガイルを地面に倒す。",
@@ -984,7 +984,7 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v3",
       "verificationObservation": "ストリートファイター6の試合画面。左側にケン（プレイヤー：FUJIMURA）、右側にブランカ（プレイヤー：MENARD）が対戦中。ブランカがケンに対してパニッシュカウンター始動のコマンド投げ（ワイルドハント）を決めている最中で、画面左に『PUNISH COUNTER』および『2 HITS』が表示され、帯電したエフェクトとともにケンに追撃を加えている。ケンはバーンアウト状態（ドライブゲージが灰色で回復途中）、体力ゲージは約1割強まで減少。ブランカの体力ゲージは約半分、ドライブゲージは約3ブロック残存、SAゲージはレベル2。タイマーは47から46へ推移している。",
@@ -1065,7 +1065,7 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
       "verifierVersion": "independent-description-v3",
       "verificationObservation": "ストリートファイター6の試合で、1P側のキャミィ（Fujimura）と2P側のブランカ（MenaRD）が対戦している。画面端付近でブランカのジャンプ攻撃に対してキャミィがパニッシュカウンターを取り、コンボを繋げてからSA3（スーパーアーツLv3）を発動。SA3演出後にブランカがハードノックダウンとなり、起き上がりにキャミィが通常投げを決めてブランカの体力を削り切り、K.O.となる。",

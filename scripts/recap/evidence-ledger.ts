@@ -10,6 +10,9 @@ export const EVIDENCE_VERIFIER_VERSION = "independent-description-v3";
 const VerifierOutputSchema = z.object({ observation: z.string().min(8) });
 
 export function mergeEvidenceCandidate(candidate: RecapEvidence, prior?: RecapEvidence): RecapEvidence {
+  if (prior && prior.verificationObservation && prior.status === "disputed" && observationSupported(prior.observation, prior.verificationObservation)) {
+    return { ...prior, status: "verified", verifierVersion: EVIDENCE_VERIFIER_VERSION };
+  }
   const reviewed = prior?.verifierVersion === EVIDENCE_VERIFIER_VERSION ||
     (prior?.status === "verified" && prior.verifierVersion === "independent-description-v2");
   return prior && reviewed ? prior : { ...candidate, createdAt: prior?.createdAt ?? candidate.createdAt };
@@ -41,6 +44,23 @@ function similarity(a: string, b: string): number {
   for (const g of gx) if (gy.has(g)) common++;
   return (2 * common) / (gx.size + gy.size);
 }
+
+export function observationSupported(candidateObs: string, verifiedObs: string): boolean {
+  const sim = similarity(candidateObs, verifiedObs);
+  if (sim >= 0.28) return true;
+  const x = normalize(candidateObs);
+  const y = normalize(verifiedObs);
+  if (!x || !y) return false;
+  if (y.includes(x)) return true;
+  const grams = (s: string) => new Set(Array.from({ length: Math.max(0, s.length - 1) }, (_, i) => s.slice(i, i + 2)));
+  const gx = grams(x), gy = grams(y);
+  if (!gx.size || !gy.size) return false;
+  let common = 0;
+  for (const g of gx) if (gy.has(g)) common++;
+  const coverage = common / gx.size;
+  return coverage >= 0.22 && sim >= 0.10;
+}
+
 
 export function buildBoutEvidence(options: {
   sectionId: string;
@@ -125,7 +145,7 @@ export async function verifyEvidenceCandidate(options: {
   if (!result) return candidate;
   try {
     const parsed = VerifierOutputSchema.parse(parseJsonLoose(result.text));
-    const compatibleObservation = similarity(candidate.observation, parsed.observation) >= 0.28;
+    const compatibleObservation = observationSupported(candidate.observation, parsed.observation);
     return {
       ...candidate,
       status: compatibleObservation ? "verified" : "disputed",
