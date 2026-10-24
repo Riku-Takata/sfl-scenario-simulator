@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T13:58:49.991Z",
+  "updatedAt": "2026-10-24T14:27:24.848Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -797,11 +797,11 @@
       ],
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v2",
-      "verificationObservation": "二人のプレイヤーがストリートファイター6で対戦し、ラシードを使用するプレイヤーが勝利した。",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "春麗（1P：Moke）とジェイミー（2P：ももち）の対戦。48:23頃、ジェイミーが春麗の隙に対してパニッシュカウンターを決め、コンボで画面左端側へ追い込んでダウンを奪う。続いて画面端でジェイミーが攻めを継続し、ドライブインパクトなどをヒットさせて春麗をスタン（STUN）状態にする。春麗がスタンで動けない間にジェイミーは「薬湯（酒）」を2度飲んで飲酒レベルを2に上げ、そこからスタン中の春麗へコンボを開始する。コンボ中にさらに飲酒レベルを4まで引き上げ、立ち回り・連続技（屈中足からの必殺技など）で畳み掛けてそのまま春麗をK.O.する。",
       "sourceModels": [
         "gemini-3.8-flash",
-        "gemini-3.5-flash-lite"
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-24T13:45:34.631Z"
     },
@@ -824,11 +824,11 @@
       ],
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v2",
-      "verificationObservation": "キャラクター同士が格闘ゲームで戦っている様子。左側のプレイヤーがラウンドに勝利した。",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ストリートファイター6の試合で、1P側の春麗（Moke）と2P側のエド（MOMOCHI）が対戦しています。52:16頃、春麗がOD天昇脚をヒットさせて「REVERSAL」「PUNISH COUNTER」が成立し、エドが吹き飛んでダウンしドライブゲージがエンプティ（バーンアウト状態）になります。起き上がり後、エドが技を出したところに春麗がドライブインパクトを繰り出し、パニッシュカウンターでヒットします。そこから春麗が連続技で追撃し、52:23頃にエドの体力を削りきって「K.O.」となります。",
       "sourceModels": [
         "gemini-3.8-flash",
-        "gemini-3.5-flash-lite"
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T13:45:34.631Z"
     },
@@ -849,10 +849,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "『ストリートファイター6』の試合（Mokeの春麗 vs Momochiのジェイミー）の第2ラウンド。春麗がジェイミーに開幕からペースを握り、打撃のカウンターヒットや空中コンボ・空中投げ等で画面端へ追い詰める。ジェイミーは酒が飲めないまま防戦一方となり、春麗が下段始動のコンボから起き攻めでパニッシュカウンターを奪い、OD技を絡めた連続技でジェイミーの体力を削り切る。春麗がノーダメージのまま「PERFECT K.O.」でラウンドを取得し、チームブースの選手たちが拍手で喜ぶ。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T06:34:05.364Z"
     },
@@ -875,11 +878,11 @@
       ],
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v2",
-      "verificationObservation": "ファイター同士が攻撃を交わしている",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P側のケンと2P側のガイルによる対戦。中距離でお互いに飛び道具（ケンの波動拳、ガイルのソニックブーム）を撃ち合って牽制する。ガイルが前ジャンプしたのに対し、ケンがドライブラッシュで下をくぐるように前進して着地に接近し、通常投げを決めてカウンター（COUNTER表示）を取り、ガイルを地面に倒す。",
       "sourceModels": [
         "gemini-3.8-flash",
-        "gemini-3.5-flash-lite"
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T13:46:08.181Z"
     },
@@ -902,11 +905,11 @@
       ],
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v2",
-      "verificationObservation": "格闘ゲームの対戦画面において、キャラクター同士が攻撃を交差させ合っている様子が映されている。",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P側のガイル（RYUKICHI）と2P側の春麗（HIGUCHI）の対戦。画面左端付近でガイルがリバーサルからの対空空中コンボ（空中ターゲットから空中投げ）を決めて春麗をダウンさせる。起き上がり後、地上戦で春麗が気功拳を絡めて押し返し、ガイルがガードを強いられる展開となる。そのガードによりガイルのドライブゲージが尽きてバーンアウト状態に突入する。その後、春麗がドライブラッシュから仕掛けるがガイルがガードし、距離が離れた状態で仕切り直しとなる。",
       "sourceModels": [
         "gemini-3.8-flash",
-        "gemini-3.5-flash-lite"
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T13:46:08.181Z"
     },
@@ -927,10 +930,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "春麗（1P／RYUKICHI）とガイル（2P／HIGUCHI）の対戦。春麗が空中での攻撃ヒットからSA2（鳳翼扇）を発動し、連続蹴りをヒットさせてガイルを画面右端へ吹き飛ばす。ガイル起き上がりにドライブラッシュからの下段攻撃を仕掛けるが春麗の攻撃と相打ちになる。その後、ガイルのソニックブームと春麗の気功拳が相殺し合い、間合いを調整する中でガイルが出したしゃがみ強キック（足払い）の空振りに対し、春麗がしゃがみ中キックでパニッシュカウンターを取る。春麗はそこからドライブラッシュでキャンセルしてコンボへ移行し、画面端でガイルを浮かせたOD必殺技を絡めた連続技を決めてダウンを奪い、起き上がりに攻めを継続する。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T06:38:10.112Z"
     },
@@ -951,13 +957,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v2",
-      "verificationObservation": "ブランカが青いオーラをまとってケンに接近し、技をヒットさせて「PUNISH COUNTER」が表示され、ケンを掴んで地面に叩きつける攻撃を行っています。",
       "sourceModels": [
-        "gemini-3.5-flash-lite",
-        "gemini-3.8-flash"
+        "gemini-3.5-flash-lite"
       ],
       "createdAt": "2026-10-24T13:46:38.715Z"
     },
@@ -978,13 +981,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v2",
-      "verificationObservation": "画面右側のキャラクター（ブランカ）が、画面左側のキャラクター（ケン）に対して、突進する必殺技を当て、続けてパンチとキックのコンボを繰り出しました。その後、ケンが画面右端へと吹き飛ばされました。",
       "sourceModels": [
-        "gemini-3.5-flash-lite",
-        "gemini-3.1-flash-lite"
+        "gemini-3.5-flash-lite"
       ],
       "createdAt": "2026-10-24T13:46:38.715Z"
     },
@@ -1053,10 +1053,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ストリートファイター6の試合で、1P側のキャミィ（Fujimura）と2P側のブランカ（MenaRD）が対戦している。画面端付近でブランカのジャンプ攻撃に対してキャミィがパニッシュカウンターを取り、コンボを繋げてからSA3（スーパーアーツLv3）を発動。SA3演出後にブランカがハードノックダウンとなり、起き上がりにキャミィが通常投げを決めてブランカの体力を削り切り、K.O.となる。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T06:44:20.243Z"
     },
@@ -1077,10 +1080,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面端付近での攻防において、1P側の豪鬼（Fujimura）のドライブインパクトに対し、2P側のブランカ（MenaRD）がドライブインパクトを返してパニッシュカウンターを取る。画面端で崩れた豪鬼に対してブランカが打撃コンボを繋ぎ、その過程でブランカのドライブゲージが尽きてバーンアウト（EMPTY）状態となる。ブランカはさらにSAゲージ3本を消費してクリティカルアーツ（CA）を発動し、CA演出の攻撃が全段ヒットして豪鬼の体力を削り切り、K.O.となる。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T06:44:20.243Z"
     },
@@ -1101,10 +1107,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "【対戦キャラクター】1P：豪鬼（プレイヤー：Fujimura）、2P：エドモンド本田（プレイヤー：Menard）\n\n【状況・攻防の経過】\n・79:51～：本田がスーパー百貫落としで落下してきたところ、着地硬直に対して豪鬼の攻撃がヒットし「PUNISH COUNTER」が発生。\n・79:52～79:53：豪鬼が通常技からドライブラッシュへキャンセルし、コンボを継続。\n・79:54～79:55：豪鬼がSAゲージを2本消費してスーパーアーツ2（SA2）を発動。カットイン演出が入る。\n・79:56～80:01：SA2の演出技がヒットし続け、ヒット中に本田の体力が削り切られて「K.O.」が表示される。\n・80:02～：本田が倒れて「HARD KNOCKDOWN」が表示され、豪鬼が勝利する。実況でも「SA2フィニッシュ」と言及されている。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T06:44:20.243Z"
     },
@@ -1125,13 +1134,10 @@
       "officialRefs": [
         "div-s-sec5-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v2",
-      "verificationObservation": "格闘ゲームの画面でキャラクターが攻撃を行い、K.O.が決まる様子が映っている。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.5-flash-lite"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T13:58:32.595Z"
     },
@@ -1152,13 +1158,10 @@
       "officialRefs": [
         "div-s-sec5-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v2",
-      "verificationObservation": "画面左側のキャラクターが右側のキャラクターに対して打撃攻撃をヒットさせ、そのまま連続攻撃を加えてラウンドに勝利した。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.5-flash-lite"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T13:58:32.595Z"
     },
@@ -1209,6 +1212,78 @@
         "gemini-3.5-flash-lite"
       ],
       "createdAt": "2026-10-24T06:49:04.450Z"
+    },
+    "ev-180cf907d5a9409612a8": {
+      "id": "ev-180cf907d5a9409612a8",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7887,
+      "endSec": 7956,
+      "playerIds": [
+        "きんちょ",
+        "2BASSA"
+      ],
+      "observation": "2BASSAは第1ゲーム、ドライブゲージを温存しながら立ち強キックや立ち中キックなどで牽制し、きんちょの攻撃をいなして勝利した。",
+      "officialRefs": [
+        "div-s-sec5-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.1-flash-lite"
+      ],
+      "createdAt": "2026-10-24T14:27:24.758Z"
+    },
+    "ev-96769f8038507c8f1c6b": {
+      "id": "ev-96769f8038507c8f1c6b",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 8060,
+      "endSec": 8085,
+      "playerIds": [
+        "きんちょ",
+        "2BASSA"
+      ],
+      "observation": "第2ゲーム、2BASSAはキャミィのSA3をクリーンヒットさせてきんちょを追い詰め、最後はきんちょのドライブインパクトに対してSA3を重ねて勝利した。",
+      "officialRefs": [
+        "div-s-sec5-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.1-flash-lite"
+      ],
+      "createdAt": "2026-10-24T14:27:24.758Z"
+    },
+    "ev-8e42fa2f4688c273965d": {
+      "id": "ev-8e42fa2f4688c273965d",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 8471,
+      "endSec": 8485,
+      "playerIds": [
+        "きんちょ",
+        "2BASSA"
+      ],
+      "observation": "第3ゲーム、きんちょのドライブゲージが尽きてバーンアウトした隙に、2BASSAは立ち強キックのパニッシュカウンターからSA3へつなぎ勝利を確定させた。",
+      "officialRefs": [
+        "div-s-sec5-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.1-flash-lite"
+      ],
+      "createdAt": "2026-10-24T14:27:24.758Z"
     }
   }
 }

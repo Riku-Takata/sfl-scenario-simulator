@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:05:44.617Z",
+  "updatedAt": "2026-10-24T14:27:24.756Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2249,10 +2249,33 @@
       "videoId": "OyvntovP-BI",
       "startSec": 7202,
       "endSec": 7606,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T14:21:22.438Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": []
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-24T14:21:33.447Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": []
+        }
+      ]
     },
     "div-s-sec5-m2-b2": {
       "videoId": "OyvntovP-BI",
@@ -2261,7 +2284,39 @@
       "status": "pending",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.1-flash-lite",
+          "analyzedAt": "2026-10-24T14:27:24.746Z",
+          "gameWinnersSeen": [
+            "B",
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "2BASSAは第1ゲーム、ドライブゲージを温存しながら立ち強キックや立ち中キックなどで牽制し、きんちょの攻撃をいなして勝利した。",
+              "evidence": "両方",
+              "startSec": 7887,
+              "endSec": 7956
+            },
+            {
+              "topic": "第2ゲーム、2BASSAはキャミィのSA3をクリーンヒットさせてきんちょを追い詰め、最後はきんちょのドライブインパクトに対してSA3を重ねて勝利した。",
+              "evidence": "両方",
+              "startSec": 8060,
+              "endSec": 8085
+            },
+            {
+              "topic": "第3ゲーム、きんちょのドライブゲージが尽きてバーンアウトした隙に、2BASSAは立ち強キックのパニッシュカウンターからSA3へつなぎ勝利を確定させた。",
+              "evidence": "両方",
+              "startSec": 8471,
+              "endSec": 8485
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec5-m2-b3": {
       "videoId": "OyvntovP-BI",
@@ -9393,8 +9448,138 @@
       "videoId": "OyvntovP-BI",
       "startSec": 7202,
       "endSec": 7606,
-      "status": "pending",
-      "runs": []
+      "status": "complete",
+      "runs": [
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T14:21:51.240Z",
+          "games": [],
+          "tags": [],
+          "matchedGames": [],
+          "error": "Expected double-quoted property name in JSON at position 161 (line 1 column 162)"
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T14:22:09.943Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "DI",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "B",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "B"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "drive_rush",
+              "side": "A"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            },
+            {
+              "id": "whiff_punish",
+              "side": "B"
+            },
+            {
+              "id": "corner",
+              "side": "B"
+            }
+          ],
+          "matchedGames": []
+        },
+        {
+          "model": "gemini-3.5-flash-lite",
+          "analyzedAt": "2026-10-24T14:22:45.491Z",
+          "games": [
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "DI",
+                  "perfect": false
+                },
+                {
+                  "winner": "B",
+                  "finish": "DI",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "CA",
+                  "perfect": false
+                }
+              ],
+              "burnout": []
+            },
+            {
+              "rounds": [
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                },
+                {
+                  "winner": "A",
+                  "finish": "NORMAL",
+                  "perfect": false
+                }
+              ],
+              "burnout": [
+                "B"
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "id": "drive_rush",
+              "side": "A"
+            },
+            {
+              "id": "drive_rush",
+              "side": "B"
+            },
+            {
+              "id": "whiff_punish",
+              "side": "A"
+            },
+            {
+              "id": "whiff_punish",
+              "side": "B"
+            }
+          ],
+          "matchedGames": [
+            0
+          ]
+        }
+      ]
     },
     "div-s-sec5-m2-b2": {
       "videoId": "OyvntovP-BI",
@@ -9432,5 +9617,7 @@
       "runs": []
     }
   },
-  "pendingNarrations": []
+  "pendingNarrations": [
+    "div-s-sec5-m1"
+  ]
 }
