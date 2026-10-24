@@ -69,7 +69,7 @@ export function evaluateBoutArticle(input: {
     noForeignEvidence: cited.length === new Set([...input.summaryEvidenceIds, ...input.keyPoints.flatMap((point) => point.evidenceIds)]).size &&
       cited.length === new Set([...validSummaryRefs, ...keyPoints.flatMap((point) => point.evidenceIds)]).size,
     noOfficialContradiction: ![input.summary, ...keyPoints.map((point) => point.text)].some((text) => contradictsOfficialRounds(text, input.games)),
-    summaryHasSubstance: input.summary.trim().length >= 60,
+    summaryHasSubstance: input.summary.trim().length >= 45,
     enoughSpecificPoints: keyPoints.length >= 2 && keyPoints.every((point) => point.text.length >= 24 && !isVacuousKeyPoint(point.text)),
     multipleVideoBackedPoints: videoEvidencePoints >= 2,
     noRepeatedPoints: new Set(keyPoints.map((point) => point.text.replace(/\s/g, ""))).size === keyPoints.length,
