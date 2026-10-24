@@ -46,6 +46,8 @@ import {
 import { buildBoutEvidence, mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate } from "./recap/evidence-ledger";
 import { articleEvidenceReady } from "./recap/automation";
 import { persistentVideoBudget } from "./recap/usage";
+import { finishWriteRequest, loadWriteRequests, queueWriteRequest, readPreparedNarratives, saveWriteRequests } from "./recap/writer-state";
+import { recordTokenUsage } from "./recap/token-usage";
 import { applyPublicationMode, evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
 import {
   currentPassedArticle, currentPassedMatchArticle, latestArticle, latestMatchArticle, evidenceForBout, loadRecapArticles, loadRecapEvidence, loadRecapJobs, recapInputHash,
@@ -56,6 +58,8 @@ import {
   dedupeAnalyses,
   generateMatchNarrative,
   narrationInputHash,
+  buildNarrationPrompt,
+  normalizeMatchNarrative,
   type BoutGameDetail,
   type NarrationBoutInput,
   type NarrationMatchInput,
@@ -274,7 +278,7 @@ export function hasPendingVideoWork(): boolean {
       b.status === "pending" &&
       !editorial.bouts[id]
   );
-  const pendingVisual = Object.entries(facts.visual).some(
+  const pendingVisual = process.env.RECAP_ENABLE_FULL_VISUAL_ANALYSIS === "true" && Object.entries(facts.visual).some(
     ([id, v]) => latestSlugs.some((slug) => id.startsWith(`${slug}-`)) && v.status === "pending"
   );
   // アーカイブ (チャプター付き) がまだ見つかっていない最新節。
@@ -333,6 +337,8 @@ export async function generateAndSaveMatchRecaps(
   const apiKey = process.env.GEMINI_API_KEY || "";
   const videoModels = parseModelList(process.env.GEMINI_VIDEO_MODELS, DEFAULT_VIDEO_MODELS);
   const textModels = parseModelList(process.env.GEMINI_TEXT_MODELS, DEFAULT_TEXT_MODELS);
+  const textBackend = process.env.RECAP_TEXT_BACKEND === "gemini" ? "gemini" : "codex";
+  const fullVisualAnalysis = process.env.RECAP_ENABLE_FULL_VISUAL_ANALYSIS === "true";
   const fps = Number(process.env.GEMINI_VIDEO_FPS || "1");
   const analysisVersion = videoAnalysisFingerprint(videoModels, fps);
   const publicationMode = process.env.RECAP_PUBLICATION_MODE === "auto" ? "auto" : "shadow";
@@ -351,6 +357,9 @@ export async function generateAndSaveMatchRecaps(
   const evidenceData = loadRecapEvidence();
   const articlesData = loadRecapArticles();
   const jobsData = loadRecapJobs();
+  const writeRequests = loadWriteRequests();
+  const preparedNarratives = readPreparedNarratives();
+  for (const prepared of preparedNarratives) recordTokenUsage({ provider: "codex", model: prepared.model, purpose: "narration", usage: prepared.usage, id: prepared.runId });
 
   // 節の配信アーカイブ: 手動登録 > 公式チャンネルから自動検出 > 以前に検出してキャッシュ済み
   const previousRecaps = fs.existsSync(RECAPS_FILE)
@@ -498,7 +507,7 @@ export async function generateAndSaveMatchRecaps(
         }
         // 編集解説があるBoutは動画解析しない（無料枠の節約）
         if (facts && videoWorkAllowed && facts.status === "pending" && !editorial.bouts[ctx.boutId]) {
-          await advanceBoutAnalysis({ apiKey, models: videoModels, ctx, facts, budget, fps });
+          await advanceBoutAnalysis({ apiKey, models: videoModels.filter((model) => !/lite/i.test(model)), ctx, facts, budget, fps });
           saveVideoFacts(videoFacts); // 途中で止まっても解析済み分は残す
         }
 
@@ -523,7 +532,7 @@ export async function generateAndSaveMatchRecaps(
           const prior = evidenceData.evidence[item.id];
           evidenceData.evidence[item.id] = mergeEvidenceCandidate(item, prior);
         }
-        if (videoWorkAllowed && facts && budgetAllows(budget, 0)) {
+        if (videoWorkAllowed && facts && !articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId)) && budgetAllows(budget, 0)) {
           const candidates = pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId));
           for (const candidate of candidates) {
             if (!budgetAllows(budget, candidate.endSec! - candidate.startSec!)) break;
@@ -532,6 +541,7 @@ export async function generateAndSaveMatchRecaps(
             const verified = await verifyEvidenceCandidate({ apiKey, models: videoModels, candidate });
             evidenceData.evidence[verified.id] = verified;
             saveRecapEvidence(evidenceData);
+            if (articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId))) break;
           }
         }
         // If the observed topics could not be independently verified, collect
@@ -552,13 +562,13 @@ export async function generateAndSaveMatchRecaps(
             pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId)).length === 0) evidenceExhaustedBouts.add(ctx.boutId);
         const verifiedBoutEvidence = evidenceForBout(evidenceData, ctx.boutId);
 
-        // 映像からの画面上の事実（決着方法・PERFECT・バーンアウト・タグ）は編集解説の有無に関わらず抽出
+        // 詳細な視覚統計の再抽出は明示的に有効化した場合だけ行う。保存済みの結果は再利用する。
         let visual = videoFacts.visual[ctx.boutId];
-        if (!visual && videoId && window) {
+        if (fullVisualAnalysis && !visual && videoId && window) {
           visual = { videoId, ...window, status: "pending", runs: [] };
           videoFacts.visual[ctx.boutId] = visual;
         }
-        if (visual && videoWorkAllowed && visual.status === "pending") {
+        if (fullVisualAnalysis && visual && videoWorkAllowed && visual.status === "pending") {
           await advanceVisualAnalysis({
             apiKey,
             models: videoModels,
@@ -579,7 +589,7 @@ export async function generateAndSaveMatchRecaps(
             : !window
               ? // チャプターが不完全でもアーカイブがあれば次回に再探索する。
                 videoId ? "pending" : "unavailable"
-            : facts?.status === "pending" || visual?.status === "pending"
+            : facts?.status === "pending" || (fullVisualAnalysis && visual?.status === "pending")
               ? "pending"
               : facts?.status === "complete" || visual?.status === "complete"
                 ? "complete"
@@ -611,6 +621,14 @@ export async function generateAndSaveMatchRecaps(
         (result.total.point.home === 30 && result.total.point.away === 20) ||
         (result.total.point.home === 20 && result.total.point.away === 30);
       const matchWinnerTeam = result.winner === "home" ? homeName : awayName;
+      const matchSourceHash = recapInputHash({
+        matchId, awayTeam: awayName, homeTeam: homeName,
+        awayPoint: result.total.point.away, homePoint: result.total.point.home,
+        bouts: boutInputs.map((input) => ({ ctx: input.ctx, games: input.games, videoId })),
+      });
+      const writerSourceHash = recapInputHash({ matchSourceHash, evidence: boutInputs.map((bout) => bout.evidence?.filter((item) => item.status === "verified")) });
+      const previousRequest = writeRequests.requests[matchId];
+      const writerAttempts = previousRequest?.sourceHash === writerSourceHash ? previousRequest.attempts : 0;
       const narrationInput: NarrationMatchInput = {
         matchId,
         awayTeam: awayName,
@@ -625,16 +643,17 @@ export async function generateAndSaveMatchRecaps(
           .slice(0, 2)
           .map(([, item]) => ({ division: division.toUpperCase() as "S" | "F", summary: item.summary, keyPoints: item.keyPoints }))),
         qualityFeedback: Object.fromEntries([
+          ...(writerAttempts > 0 ? [[matchId + ":writer", [`writer retry ${writerAttempts}`]]] : []),
           ...boutInputs.flatMap((input) => {
           const previous = latestArticle(articlesData, input.ctx.boutId);
           const job = jobsData.jobs[input.ctx.boutId];
-          return previous?.status === "insufficient" ? [[input.ctx.boutId, [...previous.quality.reasons, "retry " + (job?.attempts ?? 0)]]] : [];
+          return previous?.status === "insufficient" ? [[input.ctx.boutId, [...previous.quality.reasons, ...(textBackend === "gemini" ? ["retry " + (job?.attempts ?? 0)] : [])]]] : [];
           }),
           ...(() => {
             const previous = latestMatchArticle(articlesData, matchId);
             const job = jobsData.jobs[matchId + ":article"];
             return previous?.status === "insufficient"
-              ? [[matchId + ":article", [...previous.quality.reasons, "retry " + (job?.attempts ?? 0)]]]
+              ? [[matchId + ":article", [...previous.quality.reasons, ...(textBackend === "gemini" ? ["retry " + (job?.attempts ?? 0)] : [])]]]
               : [];
           })(),
         ]),
@@ -644,13 +663,12 @@ export async function generateAndSaveMatchRecaps(
       const allSettled = boutInputs.every((b) => !b.facts || b.facts.status !== "pending");
       const anyComplete = boutInputs.some((b) => b.facts?.status === "complete");
       const inputHash = narrationInputHash(narrationInput);
-      const matchSourceHash = recapInputHash({
-        matchId, awayTeam: awayName, homeTeam: homeName,
-        awayPoint: result.total.point.away, homePoint: result.total.point.home,
-        bouts: boutInputs.map((input) => ({ ctx: input.ctx, games: input.games, videoId })),
-      });
       let narrative = videoFacts.narratives[matchId];
       let narrationAttempted = false;
+      let acceptedPrepared = false;
+      const alreadyPublished = jobsData.jobs[matchId + ":article"]?.inputHash === matchSourceHash &&
+        Boolean(currentPassedMatchArticle(articlesData, matchId)) &&
+        boutInputs.every((bout) => editorial.bouts[bout.ctx.boutId] || currentPassedArticle(articlesData, bout.ctx.boutId));
       // 全Boutに編集解説がある試合は自動生成しない（無料枠の節約）
       const needsNarration = boutInputs.some((b) => !editorial.bouts[b.ctx.boutId]);
       const evidenceReady = boutInputs.every((bout) => editorial.bouts[bout.ctx.boutId] || articleEvidenceReady(bout.evidence ?? []));
@@ -658,34 +676,63 @@ export async function generateAndSaveMatchRecaps(
         const list = videoFacts.pendingNarrations.filter((id) => id !== matchId);
         videoFacts.pendingNarrations = pending ? [...list, matchId] : list;
       };
-      if (!needsNarration) markPending(false);
+      if (!needsNarration || alreadyPublished) {
+        markPending(false);
+        const request = writeRequests.requests[matchId];
+        if (request && request.stage !== "completed") { request.stage = "completed"; request.prompt = ""; request.updatedAt = new Date().toISOString(); }
+      }
+      if (!evidenceReady && writeRequests.requests[matchId]?.stage === "queued") {
+        writeRequests.requests[matchId].stage = "waiting_evidence";
+      }
       if (
         !options.resultsOnly && apiKey &&
         needsNarration &&
+        !alreadyPublished &&
         evidenceReady &&
         allSettled &&
         anyComplete &&
         (!narrative || narrative.inputHash !== inputHash) &&
         (!options.onlySection || options.onlySection === slug)
       ) {
-        console.log(`[Narration] ${matchId}: generating from verified video facts...`);
-        narrationAttempted = true;
-        const generated = await generateMatchNarrative({
+        const prepared = preparedNarratives.find((item) => item.matchId === matchId && item.inputHash === inputHash);
+        let generated;
+        if (prepared) {
+          console.log(`[Narration] ${matchId}: validating the prepared Codex draft...`);
+          narrationAttempted = true;
+          try {
+            generated = normalizeMatchNarrative(prepared.output, narrationInput, prepared.model, prepared.generatedAt);
+            acceptedPrepared = true;
+          } catch (error) {
+            console.warn(`[Narration] ${matchId}: rejected prepared draft: ${(error as Error).message}`);
+            finishWriteRequest(writeRequests, matchId, inputHash, false);
+          }
+        } else if (textBackend === "codex") {
+          queueWriteRequest(writeRequests, { matchId, sectionId: slug, inputHash,
+            sourceHash: writerSourceHash,
+            prompt: buildNarrationPrompt(narrationInput),
+          });
+          saveWriteRequests(writeRequests);
+          console.log(`[Narration] ${matchId}: queued verified materials for the local Codex writer.`);
+        } else {
+          console.log(`[Narration] ${matchId}: generating with the explicitly selected Gemini text backend...`);
+          narrationAttempted = true;
+          generated = await generateMatchNarrative({
           apiKey,
           models: textModels,
           match: narrationInput,
-        });
+          });
+        }
         if (generated) {
           videoFacts.narratives[matchId] = generated;
           narrative = generated;
           markPending(false);
         } else {
-          console.warn(`[Narration] ${matchId}: no narration model available today; deferred to the next run.`);
+          console.log(`[Narration] ${matchId}: draft is pending; retaining the verified materials.`);
           markPending(true);
         }
         saveVideoFacts(videoFacts);
       }
-      const narrativeUsable = narrative && narrative.inputHash === inputHash;
+      const narrativeUsable = narrative && (narrative.inputHash === inputHash || alreadyPublished);
       // 解説文の進み具合: 動画がある試合で、解析待ち・解説の持ち越し中なら「作成中」
       const articleByBout = new Map<string, ReturnType<typeof evaluateBoutArticle>>();
       if (narrativeUsable) {
@@ -725,6 +772,7 @@ export async function generateAndSaveMatchRecaps(
         : undefined;
       if (matchArticle) putArticle(articlesData, matchArticle);
       const publishedMatchArticle = matchArticle?.status === "passed" ? matchArticle : currentPassedMatchArticle(articlesData, matchId);
+      if (acceptedPrepared) finishWriteRequest(writeRequests, matchId, inputHash, publishedMatchArticle?.status === "passed" && passedBoutArticles.length === boutInputs.length);
       const editorialCoversBouts = boutInputs.every((input) => Boolean(editorial.bouts[input.ctx.boutId]));
       const videoPending = boutInputs.some((input) => input.facts?.status === "pending" || (videoId && !findBoutWindow(chapters, num,
         input.ctx.statusName.includes("延長") ? 3 : input.ctx.statusName.includes("大将") ? 2 : input.ctx.statusName.includes("中堅") ? 1 : 0)));
@@ -754,6 +802,11 @@ export async function generateAndSaveMatchRecaps(
           article: candidate, editorial: Boolean(editorial.bouts[input.ctx.boutId]),
         });
         const recapJob = jobsData.jobs[input.ctx.boutId];
+        if (writeRequests.requests[matchId]?.stage === "needs_review" && candidate?.status !== "passed" && !editorial.bouts[input.ctx.boutId]) {
+          recapJob.stage = "needs_review";
+          recapJob.failureReason = "local_writer_quality_retry_limit";
+          delete recapJob.nextAttemptAt;
+        }
         recap.videoStatus = editorial.bouts[input.ctx.boutId] || candidate?.status === "passed"
           ? "complete"
           : recapJob?.stage === "needs_review" || recapJob?.stage === "paused" || recapJob?.stage === "reviewing"
@@ -761,6 +814,11 @@ export async function generateAndSaveMatchRecaps(
       }
       const narrativeCoversAllBouts = Boolean(publishedMatchArticle?.status === "passed" && passedBoutArticles.length === boutInputs.length);
       const matchJob = jobsData.jobs[matchId + ":article"];
+      if (writeRequests.requests[matchId]?.stage === "needs_review" && !narrativeCoversAllBouts) {
+        matchJob.stage = "needs_review";
+        matchJob.failureReason = "local_writer_quality_retry_limit";
+        delete matchJob.nextAttemptAt;
+      }
       const narrationStatus: "complete" | "pending" | "unavailable" =
         editorial.matches[matchId] || narrativeCoversAllBouts || !needsNarration
           ? "complete"
@@ -771,7 +829,7 @@ export async function generateAndSaveMatchRecaps(
               ? "pending"
               : "unavailable";
 
-      // 動画由来の解説は、2回の解析で一致した要点が1件以上あるBoutだけに採用
+      // 独立検証済みの根拠を引用し、品質判定を通った解説だけを採用する。
       boutRecaps.forEach((recap, idx) => {
         const input = boutInputs[idx];
         const nb = narrativeUsable
@@ -866,6 +924,7 @@ export async function generateAndSaveMatchRecaps(
   saveRecapEvidence(evidenceData);
   saveRecapArticles(articlesData);
   saveRecapJobs(jobsData);
+  saveWriteRequests(writeRequests);
   const validated = MatchRecapsDataSchema.parse(resultRecaps);
   const targetIsVisibleLatest = !options.onlySection || [...completedDivSections.s, ...completedDivSections.f]
     .filter((entry) => [completedDivSections.s.at(-1)?.post_name, completedDivSections.f.at(-1)?.post_name].includes(entry.post_name))

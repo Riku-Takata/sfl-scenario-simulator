@@ -88,7 +88,7 @@ export function buildOfficialDataAnalysis(input: NarrationBoutInput): RecentBout
 /* 動画解析結果からの解説生成（テキストのみのLLM呼び出し）                */
 /* ------------------------------------------------------------------ */
 
-const NarrationOutputSchema = z.object({
+export const NarrationOutputSchema = z.object({
   matchHeadline: z.string(),
   matchSummary: z.string(),
   matchEvidenceIds: z.array(z.string()).default([]),
@@ -103,6 +103,22 @@ const NarrationOutputSchema = z.object({
     })
   ),
 });
+
+export const NARRATION_JSON_SCHEMA = {
+  type: "object", additionalProperties: false,
+  required: ["matchHeadline", "matchSummary", "matchEvidenceIds", "bouts"],
+  properties: {
+    matchHeadline: { type: "string" }, matchSummary: { type: "string" },
+    matchEvidenceIds: { type: "array", items: { type: "string" } },
+    bouts: { type: "array", items: {
+      type: "object", additionalProperties: false, required: ["boutId", "summary", "summaryEvidenceIds", "keyPoints"],
+      properties: { boutId: { type: "string" }, summary: { type: "string" },
+        summaryEvidenceIds: { type: "array", items: { type: "string" } },
+        keyPoints: { type: "array", items: { type: "object", additionalProperties: false, required: ["text", "evidenceIds"], properties: { text: { type: "string" }, evidenceIds: { type: "array", items: { type: "string" } } } } },
+      },
+    } },
+  },
+};
 
 function boutPayload(b: NarrationBoutInput) {
   const evidence = (b.evidence || []).filter((item) => item.status === "verified");
@@ -201,6 +217,7 @@ export async function generateMatchNarrative(options: {
 }): Promise<MatchNarrative | null> {
   const { apiKey, models, match } = options;
   const result = await callGemini({
+    purpose: "narration",
     apiKey,
     models,
     prompt: buildNarrationPrompt(match),
@@ -209,13 +226,25 @@ export async function generateMatchNarrative(options: {
   if (!result) return null;
 
   try {
-    const parsed = NarrationOutputSchema.parse(parseJsonLoose(result.text));
+    return normalizeMatchNarrative(parseJsonLoose(result.text), match, result.model);
+  } catch (err) {
+    console.warn(`[Narration] invalid output from ${result.model}: ${(err as Error).message.slice(0, 160)}`);
+    return null;
+  }
+}
+
+export function normalizeMatchNarrative(output: unknown, match: NarrationMatchInput, model: string, generatedAt = new Date().toISOString()): MatchNarrative {
+    const parsed = NarrationOutputSchema.parse(output);
+    const expected = new Set(match.bouts.map((bout) => bout.ctx.boutId));
+    if (parsed.bouts.length !== expected.size || new Set(parsed.bouts.map((bout) => bout.boutId)).size !== expected.size || parsed.bouts.some((bout) => !expected.has(bout.boutId))) {
+      throw new Error("Narrative bout IDs do not match the requested official match");
+    }
     const validEvidence = new Set(match.bouts.flatMap((bout) =>
       (bout.evidence || []).filter((item) => item.status === "verified").map((item) => item.id)));
     return {
       inputHash: narrationInputHash(match),
-      model: result.model,
-      generatedAt: new Date().toISOString(),
+      model,
+      generatedAt,
       matchHeadline: parsed.matchHeadline.trim(),
       matchSummary: parsed.matchSummary.trim(),
       matchEvidenceIds: parsed.matchEvidenceIds.filter((id) => validEvidence.has(id)),
@@ -233,10 +262,6 @@ export async function generateMatchNarrative(options: {
         };
       }),
     };
-  } catch (err) {
-    console.warn(`[Narration] invalid output from ${result.model}: ${(err as Error).message.slice(0, 160)}`);
-    return null;
-  }
 }
 
 /** 同一テキストの使い回しを除去する（節内で先に出たものを残す）。 */

@@ -4,6 +4,8 @@
  * - 503 (混雑) は短く待って1回だけ再試行し、だめなら次のモデルへ
  */
 
+import { geminiTokenCounts, recordTokenUsage } from "./token-usage";
+
 export interface GeminiVideoInput {
   youtubeUrl: string;
   startSec: number;
@@ -37,6 +39,7 @@ export async function callGemini(options: {
   prompt: string;
   video?: GeminiVideoInput;
   temperature?: number;
+  purpose?: "extract" | "verify" | "visual" | "narration";
 }): Promise<GeminiCallResult | null> {
   const { apiKey, models, prompt, video, temperature = 0.3 } = options;
 
@@ -99,10 +102,13 @@ export async function callGemini(options: {
         }
 
         const data = (await res.json()) as {
+          usage?: unknown;
+          usageMetadata?: unknown;
           candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
           output_text?: string;
           steps?: Array<{ type?: string; content?: Array<{ type?: string; text?: string }> }>;
         };
+        recordTokenUsage({ provider: "gemini", model, purpose: options.purpose ?? (video ? "extract" : "narration"), usage: geminiTokenCounts(data) });
         const interactionText = data.steps?.filter((step) => step.type === "model_output")
           .flatMap((step) => step.content ?? []).filter((part) => part.type === "text")
           .map((part) => part.text ?? "").join("");

@@ -5,10 +5,12 @@ import { callGemini, isModelExhausted, parseJsonLoose } from "./gemini-client";
 /**
  * Bout単位の動画解析。
  * 1回の解析 = Bout区間 (公式チャプター) を fps1 で映像+実況音声ごと渡し、重要トピックだけを抽出。
- * 映像から読んだゲーム勝者が公式ログと一致した解析だけを採用し、合格した2回分が揃えば complete。
+ * 映像から読んだゲーム勝者が公式ログと一致した観察を保存する。記事への採用は独立検証で別途判定する。
  */
 
-export const REQUIRED_PASSED_RUNS = 2;
+// One full pass nominates facts; publication still requires independent,
+// targeted verification of each cited video observation.
+export const REQUIRED_PASSED_RUNS = 1;
 export const MAX_RUNS_PER_BOUT = 4;
 export const BOUT_VIDEO_ANALYSIS_VERSION = "bout-video-relative-time-v2";
 
@@ -160,7 +162,7 @@ export function budgetAllows(budget: VideoBudget, seconds: number): boolean {
 }
 
 /**
- * 1 Bout について、合格2回が揃うまで（予算と試行上限の範囲で）解析を進める。
+ * 1 Bout の全区間を1回観察して候補を抽出する。採用には別モデルの区間検証が必要。
  * facts は呼び出し側のキャッシュオブジェクトをそのまま更新する。
  */
 export async function advanceBoutAnalysis(options: {

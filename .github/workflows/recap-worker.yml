@@ -21,6 +21,10 @@ on:
         description: "Prepared official chapter cache from HomeServer (base64 JSON)"
         type: string
         required: false
+      narrative_cache:
+        description: "Prepared local Codex draft (base64 JSON; revalidated against current evidence)"
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -58,9 +62,12 @@ jobs:
           GEMINI_VIDEO_MAX_SECONDS: "25200"
           GEMINI_VIDEO_TIME_BUDGET_MIN: "20"
           RECAP_PUBLICATION_MODE: auto
+          RECAP_TEXT_BACKEND: codex
+          RECAP_ENABLE_FULL_VISUAL_ANALYSIS: "false"
           RECAP_WORKER_SECTION: ${{ inputs.section }}
           RECAP_CHECK_ARCHIVES: ${{ inputs.check_archives == true || github.event.schedule == '10 15 * * *' || github.event.schedule == '0 23 * * *' }}
           RECAP_CHAPTER_CACHE: ${{ inputs.chapter_cache }}
+          RECAP_NARRATIVE_CACHE: ${{ inputs.narrative_cache }}
         run: |
           if [ -n "$RECAP_WORKER_SECTION" ]; then
             npm run recap-worker -- --section="$RECAP_WORKER_SECTION"
@@ -74,7 +81,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/recap-evidence.json src/data/recap-articles.json src/data/recap-jobs.json src/data/video-facts.json src/data/match-recaps.json src/data/recap-usage.json
+          git add src/data/recap-evidence.json src/data/recap-articles.json src/data/recap-jobs.json src/data/video-facts.json src/data/match-recaps.json src/data/recap-usage.json src/data/recap-token-usage.json src/data/recap-write-requests.json
           if git diff --cached --quiet; then
             echo "No recap state changed."
           else
