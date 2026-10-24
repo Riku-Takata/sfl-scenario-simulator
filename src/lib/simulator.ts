@@ -485,6 +485,9 @@ export function buildPersonalizedOutlook(params: {
   route1TargetPts: number;
   route2TargetPts: number;
   route3TargetPts: number;
+  plan1?: { schedule: TargetMatchPlan[]; reqWins: number; reqLosses: number };
+  plan2?: { schedule: TargetMatchPlan[]; reqWins: number; reqLosses: number };
+  plan3?: { schedule: TargetMatchPlan[]; reqWins: number; reqLosses: number };
 }): PersonalizedOutlook {
   const {
     st,
@@ -498,6 +501,9 @@ export function buildPersonalizedOutlook(params: {
     route1TargetPts,
     route2TargetPts,
     route3TargetPts,
+    plan1,
+    plan2,
+    plan3,
   } = params;
 
   const diffFromFirst = leader.point - st.point;
@@ -572,6 +578,66 @@ export function buildPersonalizedOutlook(params: {
         ? "3位チームとの直接対決で30-40ptを奪い得失差で競り勝つ逆転ルート"
         : "残り全勝が必須かつライバル総崩れを祈る奇跡のデッドライン";
 
+  // Milestones and tactical focus
+  const targetPlan = realisticTargetRank === 1 ? plan1 : realisticTargetRank === 2 ? plan2 : plan3;
+  const targetPoints = realisticTargetRank === 1 ? route1TargetPts : realisticTargetRank === 2 ? route2TargetPts : route3TargetPts;
+  const neededPoints = Math.max(0, targetPoints - st.point);
+
+  let keyMatchNote = "";
+  if (targetPlan && targetPlan.schedule.length > 0) {
+    if (realisticTargetRank === 1) {
+      const clash = targetPlan.schedule.find((m) => m.opponentKey === (leader.key === st.key ? "cr" : leader.key) || m.teamPointGain >= 30);
+      keyMatchNote = clash ? `${clash.sectionTitle} vs ${clash.opponentName}（首位攻防の天王山）` : `残りHOME戦（${st.remainingHome}試合）`;
+    } else if (realisticTargetRank === 2) {
+      const clash = targetPlan.schedule.find((m) => m.opponentKey === leader.key || m.opponentKey === thirdTeam.key);
+      keyMatchNote = clash ? `${clash.sectionTitle} vs ${clash.opponentName}（直接対決カード）` : `上位直接対決`;
+    } else {
+      const clash = targetPlan.schedule.find((m) => m.opponentKey === thirdTeam.key || m.teamPointGain === 40);
+      keyMatchNote = clash ? `${clash.sectionTitle} vs ${clash.opponentName}（勝ち点奪取が必須の直接対決）` : `3位ボーダー直接対決`;
+    }
+  }
+
+  let riskFactor = "";
+  let tacticalFocus: string[] = [];
+
+  if (realisticTargetRank === 1) {
+    riskFactor = `AWAY戦での0-40被完封による2位以下への転落リスク`;
+    tacticalFocus = [
+      `残りHOME戦（${st.remainingHome}試合）の後出しアドバンテージを活かし、大将戦20ptを確実に奪取`,
+      `ライバル直接対決で本戦勝利（30pt以上）を挙げ、自力でFINALシード直行を確定させる`,
+      `AWAY戦でも0-40を回避し、最低10〜20ptを持ち帰って首位防衛ラインを死守`,
+    ];
+  } else if (realisticTargetRank === 2) {
+    riskFactor = `直接対決での取りこぼしによる3位後退、および同率時のバトル得失差（現在${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff}）逆転`;
+    tacticalFocus = [
+      `準決勝の奇数巡目HOME優先権を掴み取るため、2位以上を絶対に死守`,
+      `首位チームとの直接対決で大将戦を制し、30〜40ptのビッグイニングを作って首位逆転を伺う`,
+      `AWAY戦の敗戦時も延長戦（20-30）に持ち込み、得失点差を改善する粘りを見せる`,
+    ];
+  } else if (feasibilityLevel === "challenging") {
+    riskFactor = `3位ボーダー直接対決での本戦敗戦、およびバトル得失差（現在${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff}）のマイナス拡大`;
+    tacticalFocus = [
+      `3位ボーダーとの直接対決が最大の天王山。大将戦必勝で30pt〜40ptを強奪する`,
+      `0-40の完封負けを徹底排除し、ボーダーラインを引き下げる他会場の結果を味方につける`,
+      `先鋒・中堅からアグレッシブに攻めて主導権を握り、延長戦のチャンスを逃さない`,
+    ];
+  } else {
+    riskFactor = `残り試合で1敗でも喫した時点で完全に終戦となる崖っぷちの自力消滅状態`;
+    tacticalFocus = [
+      `残り全試合で大将戦20ptを含む30〜40pt奪取（残り全勝ペース）が絶対条件`,
+      `得失点差の大幅なビハインドを埋めるため、40-0完勝を狙う超攻撃的オーダーを敢行`,
+      `3位〜5位の上位ライバルが総崩れ・大敗を重ねる他力本願の奇跡を待つ`,
+    ];
+  }
+
+  const milestones = {
+    targetPoints,
+    neededPoints,
+    pace: targetPlan ? `残り${remCount}戦で${targetPlan.reqWins}勝${targetPlan.reqLosses}敗ペース` : `残り${remCount}戦`,
+    keyMatch: keyMatchNote || undefined,
+    riskFactor,
+  };
+
   return {
     realisticTargetRank,
     realisticTargetTitle,
@@ -579,6 +645,8 @@ export function buildPersonalizedOutlook(params: {
     feasibilityBadgeText,
     coreNarrative,
     primaryConditionSummary,
+    milestones,
+    tacticalFocus,
     rankEvaluations: {
       first: {
         rank: 1,
@@ -1082,6 +1150,9 @@ export function analyzeDivisionScenarios(
       route1TargetPts,
       route2TargetPts,
       route3TargetPts,
+      plan1,
+      plan2,
+      plan3,
     });
 
     teamsResult[key] = {

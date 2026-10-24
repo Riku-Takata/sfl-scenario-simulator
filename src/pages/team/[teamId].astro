@@ -181,6 +181,52 @@ const targetRouteForSchedule =
         <p style="margin: 0;">{pOutlook.coreNarrative}</p>
       </div>
 
+      <!-- 戦略マイルストーン指標（4グリッド） -->
+      {pOutlook.milestones && (
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.65rem; margin-bottom: 1rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.65rem 0.85rem;">
+            <div style="font-size: 0.75rem; color: var(--text-muted);">目標合計ポイント</div>
+            <div style="font-size: 1.15rem; font-weight: 900; color: var(--primary);">
+              {pOutlook.milestones.targetPoints}pt <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-sub);">(残り+{pOutlook.milestones.neededPoints}pt)</span>
+            </div>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.65rem 0.85rem;">
+            <div style="font-size: 0.75rem; color: var(--text-muted);">残り試合の目安ペース</div>
+            <div style="font-size: 0.95rem; font-weight: 800; color: var(--text-main); margin-top: 0.15rem;">
+              {pOutlook.milestones.pace}
+            </div>
+          </div>
+          {pOutlook.milestones.keyMatch && (
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.65rem 0.85rem;">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">最大の天王山・注目カード</div>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--text-main); margin-top: 0.15rem; line-height: 1.35;">
+                ⚔️ {pOutlook.milestones.keyMatch}
+              </div>
+            </div>
+          )}
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.65rem 0.85rem;">
+            <div style="font-size: 0.75rem; color: var(--text-muted);">警戒すべきリスク要因</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--danger); margin-top: 0.15rem; line-height: 1.35;">
+              ⚠️ {pOutlook.milestones.riskFactor}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- チームの戦術的ポイント（Tactical Focus） -->
+      {pOutlook.tacticalFocus && pOutlook.tacticalFocus.length > 0 && (
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 1rem;">
+          <div style="font-size: 0.82rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.4rem;">
+            📌 {meta.shortName} が突破するために必要な戦術フォーカス
+          </div>
+          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-sub); display: flex; flex-direction: column; gap: 0.35rem; line-height: 1.5;">
+            {pOutlook.tacticalFocus.map((focus) => (
+              <li>{focus}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; font-weight: 700; color: var(--text-main); margin-bottom: 1.15rem;">
         <span style="color: var(--primary);">🎯 最重要クリア条件:</span>
         <span>{pOutlook.primaryConditionSummary}</span>

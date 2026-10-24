@@ -376,6 +376,14 @@ export const RankFeasibilityEvaluationSchema = z.object({
   note: z.string(),
 });
 
+export const MilestoneMilestonesSchema = z.object({
+  targetPoints: z.number(),
+  neededPoints: z.number(),
+  pace: z.string(),
+  keyMatch: z.string().optional(),
+  riskFactor: z.string(),
+});
+
 export const PersonalizedOutlookSchema = z.object({
   realisticTargetRank: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal("eliminated")]),
   realisticTargetTitle: z.string(),
@@ -383,6 +391,8 @@ export const PersonalizedOutlookSchema = z.object({
   feasibilityBadgeText: z.string(),
   coreNarrative: z.string(),
   primaryConditionSummary: z.string(),
+  milestones: MilestoneMilestonesSchema.optional(),
+  tacticalFocus: z.array(z.string()).optional(),
   rankEvaluations: z.object({
     first: RankFeasibilityEvaluationSchema,
     second: RankFeasibilityEvaluationSchema,
