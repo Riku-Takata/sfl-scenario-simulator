@@ -42,7 +42,7 @@ import {
   type BoutContext,
   type VideoBudget,
 } from "./recap/bout-video-facts";
-import { buildBoutEvidence, verifyEvidenceCandidate } from "./recap/evidence-ledger";
+import { buildBoutEvidence, mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate } from "./recap/evidence-ledger";
 import { applyPublicationMode, evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
 import {
   currentPassedArticle, currentPassedMatchArticle, latestArticle, latestMatchArticle, evidenceForBout, loadRecapArticles, loadRecapEvidence, loadRecapJobs, recapInputHash,
@@ -517,15 +517,10 @@ export async function generateAndSaveMatchRecaps(
         const boutEvidence = buildBoutEvidence({ sectionId: slug, matchId, boutId: ctx.boutId, videoFacts: facts, ctx, games });
         for (const item of boutEvidence) {
           const prior = evidenceData.evidence[item.id];
-          const currentDecision = prior?.verifierVersion === "independent-description-v2";
-          evidenceData.evidence[item.id] = prior && currentDecision
-            ? prior
-            : { ...item, createdAt: prior?.createdAt ?? item.createdAt };
+          evidenceData.evidence[item.id] = mergeEvidenceCandidate(item, prior);
         }
         if (videoWorkAllowed && facts && budgetAllows(budget, 0)) {
-          const candidates = boutEvidence.filter((item) => item.status === "candidate" &&
-            item.verifierVersion !== "independent-description-v2" && item.startSec !== undefined && item.endSec !== undefined)
-            .slice(0, 2);
+          const candidates = pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId));
           for (const candidate of candidates) {
             if (!budgetAllows(budget, candidate.endSec! - candidate.startSec!)) break;
             budget.calls += 1;

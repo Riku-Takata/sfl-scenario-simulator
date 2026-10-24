@@ -6,8 +6,20 @@ import { callGemini, parseJsonLoose } from "./gemini-client";
 import { z } from "zod";
 
 export const EVIDENCE_EXTRACTOR_VERSION = "recap-evidence-v2";
-export const EVIDENCE_VERIFIER_VERSION = "independent-description-v2";
+export const EVIDENCE_VERIFIER_VERSION = "independent-description-v3";
 const VerifierOutputSchema = z.object({ observation: z.string().min(8) });
+
+export function mergeEvidenceCandidate(candidate: RecapEvidence, prior?: RecapEvidence): RecapEvidence {
+  const reviewed = prior?.verifierVersion === EVIDENCE_VERIFIER_VERSION ||
+    (prior?.status === "verified" && prior.verifierVersion === "independent-description-v2");
+  return prior && reviewed ? prior : { ...candidate, createdAt: prior?.createdAt ?? candidate.createdAt };
+}
+
+export function pendingEvidenceCandidates(evidence: RecapEvidence[], limit = 3): RecapEvidence[] {
+  return evidence.filter((item) => item.status === "candidate" && item.startSec !== undefined && item.endSec !== undefined)
+    .sort((a, b) => Number(b.sourceModels.some((model) => !/lite/i.test(model))) - Number(a.sourceModels.some((model) => !/lite/i.test(model))))
+    .slice(0, limit);
+}
 
 function stableId(value: string): string {
   return "ev-" + crypto.createHash("sha256").update(value).digest("hex").slice(0, 20);
@@ -99,14 +111,14 @@ export async function verifyEvidenceCandidate(options: {
 }): Promise<RecapEvidence> {
   const { apiKey, candidate } = options;
   if (!candidate.videoId || candidate.startSec === undefined || candidate.endSec === undefined || candidate.endSec <= candidate.startSec) return candidate;
-  const models = options.models.filter((model) => !candidate.sourceModels.includes(model));
+  const models = options.models.filter((model) => !/lite/i.test(model) && !candidate.sourceModels.includes(model));
   if (models.length === 0) return candidate;
   // Blind pass: independently describe the clip before showing the model the claim.
   const result = await callGemini({
     apiKey,
     models,
     video: { youtubeUrl: "https://www.youtube.com/watch?v=" + candidate.videoId, startSec: candidate.startSec, endSec: candidate.endSec, fps: 2 },
-    prompt: `この指定区間を独立に観察してください。誰が何をしたか、画面・音声から直接確認できた内容だけを短く記述してください。結果、勝敗、心理、意図を推測せず、特定できない場合はそのことを書いてください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observation":"観察内容"}`,
+    prompt: `ストリートファイター6のこの指定区間を独立に観察してください。識別できるキャラクター名、具体的な技・システム、画面端や体力・ゲージの状況、攻防の順序を、画面・音声で直接確認できる範囲で記述してください。一般的な「キャラクターが攻撃した」だけに省略せず、識別できない部分は不明としてください。指定区間外の結果・勝敗、心理、意図を推測しないでください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observation":"観察内容"}`,
     temperature: 0,
   });
   if (!result) return candidate;

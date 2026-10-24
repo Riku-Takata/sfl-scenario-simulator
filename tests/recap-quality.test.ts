@@ -6,6 +6,7 @@ import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
 import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
+import { mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import {
   isBoutVideoCacheStale,
@@ -114,6 +115,34 @@ const evidenceSet = [
   evidence("video-1", "visual", "ACQUA選手がブランカのローリングを画面端で2BASSA選手に当てる。"),
   evidence("video-2", "visual", "2BASSA選手の体力ゲージが残りわずかになった画面が映る。"),
 ];
+
+test("evidence review advances past saved decisions instead of rechecking the first two candidates forever", () => {
+  const candidates = ["one", "two", "three"].map((id) => ({ ...evidence(id, "visual", "画面端でブランカのローリングが相手にヒットした。"), status: "candidate" as const }));
+  const saved = [
+    { ...candidates[0], status: "verified" as const, verifierVersion: EVIDENCE_VERIFIER_VERSION },
+    { ...candidates[1], status: "disputed" as const, verifierVersion: EVIDENCE_VERIFIER_VERSION },
+  ];
+  const merged = candidates.map((candidate) => mergeEvidenceCandidate(candidate, saved.find((prior) => prior.id === candidate.id)));
+  assert.deepEqual(pendingEvidenceCandidates(merged).map((candidate) => candidate.id), ["three"]);
+  assert.equal(mergeEvidenceCandidate(candidates[0], { ...saved[0], verifierVersion: "independent-description-v2" }).status, "verified");
+  assert.equal(mergeEvidenceCandidate(candidates[1], { ...saved[1], verifierVersion: "independent-description-v2" }).status, "candidate");
+});
+
+test("independent verification uses a capable model distinct from the extractor, with the same evidence gate", async (t) => {
+  const observation = "ブランカが画面端でローリングを当て、相手の体力ゲージが残りわずかになった。";
+  const candidate = { ...evidence("review", "visual", observation), status: "candidate" as const, sourceModels: ["gemini-3.8-flash"] };
+  let calls = 0;
+  t.mock.method(globalThis, "fetch", async (_url: string, options: RequestInit) => {
+    calls++;
+    const request = JSON.parse(String(options.body));
+    assert.equal(request.model, "gemini-3.6-flash");
+    return new Response(JSON.stringify({ output_text: JSON.stringify({ observation }) }));
+  });
+  const verified = await verifyEvidenceCandidate({ apiKey: "test", models: ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-3.6-flash"], candidate });
+  assert.equal(calls, 1);
+  assert.equal(verified.status, "verified");
+  assert.deepEqual(verified.sourceModels, ["gemini-3.8-flash", "gemini-3.6-flash"]);
+});
 
 test("quality gate rejects unrelated prose even when all cited evidence IDs are valid", () => {
   const unrelated = evaluateBoutArticle({
