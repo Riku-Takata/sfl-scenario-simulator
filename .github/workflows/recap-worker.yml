@@ -25,6 +25,14 @@ on:
         description: "Prepared local Codex draft (base64 JSON; revalidated against current evidence)"
         type: string
         required: false
+      text_backend:
+        description: "Text generation backend (codex or gemini)"
+        required: false
+        type: choice
+        options:
+          - codex
+          - gemini
+        default: codex
 
 permissions:
   contents: write
@@ -62,7 +70,7 @@ jobs:
           GEMINI_VIDEO_MAX_SECONDS: "25200"
           GEMINI_VIDEO_TIME_BUDGET_MIN: "20"
           RECAP_PUBLICATION_MODE: auto
-          RECAP_TEXT_BACKEND: codex
+          RECAP_TEXT_BACKEND: ${{ inputs.text_backend || 'codex' }}
           RECAP_ENABLE_FULL_VISUAL_ANALYSIS: "false"
           RECAP_WORKER_SECTION: ${{ inputs.section }}
           RECAP_CHECK_ARCHIVES: ${{ inputs.check_archives == true || github.event.schedule == '10 15 * * *' || github.event.schedule == '0 23 * * *' }}
