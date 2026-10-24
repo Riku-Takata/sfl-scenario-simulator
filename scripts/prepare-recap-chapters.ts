@@ -1,7 +1,9 @@
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import { pathToFileURL } from "node:url";
-import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
+import { MatchesDataSchema, RecapJobsDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
+import { selectAutomaticSection } from "./recap/automation";
+import { RecapUsageSchema, remainingDailyUsage } from "./recap/usage";
 import type { MatchesData, VideoFactsData } from "../src/lib/types";
 import { SECTION_VIDEO_IDS } from "../src/config/section-videos";
 import { SFL_CURRENT_SEASON } from "../src/lib/sfl/play-style";
@@ -42,34 +44,26 @@ async function main(): Promise<void> {
     if (await prepareChapters(matches, facts)) fs.writeFileSync("src/data/video-facts.json", JSON.stringify(VideoFactsDataSchema.parse(facts), null, 2));
     return;
   }
-  // Read and update only the current remote cache. The SHA guards against a
-  // concurrent worker overwriting newly extracted video facts.
+  // Prepare metadata against the latest remote state. The worker imports it
+  // under the shared writer lock; this process never overwrites worker output.
   const repository = process.env.SFL_REPOSITORY ?? "Riku-Takata/sfl-scenario-simulator";
   if (!/^[\w.-]+\/[\w.-]+$/.test(repository)) throw new Error("Invalid repository");
   const gh = process.env.SFL_GH_PATH || "gh";
-  const request = (args: string[], input?: unknown) => JSON.parse(execFileSync(gh, args, { encoding: "utf8", maxBuffer: 32 * 1024 * 1024, input: input === undefined ? undefined : JSON.stringify(input) }));
+  const request = (args: string[]) => JSON.parse(execFileSync(gh, args, { encoding: "utf8", maxBuffer: 32 * 1024 * 1024 }));
   const read = (name: string) => request(["api", `repos/${repository}/contents/src/data/${name}.json?ref=main`]);
   const decode = (file: any) => JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
-  for (let attempt = 0; attempt < 3; attempt++) {
-    const matches = MatchesDataSchema.parse(decode(read("matches")));
-    const remote = read("video-facts");
-    const facts = VideoFactsDataSchema.parse(decode(remote));
-    if (await prepareChapters(matches, facts)) {
-      try {
-        request(["api", `repos/${repository}/contents/src/data/video-facts.json`, "--method", "PUT", "--input", "-"], {
-          message: "chore(recap): cache official chapters after broadcast",
-          content: Buffer.from(JSON.stringify(VideoFactsDataSchema.parse(facts), null, 2)).toString("base64"),
-          sha: remote.sha, branch: "main",
-        });
-      } catch (error) { if (attempt < 2) continue; throw error; }
-    }
-    const jobs = decode(read("recap-jobs")).jobs;
-    const sections = Object.values(jobs as Record<string, any>).filter((job) => job.stage !== "completed" &&
-      ["s", "f"].some((div) => job.sectionId === `div-${div}-sec${matches.completedSectionCount[div as "s" | "f"]}`))
-      .map((job: any) => job.sectionId);
-    console.log(`SFL_RECAP_SECTIONS=${[...new Set(sections)].join(",")}`);
-    return;
-  }
+  const matches = MatchesDataSchema.parse(decode(read("matches")));
+  const facts = VideoFactsDataSchema.parse(decode(read("video-facts")));
+  const previousVideos = structuredClone(facts.videos);
+  const readyOnly = process.argv.includes("--ready-only");
+  if (!readyOnly) await prepareChapters(matches, facts);
+  const jobs = RecapJobsDataSchema.parse(decode(read("recap-jobs")));
+  const remaining = remainingDailyUsage(RecapUsageSchema.parse(decode(read("recap-usage"))));
+  const section = remaining.calls && remaining.videoSeconds
+    ? selectAutomaticSection({ jobs, facts, matches, apiAvailable: true, allowArchiveCheck: !readyOnly }) : undefined;
+  const changedVideos = Object.fromEntries(Object.entries(facts.videos).filter(([slug, video]) => JSON.stringify(previousVideos[slug]) !== JSON.stringify(video)));
+  console.log(`SFL_RECAP_CACHE=${Object.keys(changedVideos).length ? Buffer.from(JSON.stringify(changedVideos)).toString("base64") : ""}`);
+  console.log(`SFL_RECAP_SECTIONS=${section ?? ""}`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main().catch((error) => { console.error(error); process.exitCode = 1; });

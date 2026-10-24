@@ -170,14 +170,17 @@ export async function advanceBoutAnalysis(options: {
   facts: BoutVideoFacts;
   budget: VideoBudget;
   fps: number;
+  collectMoreEvidence?: boolean;
 }): Promise<void> {
   const { apiKey, models, ctx, facts, budget, fps } = options;
   const youtubeUrl = `https://www.youtube.com/watch?v=${facts.videoId}`;
   const seconds = facts.endSec - facts.startSec;
+  const initialRuns = facts.runs.length;
+  const needsAdditionalRun = () => Boolean(options.collectMoreEvidence && facts.runs.length === initialRuns);
 
   while (
-    facts.status === "pending" &&
-    passedRuns(facts).length < REQUIRED_PASSED_RUNS &&
+    (facts.status === "pending" || needsAdditionalRun()) &&
+    (passedRuns(facts).length < REQUIRED_PASSED_RUNS || needsAdditionalRun()) &&
     facts.runs.length < MAX_RUNS_PER_BOUT
   ) {
     const order = pickModelOrder(facts, models);

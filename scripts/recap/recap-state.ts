@@ -68,6 +68,7 @@ export function upsertJob(input: {
   article?: RecapArticle;
   editorial: boolean;
   attempted?: boolean;
+  evidenceExhausted?: boolean;
 }): void {
   const key = input.boutId;
   const inputHash = crypto.createHash("sha256").update(JSON.stringify(input.officialInput)).digest("hex");
@@ -81,7 +82,7 @@ export function upsertJob(input: {
     : !input.hasVideo ? "waiting_video"
       : !input.hasWindow ? "waiting_window"
         : !input.apiAvailable ? "paused"
-          : input.article?.status === "invalid" ? "needs_review"
+          : input.evidenceExhausted || input.article?.status === "invalid" ? "needs_review"
           : input.article?.status === "insufficient" && (previous?.attempts ?? 0) >= 3 ? "needs_review"
           : input.videoStatus === "pending" ? "extracting"
             : input.videoStatus === "complete" ? "writing"
@@ -100,6 +101,7 @@ export function upsertJob(input: {
     ...(stage === "retry_wait" || stage === "extracting" || stage === "writing" ? { nextAttemptAt: new Date(Date.now() + backoffMs).toISOString() } : {}),
     ...(previous?.leaseUntil && Date.parse(previous.leaseUntil) > Date.now() ? { leaseUntil: previous.leaseUntil } : {}),
     ...(input.article?.quality.reasons.length ? { failureReason: input.article.quality.reasons.join(",") } : {}),
+    ...(input.evidenceExhausted ? { failureReason: "insufficient_verified_video_evidence_after_bounded_analysis" } : {}),
     evidenceIds: input.article?.evidenceIds ?? [],
     ...((articlePassed || editorial) ? { publishedRevision: input.article?.revision ?? "editorial" } : previous?.publishedRevision ? { publishedRevision: previous.publishedRevision } : {}),
     ...(!articlePassed && !editorial && input.article ? { candidateRevision: input.article.revision } : {}),
@@ -124,6 +126,7 @@ export function upsertMatchJob(input: {
   editorial: boolean;
   someBoutPassed: boolean;
   attempted?: boolean;
+  evidenceExhausted?: boolean;
 }): void {
   const key = input.matchId + ":article";
   const previous = input.jobs.jobs[key];
@@ -136,7 +139,7 @@ export function upsertMatchJob(input: {
     : !input.hasVideo ? "waiting_video"
       : !input.hasWindow ? "waiting_window"
         : !input.apiAvailable ? "paused"
-          : input.article?.status === "invalid" || attempts >= 3 ? "needs_review"
+          : input.evidenceExhausted || input.article?.status === "invalid" || attempts >= 3 ? "needs_review"
             : input.videoPending ? "extracting" : "writing";
   const publication = input.editorial || input.article?.status === "passed" ? "detailed" : input.someBoutPassed ? "partial" : "results_only";
   const backoffMs = Math.min(6 * 60 * 60_000, 15 * 60_000 * Math.pow(2, Math.max(0, attempts - 1)));
@@ -148,6 +151,7 @@ export function upsertMatchJob(input: {
     ...(stage === "writing" || stage === "extracting" ? { nextAttemptAt: new Date(Date.now() + backoffMs).toISOString() } : {}),
     ...(previous?.leaseUntil ? { leaseUntil: previous.leaseUntil } : {}),
     ...(input.article?.quality.reasons.length ? { failureReason: input.article.quality.reasons.join(",") } : {}),
+    ...(input.evidenceExhausted ? { failureReason: "insufficient_verified_video_evidence_after_bounded_analysis" } : {}),
     evidenceIds: input.article?.evidenceIds ?? [],
     ...((input.editorial || input.article?.status === "passed") ? { publishedRevision: input.article?.revision ?? "editorial" } : previous?.publishedRevision ? { publishedRevision: previous.publishedRevision } : {}),
     ...(!input.editorial && input.article?.status !== "passed" && input.article ? { candidateRevision: input.article.revision } : {}),
