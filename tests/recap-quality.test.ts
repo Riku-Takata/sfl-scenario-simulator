@@ -8,7 +8,7 @@ import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
 import { mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
-import { articleEvidenceReady, selectAutomaticSection } from "../scripts/recap/automation";
+import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
 import {
   isBoutVideoCacheStale,
@@ -151,6 +151,17 @@ test("writing waits for independently verified video evidence rather than genera
   assert.equal(articleEvidenceReady(evidenceSet.map((item) => ({ ...item, status: item.kind === "official" ? "verified" : "candidate" }))), false);
   assert.equal(articleEvidenceReady(evidenceSet), true);
   assert.equal(articleEvidenceReady(evidenceSet.filter((item) => item.kind !== "official")), false);
+});
+
+test("prepared chapters merge under the writer without replacing analysis, and reject foreign sections", () => {
+  const matches = MatchesDataSchema.parse(JSON.parse(fs.readFileSync(new URL("../src/data/matches.json", import.meta.url), "utf8")));
+  const facts = VideoFactsDataSchema.parse({ updatedAt: "2026-10-24T00:00:00Z", videos: {}, bouts: {}, visual: {}, narratives: {}, pendingNarrations: ["preserve-analysis"] });
+  const encoded = Buffer.from(JSON.stringify({ "div-s-sec1": { videoId: "RdpsP-M30sU", chapters: [{ startSec: 0, title: "配信開始" }] } })).toString("base64");
+  assert.equal(mergePreparedChapters(facts, matches, encoded), true);
+  assert.deepEqual(facts.pendingNarrations, ["preserve-analysis"]);
+  assert.equal(mergePreparedChapters(facts, matches, encoded), false);
+  const foreign = Buffer.from(JSON.stringify({ "div-s-sec999": { videoId: "RdpsP-M30sU", chapters: [] } })).toString("base64");
+  assert.throws(() => mergePreparedChapters(facts, matches, foreign), /Unexpected prepared section/);
 });
 
 test("continuations share a persisted daily budget and resume after the JST date changes", () => {

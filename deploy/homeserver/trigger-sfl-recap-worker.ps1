@@ -44,18 +44,23 @@ try {
         $output = & node @prepareArgs 2>&1
         $prepareExit = $LASTEXITCODE
     } finally { $ErrorActionPreference = "Stop" }
-    $output | ForEach-Object { Add-Content -LiteralPath $logFile -Value ("{0:o} {1}" -f [DateTime]::Now, $_) -Encoding UTF8; Write-Host $_ }
+    $output | Where-Object { [string]$_ -notlike "SFL_RECAP_CACHE=*" } | ForEach-Object { Add-Content -LiteralPath $logFile -Value ("{0:o} {1}" -f [DateTime]::Now, $_) -Encoding UTF8; Write-Host $_ }
     if ($prepareExit -ne 0) { throw "Chapter preparation failed (exit $prepareExit)." }
-    if ($checkArchives) { @{ checkedAt = [DateTime]::UtcNow.ToString("o") } | ConvertTo-Json | Set-Content -LiteralPath $stateFile -Encoding UTF8 }
     $marker = $output | Where-Object { [string]$_ -like "SFL_RECAP_SECTIONS=*" } | Select-Object -Last 1
     $sections = if ($marker) { ([string]$marker).Substring("SFL_RECAP_SECTIONS=".Length).Split(",") } else { @() }
-    foreach ($section in $sections) {
-        if ($section -notmatch '^div-[sf]-sec\d+$') { continue }
+    $section = $sections | Where-Object { $_ -match '^div-[sf]-sec\d+$' } | Select-Object -First 1
+    $cacheMarker = $output | Where-Object { [string]$_ -like "SFL_RECAP_CACHE=*" } | Select-Object -Last 1
+    $chapterCache = if ($cacheMarker) { ([string]$cacheMarker).Substring("SFL_RECAP_CACHE=".Length) } else { "" }
+    if ($section -or $chapterCache) {
         $archiveFlag = if ($checkArchives) { "true" } else { "false" }
-        & $ghCommand workflow run recap-worker.yml --repo $Repository --ref main -f "section=$section" -f "check_archives=$archiveFlag"
+        $dispatchArgs = @("workflow", "run", "recap-worker.yml", "--repo", $Repository, "--ref", "main", "-f", "check_archives=$archiveFlag")
+        if ($section) { $dispatchArgs += @("-f", "section=$section") }
+        if ($chapterCache) { $dispatchArgs += @("-f", "chapter_cache=$chapterCache") }
+        & $ghCommand @dispatchArgs
         if ($LASTEXITCODE -ne 0) { throw "Could not dispatch recap worker for $section." }
         Add-Content -LiteralPath $logFile -Value ("{0:o} Dispatched {1}" -f [DateTime]::Now, $section) -Encoding UTF8
     }
+    if ($checkArchives) { @{ checkedAt = [DateTime]::UtcNow.ToString("o") } | ConvertTo-Json | Set-Content -LiteralPath $stateFile -Encoding UTF8 }
 } finally {
     Remove-Item Env:SFL_GH_PATH, Env:SFL_REPOSITORY -ErrorAction SilentlyContinue
     Pop-Location

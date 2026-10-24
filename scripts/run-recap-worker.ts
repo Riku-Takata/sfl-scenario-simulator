@@ -1,11 +1,20 @@
 import fs from "node:fs";
 import { MatchesDataSchema, RecapJobsDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { generateAndSaveMatchRecaps } from "./4-generate-match-recaps";
-import { selectAutomaticSection } from "./recap/automation";
+import { mergePreparedChapters, selectAutomaticSection } from "./recap/automation";
 import { loadRecapUsage, remainingDailyUsage } from "./recap/usage";
 
 const JOBS_FILE = new URL("../src/data/recap-jobs.json", import.meta.url);
 const allowArchiveCheck = process.env.RECAP_CHECK_ARCHIVES === "true" || process.argv.includes("--check-archives");
+if (process.env.RECAP_CHAPTER_CACHE) {
+  const file = new URL("../src/data/video-facts.json", import.meta.url);
+  const facts = VideoFactsDataSchema.parse(JSON.parse(fs.readFileSync(file, "utf8")));
+  const matches = MatchesDataSchema.parse(JSON.parse(fs.readFileSync(new URL("../src/data/matches.json", import.meta.url), "utf8")));
+  if (mergePreparedChapters(facts, matches, process.env.RECAP_CHAPTER_CACHE)) {
+    fs.writeFileSync(file, JSON.stringify(VideoFactsDataSchema.parse(facts), null, 2));
+    console.log("[Recap worker] Imported prepared official chapters into the serialized writer.");
+  }
+}
 
 function nextSection(): { section?: string; hasJobs: boolean } {
   if (!fs.existsSync(JOBS_FILE)) return { hasJobs: false };

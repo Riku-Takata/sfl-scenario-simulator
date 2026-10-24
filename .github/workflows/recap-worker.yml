@@ -17,6 +17,10 @@ on:
         description: "Recheck unavailable official descriptions (normally 00:10/08:00 JST)"
         type: boolean
         default: false
+      chapter_cache:
+        description: "Prepared official chapter cache from HomeServer (base64 JSON)"
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -56,6 +60,7 @@ jobs:
           RECAP_PUBLICATION_MODE: auto
           RECAP_WORKER_SECTION: ${{ inputs.section }}
           RECAP_CHECK_ARCHIVES: ${{ inputs.check_archives == true || github.event.schedule == '10 15 * * *' || github.event.schedule == '0 23 * * *' }}
+          RECAP_CHAPTER_CACHE: ${{ inputs.chapter_cache }}
         run: |
           if [ -n "$RECAP_WORKER_SECTION" ]; then
             npm run recap-worker -- --section="$RECAP_WORKER_SECTION"
