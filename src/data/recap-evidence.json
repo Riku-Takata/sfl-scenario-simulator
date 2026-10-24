@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-23T14:00:32.084Z",
+  "updatedAt": "2026-10-24T06:27:24.833Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -526,6 +526,9 @@
       "matchId": "div-s-sec5-m1",
       "boutId": "div-s-sec5-m1-b0",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 2871,
+      "endSec": 3386,
       "playerIds": [
         "もけ",
         "ももち"
@@ -549,6 +552,9 @@
       "matchId": "div-s-sec5-m1",
       "boutId": "div-s-sec5-m1-b1",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3581,
+      "endSec": 3934,
       "playerIds": [
         "りゅうきち",
         "ひぐち"
@@ -571,6 +577,9 @@
       "matchId": "div-s-sec5-m1",
       "boutId": "div-s-sec5-m1-b2",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 4170,
+      "endSec": 5072,
       "playerIds": [
         "藤村",
         "MenaRD"
@@ -596,6 +605,9 @@
       "matchId": "div-s-sec5-m2",
       "boutId": "div-s-sec5-m2-b0",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 6605,
+      "endSec": 6969,
       "playerIds": [
         "cosa",
         "ヤナイ"
@@ -618,6 +630,9 @@
       "matchId": "div-s-sec5-m2",
       "boutId": "div-s-sec5-m2-b1",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7202,
+      "endSec": 7606,
       "playerIds": [
         "まちゃぼー",
         "鶏めし"
@@ -640,6 +655,9 @@
       "matchId": "div-s-sec5-m2",
       "boutId": "div-s-sec5-m2-b2",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7837,
+      "endSec": 8596,
       "playerIds": [
         "きんちょ",
         "2BASSA"
@@ -663,6 +681,9 @@
       "matchId": "div-s-sec5-m2",
       "boutId": "div-s-sec5-m2-b3",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 8785,
+      "endSec": 9321,
       "playerIds": [
         "こばやん",
         "ジョニィ"
@@ -685,6 +706,9 @@
       "matchId": "div-s-sec5-m3",
       "boutId": "div-s-sec5-m3-b0",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11011,
+      "endSec": 11434,
       "playerIds": [
         "ACQUA",
         "どぐら"
@@ -707,6 +731,9 @@
       "matchId": "div-s-sec5-m3",
       "boutId": "div-s-sec5-m3-b1",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11640,
+      "endSec": 12118,
       "playerIds": [
         "takepi",
         "かずのこ"
@@ -729,6 +756,9 @@
       "matchId": "div-s-sec5-m3",
       "boutId": "div-s-sec5-m3-b2",
       "kind": "official",
+      "videoId": "OyvntovP-BI",
+      "startSec": 12319,
+      "endSec": 13453,
       "playerIds": [
         "ひびき",
         "Shuto"

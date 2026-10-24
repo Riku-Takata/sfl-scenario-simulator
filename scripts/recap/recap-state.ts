@@ -5,6 +5,7 @@ import {
   RecapEvidenceDataSchema, RecapArticlesDataSchema, RecapJobsDataSchema,
 } from "../../src/lib/schema";
 import type { RecapArticle, RecapEvidence, RecapEvidenceData, RecapArticlesData, RecapJobsData } from "../../src/lib/types";
+import { nextArchiveCheckAt } from "./check-schedule";
 
 const DATA_DIR = path.resolve(process.cwd(), "src/data");
 const EVIDENCE_FILE = path.join(DATA_DIR, "recap-evidence.json");
@@ -66,6 +67,7 @@ export function upsertJob(input: {
   apiAvailable: boolean;
   article?: RecapArticle;
   editorial: boolean;
+  attempted?: boolean;
 }): void {
   const key = input.boutId;
   const inputHash = crypto.createHash("sha256").update(JSON.stringify(input.officialInput)).digest("hex");
@@ -85,8 +87,8 @@ export function upsertJob(input: {
             : input.videoStatus === "complete" ? "writing"
               : input.article?.status === "insufficient" ? "writing" : "retry_wait";
   const due = !previous || Date.now() - Date.parse(previous.updatedAt) >= 10 * 60_000;
-  const attempts = changed ? 0 : (previous?.attempts ?? 0) + (due && (stage === "extracting" || stage === "writing") ? 1 : 0);
-  if ((input.article?.status === "insufficient" || input.videoStatus === "pending") && attempts >= 3) stage = "needs_review";
+  const attempts = changed || !input.article ? 0 : (previous?.attempts ?? 0) + (due && input.attempted && input.article.status === "insufficient" ? 1 : 0);
+  if (input.article?.status === "insufficient" && attempts >= 3) stage = "needs_review";
   const backoffMs = Math.min(6 * 60 * 60_000, 15 * 60_000 * Math.pow(2, Math.max(0, attempts - 1)));
   input.jobs.jobs[key] = {
     jobId: key, sectionId: input.sectionId, matchId: input.matchId, boutId: key,
@@ -94,6 +96,7 @@ export function upsertJob(input: {
     publication: editorial || articlePassed ? "detailed" : "results_only",
     inputHash, pipelineVersion: "recap-pipeline-v3",
     attempts,
+    ...(stage === "waiting_video" || stage === "waiting_window" ? { nextAttemptAt: nextArchiveCheckAt() } : {}),
     ...(stage === "retry_wait" || stage === "extracting" || stage === "writing" ? { nextAttemptAt: new Date(Date.now() + backoffMs).toISOString() } : {}),
     ...(previous?.leaseUntil && Date.parse(previous.leaseUntil) > Date.now() ? { leaseUntil: previous.leaseUntil } : {}),
     ...(input.article?.quality.reasons.length ? { failureReason: input.article.quality.reasons.join(",") } : {}),
@@ -114,30 +117,34 @@ export function upsertMatchJob(input: {
   matchId: string;
   inputHash: string;
   hasVideo: boolean;
+  hasWindow: boolean;
   videoPending: boolean;
   apiAvailable: boolean;
   article?: RecapArticle;
   editorial: boolean;
   someBoutPassed: boolean;
+  attempted?: boolean;
 }): void {
   const key = input.matchId + ":article";
   const previous = input.jobs.jobs[key];
   const changed = previous?.inputHash !== input.inputHash;
   const awaitingEditorialReview = input.article?.status === "candidate";
   const due = !previous || Date.now() - Date.parse(previous.updatedAt) >= 10 * 60_000;
-  const attempts = changed ? 0 : (previous?.attempts ?? 0) + (due && (input.videoPending || input.article?.status === "insufficient") ? 1 : 0);
+  const attempts = changed || !input.article ? 0 : (previous?.attempts ?? 0) + (due && input.attempted && input.article.status === "insufficient" ? 1 : 0);
   const stage = input.editorial || input.article?.status === "passed" ? "completed"
     : awaitingEditorialReview ? "reviewing"
-    : !input.apiAvailable ? "paused"
-      : input.article?.status === "invalid" || attempts >= 3 ? "needs_review"
-      : !input.hasVideo ? "waiting_video"
-        : input.videoPending ? "extracting" : "writing";
+    : !input.hasVideo ? "waiting_video"
+      : !input.hasWindow ? "waiting_window"
+        : !input.apiAvailable ? "paused"
+          : input.article?.status === "invalid" || attempts >= 3 ? "needs_review"
+            : input.videoPending ? "extracting" : "writing";
   const publication = input.editorial || input.article?.status === "passed" ? "detailed" : input.someBoutPassed ? "partial" : "results_only";
   const backoffMs = Math.min(6 * 60 * 60_000, 15 * 60_000 * Math.pow(2, Math.max(0, attempts - 1)));
   input.jobs.jobs[key] = {
     jobId: key, sectionId: input.sectionId, matchId: input.matchId,
     stage, quality: input.editorial || input.article?.status === "passed" ? "passed" : awaitingEditorialReview ? "candidate" : input.article?.status === "invalid" ? "invalid" : input.article ? "insufficient" : "not_evaluated",
     publication, inputHash: input.inputHash, pipelineVersion: "recap-pipeline-v3", attempts,
+    ...(stage === "waiting_video" || stage === "waiting_window" ? { nextAttemptAt: nextArchiveCheckAt() } : {}),
     ...(stage === "writing" || stage === "extracting" ? { nextAttemptAt: new Date(Date.now() + backoffMs).toISOString() } : {}),
     ...(previous?.leaseUntil ? { leaseUntil: previous.leaseUntil } : {}),
     ...(input.article?.quality.reasons.length ? { failureReason: input.article.quality.reasons.join(",") } : {}),

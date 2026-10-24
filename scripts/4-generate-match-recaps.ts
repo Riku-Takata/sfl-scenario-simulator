@@ -422,7 +422,7 @@ export async function generateAndSaveMatchRecaps(
       const result = slot.result as Exclude<RawMatchSlot["result"], "">;
       return (result["1p"] || []).some((bout) => !findBoutWindow(chapters, num, bout.status));
     });
-    if (videoId && (chapters.length === 0 || requiredWindowsMissing)) {
+    if (!options.resultsOnly && videoId && (chapters.length === 0 || requiredWindowsMissing)) {
       try {
         const refreshed = await fetchYoutubeChapters(videoId);
         if (refreshed.length > 0) {
@@ -635,6 +635,7 @@ export async function generateAndSaveMatchRecaps(
         bouts: boutInputs.map((input) => ({ ctx: input.ctx, games: input.games, videoId })),
       });
       let narrative = videoFacts.narratives[matchId];
+      let narrationAttempted = false;
       // 全Boutに編集解説がある試合は自動生成しない（無料枠の節約）
       const needsNarration = boutInputs.some((b) => !editorial.bouts[b.ctx.boutId]);
       const markPending = (pending: boolean) => {
@@ -651,6 +652,7 @@ export async function generateAndSaveMatchRecaps(
         (!options.onlySection || options.onlySection === slug)
       ) {
         console.log(`[Narration] ${matchId}: generating from verified video facts...`);
+        narrationAttempted = true;
         const generated = await generateMatchNarrative({
           apiKey,
           models: textModels,
@@ -712,6 +714,8 @@ export async function generateAndSaveMatchRecaps(
       upsertMatchJob({
         jobs: jobsData, sectionId: slug, matchId, inputHash: matchSourceHash,
         hasVideo: Boolean(videoId), videoPending,
+        hasWindow: boutInputs.every((input) => Boolean(findBoutWindow(chapters, num, Number(input.ctx.boutId.at(-1))))),
+        attempted: narrationAttempted,
         apiAvailable: Boolean(apiKey),
         article: matchArticle, editorial: Boolean(editorial.matches[matchId]) || editorialCoversBouts,
         someBoutPassed: passedBoutArticles.length > 0,
@@ -721,12 +725,13 @@ export async function generateAndSaveMatchRecaps(
         const recap = boutRecaps[idx];
         const window = findBoutWindow(chapters, num, input.ctx.boutId.endsWith("-b3") ? 3 : input.ctx.boutId.endsWith("-b2") ? 2 : input.ctx.boutId.endsWith("-b1") ? 1 : 0);
         const candidateDraft = articleByBout.get(input.ctx.boutId);
-        const candidate = candidateDraft?.status === "passed" ? candidateDraft : currentPassedArticle(articlesData, input.ctx.boutId);
+        const candidate = candidateDraft ?? currentPassedArticle(articlesData, input.ctx.boutId);
         upsertJob({
           jobs: jobsData, sectionId: slug, matchId, boutId: input.ctx.boutId,
-          officialInput: { ctx: input.ctx, games: input.games, videoId },
+          officialInput: { ctx: input.ctx, games: input.games, videoId, window, analysisVersion, publicationMode },
           hasVideo: Boolean(videoId), hasWindow: Boolean(window), videoStatus: recap.videoStatus,
           apiAvailable: Boolean(apiKey),
+          attempted: narrationAttempted,
           article: candidate, editorial: Boolean(editorial.bouts[input.ctx.boutId]),
         });
         const recapJob = jobsData.jobs[input.ctx.boutId];

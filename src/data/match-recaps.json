@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T03:54:58.569Z",
+  "updatedAt": "2026-10-24T06:27:24.812Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 5,
@@ -15,7 +15,9 @@
         "matchNumber": 1,
         "scheduledAt": "2026-10-23 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=OyvntovP-BI",
-        "matchVideoUrl": "https://www.youtube.com/watch?v=OyvntovP-BI",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=OyvntovP-BI&t=2378s",
+        "matchStartTime": 2378,
+        "matchStartLabel": "39:38",
         "home": "zeta",
         "away": "fav",
         "homePoint": 0,
@@ -259,7 +261,7 @@
             "videoStatus": "pending"
           }
         ],
-        "narrationStatus": "unavailable"
+        "narrationStatus": "pending"
       },
       {
         "matchId": "div-s-sec5-m2",
@@ -269,7 +271,9 @@
         "matchNumber": 2,
         "scheduledAt": "2026-10-23 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=OyvntovP-BI",
-        "matchVideoUrl": "https://www.youtube.com/watch?v=OyvntovP-BI",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=OyvntovP-BI&t=6174s",
+        "matchStartTime": 6174,
+        "matchStartLabel": "1:42:54",
         "home": "ibsg",
         "away": "sol",
         "homePoint": 20,
@@ -534,7 +538,7 @@
             "videoStatus": "pending"
           }
         ],
-        "narrationStatus": "unavailable"
+        "narrationStatus": "pending"
       },
       {
         "matchId": "div-s-sec5-m3",
@@ -544,7 +548,9 @@
         "matchNumber": 3,
         "scheduledAt": "2026-10-23 00:00:00",
         "youtubeUrl": "https://www.youtube.com/watch?v=OyvntovP-BI",
-        "matchVideoUrl": "https://www.youtube.com/watch?v=OyvntovP-BI",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=OyvntovP-BI&t=10580s",
+        "matchStartTime": 10580,
+        "matchStartLabel": "2:56:20",
         "home": "cr",
         "away": "ixa",
         "homePoint": 10,
@@ -789,7 +795,7 @@
             "videoStatus": "pending"
           }
         ],
-        "narrationStatus": "unavailable"
+        "narrationStatus": "pending"
       }
     ],
     "f": [
