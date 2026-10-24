@@ -347,6 +347,9 @@ test("analyzeDivisionScenarios generates rich personalizedPlayoffOutlook for all
   assert.equal(resultS.teams.fav.routes.route2Second.isRecommendedTarget, false);
   assert.ok(favOutlook.coreNarrative.length > 20);
   assert.ok(favOutlook.primaryConditionSummary.length > 10);
+  assert.ok(favOutlook.milestones);
+  assert.ok(favOutlook.milestones.targetPoints >= 250);
+  assert.ok(favOutlook.tacticalFocus && favOutlook.tacticalFocus.length >= 2);
 
   // iXA (Trailing / Miracle)
   const ixaOutlook = resultS.teams.ixa.personalizedOutlook;
@@ -360,4 +363,7 @@ test("analyzeDivisionScenarios generates rich personalizedPlayoffOutlook for all
   assert.equal(resultS.teams.ixa.routes.route3Third.isRecommendedTarget, true);
   assert.equal(resultS.teams.ixa.routes.route1First.isRecommendedTarget, false);
   assert.match(ixaOutlook.coreNarrative, /崖っぷち/);
+  assert.ok(ixaOutlook.milestones);
+  assert.ok(ixaOutlook.milestones.riskFactor.length > 10);
+  assert.ok(ixaOutlook.tacticalFocus && ixaOutlook.tacticalFocus.length >= 2);
 });
