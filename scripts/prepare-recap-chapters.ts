@@ -4,6 +4,9 @@ import { pathToFileURL } from "node:url";
 import { MatchesDataSchema, RecapJobsDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { selectAutomaticSection } from "./recap/automation";
 import { RecapUsageSchema, remainingDailyUsage } from "./recap/usage";
+import { WriteRequestsSchema } from "./recap/writer-state";
+import { writeWithCodex } from "./recap/codex-writer";
+import path from "node:path";
 import type { MatchesData, VideoFactsData } from "../src/lib/types";
 import { SECTION_VIDEO_IDS } from "../src/config/section-videos";
 import { SFL_CURRENT_SEASON } from "../src/lib/sfl/play-style";
@@ -50,19 +53,31 @@ async function main(): Promise<void> {
   if (!/^[\w.-]+\/[\w.-]+$/.test(repository)) throw new Error("Invalid repository");
   const gh = process.env.SFL_GH_PATH || "gh";
   const request = (args: string[]) => JSON.parse(execFileSync(gh, args, { encoding: "utf8", maxBuffer: 32 * 1024 * 1024 }));
-  const read = (name: string) => request(["api", `repos/${repository}/contents/src/data/${name}.json?ref=main`]);
-  const decode = (file: any) => JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
+  const read = (name: string) => request(["api", `repos/${repository}/contents/src/data/${name}.json?ref=main`, "-H", "Accept: application/vnd.github.raw+json"]);
+  const decode = (file: any) => typeof file.content === "string" ? JSON.parse(Buffer.from(file.content, "base64").toString("utf8")) : file;
+  const optionalData = (name: string, fallback: unknown) => {
+    try { return decode(read(name)); } catch (error) {
+      if (/404/.test(String((error as { stderr?: unknown }).stderr))) return fallback;
+      throw error;
+    }
+  };
   const matches = MatchesDataSchema.parse(decode(read("matches")));
   const facts = VideoFactsDataSchema.parse(decode(read("video-facts")));
   const previousVideos = structuredClone(facts.videos);
   const readyOnly = process.argv.includes("--ready-only");
   if (!readyOnly) await prepareChapters(matches, facts);
   const jobs = RecapJobsDataSchema.parse(decode(read("recap-jobs")));
+  const requests = WriteRequestsSchema.parse(optionalData("recap-write-requests", { schemaVersion: 1, requests: {} }));
+  const requestToWrite = process.argv.includes("--write-with-codex") ? Object.values(requests.requests)
+    .filter((request) => request.stage === "queued")
+    .sort((a, b) => a.updatedAt.localeCompare(b.updatedAt))[0] : undefined;
+  const prepared = requestToWrite ? writeWithCodex(requestToWrite, process.env.SFL_WRITER_CACHE_DIR ?? path.resolve("../../data/app-data/sfl-recap/writer")) : undefined;
   const remaining = remainingDailyUsage(RecapUsageSchema.parse(decode(read("recap-usage"))));
-  const section = remaining.calls && remaining.videoSeconds
+  const section = prepared ? requestToWrite!.sectionId : remaining.calls && remaining.videoSeconds
     ? selectAutomaticSection({ jobs, facts, matches, apiAvailable: true, allowArchiveCheck: !readyOnly }) : undefined;
   const changedVideos = Object.fromEntries(Object.entries(facts.videos).filter(([slug, video]) => JSON.stringify(previousVideos[slug]) !== JSON.stringify(video)));
   console.log(`SFL_RECAP_CACHE=${Object.keys(changedVideos).length ? Buffer.from(JSON.stringify(changedVideos)).toString("base64") : ""}`);
+  console.log(`SFL_NARRATIVE_CACHE=${prepared ? Buffer.from(JSON.stringify([prepared])).toString("base64") : ""}`);
   console.log(`SFL_RECAP_SECTIONS=${section ?? ""}`);
 }
 

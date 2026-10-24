@@ -219,6 +219,7 @@ export async function advanceVisualAnalysis(options: {
     budget.calls += 1;
     budget.videoSeconds += seconds;
     const result = await callGemini({
+      purpose: "visual",
       apiKey,
       models: order,
       prompt: buildVisualPrompt(ctx),

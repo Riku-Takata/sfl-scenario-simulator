@@ -92,7 +92,7 @@ export function buildBoutEvidence(options: {
         videoId: videoFacts.videoId, startSec, endSec,
         playerIds: [ctx.playerA.name, ctx.playerB.name], observation,
         officialRefs: [boutId + ":winner-order-reviewed"],
-        // Two extractors nominate the same fact, but only a targeted review below can verify it.
+        // Extraction only nominates a fact; a separate targeted review verifies it.
         status: "candidate",
         extractorVersion: EVIDENCE_EXTRACTOR_VERSION,
         ...(confirmation ? { verifierVersion: "cross-model-candidate-v1" } : {}),
@@ -115,6 +115,7 @@ export async function verifyEvidenceCandidate(options: {
   if (models.length === 0) return candidate;
   // Blind pass: independently describe the clip before showing the model the claim.
   const result = await callGemini({
+    purpose: "verify",
     apiKey,
     models,
     video: { youtubeUrl: "https://www.youtube.com/watch?v=" + candidate.videoId, startSec: candidate.startSec, endSec: candidate.endSec, fps: 2 },

@@ -1,6 +1,12 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { normalizeMatchNarrative, narrationInputHash, type NarrationMatchInput } from "../scripts/recap/narration";
+import { queueWriteRequest, finishWriteRequest, readPreparedNarratives, type WriteRequests } from "../scripts/recap/writer-state";
+import { codexUsage, writeWithCodex } from "../scripts/recap/codex-writer";
+import { geminiTokenCounts, recordTokenUsage } from "../scripts/recap/token-usage";
 import { applyPublicationMode, evaluateBoutArticle } from "../scripts/recap/article-quality";
 import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
@@ -120,6 +126,93 @@ const evidenceSet = [
   evidence("video-1", "visual", "ACQUA選手がブランカのローリングを画面端で2BASSA選手に当てる。"),
   evidence("video-2", "visual", "2BASSA選手の体力ゲージが残りわずかになった画面が映る。"),
 ];
+
+test("one full observation nominates evidence; independent clip verification remains a separate requirement", async (t) => {
+  let calls = 0;
+  t.mock.method(globalThis, "fetch", async () => {
+    calls++;
+    return new Response(JSON.stringify({ output_text: JSON.stringify({ gameWinnersSeen: ["A", "A"], topics: [{ topic: "選手Aが画面端でドライブインパクトを当てた。", evidence: "映像", startSec: 10, endSec: 20 }] }) }));
+  });
+  const facts: BoutVideoFacts = { videoId: "VIDEO", startSec: 100, endSec: 200, status: "pending", runs: [], staleRuns: [] };
+  const ctx = { boutId: "bout", divisionLabel: "Division S", sectionTitle: "第1節", matchNumber: 1, statusName: "先鋒戦", bestOf: 3, playerA: { name: "A", chara: "ケン", team: "A" }, playerB: { name: "B", chara: "リュウ", team: "B" }, officialGameWinners: ["A", "A"] as Array<"A" | "B">, boutWinner: "A" as const, scoreA: 2, scoreB: 0 };
+  await advanceBoutAnalysis({ apiKey: "test", models: ["model-one", "model-two"], facts, ctx, fps: 1, budget: { calls: 0, videoSeconds: 0, maxCalls: 24, maxVideoSeconds: 1000 } });
+  assert.equal(calls, 1);
+  assert.equal(facts.status, "complete");
+  assert.equal(articleEvidenceReady(evidenceSet.map((item) => ({ ...item, status: item.kind === "official" ? "verified" : "candidate" }))), false);
+});
+
+test("local writer requests are durable, bounded on quality failures, and recover when verified source facts change", () => {
+  const state: WriteRequests = { schemaVersion: 1, requests: {} };
+  const request = { matchId: "div-s-sec5-m1", sectionId: "div-s-sec5", inputHash: "0123456789abcdef", sourceHash: "source", prompt: "Verified evidence only" };
+  queueWriteRequest(state, request);
+  const timestamp = state.requests[request.matchId].updatedAt;
+  queueWriteRequest(state, request);
+  assert.equal(state.requests[request.matchId].updatedAt, timestamp);
+  for (let retry = 0; retry < 3; retry++) {
+    const current = { ...request, inputHash: String(retry).repeat(16) };
+    queueWriteRequest(state, current);
+    finishWriteRequest(state, current.matchId, current.inputHash, false);
+  }
+  assert.equal(state.requests[request.matchId].stage, "needs_review");
+  queueWriteRequest(state, { ...request, sourceHash: "new independently verified facts" });
+  assert.equal(state.requests[request.matchId].attempts, 0);
+  finishWriteRequest(state, request.matchId, request.inputHash, true);
+  assert.equal(state.requests[request.matchId].stage, "completed");
+  assert.equal(state.requests[request.matchId].prompt, "");
+});
+
+test("provider token accounting preserves real fields and deduplicates resubmitted Codex drafts", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "sfl-token-test-"));
+  const file = path.join(directory, "tokens.json");
+  const previous = process.env.RECAP_TOKEN_USAGE_FILE;
+  process.env.RECAP_TOKEN_USAGE_FILE = file;
+  try {
+    const usage = geminiTokenCounts({ usage: { total_input_tokens: 100, total_output_tokens: 12, total_thought_tokens: 5, total_tokens: 117 } });
+    assert.equal(usage?.inputTokens, 100);
+    assert.equal(geminiTokenCounts({ candidates: [] }), undefined);
+    assert.equal(geminiTokenCounts({ usageMetadata: { promptTokenCount: 7, candidatesTokenCount: 3 } })?.inputTokens, 7);
+    const local = codexUsage('{"type":"turn.completed","usage":{"input_tokens":50,"cached_input_tokens":20,"output_tokens":8}}\n');
+    assert.equal(local?.cachedInputTokens, 20);
+    recordTokenUsage({ provider: "codex", model: "codex-cli", purpose: "narration", usage: local, id: "same-cli-run" });
+    recordTokenUsage({ provider: "codex", model: "codex-cli", purpose: "narration", usage: local, id: "same-cli-run" });
+    const totals = JSON.parse(fs.readFileSync(file, "utf8")).days[usageDay()]["codex:narration:codex-cli"];
+    assert.equal(totals.responses, 1);
+    assert.equal(totals.tokens.inputTokens, 50);
+    assert.equal(totals.observations.totalTokens, undefined, "unreported totals are not invented");
+  } finally {
+    if (previous === undefined) delete process.env.RECAP_TOKEN_USAGE_FILE; else process.env.RECAP_TOKEN_USAGE_FILE = previous;
+    if (fs.existsSync(file)) fs.unlinkSync(file);
+    fs.rmdirSync(directory);
+  }
+});
+
+test("a cached local draft is reused without invoking Codex again", () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "sfl-writer-cache-test-"));
+  const request = { matchId: "div-s-sec5-m1", sectionId: "div-s-sec5", inputHash: "0123456789abcdef", sourceHash: "source", prompt: "test", stage: "queued" as const, attempts: 0, updatedAt: new Date().toISOString() };
+  const directory = path.join(root, request.inputHash);
+  fs.mkdirSync(directory);
+  const result = { matchId: request.matchId, inputHash: request.inputHash, runId: "cached-run", model: "codex-cli", generatedAt: request.updatedAt, output: { matchHeadline: "動作確認", matchSummary: "未公開テスト", matchEvidenceIds: [], bouts: [] } };
+  const file = path.join(directory, "result.json");
+  fs.writeFileSync(file, JSON.stringify(result));
+  try {
+    assert.equal(writeWithCodex(request, root)?.runId, "cached-run");
+    assert.equal(fs.existsSync(path.join(root, "local-writer-usage.json")), false);
+    assert.equal(readPreparedNarratives(Buffer.from(JSON.stringify([result])).toString("base64"))[0].runId, "cached-run");
+  } finally { fs.unlinkSync(file); fs.rmdirSync(directory); fs.rmdirSync(root); }
+});
+
+test("Codex drafts pass the same official-match and evidence validation as Gemini drafts", () => {
+  const input: NarrationMatchInput = { matchId: "div-s-sec5-m1", awayTeam: "A", homeTeam: "B", awayPoint: 30, homePoint: 10, winnerTeam: "A", isTiebreaker: false, bouts: [{
+    ctx: { boutId: "bout-1", divisionLabel: "Division S", sectionTitle: "第5節", matchNumber: 1, statusName: "先鋒戦", bestOf: 3, playerA: { name: "ACQUA", chara: "ブランカ", team: "A" }, playerB: { name: "2BASSA", chara: "ケン", team: "B" }, officialGameWinners: ["A", "B", "A"], boutWinner: "A", scoreA: 2, scoreB: 1 },
+    games: [{ winner: "A", rounds: ["A", "A"] }, { winner: "B", rounds: ["B", "B"] }, { winner: "A", rounds: ["A", "A"] }], evidence: evidenceSet,
+  }] };
+  const output = { matchHeadline: "確認", matchSummary: "公式記録", matchEvidenceIds: ["official", "FOREIGN"], bouts: [{ boutId: "bout-1", summary: "ACQUA選手が勝利した。", summaryEvidenceIds: ["official", "FOREIGN"], keyPoints: [{ text: "資料にない記述", evidenceIds: ["FOREIGN"] }] }] };
+  const normalized = normalizeMatchNarrative(output, input, "codex-cli");
+  assert.equal(normalized.inputHash, narrationInputHash(input));
+  assert.deepEqual(normalized.bouts[0].summaryEvidenceIds, ["official"]);
+  assert.deepEqual(normalized.bouts[0].keyPoints, []);
+  assert.throws(() => normalizeMatchNarrative({ ...output, bouts: [{ ...output.bouts[0], boutId: "another-bout" }] }, input, "codex-cli"), /bout IDs/);
+});
 
 test("automatic lifecycle waits for video metadata, wakes on fresh chapters, and stops after publication", () => {
   const matches = MatchesDataSchema.parse(JSON.parse(fs.readFileSync(new URL("../src/data/matches.json", import.meta.url), "utf8")));

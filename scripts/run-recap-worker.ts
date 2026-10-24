@@ -28,7 +28,7 @@ const explicitSection = process.argv.find((arg) => arg.startsWith("--section="))
 const next = nextSection();
 const section = explicitSection || next.section;
 const remaining = remainingDailyUsage(loadRecapUsage());
-if (!remaining.calls || !remaining.videoSeconds) {
+if ((!remaining.calls || !remaining.videoSeconds) && !process.env.RECAP_NARRATIVE_CACHE) {
   console.log("[Recap worker] Daily video budget reached; saved progress will resume after the daily reset.");
   process.exit(0);
 }
