@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-24T19:45:09.856Z",
+  "updatedAt": "2026-10-25T16:37:15.341Z",
   "source": "start.gg GraphQL API (player.sets / SF6 premier events)",
   "windowDays": 365,
-  "windowStart": "2025-10-24",
+  "windowStart": "2025-10-25",
   "events": {
     "1412310": {"id":"1412310","slug":"tournament/world-warrior-2025-japan-3-1/event/street-fighter-6","tournamentName":"World Warrior 2025 - Japan 3","eventName":"Street Fighter 6","startDate":"2025-10-25","numEntrants":1470,"isOnline":true,"countryCode":null,"category":"CPT WW"},
     "1412311": {"id":"1412311","slug":"tournament/world-warrior-2025-japan-4-1/event/street-fighter-6","tournamentName":"World Warrior 2025 - Japan 4","eventName":"Street Fighter 6","startDate":"2025-11-29","numEntrants":1254,"isOnline":true,"countryCode":null,"category":"CPT WW"},
@@ -62,7 +62,7 @@
     "1730271": {"id":"1730271","slug":"tournament/tta-5/event/tta-4","tournamentName":"TTA","eventName":"TTA #4","startDate":"2026-10-15","numEntrants":295,"isOnline":true,"countryCode":null,"category":null}
   },
   "players": {
-    "2bassa": {"startggPlayerId":3944042,"gamerTag":"2BASSA","fetchedAt":"2026-10-24T19:44:28.816Z",
+    "2bassa": {"startggPlayerId":3944042,"gamerTag":"2BASSA","fetchedAt":"2026-10-25T16:36:34.482Z",
       "placements": [{"eventId":"1607678","placement":25,"seed":37},{"eventId":"1540814","placement":9,"seed":55},{"eventId":"1607665","placement":65,"seed":39},{"eventId":"1586230","placement":129,"seed":42},{"eventId":"1516510","placement":193,"seed":104},{"eventId":"1412312","placement":33,"seed":55},{"eventId":"1412311","placement":129,"seed":63},{"eventId":"1412310","placement":4,"seed":65}],
       "sets": [
         {"id":"107132296","eventId":"1607678","completedAt":1788069354,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 32","mySeed":37,"oppSeed":22,"oppPlayerId":2237431,"oppTag":"cosa","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -128,7 +128,7 @@
         {"id":"95510477","eventId":"1412310","completedAt":1761449217,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":65,"oppSeed":577,"oppPlayerId":3969807,"oppTag":"いわき","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95510451","eventId":"1412310","completedAt":1761448698,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":65,"oppSeed":1089,"oppPlayerId":3631035,"oppTag":"MSK","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "acqua": {"startggPlayerId":338696,"gamerTag":"ACQUA","fetchedAt":"2026-10-24T19:44:29.689Z",
+    "acqua": {"startggPlayerId":338696,"gamerTag":"ACQUA","fetchedAt":"2026-10-25T16:36:35.234Z",
       "placements": [{"eventId":"1607680","placement":97,"seed":12},{"eventId":"1607678","placement":9,"seed":12},{"eventId":"1607665","placement":65,"seed":7},{"eventId":"1516198","placement":33,"seed":85},{"eventId":"1528962","placement":65,"seed":73},{"eventId":"1586230","placement":25,"seed":13},{"eventId":"1516510","placement":513,"seed":80},{"eventId":"1412312","placement":129,"seed":2},{"eventId":"1412311","placement":17,"seed":7},{"eventId":"1415183","placement":33,"seed":46},{"eventId":"1412310","placement":9,"seed":9}],
       "sets": [
         {"id":"109099627","eventId":"1607680","completedAt":1792300407,"round":-11,"roundText":"Losers Round 8","phaseName":"Bracket Play","mySeed":12,"oppSeed":76,"oppPlayerId":1562482,"oppTag":"Shimiso","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -215,7 +215,7 @@
         {"id":"95510088","eventId":"1412310","completedAt":1761449558,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":9,"oppSeed":521,"oppPlayerId":4953013,"oppTag":"つかれっちマン","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95510056","eventId":"1412310","completedAt":1761449099,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":9,"oppSeed":1016,"oppPlayerId":4292764,"oppTag":"Gordon","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "adelie": {"startggPlayerId":3577649,"gamerTag":"あでりい","fetchedAt":"2026-10-24T19:44:30.436Z",
+    "adelie": {"startggPlayerId":3577649,"gamerTag":"あでりい","fetchedAt":"2026-10-25T16:36:36.092Z",
       "placements": [{"eventId":"1607680","placement":2,"seed":32},{"eventId":"1607678","placement":193,"seed":64},{"eventId":"1607665","placement":9,"seed":56},{"eventId":"1528962","placement":33,"seed":61},{"eventId":"1600986","placement":49,"seed":28},{"eventId":"1586230","placement":9,"seed":74},{"eventId":"1516510","placement":193,"seed":77},{"eventId":"1412310","placement":33,"seed":60}],
       "sets": [
         {"id":"109107344","eventId":"1607680","completedAt":1792324765,"round":3,"roundText":"Grand Final Reset","phaseName":"Top 8","mySeed":32,"oppSeed":66,"oppPlayerId":3933407,"oppTag":"zabutonn","myScore":1,"oppScore":3,"won":false,"games":[]},
@@ -295,7 +295,7 @@
         {"id":"95509709","eventId":"1412310","completedAt":1761449227,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":60,"oppSeed":453,"oppPlayerId":4316929,"oppTag":"Chagama","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95509681","eventId":"1412310","completedAt":1761448866,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":60,"oppSeed":965,"oppPlayerId":3561123,"oppTag":"打撲","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "akira": {"startggPlayerId":557482,"gamerTag":"Akira","fetchedAt":"2026-10-24T19:44:31.527Z",
+    "akira": {"startggPlayerId":557482,"gamerTag":"Akira","fetchedAt":"2026-10-25T16:36:36.923Z",
       "placements": [{"eventId":"1607680","placement":257,"seed":22},{"eventId":"1607678","placement":385,"seed":29},{"eventId":"1517778","placement":33,"seed":62},{"eventId":"1607665","placement":13,"seed":19},{"eventId":"1516198","placement":65,"seed":86},{"eventId":"1586230","placement":513,"seed":17},{"eventId":"1516510","placement":257,"seed":55},{"eventId":"1412312","placement":129,"seed":37},{"eventId":"1412311","placement":193,"seed":36},{"eventId":"1415183","placement":13,"seed":13},{"eventId":"1412310","placement":513,"seed":31}],
       "sets": [
         {"id":"109097698","eventId":"1607680","completedAt":1792297192,"round":-8,"roundText":"Losers Round 5","phaseName":"Bracket Play","mySeed":22,"oppSeed":854,"oppPlayerId":3849944,"oppTag":"くら","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -363,7 +363,7 @@
         {"id":"95511451","eventId":"1412310","completedAt":1761449380,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":31,"oppSeed":482,"oppPlayerId":1403556,"oppTag":"どすこい太郎","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
         {"id":"95511427","eventId":"1412310","completedAt":1761448731,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":31,"oppSeed":994,"oppPlayerId":4885900,"oppTag":"Ci+LUS","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "bonchan": {"startggPlayerId":232824,"gamerTag":"Bonchan","fetchedAt":"2026-10-24T19:44:32.271Z",
+    "bonchan": {"startggPlayerId":232824,"gamerTag":"Bonchan","fetchedAt":"2026-10-25T16:36:37.980Z",
       "placements": [{"eventId":"1607680","placement":33,"seed":11},{"eventId":"1607678","placement":49,"seed":10},{"eventId":"1607665","placement":13,"seed":12},{"eventId":"1516198","placement":97,"seed":37},{"eventId":"1528962","placement":17,"seed":52},{"eventId":"1600986","placement":25,"seed":30},{"eventId":"1586230","placement":13,"seed":9},{"eventId":"1516510","placement":49,"seed":61},{"eventId":"1554815","placement":33,"seed":16},{"eventId":"1412312","placement":4,"seed":7},{"eventId":"1412311","placement":25,"seed":3},{"eventId":"1412310","placement":129,"seed":4}],
       "sets": [
         {"id":"109100227","eventId":"1607680","completedAt":1792301820,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 64","mySeed":11,"oppSeed":10,"oppPlayerId":395486,"oppTag":"moke","myScore":1,"oppScore":2,"won":false,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -461,7 +461,7 @@
         {"id":"95514695","eventId":"1412310","completedAt":1761450339,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":4,"oppSeed":509,"oppPlayerId":4949367,"oppTag":"干し柿","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
         {"id":"95514663","eventId":"1412310","completedAt":1761449794,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":4,"oppSeed":1028,"oppPlayerId":4820986,"oppTag":"れい","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "cosa": {"startggPlayerId":2237431,"gamerTag":"cosa","fetchedAt":"2026-10-24T19:44:32.974Z",
+    "cosa": {"startggPlayerId":2237431,"gamerTag":"cosa","fetchedAt":"2026-10-25T16:36:38.697Z",
       "placements": [{"eventId":"1602225","placement":13,"seed":9},{"eventId":"1609152","placement":65,"seed":2},{"eventId":"1607678","placement":3,"seed":22},{"eventId":"1517778","placement":13,"seed":12},{"eventId":"1540814","placement":2,"seed":15},{"eventId":"1607665","placement":7,"seed":25},{"eventId":"1516198","placement":65,"seed":31},{"eventId":"1537500","placement":49,"seed":3},{"eventId":"1528962","placement":9,"seed":43},{"eventId":"1600986","placement":33,"seed":14},{"eventId":"1586230","placement":13,"seed":16},{"eventId":"1516510","placement":9,"seed":66},{"eventId":"1412312","placement":129,"seed":34},{"eventId":"1412311","placement":65,"seed":28},{"eventId":"1415183","placement":17,"seed":48},{"eventId":"1412310","placement":33,"seed":20}],
       "sets": [
         {"id":"108751136","eventId":"1602225","completedAt":1791655983,"round":-5,"roundText":"Losers Round 2","phaseName":"TOP 24","mySeed":9,"oppSeed":29,"oppPlayerId":356363,"oppTag":"gachikun","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":"gouki_akuma","oppChar":"rashid"},{"won":false,"myChar":"gouki_akuma","oppChar":"rashid"}]},
@@ -606,7 +606,7 @@
         {"id":"95510862","eventId":"1412310","completedAt":1761450083,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":20,"oppSeed":493,"oppPlayerId":1924636,"oppTag":"みなぎ　","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95510838","eventId":"1412310","completedAt":1761449671,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":20,"oppSeed":1005,"oppPlayerId":4327398,"oppTag":"1/144 Takeuchi","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "daigo": {"startggPlayerId":135910,"gamerTag":"DAIGO","fetchedAt":"2026-10-24T19:44:33.837Z",
+    "daigo": {"startggPlayerId":135910,"gamerTag":"DAIGO","fetchedAt":"2026-10-25T16:36:39.501Z",
       "placements": [{"eventId":"1609152","placement":25,"seed":60},{"eventId":"1607678","placement":193,"seed":9},{"eventId":"1516198","placement":33,"seed":52},{"eventId":"1412312","placement":257,"seed":1},{"eventId":"1412311","placement":257,"seed":1},{"eventId":"1412310","placement":129,"seed":1}],
       "sets": [
         {"id":"107708331","eventId":"1609152","completedAt":1789308880,"round":-7,"roundText":"Losers Round 4","phaseName":"TOP 96","mySeed":60,"oppSeed":5,"oppPlayerId":4143648,"oppTag":"Blaz","myScore":1,"oppScore":2,"won":false,"games":[]},
@@ -648,7 +648,7 @@
         {"id":"95510711","eventId":"1412310","completedAt":1761451311,"round":-5,"roundText":"Losers Round 2","phaseName":"Bracket Play","mySeed":1,"oppSeed":512,"oppPlayerId":3231610,"oppTag":"wachabi","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95510439","eventId":"1412310","completedAt":1761448800,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":1,"oppSeed":1024,"oppPlayerId":4665584,"oppTag":"shampoo","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]}
       ]},
-    "dogura": {"startggPlayerId":266493,"gamerTag":"Dogura","fetchedAt":"2026-10-24T19:44:34.639Z",
+    "dogura": {"startggPlayerId":266493,"gamerTag":"Dogura","fetchedAt":"2026-10-25T16:36:40.410Z",
       "placements": [{"eventId":"1607680","placement":129,"seed":8},{"eventId":"1602225","placement":7,"seed":20},{"eventId":"1609152","placement":65,"seed":14},{"eventId":"1517778","placement":25,"seed":27},{"eventId":"1540814","placement":17,"seed":10},{"eventId":"1607665","placement":33,"seed":3},{"eventId":"1516198","placement":5,"seed":63},{"eventId":"1586230","placement":9,"seed":7},{"eventId":"1516510","placement":193,"seed":44},{"eventId":"1412312","placement":65,"seed":16},{"eventId":"1412311","placement":5,"seed":14},{"eventId":"1412310","placement":17,"seed":16}],
       "sets": [
         {"id":"109098856","eventId":"1607680","completedAt":1792299431,"round":-10,"roundText":"Losers Round 7","phaseName":"Bracket Play","mySeed":8,"oppSeed":25,"oppPlayerId":382483,"oppTag":"Kazunoko","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -754,7 +754,7 @@
         {"id":"95515891","eventId":"1412310","completedAt":1761449768,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":16,"oppSeed":528,"oppPlayerId":3577486,"oppTag":"satoeji","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95515859","eventId":"1412310","completedAt":1761449143,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":16,"oppSeed":1009,"oppPlayerId":1292047,"oppTag":"八神玲名","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "fujimura": {"startggPlayerId":616064,"gamerTag":"Fujimura","fetchedAt":"2026-10-24T19:44:35.687Z",
+    "fujimura": {"startggPlayerId":616064,"gamerTag":"Fujimura","fetchedAt":"2026-10-25T16:36:41.156Z",
       "placements": [{"eventId":"1607680","placement":4,"seed":7},{"eventId":"1607678","placement":2,"seed":6},{"eventId":"1607665","placement":193,"seed":9},{"eventId":"1586230","placement":513,"seed":6},{"eventId":"1516510","placement":97,"seed":88},{"eventId":"1412312","placement":49,"seed":15},{"eventId":"1412311","placement":17,"seed":13},{"eventId":"1412310","placement":49,"seed":15}],
       "sets": [
         {"id":"109107357","eventId":"1607680","completedAt":1792321117,"round":-5,"roundText":"Losers Semi-Final","phaseName":"Top 8","mySeed":7,"oppSeed":78,"oppPlayerId":3631257,"oppTag":"Wabiichi","myScore":0,"oppScore":3,"won":false,"games":[]},
@@ -827,7 +827,7 @@
         {"id":"95514312","eventId":"1412310","completedAt":1761449991,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":15,"oppSeed":527,"oppPlayerId":4964803,"oppTag":"fgfg","myScore":2,"oppScore":1,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95514280","eventId":"1412310","completedAt":1761449092,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":15,"oppSeed":1010,"oppPlayerId":2423106,"oppTag":"Yukimaru","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "fuudo": {"startggPlayerId":565873,"gamerTag":"Fuudo","fetchedAt":"2026-10-24T19:44:36.383Z",
+    "fuudo": {"startggPlayerId":565873,"gamerTag":"Fuudo","fetchedAt":"2026-10-25T16:36:41.938Z",
       "placements": [{"eventId":"1607680","placement":25,"seed":9},{"eventId":"1602225","placement":33,"seed":25},{"eventId":"1607678","placement":5,"seed":7},{"eventId":"1607665","placement":129,"seed":8},{"eventId":"1516198","placement":49,"seed":11},{"eventId":"1528962","placement":5,"seed":6},{"eventId":"1516510","placement":65,"seed":4}],
       "sets": [
         {"id":"109100512","eventId":"1607680","completedAt":1792302668,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 32","mySeed":9,"oppSeed":956,"oppPlayerId":233884,"oppTag":"Mira","myScore":1,"oppScore":2,"won":false,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -889,7 +889,7 @@
         {"id":"102335858","eventId":"1516510","completedAt":1777637200,"round":3,"roundText":"Winners Semi-Final","phaseName":"Round1","mySeed":4,"oppSeed":2045,"oppPlayerId":5187875,"oppTag":"godharuki","myScore":2,"oppScore":0,"won":true,"games":[]},
         {"id":"102335854","eventId":"1516510","completedAt":1777637158,"round":2,"roundText":"Winners Quarter-Final","phaseName":"Round1","mySeed":4,"oppSeed":4093,"oppPlayerId":5243750,"oppTag":"やまゆー","myScore":2,"oppScore":0,"won":true,"games":[]}
       ]},
-    "gachikun": {"startggPlayerId":356363,"gamerTag":"gachikun","fetchedAt":"2026-10-24T19:44:37.247Z",
+    "gachikun": {"startggPlayerId":356363,"gamerTag":"gachikun","fetchedAt":"2026-10-25T16:36:42.773Z",
       "placements": [{"eventId":"1607680","placement":65,"seed":1},{"eventId":"1602225","placement":9,"seed":29},{"eventId":"1609152","placement":65,"seed":7},{"eventId":"1607678","placement":129,"seed":1},{"eventId":"1517778","placement":13,"seed":13},{"eventId":"1540814","placement":5,"seed":22},{"eventId":"1607665","placement":13,"seed":2},{"eventId":"1516198","placement":13,"seed":16},{"eventId":"1528962","placement":25,"seed":7},{"eventId":"1586230","placement":513,"seed":2},{"eventId":"1516510","placement":33,"seed":15},{"eventId":"1554815","placement":1,"seed":7},{"eventId":"1412312","placement":33,"seed":9},{"eventId":"1412311","placement":25,"seed":6},{"eventId":"1412310","placement":65,"seed":7}],
       "sets": [
         {"id":"109098480","eventId":"1607680","completedAt":1792300139,"round":-12,"roundText":"Losers Quarter-Final","phaseName":"Bracket Play","mySeed":1,"oppSeed":65,"oppPlayerId":529158,"oppTag":"NISHIKIN","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -1018,7 +1018,7 @@
         {"id":"95513523","eventId":"1412310","completedAt":1761450112,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":7,"oppSeed":519,"oppPlayerId":4176477,"oppTag":"pannel","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513491","eventId":"1412310","completedAt":1761449675,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":7,"oppSeed":1031,"oppPlayerId":3265645,"oppTag":"kusamoto","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "hibiki": {"startggPlayerId":1228359,"gamerTag":"Hibiki","fetchedAt":"2026-10-24T19:44:38.137Z",
+    "hibiki": {"startggPlayerId":1228359,"gamerTag":"Hibiki","fetchedAt":"2026-10-25T16:36:43.831Z",
       "placements": [{"eventId":"1607680","placement":97,"seed":17},{"eventId":"1607678","placement":65,"seed":43},{"eventId":"1607665","placement":65,"seed":37},{"eventId":"1516198","placement":49,"seed":47},{"eventId":"1528962","placement":33,"seed":48},{"eventId":"1586230","placement":9,"seed":26},{"eventId":"1516510","placement":25,"seed":37},{"eventId":"1412312","placement":257,"seed":21},{"eventId":"1412311","placement":33,"seed":16},{"eventId":"1415183","placement":33,"seed":22},{"eventId":"1412310","placement":33,"seed":18}],
       "sets": [
         {"id":"109095797","eventId":"1607680","completedAt":1792301635,"round":-11,"roundText":"Losers Round 8","phaseName":"Bracket Play","mySeed":17,"oppSeed":368,"oppPlayerId":3603732,"oppTag":"ashumaru","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -1102,7 +1102,7 @@
         {"id":"95514320","eventId":"1412310","completedAt":1761449401,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":18,"oppSeed":530,"oppPlayerId":4997137,"oppTag":"今井翔太","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95514296","eventId":"1412310","completedAt":1761448723,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":18,"oppSeed":1042,"oppPlayerId":4853988,"oppTag":"りくすてる","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "higuchi": {"startggPlayerId":632437,"gamerTag":"Higuchi","fetchedAt":"2026-10-24T19:44:38.992Z",
+    "higuchi": {"startggPlayerId":632437,"gamerTag":"Higuchi","fetchedAt":"2026-10-25T16:36:44.684Z",
       "placements": [{"eventId":"1607680","placement":5,"seed":21},{"eventId":"1609152","placement":2,"seed":3},{"eventId":"1607678","placement":25,"seed":24},{"eventId":"1517778","placement":49,"seed":3},{"eventId":"1540814","placement":13,"seed":1},{"eventId":"1607665","placement":7,"seed":26},{"eventId":"1516198","placement":65,"seed":6},{"eventId":"1537500","placement":5,"seed":15},{"eventId":"1528962","placement":33,"seed":2},{"eventId":"1586230","placement":49,"seed":24},{"eventId":"1516510","placement":3,"seed":5},{"eventId":"1412312","placement":1,"seed":25},{"eventId":"1412311","placement":7,"seed":34},{"eventId":"1412310","placement":25,"seed":26}],
       "sets": [
         {"id":"109107356","eventId":"1607680","completedAt":1792320101,"round":-4,"roundText":"Losers Quarter-Final","phaseName":"Top 8","mySeed":21,"oppSeed":7,"oppPlayerId":616064,"oppTag":"Fujimura","myScore":1,"oppScore":3,"won":false,"games":[]},
@@ -1236,7 +1236,7 @@
         {"id":"95513531","eventId":"1412310","completedAt":1761449307,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":26,"oppSeed":538,"oppPlayerId":4339682,"oppTag":"enigma","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513507","eventId":"1412310","completedAt":1761448689,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":26,"oppSeed":1050,"oppPlayerId":4945120,"oppTag":"コヴヘー","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "hikaru": {"startggPlayerId":1791717,"gamerTag":"Hikaru","fetchedAt":"2026-10-24T19:44:40.063Z",
+    "hikaru": {"startggPlayerId":1791717,"gamerTag":"Hikaru","fetchedAt":"2026-10-25T16:36:45.793Z",
       "placements": [{"eventId":"1607680","placement":13,"seed":15},{"eventId":"1607678","placement":7,"seed":15},{"eventId":"1607665","placement":1,"seed":15},{"eventId":"1516198","placement":65,"seed":64},{"eventId":"1528962","placement":49,"seed":31},{"eventId":"1600986","placement":13,"seed":20},{"eventId":"1586230","placement":2,"seed":33},{"eventId":"1516510","placement":257,"seed":41},{"eventId":"1554815","placement":25,"seed":18},{"eventId":"1412312","placement":9,"seed":33},{"eventId":"1412311","placement":49,"seed":35},{"eventId":"1412310","placement":513,"seed":29}],
       "sets": [
         {"id":"109100661","eventId":"1607680","completedAt":1792305215,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 16","mySeed":15,"oppSeed":23,"oppPlayerId":405023,"oppTag":"Machabo","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -1337,7 +1337,7 @@
         {"id":"95514703","eventId":"1412310","completedAt":1761450172,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":29,"oppSeed":541,"oppPlayerId":3632380,"oppTag":"Pankratops","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
         {"id":"95514679","eventId":"1412310","completedAt":1761449418,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":29,"oppSeed":1053,"oppPlayerId":5017520,"oppTag":"tlow1301","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "hinao": {"startggPlayerId":5091007,"gamerTag":"ひなお/Hinao","fetchedAt":"2026-10-24T19:44:40.614Z",
+    "hinao": {"startggPlayerId":5091007,"gamerTag":"ひなお/Hinao","fetchedAt":"2026-10-25T16:36:46.327Z",
       "placements": [{"eventId":"1607680","placement":257,"seed":19},{"eventId":"1602225","placement":5,"seed":2},{"eventId":"1607678","placement":65,"seed":67},{"eventId":"1540814","placement":1,"seed":4},{"eventId":"1607665","placement":17,"seed":53},{"eventId":"1516198","placement":33,"seed":9},{"eventId":"1528962","placement":2,"seed":25},{"eventId":"1586230","placement":7,"seed":75},{"eventId":"1516510","placement":33,"seed":26}],
       "sets": [
         {"id":"109095017","eventId":"1607680","completedAt":1792298630,"round":-8,"roundText":"Losers Round 5","phaseName":"Bracket Play","mySeed":19,"oppSeed":1198,"oppPlayerId":4945621,"oppTag":"PAPI","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -1433,7 +1433,7 @@
         {"id":"102334301","eventId":"1516510","completedAt":1777634890,"round":3,"roundText":"Winners Semi-Final","phaseName":"Round1","mySeed":26,"oppSeed":2023,"oppPlayerId":3563581,"oppTag":"michitaka","myScore":2,"oppScore":0,"won":true,"games":[]},
         {"id":"102334297","eventId":"1516510","completedAt":1777634860,"round":2,"roundText":"Winners Quarter-Final","phaseName":"Round1","mySeed":26,"oppSeed":4071,"oppPlayerId":3772836,"oppTag":"Null","myScore":2,"oppScore":0,"won":true,"games":[]}
       ]},
-    "itazan": {"startggPlayerId":314715,"gamerTag":"Itabashi Zangief","fetchedAt":"2026-10-24T19:44:41.891Z",
+    "itazan": {"startggPlayerId":314715,"gamerTag":"Itabashi Zangief","fetchedAt":"2026-10-25T16:36:47.356Z",
       "placements": [{"eventId":"1607678","placement":257,"seed":8},{"eventId":"1540814","placement":33,"seed":20},{"eventId":"1607665","placement":65,"seed":13},{"eventId":"1516198","placement":97,"seed":54},{"eventId":"1537500","placement":13,"seed":29},{"eventId":"1528962","placement":49,"seed":13},{"eventId":"1586230","placement":129,"seed":8},{"eventId":"1516510","placement":49,"seed":17},{"eventId":"1412312","placement":65,"seed":3},{"eventId":"1412311","placement":17,"seed":15},{"eventId":"1415183","placement":97,"seed":5},{"eventId":"1412310","placement":385,"seed":10}],
       "sets": [
         {"id":"107127990","eventId":"1607678","completedAt":1788064646,"round":-8,"roundText":"Losers Round 6","phaseName":"Bracket Play","mySeed":8,"oppSeed":1209,"oppPlayerId":5372141,"oppTag":"rami","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -1513,7 +1513,7 @@
         {"id":"95512185","eventId":"1412310","completedAt":1761449439,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":10,"oppSeed":522,"oppPlayerId":4153041,"oppTag":"やっちょ","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
         {"id":"95512125","eventId":"1412310","completedAt":1761449023,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":10,"oppSeed":1015,"oppPlayerId":4129662,"oppTag":"amane_souma","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "johnny": {"startggPlayerId":616069,"gamerTag":"Johnny","fetchedAt":"2026-10-24T19:44:42.869Z",
+    "johnny": {"startggPlayerId":616069,"gamerTag":"Johnny","fetchedAt":"2026-10-25T16:36:48.247Z",
       "placements": [{"eventId":"1607680","placement":33,"seed":31},{"eventId":"1607678","placement":257,"seed":34},{"eventId":"1540814","placement":49,"seed":67},{"eventId":"1607665","placement":49,"seed":35},{"eventId":"1586230","placement":97,"seed":41},{"eventId":"1516510","placement":1025,"seed":78},{"eventId":"1412312","placement":129,"seed":41},{"eventId":"1412311","placement":129,"seed":40},{"eventId":"1412310","placement":193,"seed":35}],
       "sets": [
         {"id":"109100230","eventId":"1607680","completedAt":1792302480,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 64","mySeed":31,"oppSeed":61,"oppPlayerId":4625088,"oppTag":"eguto","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -1572,7 +1572,7 @@
         {"id":"95513105","eventId":"1412310","completedAt":1761449800,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":35,"oppSeed":478,"oppPlayerId":5027487,"oppTag":"カレイの縁側","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513085","eventId":"1412310","completedAt":1761449213,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":35,"oppSeed":990,"oppPlayerId":768344,"oppTag":"shouma","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "jr": {"startggPlayerId":2243649,"gamerTag":"Jr.","fetchedAt":"2026-10-24T19:44:43.439Z",
+    "jr": {"startggPlayerId":2243649,"gamerTag":"Jr.","fetchedAt":"2026-10-25T16:36:48.923Z",
       "placements": [{"eventId":"1607680","placement":33,"seed":16},{"eventId":"1602225","placement":33,"seed":19},{"eventId":"1609152","placement":33,"seed":4},{"eventId":"1607678","placement":7,"seed":16},{"eventId":"1517778","placement":17,"seed":24},{"eventId":"1540814","placement":17,"seed":6},{"eventId":"1607665","placement":2,"seed":38},{"eventId":"1516198","placement":25,"seed":10},{"eventId":"1528962","placement":3,"seed":35},{"eventId":"1600986","placement":3,"seed":34},{"eventId":"1586230","placement":49,"seed":23},{"eventId":"1516510","placement":49,"seed":54},{"eventId":"1412312","placement":5,"seed":62},{"eventId":"1412311","placement":97,"seed":62},{"eventId":"1412310","placement":25,"seed":63}],
       "sets": [
         {"id":"109100237","eventId":"1607680","completedAt":1792301970,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 64","mySeed":16,"oppSeed":878,"oppPlayerId":3770897,"oppTag":"Shark","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -1711,7 +1711,7 @@
         {"id":"95511447","eventId":"1412310","completedAt":1761449162,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":63,"oppSeed":575,"oppPlayerId":556373,"oppTag":"Garu","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95511419","eventId":"1412310","completedAt":1761448612,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":63,"oppSeed":962,"oppPlayerId":4945621,"oppTag":"PAPI","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "kawano": {"startggPlayerId":1154814,"gamerTag":"Kawano","fetchedAt":"2026-10-24T19:44:44.328Z",
+    "kawano": {"startggPlayerId":1154814,"gamerTag":"Kawano","fetchedAt":"2026-10-25T16:36:49.884Z",
       "placements": [{"eventId":"1607680","placement":13,"seed":29},{"eventId":"1609152","placement":33,"seed":19},{"eventId":"1607678","placement":1,"seed":25},{"eventId":"1517778","placement":9,"seed":36},{"eventId":"1540814","placement":9,"seed":28},{"eventId":"1607665","placement":4,"seed":30},{"eventId":"1516198","placement":25,"seed":43},{"eventId":"1528962","placement":25,"seed":32},{"eventId":"1586230","placement":129,"seed":36},{"eventId":"1516510","placement":49,"seed":22},{"eventId":"1412311","placement":2,"seed":23},{"eventId":"1415183","placement":65,"seed":30},{"eventId":"1412310","placement":513,"seed":23}],
       "sets": [
         {"id":"109100660","eventId":"1607680","completedAt":1792304530,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 16","mySeed":29,"oppSeed":61,"oppPlayerId":4625088,"oppTag":"eguto","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -1826,7 +1826,7 @@
         {"id":"95512417","eventId":"1412310","completedAt":1761449107,"round":-4,"roundText":"Losers Round 1","phaseName":"Bracket Play","mySeed":23,"oppSeed":695,"oppPlayerId":3754394,"oppTag":"かしけん/KS_Ken1","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95512154","eventId":"1412310","completedAt":1761448773,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":23,"oppSeed":1047,"oppPlayerId":3954698,"oppTag":"itagaki","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]}
       ]},
-    "kazunoko": {"startggPlayerId":382483,"gamerTag":"Kazunoko","fetchedAt":"2026-10-24T19:44:45.150Z",
+    "kazunoko": {"startggPlayerId":382483,"gamerTag":"Kazunoko","fetchedAt":"2026-10-25T16:36:50.835Z",
       "placements": [{"eventId":"1607680","placement":7,"seed":25},{"eventId":"1607678","placement":129,"seed":18},{"eventId":"1607665","placement":33,"seed":28},{"eventId":"1586230","placement":65,"seed":34},{"eventId":"1516510","placement":25,"seed":96},{"eventId":"1412312","placement":7,"seed":44},{"eventId":"1412311","placement":13,"seed":38},{"eventId":"1412310","placement":769,"seed":34}],
       "sets": [
         {"id":"109107354","eventId":"1607680","completedAt":1792317775,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 8","mySeed":25,"oppSeed":7,"oppPlayerId":616064,"oppTag":"Fujimura","myScore":1,"oppScore":3,"won":false,"games":[]},
@@ -1902,7 +1902,7 @@
         {"id":"95511660","eventId":"1412310","completedAt":1761450046,"round":-4,"roundText":"Losers Round 1","phaseName":"Bracket Play","mySeed":34,"oppSeed":642,"oppPlayerId":3567470,"oppTag":"Yuma","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95511435","eventId":"1412310","completedAt":1761449464,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":34,"oppSeed":991,"oppPlayerId":4447013,"oppTag":"小野寺","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]}
       ]},
-    "keib": {"startggPlayerId":633048,"gamerTag":"KEI.B","fetchedAt":"2026-10-24T19:44:46.279Z",
+    "keib": {"startggPlayerId":633048,"gamerTag":"KEI.B","fetchedAt":"2026-10-25T16:36:51.435Z",
       "placements": [{"eventId":"1607680","placement":7,"seed":13},{"eventId":"1607678","placement":65,"seed":13},{"eventId":"1540814","placement":25,"seed":25},{"eventId":"1607665","placement":769,"seed":1},{"eventId":"1516198","placement":49,"seed":80},{"eventId":"1528962","placement":17,"seed":70},{"eventId":"1586230","placement":193,"seed":14},{"eventId":"1516510","placement":129,"seed":68},{"eventId":"1412312","placement":65,"seed":13},{"eventId":"1412311","placement":513,"seed":10},{"eventId":"1415183","placement":25,"seed":52},{"eventId":"1412310","placement":129,"seed":12}],
       "sets": [
         {"id":"109107353","eventId":"1607680","completedAt":1792317055,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 8","mySeed":13,"oppSeed":960,"oppPlayerId":4406500,"oppTag":"みすとめーる","myScore":2,"oppScore":3,"won":false,"games":[]},
@@ -1987,7 +1987,7 @@
         {"id":"95515078","eventId":"1412310","completedAt":1761449317,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":12,"oppSeed":524,"oppPlayerId":560560,"oppTag":"Persia","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95515046","eventId":"1412310","completedAt":1761449013,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":12,"oppSeed":1036,"oppPlayerId":4345113,"oppTag":"Rapis","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "kincho": {"startggPlayerId":2615047,"gamerTag":"kincho","fetchedAt":"2026-10-24T19:44:46.989Z",
+    "kincho": {"startggPlayerId":2615047,"gamerTag":"kincho","fetchedAt":"2026-10-25T16:36:52.402Z",
       "placements": [{"eventId":"1607680","placement":65,"seed":18},{"eventId":"1609152","placement":33,"seed":44},{"eventId":"1607678","placement":65,"seed":23},{"eventId":"1540814","placement":9,"seed":38},{"eventId":"1607665","placement":25,"seed":23},{"eventId":"1516198","placement":49,"seed":23},{"eventId":"1528962","placement":49,"seed":10},{"eventId":"1600986","placement":9,"seed":5},{"eventId":"1586230","placement":1,"seed":63},{"eventId":"1516510","placement":257,"seed":11},{"eventId":"1412312","placement":17,"seed":35},{"eventId":"1412311","placement":3,"seed":54},{"eventId":"1415183","placement":49,"seed":19},{"eventId":"1412310","placement":5,"seed":55}],
       "sets": [
         {"id":"109096564","eventId":"1607680","completedAt":1792300736,"round":-12,"roundText":"Losers Quarter-Final","phaseName":"Bracket Play","mySeed":18,"oppSeed":370,"oppPlayerId":4405204,"oppTag":"双子兄","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2102,7 +2102,7 @@
         {"id":"95512191","eventId":"1412310","completedAt":1761448960,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":55,"oppSeed":567,"oppPlayerId":629749,"oppTag":"johnnydayon","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95512139","eventId":"1412310","completedAt":1761448373,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":55,"oppSeed":970,"oppPlayerId":4999040,"oppTag":"Zen","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "kobayan": {"startggPlayerId":1231457,"gamerTag":"kobayan","fetchedAt":"2026-10-24T19:44:47.839Z",
+    "kobayan": {"startggPlayerId":1231457,"gamerTag":"kobayan","fetchedAt":"2026-10-25T16:36:53.276Z",
       "placements": [{"eventId":"1602225","placement":4,"seed":4},{"eventId":"1609152","placement":5,"seed":6},{"eventId":"1607678","placement":4,"seed":20},{"eventId":"1517778","placement":9,"seed":8},{"eventId":"1540814","placement":17,"seed":5},{"eventId":"1607665","placement":49,"seed":31},{"eventId":"1516198","placement":17,"seed":5},{"eventId":"1537500","placement":9,"seed":2},{"eventId":"1528962","placement":4,"seed":9},{"eventId":"1600986","placement":1,"seed":7},{"eventId":"1586230","placement":49,"seed":19},{"eventId":"1516510","placement":17,"seed":14},{"eventId":"1554815","placement":4,"seed":5},{"eventId":"1412312","placement":5,"seed":28},{"eventId":"1412311","placement":193,"seed":25},{"eventId":"1415183","placement":25,"seed":1},{"eventId":"1412310","placement":25,"seed":22}],
       "sets": [
         {"id":"108819753","eventId":"1602225","completedAt":1791746576,"round":-5,"roundText":"Losers Semi-Final","phaseName":"TOP 8","mySeed":4,"oppSeed":49,"oppPlayerId":404179,"oppTag":"Tachikawa","myScore":2,"oppScore":3,"won":false,"games":[{"won":false,"myChar":"zangief","oppChar":"cviper"},{"won":false,"myChar":"zangief","oppChar":"cviper"},{"won":true,"myChar":"zangief","oppChar":"cviper"},{"won":true,"myChar":"zangief","oppChar":"cviper"},{"won":false,"myChar":"zangief","oppChar":"cviper"}]},
@@ -2263,7 +2263,7 @@
         {"id":"95513937","eventId":"1412310","completedAt":1761450131,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":22,"oppSeed":534,"oppPlayerId":1575951,"oppTag":"カワギシ","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513913","eventId":"1412310","completedAt":1761449803,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":22,"oppSeed":1046,"oppPlayerId":4992960,"oppTag":"Minase","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "machabo": {"startggPlayerId":405023,"gamerTag":"Machabo","fetchedAt":"2026-10-24T19:44:48.615Z",
+    "machabo": {"startggPlayerId":405023,"gamerTag":"Machabo","fetchedAt":"2026-10-25T16:36:54.182Z",
       "placements": [{"eventId":"1607680","placement":9,"seed":23},{"eventId":"1607678","placement":97,"seed":21},{"eventId":"1607665","placement":97,"seed":24},{"eventId":"1516198","placement":49,"seed":72},{"eventId":"1586230","placement":65,"seed":25},{"eventId":"1516510","placement":65,"seed":90},{"eventId":"1412312","placement":25,"seed":31},{"eventId":"1412311","placement":33,"seed":29},{"eventId":"1412310","placement":49,"seed":32}],
       "sets": [
         {"id":"109100665","eventId":"1607680","completedAt":1792305742,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 16","mySeed":23,"oppSeed":13,"oppPlayerId":633048,"oppTag":"KEI.B","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2344,7 +2344,7 @@
         {"id":"95510479","eventId":"1412310","completedAt":1761449257,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":32,"oppSeed":481,"oppPlayerId":2783946,"oppTag":"Kazuyasyan","myScore":2,"oppScore":1,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95510455","eventId":"1412310","completedAt":1761448799,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":32,"oppSeed":993,"oppPlayerId":3755691,"oppTag":"kenji1nu","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "mago": {"startggPlayerId":138015,"gamerTag":"Mago","fetchedAt":"2026-10-24T19:44:49.493Z",
+    "mago": {"startggPlayerId":138015,"gamerTag":"Mago","fetchedAt":"2026-10-25T16:36:54.942Z",
       "placements": [{"eventId":"1607680","placement":193,"seed":14},{"eventId":"1609152","placement":25,"seed":56},{"eventId":"1607678","placement":17,"seed":14},{"eventId":"1540814","placement":33,"seed":44},{"eventId":"1607665","placement":97,"seed":4},{"eventId":"1516198","placement":129,"seed":94},{"eventId":"1537500","placement":33,"seed":39},{"eventId":"1528962","placement":129,"seed":65},{"eventId":"1600986","placement":49,"seed":52},{"eventId":"1586230","placement":97,"seed":15},{"eventId":"1516510","placement":513,"seed":84},{"eventId":"1412312","placement":257,"seed":4},{"eventId":"1412310","placement":193,"seed":5}],
       "sets": [
         {"id":"109095024","eventId":"1607680","completedAt":1792298330,"round":-9,"roundText":"Losers Round 6","phaseName":"Bracket Play","mySeed":14,"oppSeed":467,"oppPlayerId":4194450,"oppTag":"tsumugiZ","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2427,7 +2427,7 @@
         {"id":"95509705","eventId":"1412310","completedAt":1761450901,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":5,"oppSeed":517,"oppPlayerId":3847029,"oppTag":"yuNchaN","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95509673","eventId":"1412310","completedAt":1761450573,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":5,"oppSeed":1029,"oppPlayerId":557496,"oppTag":"kamayan","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "mena": {"startggPlayerId":224650,"gamerTag":"MenaRD","fetchedAt":"2026-10-24T19:44:50.408Z",
+    "mena": {"startggPlayerId":224650,"gamerTag":"MenaRD","fetchedAt":"2026-10-25T16:36:55.877Z",
       "placements": [{"eventId":"1516198","placement":1,"seed":1},{"eventId":"1537500","placement":1,"seed":6},{"eventId":"1528962","placement":13,"seed":3},{"eventId":"1516510","placement":65,"seed":2}],
       "sets": [
         {"id":"104791036","eventId":"1516198","completedAt":1782709317,"round":3,"roundText":"Grand Final Reset","phaseName":"Top 8","mySeed":1,"oppSeed":20,"oppPlayerId":3916330,"oppTag":"Shigematsu","myScore":3,"oppScore":0,"won":true,"games":[{"won":true,"myChar":"blanka","oppChar":"blanka"},{"won":true,"myChar":"blanka","oppChar":"blanka"},{"won":true,"myChar":"blanka","oppChar":"blanka"}]},
@@ -2473,7 +2473,7 @@
         {"id":"102320397","eventId":"1516510","completedAt":1777624412,"round":3,"roundText":"Winners Semi-Final","phaseName":"Round1","mySeed":2,"oppSeed":6143,"oppPlayerId":3927383,"oppTag":"gaze","myScore":2,"oppScore":0,"won":true,"games":[]},
         {"id":"102320393","eventId":"1516510","completedAt":1777624409,"round":2,"roundText":"Winners Quarter-Final","phaseName":"Round1","mySeed":2,"oppSeed":4095,"oppPlayerId":5214387,"oppTag":"あざらしのさいき","myScore":2,"oppScore":0,"won":true,"games":[]}
       ]},
-    "mizuha": {"startggPlayerId":415068,"gamerTag":"Mizuha","fetchedAt":"2026-10-24T19:44:51.235Z",
+    "mizuha": {"startggPlayerId":415068,"gamerTag":"Mizuha","fetchedAt":"2026-10-25T16:36:56.697Z",
       "placements": [{"eventId":"1607680","placement":97,"seed":36},{"eventId":"1609152","placement":33,"seed":42},{"eventId":"1607678","placement":513,"seed":32},{"eventId":"1517778","placement":17,"seed":44},{"eventId":"1607665","placement":49,"seed":32},{"eventId":"1516198","placement":129,"seed":88},{"eventId":"1528962","placement":257,"seed":60},{"eventId":"1586230","placement":385,"seed":29},{"eventId":"1516510","placement":25,"seed":70},{"eventId":"1412312","placement":97,"seed":29},{"eventId":"1412311","placement":13,"seed":21},{"eventId":"1415183","placement":97,"seed":55},{"eventId":"1412310","placement":17,"seed":24}],
       "sets": [
         {"id":"109098095","eventId":"1607680","completedAt":1792299642,"round":-11,"roundText":"Losers Round 8","phaseName":"Bracket Play","mySeed":36,"oppSeed":100,"oppPlayerId":4641037,"oppTag":"ファルコンタ","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2565,7 +2565,7 @@
         {"id":"95510096","eventId":"1412310","completedAt":1761449682,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":24,"oppSeed":536,"oppPlayerId":5012740,"oppTag":"take","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95510072","eventId":"1412310","completedAt":1761449201,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":24,"oppSeed":1048,"oppPlayerId":3251449,"oppTag":"空条Q太郎","myScore":2,"oppScore":1,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "mocchi": {"startggPlayerId":567007,"gamerTag":"MOCCHI","fetchedAt":"2026-10-24T19:44:52.077Z",
+    "mocchi": {"startggPlayerId":567007,"gamerTag":"MOCCHI","fetchedAt":"2026-10-25T16:36:57.564Z",
       "placements": [{"eventId":"1607680","placement":65,"seed":48},{"eventId":"1607678","placement":97,"seed":50},{"eventId":"1586230","placement":129,"seed":53},{"eventId":"1516510","placement":385,"seed":106},{"eventId":"1412312","placement":257,"seed":47},{"eventId":"1412311","placement":129,"seed":51},{"eventId":"1412310","placement":49,"seed":52}],
       "sets": [
         {"id":"109095798","eventId":"1607680","completedAt":1792299860,"round":-12,"roundText":"Losers Quarter-Final","phaseName":"Bracket Play","mySeed":48,"oppSeed":913,"oppPlayerId":4914455,"oppTag":"ハイテイ/HAITEI","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2612,7 +2612,7 @@
         {"id":"95510858","eventId":"1412310","completedAt":1761449942,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":52,"oppSeed":461,"oppPlayerId":3758814,"oppTag":"ゲジマユ","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95510830","eventId":"1412310","completedAt":1761449505,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":52,"oppSeed":973,"oppPlayerId":4659664,"oppTag":"Kayui","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "moke": {"startggPlayerId":395486,"gamerTag":"moke","fetchedAt":"2026-10-24T19:44:52.921Z",
+    "moke": {"startggPlayerId":395486,"gamerTag":"moke","fetchedAt":"2026-10-25T16:36:58.510Z",
       "placements": [{"eventId":"1607680","placement":17,"seed":10},{"eventId":"1602225","placement":49,"seed":52},{"eventId":"1609152","placement":97,"seed":64},{"eventId":"1607678","placement":49,"seed":11},{"eventId":"1517778","placement":49,"seed":18},{"eventId":"1540814","placement":17,"seed":36},{"eventId":"1607665","placement":49,"seed":11},{"eventId":"1516198","placement":97,"seed":81},{"eventId":"1537500","placement":33,"seed":13},{"eventId":"1528962","placement":65,"seed":54},{"eventId":"1600986","placement":17,"seed":32},{"eventId":"1586230","placement":65,"seed":10},{"eventId":"1516510","placement":65,"seed":34},{"eventId":"1412312","placement":193,"seed":5},{"eventId":"1412311","placement":65,"seed":4},{"eventId":"1415183","placement":17,"seed":8},{"eventId":"1412310","placement":13,"seed":3}],
       "sets": [
         {"id":"109100522","eventId":"1607680","completedAt":1792304142,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 32","mySeed":10,"oppSeed":29,"oppPlayerId":1154814,"oppTag":"Kawano","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2736,7 +2736,7 @@
         {"id":"95513093","eventId":"1412310","completedAt":1761449202,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":3,"oppSeed":510,"oppPlayerId":3215123,"oppTag":"d0ngur1","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513061","eventId":"1412310","completedAt":1761448708,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":3,"oppSeed":1022,"oppPlayerId":4646629,"oppTag":"ほしがた","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "momochi": {"startggPlayerId":277358,"gamerTag":"Momochi","fetchedAt":"2026-10-24T19:44:53.690Z",
+    "momochi": {"startggPlayerId":277358,"gamerTag":"Momochi","fetchedAt":"2026-10-25T16:36:59.267Z",
       "placements": [{"eventId":"1607680","placement":49,"seed":2},{"eventId":"1602225","placement":25,"seed":33},{"eventId":"1607678","placement":25,"seed":2},{"eventId":"1540814","placement":33,"seed":35},{"eventId":"1607665","placement":25,"seed":10},{"eventId":"1516198","placement":97,"seed":25},{"eventId":"1528962","placement":33,"seed":17},{"eventId":"1586230","placement":49,"seed":1},{"eventId":"1516510","placement":129,"seed":12}],
       "sets": [
         {"id":"109100210","eventId":"1607680","completedAt":1792302356,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 64","mySeed":2,"oppSeed":33,"oppPlayerId":623094,"oppTag":"Otani","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2811,7 +2811,7 @@
         {"id":"102342372","eventId":"1516510","completedAt":1777642881,"round":-4,"roundText":"Losers Round 2","phaseName":"Round1","mySeed":12,"oppSeed":3061,"oppPlayerId":5157620,"oppTag":"イザロス","myScore":2,"oppScore":0,"won":true,"games":[]},
         {"id":"102342340","eventId":"1516510","completedAt":1777642707,"round":2,"roundText":"Winners Quarter-Final","phaseName":"Round1","mySeed":12,"oppSeed":4108,"oppPlayerId":5225998,"oppTag":"たけうち","myScore":0,"oppScore":2,"won":false,"games":[]}
       ]},
-    "nauman": {"startggPlayerId":567852,"gamerTag":"Nauman","fetchedAt":"2026-10-24T19:44:54.704Z",
+    "nauman": {"startggPlayerId":567852,"gamerTag":"Nauman","fetchedAt":"2026-10-25T16:37:00.088Z",
       "placements": [{"eventId":"1607680","placement":129,"seed":42},{"eventId":"1607678","placement":97,"seed":28},{"eventId":"1607665","placement":49,"seed":22},{"eventId":"1516198","placement":33,"seed":84},{"eventId":"1528962","placement":97,"seed":55},{"eventId":"1586230","placement":97,"seed":28},{"eventId":"1516510","placement":25,"seed":93},{"eventId":"1412312","placement":49,"seed":43},{"eventId":"1412311","placement":49,"seed":42},{"eventId":"1415183","placement":13,"seed":62},{"eventId":"1412310","placement":65,"seed":38}],
       "sets": [
         {"id":"109094143","eventId":"1607680","completedAt":1792299260,"round":-10,"roundText":"Losers Round 7","phaseName":"Bracket Play","mySeed":42,"oppSeed":1207,"oppPlayerId":4227231,"oppTag":"ちょろぶー/tyorobuu","myScore":1,"oppScore":2,"won":false,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2894,7 +2894,7 @@
         {"id":"95511838","eventId":"1412310","completedAt":1761450333,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":38,"oppSeed":475,"oppPlayerId":3296726,"oppTag":"masa","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95511818","eventId":"1412310","completedAt":1761448339,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":38,"oppSeed":987,"oppPlayerId":4654813,"oppTag":"んみちゃ","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "otani": {"startggPlayerId":623094,"gamerTag":"Otani","fetchedAt":"2026-10-24T19:44:55.440Z",
+    "otani": {"startggPlayerId":623094,"gamerTag":"Otani","fetchedAt":"2026-10-25T16:37:00.921Z",
       "placements": [{"eventId":"1607680","placement":25,"seed":33},{"eventId":"1607678","placement":97,"seed":27},{"eventId":"1607665","placement":17,"seed":16},{"eventId":"1516198","placement":49,"seed":101},{"eventId":"1586230","placement":17,"seed":40},{"eventId":"1516510","placement":193,"seed":113},{"eventId":"1412312","placement":17,"seed":30},{"eventId":"1412311","placement":9,"seed":33},{"eventId":"1412310","placement":65,"seed":30}],
       "sets": [
         {"id":"109100515","eventId":"1607680","completedAt":1792304277,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 32","mySeed":33,"oppSeed":50,"oppPlayerId":3604118,"oppTag":"えびはら","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -2971,7 +2971,7 @@
         {"id":"95513101","eventId":"1412310","completedAt":1761449398,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":30,"oppSeed":542,"oppPlayerId":4364075,"oppTag":"影屋うるな","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513077","eventId":"1412310","completedAt":1761448960,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":30,"oppSeed":1054,"oppPlayerId":4947113,"oppTag":"白ぽっち","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "pugera": {"startggPlayerId":487424,"gamerTag":"pugera","fetchedAt":"2026-10-24T19:44:56.250Z",
+    "pugera": {"startggPlayerId":487424,"gamerTag":"pugera","fetchedAt":"2026-10-25T16:37:01.734Z",
       "placements": [{"eventId":"1607680","placement":65,"seed":27},{"eventId":"1607678","placement":25,"seed":30},{"eventId":"1517778","placement":49,"seed":37},{"eventId":"1540814","placement":33,"seed":23},{"eventId":"1607665","placement":25,"seed":20},{"eventId":"1516198","placement":13,"seed":95},{"eventId":"1537500","placement":33,"seed":22},{"eventId":"1528962","placement":97,"seed":37},{"eventId":"1600986","placement":49,"seed":23},{"eventId":"1586230","placement":65,"seed":43},{"eventId":"1516510","placement":33,"seed":48},{"eventId":"1412312","placement":257,"seed":27},{"eventId":"1412311","placement":49,"seed":20},{"eventId":"1415183","placement":97,"seed":26},{"eventId":"1412310","placement":385,"seed":19}],
       "sets": [
         {"id":"109095415","eventId":"1607680","completedAt":1792302079,"round":-12,"roundText":"Losers Quarter-Final","phaseName":"Bracket Play","mySeed":27,"oppSeed":198,"oppPlayerId":2753823,"oppTag":"watyawacha","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3072,7 +3072,7 @@
         {"id":"95512679","eventId":"1412310","completedAt":1761449783,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":19,"oppSeed":531,"oppPlayerId":783245,"oppTag":"touno","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
         {"id":"95512655","eventId":"1412310","completedAt":1761448656,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":19,"oppSeed":1006,"oppPlayerId":3631257,"oppTag":"Wabiichi","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "raoyamu": {"startggPlayerId":4438825,"gamerTag":"らおやむ","fetchedAt":"2026-10-24T19:44:57.191Z",
+    "raoyamu": {"startggPlayerId":4438825,"gamerTag":"らおやむ","fetchedAt":"2026-10-25T16:37:02.770Z",
       "placements": [{"eventId":"1607680","placement":17,"seed":75},{"eventId":"1607678","placement":97,"seed":1472},{"eventId":"1607665","placement":193,"seed":1466},{"eventId":"1586230","placement":1025,"seed":1103},{"eventId":"1516510","placement":97,"seed":162},{"eventId":"1412312","placement":513,"seed":993},{"eventId":"1412311","placement":65,"seed":886},{"eventId":"1415183","placement":65,"seed":108},{"eventId":"1412310","placement":49,"seed":533}],
       "sets": [
         {"id":"109100517","eventId":"1607680","completedAt":1792303369,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 32","mySeed":75,"oppSeed":960,"oppPlayerId":4406500,"oppTag":"みすとめーる","myScore":1,"oppScore":2,"won":false,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3137,7 +3137,7 @@
         {"id":"95515086","eventId":"1412310","completedAt":1761449489,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":533,"oppSeed":1045,"oppPlayerId":4560410,"oppTag":"SHIGEMARU","myScore":2,"oppScore":1,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95515063","eventId":"1412310","completedAt":1761448350,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":533,"oppSeed":492,"oppPlayerId":4503095,"oppTag":"tama","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "ryukichi": {"startggPlayerId":2441054,"gamerTag":"Ryukichi","fetchedAt":"2026-10-24T19:44:57.945Z",
+    "ryukichi": {"startggPlayerId":2441054,"gamerTag":"Ryukichi","fetchedAt":"2026-10-25T16:37:03.394Z",
       "placements": [{"eventId":"1607680","placement":33,"seed":30},{"eventId":"1602225","placement":25,"seed":23},{"eventId":"1609152","placement":5,"seed":31},{"eventId":"1607678","placement":25,"seed":44},{"eventId":"1540814","placement":13,"seed":19},{"eventId":"1607665","placement":193,"seed":42},{"eventId":"1537500","placement":17,"seed":9},{"eventId":"1528962","placement":17,"seed":21},{"eventId":"1600986","placement":7,"seed":11},{"eventId":"1586230","placement":97,"seed":35},{"eventId":"1516510","placement":25,"seed":23},{"eventId":"1412311","placement":65,"seed":39},{"eventId":"1415183","placement":13,"seed":2},{"eventId":"1412310","placement":25,"seed":40}],
       "sets": [
         {"id":"109100226","eventId":"1607680","completedAt":1792302750,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 64","mySeed":30,"oppSeed":33,"oppPlayerId":623094,"oppTag":"Otani","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3247,7 +3247,7 @@
         {"id":"95515473","eventId":"1412310","completedAt":1761449652,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":40,"oppSeed":473,"oppPlayerId":4658245,"oppTag":"seji","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95515453","eventId":"1412310","completedAt":1761448774,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":40,"oppSeed":985,"oppPlayerId":768484,"oppTag":"省吾","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "sahara": {"startggPlayerId":3935651,"gamerTag":"Sahara.","fetchedAt":"2026-10-24T19:44:58.713Z",
+    "sahara": {"startggPlayerId":3935651,"gamerTag":"Sahara.","fetchedAt":"2026-10-25T16:37:04.276Z",
       "placements": [{"eventId":"1607680","placement":65,"seed":37},{"eventId":"1609152","placement":25,"seed":21},{"eventId":"1607678","placement":49,"seed":35},{"eventId":"1540814","placement":33,"seed":33},{"eventId":"1607665","placement":25,"seed":33},{"eventId":"1516198","placement":129,"seed":13},{"eventId":"1528962","placement":97,"seed":4},{"eventId":"1586230","placement":49,"seed":39},{"eventId":"1516510","placement":49,"seed":3},{"eventId":"1412312","placement":9,"seed":18},{"eventId":"1412311","placement":1,"seed":24},{"eventId":"1412310","placement":1,"seed":50}],
       "sets": [
         {"id":"109093346","eventId":"1607680","completedAt":1792301289,"round":-12,"roundText":"Losers Quarter-Final","phaseName":"Bracket Play","mySeed":37,"oppSeed":60,"oppPlayerId":558054,"oppTag":"Jazzy","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3352,7 +3352,7 @@
         {"id":"95514316","eventId":"1412310","completedAt":1761449372,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":50,"oppSeed":562,"oppPlayerId":4281601,"oppTag":"じゅんこっこ","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95514288","eventId":"1412310","completedAt":1761448860,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":50,"oppSeed":975,"oppPlayerId":4949510,"oppTag":"Toth","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "sako": {"startggPlayerId":327575,"gamerTag":"sako","fetchedAt":"2026-10-24T19:45:00.392Z",
+    "sako": {"startggPlayerId":327575,"gamerTag":"sako","fetchedAt":"2026-10-25T16:37:05.351Z",
       "placements": [{"eventId":"1607680","placement":49,"seed":5},{"eventId":"1607678","placement":257,"seed":5},{"eventId":"1607665","placement":97,"seed":14},{"eventId":"1586230","placement":129,"seed":4},{"eventId":"1516510","placement":129,"seed":76},{"eventId":"1412312","placement":13,"seed":11},{"eventId":"1412311","placement":9,"seed":8},{"eventId":"1412310","placement":193,"seed":2}],
       "sets": [
         {"id":"109100220","eventId":"1607680","completedAt":1792302614,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 64","mySeed":5,"oppSeed":198,"oppPlayerId":2753823,"oppTag":"watyawacha","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3413,7 +3413,7 @@
         {"id":"95511443","eventId":"1412310","completedAt":1761449478,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":2,"oppSeed":514,"oppPlayerId":4952832,"oppTag":"shimo_otsu","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95511411","eventId":"1412310","completedAt":1761449122,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":2,"oppSeed":1026,"oppPlayerId":4953061,"oppTag":"toribu","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "seiya": {"startggPlayerId":830613,"gamerTag":"Seiya","fetchedAt":"2026-10-24T19:45:01.105Z",
+    "seiya": {"startggPlayerId":830613,"gamerTag":"Seiya","fetchedAt":"2026-10-25T16:37:06.515Z",
       "placements": [{"eventId":"1607680","placement":17,"seed":28},{"eventId":"1607678","placement":17,"seed":42},{"eventId":"1607665","placement":257,"seed":43},{"eventId":"1516198","placement":97,"seed":71},{"eventId":"1586230","placement":25,"seed":46},{"eventId":"1516510","placement":97,"seed":95},{"eventId":"1412312","placement":97,"seed":20},{"eventId":"1412311","placement":17,"seed":17},{"eventId":"1415183","placement":49,"seed":54},{"eventId":"1412310","placement":3,"seed":373}],
       "sets": [
         {"id":"109100521","eventId":"1607680","completedAt":1792303659,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 32","mySeed":28,"oppSeed":61,"oppPlayerId":4625088,"oppTag":"eguto","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3491,7 +3491,7 @@
         {"id":"95515081","eventId":"1412310","completedAt":1761450396,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":373,"oppSeed":1164,"oppPlayerId":4640157,"oppTag":"はまじgai","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95515053","eventId":"1412310","completedAt":1761448876,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":373,"oppSeed":1397,"oppPlayerId":4743106,"oppTag":"Koban","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "shuto": {"startggPlayerId":486860,"gamerTag":"Shuto","fetchedAt":"2026-10-24T19:45:01.953Z",
+    "shuto": {"startggPlayerId":486860,"gamerTag":"Shuto","fetchedAt":"2026-10-25T16:37:07.483Z",
       "placements": [{"eventId":"1607680","placement":97,"seed":35},{"eventId":"1602225","placement":25,"seed":18},{"eventId":"1609152","placement":9,"seed":8},{"eventId":"1607678","placement":5,"seed":38},{"eventId":"1540814","placement":17,"seed":7},{"eventId":"1607665","placement":9,"seed":29},{"eventId":"1516198","placement":17,"seed":19},{"eventId":"1528962","placement":65,"seed":18},{"eventId":"1600986","placement":17,"seed":2},{"eventId":"1586230","placement":13,"seed":31},{"eventId":"1516510","placement":5,"seed":57},{"eventId":"1412311","placement":25,"seed":22},{"eventId":"1412310","placement":33,"seed":27}],
       "sets": [
         {"id":"109099244","eventId":"1607680","completedAt":1792301267,"round":-11,"roundText":"Losers Round 8","phaseName":"Bracket Play","mySeed":35,"oppSeed":547,"oppPlayerId":3822091,"oppTag":"ルル","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3604,7 +3604,7 @@
         {"id":"95511834","eventId":"1412310","completedAt":1761449263,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":27,"oppSeed":486,"oppPlayerId":4194321,"oppTag":"kanata","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95511810","eventId":"1412310","completedAt":1761448841,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":27,"oppSeed":998,"oppPlayerId":1338119,"oppTag":"つゆあっと","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "takagi": {"startggPlayerId":3857845,"gamerTag":"高木","fetchedAt":"2026-10-24T19:45:02.986Z",
+    "takagi": {"startggPlayerId":3857845,"gamerTag":"高木","fetchedAt":"2026-10-25T16:37:08.296Z",
       "placements": [{"eventId":"1607680","placement":129,"seed":59},{"eventId":"1607678","placement":13,"seed":60},{"eventId":"1540814","placement":65,"seed":27},{"eventId":"1607665","placement":5,"seed":65},{"eventId":"1528962","placement":17,"seed":89},{"eventId":"1600986","placement":33,"seed":41},{"eventId":"1586230","placement":65,"seed":71},{"eventId":"1516510","placement":49,"seed":97},{"eventId":"1412310","placement":129,"seed":67}],
       "sets": [
         {"id":"109095412","eventId":"1607680","completedAt":1792299915,"round":-10,"roundText":"Losers Round 7","phaseName":"Bracket Play","mySeed":59,"oppSeed":91,"oppPlayerId":4195981,"oppTag":"Akutagawa","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3675,7 +3675,7 @@
         {"id":"95513099","eventId":"1412310","completedAt":1761449333,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":67,"oppSeed":579,"oppPlayerId":3945308,"oppTag":"三ツ失サイダー","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513073","eventId":"1412310","completedAt":1761448613,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":67,"oppSeed":1091,"oppPlayerId":5012737,"oppTag":"さけちうまお","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "takepi": {"startggPlayerId":4262345,"gamerTag":"takepi","fetchedAt":"2026-10-24T19:45:04.147Z",
+    "takepi": {"startggPlayerId":4262345,"gamerTag":"takepi","fetchedAt":"2026-10-25T16:37:09.015Z",
       "placements": [{"eventId":"1607680","placement":513,"seed":43},{"eventId":"1602225","placement":129,"seed":47},{"eventId":"1609152","placement":33,"seed":30},{"eventId":"1607678","placement":49,"seed":45},{"eventId":"1517778","placement":25,"seed":28},{"eventId":"1607665","placement":65,"seed":45},{"eventId":"1516198","placement":65,"seed":30},{"eventId":"1586230","placement":4,"seed":56},{"eventId":"1412312","placement":2,"seed":553},{"eventId":"1412311","placement":49,"seed":842},{"eventId":"1412310","placement":7,"seed":1169}],
       "sets": [
         {"id":"109097682","eventId":"1607680","completedAt":1792295981,"round":-6,"roundText":"Losers Round 3","phaseName":"Bracket Play","mySeed":43,"oppSeed":54,"oppPlayerId":395875,"oppTag":"MOV","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3769,7 +3769,7 @@
         {"id":"95515881","eventId":"1412310","completedAt":1761449034,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":1169,"oppSeed":145,"oppPlayerId":336807,"oppTag":"Jimmy1","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95515840","eventId":"1412310","completedAt":1761448538,"round":1,"roundText":"Winners Round 1","phaseName":"Bracket Play","mySeed":1169,"oppSeed":880,"oppPlayerId":754215,"oppTag":"kouki","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "takeuchi": {"startggPlayerId":404377,"gamerTag":"John Takeuchi","fetchedAt":"2026-10-24T19:45:04.795Z",
+    "takeuchi": {"startggPlayerId":404377,"gamerTag":"John Takeuchi","fetchedAt":"2026-10-25T16:37:10.365Z",
       "placements": [{"eventId":"1607678","placement":513,"seed":26},{"eventId":"1607665","placement":129,"seed":21},{"eventId":"1516198","placement":9,"seed":87},{"eventId":"1586230","placement":257,"seed":30},{"eventId":"1516510","placement":257,"seed":82},{"eventId":"1412312","placement":257,"seed":45},{"eventId":"1412311","placement":13,"seed":37},{"eventId":"1412310","placement":65,"seed":44}],
       "sets": [
         {"id":"107130755","eventId":"1607678","completedAt":1788064022,"round":-6,"roundText":"Losers Round 4","phaseName":"Bracket Play","mySeed":26,"oppSeed":1530,"oppPlayerId":4563325,"oppTag":"Haru.","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3829,7 +3829,7 @@
         {"id":"95515278","eventId":"1412310","completedAt":1761450308,"round":-4,"roundText":"Losers Round 1","phaseName":"Bracket Play","mySeed":44,"oppSeed":652,"oppPlayerId":4938375,"oppTag":"Hoshika Lacia","myScore":2,"oppScore":1,"won":true,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95515070","eventId":"1412310","completedAt":1761449020,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":44,"oppSeed":981,"oppPlayerId":4404956,"oppTag":"タカサワ","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]}
       ]},
-    "tokido": {"startggPlayerId":148527,"gamerTag":"Tokido","fetchedAt":"2026-10-24T19:45:05.664Z",
+    "tokido": {"startggPlayerId":148527,"gamerTag":"Tokido","fetchedAt":"2026-10-25T16:37:10.991Z",
       "placements": [{"eventId":"1607680","placement":33,"seed":4},{"eventId":"1602225","placement":17,"seed":6},{"eventId":"1609152","placement":17,"seed":20},{"eventId":"1607678","placement":33,"seed":4},{"eventId":"1517778","placement":1,"seed":15},{"eventId":"1540814","placement":7,"seed":16},{"eventId":"1607665","placement":257,"seed":6},{"eventId":"1516198","placement":17,"seed":61},{"eventId":"1537500","placement":9,"seed":17},{"eventId":"1528962","placement":33,"seed":27},{"eventId":"1600986","placement":25,"seed":16},{"eventId":"1586230","placement":33,"seed":3},{"eventId":"1516510","placement":33,"seed":25},{"eventId":"1412312","placement":17,"seed":12},{"eventId":"1412311","placement":17,"seed":9},{"eventId":"1415183","placement":5,"seed":14},{"eventId":"1412310","placement":25,"seed":11}],
       "sets": [
         {"id":"109100234","eventId":"1607680","completedAt":1792301468,"round":-4,"roundText":"Losers Round 2","phaseName":"Top 64","mySeed":4,"oppSeed":63,"oppPlayerId":525029,"oppTag":"よっさん","myScore":1,"oppScore":2,"won":false,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -3974,7 +3974,7 @@
         {"id":"95513929","eventId":"1412310","completedAt":1761450955,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":11,"oppSeed":502,"oppPlayerId":1020716,"oppTag":"たかだんご","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513897","eventId":"1412310","completedAt":1761450607,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":11,"oppSeed":1014,"oppPlayerId":4395072,"oppTag":"たかひとまん","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "torimeshi": {"startggPlayerId":1257257,"gamerTag":"Torimeshi","fetchedAt":"2026-10-24T19:45:06.672Z",
+    "torimeshi": {"startggPlayerId":1257257,"gamerTag":"Torimeshi","fetchedAt":"2026-10-25T16:37:11.966Z",
       "placements": [{"eventId":"1607680","placement":13,"seed":40},{"eventId":"1607678","placement":33,"seed":41},{"eventId":"1607665","placement":193,"seed":36},{"eventId":"1516198","placement":33,"seed":39},{"eventId":"1586230","placement":5,"seed":37},{"eventId":"1516510","placement":193,"seed":30},{"eventId":"1412312","placement":3,"seed":19},{"eventId":"1412311","placement":13,"seed":18},{"eventId":"1412310","placement":2,"seed":43}],
       "sets": [
         {"id":"109100659","eventId":"1607680","completedAt":1792305272,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 16","mySeed":40,"oppSeed":25,"oppPlayerId":382483,"oppTag":"Kazunoko","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -4072,7 +4072,7 @@
         {"id":"95513941","eventId":"1412310","completedAt":1761449645,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":43,"oppSeed":470,"oppPlayerId":5016280,"oppTag":"moti","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]},
         {"id":"95513921","eventId":"1412310","completedAt":1761448931,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":43,"oppSeed":1067,"oppPlayerId":3755707,"oppTag":"CorLeonis","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "wabiichi": {"startggPlayerId":3631257,"gamerTag":"Wabiichi","fetchedAt":"2026-10-24T19:45:07.346Z",
+    "wabiichi": {"startggPlayerId":3631257,"gamerTag":"Wabiichi","fetchedAt":"2026-10-25T16:37:12.534Z",
       "placements": [{"eventId":"1607680","placement":3,"seed":78},{"eventId":"1602225","placement":33,"seed":44},{"eventId":"1609152","placement":13,"seed":11},{"eventId":"1607678","placement":257,"seed":792},{"eventId":"1517778","placement":7,"seed":46},{"eventId":"1540814","placement":17,"seed":54},{"eventId":"1607665","placement":33,"seed":964},{"eventId":"1528962","placement":33,"seed":66},{"eventId":"1586230","placement":385,"seed":1775},{"eventId":"1516510","placement":385,"seed":131},{"eventId":"1412312","placement":97,"seed":588},{"eventId":"1412311","placement":97,"seed":1140},{"eventId":"1412310","placement":33,"seed":1006}],
       "sets": [
         {"id":"109107358","eventId":"1607680","completedAt":1792323438,"round":-6,"roundText":"Losers Final","phaseName":"Top 8","mySeed":78,"oppSeed":32,"oppPlayerId":3577649,"oppTag":"あでりい","myScore":2,"oppScore":3,"won":false,"games":[]},
@@ -4185,7 +4185,7 @@
         {"id":"95512655","eventId":"1412310","completedAt":1761448656,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":1006,"oppSeed":19,"oppPlayerId":487424,"oppTag":"pugera","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
         {"id":"95512608","eventId":"1412310","completedAt":1761448294,"round":1,"roundText":"Winners Round 1","phaseName":"Bracket Play","mySeed":1006,"oppSeed":1043,"oppPlayerId":3575517,"oppTag":"P-Man","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "yamaguchi": {"startggPlayerId":2360463,"gamerTag":"Yamaguchi","fetchedAt":"2026-10-24T19:45:08.408Z",
+    "yamaguchi": {"startggPlayerId":2360463,"gamerTag":"Yamaguchi","fetchedAt":"2026-10-25T16:37:13.746Z",
       "placements": [{"eventId":"1602225","placement":9,"seed":7},{"eventId":"1516198","placement":25,"seed":4},{"eventId":"1537500","placement":33,"seed":1},{"eventId":"1586230","placement":65,"seed":27},{"eventId":"1516510","placement":1,"seed":62},{"eventId":"1412312","placement":49,"seed":26},{"eventId":"1412311","placement":49,"seed":32},{"eventId":"1415183","placement":65,"seed":31},{"eventId":"1412310","placement":513,"seed":25}],
       "sets": [
         {"id":"108751142","eventId":"1602225","completedAt":1791660085,"round":-6,"roundText":"Losers Round 3","phaseName":"TOP 24","mySeed":7,"oppSeed":13,"oppPlayerId":547837,"oppTag":"Lexx","myScore":1,"oppScore":2,"won":false,"games":[{"won":true,"myChar":"mai","oppChar":"guile"},{"won":false,"myChar":"mai","oppChar":"guile"},{"won":false,"myChar":"cviper","oppChar":"guile"}]},
@@ -4261,7 +4261,7 @@
         {"id":"95515469","eventId":"1412310","completedAt":1761449371,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":25,"oppSeed":537,"oppPlayerId":5016058,"oppTag":"hawk","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
         {"id":"95515445","eventId":"1412310","completedAt":1761448805,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":25,"oppSeed":1049,"oppPlayerId":4650601,"oppTag":"からあげの悪魔","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "yanai": {"startggPlayerId":1228620,"gamerTag":"Yanai","fetchedAt":"2026-10-24T19:45:09.185Z",
+    "yanai": {"startggPlayerId":1228620,"gamerTag":"Yanai","fetchedAt":"2026-10-25T16:37:14.500Z",
       "placements": [{"eventId":"1607680","placement":257,"seed":24},{"eventId":"1607678","placement":17,"seed":17},{"eventId":"1540814","placement":65,"seed":41},{"eventId":"1607665","placement":33,"seed":18},{"eventId":"1586230","placement":193,"seed":20},{"eventId":"1516510","placement":65,"seed":50},{"eventId":"1412312","placement":97,"seed":17},{"eventId":"1412311","placement":9,"seed":19},{"eventId":"1412310","placement":97,"seed":17}],
       "sets": [
         {"id":"109093098","eventId":"1607680","completedAt":1792297220,"round":-8,"roundText":"Losers Round 5","phaseName":"Bracket Play","mySeed":24,"oppSeed":1193,"oppPlayerId":5476702,"oppTag":"ヨルノ","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
@@ -4333,7 +4333,7 @@
         {"id":"95515899","eventId":"1412310","completedAt":1761449779,"round":3,"roundText":"Winners Round 3","phaseName":"Bracket Play","mySeed":17,"oppSeed":529,"oppPlayerId":2824425,"oppTag":"山田の隣","myScore":0,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
         {"id":"95515875","eventId":"1412310","completedAt":1761449115,"round":2,"roundText":"Winners Round 2","phaseName":"Bracket Play","mySeed":17,"oppSeed":1041,"oppPlayerId":5017403,"oppTag":"makoyan","myScore":2,"oppScore":0,"won":true,"games":[{"won":true,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null}]}
       ]},
-    "yas": {"startggPlayerId":4373839,"gamerTag":"YAS","fetchedAt":"2026-10-24T19:45:09.856Z",
+    "yas": {"startggPlayerId":4373839,"gamerTag":"YAS","fetchedAt":"2026-10-25T16:37:15.341Z",
       "placements": [{"eventId":"1607680","placement":49,"seed":72},{"eventId":"1602225","placement":33,"seed":54},{"eventId":"1609152","placement":49,"seed":23},{"eventId":"1607678","placement":193,"seed":76},{"eventId":"1517778","placement":17,"seed":48},{"eventId":"1540814","placement":33,"seed":30},{"eventId":"1607665","placement":257,"seed":77},{"eventId":"1516198","placement":17,"seed":67},{"eventId":"1528962","placement":65,"seed":93},{"eventId":"1586230","placement":129,"seed":164},{"eventId":"1516510","placement":97,"seed":156},{"eventId":"1412312","placement":49,"seed":156}],
       "sets": [
         {"id":"109100216","eventId":"1607680","completedAt":1792301508,"round":-3,"roundText":"Losers Round 1","phaseName":"Top 64","mySeed":72,"oppSeed":26,"oppPlayerId":540521,"oppTag":"inaba","myScore":1,"oppScore":2,"won":false,"games":[{"won":false,"myChar":null,"oppChar":null},{"won":true,"myChar":null,"oppChar":null},{"won":false,"myChar":null,"oppChar":null}]},
