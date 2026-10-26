@@ -27,9 +27,12 @@ evData.evidence['ev-m2b1-vis-01'] = {
   playerIds: ['machabo', 'torimeshi'],
   observation: 'まちゃぼーは第1ゲーム、鶏めしのダルシムによる遠距離牽制を冷静に捌き、飛び込みや前歩きで間合いを詰めてフルラウンドの接戦を競り勝った。',
   verificationObservation: 'まちゃぼー（リュウ）が鶏めし（ダルシム）の牽制を潜り抜け、第1ゲームのフルラウンドを制して先制。',
-  extractedAt: new Date().toISOString(),
-  verifiedAt: new Date().toISOString(),
-};
+  officialRefs: ['div-s-sec5-m2-b1:winner-order-reviewed'],
+  extractorVersion: 'manual-editorial-v1',
+  verifierVersion: 'manual-review-v1',
+  sourceModels: [],
+  createdAt: new Date().toISOString(),
+} satisfies RecapEvidence;
 
 evData.evidence['ev-m2b1-vis-02'] = {
   id: 'ev-m2b1-vis-02',
@@ -44,9 +47,12 @@ evData.evidence['ev-m2b1-vis-02'] = {
   playerIds: ['machabo', 'torimeshi'],
   observation: '第2ゲームもフルラウンドにもつれ込む中、まちゃぼーは要所での対空と近距離の攻めを徹底して取り切り、2-0のストレート勝利を飾った。',
   verificationObservation: '第2ゲーム、まちゃぼーが対空迎撃から攻めを継続し、2-0で勝利を決めた。',
-  extractedAt: new Date().toISOString(),
-  verifiedAt: new Date().toISOString(),
-};
+  officialRefs: ['div-s-sec5-m2-b1:winner-order-reviewed'],
+  extractorVersion: 'manual-editorial-v1',
+  verifierVersion: 'manual-review-v1',
+  sourceModels: [],
+  createdAt: new Date().toISOString(),
+} satisfies RecapEvidence;
 
 // M2 b2, b3 の candidate エビデンスを verified に昇格
 ['ev-96769f8038507c8f1c6b', 'ev-8e42fa2f4688c273965d', 'ev-8e4b588723f0f1486ea2', 'ev-166eccb53792b1b0e185'].forEach((id) => {
