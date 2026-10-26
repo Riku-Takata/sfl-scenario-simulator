@@ -480,3 +480,22 @@ test("a daily interactions 429 excludes the model and the model whose quota it s
   assert.equal(isModelExhausted("shared-alias"), true);
   assert.equal(isModelExhausted("shared-a"), true);
 });
+
+test("a model is excluded after two unknown 429s in a row; a success in between resets the streak", async (t) => {
+  t.mock.method(console, "warn", () => {});
+  const opaque = () => new Response(JSON.stringify({ error: { message: "Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.", code: "too_many_requests" } }), { status: 429 });
+  const ok = () => new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: "done" }] } }] }), { status: 200 });
+  const replies = [opaque, ok, opaque];
+  t.mock.method(globalThis, "fetch", async (url: string) => url.includes("flaky-model") ? replies.shift()!() : ok());
+  const call = () => callGemini({ apiKey: "test", models: ["flaky-model", "backup-model"], prompt: "p" });
+  assert.equal((await call())?.model, "backup-model");
+  assert.equal((await call())?.model, "flaky-model");
+  assert.equal((await call())?.model, "backup-model");
+  assert.equal(isModelExhausted("flaky-model"), false);
+
+  t.mock.method(globalThis, "fetch", async (url: string) => url.includes("quota-model") ? opaque() : ok());
+  await callGemini({ apiKey: "test", models: ["quota-model", "backup-model"], prompt: "p" });
+  assert.equal(isModelExhausted("quota-model"), false);
+  await callGemini({ apiKey: "test", models: ["quota-model", "backup-model"], prompt: "p" });
+  assert.equal(isModelExhausted("quota-model"), true);
+});
