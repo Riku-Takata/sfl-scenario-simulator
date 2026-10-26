@@ -2,6 +2,7 @@
  * Gemini generateContent の薄いラッパー（無料枠前提）。
  * - 429 は本文の quotaId で判別する。日次上限 (PerDay) のモデルだけこの実行中は使わない
  * - 分あたりの上限 (RPM/TPM) は retryDelay だけ待って再試行し、待ちが長すぎれば次のモデルへ
+ * - 種類が分からない 429 は本文をログに出し、待たずに次のモデルへ (除外はしない)
  * - 503 (混雑) は短く待って1回だけ再試行し、だめなら次のモデルへ
  */
 
@@ -117,8 +118,14 @@ export async function callGemini(options: {
         });
 
         if (res.status === 429) {
-          const limit = classifyRateLimit(await res.text().catch(() => ""));
-          const quota = limit.quotaIds.join(",") || "unknown quota";
+          const body = await res.text().catch(() => "");
+          const limit = classifyRateLimit(body);
+          if (!limit.quotaIds.length) {
+            // 種類が分からない上限は待っても通る保証がないので、本文を残して次のモデルへ回す。
+            console.warn(`[Gemini ${model}] rate limited (unknown quota); trying the next model. Body: ${body.replace(/\s+/g, " ").slice(0, 500)}`);
+            break;
+          }
+          const quota = limit.quotaIds.join(",");
           if (limit.daily) {
             console.warn(`[Gemini ${model}] daily quota exhausted (${quota}); skipping this model for the rest of the run.`);
             exhaustedModels.add(model);

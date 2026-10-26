@@ -435,3 +435,17 @@ test("a long per-minute wait moves to the next model without excluding the first
   assert.equal(result?.model, "other-model");
   assert.equal(isModelExhausted("slow-model"), false);
 });
+
+test("a 429 without a quota id logs its body and moves on without waiting or excluding", async (t) => {
+  const warnings: string[] = [];
+  t.mock.method(console, "warn", (message: string) => { warnings.push(message); });
+  t.mock.method(globalThis, "fetch", async (url: string) => url.includes("opaque-model")
+    ? new Response(JSON.stringify({ error: { code: 429, message: "Resource has been exhausted (e.g. check quota).", status: "RESOURCE_EXHAUSTED" } }), { status: 429 })
+    : new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: "done" }] } }] }), { status: 200 }));
+  const started = Date.now();
+  const result = await callGemini({ apiKey: "test", models: ["opaque-model", "spare-model"], prompt: "p" });
+  assert.equal(result?.model, "spare-model");
+  assert.ok(Date.now() - started < 5_000);
+  assert.equal(isModelExhausted("opaque-model"), false);
+  assert.match(warnings.join("\n"), /opaque-model.*unknown quota.*Resource has been exhausted/);
+});
