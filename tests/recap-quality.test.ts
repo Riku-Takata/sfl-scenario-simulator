@@ -16,6 +16,7 @@ import { mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandid
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
+import { callGemini, classifyRateLimit, isModelExhausted } from "../scripts/recap/gemini-client";
 import {
   isBoutVideoCacheStale,
   normalizeTopicWindow,
@@ -379,4 +380,51 @@ test("machine checks create a shadow candidate and hold publication for editoria
   assert.equal(jobs.jobs["bout-1"].stage, "reviewing");
   assert.equal(jobs.jobs["bout-1"].quality, "candidate");
   assert.equal(jobs.jobs["bout-1"].publication, "results_only");
+});
+
+function quotaError(quotaId: string, retryDelay?: string): string {
+  return JSON.stringify({ error: { code: 429, status: "RESOURCE_EXHAUSTED", details: [
+    { "@type": "type.googleapis.com/google.rpc.QuotaFailure", violations: [{ quotaMetric: "generativelanguage.googleapis.com/generate_content_free_tier_requests", quotaId }] },
+    ...(retryDelay ? [{ "@type": "type.googleapis.com/google.rpc.RetryInfo", retryDelay }] : []),
+  ] } });
+}
+
+test("429 bodies are classified by quota id and retry delay", () => {
+  assert.deepEqual(classifyRateLimit(quotaError("GenerateRequestsPerDayPerProjectPerModel-FreeTier", "41s")),
+    { daily: true, quotaIds: ["GenerateRequestsPerDayPerProjectPerModel-FreeTier"], retryDelayMs: 41_000 });
+  assert.deepEqual(classifyRateLimit(quotaError("GenerateContentInputTokensPerModelPerMinute-FreeTier", "12.5s")),
+    { daily: false, quotaIds: ["GenerateContentInputTokensPerModelPerMinute-FreeTier"], retryDelayMs: 12_500 });
+  assert.deepEqual(classifyRateLimit("Too Many Requests"), { daily: false, quotaIds: [] });
+});
+
+test("per-minute 429 waits and retries the same model; only a daily 429 removes it", async (t) => {
+  const bodies = [quotaError("GenerateRequestsPerMinutePerProjectPerModel-FreeTier", "0s"), "ok"];
+  const seen: string[] = [];
+  t.mock.method(globalThis, "fetch", async (url: string) => {
+    seen.push(url);
+    const body = bodies.shift()!;
+    return body === "ok"
+      ? new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: "done" }] } }] }), { status: 200 })
+      : new Response(body, { status: 429 });
+  });
+  const result = await callGemini({ apiKey: "test", models: ["rpm-model", "fallback-model"], prompt: "p" });
+  assert.equal(result?.model, "rpm-model");
+  assert.equal(seen.length, 2);
+  assert.equal(isModelExhausted("rpm-model"), false);
+
+  t.mock.method(globalThis, "fetch", async (url: string) => url.includes("rpd-model")
+    ? new Response(quotaError("GenerateRequestsPerDayPerProjectPerModel-FreeTier", "0s"), { status: 429 })
+    : new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: "done" }] } }] }), { status: 200 }));
+  const fallback = await callGemini({ apiKey: "test", models: ["rpd-model", "next-model"], prompt: "p" });
+  assert.equal(fallback?.model, "next-model");
+  assert.equal(isModelExhausted("rpd-model"), true);
+});
+
+test("a long per-minute wait moves to the next model without excluding the first", async (t) => {
+  t.mock.method(globalThis, "fetch", async (url: string) => url.includes("slow-model")
+    ? new Response(quotaError("GenerateContentInputTokensPerModelPerMinute-FreeTier", "600s"), { status: 429 })
+    : new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: "done" }] } }] }), { status: 200 }));
+  const result = await callGemini({ apiKey: "test", models: ["slow-model", "other-model"], prompt: "p" });
+  assert.equal(result?.model, "other-model");
+  assert.equal(isModelExhausted("slow-model"), false);
 });

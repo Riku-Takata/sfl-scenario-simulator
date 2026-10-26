@@ -1,6 +1,7 @@
 /**
  * Gemini generateContent の薄いラッパー（無料枠前提）。
- * - 429 (日次上限) を返したモデルはこの実行中は使わない
+ * - 429 は本文の quotaId で判別する。日次上限 (PerDay) のモデルだけこの実行中は使わない
+ * - 分あたりの上限 (RPM/TPM) は retryDelay だけ待って再試行し、待ちが長すぎれば次のモデルへ
  * - 503 (混雑) は短く待って1回だけ再試行し、だめなら次のモデルへ
  */
 
@@ -33,6 +34,35 @@ export function isModelExhausted(model: string): boolean {
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+const RATE_LIMIT_RETRIES = 2;
+const RATE_LIMIT_DEFAULT_WAIT_MS = 30_000;
+// これより長い待ちは実行時間の予算を食うので、待たずに次のモデルへ回す。
+const RATE_LIMIT_MAX_WAIT_MS = 90_000;
+
+export interface GeminiRateLimit {
+  daily: boolean;
+  quotaIds: string[];
+  retryDelayMs?: number;
+}
+
+/** 429 の本文 (google.rpc.QuotaFailure / RetryInfo) から、どの上限に当たったかを読む。 */
+export function classifyRateLimit(body: string): GeminiRateLimit {
+  let details: Array<{ "@type"?: string; violations?: Array<{ quotaId?: string }>; retryDelay?: string }> = [];
+  try {
+    const parsed = JSON.parse(body) as { error?: { details?: typeof details } } | Array<{ error?: { details?: typeof details } }>;
+    details = (Array.isArray(parsed) ? parsed[0] : parsed)?.error?.details ?? [];
+  } catch {
+    // 本文が JSON でなければ種類は不明として扱う。
+  }
+  const quotaIds = details.flatMap((detail) => detail.violations ?? []).map((violation) => violation.quotaId ?? "").filter(Boolean);
+  const delay = details.find((detail) => detail.retryDelay)?.retryDelay?.match(/^(\d+(?:\.\d+)?)s$/);
+  return {
+    daily: quotaIds.some((id) => /PerDay/i.test(id)),
+    quotaIds,
+    ...(delay ? { retryDelayMs: Math.ceil(Number(delay[1]) * 1000) } : {}),
+  };
+}
+
 export async function callGemini(options: {
   apiKey: string;
   models: string[];
@@ -46,6 +76,7 @@ export async function callGemini(options: {
   for (const model of models) {
     if (exhaustedModels.has(model)) continue;
 
+    let rateLimitRetries = 0;
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
         const request = video
@@ -86,9 +117,23 @@ export async function callGemini(options: {
         });
 
         if (res.status === 429) {
-          console.warn(`[Gemini ${model}] daily quota exhausted; skipping this model for the rest of the run.`);
-          exhaustedModels.add(model);
-          break;
+          const limit = classifyRateLimit(await res.text().catch(() => ""));
+          const quota = limit.quotaIds.join(",") || "unknown quota";
+          if (limit.daily) {
+            console.warn(`[Gemini ${model}] daily quota exhausted (${quota}); skipping this model for the rest of the run.`);
+            exhaustedModels.add(model);
+            break;
+          }
+          const waitMs = limit.retryDelayMs ?? RATE_LIMIT_DEFAULT_WAIT_MS;
+          if (rateLimitRetries >= RATE_LIMIT_RETRIES || waitMs > RATE_LIMIT_MAX_WAIT_MS) {
+            console.warn(`[Gemini ${model}] rate limited (${quota}, retry in ${waitMs / 1000}s); trying the next model.`);
+            break;
+          }
+          rateLimitRetries++;
+          console.warn(`[Gemini ${model}] rate limited (${quota}); waiting ${waitMs / 1000}s (retry ${rateLimitRetries}/${RATE_LIMIT_RETRIES}).`);
+          await sleep(waitMs);
+          attempt--; // 分あたりの上限待ちは 503/通信エラーの再試行回数に数えない
+          continue;
         }
         if (res.status === 503) {
           console.warn(`[Gemini ${model}] HTTP 503 (attempt ${attempt}/2)`);
