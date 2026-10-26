@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T15:06:16.888Z",
+  "updatedAt": "2026-10-26T16:25:20.941Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2480,10 +2480,47 @@
       "videoId": "OyvntovP-BI",
       "startSec": 11011,
       "endSec": 11434,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-10-26T16:25:20.926Z",
+          "gameWinnersSeen": [
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム Final Round、ACQUA（ブランカ）がSA2「ライトニングビースト」から画面端で攻め立てる中、どぐら（エレナ）がジャストパリィを成功させて切り返し、CA（クリティカルアート）まで繋げる大コンボで大幅に体力を逆転させた。",
+              "evidence": "両方",
+              "startSec": 11194,
+              "endSec": 11215
+            },
+            {
+              "topic": "第1ゲーム Final Round、CAで追い詰めたどぐら（エレナ）が、ACQUA（ブランカ）の起き上がり無敵技での暴れを冷静にガードし、パニッシュカウンターで確実にKOした。",
+              "evidence": "両方",
+              "startSec": 11216,
+              "endSec": 11222
+            },
+            {
+              "topic": "第1ゲーム Round 2にて、どぐら（エレナ）がコンボからSA2「ヒーリング」を発動して体力を大幅回復し、立ち回りの有利を維持したまま画面端のラッシュでそのままラウンドを取り返した。",
+              "evidence": "両方",
+              "startSec": 11110,
+              "endSec": 11123
+            },
+            {
+              "topic": "第2ゲーム Round 1、どぐら（エレナ）が相手の隙を見逃さず高火力コンボを完走し、完璧なリーサル計算でラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 11283,
+              "endSec": 11290
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec5-m3-b1": {
       "videoId": "OyvntovP-BI",

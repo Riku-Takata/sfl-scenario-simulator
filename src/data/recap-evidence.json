@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-26T15:06:16.877Z",
+  "updatedAt": "2026-10-26T16:27:31.317Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1277,11 +1277,11 @@
       ],
       "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "manual-review-v1",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T14:27:24.758Z",
-      "verifierVersion": "manual-review-v1"
+      "createdAt": "2026-10-24T14:27:24.758Z"
     },
     "ev-8e42fa2f4688c273965d": {
       "id": "ev-8e42fa2f4688c273965d",
@@ -1302,11 +1302,11 @@
       ],
       "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "manual-review-v1",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T14:27:24.758Z",
-      "verifierVersion": "manual-review-v1"
+      "createdAt": "2026-10-24T14:27:24.758Z"
     },
     "ev-47f540269636fb89a1c1": {
       "id": "ev-47f540269636fb89a1c1",
@@ -1551,11 +1551,11 @@
       ],
       "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "manual-review-v1",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T15:03:55.845Z",
-      "verifierVersion": "manual-review-v1"
+      "createdAt": "2026-10-24T15:03:55.845Z"
     },
     "ev-c2dcd52052cd4d4a30a7": {
       "id": "ev-c2dcd52052cd4d4a30a7",
@@ -1600,11 +1600,11 @@
       ],
       "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "manual-review-v1",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
-      "createdAt": "2026-10-24T15:03:55.845Z",
-      "verifierVersion": "manual-review-v1"
+      "createdAt": "2026-10-24T15:03:55.845Z"
     },
     "ev-m2b1-vis-01": {
       "id": "ev-m2b1-vis-01",
@@ -1653,6 +1653,102 @@
       "verificationObservation": "第2ゲーム、まちゃぼーが対空迎撃から攻めを継続し、2-0で勝利を決めた。",
       "sourceModels": [],
       "createdAt": "2026-10-24T19:54:30.246Z"
+    },
+    "ev-65e8a74430d65e44954c": {
+      "id": "ev-65e8a74430d65e44954c",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11194,
+      "endSec": 11215,
+      "playerIds": [
+        "ACQUA",
+        "どぐら"
+      ],
+      "observation": "第1ゲーム Final Round、ACQUA（ブランカ）がSA2「ライトニングビースト」から画面端で攻め立てる中、どぐら（エレナ）がジャストパリィを成功させて切り返し、CA（クリティカルアート）まで繋げる大コンボで大幅に体力を逆転させた。",
+      "officialRefs": [
+        "div-s-sec5-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T16:25:20.943Z"
+    },
+    "ev-409beb422c1151a927fc": {
+      "id": "ev-409beb422c1151a927fc",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11216,
+      "endSec": 11222,
+      "playerIds": [
+        "ACQUA",
+        "どぐら"
+      ],
+      "observation": "第1ゲーム Final Round、CAで追い詰めたどぐら（エレナ）が、ACQUA（ブランカ）の起き上がり無敵技での暴れを冷静にガードし、パニッシュカウンターで確実にKOした。",
+      "officialRefs": [
+        "div-s-sec5-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T16:25:20.943Z"
+    },
+    "ev-80c287aa373c6f03a4b8": {
+      "id": "ev-80c287aa373c6f03a4b8",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11110,
+      "endSec": 11123,
+      "playerIds": [
+        "ACQUA",
+        "どぐら"
+      ],
+      "observation": "第1ゲーム Round 2にて、どぐら（エレナ）がコンボからSA2「ヒーリング」を発動して体力を大幅回復し、立ち回りの有利を維持したまま画面端のラッシュでそのままラウンドを取り返した。",
+      "officialRefs": [
+        "div-s-sec5-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T16:25:20.943Z"
+    },
+    "ev-e21d158c54baffba1cac": {
+      "id": "ev-e21d158c54baffba1cac",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b0",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11283,
+      "endSec": 11290,
+      "playerIds": [
+        "ACQUA",
+        "どぐら"
+      ],
+      "observation": "第2ゲーム Round 1、どぐら（エレナ）が相手の隙を見逃さず高火力コンボを完走し、完璧なリーサル計算でラウンドを先取した。",
+      "officialRefs": [
+        "div-s-sec5-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T16:25:20.943Z"
     }
   }
 }

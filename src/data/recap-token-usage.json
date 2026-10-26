@@ -66,6 +66,25 @@
           "totalTokens": 1
         }
       }
+    },
+    "2026-10-27": {
+      "gemini:extract:gemini-3.6-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 39116,
+          "cachedInputTokens": 0,
+          "outputTokens": 415,
+          "thoughtTokens": 1979,
+          "totalTokens": 41510
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      }
     }
   },
   "seenIds": []
