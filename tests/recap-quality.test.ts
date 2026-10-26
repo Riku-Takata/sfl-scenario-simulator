@@ -398,10 +398,10 @@ function quotaError(quotaId: string, retryDelay?: string): string {
 
 test("429 bodies are classified by quota id and retry delay", () => {
   assert.deepEqual(classifyRateLimit(quotaError("GenerateRequestsPerDayPerProjectPerModel-FreeTier", "41s")),
-    { daily: true, quotaIds: ["GenerateRequestsPerDayPerProjectPerModel-FreeTier"], retryDelayMs: 41_000 });
+    { known: true, daily: true, quotaIds: ["GenerateRequestsPerDayPerProjectPerModel-FreeTier"], retryDelayMs: 41_000 });
   assert.deepEqual(classifyRateLimit(quotaError("GenerateContentInputTokensPerModelPerMinute-FreeTier", "12.5s")),
-    { daily: false, quotaIds: ["GenerateContentInputTokensPerModelPerMinute-FreeTier"], retryDelayMs: 12_500 });
-  assert.deepEqual(classifyRateLimit("Too Many Requests"), { daily: false, quotaIds: [] });
+    { known: true, daily: false, quotaIds: ["GenerateContentInputTokensPerModelPerMinute-FreeTier"], retryDelayMs: 12_500 });
+  assert.deepEqual(classifyRateLimit("Too Many Requests"), { known: false, daily: false, quotaIds: [] });
 });
 
 test("per-minute 429 waits and retries the same model; only a daily 429 removes it", async (t) => {
@@ -448,4 +448,35 @@ test("a 429 without a quota id logs its body and moves on without waiting or exc
   assert.ok(Date.now() - started < 5_000);
   assert.equal(isModelExhausted("opaque-model"), false);
   assert.match(warnings.join("\n"), /opaque-model.*unknown quota.*Resource has been exhausted/);
+});
+
+// Bodies observed from the interactions endpoint on 2026-10-27 (no google.rpc details).
+const interactionsDaily = (model: string) => JSON.stringify({ error: {
+  message: `Rate limit exceeded for model ${model} (limit: 20 requests per day on Free Tier). Please retry in 14h13m59s or upgrade your tier at https://ai.dev/rate-limit.`,
+  code: "too_many_requests",
+} });
+
+test("interactions 429 messages are read for the daily limit, reset time and the limited model", () => {
+  assert.deepEqual(classifyRateLimit(interactionsDaily("gemini-3.8-flash")),
+    { known: true, daily: true, quotaIds: [], retryDelayMs: (14 * 3600 + 13 * 60 + 59) * 1000, limitedModel: "gemini-3.8-flash" });
+  assert.deepEqual(classifyRateLimit(JSON.stringify({ error: { message: "Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.", code: "too_many_requests" } })),
+    { known: false, daily: false, quotaIds: [] });
+});
+
+test("a daily interactions 429 excludes the model and the model whose quota it shares", async (t) => {
+  const seen: string[] = [];
+  t.mock.method(console, "warn", () => {});
+  t.mock.method(globalThis, "fetch", async (_url: string, options: RequestInit) => {
+    const { model } = JSON.parse(String(options.body)) as { model: string };
+    seen.push(model);
+    return model === "shared-b"
+      ? new Response(JSON.stringify({ output_text: "done" }), { status: 200 })
+      : new Response(interactionsDaily("shared-a"), { status: 429 });
+  });
+  const video = { youtubeUrl: "https://www.youtube.com/watch?v=abcdefghijk", startSec: 0, endSec: 10, fps: 1 };
+  const result = await callGemini({ apiKey: "test", models: ["shared-alias", "shared-a", "shared-b"], prompt: "p", video });
+  assert.equal(result?.model, "shared-b");
+  assert.deepEqual(seen, ["shared-alias", "shared-b"]);
+  assert.equal(isModelExhausted("shared-alias"), true);
+  assert.equal(isModelExhausted("shared-a"), true);
 });
