@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-26T16:27:31.317Z",
+  "updatedAt": "2026-10-26T23:21:16.104Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1749,6 +1749,198 @@
         "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-26T16:25:20.943Z"
+    },
+    "ev-ce85e9a9d7ed97875e4d": {
+      "id": "ev-ce85e9a9d7ed97875e4d",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11671,
+      "endSec": 11690,
+      "playerIds": [
+        "takepi",
+        "かずのこ"
+      ],
+      "observation": "Game 1 第1ラウンド、takepi（JP）がかずのこ（C.ヴァイパー）の技の隙を見逃さずドライブインパクトをパニッシュカウンターで決め、ヴィハト設置から遠距離の有利展開を作り出す。",
+      "officialRefs": [
+        "div-s-sec5-m3-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T23:20:25.436Z"
+    },
+    "ev-3b98345ec1d31f5cf617": {
+      "id": "ev-3b98345ec1d31f5cf617",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11791,
+      "endSec": 11806,
+      "playerIds": [
+        "takepi",
+        "かずのこ"
+      ],
+      "observation": "Game 1 最終ラウンド、takepiがかずのこの差し込みに対して大足でパニッシュカウンターを取り、CA（SA3）「トリグラフレヴァティン」を確実に叩き込んでGame 1を先取する。",
+      "officialRefs": [
+        "div-s-sec5-m3-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T23:20:25.436Z"
+    },
+    "ev-b80f37b581c31b8745d2": {
+      "id": "ev-b80f37b581c31b8745d2",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11870,
+      "endSec": 11896,
+      "playerIds": [
+        "takepi",
+        "かずのこ"
+      ],
+      "observation": "Game 2 第1ラウンド、かずのこが立ち中Kのパニッシュカウンターから画面端へ押し込み、空中コンボからSA2「ハイパーヴァイパー」を完走してラウンドを取り返す。",
+      "officialRefs": [
+        "div-s-sec5-m3-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T23:20:25.436Z"
+    },
+    "ev-59655a3f3ae1c6aaa4da": {
+      "id": "ev-59655a3f3ae1c6aaa4da",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 11995,
+      "endSec": 12029,
+      "playerIds": [
+        "takepi",
+        "かずのこ"
+      ],
+      "observation": "Game 2 最終ラウンド、takepiがSA2「ラヴーシュカ」で相手の行動を制限して画面端へ追いやると、焦って前に出たかずのこの隙を冷静に捉えてKOを奪う。",
+      "officialRefs": [
+        "div-s-sec5-m3-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T23:20:25.436Z"
+    },
+    "ev-98538ca32f84ce4b6c57": {
+      "id": "ev-98538ca32f84ce4b6c57",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 12362,
+      "endSec": 12387,
+      "playerIds": [
+        "ひびき",
+        "Shuto"
+      ],
+      "observation": "Shuto（ルーク）がGame 1第2ラウンドで、ひびき（リリー）の立ち回りに対して差し返しや連続攻撃を叩き込み、パーフェクトKO（PERFECT KO）を達成してラウンドを取り返す。",
+      "officialRefs": [
+        "div-s-sec5-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T23:21:16.098Z"
+    },
+    "ev-c333addb3eb0a979c77d": {
+      "id": "ev-c333addb3eb0a979c77d",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 12542,
+      "endSec": 12551,
+      "playerIds": [
+        "ひびき",
+        "Shuto"
+      ],
+      "observation": "ひびき（リリー）がGame 2最終ラウンドにて、ミリ単位の体力状況からShuto（ルーク）のジャンプに空対空攻撃を精密に引っ掛け、そのままCA（SA3）へ繋げて逆転KOでGame 2を獲得する。",
+      "officialRefs": [
+        "div-s-sec5-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T23:21:16.098Z"
+    },
+    "ev-55dd50d56272bd1285a5": {
+      "id": "ev-55dd50d56272bd1285a5",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 12790,
+      "endSec": 12808,
+      "playerIds": [
+        "ひびき",
+        "Shuto"
+      ],
+      "observation": "Game 3第1ラウンド、ひびき（リリー）がバーンアウト状態に追い込まれ画面端の危機に瀕するも、垂直ジャンプからのコンドルダイブやODコンドルスパイアで強烈に切り返し、最後はODメキシカンタイフーンでラウンドを奪い切る。",
+      "officialRefs": [
+        "div-s-sec5-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T23:21:16.098Z"
+    },
+    "ev-8304f9e1d678ef6f6f46": {
+      "id": "ev-8304f9e1d678ef6f6f46",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b2",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 13335,
+      "endSec": 13345,
+      "playerIds": [
+        "ひびき",
+        "Shuto"
+      ],
+      "observation": "Game 5最終ラウンドの決着局面、ひびき（リリー）がShuto（ルーク）の逆転を狙ったODライジングアッパーを完璧にガードし、パニッシュカウンターからのコンボでKOして大将戦の勝利を決定付ける。",
+      "officialRefs": [
+        "div-s-sec5-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-26T23:21:16.098Z"
     }
   }
 }

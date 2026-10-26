@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T16:25:20.941Z",
+  "updatedAt": "2026-10-26T23:21:16.096Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2526,19 +2526,96 @@
       "videoId": "OyvntovP-BI",
       "startSec": 11640,
       "endSec": 12118,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-10-26T23:20:25.421Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "Game 1 第1ラウンド、takepi（JP）がかずのこ（C.ヴァイパー）の技の隙を見逃さずドライブインパクトをパニッシュカウンターで決め、ヴィハト設置から遠距離の有利展開を作り出す。",
+              "evidence": "両方",
+              "startSec": 11671,
+              "endSec": 11690
+            },
+            {
+              "topic": "Game 1 最終ラウンド、takepiがかずのこの差し込みに対して大足でパニッシュカウンターを取り、CA（SA3）「トリグラフレヴァティン」を確実に叩き込んでGame 1を先取する。",
+              "evidence": "両方",
+              "startSec": 11791,
+              "endSec": 11806
+            },
+            {
+              "topic": "Game 2 第1ラウンド、かずのこが立ち中Kのパニッシュカウンターから画面端へ押し込み、空中コンボからSA2「ハイパーヴァイパー」を完走してラウンドを取り返す。",
+              "evidence": "両方",
+              "startSec": 11870,
+              "endSec": 11896
+            },
+            {
+              "topic": "Game 2 最終ラウンド、takepiがSA2「ラヴーシュカ」で相手の行動を制限して画面端へ追いやると、焦って前に出たかずのこの隙を冷静に捉えてKOを奪う。",
+              "evidence": "両方",
+              "startSec": 11995,
+              "endSec": 12029
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec5-m3-b2": {
       "videoId": "OyvntovP-BI",
       "startSec": 12319,
       "endSec": 13453,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-10-26T23:21:16.077Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "A",
+            "B",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "Shuto（ルーク）がGame 1第2ラウンドで、ひびき（リリー）の立ち回りに対して差し返しや連続攻撃を叩き込み、パーフェクトKO（PERFECT KO）を達成してラウンドを取り返す。",
+              "evidence": "両方",
+              "startSec": 12362,
+              "endSec": 12387
+            },
+            {
+              "topic": "ひびき（リリー）がGame 2最終ラウンドにて、ミリ単位の体力状況からShuto（ルーク）のジャンプに空対空攻撃を精密に引っ掛け、そのままCA（SA3）へ繋げて逆転KOでGame 2を獲得する。",
+              "evidence": "両方",
+              "startSec": 12542,
+              "endSec": 12551
+            },
+            {
+              "topic": "Game 3第1ラウンド、ひびき（リリー）がバーンアウト状態に追い込まれ画面端の危機に瀕するも、垂直ジャンプからのコンドルダイブやODコンドルスパイアで強烈に切り返し、最後はODメキシカンタイフーンでラウンドを奪い切る。",
+              "evidence": "両方",
+              "startSec": 12790,
+              "endSec": 12808
+            },
+            {
+              "topic": "Game 5最終ラウンドの決着局面、ひびき（リリー）がShuto（ルーク）の逆転を狙ったODライジングアッパーを完璧にガードし、パニッシュカウンターからのコンボでKOして大将戦の勝利を決定付ける。",
+              "evidence": "両方",
+              "startSec": 13335,
+              "endSec": 13345
+            }
+          ]
+        }
+      ]
     }
   },
   "narratives": {
