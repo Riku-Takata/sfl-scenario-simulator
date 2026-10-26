@@ -2,7 +2,7 @@
  * Gemini generateContent の薄いラッパー（無料枠前提）。
  * - 429 は本文 (quotaId、または interactions の "requests per day" という文) で判別し、日次上限のモデルだけこの実行中は使わない
  * - 分あたりの上限 (RPM/TPM) は retryDelay だけ待って再試行し、待ちが長すぎれば次のモデルへ
- * - 種類が分からない 429 は本文をログに出し、待たずに次のモデルへ (除外はしない)
+ * - 種類が分からない 429 は本文をログに出し、待たずに次のモデルへ。同じモデルで2回続いたらこの実行中は使わない
  * - 503 (混雑) は短く待って1回だけ再試行し、だめなら次のモデルへ
  */
 
@@ -23,6 +23,9 @@ export interface GeminiCallResult {
 }
 
 const exhaustedModels = new Set<string>();
+// 種類が分からない 429 がこの回数続いたモデルは、この実行中は使わない (3.6-flash の "project has exceeded a quota" など)。
+const UNKNOWN_RATE_LIMIT_EXCLUDE_AFTER = 2;
+const unknownRateLimitStreaks = new Map<string, number>();
 
 export function parseModelList(value: string | undefined, fallback: string[]): string[] {
   const list = (value || "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -147,9 +150,14 @@ export async function callGemini(options: {
           const limit = classifyRateLimit(body);
           if (!limit.known) {
             // 種類が分からない上限は待っても通る保証がないので、本文を残して次のモデルへ回す。
-            console.warn(`[Gemini ${model}] rate limited (unknown quota); trying the next model. Body: ${body.replace(/\s+/g, " ").slice(0, 500)}`);
+            const streak = (unknownRateLimitStreaks.get(model) ?? 0) + 1;
+            unknownRateLimitStreaks.set(model, streak);
+            const excluded = streak >= UNKNOWN_RATE_LIMIT_EXCLUDE_AFTER;
+            if (excluded) exhaustedModels.add(model);
+            console.warn(`[Gemini ${model}] rate limited (unknown quota, ${streak} in a row); ${excluded ? "skipping this model for the rest of the run" : "trying the next model"}. Body: ${body.replace(/\s+/g, " ").slice(0, 500)}`);
             break;
           }
+          unknownRateLimitStreaks.delete(model);
           const quota = limit.quotaIds.join(",") || (limit.daily ? "requests per day" : "per minute");
           if (limit.daily) {
             const resetsIn = limit.retryDelayMs !== undefined ? `, resets in ${Math.round(limit.retryDelayMs / 60_000)}m` : "";
@@ -202,6 +210,7 @@ export async function callGemini(options: {
           console.warn(`[Gemini ${model}] empty response`);
           break;
         }
+        unknownRateLimitStreaks.delete(model);
         return {
           model,
           text,
