@@ -1,6 +1,6 @@
 /**
  * Gemini generateContent の薄いラッパー（無料枠前提）。
- * - 429 は本文の quotaId で判別する。日次上限 (PerDay) のモデルだけこの実行中は使わない
+ * - 429 は本文 (quotaId、または interactions の "requests per day" という文) で判別し、日次上限のモデルだけこの実行中は使わない
  * - 分あたりの上限 (RPM/TPM) は retryDelay だけ待って再試行し、待ちが長すぎれば次のモデルへ
  * - 種類が分からない 429 は本文をログに出し、待たずに次のモデルへ (除外はしない)
  * - 503 (混雑) は短く待って1回だけ再試行し、だめなら次のモデルへ
@@ -41,26 +41,51 @@ const RATE_LIMIT_DEFAULT_WAIT_MS = 30_000;
 const RATE_LIMIT_MAX_WAIT_MS = 90_000;
 
 export interface GeminiRateLimit {
+  /** どの上限か判別できたか。できなければ本文をログに残して次のモデルへ回す。 */
+  known: boolean;
   daily: boolean;
   quotaIds: string[];
   retryDelayMs?: number;
+  /** 上限に当たったと本文が名指ししたモデル。要求したモデルと違えば枠を共有している。 */
+  limitedModel?: string;
 }
 
-/** 429 の本文 (google.rpc.QuotaFailure / RetryInfo) から、どの上限に当たったかを読む。 */
+/** "41s" / "14h13m59s" / "1m30.5s" をミリ秒にする。 */
+function parseDuration(text: string | undefined): number | undefined {
+  const match = text?.match(/^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+(?:\.\d+)?)s)?$/);
+  if (!match || !(match[1] || match[2] || match[3])) return undefined;
+  return Math.ceil(((Number(match[1] ?? 0) * 60 + Number(match[2] ?? 0)) * 60 + Number(match[3] ?? 0)) * 1000);
+}
+
+/**
+ * 429 の本文から、どの上限に当たったかを読む。
+ * generateContent は google.rpc.QuotaFailure / RetryInfo を返すが、動画用の interactions は
+ * "Rate limit exceeded for model X (limit: 20 requests per day ...). Please retry in 14h13m59s" という文章だけを返す。
+ */
 export function classifyRateLimit(body: string): GeminiRateLimit {
-  let details: Array<{ "@type"?: string; violations?: Array<{ quotaId?: string }>; retryDelay?: string }> = [];
+  type Detail = { "@type"?: string; violations?: Array<{ quotaId?: string }>; retryDelay?: string };
+  let details: Detail[] = [];
+  let message = "";
   try {
-    const parsed = JSON.parse(body) as { error?: { details?: typeof details } } | Array<{ error?: { details?: typeof details } }>;
-    details = (Array.isArray(parsed) ? parsed[0] : parsed)?.error?.details ?? [];
+    const parsed = JSON.parse(body) as { error?: { message?: string; details?: Detail[] } } | Array<{ error?: { message?: string; details?: Detail[] } }>;
+    const error = (Array.isArray(parsed) ? parsed[0] : parsed)?.error;
+    details = error?.details ?? [];
+    message = error?.message ?? "";
   } catch {
     // 本文が JSON でなければ種類は不明として扱う。
   }
   const quotaIds = details.flatMap((detail) => detail.violations ?? []).map((violation) => violation.quotaId ?? "").filter(Boolean);
-  const delay = details.find((detail) => detail.retryDelay)?.retryDelay?.match(/^(\d+(?:\.\d+)?)s$/);
+  const perDay = /\bper day\b/i.test(message);
+  const perMinute = /\bper minute\b/i.test(message);
+  const retryDelayMs = parseDuration(details.find((detail) => detail.retryDelay)?.retryDelay) ??
+    parseDuration(message.match(/retry in ([\d.hms]+)/i)?.[1]);
+  const limitedModel = message.match(/for model ([\w.-]+)/i)?.[1];
   return {
-    daily: quotaIds.some((id) => /PerDay/i.test(id)),
+    known: quotaIds.length > 0 || perDay || perMinute,
+    daily: quotaIds.some((id) => /PerDay/i.test(id)) || perDay,
     quotaIds,
-    ...(delay ? { retryDelayMs: Math.ceil(Number(delay[1]) * 1000) } : {}),
+    ...(retryDelayMs !== undefined ? { retryDelayMs } : {}),
+    ...(limitedModel ? { limitedModel } : {}),
   };
 }
 
@@ -120,15 +145,21 @@ export async function callGemini(options: {
         if (res.status === 429) {
           const body = await res.text().catch(() => "");
           const limit = classifyRateLimit(body);
-          if (!limit.quotaIds.length) {
+          if (!limit.known) {
             // 種類が分からない上限は待っても通る保証がないので、本文を残して次のモデルへ回す。
             console.warn(`[Gemini ${model}] rate limited (unknown quota); trying the next model. Body: ${body.replace(/\s+/g, " ").slice(0, 500)}`);
             break;
           }
-          const quota = limit.quotaIds.join(",");
+          const quota = limit.quotaIds.join(",") || (limit.daily ? "requests per day" : "per minute");
           if (limit.daily) {
-            console.warn(`[Gemini ${model}] daily quota exhausted (${quota}); skipping this model for the rest of the run.`);
+            const resetsIn = limit.retryDelayMs !== undefined ? `, resets in ${Math.round(limit.retryDelayMs / 60_000)}m` : "";
+            console.warn(`[Gemini ${model}] daily quota exhausted (${quota}${resetsIn}); skipping this model for the rest of the run.`);
             exhaustedModels.add(model);
+            // 3.7-flash への要求が 3.8-flash の上限を返すように、枠を共有するモデルも使い切っている。
+            if (limit.limitedModel && limit.limitedModel !== model) {
+              console.warn(`[Gemini ${model}] the limit belongs to ${limit.limitedModel}; skipping it too.`);
+              exhaustedModels.add(limit.limitedModel);
+            }
             break;
           }
           const waitMs = limit.retryDelayMs ?? RATE_LIMIT_DEFAULT_WAIT_MS;
