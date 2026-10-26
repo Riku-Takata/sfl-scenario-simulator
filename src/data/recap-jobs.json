@@ -412,21 +412,16 @@
       "sectionId": "div-s-sec5",
       "matchId": "div-s-sec5-m1",
       "boutId": "div-s-sec5-m1-b0",
-      "stage": "writing",
-      "quality": "insufficient",
-      "publication": "results_only",
+      "stage": "completed",
+      "quality": "passed",
+      "publication": "detailed",
       "inputHash": "bce030aa7423e4ff35b554b6074c821b28086f8acfbe74b359b04b73f9200c82",
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
-      "nextAttemptAt": "2026-10-26T15:25:33.334Z",
-      "failureReason": "summaryHasSubstance,enoughSpecificPoints,multipleVideoBackedPoints",
-      "evidenceIds": [
-        "ev-86d3a474908cef95bf54",
-        "ev-d0a04b150ea36c589380"
-      ],
-      "publishedRevision": "b75e4aa259e25fbd",
-      "candidateRevision": "e6cd34d2d1d36a67",
-      "updatedAt": "2026-10-26T15:10:33.334Z"
+      "nextAttemptAt": "2026-10-24T19:59:03.006Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-10-24T19:54:30.254Z",
+      "publishedRevision": "b75e4aa259e25fbd"
     },
     "div-s-sec5-m1-b1": {
       "jobId": "div-s-sec5-m1-b1",
@@ -470,16 +465,16 @@
       "jobId": "div-s-sec5-m2:article",
       "sectionId": "div-s-sec5",
       "matchId": "div-s-sec5-m2",
-      "stage": "writing",
-      "quality": "not_evaluated",
-      "publication": "partial",
+      "stage": "completed",
+      "quality": "passed",
+      "publication": "detailed",
       "inputHash": "1133b24f1e0e379289c91db117946fea025c281149c1d9d46ce4b8d8f3e9bfd4",
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
-      "nextAttemptAt": "2026-10-26T15:26:37.018Z",
+      "nextAttemptAt": "2026-10-24T19:59:03.771Z",
       "evidenceIds": [],
-      "publishedRevision": "25ef14c44390554d",
-      "updatedAt": "2026-10-26T15:11:37.018Z"
+      "updatedAt": "2026-10-24T19:54:30.254Z",
+      "publishedRevision": "25ef14c44390554d"
     },
     "div-s-sec5-m2-b0": {
       "jobId": "div-s-sec5-m2-b0",

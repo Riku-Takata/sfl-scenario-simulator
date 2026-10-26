@@ -783,7 +783,8 @@ export async function generateAndSaveMatchRecaps(
         attempted: narrationAttempted,
         evidenceExhausted: evidenceExhaustedBouts.size > 0,
         apiAvailable: Boolean(apiKey),
-        article: matchArticle, editorial: Boolean(editorial.matches[matchId]) || editorialCoversBouts,
+        // A failed redraft or a missing narrative must not unpublish an article that already passed.
+        article: publishedMatchArticle ?? matchArticle, editorial: Boolean(editorial.matches[matchId]) || editorialCoversBouts,
         someBoutPassed: passedBoutArticles.length > 0,
       });
       for (let idx = 0; idx < boutInputs.length; idx++) {
@@ -791,7 +792,9 @@ export async function generateAndSaveMatchRecaps(
         const recap = boutRecaps[idx];
         const window = findBoutWindow(chapters, num, input.ctx.boutId.endsWith("-b3") ? 3 : input.ctx.boutId.endsWith("-b2") ? 2 : input.ctx.boutId.endsWith("-b1") ? 1 : 0);
         const candidateDraft = articleByBout.get(input.ctx.boutId);
-        const candidate = candidateDraft ?? currentPassedArticle(articlesData, input.ctx.boutId);
+        const candidate = candidateDraft?.status === "passed"
+          ? candidateDraft
+          : currentPassedArticle(articlesData, input.ctx.boutId) ?? candidateDraft;
         upsertJob({
           jobs: jobsData, sectionId: slug, matchId, boutId: input.ctx.boutId,
           officialInput: { ctx: input.ctx, games: input.games, videoId, window, analysisVersion, publicationMode },
@@ -832,13 +835,11 @@ export async function generateAndSaveMatchRecaps(
       // 独立検証済みの根拠を引用し、品質判定を通った解説だけを採用する。
       boutRecaps.forEach((recap, idx) => {
         const input = boutInputs[idx];
-        const nb = narrativeUsable
-          ? narrative!.bouts.find((b) => b.boutId === input.ctx.boutId)
-          : undefined;
         // 映像観測を使った生成文は公式ログ整合性を通したうえで、内容のある文だけ採用する。
         const articleDraft = articleByBout.get(input.ctx.boutId);
         const article = articleDraft?.status === "passed" ? articleDraft : currentPassedArticle(articlesData, input.ctx.boutId);
-        if (article?.status === "passed" && nb) {
+        // 手作業で仕上げた記事など、現行の生成文がなくても合格済みの記事は公開する。
+        if (article?.status === "passed") {
           recap.analysis = {
             source: "gemini-video",
             summary: article.summary,
