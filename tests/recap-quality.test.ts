@@ -12,7 +12,7 @@ import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
 import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
-import { mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
+import { mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
@@ -304,6 +304,13 @@ test("evidence review advances past saved decisions instead of rechecking the fi
   assert.deepEqual(pendingEvidenceCandidates(merged).map((candidate) => candidate.id), ["three"]);
   assert.equal(mergeEvidenceCandidate(candidates[0], { ...saved[0], verifierVersion: "independent-description-v2" }).status, "verified");
   assert.equal(mergeEvidenceCandidate(candidates[1], { ...saved[1], verifierVersion: "independent-description-v2" }).status, "candidate");
+});
+
+test("re-extraction keeps evidence that was reviewed by hand", () => {
+  const candidate = { ...evidence("manual", "visual", "画面端でブランカのローリングが相手にヒットした。"), status: "candidate" as const };
+  const reviewed = { ...candidate, status: "verified" as const, verifierVersion: MANUAL_REVIEW_VERIFIER_VERSION };
+  assert.deepEqual(mergeEvidenceCandidate(candidate, reviewed), reviewed);
+  assert.equal(mergeEvidenceCandidate(candidate, { ...reviewed, verifierVersion: undefined }).status, "candidate");
 });
 
 test("independent verification uses a capable model distinct from the extractor, with the same evidence gate", async (t) => {

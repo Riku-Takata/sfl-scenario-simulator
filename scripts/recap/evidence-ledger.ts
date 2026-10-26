@@ -7,6 +7,8 @@ import { z } from "zod";
 
 export const EVIDENCE_EXTRACTOR_VERSION = "recap-evidence-v2";
 export const EVIDENCE_VERIFIER_VERSION = "independent-description-v3";
+// Evidence a person checked against the video; re-extraction must not reset it.
+export const MANUAL_REVIEW_VERIFIER_VERSION = "manual-review-v1";
 const VerifierOutputSchema = z.object({ observation: z.string().min(8) });
 
 export function mergeEvidenceCandidate(candidate: RecapEvidence, prior?: RecapEvidence): RecapEvidence {
@@ -14,6 +16,7 @@ export function mergeEvidenceCandidate(candidate: RecapEvidence, prior?: RecapEv
     return { ...prior, status: "verified", verifierVersion: EVIDENCE_VERIFIER_VERSION };
   }
   const reviewed = prior?.verifierVersion === EVIDENCE_VERIFIER_VERSION ||
+    prior?.verifierVersion === MANUAL_REVIEW_VERIFIER_VERSION ||
     (prior?.status === "verified" && prior.verifierVersion === "independent-description-v2");
   return prior && reviewed ? prior : { ...candidate, createdAt: prior?.createdAt ?? candidate.createdAt };
 }
