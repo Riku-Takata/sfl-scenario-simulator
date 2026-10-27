@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-27T11:14:06.367Z",
+  "updatedAt": "2026-10-27T14:00:31.458Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -876,9 +876,9 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "verified",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
+      "verifierVersion": "invalidated-by-official-update",
       "verificationObservation": "1P側のケンと2P側のガイルによる対戦。中距離でお互いに飛び道具（ケンの波動拳、ガイルのソニックブーム）を撃ち合って牽制する。ガイルが前ジャンプしたのに対し、ケンがドライブラッシュで下をくぐるように前進して着地に接近し、通常投げを決めてカウンター（COUNTER表示）を取り、ガイルを地面に倒す。",
       "sourceModels": [
         "gemini-3.8-flash",
@@ -903,13 +903,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P側のガイル（RYUKICHI）と2P側の春麗（HIGUCHI）の対戦。画面左端付近でガイルがリバーサルからの対空空中コンボ（空中ターゲットから空中投げ）を決めて春麗をダウンさせる。起き上がり後、地上戦で春麗が気功拳を絡めて押し返し、ガイルがガードを強いられる展開となる。そのガードによりガイルのドライブゲージが尽きてバーンアウト状態に突入する。その後、春麗がドライブラッシュから仕掛けるがガイルがガードし、距離が離れた状態で仕切り直しとなる。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.7-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T13:46:08.181Z"
     },
@@ -930,13 +927,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "春麗（1P／RYUKICHI）とガイル（2P／HIGUCHI）の対戦。春麗が空中での攻撃ヒットからSA2（鳳翼扇）を発動し、連続蹴りをヒットさせてガイルを画面右端へ吹き飛ばす。ガイル起き上がりにドライブラッシュからの下段攻撃を仕掛けるが春麗の攻撃と相打ちになる。その後、ガイルのソニックブームと春麗の気功拳が相殺し合い、間合いを調整する中でガイルが出したしゃがみ強キック（足払い）の空振りに対し、春麗がしゃがみ中キックでパニッシュカウンターを取る。春麗はそこからドライブラッシュでキャンセルしてコンボへ移行し、画面端でガイルを浮かせたOD必殺技を絡めた連続技を決めてダウンを奪い、起き上がりに攻めを継続する。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.7-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T06:38:10.112Z"
     },
@@ -957,13 +951,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "70:40.000〜70:41.500の区間では、1P側の豪鬼（プレイヤー：藤村）と2P側のブランカ（プレイヤー：MENARD）の対戦が確認できる。ブランカはSA2（ライトニングビースト）発動中の状態で、前進して豪鬼に打撃をヒットさせ「PUNISH COUNTER」が画面左に表示される。その後、コンボが繋がり「2 HITS PUNISH COUNTER」と表示され、さらにブランカが電撃エフェクトを伴う攻撃（エレクトリックサンダー系）を豪鬼に当てている。",
       "sourceModels": [
-        "gemini-3.5-flash-lite",
-        "gemini-3.8-flash"
+        "gemini-3.5-flash-lite"
       ],
       "createdAt": "2026-10-24T13:46:38.715Z"
     },
@@ -1011,13 +1002,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P側の藤村（豪鬼）と2P側のMenaRD（ルーク）の対戦。豪鬼が画面左端（画面端）付近にいる状態で、ルークの攻撃がパニッシュカウンター（Punish Counter）でヒットし、豪鬼が吹き飛んでコンボ（2 HITSから3 HITS）を受けている。残り時間は45秒から44秒付近。",
       "sourceModels": [
-        "gemini-3.5-flash-lite",
-        "gemini-3.7-flash"
+        "gemini-3.5-flash-lite"
       ],
       "createdAt": "2026-10-24T06:44:20.243Z"
     },
@@ -1038,13 +1026,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ラウンド2の開始演出区間。1P側のJP（藤村）と2P側のブランカ（MenaRD）が対峙しており、画面中央に「ROUND 2」から「FIGHT」のコールが表示される。タイマーは99秒、体力ゲージおよびドライブゲージは両者満タン、SAゲージはJPが3本、ブランカが2本ストックされている。両キャラクターとも構えの姿勢で静止しており、まだ打撃等の接触や攻防の発生は見られない。",
       "sourceModels": [
-        "gemini-3.5-flash-lite",
-        "gemini-3.7-flash"
+        "gemini-3.5-flash-lite"
       ],
       "createdAt": "2026-10-24T06:44:20.243Z"
     },
@@ -1119,13 +1104,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "【対戦キャラクター】1P：豪鬼（プレイヤー：Fujimura）、2P：エドモンド本田（プレイヤー：Menard）\n\n【状況・攻防の経過】\n・79:51～：本田がスーパー百貫落としで落下してきたところ、着地硬直に対して豪鬼の攻撃がヒットし「PUNISH COUNTER」が発生。\n・79:52～79:53：豪鬼が通常技からドライブラッシュへキャンセルし、コンボを継続。\n・79:54～79:55：豪鬼がSAゲージを2本消費してスーパーアーツ2（SA2）を発動。カットイン演出が入る。\n・79:56～80:01：SA2の演出技がヒットし続け、ヒット中に本田の体力が削り切られて「K.O.」が表示される。\n・80:02～：本田が倒れて「HARD KNOCKDOWN」が表示され、豪鬼が勝利する。実況でも「SA2フィニッシュ」と言及されている。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.7-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T06:44:20.243Z"
     },
@@ -1146,13 +1128,10 @@
       "officialRefs": [
         "div-s-sec5-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P側のケン（COSA）と2P側の豪鬼（YANAI）の対戦。ケンが豪鬼を吹き飛ばしてダウンさせた後、ドライブラッシュで起き上がりに攻め込み、カウンターヒット（COUNTER表示）から連続技を繋ぐ。ケンはドライブラッシュキャンセルを絡めた地上コンボからSAゲージを3本消費してSA3（神龍拳）を発動。神龍拳の演出がヒットし続け、豪鬼の体力を削り切ってK.O.となる。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.7-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-24T13:58:32.595Z"
     },
@@ -1275,9 +1254,8 @@
       "officialRefs": [
         "div-s-sec5-m2-b2:winner-order-reviewed"
       ],
-      "status": "verified",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "manual-review-v1",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
@@ -1300,9 +1278,8 @@
       "officialRefs": [
         "div-s-sec5-m2-b2:winner-order-reviewed"
       ],
-      "status": "verified",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "manual-review-v1",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
@@ -1351,13 +1328,10 @@
       "officialRefs": [
         "div-s-sec5-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ストリートファイター6の試合映像（1P側：もけ／春麗、2P側：ももち／エド）。両者ともに体力が残りわずかな状況で、53:30頃にももちのエドがODサイコアッパーをヒットさせて春麗をダウンさせます。起き上がり後の立ち回りで、53:40頃にももちのエドがしゃがみ中Kからドライブラッシュで接近を試みますが、もけの春麗がこれに合わせてOD天昇脚をカウンターヒット（画面にREVERSAL・COUNTER表示）させ、エドの体力を削りきってK.O.勝利します。",
       "sourceModels": [
-        "gemini-3.7-flash",
-        "gemini-3.8-flash"
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T14:50:15.893Z"
     },
@@ -1549,9 +1523,8 @@
       "officialRefs": [
         "div-s-sec5-m2-b3:winner-order-reviewed"
       ],
-      "status": "verified",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "manual-review-v1",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
@@ -1598,9 +1571,8 @@
       "officialRefs": [
         "div-s-sec5-m2-b3:winner-order-reviewed"
       ],
-      "status": "verified",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "manual-review-v1",
       "sourceModels": [
         "gemini-3.1-flash-lite"
       ],
@@ -1623,9 +1595,9 @@
       "officialRefs": [
         "div-s-sec5-m2-b1:winner-order-reviewed"
       ],
-      "status": "verified",
+      "status": "disputed",
       "extractorVersion": "manual-editorial-v1",
-      "verifierVersion": "manual-review-v1",
+      "verifierVersion": "invalidated-by-official-update",
       "verificationObservation": "まちゃぼー（リュウ）が鶏めし（ダルシム）の牽制を潜り抜け、第1ゲームのフルラウンドを制して先制。",
       "sourceModels": [],
       "createdAt": "2026-10-24T19:54:30.246Z"
@@ -1647,9 +1619,9 @@
       "officialRefs": [
         "div-s-sec5-m2-b1:winner-order-reviewed"
       ],
-      "status": "verified",
+      "status": "disputed",
       "extractorVersion": "manual-editorial-v1",
-      "verifierVersion": "manual-review-v1",
+      "verifierVersion": "invalidated-by-official-update",
       "verificationObservation": "第2ゲーム、まちゃぼーが対空迎撃から攻めを継続し、2-0で勝利を決めた。",
       "sourceModels": [],
       "createdAt": "2026-10-24T19:54:30.246Z"
@@ -1950,6 +1922,234 @@
         "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-26T23:21:16.098Z"
+    },
+    "ev-86539a1f42273585fd1d": {
+      "id": "ev-86539a1f42273585fd1d",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b0",
+      "kind": "official",
+      "playerIds": [
+        "YAS",
+        "もっちー"
+      ],
+      "observation": "YASともっちーの先鋒戦は2-0。第1ゲームYASが勝利、第2ゲームYASが勝利",
+      "officialRefs": [
+        "div-f-sec5-m1-b0:score",
+        "div-f-sec5-m1-b0:game:0:winner-and-rounds",
+        "div-f-sec5-m1-b0:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.449Z"
+    },
+    "ev-85fccab06915fad2479e": {
+      "id": "ev-85fccab06915fad2479e",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "kind": "official",
+      "playerIds": [
+        "ひなお",
+        "らおやむ"
+      ],
+      "observation": "ひなおとらおやむの中堅戦は2-0。第1ゲームひなおが勝利、第2ゲームひなおが勝利",
+      "officialRefs": [
+        "div-f-sec5-m1-b1:score",
+        "div-f-sec5-m1-b1:game:0:winner-and-rounds",
+        "div-f-sec5-m1-b1:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.449Z"
+    },
+    "ev-e02e9b6ce8c5644b9600": {
+      "id": "ev-e02e9b6ce8c5644b9600",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b2",
+      "kind": "official",
+      "playerIds": [
+        "ふ～ど",
+        "大谷"
+      ],
+      "observation": "ふ～どと大谷の大将戦は3-1。第1ゲームふ～どが勝利、第2ゲーム大谷が勝利、第3ゲームふ～どが勝利、第4ゲームふ～どが勝利",
+      "officialRefs": [
+        "div-f-sec5-m1-b2:score",
+        "div-f-sec5-m1-b2:game:0:winner-and-rounds",
+        "div-f-sec5-m1-b2:game:1:winner-and-rounds",
+        "div-f-sec5-m1-b2:game:2:winner-and-rounds",
+        "div-f-sec5-m1-b2:game:3:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.449Z"
+    },
+    "ev-89135caa81ab92c51566": {
+      "id": "ev-89135caa81ab92c51566",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b0",
+      "kind": "official",
+      "playerIds": [
+        "あでりい",
+        "マゴ"
+      ],
+      "observation": "あでりいとマゴの先鋒戦は2-0。第1ゲームマゴが勝利、第2ゲームマゴが勝利",
+      "officialRefs": [
+        "div-f-sec5-m2-b0:score",
+        "div-f-sec5-m2-b0:game:0:winner-and-rounds",
+        "div-f-sec5-m2-b0:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.449Z"
+    },
+    "ev-e6e5ae552d5e96876fe9": {
+      "id": "ev-e6e5ae552d5e96876fe9",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b1",
+      "kind": "official",
+      "playerIds": [
+        "高木",
+        "ときど"
+      ],
+      "observation": "高木とときどの中堅戦は2-0。第1ゲーム高木が勝利、第2ゲーム高木が勝利",
+      "officialRefs": [
+        "div-f-sec5-m2-b1:score",
+        "div-f-sec5-m2-b1:game:0:winner-and-rounds",
+        "div-f-sec5-m2-b1:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.449Z"
+    },
+    "ev-e1fb1eab6dd76af1f582": {
+      "id": "ev-e1fb1eab6dd76af1f582",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b2",
+      "kind": "official",
+      "playerIds": [
+        "Jr.",
+        "わびいち"
+      ],
+      "observation": "Jr.とわびいちの大将戦は3-2。第1ゲームわびいちが勝利、第2ゲームJr.が勝利、第3ゲームJr.が勝利、第4ゲームわびいちが勝利、第5ゲームわびいちが勝利",
+      "officialRefs": [
+        "div-f-sec5-m2-b2:score",
+        "div-f-sec5-m2-b2:game:0:winner-and-rounds",
+        "div-f-sec5-m2-b2:game:1:winner-and-rounds",
+        "div-f-sec5-m2-b2:game:2:winner-and-rounds",
+        "div-f-sec5-m2-b2:game:3:winner-and-rounds",
+        "div-f-sec5-m2-b2:game:4:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.449Z"
+    },
+    "ev-10ddd75b13722aadbba2": {
+      "id": "ev-10ddd75b13722aadbba2",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b0",
+      "kind": "official",
+      "playerIds": [
+        "ナウマン",
+        "ガチくん"
+      ],
+      "observation": "ナウマンとガチくんの先鋒戦は2-1。第1ゲームガチくんが勝利、第2ゲームナウマンが勝利、第3ゲームガチくんが勝利",
+      "officialRefs": [
+        "div-f-sec5-m3-b0:score",
+        "div-f-sec5-m3-b0:game:0:winner-and-rounds",
+        "div-f-sec5-m3-b0:game:1:winner-and-rounds",
+        "div-f-sec5-m3-b0:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.450Z"
+    },
+    "ev-996603fc7046989b64c1": {
+      "id": "ev-996603fc7046989b64c1",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b1",
+      "kind": "official",
+      "playerIds": [
+        "板橋ザンギエフ",
+        "カワノ"
+      ],
+      "observation": "板橋ザンギエフとカワノの中堅戦は2-0。第1ゲームカワノが勝利、第2ゲームカワノが勝利",
+      "officialRefs": [
+        "div-f-sec5-m3-b1:score",
+        "div-f-sec5-m3-b1:game:0:winner-and-rounds",
+        "div-f-sec5-m3-b1:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.450Z"
+    },
+    "ev-7d902d80cbb135991e66": {
+      "id": "ev-7d902d80cbb135991e66",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b2",
+      "kind": "official",
+      "playerIds": [
+        "KEI.B",
+        "さはら"
+      ],
+      "observation": "KEI.Bとさはらの大将戦は3-1。第1ゲームKEI.Bが勝利、第2ゲームKEI.Bが勝利、第3ゲームさはらが勝利、第4ゲームKEI.Bが勝利",
+      "officialRefs": [
+        "div-f-sec5-m3-b2:score",
+        "div-f-sec5-m3-b2:game:0:winner-and-rounds",
+        "div-f-sec5-m3-b2:game:1:winner-and-rounds",
+        "div-f-sec5-m3-b2:game:2:winner-and-rounds",
+        "div-f-sec5-m3-b2:game:3:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.450Z"
+    },
+    "ev-83d01366a8ace04d5262": {
+      "id": "ev-83d01366a8ace04d5262",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b3",
+      "kind": "official",
+      "playerIds": [
+        "竹内ジョン",
+        "ぷげら"
+      ],
+      "observation": "竹内ジョンとぷげらの延長戦は2-0。第1ゲームぷげらが勝利、第2ゲームぷげらが勝利",
+      "officialRefs": [
+        "div-f-sec5-m3-b3:score",
+        "div-f-sec5-m3-b3:game:0:winner-and-rounds",
+        "div-f-sec5-m3-b3:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-27T14:00:31.450Z"
     }
   }
 }
