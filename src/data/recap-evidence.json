@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-26T23:21:16.104Z",
+  "updatedAt": "2026-10-27T08:46:45.033Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1695,10 +1695,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ストリートファイター6の試合画面。画面左側にブランカ（ACQUA）、画面右側にキャミィ（DOGURA）。ブランカは体力が残りわずかの状態で画面左側でダウンから起き上がり、リバーサル（REVERSAL表示）でオーバードライブ版バーチカルローリングを繰り出すが空振りとなる。キャミィは接近していたが当たらず、着地硬直中のブランカに対して攻撃を当ててパニッシュカウンター（PUNISH COUNTER表示）を取り、追撃のコンボをヒットさせてK.O.となりラウンドが終了する。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T16:25:20.943Z"
     },
@@ -1719,10 +1722,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P側ACQUA（ブランカ）と2P側DOGURA（エレナ）の試合。エレナがブランカに対してコンボ（SA2からの派生）をヒットさせ、ヒーリングを発動して体力を回復しつつブランカをハードノックダウン（HARD KNOCKDOWN）させる。ブランカの起き上がりにエレナが攻め込み、投げ抜け（THROW ESCAPE）が発生して一旦距離が離れる。仕切り直しの後、エレナが踏み込んで放った攻撃がブランカにカウンター（COUNTER）ヒットし、ドライブラッシュを絡めた追撃へと移行する。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-26T16:25:20.943Z"
     },
