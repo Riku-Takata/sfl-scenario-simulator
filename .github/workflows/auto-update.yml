@@ -54,6 +54,10 @@ jobs:
         env:
           STARTGG_API_TOKEN: ${{ secrets.STARTGG_API_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # The recap job input hash includes these. They must match recap-worker.yml,
+          # or a results update treats every article as stale and deletes it.
+          RECAP_PUBLICATION_MODE: auto
+          GEMINI_VIDEO_MODELS: ${{ vars.GEMINI_VIDEO_MODELS }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             npm run pipeline:force -- --results-only

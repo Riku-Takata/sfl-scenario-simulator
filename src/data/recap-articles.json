@@ -1,5 +1,968 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-10-27T14:00:31.459Z",
-  "articles": {}
+  "articles": {
+    "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
+      "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "revision": "bb88511ce563110b",
+      "status": "insufficient",
+      "summary": "",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "quality": {
+        "score": 0.4444444444444444,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": false
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints",
+          "everyClaimOverlapsCitedEvidence"
+        ],
+        "evaluatedAt": "2026-10-24T06:47:57.980Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T06:47:57.980Z"
+    },
+    "div-s-sec5-m1-b1:4c321f6966c5f2e8:candidate": {
+      "articleId": "div-s-sec5-m1-b1:4c321f6966c5f2e8:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "revision": "4c321f6966c5f2e8",
+      "status": "insufficient",
+      "summary": "りゅうきち選手（不知火舞）がひぐち選手（ガイル）を2-0のストレートで下した。",
+      "summaryEvidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T06:47:57.981Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T06:47:57.981Z"
+    },
+    "div-s-sec5-m1-b2:8173a37efeb4afc1:candidate": {
+      "articleId": "div-s-sec5-m1-b2:8173a37efeb4afc1:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "revision": "8173a37efeb4afc1",
+      "status": "insufficient",
+      "summary": "藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）とのフルセットの接戦を3-2で制した。",
+      "summaryEvidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T06:47:57.981Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T06:47:57.981Z"
+    },
+    "div-s-sec5-m1:1390688b498699c8:candidate": {
+      "articleId": "div-s-sec5-m1:1390688b498699c8:candidate",
+      "matchId": "div-s-sec5-m1",
+      "revision": "1390688b498699c8",
+      "status": "insufficient",
+      "headline": "FAV gamingが40-0でZETAに完勝",
+      "summary": "KADOKAWA FAV gamingが40-0でZETA DIVISION Geeklyに勝利した。先鋒戦ではもけ選手（不知火舞）がももち選手（ジェイミー）に第1ゲームを先取されながらも2-1で逆転勝ち。続く中堅戦はりゅうきち選手（不知火舞）がひぐち選手（ガイル）を2-0のストレートで破った。大将戦では藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）に第2・第3ゲームを連取される展開から巻き返し、3-2のフルセットを制してチームの全勝を確定させた。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.8,
+        "checks": {
+          "allBoutsPassed": false,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [
+          "allBoutsPassed"
+        ],
+        "evaluatedAt": "2026-10-24T06:47:57.981Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T06:47:57.981Z"
+    },
+    "div-s-sec5-m1-b0:b8328cb50d68bd43:candidate": {
+      "articleId": "div-s-sec5-m1-b0:b8328cb50d68bd43:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "revision": "b8328cb50d68bd43",
+      "status": "insufficient",
+      "summary": "先鋒戦はもけ選手（不知火舞）が、第1ゲームを先取したももち選手（ジェイミー）に2-1で勝利した。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T13:58:32.594Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T13:58:32.594Z"
+    },
+    "div-s-sec5-m1-b1:1c167c066e191929:candidate": {
+      "articleId": "div-s-sec5-m1-b1:1c167c066e191929:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "revision": "1c167c066e191929",
+      "status": "insufficient",
+      "summary": "中堅戦はりゅうきち選手（不知火舞）がひぐち選手（ガイル）に2-0で勝利した。",
+      "summaryEvidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T13:58:32.594Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T13:58:32.594Z"
+    },
+    "div-s-sec5-m1-b2:c8a9e750bac87a23:candidate": {
+      "articleId": "div-s-sec5-m1-b2:c8a9e750bac87a23:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "revision": "c8a9e750bac87a23",
+      "status": "insufficient",
+      "summary": "大将戦は藤村選手（C.ヴァイパー）がMenaRD選手（ブランカ）を3-2で破った。",
+      "summaryEvidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.5555555555555556,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": false,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "everyPointHasVerifiedReferences",
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T13:58:32.594Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T13:58:32.594Z"
+    },
+    "div-s-sec5-m1:c673bae5ea85974d:candidate": {
+      "articleId": "div-s-sec5-m1:c673bae5ea85974d:candidate",
+      "matchId": "div-s-sec5-m1",
+      "revision": "c673bae5ea85974d",
+      "status": "insufficient",
+      "headline": "FAVがZETAを40-0で破りストレート勝利",
+      "summary": "KADOKAWA FAV gamingがZETA DIVISION Geeklyを相手に40-0で勝利した。先鋒戦ではもけが第1ゲームを取られながらも2-1でももちに勝利。続く中堅戦ではりゅうきちがひぐちを2-0で下した。大将戦は藤村がMenaRDとのフルセットを3-2で制し、KADOKAWA FAV gamingが40ポイントを獲得した。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.6,
+        "checks": {
+          "allBoutsPassed": false,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": false
+        },
+        "reasons": [
+          "allBoutsPassed",
+          "summaryHasSubstance"
+        ],
+        "evaluatedAt": "2026-10-24T13:58:32.595Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T13:58:32.595Z"
+    },
+    "div-s-sec5-m1-b0:195061849ec4d947:candidate": {
+      "articleId": "div-s-sec5-m1-b0:195061849ec4d947:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "revision": "195061849ec4d947",
+      "status": "insufficient",
+      "summary": "先鋒戦はもけ選手がももち選手に2-1で逆転勝利を収めた。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームはももち選手が画面端でスタンに追い込んで酒レベルを4まで引き上げ先取したが、第2ゲーム第2ラウンド終盤にもけ選手が無敵技の暴れを防ぎ、パニッシュカウンターからK.O.して勝敗をタイに戻した。",
+          "evidenceIds": [
+            "ev-d0a04b150ea36c589380",
+            "ev-59861cfdbe442f24e3c9"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドでは、もけ選手が画面端に追い詰めて一切の被弾を許さずパーフェクトK.O.を奪い勝利を決めた。",
+          "evidenceIds": [
+            "ev-d1821140d32529f0c00f"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-d0a04b150ea36c589380",
+        "ev-59861cfdbe442f24e3c9",
+        "ev-d1821140d32529f0c00f"
+      ],
+      "quality": {
+        "score": 0.8888888888888888,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "summaryHasSubstance"
+        ],
+        "evaluatedAt": "2026-10-24T18:04:50.495Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T18:04:50.495Z"
+    },
+    "div-s-sec5-m1-b1:78264cfc49974bc4:candidate": {
+      "articleId": "div-s-sec5-m1-b1:78264cfc49974bc4:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "revision": "78264cfc49974bc4",
+      "status": "insufficient",
+      "summary": "中堅戦はりゅうきち選手がひぐち選手に2-0でストレート勝利した。",
+      "summaryEvidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンド終盤、りゅうきち選手は相手のソニックブームを至近距離のSA2で弾抜けしてパニッシュカウンターを取り、第1ゲームを先取した。",
+          "evidenceIds": [
+            "ev-d72684ae9287c40c10ca"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンド終盤には、相手のSA2発動に対して遅らせキャンセルによるムササビの舞でタイミングをずらし、パニッシュカウンターを決めてラウンドを奪った。",
+          "evidenceIds": [
+            "ev-5c99881b87b5c1e89067"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d72684ae9287c40c10ca",
+        "ev-5c99881b87b5c1e89067"
+      ],
+      "quality": {
+        "score": 0.8888888888888888,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "summaryHasSubstance"
+        ],
+        "evaluatedAt": "2026-10-24T18:04:50.496Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T18:04:50.496Z"
+    },
+    "div-s-sec5-m1-b2:45c81cae62c57e6b:candidate": {
+      "articleId": "div-s-sec5-m1-b2:45c81cae62c57e6b:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "revision": "45c81cae62c57e6b",
+      "status": "insufficient",
+      "summary": "大将戦は藤村選手がMenaRD選手とのフルセットを3-2で制した。",
+      "summaryEvidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームではMenaRD選手がしゃがみ中Kから電撃オディオティをヒットさせ、パーフェクトK.O.を奪った。",
+          "evidenceIds": [
+            "ev-36a0679ebad98ed00512"
+          ]
+        },
+        {
+          "text": "第5ゲーム第3ラウンド、藤村選手は飛び込みを迎撃してSA3を叩き込み、起き上がりの暴れを後ろ下がりでかわして投げを決め勝利を決定づけた。",
+          "evidenceIds": [
+            "ev-b92fa1bb9cfd4350193f"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-d5f10d6c743c361ee4ce",
+        "ev-36a0679ebad98ed00512",
+        "ev-b92fa1bb9cfd4350193f"
+      ],
+      "quality": {
+        "score": 0.8888888888888888,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "summaryHasSubstance"
+        ],
+        "evaluatedAt": "2026-10-24T18:04:50.496Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T18:04:50.496Z"
+    },
+    "div-s-sec5-m1:c5a6901ef52abad1:candidate": {
+      "articleId": "div-s-sec5-m1:c5a6901ef52abad1:candidate",
+      "matchId": "div-s-sec5-m1",
+      "revision": "c5a6901ef52abad1",
+      "status": "insufficient",
+      "headline": "KADOKAWA FAVが40-0でZETAに勝利",
+      "summary": "先鋒戦ではもけ選手がももち選手に2-1で逆転勝利を収めると、中堅戦でもりゅうきち選手がひぐち選手を2-0のストレートで破り、KADOKAWA FAV gamingが連勝を飾った。大将戦でも藤村選手がMenaRD選手とのフルセットに及ぶ激戦を3-2で制し、KADOKAWA FAV gamingが40-0のスコアでZETA DIVISION Geeklyに勝利を収めた。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "quality": {
+        "score": 0.8,
+        "checks": {
+          "allBoutsPassed": false,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [
+          "allBoutsPassed"
+        ],
+        "evaluatedAt": "2026-10-24T18:04:50.496Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T18:04:50.496Z"
+    },
+    "div-s-sec5-m1-b0:e6cd34d2d1d36a67:candidate": {
+      "articleId": "div-s-sec5-m1-b0:e6cd34d2d1d36a67:candidate",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "revision": "e6cd34d2d1d36a67",
+      "status": "insufficient",
+      "summary": "",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームは、ももち選手が画面端で不知火舞をバーンアウトからスタンに追い込み、一気に酒レベル4まで引き上げて先取した。",
+          "evidenceIds": [
+            "ev-d0a04b150ea36c589380"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-d0a04b150ea36c589380"
+      ],
+      "quality": {
+        "score": 0.6666666666666666,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "summaryHasSubstance",
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-24T18:17:45.276Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T18:17:45.276Z"
+    },
+    "div-s-sec5-m1-b1:a2dfc39e094f7b6a:published": {
+      "articleId": "div-s-sec5-m1-b1:a2dfc39e094f7b6a:published",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "revision": "a2dfc39e094f7b6a",
+      "status": "passed",
+      "summary": "りゅうきち選手がひぐち選手を2-0のストレートで破り、KADOKAWA FAV gamingがリードを広げて勝利に王手をかけた。",
+      "summaryEvidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンド終盤、りゅうきち選手はひぐち選手のソニックブームを至近距離のSA2で弾抜けしてパニッシュカウンターを取り、第1ゲームを先取した。",
+          "evidenceIds": [
+            "ev-d72684ae9287c40c10ca"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンド終盤には、ひぐち選手のSA2発動に対して遅らせキャンセルによるムササビの舞でタイミングをずらしてかわし、パニッシュカウンターを決めてラウンドを奪った。",
+          "evidenceIds": [
+            "ev-5c99881b87b5c1e89067"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d72684ae9287c40c10ca",
+        "ev-5c99881b87b5c1e89067"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T18:17:45.276Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T18:17:45.276Z"
+    },
+    "div-s-sec5-m1-b2:8946d6b04cfe18a5:published": {
+      "articleId": "div-s-sec5-m1-b2:8946d6b04cfe18a5:published",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b2",
+      "revision": "8946d6b04cfe18a5",
+      "status": "passed",
+      "summary": "藤村選手がMenaRD選手とのフルセットに及ぶ激闘を3-2で制し、KADOKAWA FAV gamingが40-0の完封勝利を達成した。",
+      "summaryEvidenceIds": [
+        "ev-d5f10d6c743c361ee4ce"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームでは、MenaRD選手のブランカがしゃがみ中Kから電撃オディオティをヒットさせ、そのままパーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-36a0679ebad98ed00512"
+          ]
+        },
+        {
+          "text": "第5ゲーム第3ラウンド、藤村選手はMenaRD選手の飛び込みを迎撃してSA3を叩き込み、起き上がりの暴れを後ろ下がりでスカして投げを決め勝利を決定づけた。",
+          "evidenceIds": [
+            "ev-b92fa1bb9cfd4350193f"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-d5f10d6c743c361ee4ce",
+        "ev-36a0679ebad98ed00512",
+        "ev-b92fa1bb9cfd4350193f"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T18:17:45.277Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T18:17:45.277Z"
+    },
+    "div-s-sec5-m1:7e6e595cff6fe44c:published": {
+      "articleId": "div-s-sec5-m1:7e6e595cff6fe44c:published",
+      "matchId": "div-s-sec5-m1",
+      "revision": "7e6e595cff6fe44c",
+      "status": "passed",
+      "headline": "FAVが40-0でZETAに完封勝利",
+      "summary": "先鋒戦でもけ選手がももち選手に第1ゲームを奪われながらも、第3ゲーム第2ラウンドでパーフェクトK.O.を奪って逆転勝利し先制した。続く中堅戦ではりゅうきち選手が相手のソニックブームを至近距離のSA2で弾抜けする対応を見せ、ひぐち選手を2-0で下してリードを広げた。大将戦はフルセットにもつれ込んだが、藤村選手が第5ゲーム第3ラウンドで飛び込みに対空からSA3を叩き込み、起き上がりの投げを決めてMenaRD選手に3-2で競り勝った。これによりKADOKAWA FAV gamingが40-0の完全勝利を収めた。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-d1821140d32529f0c00f",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d72684ae9287c40c10ca",
+        "ev-d5f10d6c743c361ee4ce",
+        "ev-b92fa1bb9cfd4350193f"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-d1821140d32529f0c00f",
+        "ev-2b73f2666a3cfb01d3ac",
+        "ev-d72684ae9287c40c10ca",
+        "ev-d5f10d6c743c361ee4ce",
+        "ev-b92fa1bb9cfd4350193f"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T18:17:45.277Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T18:17:45.277Z"
+    },
+    "div-s-sec5-m1-b0:b75e4aa259e25fbd:published": {
+      "articleId": "div-s-sec5-m1-b0:b75e4aa259e25fbd:published",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b0",
+      "revision": "b75e4aa259e25fbd",
+      "status": "passed",
+      "summary": "もけ選手がももち選手に第1ゲームを奪われながらも、続く第2ゲーム・第3ゲームを連取して2-1で逆転勝利を収めた。",
+      "summaryEvidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-d1821140d32529f0c00f"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームはももち選手が画面端で不知火舞をバーンアウトからスタンに追い込み、一気に酒レベル4まで引き上げて先制した。",
+          "evidenceIds": [
+            "ev-d0a04b150ea36c589380"
+          ]
+        },
+        {
+          "text": "第2ゲーム第2ラウンド終盤にもけ選手が無敵技の暴れを冷静に防ぎ、パニッシュカウンターからK.O.して勝敗をタイに戻した。",
+          "evidenceIds": [
+            "ev-59861cfdbe442f24e3c9"
+          ]
+        },
+        {
+          "text": "最終第3ゲーム第2ラウンドではもけ選手がももち選手を画面端に追い詰め、一切の被弾を許さずパーフェクトK.O.で試合を決めた。",
+          "evidenceIds": [
+            "ev-d1821140d32529f0c00f"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-86d3a474908cef95bf54",
+        "ev-d1821140d32529f0c00f",
+        "ev-d0a04b150ea36c589380",
+        "ev-59861cfdbe442f24e3c9"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T19:54:30.248Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T19:54:30.248Z"
+    },
+    "div-s-sec5-m2-b0:ab5f753cb9a5b209:published": {
+      "articleId": "div-s-sec5-m2-b0:ab5f753cb9a5b209:published",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b0",
+      "revision": "ab5f753cb9a5b209",
+      "status": "passed",
+      "summary": "cosa選手が卓越した差し返しと間合い管理でヤナイ選手を圧倒し、1ラウンドも落とさず2-0のストレートで完勝した。",
+      "summaryEvidenceIds": [
+        "ev-722fa91a4d1755ed1d54",
+        "ev-1243c70ed38678d136de"
+      ],
+      "keyPoints": [
+        {
+          "text": "cosa選手は第2ゲーム第1ラウンド、卓越した間合い管理と差し返しからヤナイ選手を画面端に追い詰めてパーフェクトK.O.を奪った。",
+          "evidenceIds": [
+            "ev-1243c70ed38678d136de"
+          ]
+        },
+        {
+          "text": "第2ゲーム第2ラウンド終盤には守りを崩すめくりジャンプ攻撃を通してK.O.を奪い、ストレートで2-0勝利を決めた。",
+          "evidenceIds": [
+            "ev-e79df3fcf3faf037089b"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-722fa91a4d1755ed1d54",
+        "ev-1243c70ed38678d136de",
+        "ev-e79df3fcf3faf037089b"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T19:54:30.249Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T19:54:30.249Z"
+    },
+    "div-s-sec5-m2-b1:0d02c0a962e2ee89:published": {
+      "articleId": "div-s-sec5-m2-b1:0d02c0a962e2ee89:published",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b1",
+      "revision": "0d02c0a962e2ee89",
+      "status": "passed",
+      "summary": "まちゃぼー選手が鶏めし選手とのフルラウンドの激闘を2ゲーム続けて競り勝ち、2-0で勝利してリードを広げた。",
+      "summaryEvidenceIds": [
+        "ev-2de5409c725a3a8bd60b",
+        "ev-m2b1-vis-01"
+      ],
+      "keyPoints": [
+        {
+          "text": "まちゃぼー選手は第1ゲーム、鶏めし選手のダルシムによる遠距離牽制を冷静に捌き、飛び込みや前歩きで間合いを詰めてフルラウンドを制した。",
+          "evidenceIds": [
+            "ev-m2b1-vis-01"
+          ]
+        },
+        {
+          "text": "第2ゲームもフルラウンドにもつれ込む中、要所での対空と近距離の攻めを徹底して取り切り、2-0で勝利を飾った。",
+          "evidenceIds": [
+            "ev-m2b1-vis-02"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-2de5409c725a3a8bd60b",
+        "ev-m2b1-vis-01",
+        "ev-m2b1-vis-02"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T19:54:30.249Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T19:54:30.249Z"
+    },
+    "div-s-sec5-m2-b2:4a6e225c864ef098:published": {
+      "articleId": "div-s-sec5-m2-b2:4a6e225c864ef098:published",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b2",
+      "revision": "4a6e225c864ef098",
+      "status": "passed",
+      "summary": "2BASSA選手がきんちょ選手に対してキャミィのスピードと要所のSA3で主導権を握り、3-0のストレートで圧勝した。",
+      "summaryEvidenceIds": [
+        "ev-8855fc3d1ede5a4c849f",
+        "ev-96769f8038507c8f1c6b"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム、2BASSA選手はキャミィのSA3をクリーンヒットさせてきんちょ選手を追い詰め、相手のドライブインパクトに対処して勝ち切った。",
+          "evidenceIds": [
+            "ev-96769f8038507c8f1c6b"
+          ]
+        },
+        {
+          "text": "第3ゲームにはバーンアウトした隙を見逃さず、立ち強キックのパニッシュカウンターからSA3を叩き込んで3-0のストレート勝利を飾った。",
+          "evidenceIds": [
+            "ev-8e42fa2f4688c273965d"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-8855fc3d1ede5a4c849f",
+        "ev-96769f8038507c8f1c6b",
+        "ev-8e42fa2f4688c273965d"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T19:54:30.249Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T19:54:30.249Z"
+    },
+    "div-s-sec5-m2-b3:cda737cee6d0ce45:published": {
+      "articleId": "div-s-sec5-m2-b3:cda737cee6d0ce45:published",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b3",
+      "revision": "cda737cee6d0ce45",
+      "status": "passed",
+      "summary": "延長戦にもつれ込んだ大一番で、こばやん選手がジョニィ選手を2-0で下し、Saishunkan Sol 熊本に価値ある勝利をもたらした。",
+      "summaryEvidenceIds": [
+        "ev-0df46428ab2940aae594",
+        "ev-8e4b588723f0f1486ea2"
+      ],
+      "keyPoints": [
+        {
+          "text": "こばやん選手は第1ゲーム終盤、ドライブインパクトの応酬を制した直後に起き攻めを決め、ジョニィ選手をバーンアウトからK.O.した。",
+          "evidenceIds": [
+            "ev-8e4b588723f0f1486ea2"
+          ]
+        },
+        {
+          "text": "第2ゲーム決着時には起き上がりに合わせてSA2を放ち、相手の投げ抜けや暴れを吸い込んで2-0の勝利を決めた。",
+          "evidenceIds": [
+            "ev-166eccb53792b1b0e185"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-0df46428ab2940aae594",
+        "ev-8e4b588723f0f1486ea2",
+        "ev-166eccb53792b1b0e185"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T19:54:30.250Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T19:54:30.250Z"
+    },
+    "div-s-sec5-m2:25ef14c44390554d:published": {
+      "articleId": "div-s-sec5-m2:25ef14c44390554d:published",
+      "matchId": "div-s-sec5-m2",
+      "revision": "25ef14c44390554d",
+      "status": "passed",
+      "headline": "Sol熊本が延長戦を制し30-20で勝利",
+      "summary": "先鋒戦でcosa選手がヤナイ選手を相手に第2ゲームでパーフェクトK.O.を奪うなど圧倒し、ストレート勝ちで先制した。続く中堅戦ではまちゃぼー選手が鶏めし選手とのフルラウンドの攻防を競り勝ってリードを20-0へと広げた。大将戦はFUKUSHIMA IBUSHIGINの2BASSA選手がきんちょ選手を3-0で下して20-20の同点に追いつき延長戦へ突入。緊迫の延長戦ではこばやん選手がジョニィ選手とのインパクト戦を制し、最後は起き上がりにSA2を合わせて2-0で勝利。Saishunkan Sol 熊本が激闘の末に勝ち点30を獲得した。",
+      "summaryEvidenceIds": [
+        "ev-722fa91a4d1755ed1d54",
+        "ev-1243c70ed38678d136de",
+        "ev-2de5409c725a3a8bd60b",
+        "ev-m2b1-vis-01",
+        "ev-8855fc3d1ede5a4c849f",
+        "ev-8e42fa2f4688c273965d",
+        "ev-0df46428ab2940aae594",
+        "ev-166eccb53792b1b0e185"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-722fa91a4d1755ed1d54",
+        "ev-1243c70ed38678d136de",
+        "ev-2de5409c725a3a8bd60b",
+        "ev-m2b1-vis-01",
+        "ev-8855fc3d1ede5a4c849f",
+        "ev-8e42fa2f4688c273965d",
+        "ev-0df46428ab2940aae594",
+        "ev-166eccb53792b1b0e185"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-24T19:54:30.250Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-24T19:54:30.250Z"
+    }
+  }
 }
