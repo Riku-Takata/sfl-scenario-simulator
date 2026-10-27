@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-27T08:46:45.033Z",
+  "updatedAt": "2026-10-27T11:14:06.367Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1821,10 +1821,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのJP（TAKEPI）と2Pのキャミィ（KAZUNOKO）の対戦。197:50付近でキャミィがJPに画面端付近でコンボを決めてダウンを奪う。仕切り直し後、中距離〜遠距離の差し合いとなり、JPがヴィハトの設置やトリグラフなどの飛び道具で牽制する。198:05付近でJPがしゃがみモーションからトリグラフを展開したのに対し、キャミィがODアクセルスピンナックルで抜けてパニッシュカウンターを取る。キャミィはそこからコンボを繋いでSA3（デルタレッドアサルト）へキャンセル発動し、演出を経てそのままJPをK.O.する。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T23:20:25.436Z"
     },
