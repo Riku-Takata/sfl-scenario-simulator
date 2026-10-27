@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T23:21:16.096Z",
+  "updatedAt": "2026-10-27T15:02:49.443Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2163,6 +2163,36 @@
               "endSec": 3834
             }
           ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-10-27T15:01:44.415Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド、りゅう落（舞）がひぐち（ガイル）のソニックブームに対してSA2での弾抜けを正確に合わせ、パニッシュカウンターから大ダメージを与えて主導権を握った。",
+              "evidence": "両方",
+              "startSec": 3643,
+              "endSec": 3651
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド終盤、ひぐちが生発動したSA2に対し、りゅう打ちはタイミングをずらした攻撃で見事にパニッシュカウンターを奪い、ラウンドを制した。",
+              "evidence": "両方",
+              "startSec": 3781,
+              "endSec": 3788
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ひぐちの猛攻を受けて体力ミリまで追い詰められたりゅう打ちだったが、冷静に弾を防ぎ切り、めくりジャンプ攻撃からの小技コンボで逆転KOを決めた。",
+              "evidence": "両方",
+              "startSec": 3815,
+              "endSec": 3833
+            }
+          ]
         }
       ]
     },
@@ -2335,6 +2365,36 @@
           "gatePassed": true,
           "gateReason": "game winners match official log",
           "topics": []
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-10-27T15:02:49.429Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド、まちゃぼー（リュウ）は開幕から鶏めし（ダルシム）の牽制の伸ばした手足を潰して接近し、画面端へ追い込んでバーンアウトにさせた後、パニッシュカウンターから電刃ストック入りの攻撃を叩き込んでKOする。",
+              "evidence": "両方",
+              "startSec": 7227,
+              "endSec": 7271
+            },
+            {
+              "topic": "第1ゲームファイナルラウンド、まちゃぼーは強パンチからの真空波動拳/真・昇龍拳（SA3）で大きなダメージを与えた後、ドライブゲージが枯渇した状況下で最後はOD波動拳を選択して削り切り第1ゲームを先取する。",
+              "evidence": "両方",
+              "startSec": 7344,
+              "endSec": 7358
+            },
+            {
+              "topic": "第2ゲームファイナルラウンド、後がない鶏めしの長距離攻撃に対してまちゃぼーがドライブラッシュで強引に間合いを詰めて捕らえ、最後は真・昇龍拳（CA）を叩き込んでストレート勝ちを決める。",
+              "evidence": "両方",
+              "startSec": 7469,
+              "endSec": 7499
+            }
+          ]
         }
       ]
     },

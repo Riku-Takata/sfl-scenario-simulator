@@ -103,13 +103,30 @@
         }
       },
       "gemini:verify:gemini-3.7-flash": {
+        "responses": 2,
+        "tokens": {
+          "inputTokens": 4153,
+          "cachedInputTokens": 0,
+          "outputTokens": 406,
+          "thoughtTokens": 1992,
+          "totalTokens": 6551
+        },
+        "observations": {
+          "inputTokens": 2,
+          "cachedInputTokens": 2,
+          "outputTokens": 2,
+          "thoughtTokens": 2,
+          "totalTokens": 2
+        }
+      },
+      "gemini:verify:gemini-3.6-flash": {
         "responses": 1,
         "tokens": {
-          "inputTokens": 2155,
+          "inputTokens": 3096,
           "cachedInputTokens": 0,
-          "outputTokens": 142,
-          "thoughtTokens": 478,
-          "totalTokens": 2775
+          "outputTokens": 236,
+          "thoughtTokens": 1060,
+          "totalTokens": 4392
         },
         "observations": {
           "inputTokens": 1,
@@ -117,6 +134,42 @@
           "outputTokens": 1,
           "thoughtTokens": 1,
           "totalTokens": 1
+        }
+      }
+    },
+    "2026-10-28": {
+      "gemini:verify:gemini-3.6-flash": {
+        "responses": 4,
+        "tokens": {
+          "inputTokens": 16154,
+          "cachedInputTokens": 0,
+          "outputTokens": 902,
+          "thoughtTokens": 5000,
+          "totalTokens": 22056
+        },
+        "observations": {
+          "inputTokens": 4,
+          "cachedInputTokens": 4,
+          "outputTokens": 4,
+          "thoughtTokens": 4,
+          "totalTokens": 4
+        }
+      },
+      "gemini:extract:gemini-3.6-flash": {
+        "responses": 2,
+        "tokens": {
+          "inputTokens": 70148,
+          "cachedInputTokens": 0,
+          "outputTokens": 654,
+          "thoughtTokens": 2657,
+          "totalTokens": 73459
+        },
+        "observations": {
+          "inputTokens": 2,
+          "cachedInputTokens": 2,
+          "outputTokens": 2,
+          "thoughtTokens": 2,
+          "totalTokens": 2
         }
       }
     }

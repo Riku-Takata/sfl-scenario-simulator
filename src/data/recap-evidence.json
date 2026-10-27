@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-27T14:00:31.458Z",
+  "updatedAt": "2026-10-27T15:05:10.407Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -903,10 +903,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "【キャラクター】1P側：ガイル（RYUKICHI）、2P側：春麗（HIGUCHI）\n\n【攻防の流れ】\n1. 画面左端付近で、春麗の攻撃（中段技等）に対してガイルが通常技をカウンターヒットさせ、ターゲットコンボからサマーソルトキックで春麗を上空に打ち上げてコンボを完走する。\n2. 春麗が画面端寄りに吹き飛びダウンし、ガイルが起き攻めを仕掛ける。\n3. 起き上がった春麗がしゃがみ攻撃等で牽制しつつ気功拳を放ち、ガイルは画面端付近でソニックブームを撃ち返して牽制し合う。\n4. ソニックブームを撃った後、ガイルがパリィドライブラッシュで急速に前進を仕掛ける。\n5. 春麗がしゃがみ通常技（しゃがみ弱P等）を出して突進中のガイルを止め、迎撃（ラッシュ止め）に成功する。\n6. ヒット後、互いに一定の距離を保ちながら牽制し合う状態に戻る。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-24T13:46:08.181Z"
     },
@@ -927,10 +930,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "63:16.000から63:19.500にかけて、1P側の春麗（RYUKICHI）が空中コンボからSA2（鳳扇華）をヒットさせ、13ヒットの連続技でガイル（HIGUCHI）にダメージを与えます。その後、63:20.000から63:27.000まで両者は地上での間合い補正・牽制（下段攻撃や気功拳など）を行い、相打ちやガードが交錯します。63:28.000にて、ガイルの攻撃に対し春麗がパニッシュカウンター（Punish Counter）を獲得し、立ち立ち中パンチ等からOD技を交えた11ヒットのコンボを叩き込んでガイルを画面右端に追い詰めます。63:34.000以降、春麗が画面端でガイルに接近し攻めを継続する位置関係で指定区間が終了します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-24T06:38:10.112Z"
     },
@@ -1230,10 +1236,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "131:27.000〜132:36.000区間の観察結果：\n\n【登場キャラクター】\n・KINCHO：キャミィ\n・2BASSA：テリー\n\n【131:27〜131:59（ラウンド1終盤）】\n・キャミィとテリーが地上で牽制し合う中、キャミィがパニッシュカウンター（PUNISH COUNTER）を獲得し、空中コンボへと繋げてテリーを画面端付近へ運びます。\n・テリーのダウン起き上がりにキャミィが投げを成功させます。\n・直後の起き上がりでテリーがリバーサル（REVERSAL）のOD必殺技（ライジングタックル）を出し、キャミィへパニッシュカウンターの反撃を与えます。\n・キャミィのドライブゲージがゼロになりバーンアウト（EMPTY）状態に陥ります。\n・テリーがバーンアウト中のキャミィに打撃とガード揺さぶりで圧力を掛け続け、最後はコンボを決めてK.O.を奪い、ラウンド1はテリーが勝利します。\n\n【132:00〜132:36（ラウンド2）】\n・「ROUND 2 FIGHT」でラウンド2が開始。\n・両者が中距離で技を振り合う中、テリーがキャミィの攻撃隙に技を当ててコンボから投げを決め、キャミィを左画面端へ追い込みます。\n・画面端の攻防でテリーがパニッシュカウンターを獲得。OD必殺技からスーパーアート3（SA3）を発動し、カットイン演出を経て大ダメージを与えます（HARD KNOCKDOWN）。\n・キャミィのダウン起き上がりに対し、テリーが緑色のエフェクトを纏うドライブラッシュで攻め込み、画面端での圧力を継続した状態で指定区間が終了します。",
       "sourceModels": [
-        "gemini-3.1-flash-lite"
+        "gemini-3.1-flash-lite",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-24T14:27:24.758Z"
     },
@@ -1254,10 +1263,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ディージェイ（1P・KINCHO）とキャミィ（2P・2BASSA）の対戦。序盤、ディージェイがキャミィの技の隙にパニッシュカウンターを奪い、ジャックナイフマキシマム等を含むコンボで画面端近くへ押し込みます。起き攻めでディージェイがドライブラッシュから圧力をかけ、空中戦や間合いの差し合いが展開されます。134:37付近でキャミィがリバーサルでSA1（スピンドライブスマッシャー）を発動しますが、ディージェイはこれをガード。技の硬直に対してディージェイがパニッシュカウンターから攻撃を始動し、SA3（サンライズカーニバル）へ繋いで暗転演出に入る一連の攻防が記録されています。",
       "sourceModels": [
-        "gemini-3.1-flash-lite"
+        "gemini-3.1-flash-lite",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-24T14:27:24.758Z"
     },
@@ -1403,10 +1415,13 @@
       "officialRefs": [
         "div-s-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "春麗（1P：リュウキチ）が空中からガイル（2P：ひぐち）に向かって攻撃を試みて接近しますが、ガイルが地上で攻撃を当てて春麗を倒し、KOとなります。KO判定の直後（63:52.000以降）、画面は選手・チームメンバーのWebカメラ映像（4分割）とゲーム画面の小画面表示に切り替わり、画面下部に「STREET FIGHTER LEAGUE JAPAN 2026」のテキストが表示されます。",
       "sourceModels": [
-        "gemini-3.7-flash"
+        "gemini-3.7-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-24T14:51:54.131Z"
     },
@@ -1499,10 +1514,13 @@
       "officialRefs": [
         "div-s-sec5-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "148:53.000〜148:53.500の区間において、画面中央に「FIGHT」のテキストが表示され、ラウンドが開始されます。1P側のザンギエフ（KOBAYAN）と2P側のディージェイ（JOHNNY）がラウンド開始の初期位置に並んでおり、残りタイムは99、両者ともに体力は100%、ドライブゲージ6本、SAゲージ3本（MAX）の状態です。このわずかな区間内では攻撃やシステムの入力・発動は見られません。",
       "sourceModels": [
-        "gemini-3.5-flash-lite"
+        "gemini-3.5-flash-lite",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-24T15:03:55.845Z"
     },
@@ -2150,6 +2168,126 @@
       "verifierVersion": "official-source-v1",
       "sourceModels": [],
       "createdAt": "2026-10-27T14:00:31.450Z"
+    },
+    "ev-dfda2eb59bbc2db855c4": {
+      "id": "ev-dfda2eb59bbc2db855c4",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3643,
+      "endSec": 3651,
+      "playerIds": [
+        "りゅうきち",
+        "ひぐち"
+      ],
+      "observation": "第1ゲーム第2ラウンド、りゅう落（舞）がひぐち（ガイル）のソニックブームに対してSA2での弾抜けを正確に合わせ、パニッシュカウンターから大ダメージを与えて主導権を握った。",
+      "officialRefs": [
+        "div-s-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-27T15:01:44.416Z"
+    },
+    "ev-fa11457771bca847ae44": {
+      "id": "ev-fa11457771bca847ae44",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m1",
+      "boutId": "div-s-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 3815,
+      "endSec": 3833,
+      "playerIds": [
+        "りゅうきち",
+        "ひぐち"
+      ],
+      "observation": "第2ゲーム第2ラウンド、ひぐちの猛攻を受けて体力ミリまで追い詰められたりゅう打ちだったが、冷静に弾を防ぎ切り、めくりジャンプ攻撃からの小技コンボで逆転KOを決めた。",
+      "officialRefs": [
+        "div-s-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-27T15:01:44.416Z"
+    },
+    "ev-f566ce209815ff139152": {
+      "id": "ev-f566ce209815ff139152",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7227,
+      "endSec": 7271,
+      "playerIds": [
+        "まちゃぼー",
+        "鶏めし"
+      ],
+      "observation": "第1ゲーム第1ラウンド、まちゃぼー（リュウ）は開幕から鶏めし（ダルシム）の牽制の伸ばした手足を潰して接近し、画面端へ追い込んでバーンアウトにさせた後、パニッシュカウンターから電刃ストック入りの攻撃を叩き込んでKOする。",
+      "officialRefs": [
+        "div-s-sec5-m2-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-27T15:02:49.429Z"
+    },
+    "ev-df7d5779691f3141e5e3": {
+      "id": "ev-df7d5779691f3141e5e3",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7344,
+      "endSec": 7358,
+      "playerIds": [
+        "まちゃぼー",
+        "鶏めし"
+      ],
+      "observation": "第1ゲームファイナルラウンド、まちゃぼーは強パンチからの真空波動拳/真・昇龍拳（SA3）で大きなダメージを与えた後、ドライブゲージが枯渇した状況下で最後はOD波動拳を選択して削り切り第1ゲームを先取する。",
+      "officialRefs": [
+        "div-s-sec5-m2-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-27T15:02:49.429Z"
+    },
+    "ev-14d74c67347ac8844a1e": {
+      "id": "ev-14d74c67347ac8844a1e",
+      "sectionId": "div-s-sec5",
+      "matchId": "div-s-sec5-m2",
+      "boutId": "div-s-sec5-m2-b1",
+      "kind": "visual",
+      "videoId": "OyvntovP-BI",
+      "startSec": 7469,
+      "endSec": 7499,
+      "playerIds": [
+        "まちゃぼー",
+        "鶏めし"
+      ],
+      "observation": "第2ゲームファイナルラウンド、後がない鶏めしの長距離攻撃に対してまちゃぼーがドライブラッシュで強引に間合いを詰めて捕らえ、最後は真・昇龍拳（CA）を叩き込んでストレート勝ちを決める。",
+      "officialRefs": [
+        "div-s-sec5-m2-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-27T15:02:49.429Z"
     }
   }
 }
