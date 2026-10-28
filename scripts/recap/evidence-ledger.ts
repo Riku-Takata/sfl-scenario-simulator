@@ -22,9 +22,93 @@ export function mergeEvidenceCandidate(candidate: RecapEvidence, prior?: RecapEv
 }
 
 export function pendingEvidenceCandidates(evidence: RecapEvidence[], limit = 3): RecapEvidence[] {
+  const capable = (item: RecapEvidence) => Number(item.sourceModels.some((model) => !/lite/i.test(model)));
+  // 2モデルの解析で一致した候補は検証を通りやすいので先に回し、少ない呼び出しで必要数に届かせる。
+  const agreed = (item: RecapEvidence) => Number(item.sourceModels.length >= 2);
   return evidence.filter((item) => item.status === "candidate" && item.startSec !== undefined && item.endSec !== undefined)
-    .sort((a, b) => Number(b.sourceModels.some((model) => !/lite/i.test(model))) - Number(a.sourceModels.some((model) => !/lite/i.test(model))))
+    .sort((a, b) => agreed(b) - agreed(a) || capable(b) - capable(a))
     .slice(0, limit);
+}
+
+// 一致した2モデルの時間窓の重なりは数秒しか残らないことが多く、そのままでは検証側が攻防を追えない。
+export const MIN_VERIFICATION_CLIP_SEC = 12;
+export const MAX_VERIFICATION_BATCH = 4;
+
+/** 検証で見せる区間。短すぎる区間は中心を保ったまま最小長まで広げる。 */
+export function verificationWindow(candidate: RecapEvidence): { startSec: number; endSec: number } {
+  const startSec = candidate.startSec!;
+  const endSec = candidate.endSec!;
+  if (endSec - startSec >= MIN_VERIFICATION_CLIP_SEC) return { startSec, endSec };
+  const widenedStart = Math.max(0, Math.floor((startSec + endSec) / 2 - MIN_VERIFICATION_CLIP_SEC / 2));
+  return { startSec: widenedStart, endSec: widenedStart + MIN_VERIFICATION_CLIP_SEC };
+}
+
+/**
+ * 1回の呼び出しでまとめて検証する候補と、使えるモデルを選ぶ。
+ * 検証は抽出に使っていないモデルで行うので、最も多くの候補を受け持てるモデルを基準にする。
+ */
+export function selectVerificationBatch(candidates: RecapEvidence[], videoModels: string[]): { candidates: RecapEvidence[]; models: string[] } {
+  const verifiable = candidates.filter((item) => item.videoId && item.startSec !== undefined && item.endSec !== undefined && item.endSec > item.startSec);
+  const capable = videoModels.filter((model) => !/lite/i.test(model));
+  let best: RecapEvidence[] = [];
+  // 受け持てる数が同じなら、優先度の高い (先頭に近い) 候補を含むモデルを選ぶ。
+  const rank = (items: RecapEvidence[]) => items.map((item) => verifiable.indexOf(item));
+  const earlier = (a: number[], b: number[]) => {
+    const i = a.findIndex((value, j) => value !== b[j]);
+    return i >= 0 && a[i] < b[i];
+  };
+  for (const model of capable) {
+    const compatible = verifiable.filter((item) => !item.sourceModels.includes(model) && item.videoId === verifiable[0]?.videoId);
+    if (compatible.length > best.length || (compatible.length === best.length && earlier(rank(compatible), rank(best)))) best = compatible;
+  }
+  const batch = best.slice(0, MAX_VERIFICATION_BATCH);
+  return { candidates: batch, models: capable.filter((model) => batch.every((item) => !item.sourceModels.includes(model))) };
+}
+
+const BatchVerifierOutputSchema = z.object({
+  observations: z.array(z.object({ clip: z.number().int().positive(), observation: z.string() })),
+});
+
+/**
+ * 複数の候補を1リクエストで独立に検証する。呼び出しに失敗したら null (候補はそのまま)。
+ * 区間ごとの判定基準は verifyEvidenceCandidate と同じ。
+ */
+export async function verifyEvidenceBatch(options: {
+  apiKey: string;
+  models: string[];
+  candidates: RecapEvidence[];
+}): Promise<RecapEvidence[] | null> {
+  const { apiKey, models, candidates } = options;
+  if (candidates.length === 0 || models.length === 0) return null;
+  const clips = candidates.map(verificationWindow);
+  const result = await callGemini({
+    purpose: "verify",
+    apiKey,
+    models,
+    video: { youtubeUrl: "https://www.youtube.com/watch?v=" + candidates[0].videoId, startSec: clips[0].startSec, endSec: clips[0].endSec, fps: 2, clips },
+    prompt: `ストリートファイター6の映像区間が${clips.length}本、区間1から順に渡されます。区間ごとに独立に観察してください。識別できるキャラクター名、具体的な技・システム、画面端や体力・ゲージの状況、攻防の順序を、画面・音声で直接確認できる範囲で記述してください。一般的な「キャラクターが攻撃した」だけに省略せず、識別できない部分は不明としてください。区間外の結果・勝敗、心理、意図を推測せず、他の区間の内容を混ぜないでください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observations":[{"clip":1,"observation":"観察内容"}]}`,
+    temperature: 0,
+  });
+  if (!result) return null;
+  let observations: Map<number, string>;
+  try {
+    observations = new Map(BatchVerifierOutputSchema.parse(parseJsonLoose(result.text)).observations
+      .map((item) => [item.clip, item.observation.trim()] as const));
+  } catch {
+    return candidates.map((candidate) => ({ ...candidate, status: "disputed" as const, verifierVersion: EVIDENCE_VERIFIER_VERSION }));
+  }
+  return candidates.map((candidate, index) => {
+    const observation = observations.get(index + 1);
+    // 区間の記述が欠けた候補は判定せず、次の検証に回す。
+    if (!observation || observation.length < 8) return candidate;
+    return {
+      ...candidate,
+      status: observationSupported(candidate.observation, observation) ? "verified" as const : "disputed" as const,
+      verifierVersion: EVIDENCE_VERIFIER_VERSION,
+      verificationObservation: observation,
+      sourceModels: [...new Set([...candidate.sourceModels, result.model])],
+    };
+  });
 }
 
 function stableId(value: string): string {
@@ -137,11 +221,12 @@ export async function verifyEvidenceCandidate(options: {
   const models = options.models.filter((model) => !/lite/i.test(model) && !candidate.sourceModels.includes(model));
   if (models.length === 0) return candidate;
   // Blind pass: independently describe the clip before showing the model the claim.
+  const clip = verificationWindow(candidate);
   const result = await callGemini({
     purpose: "verify",
     apiKey,
     models,
-    video: { youtubeUrl: "https://www.youtube.com/watch?v=" + candidate.videoId, startSec: candidate.startSec, endSec: candidate.endSec, fps: 2 },
+    video: { youtubeUrl: "https://www.youtube.com/watch?v=" + candidate.videoId, startSec: clip.startSec, endSec: clip.endSec, fps: 2 },
     prompt: `ストリートファイター6のこの指定区間を独立に観察してください。識別できるキャラクター名、具体的な技・システム、画面端や体力・ゲージの状況、攻防の順序を、画面・音声で直接確認できる範囲で記述してください。一般的な「キャラクターが攻撃した」だけに省略せず、識別できない部分は不明としてください。指定区間外の結果・勝敗、心理、意図を推測しないでください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observation":"観察内容"}`,
     temperature: 0,
   });

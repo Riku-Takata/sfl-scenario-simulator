@@ -33,7 +33,7 @@ import {
   findBoutWindow,
   findMatchStartSec,
 } from "./recap/youtube-chapters";
-import { parseModelList } from "./recap/gemini-client";
+import { lastGeminiFailureStatus, parseModelList } from "./recap/gemini-client";
 import {
   advanceBoutAnalysis,
   budgetAllows,
@@ -43,7 +43,10 @@ import {
   type BoutContext,
   type VideoBudget,
 } from "./recap/bout-video-facts";
-import { buildBoutEvidence, mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate } from "./recap/evidence-ledger";
+import {
+  buildBoutEvidence, MAX_VERIFICATION_BATCH, mergeEvidenceCandidate, pendingEvidenceCandidates, selectVerificationBatch,
+  verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate,
+} from "./recap/evidence-ledger";
 import { articleEvidenceReady } from "./recap/automation";
 import { persistentVideoBudget } from "./recap/usage";
 import { finishWriteRequest, loadWriteRequests, queueWriteRequest, readPreparedNarratives, saveWriteRequests } from "./recap/writer-state";
@@ -342,6 +345,8 @@ export async function generateAndSaveMatchRecaps(
   const fps = Number(process.env.GEMINI_VIDEO_FPS || "1");
   const analysisVersion = videoAnalysisFingerprint(videoModels, fps);
   const publicationMode = process.env.RECAP_PUBLICATION_MODE === "auto" ? "auto" : "shadow";
+  // 複数区間の同時送信を API が受け付けなかったら、この実行では1区間ずつに戻す。
+  let batchedVerificationRejected = false;
   const budget: VideoBudget = persistentVideoBudget({
     maxCalls: Number(process.env.GEMINI_VIDEO_MAX_CALLS || "24"),
     // 無料枠のYouTube入力は1日8時間まで。他の利用分を残して7時間で打ち切る
@@ -533,15 +538,37 @@ export async function generateAndSaveMatchRecaps(
           evidenceData.evidence[item.id] = mergeEvidenceCandidate(item, prior);
         }
         if (videoWorkAllowed && facts && !articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId)) && budgetAllows(budget, 0)) {
-          const candidates = pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId));
-          for (const candidate of candidates) {
-            if (!budgetAllows(budget, candidate.endSec! - candidate.startSec!)) break;
+          // 無料枠は1日のリクエスト数で尽きるので、Boutの候補はまとめて1リクエストで検証する。
+          const batch = selectVerificationBatch(pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId), MAX_VERIFICATION_BATCH), videoModels);
+          const batchSeconds = batch.candidates.reduce((sum, item) => {
+            const clip = verificationWindow(item);
+            return sum + clip.endSec - clip.startSec;
+          }, 0);
+          if (!batchedVerificationRejected && batch.candidates.length > 1 && budgetAllows(budget, batchSeconds)) {
             budget.calls += 1;
-            budget.videoSeconds += candidate.endSec! - candidate.startSec!;
-            const verified = await verifyEvidenceCandidate({ apiKey, models: videoModels, candidate });
-            evidenceData.evidence[verified.id] = verified;
-            saveRecapEvidence(evidenceData);
-            if (articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId))) break;
+            budget.videoSeconds += batchSeconds;
+            const results = await verifyEvidenceBatch({ apiKey, models: batch.models, candidates: batch.candidates });
+            if (results) {
+              for (const item of results) evidenceData.evidence[item.id] = item;
+              saveRecapEvidence(evidenceData);
+            } else if (lastGeminiFailureStatus() === 400) {
+              // 失敗したリクエストも Google の日次上限に数えられるので、予約は戻さない。
+              batchedVerificationRejected = true;
+              console.warn("[Evidence] the API rejected several clips in one request; verifying one clip per request for the rest of this run.");
+            }
+          }
+          if (batchedVerificationRejected || batch.candidates.length === 1) {
+            for (const candidate of pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId))) {
+              const clip = verificationWindow(candidate);
+              if (!budgetAllows(budget, clip.endSec - clip.startSec)) break;
+              budget.calls += 1;
+              budget.videoSeconds += clip.endSec - clip.startSec;
+              const verified = await verifyEvidenceCandidate({ apiKey, models: videoModels, candidate });
+              if (verified === candidate) break;
+              evidenceData.evidence[verified.id] = verified;
+              saveRecapEvidence(evidenceData);
+              if (articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId))) break;
+            }
           }
         }
         // If the observed topics could not be independently verified, collect
