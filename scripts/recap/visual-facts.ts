@@ -11,7 +11,7 @@ import type {
 import type { BoutContext, VideoBudget } from "./bout-video-facts";
 import { budgetAllows } from "./bout-video-facts";
 import type { BoutGameDetail } from "./narration";
-import { callGemini, isModelExhausted, parseJsonLoose } from "./gemini-client";
+import { callGemini, isModelExhausted, isVideoQuotaExhausted, parseJsonLoose } from "./gemini-client";
 
 /**
  * 映像からしか分からない画面上の事実（各ラウンドの決着方法・PERFECT・バーンアウト・
@@ -211,7 +211,7 @@ export async function advanceVisualAnalysis(options: {
 
   while (facts.status === "pending" && !isSettled(facts, officialGames.length)) {
     const used = new Set(facts.runs.filter((r) => r.matchedGames.length > 0).map((r) => r.model));
-    const available = models.filter((m) => !isModelExhausted(m));
+    const available = isVideoQuotaExhausted() ? [] : models.filter((m) => !isModelExhausted(m));
     const order = [...available.filter((m) => !used.has(m)), ...available.filter((m) => used.has(m))];
     if (order.length === 0 || !budgetAllows(budget, seconds)) return;
 

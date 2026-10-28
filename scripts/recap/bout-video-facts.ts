@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { BoutVideoFacts, BoutVideoRun } from "../../src/lib/types";
-import { callGemini, isModelExhausted, parseJsonLoose } from "./gemini-client";
+import { callGemini, isModelExhausted, isVideoQuotaExhausted, parseJsonLoose } from "./gemini-client";
 
 /**
  * Bout単位の動画解析。
@@ -142,7 +142,7 @@ export function passedRuns(facts: BoutVideoFacts): BoutVideoRun[] {
 /** 合格済みの解析と別のモデルを優先し、2回の解析を独立させる。 */
 export function pickModelOrder(facts: BoutVideoFacts, models: string[]): string[] {
   const usedPassed = new Set(passedRuns(facts).map((r) => r.model));
-  const available = models.filter((m) => !isModelExhausted(m));
+  const available = isVideoQuotaExhausted() ? [] : models.filter((m) => !isModelExhausted(m));
   return [
     ...available.filter((m) => !usedPassed.has(m)),
     ...available.filter((m) => usedPassed.has(m)),
