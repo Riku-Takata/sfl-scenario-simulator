@@ -3,6 +3,8 @@
  * - 429 は本文 (quotaId、または interactions の "requests per day" という文) で判別し、日次上限のモデルだけこの実行中は使わない
  * - 分あたりの上限 (RPM/TPM) は retryDelay だけ待って再試行し、待ちが長すぎれば次のモデルへ
  * - 種類が分からない 429 は本文をログに出し、待たずに次のモデルへ。同じモデルで2回続いたらこの実行中は使わない
+ * - 動画の呼び出しで "Your project has exceeded a quota" が返ったら、プロジェクト全体の動画の枠 (日次でリセット) が尽きているので、
+ *   この実行中は動画の呼び出しをすべて止める。テキストの呼び出しはこの枠に掛からないので続ける
  * - 503 (混雑)・通信エラーは同じモデルで再試行せず次のモデルへ。全モデル混雑の呼び出しが2回続いたら、この実行では以降の呼び出しを送らない
  */
 
@@ -32,10 +34,16 @@ const unknownRateLimitStreaks = new Map<string, number>();
 const OVERLOADED_CALLS_BEFORE_PAUSE = 2;
 let overloadedCallStreak = 0;
 let lastFailureStatus: number | undefined;
+let videoQuotaExhausted = false;
 
 /** 直前の callGemini が null を返したときの最後の HTTP ステータス (通信エラーなら undefined)。 */
 export function lastGeminiFailureStatus(): number | undefined {
   return lastFailureStatus;
+}
+
+/** プロジェクト全体の動画の枠が尽きたか。尽きていれば、この実行中は動画の呼び出しを送らない。 */
+export function isVideoQuotaExhausted(): boolean {
+  return videoQuotaExhausted;
 }
 
 /** テスト用: 実行単位で持っている状態を初期化する。 */
@@ -44,6 +52,7 @@ export function resetGeminiRunState(): void {
   unknownRateLimitStreaks.clear();
   overloadedCallStreak = 0;
   lastFailureStatus = undefined;
+  videoQuotaExhausted = false;
 }
 
 export function videoClips(video: GeminiVideoInput): Array<{ startSec: number; endSec: number }> {
@@ -74,6 +83,8 @@ export interface GeminiRateLimit {
   retryDelayMs?: number;
   /** 上限に当たったと本文が名指ししたモデル。要求したモデルと違えば枠を共有している。 */
   limitedModel?: string;
+  /** "Your project has exceeded a quota"。モデルを名指ししない、プロジェクト全体の上限。 */
+  projectQuota?: boolean;
 }
 
 /** "41s" / "14h13m59s" / "1m30.5s" をミリ秒にする。 */
@@ -106,12 +117,14 @@ export function classifyRateLimit(body: string): GeminiRateLimit {
   const retryDelayMs = parseDuration(details.find((detail) => detail.retryDelay)?.retryDelay) ??
     parseDuration(message.match(/retry in ([\d.hms]+)/i)?.[1]);
   const limitedModel = message.match(/for model ([\w.-]+)/i)?.[1];
+  const projectQuota = /project has exceeded a quota/i.test(message);
   return {
     known: quotaIds.length > 0 || perDay || perMinute,
     daily: quotaIds.some((id) => /PerDay/i.test(id)) || perDay,
     quotaIds,
     ...(retryDelayMs !== undefined ? { retryDelayMs } : {}),
     ...(limitedModel ? { limitedModel } : {}),
+    ...(projectQuota ? { projectQuota } : {}),
   };
 }
 
@@ -125,6 +138,10 @@ export async function callGemini(options: {
 }): Promise<GeminiCallResult | null> {
   const { apiKey, models, prompt, video, temperature = 0.3 } = options;
   lastFailureStatus = undefined;
+  if (video && videoQuotaExhausted) {
+    lastFailureStatus = 429;
+    return null;
+  }
   if (overloadedCallStreak >= OVERLOADED_CALLS_BEFORE_PAUSE) {
     console.warn(`[Gemini] every model was overloaded on ${overloadedCallStreak} calls in a row; skipping further calls this run.`);
     return null;
@@ -184,6 +201,13 @@ export async function callGemini(options: {
         if (res.status === 429) {
           const body = await res.text().catch(() => "");
           const limit = classifyRateLimit(body);
+          if (video && limit.projectQuota) {
+            // 2026-10-28 の検証では、この 429 はどの動画・どのモデルでも返り、太平洋時間 0 時に解けた。
+            // 他のモデルを試しても同じ枠で弾かれるだけなので、この実行の動画の呼び出しはここで打ち切る。
+            videoQuotaExhausted = true;
+            console.warn(`[Gemini ${model}] project video quota exhausted; skipping every video call for the rest of the run. Body: ${body.replace(/\s+/g, " ").slice(0, 300)}`);
+            return null;
+          }
           if (!limit.known) {
             // 種類が分からない上限は待っても通る保証がないので、本文を残して次のモデルへ回す。
             const streak = (unknownRateLimitStreaks.get(model) ?? 0) + 1;

@@ -33,7 +33,7 @@ import {
   findBoutWindow,
   findMatchStartSec,
 } from "./recap/youtube-chapters";
-import { lastGeminiFailureStatus, parseModelList } from "./recap/gemini-client";
+import { isVideoQuotaExhausted, lastGeminiFailureStatus, parseModelList } from "./recap/gemini-client";
 import {
   advanceBoutAnalysis,
   budgetAllows,
@@ -537,7 +537,7 @@ export async function generateAndSaveMatchRecaps(
           const prior = evidenceData.evidence[item.id];
           evidenceData.evidence[item.id] = mergeEvidenceCandidate(item, prior);
         }
-        if (videoWorkAllowed && facts && !articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId)) && budgetAllows(budget, 0)) {
+        if (videoWorkAllowed && facts && !isVideoQuotaExhausted() && !articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId)) && budgetAllows(budget, 0)) {
           // 無料枠は1日のリクエスト数で尽きるので、Boutの候補はまとめて1リクエストで検証する。
           const batch = selectVerificationBatch(pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId), MAX_VERIFICATION_BATCH), videoModels);
           const batchSeconds = batch.candidates.reduce((sum, item) => {

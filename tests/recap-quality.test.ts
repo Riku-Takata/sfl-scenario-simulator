@@ -16,7 +16,7 @@ import { mergeEvidenceCandidate, pendingEvidenceCandidates, selectVerificationBa
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
-import { callGemini, classifyRateLimit, isModelExhausted, resetGeminiRunState } from "../scripts/recap/gemini-client";
+import { callGemini, classifyRateLimit, isModelExhausted, isVideoQuotaExhausted, resetGeminiRunState } from "../scripts/recap/gemini-client";
 import {
   isBoutVideoCacheStale,
   normalizeTopicWindow,
@@ -460,7 +460,28 @@ test("interactions 429 messages are read for the daily limit, reset time and the
   assert.deepEqual(classifyRateLimit(interactionsDaily("gemini-3.8-flash")),
     { known: true, daily: true, quotaIds: [], retryDelayMs: (14 * 3600 + 13 * 60 + 59) * 1000, limitedModel: "gemini-3.8-flash" });
   assert.deepEqual(classifyRateLimit(JSON.stringify({ error: { message: "Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.", code: "too_many_requests" } })),
-    { known: false, daily: false, quotaIds: [] });
+    { known: false, daily: false, quotaIds: [], projectQuota: true });
+});
+
+test("a project quota 429 on a video call stops every video call for the run, but not text calls", async (t) => {
+  resetGeminiRunState();
+  t.mock.method(console, "warn", () => {});
+  const seen: string[] = [];
+  t.mock.method(globalThis, "fetch", async (url: string, options: RequestInit) => {
+    const { model } = JSON.parse(String(options.body)) as { model?: string };
+    seen.push(model ?? url);
+    return url.includes("interactions")
+      ? new Response(JSON.stringify({ error: { message: "Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.", code: "too_many_requests" } }), { status: 429 })
+      : new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: "done" }] } }] }), { status: 200 });
+  });
+  const video = { youtubeUrl: "https://www.youtube.com/watch?v=abcdefghijk", startSec: 0, endSec: 10, fps: 1 };
+  assert.equal(await callGemini({ apiKey: "test", models: ["video-a", "video-b"], prompt: "p", video }), null);
+  assert.deepEqual(seen, ["video-a"]);
+  assert.equal(isVideoQuotaExhausted(), true);
+  assert.equal(await callGemini({ apiKey: "test", models: ["video-b"], prompt: "p", video }), null);
+  assert.equal(seen.length, 1);
+  assert.equal((await callGemini({ apiKey: "test", models: ["video-a"], prompt: "p" }))?.model, "video-a");
+  resetGeminiRunState();
 });
 
 test("a daily interactions 429 excludes the model and the model whose quota it shares", async (t) => {
