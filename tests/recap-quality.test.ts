@@ -12,11 +12,11 @@ import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
 import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
-import { mergeEvidenceCandidate, pendingEvidenceCandidates, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
+import { mergeEvidenceCandidate, pendingEvidenceCandidates, selectVerificationBatch, verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
-import { callGemini, classifyRateLimit, isModelExhausted } from "../scripts/recap/gemini-client";
+import { callGemini, classifyRateLimit, isModelExhausted, resetGeminiRunState } from "../scripts/recap/gemini-client";
 import {
   isBoutVideoCacheStale,
   normalizeTopicWindow,
@@ -498,4 +498,60 @@ test("a model is excluded after two unknown 429s in a row; a success in between 
   assert.equal(isModelExhausted("quota-model"), false);
   await callGemini({ apiKey: "test", models: ["quota-model", "backup-model"], prompt: "p" });
   assert.equal(isModelExhausted("quota-model"), true);
+});
+
+test("verification prefers candidates two models agreed on and widens clips that are too short", () => {
+  const single = { ...evidence("single", "visual", "画面端でブランカのローリングが相手にヒットした。"), status: "candidate" as const, sourceModels: ["gemini-3.8-flash"] };
+  const agreed = { ...single, id: "agreed", sourceModels: ["gemini-3.8-flash", "gemini-3.7-flash"], startSec: 100, endSec: 103 };
+  assert.deepEqual(pendingEvidenceCandidates([single, agreed]).map((item) => item.id), ["agreed", "single"]);
+  assert.deepEqual(verificationWindow(agreed), { startSec: 95, endSec: 107 });
+  assert.deepEqual(verificationWindow(single), { startSec: 2640, endSec: 2660 });
+  assert.deepEqual(verificationWindow({ ...agreed, startSec: 2, endSec: 3 }), { startSec: 0, endSec: 12 });
+});
+
+test("a verification batch uses a model none of its candidates came from", () => {
+  const make = (id: string, sourceModels: string[]) => ({ ...evidence(id, "visual", "画面端でブランカのローリングが相手にヒットした。"), status: "candidate" as const, sourceModels });
+  const models = ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-3.7-flash", "gemini-3.6-flash"];
+  const batch = selectVerificationBatch([make("a", ["gemini-3.8-flash"]), make("b", ["gemini-3.8-flash", "gemini-3.7-flash"]), make("c", ["gemini-3.6-flash"])], models);
+  assert.deepEqual(batch.candidates.map((item) => item.id), ["a", "b"]);
+  assert.deepEqual(batch.models, ["gemini-3.6-flash"]);
+});
+
+test("batched verification sends every clip in one request and judges each clip on its own", async (t) => {
+  resetGeminiRunState();
+  const supported = "ブランカが画面端でローリングを当て、相手の体力ゲージが残りわずかになった。";
+  const candidates = [
+    { ...evidence("one", "visual", supported), status: "candidate" as const, sourceModels: ["gemini-3.8-flash"], startSec: 100, endSec: 104 },
+    { ...evidence("two", "visual", supported), status: "candidate" as const, sourceModels: ["gemini-3.8-flash"] },
+    { ...evidence("three", "visual", supported), status: "candidate" as const, sourceModels: ["gemini-3.8-flash"] },
+  ];
+  const requests: Array<{ input: Array<{ type: string; processing?: { start_offset: string; end_offset: string } }> }> = [];
+  t.mock.method(globalThis, "fetch", async (_url: string, options: RequestInit) => {
+    requests.push(JSON.parse(String(options.body)));
+    return new Response(JSON.stringify({ output_text: JSON.stringify({ observations: [
+      { clip: 1, observation: supported },
+      { clip: 2, observation: "観客席が映り、実況者が次の試合の紹介をしている場面だった。" },
+    ] }) }));
+  });
+  const results = await verifyEvidenceBatch({ apiKey: "test", models: ["gemini-3.6-flash"], candidates });
+  assert.equal(requests.length, 1);
+  assert.deepEqual(requests[0].input.filter((item) => item.type === "video").map((item) => [item.processing!.start_offset, item.processing!.end_offset]),
+    [["96s", "108s"], ["2640s", "2660s"], ["2640s", "2660s"]]);
+  assert.deepEqual(results!.map((item) => item.status), ["verified", "disputed", "candidate"]);
+  assert.deepEqual(results![0].sourceModels, ["gemini-3.8-flash", "gemini-3.6-flash"]);
+});
+
+test("503s move straight to the next model, and two fully overloaded calls pause the run", async (t) => {
+  resetGeminiRunState();
+  t.mock.method(console, "warn", () => {});
+  let requests = 0;
+  t.mock.method(globalThis, "fetch", async () => { requests++; return new Response("overloaded", { status: 503 }); });
+  const call = () => callGemini({ apiKey: "test", models: ["busy-a", "busy-b"], prompt: "p" });
+  assert.equal(await call(), null);
+  assert.equal(requests, 2);
+  assert.equal(await call(), null);
+  assert.equal(requests, 4);
+  assert.equal(await call(), null);
+  assert.equal(requests, 4);
+  resetGeminiRunState();
 });
