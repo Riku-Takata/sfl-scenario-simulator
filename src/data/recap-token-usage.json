@@ -172,6 +172,25 @@
           "totalTokens": 2
         }
       }
+    },
+    "2026-10-29": {
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 2,
+        "tokens": {
+          "inputTokens": 21482,
+          "cachedInputTokens": 0,
+          "outputTokens": 762,
+          "thoughtTokens": 2540,
+          "totalTokens": 24784
+        },
+        "observations": {
+          "inputTokens": 2,
+          "cachedInputTokens": 2,
+          "outputTokens": 2,
+          "thoughtTokens": 2,
+          "totalTokens": 2
+        }
+      }
     }
   },
   "seenIds": []

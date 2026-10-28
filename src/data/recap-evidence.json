@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-27T15:11:29.508Z",
+  "updatedAt": "2026-10-28T20:18:45.498Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -1773,10 +1773,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "JPとキャミィの対戦。JPがキャミィの攻撃に対してパニッシュカウンターを取り、OD技を絡めた連続技でキャミィを吹き飛ばします。その後、JPの飛び道具による牽制に対し、キャミィがハイジャンプで接近を試みますが、JPが対空攻撃で迎撃して追撃コンボを決めます。最後はJPが設置技を絡めて間合いを取り、ドライブラッシュを仕掛けたところで終了します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T23:20:25.436Z"
     },
@@ -1797,10 +1800,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "JPがキャミィに対して近距離でパニッシュカウンターを取り、コンボをヒットさせてキャミィのドライブゲージを削り切りバーンアウト状態に追い込みます。その後、キャミィが仕掛けた投げの空振りに対してJPがドライブラッシュからパニッシュカウンターを取り、SA3（Critical Art）へ繋いでダメージを与え、K.O.となってラウンドが終了します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T23:20:25.436Z"
     },
@@ -1848,10 +1854,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "キャミィがSA2を発動してガードされた後、攻防が続いてキャミィがJPを投げます。その後、JPの攻撃の隙にキャミィがパニッシュカウンターを取り、スパイラルアローを絡めたコンボでJPを画面端へ追い詰めます。JPはODアムネジアを発動して切り返しを図りますが、キャミィはこれを回避・様子見し、直後にJPが仕掛けたドライブラッシュからの技に対してキャミィがパニッシュカウンターを取り、反撃の連続攻撃を叩き込みます。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T23:20:25.436Z"
     },
@@ -1872,10 +1881,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "Pao Pao Cafeステージ、ラウンド2開始。リリー（HIBIKI）とルーク（SHUTO）。ルークが差し返しからパニッシュカウンターを取り、ドライブラッシュを絡めた連続技でリリーを画面端へ運びます。起き上がりにルークが再びパニッシュカウンターからODフラッシュナックル等のコンボを決め、最後は画面端の打撃コンボでリリーをノーダメージのまま倒し切り、PERFECT K.O.を獲得します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T23:21:16.098Z"
     },
@@ -1896,10 +1908,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "玄武寺ステージ、ルークの体力が残り僅か、リリーが体力リードの状況。ルークがサンダーブラストを放ち牽制しますが、リリーがドライブラッシュで間合いを一気に詰め、ルークを捕らえてメキシカンタイフーンを成立させます。ルークが投げ飛ばされてK.O.となり、リリーがラウンドを取ります。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T23:21:16.098Z"
     },
@@ -1920,10 +1935,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "Old Town Marketステージ。画面端付近でリリーがめくりジャンプ攻撃をヒットさせてパニッシュカウンターを取り、コンボを叩き込みます。ルークが画面端で反撃を試みるものの、リリーがドライブラッシュを絡めた打撃連携で固め続け、ルークの体力を削り切ってK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T23:21:16.098Z"
     },
@@ -1944,10 +1962,13 @@
       "officialRefs": [
         "div-s-sec5-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "玄武寺ステージ。リリーがメキシカンタイフーンでルークをダウンさせ、起き上がりに風纏いODコンドルスパイアで突進します。ダウンから起きたルークが無敵技（SA3/CA）を発動して割り込もうとしますが、リリーがしっかりガード。リリーがガード硬直終了後にパニッシュカウンターから追撃のコンボを決めてルークをK.O.し、「LILY WIN」の勝利演出となります。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-26T23:21:16.098Z"
     },
