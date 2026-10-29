@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-28T20:18:45.498Z",
+  "updatedAt": "2026-10-29T15:29:07.553Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -2349,6 +2349,183 @@
         "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-27T15:02:49.429Z"
+    },
+    "ev-4d3a0706ea86ad3826ed": {
+      "id": "ev-4d3a0706ea86ad3826ed",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3516,
+      "endSec": 3585,
+      "playerIds": [
+        "ひなお",
+        "らおやむ"
+      ],
+      "observation": "第1ゲーム第1ラウンド、ひなお（ルーク）が開幕からサンドブラストを軸にペースを握り、らおやむ（ベガ）を画面端に追い詰めてドライブゲージを削り切ってバーンアウト状態へ追い込み、最後はODサンドブラストで先制ラウンドを奪った。",
+      "officialRefs": [
+        "div-f-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ルーク（1P・雛央）対ベガ（2P・らおやま）の対戦。第1セット第1ラウンド終盤、ルークがバーンアウト状態のベガに対してODサンドブラストをヒットさせてKOし、ラウンドを先取します。第2ラウンドでは、ルークがベガの攻撃にジャストパリィを成功させて画面端へ追い込み、起き上がりに連続して投げを通します。バーンアウトしたベガの反撃に対して打撃を合わせて相打ちとなり、ルークが第2ラウンドも連取して1セット目を勝利します。その後、第2セットの第1ラウンドが開始されます。",
+      "sourceModels": [
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-29T15:22:18.266Z"
+    },
+    "ev-c57bf43b890b353f50e7": {
+      "id": "ev-c57bf43b890b353f50e7",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3606,
+      "endSec": 3624,
+      "playerIds": [
+        "ひなお",
+        "らおやむ"
+      ],
+      "observation": "第1ゲーム第2ラウンド、ひなおもらおやむのドライブラッシュをジャストパリィでとらえて反撃に転じ、画面端での猛攻でらおやむをバーンアウト状態に追い込んで第1ゲームを先取した。",
+      "officialRefs": [
+        "div-f-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "第2セット第1ラウンド終盤、画面端のベガに対し、ルークが打撃カウンターからコンボを完走してKOし、ルークが第1ラウンドを獲得します。続く第2ラウンド開始直後、ベガが空中軌道変化を伴う技で飛び込み、着地際の攻撃がルークにパニッシュカウンターでヒットして大ダメージを与えます。",
+      "sourceModels": [
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-29T15:22:18.266Z"
+    },
+    "ev-9a3f936fd9d3c190ca48": {
+      "id": "ev-9a3f936fd9d3c190ca48",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3713,
+      "endSec": 3731,
+      "playerIds": [
+        "ひなお",
+        "らおやむ"
+      ],
+      "observation": "第2ゲーム第2ラウンド、ひなおがカウンターからのコンボでCA（クリティカルアート）まで繋いで大幅に体力を削り取り、ダウン復帰への追撃でらおやむを仕留めて2-0でストレート勝利を果たした。",
+      "officialRefs": [
+        "div-f-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面左側にスタッツが表示されたリプレイ映像。第1セット第2ラウンド終盤におけるルークの画面端での連続投げ、ベガのバーンアウト、相打ちでのKOシーンが再生されます。その後、タイム69付近の別の攻防に切り替わり、画面端で攻めるルークに対し、ベガが起き上がりにOD無敵技を繰り出してカウンターヒットさせ、画面端を脱出する場面が映し出されます。",
+      "sourceModels": [
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-29T15:22:18.266Z"
+    },
+    "ev-2316de6a25da5535a541": {
+      "id": "ev-2316de6a25da5535a541",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3457,
+      "endSec": 3525,
+      "playerIds": [
+        "ひなお",
+        "らおやむ"
+      ],
+      "observation": "第1ゲーム第1ラウンド、ひなおはサンドブラストによる牽制と画面端のラッシュで主導権を握り、らおやむをバーンアウトへ追い込んでODサンドブラストで削り切ってラウンドを先取した。",
+      "officialRefs": [
+        "div-f-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-29T15:29:07.533Z"
+    },
+    "ev-3be0bbfbed12104f41ce": {
+      "id": "ev-3be0bbfbed12104f41ce",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3546,
+      "endSec": 3567,
+      "playerIds": [
+        "ひなお",
+        "らおやむ"
+      ],
+      "observation": "第1ゲーム第2ラウンド、ひなおは相手のドライブインパクトにジャストパリィを取ってパニッシュカウンターから画面端へ押し込み、一切の反撃を許さずパーフェクトで第1ゲームを奪った。",
+      "officialRefs": [
+        "div-f-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-29T15:29:07.533Z"
+    },
+    "ev-108752058a40d56a0d40": {
+      "id": "ev-108752058a40d56a0d40",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3589,
+      "endSec": 3615,
+      "playerIds": [
+        "ひなお",
+        "らおやむ"
+      ],
+      "observation": "第2ゲーム第1ラウンド、ひなおはしゃがみ中キックから画面端へ運んで有利な攻めを展開し、らおやむの反撃を立ち強キックのカウンターで潰してラウンドを連取した。",
+      "officialRefs": [
+        "div-f-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-29T15:29:07.533Z"
+    },
+    "ev-c0b6deb0600d2f245f8e": {
+      "id": "ev-c0b6deb0600d2f245f8e",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3655,
+      "endSec": 3673,
+      "playerIds": [
+        "ひなお",
+        "らおやむ"
+      ],
+      "observation": "第2ゲーム第2ラウンド、ひなおは画面端でコンボからCA（ペイルライダー）を叩き込み、バーンアウトしたらおやむの起き上がりにODサンドブラストを重ねて削りKOし、2-0でストレート勝利を収めた。",
+      "officialRefs": [
+        "div-f-sec5-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-29T15:29:07.533Z"
     }
   }
 }

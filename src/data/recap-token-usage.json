@@ -206,6 +206,59 @@
           "thoughtTokens": 2
         }
       }
+    },
+    "2026-10-30": {
+      "gemini:extract:gemini-3.6-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 30923,
+          "cachedInputTokens": 0,
+          "outputTokens": 350,
+          "thoughtTokens": 1156,
+          "totalTokens": 32429
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      },
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 16630,
+          "cachedInputTokens": 0,
+          "outputTokens": 355,
+          "thoughtTokens": 1357,
+          "totalTokens": 18342
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      },
+      "gemini:extract:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 30923,
+          "cachedInputTokens": 0,
+          "outputTokens": 416,
+          "thoughtTokens": 491,
+          "totalTokens": 31830
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      }
     }
   },
   "seenIds": [

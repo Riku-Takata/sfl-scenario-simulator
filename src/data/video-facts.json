@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T11:00:56.533Z",
+  "updatedAt": "2026-10-29T15:29:07.547Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2855,10 +2855,77 @@
       "videoId": "uJmB3lK0WNo",
       "startSec": 3442,
       "endSec": 3775,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-10-29T15:22:18.249Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド、ひなお（ルーク）が開幕からサンドブラストを軸にペースを握り、らおやむ（ベガ）を画面端に追い詰めてドライブゲージを削り切ってバーンアウト状態へ追い込み、最後はODサンドブラストで先制ラウンドを奪った。",
+              "evidence": "両方",
+              "startSec": 3516,
+              "endSec": 3585
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド、ひなおもらおやむのドライブラッシュをジャストパリィでとらえて反撃に転じ、画面端での猛攻でらおやむをバーンアウト状態に追い込んで第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 3606,
+              "endSec": 3624
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ひなおがカウンターからのコンボでCA（クリティカルアート）まで繋いで大幅に体力を削り取り、ダウン復帰への追撃でらおやむを仕留めて2-0でストレート勝利を果たした。",
+              "evidence": "両方",
+              "startSec": 3713,
+              "endSec": 3731
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-10-29T15:29:07.533Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド、ひなおはサンドブラストによる牽制と画面端のラッシュで主導権を握り、らおやむをバーンアウトへ追い込んでODサンドブラストで削り切ってラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 3457,
+              "endSec": 3525
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド、ひなおは相手のドライブインパクトにジャストパリィを取ってパニッシュカウンターから画面端へ押し込み、一切の反撃を許さずパーフェクトで第1ゲームを奪った。",
+              "evidence": "両方",
+              "startSec": 3546,
+              "endSec": 3567
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、ひなおはしゃがみ中キックから画面端へ運んで有利な攻めを展開し、らおやむの反撃を立ち強キックのカウンターで潰してラウンドを連取した。",
+              "evidence": "両方",
+              "startSec": 3589,
+              "endSec": 3615
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ひなおは画面端でコンボからCA（ペイルライダー）を叩き込み、バーンアウトしたらおやむの起き上がりにODサンドブラストを重ねて削りKOし、2-0でストレート勝利を収めた。",
+              "evidence": "両方",
+              "startSec": 3655,
+              "endSec": 3673
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m1-b2": {
       "videoId": "uJmB3lK0WNo",
