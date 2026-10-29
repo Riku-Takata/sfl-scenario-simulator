@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T15:29:07.547Z",
+  "updatedAt": "2026-10-29T23:13:05.323Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -2846,10 +2846,47 @@
       "videoId": "uJmB3lK0WNo",
       "startSec": 2698,
       "endSec": 3261,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-10-29T23:04:40.174Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第2ゲーム第3ラウンド、追い詰められたもっちーが豪鬼のCA（禍突鬼）で暴れるも間合いが遠く空振りとなり、YASが冷静にパニッシュカウンターを決めてKOし勝利を収める。",
+              "evidence": "両方",
+              "startSec": 3155,
+              "endSec": 3164
+            },
+            {
+              "topic": "第2ゲーム第3ラウンド終盤、激しい打ち合いの中でYASが相打ちからSA3（真・波掌撃）を完璧に叩き込み、もっちーの体力を瀕死まで削り取りバーンアウトに追い込む。",
+              "evidence": "両方",
+              "startSec": 3134,
+              "endSec": 3146
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド、もっちーの切り返しSA2に対してYASが的確にパリィを取り、パニッシュカウンターからOD波掌撃の追撃を決めてラウンドの主導権を完全に掌握する。",
+              "evidence": "両方",
+              "startSec": 2801,
+              "endSec": 2811
+            },
+            {
+              "topic": "第1ゲーム第1ラウンド、もっちーの割り込みOD無敵技を冷静にガードしたYASが、高火力のパニッシュカウンターコンボを決めて一気に体力差を逆転する。",
+              "evidence": "両方",
+              "startSec": 2747,
+              "endSec": 2757
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m1-b1": {
       "videoId": "uJmB3lK0WNo",
@@ -2931,10 +2968,49 @@
       "videoId": "uJmB3lK0WNo",
       "startSec": 3984,
       "endSec": 4745,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-10-29T23:13:05.309Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド、ふ～どが下段足払いで大谷の体力をミリまで削った後、前進する大谷の牽制をジャストパリィで取ってそのままCA（Critical Art）に繋ぎ、反撃を許さず初戦を先取した。",
+              "evidence": "両方",
+              "startSec": 4124,
+              "endSec": 4166
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、大谷をバーンアウトに追い込んだふ～どが、相手のジャンプ攻撃をバックステップでかわしてパニッシュカウンターを取り、そのままCAへと繋いでパーフェクトK.O.を奪った。",
+              "evidence": "両方",
+              "startSec": 4415,
+              "endSec": 4435
+            },
+            {
+              "topic": "第4ゲーム第1ラウンド、大谷がサンドブラストを撃った隙を逃さず、ふ～どが垂直バーニングキックを合わせてパニッシュカウンターからコンボを完走し、さらに相手のODライジングアッパーをガードして反撃を叩き込みラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 4517,
+              "endSec": 4550
+            },
+            {
+              "topic": "第4ゲーム第2ラウンド、ふ～どが起き上がりにジャストパリィを決めて端へ追い詰め、最後は追い詰められた大谷のグラップや暴れをバックジャンプ強キックで狩り取ってK.O.し、チームの勝利を確定させた。",
+              "evidence": "両方",
+              "startSec": 4604,
+              "endSec": 4634
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m2-b0": {
       "videoId": "uJmB3lK0WNo",

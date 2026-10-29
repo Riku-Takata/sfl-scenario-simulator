@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-29T15:29:07.553Z",
+  "updatedAt": "2026-10-29T23:15:58.683Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -2448,10 +2448,13 @@
       "officialRefs": [
         "div-f-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pルーク（ひなお）と2Pリュウ（ろおやむ）の対戦。ルークがパニッシュカウンターから前投げを決めて起き攻めのドライブラッシュコンボでリュウを画面端へ運び、さらに前投げを決めます。リュウはジャンプで画面端を脱出しますが、ドライブゲージが削られて残りわずかとなります。立ち回りでルークが弱サンドブラストを交えつつ差し合い、反撃からコンボを繋いで再びリュウを画面端へ追い込み前投げを決めます。攻防の中でリュウがバーンアウト状態になり、画面端でルークが打撃からオーバードライブ版サンドブラストをヒットさせてK.O.し、ルークがラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-29T15:29:07.533Z"
     },
@@ -2472,10 +2475,13 @@
       "officialRefs": [
         "div-f-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ルークがパニッシュカウンターからのコンボを決めた後、前投げを成功させます。起き上がりにリュウへさらに前投げを重ねてパニッシュカウンターを奪い、続けてもう一度前投げを通して3連続で投げを決めます。リュウのドライブゲージが尽きてバーンアウト状態となり、ルークがドライブラッシュから打撃を仕掛けてK.O.を奪い、「LUKE WIN」の勝利演出が表示されます。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-29T15:29:07.533Z"
     },
@@ -2496,10 +2502,13 @@
       "officialRefs": [
         "div-f-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ルークがコンボからライジングアッパーを決めてリュウを画面端へ運びます。両者の打撃戦から投げ抜け（THROW ESCAPE）が発生したのち、ルークがガードの上から前投げを決めます。起き上がりにルークの立ち強Kがカウンターヒットし、ルークはドライブゲージを使い切ってバーンアウトになりながらもコンボを継続してライジングアッパーで締め、リュウをK.O.してラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-29T15:29:07.533Z"
     },
@@ -2520,12 +2529,231 @@
       "officialRefs": [
         "div-f-sec5-m1-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面端でバーンアウト状態のリュウに対し、ルークのコンボがヒットしてクリティカルアーツ（CA）「ペイルライダー」へ繋ぎます。CA演出終了後、リュウの体力はわずかに残りますが、起き上がりにルークが放ったオーバードライブ版サンドブラストが直撃してパニッシュカウンターとなりK.O.。ルーク（ひなお）の勝利となり、選手カメラではチームメンバーと喜び合う様子が映し出されます。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-29T15:29:07.533Z"
+    },
+    "ev-766fcd4c3914584a1d7d": {
+      "id": "ev-766fcd4c3914584a1d7d",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3155,
+      "endSec": 3164,
+      "playerIds": [
+        "YAS",
+        "もっちー"
+      ],
+      "observation": "第2ゲーム第3ラウンド、追い詰められたもっちーが豪鬼のCA（禍突鬼）で暴れるも間合いが遠く空振りとなり、YASが冷静にパニッシュカウンターを決めてKOし勝利を収める。",
+      "officialRefs": [
+        "div-f-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "夜の寺院ステージで、リュウ（1P・YAS）と豪鬼（2P・MOCCHI）の対戦。リュウが豪鬼を投げで倒し、起き上がりに技を重ねると、豪鬼がリバーサルで暴れ技（必殺技）を出して空振りし、リュウがパニッシュカウンターを取ります。リュウがコンボを決めて豪鬼をK.O.し、画面がチームカメラと「RYU WIN」のリザルトに切り替わります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-29T23:04:40.200Z"
+    },
+    "ev-ceb8f5006da5419e1172": {
+      "id": "ev-ceb8f5006da5419e1172",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 3134,
+      "endSec": 3146,
+      "playerIds": [
+        "YAS",
+        "もっちー"
+      ],
+      "observation": "第2ゲーム第3ラウンド終盤、激しい打ち合いの中でYASが相打ちからSA3（真・波掌撃）を完璧に叩き込み、もっちーの体力を瀕死まで削り取りバーンアウトに追い込む。",
+      "officialRefs": [
+        "div-f-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "夜の寺院ステージにて、リュウと豪鬼が画面中央で地上戦を展開。リュウの攻撃がカウンターヒットしたところから、リュウがSA3（真・昇龍拳）を発動します。暗転演出から顔面のクローズアップ、連撃、上空への打ち上げと地面への叩きつけ演出が最後まで入り、豪鬼の体力が大きく削られます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-29T23:04:40.200Z"
+    },
+    "ev-04681ed026ffbf8a131f": {
+      "id": "ev-04681ed026ffbf8a131f",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 2801,
+      "endSec": 2811,
+      "playerIds": [
+        "YAS",
+        "もっちー"
+      ],
+      "observation": "第1ゲーム第2ラウンド、もっちーの切り返しSA2に対してYASが的確にパリィを取り、パニッシュカウンターからOD波掌撃の追撃を決めてラウンドの主導権を完全に掌握する。",
+      "officialRefs": [
+        "div-f-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "中華風の夜ステージにて、画面中央で豪鬼がドライブインパクトを繰り出しますが、リュウがこれをパリィ（ジャストパリィ）で受け止めます。リュウはパニッシュカウンターからOD必殺技を絡めた連続技で豪鬼を浮かせますが、追撃を落とします。その後、リュウが波掌撃の溜めモーションを見せたところへ、豪鬼がリバーサルで無敵技を繰り出して切り返します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-29T23:04:40.200Z"
+    },
+    "ev-8f6d624ce552a9991681": {
+      "id": "ev-8f6d624ce552a9991681",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 2747,
+      "endSec": 2757,
+      "playerIds": [
+        "YAS",
+        "もっちー"
+      ],
+      "observation": "第1ゲーム第1ラウンド、もっちーの割り込みOD無敵技を冷静にガードしたYASが、高火力のパニッシュカウンターコンボを決めて一気に体力差を逆転する。",
+      "officialRefs": [
+        "div-f-sec5-m1-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "中華風の夜ステージにて、豪鬼が起き上がりにリバーサル無敵技を出して空振りし、リュウが立ち強Kでパニッシュカウンターを取ります。リュウはOD波掌撃から昇龍拳のコンボを決め、続けてドライブラッシュから立ち強Pで攻めを継続します。最後はリュウの投げ技に対して豪鬼が投げ抜け（THROW ESCAPE）を行い、両者の間合いが離れます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-29T23:04:40.200Z"
+    },
+    "ev-dbdb1f0d57d6d0f53d07": {
+      "id": "ev-dbdb1f0d57d6d0f53d07",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 4124,
+      "endSec": 4166,
+      "playerIds": [
+        "ふ～ど",
+        "大谷"
+      ],
+      "observation": "第1ゲーム第2ラウンド、ふ～どが下段足払いで大谷の体力をミリまで削った後、前進する大谷の牽制をジャストパリィで取ってそのままCA（Critical Art）に繋ぎ、反撃を許さず初戦を先取した。",
+      "officialRefs": [
+        "div-f-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ふ〜ど（C.ヴァイパー）が大谷（ルーク）のサンドブラストをジャストパリィしてパニッシュカウンターを取り、コンボからクリティカルアーツ（CA）を決めてラウンドを取りK.O.します。インターバルを挟んで次のラウンドが開始し、ルークがサンドブラストやドライブラッシュからの投げを決め、C.ヴァイパーがOD技などで切り返して立ち回りを展開します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-29T23:13:05.325Z"
+    },
+    "ev-ce7387bae418b9cfadbd": {
+      "id": "ev-ce7387bae418b9cfadbd",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 4415,
+      "endSec": 4435,
+      "playerIds": [
+        "ふ～ど",
+        "大谷"
+      ],
+      "observation": "第3ゲーム第2ラウンド、大谷をバーンアウトに追い込んだふ～どが、相手のジャンプ攻撃をバックステップでかわしてパニッシュカウンターを取り、そのままCAへと繋いでパーフェクトK.O.を奪った。",
+      "officialRefs": [
+        "div-f-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "天擂台ステージにて、C.ヴァイパーとルークが中距離で牽制し合います。ルークが放った無敵技（ODライジングアッパー）をC.ヴァイパーがガードし、パニッシュカウンターから大ダメージのコンボを叩き込みます。起き上がりにルークがドライブラッシュを仕掛けて攻防が続きます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-29T23:13:05.325Z"
+    },
+    "ev-87c95592bf7d45efb644": {
+      "id": "ev-87c95592bf7d45efb644",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 4517,
+      "endSec": 4550,
+      "playerIds": [
+        "ふ～ど",
+        "大谷"
+      ],
+      "observation": "第4ゲーム第1ラウンド、大谷がサンドブラストを撃った隙を逃さず、ふ～どが垂直バーニングキックを合わせてパニッシュカウンターからコンボを完走し、さらに相手のODライジングアッパーをガードして反撃を叩き込みラウンドを先取した。",
+      "officialRefs": [
+        "div-f-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "C.ヴァイパーのジャンプ攻撃がヒットしてドライブラッシュコンボへ持ち込みますが、ルーク側もジャストパリィから反撃コンボを決めます。その後、ルークがリバーサルで放ったODライジングアッパーをC.ヴァイパーがガードし、確定反撃のパニッシュカウンターコンボを決めてルークをK.O.し、次ラウンドへ進みます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-29T23:13:05.325Z"
+    },
+    "ev-c4bbe068d1b23ffac50c": {
+      "id": "ev-c4bbe068d1b23ffac50c",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b2",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 4604,
+      "endSec": 4634,
+      "playerIds": [
+        "ふ～ど",
+        "大谷"
+      ],
+      "observation": "第4ゲーム第2ラウンド、ふ～どが起き上がりにジャストパリィを決めて端へ追い詰め、最後は追い詰められた大谷のグラップや暴れをバックジャンプ強キックで狩り取ってK.O.し、チームの勝利を確定させた。",
+      "officialRefs": [
+        "div-f-sec5-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "C.ヴァイパーがルークをK.O.して試合が決着します。画面が切り替わり、ふ〜どが所属するREJECTのチームメンバーたちが歓喜してハイタッチを交わし、チームの勝利（40ポイント獲得）が表示されます。試合後のふ〜どの笑顔や、対戦相手の大谷の様子が映し出されます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-29T23:13:05.325Z"
     }
   }
 }
