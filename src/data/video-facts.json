@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T20:18:45.518Z",
+  "updatedAt": "2026-10-29T04:00:51.537Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -3203,6 +3203,76 @@
               "text": "第5ゲーム第3ラウンド、藤村選手はMenaRD選手の飛び込みを迎撃してSA3を叩き込み、起き上がりの暴れを後ろ下がりでスカして投げを決め勝利を決定づけた。",
               "evidenceIds": [
                 "ev-b92fa1bb9cfd4350193f"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "div-s-sec5-m3": {
+      "inputHash": "be9e81ac0e4d3baf",
+      "model": "codex-cli",
+      "generatedAt": "2026-10-29T04:00:28.441Z",
+      "matchHeadline": "広島 TEAM iXAが中堅・大将を取り30-10で勝利",
+      "matchSummary": "広島 TEAM iXAがCrazy Raccoonに30-10で勝利した。先鋒戦はどぐらがACQUAを2-0で下し、Crazy Raccoonが先制。どぐらはヒーリングで体力を回復し、攻めを継続する場面を見せた。中堅戦ではtakepiがパニッシュカウンターからCAにつなげて第1ゲームを取り、2-0で勝利してチームをタイに戻した。大将戦はひびきが第1ゲームを落としてから2ゲームを連取。Shutoに第4ゲームを奪われたものの、最終ゲームの決着では無敵技をガードして反撃を決め、3-2でチームの勝利を決めた。",
+      "matchEvidenceIds": [
+        "ev-8e7b55f7409c1d173d39",
+        "ev-80c287aa373c6f03a4b8",
+        "ev-46fc0773f53d2a9fcd7b",
+        "ev-3b98345ec1d31f5cf617",
+        "ev-7760cb7db190cafb774e",
+        "ev-8304f9e1d678ef6f6f46"
+      ],
+      "bouts": [
+        {
+          "boutId": "div-s-sec5-m3-b0",
+          "summary": "どぐら選手がACQUA選手を2-0で下し、Crazy Raccoonが先制した。第1ゲームではヒーリングで体力を回復し、起き攻めから仕切り直し後の追撃へと攻めをつないだ。",
+          "summaryEvidenceIds": [
+            "ev-8e7b55f7409c1d173d39",
+            "ev-80c287aa373c6f03a4b8"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム第2ラウンド、どぐらはコンボからヒーリングで体力を回復し、投げ抜けで距離が離れた後も、踏み込んだ攻撃のカウンターヒットからドライブラッシュを絡めて追撃した。",
+              "evidenceIds": [
+                "ev-80c287aa373c6f03a4b8"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec5-m3-b1",
+          "summary": "takepi選手がかずのこ選手に2-0で勝利し、広島 TEAM iXAがチームスコアをタイに戻した。第1ゲームの最終ラウンドはパニッシュカウンターからCAにつなぎ、先取した。",
+          "summaryEvidenceIds": [
+            "ev-46fc0773f53d2a9fcd7b",
+            "ev-3b98345ec1d31f5cf617"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲームの最終ラウンド、takepiはパニッシュカウンターからコンボをつなぎ、CAでKOまで持ち込んだ。",
+              "evidenceIds": [
+                "ev-3b98345ec1d31f5cf617"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec5-m3-b2",
+          "summary": "ひびき選手がShuto選手との大将戦を3-2で制し、広島 TEAM iXAの勝利を決めた。第1ゲームを失った後に2ゲームを連取し、第4ゲームを取り返されながらも最終ゲームを取り切った。",
+          "summaryEvidenceIds": [
+            "ev-7760cb7db190cafb774e"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム第2ラウンド、Shutoは差し返しのパニッシュカウンターからドライブラッシュを絡めて画面端へ運び、起き攻めからのコンボも決めてパーフェクトKOを奪った。",
+              "evidenceIds": [
+                "ev-98538ca32f84ce4b6c57"
+              ]
+            },
+            {
+              "text": "第5ゲーム最終ラウンドの決着では、ひびきがShutoの無敵技をガードし、パニッシュカウンターからのコンボでKOして大将戦を締めくくった。",
+              "evidenceIds": [
+                "ev-8304f9e1d678ef6f6f46"
               ]
             }
           ]
@@ -10634,7 +10704,5 @@
       "runs": []
     }
   },
-  "pendingNarrations": [
-    "div-s-sec5-m3"
-  ]
+  "pendingNarrations": []
 }

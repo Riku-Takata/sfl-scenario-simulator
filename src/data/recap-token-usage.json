@@ -190,8 +190,25 @@
           "thoughtTokens": 2,
           "totalTokens": 2
         }
+      },
+      "codex:narration:codex-cli": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 18867,
+          "cachedInputTokens": 0,
+          "outputTokens": 1187,
+          "thoughtTokens": 63
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1
+        }
       }
     }
   },
-  "seenIds": []
+  "seenIds": [
+    "1237a249-c940-43c8-9a93-6c6427ca7f52"
+  ]
 }

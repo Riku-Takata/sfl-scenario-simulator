@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-27T14:00:31.459Z",
+  "updatedAt": "2026-10-29T04:00:51.565Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -963,6 +963,183 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-10-24T19:54:30.250Z"
+    },
+    "div-s-sec5-m3-b0:348f027838e5437d:candidate": {
+      "articleId": "div-s-sec5-m3-b0:348f027838e5437d:candidate",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b0",
+      "revision": "348f027838e5437d",
+      "status": "insufficient",
+      "summary": "どぐら選手がACQUA選手を2-0で下し、Crazy Raccoonが先制した。第1ゲームではヒーリングで体力を回復し、起き攻めから仕切り直し後の追撃へと攻めをつないだ。",
+      "summaryEvidenceIds": [
+        "ev-8e7b55f7409c1d173d39",
+        "ev-80c287aa373c6f03a4b8"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンド、どぐらはコンボからヒーリングで体力を回復し、投げ抜けで距離が離れた後も、踏み込んだ攻撃のカウンターヒットからドライブラッシュを絡めて追撃した。",
+          "evidenceIds": [
+            "ev-80c287aa373c6f03a4b8"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-8e7b55f7409c1d173d39",
+        "ev-80c287aa373c6f03a4b8"
+      ],
+      "quality": {
+        "score": 0.7777777777777778,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-29T04:00:51.546Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-29T04:00:51.546Z"
+    },
+    "div-s-sec5-m3-b1:e1b8f8202343476a:candidate": {
+      "articleId": "div-s-sec5-m3-b1:e1b8f8202343476a:candidate",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b1",
+      "revision": "e1b8f8202343476a",
+      "status": "insufficient",
+      "summary": "takepi選手がかずのこ選手に2-0で勝利し、広島 TEAM iXAがチームスコアをタイに戻した。第1ゲームの最終ラウンドはパニッシュカウンターからCAにつなぎ、先取した。",
+      "summaryEvidenceIds": [
+        "ev-46fc0773f53d2a9fcd7b",
+        "ev-3b98345ec1d31f5cf617"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームの最終ラウンド、takepiはパニッシュカウンターからコンボをつなぎ、CAでKOまで持ち込んだ。",
+          "evidenceIds": [
+            "ev-3b98345ec1d31f5cf617"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-46fc0773f53d2a9fcd7b",
+        "ev-3b98345ec1d31f5cf617"
+      ],
+      "quality": {
+        "score": 0.7777777777777778,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-10-29T04:00:51.546Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-29T04:00:51.546Z"
+    },
+    "div-s-sec5-m3-b2:a890b1a8a4ddec68:published": {
+      "articleId": "div-s-sec5-m3-b2:a890b1a8a4ddec68:published",
+      "matchId": "div-s-sec5-m3",
+      "boutId": "div-s-sec5-m3-b2",
+      "revision": "a890b1a8a4ddec68",
+      "status": "passed",
+      "summary": "ひびき選手がShuto選手との大将戦を3-2で制し、広島 TEAM iXAの勝利を決めた。第1ゲームを失った後に2ゲームを連取し、第4ゲームを取り返されながらも最終ゲームを取り切った。",
+      "summaryEvidenceIds": [
+        "ev-7760cb7db190cafb774e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンド、Shutoは差し返しのパニッシュカウンターからドライブラッシュを絡めて画面端へ運び、起き攻めからのコンボも決めてパーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-98538ca32f84ce4b6c57"
+          ]
+        },
+        {
+          "text": "第5ゲーム最終ラウンドの決着では、ひびきがShutoの無敵技をガードし、パニッシュカウンターからのコンボでKOして大将戦を締めくくった。",
+          "evidenceIds": [
+            "ev-8304f9e1d678ef6f6f46"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-7760cb7db190cafb774e",
+        "ev-98538ca32f84ce4b6c57",
+        "ev-8304f9e1d678ef6f6f46"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-29T04:00:51.547Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-29T04:00:51.547Z"
+    },
+    "div-s-sec5-m3:5e284ce41479df97:published": {
+      "articleId": "div-s-sec5-m3:5e284ce41479df97:published",
+      "matchId": "div-s-sec5-m3",
+      "revision": "5e284ce41479df97",
+      "status": "passed",
+      "headline": "広島 TEAM iXAが中堅・大将を取り30-10で勝利",
+      "summary": "広島 TEAM iXAがCrazy Raccoonに30-10で勝利した。先鋒戦はどぐらがACQUAを2-0で下し、Crazy Raccoonが先制。どぐらはヒーリングで体力を回復し、攻めを継続する場面を見せた。中堅戦ではtakepiがパニッシュカウンターからCAにつなげて第1ゲームを取り、2-0で勝利してチームをタイに戻した。大将戦はひびきが第1ゲームを落としてから2ゲームを連取。Shutoに第4ゲームを奪われたものの、最終ゲームの決着では無敵技をガードして反撃を決め、3-2でチームの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-8e7b55f7409c1d173d39",
+        "ev-80c287aa373c6f03a4b8",
+        "ev-46fc0773f53d2a9fcd7b",
+        "ev-3b98345ec1d31f5cf617",
+        "ev-7760cb7db190cafb774e",
+        "ev-8304f9e1d678ef6f6f46"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-8e7b55f7409c1d173d39",
+        "ev-80c287aa373c6f03a4b8",
+        "ev-46fc0773f53d2a9fcd7b",
+        "ev-3b98345ec1d31f5cf617",
+        "ev-7760cb7db190cafb774e",
+        "ev-8304f9e1d678ef6f6f46"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-10-29T04:00:51.547Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-10-29T04:00:51.547Z"
     }
   }
 }

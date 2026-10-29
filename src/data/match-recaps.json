@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T15:30:51.525Z",
+  "updatedAt": "2026-10-29T04:00:51.503Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 5,
@@ -618,8 +618,8 @@
         "awayPoint": 30,
         "winner": "away",
         "isTiebreaker": false,
-        "matchHeadline": "広島 TEAM iXAが30-10で勝利",
-        "matchSummary": "第3試合【広島 TEAM iXA vs Crazy Raccoon】は30-10で広島 TEAM iXAの勝利。大将戦はひびき選手が制した。",
+        "matchHeadline": "広島 TEAM iXAが中堅・大将を取り30-10で勝利",
+        "matchSummary": "広島 TEAM iXAがCrazy Raccoonに30-10で勝利した。先鋒戦はどぐらがACQUAを2-0で下し、Crazy Raccoonが先制。どぐらはヒーリングで体力を回復し、攻めを継続する場面を見せた。中堅戦ではtakepiがパニッシュカウンターからCAにつなげて第1ゲームを取り、2-0で勝利してチームをタイに戻した。大将戦はひびきが第1ゲームを落としてから2ゲームを連取。Shutoに第4ゲームを奪われたものの、最終ゲームの決着では無敵技をガードして反撃を決め、3-2でチームの勝利を決めた。",
         "bouts": [
           {
             "status": 0,
@@ -765,12 +765,11 @@
               "Game 5: [2-1] ひびき選手がフルラウンド勝利"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "ひびき選手（リリー）がShuto選手（ルーク）を3-2で下した。",
+              "source": "gemini-video",
+              "summary": "ひびき選手がShuto選手との大将戦を3-2で制し、広島 TEAM iXAの勝利を決めた。第1ゲームを失った後に2ゲームを連取し、第4ゲームを取り返されながらも最終ゲームを取り切った。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームShuto→第2ゲームひびき→第3ゲームひびき→第4ゲームShuto→第5ゲームひびき",
-                "第1ゲームをShuto選手に先取されてからの逆転勝利。",
-                "第1ゲームはShuto選手が1ラウンド目を落としてから逆転、第2ゲームはひびき選手が1ラウンド目を落としてから逆転。"
+                "第1ゲーム第2ラウンド、Shutoは差し返しのパニッシュカウンターからドライブラッシュを絡めて画面端へ運び、起き攻めからのコンボも決めてパーフェクトKOを奪った。",
+                "第5ゲーム最終ラウンドの決着では、ひびきがShutoの無敵技をガードし、パニッシュカウンターからのコンボでKOして大将戦を締めくくった。"
               ]
             },
             "games": [
@@ -853,7 +852,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           }
         ],
         "narrationStatus": "pending"
