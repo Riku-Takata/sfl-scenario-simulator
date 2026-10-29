@@ -241,6 +241,24 @@ test("automatic lifecycle waits for video metadata, wakes on fresh chapters, and
   assert.equal(selectAutomaticSection({ ...context, allowArchiveCheck: true }), undefined);
 });
 
+test("a section waiting only for the local writer does not starve the next section's video work", () => {
+  const matches = MatchesDataSchema.parse(JSON.parse(fs.readFileSync(new URL("../src/data/matches.json", import.meta.url), "utf8")));
+  const facts = VideoFactsDataSchema.parse({ updatedAt: "2026-10-24T00:00:00Z", videos: {}, bouts: {}, visual: {}, narratives: {}, pendingNarrations: [] });
+  const jobs: RecapJobsData = { schemaVersion: 1, updatedAt: "2026-10-24T00:00:00Z", jobs: {} };
+  const base = { jobs, inputHash: "source", hasVideo: true, hasWindow: true, apiAvailable: true, editorial: false, someBoutPassed: false };
+  upsertMatchJob({ ...base, sectionId: "div-s-sec5", matchId: "div-s-sec5-m3", videoPending: false });
+  upsertMatchJob({ ...base, sectionId: "div-f-sec5", matchId: "div-f-sec5-m1", videoPending: true });
+  jobs.jobs["div-s-sec5-m3:article"].updatedAt = "2026-10-29T08:23:25.630Z";
+  jobs.jobs["div-f-sec5-m1:article"].updatedAt = "2026-10-29T08:23:25.631Z";
+  const writeRequests: WriteRequests = { schemaVersion: 1, requests: {} };
+  queueWriteRequest(writeRequests, { matchId: "div-s-sec5-m3", sectionId: "div-s-sec5", inputHash: "c2706a648e03cabe", sourceHash: "source", prompt: "draft" });
+  const context = { matches, facts, jobs, apiAvailable: true, now: Date.parse("2026-10-30T00:00:00Z"), allowArchiveCheck: false };
+  assert.equal(selectAutomaticSection(context), "div-s-sec5", "without request state the older section wins");
+  assert.equal(selectAutomaticSection({ ...context, writeRequests }), "div-f-sec5");
+  writeRequests.requests["div-s-sec5-m3"].stage = "waiting_evidence";
+  assert.equal(selectAutomaticSection({ ...context, writeRequests }), "div-s-sec5", "evidence verification still runs in Actions");
+});
+
 test("writing waits for independently verified video evidence rather than generating a low-information draft", () => {
   assert.equal(articleEvidenceReady(evidenceSet.map((item) => ({ ...item, status: item.kind === "official" ? "verified" : "candidate" }))), false);
   assert.equal(articleEvidenceReady(evidenceSet), true);

@@ -1,6 +1,7 @@
 import type { MatchesData, RecapJobsData, VideoFactsData, RecapEvidence } from "../../src/lib/types";
 import { findBoutWindow } from "./youtube-chapters";
 import { VideoFactsDataSchema } from "../../src/lib/schema";
+import type { WriteRequests } from "./writer-state";
 
 export const AUTOMATIC_STAGES = new Set(["queued", "waiting_video", "waiting_window", "extracting", "verifying", "writing", "retry_wait", "paused"]);
 
@@ -31,11 +32,16 @@ export function mergePreparedChapters(facts: VideoFactsData, matches: MatchesDat
 export function selectAutomaticSection(input: {
   jobs: RecapJobsData; facts: VideoFactsData; matches: MatchesData;
   now?: number; apiAvailable: boolean; allowArchiveCheck: boolean;
+  /** Matches whose draft is queued for the local writer; only a prepared draft can advance them. */
+  writeRequests?: WriteRequests;
 }): string | undefined {
   const now = input.now ?? Date.now();
   return Object.values(input.jobs.jobs)
     .filter((job) => AUTOMATIC_STAGES.has(job.stage))
     .filter((job) => job.stage !== "paused" || input.apiAvailable)
+    // Every run rewrites updatedAt in section order, so a job that only waits for
+    // the local writer would stay oldest and starve the next section forever.
+    .filter((job) => job.stage !== "writing" || input.writeRequests?.requests[job.matchId]?.stage !== "queued")
     .filter((job) => !job.leaseUntil || Date.parse(job.leaseUntil) <= now)
     .filter((job) => {
       const due = !job.nextAttemptAt || Date.parse(job.nextAttemptAt) <= now;

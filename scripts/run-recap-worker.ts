@@ -3,6 +3,7 @@ import { MatchesDataSchema, RecapJobsDataSchema, VideoFactsDataSchema } from "..
 import { generateAndSaveMatchRecaps } from "./4-generate-match-recaps";
 import { mergePreparedChapters, selectAutomaticSection } from "./recap/automation";
 import { loadRecapUsage, remainingDailyUsage } from "./recap/usage";
+import { loadWriteRequests } from "./recap/writer-state";
 
 const JOBS_FILE = new URL("../src/data/recap-jobs.json", import.meta.url);
 const allowArchiveCheck = process.env.RECAP_CHECK_ARCHIVES === "true" || process.argv.includes("--check-archives");
@@ -21,7 +22,9 @@ function nextSection(): { section?: string; hasJobs: boolean } {
   const data = RecapJobsDataSchema.parse(JSON.parse(fs.readFileSync(JOBS_FILE, "utf8")));
   const facts = VideoFactsDataSchema.parse(JSON.parse(fs.readFileSync(new URL("../src/data/video-facts.json", import.meta.url), "utf8")));
   const matches = MatchesDataSchema.parse(JSON.parse(fs.readFileSync(new URL("../src/data/matches.json", import.meta.url), "utf8")));
-  return { section: selectAutomaticSection({ jobs: data, facts, matches, apiAvailable: Boolean(process.env.GEMINI_API_KEY), allowArchiveCheck }), hasJobs: Object.keys(data.jobs).length > 0 };
+  // The Gemini text backend writes in this run, so its queued drafts are still actionable here.
+  const writeRequests = process.env.RECAP_TEXT_BACKEND === "gemini" ? undefined : loadWriteRequests();
+  return { section: selectAutomaticSection({ jobs: data, facts, matches, apiAvailable: Boolean(process.env.GEMINI_API_KEY), allowArchiveCheck, writeRequests }), hasJobs: Object.keys(data.jobs).length > 0 };
 }
 
 const explicitSection = process.argv.find((arg) => arg.startsWith("--section="))?.slice("--section=".length);
