@@ -84,7 +84,7 @@ async function main(): Promise<void> {
   }) : undefined;
   const remaining = remainingDailyUsage(RecapUsageSchema.parse(decode(read("recap-usage"))));
   const section = prepared ? requestToWrite!.sectionId : remaining.calls && remaining.videoSeconds
-    ? selectAutomaticSection({ jobs, facts, matches, apiAvailable: true, allowArchiveCheck: !readyOnly }) : undefined;
+    ? selectAutomaticSection({ jobs, facts, matches, apiAvailable: true, allowArchiveCheck: !readyOnly, writeRequests: requests }) : undefined;
   const changedVideos = Object.fromEntries(Object.entries(facts.videos).filter(([slug, video]) => JSON.stringify(previousVideos[slug]) !== JSON.stringify(video)));
   console.log(`SFL_RECAP_CACHE=${Object.keys(changedVideos).length ? Buffer.from(JSON.stringify(changedVideos)).toString("base64") : ""}`);
   console.log(`SFL_NARRATIVE_CACHE=${prepared ? Buffer.from(JSON.stringify([prepared])).toString("base64") : ""}`);
