@@ -250,6 +250,8 @@ test("a section waiting only for the local writer does not starve the next secti
   upsertMatchJob({ ...base, sectionId: "div-f-sec5", matchId: "div-f-sec5-m1", videoPending: true });
   jobs.jobs["div-s-sec5-m3:article"].updatedAt = "2026-10-29T08:23:25.630Z";
   jobs.jobs["div-f-sec5-m1:article"].updatedAt = "2026-10-29T08:23:25.631Z";
+  jobs.jobs["div-s-sec5-m3:article"].nextAttemptAt = "2026-10-29T08:38:25.630Z";
+  jobs.jobs["div-f-sec5-m1:article"].nextAttemptAt = "2026-10-29T08:38:25.631Z";
   const writeRequests: WriteRequests = { schemaVersion: 1, requests: {} };
   queueWriteRequest(writeRequests, { matchId: "div-s-sec5-m3", sectionId: "div-s-sec5", inputHash: "c2706a648e03cabe", sourceHash: "source", prompt: "draft" });
   const context = { matches, facts, jobs, apiAvailable: true, now: Date.parse("2026-10-30T00:00:00Z"), allowArchiveCheck: false };
