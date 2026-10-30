@@ -3,6 +3,7 @@
  *
  *   npx tsx scripts/fan/eval/provider-eval.ts                      # 使える Provider すべて
  *   npx tsx scripts/fan/eval/provider-eval.ts --providers mdfromx --pages 3
+ *   npx tsx scripts/fan/eval/provider-eval.ts --providers flovia --pages 1 --max-results 20
  *
  * 本番と同じ収集処理 (runCollection) を、使い捨てのメモリ上 DB と「本文を読まない分類器」で動かし、
  * 呼び出しの速さ・件数・遡れる範囲・エンゲージメントの有無・Provider 間の重なりを測る。
@@ -15,6 +16,7 @@ import { DEFAULT_BUDGET_LIMITS } from "../budget";
 import type { Classifier, PostClassification } from "../classifier/types";
 import { runCollection, type CollectTarget } from "../collect";
 import { authorHmacSecret } from "../providers/author-key";
+import { FloviaProvider } from "../providers/flovia-mcp";
 import { MdfromxProvider } from "../providers/mdfromx";
 import type { EphemeralPost, SearchPage, SearchRequest, XSearchProvider } from "../providers/types";
 import { FanStore, fanDataDir } from "../store";
@@ -108,6 +110,8 @@ interface ProviderReport {
   sources: Record<string, number>;
   /** ページ送りが進まず打ち切ったページ (mdfromx の empty_page / repeated_cursor) */
   noProgressPages: number | null;
+  /** 呼び出しごとの返却件数・課金件数・呼び出し後の使用率 (Flovia のみ) */
+  usage: { returned: number; billedPosts: number | null; fiveHourUsedPct: number | null; weekUsedPct: number | null }[] | null;
   teams: Record<string, TeamStats>;
 }
 
@@ -143,7 +147,7 @@ function teamStats(store: FanStore, runId: string, teamKey: string, now: number)
 export async function evaluateProvider(
   name: string,
   provider: XSearchProvider,
-  options: { pages: number; minIntervalMs: number; targets?: CollectTarget[] }
+  options: { pages: number; minIntervalMs: number; targets?: CollectTarget[]; maxResults?: number; respectBudget?: boolean }
 ): Promise<{ report: ProviderReport; postIds: Map<string, Set<string>> }> {
   const targets = options.targets ?? EVAL_TARGETS;
   const paced = new PacedProvider(provider, options.minIntervalMs);
@@ -156,11 +160,12 @@ export async function evaluateProvider(
       targets,
       limits: {
         ...DEFAULT_BUDGET_LIMITS,
-        stopFiveHourPct: 101,
-        stopWeekPct: 101,
+        // mdfromx の枠は評価が終われば戻る。Flovia は本番と同じ停止ラインを守る
+        ...(options.respectBudget ? {} : { stopFiveHourPct: 101, stopWeekPct: 101 }),
         maxPagesPerTeamPerRun: options.pages,
         maxCallsPerRun: options.pages * targets.length,
       },
+      maxResults: options.maxResults,
       log: () => {},
     });
     const now = Date.now();
@@ -182,6 +187,9 @@ export async function evaluateProvider(
         postsPerCall: summary.calls ? Math.round((totalPosts / summary.calls) * 10) / 10 : null,
         sources,
         noProgressPages: provider instanceof MdfromxProvider ? provider.noProgressPages : null,
+        usage: provider instanceof FloviaProvider
+          ? provider.calls.map(({ returned, billedPosts, fiveHourUsedPct, weekUsedPct }) => ({ returned, billedPosts, fiveHourUsedPct, weekUsedPct }))
+          : null,
         teams,
       },
       postIds,
@@ -211,17 +219,20 @@ async function main() {
     return i >= 0 ? args[i + 1] : undefined;
   };
   const pages = Number(arg("pages") ?? 3);
+  const maxResults = arg("max-results") ? Number(arg("max-results")) : undefined;
   const wanted = (arg("providers") ?? "mdfromx,flovia").split(",");
   const secret = authorHmacSecret();
 
   const results: { report: ProviderReport; postIds: Map<string, Set<string>> }[] = [];
   if (wanted.includes("mdfromx")) {
     // 匿名の検索枠は 1分5回・アカウント枠は 15分10回。間隔 13秒で 1回の評価 (最大9回) に収める
-    results.push(await evaluateProvider("mdfromx", new MdfromxProvider(secret), { pages, minIntervalMs: 13_000 }));
+    results.push(await evaluateProvider("mdfromx", new MdfromxProvider(secret), { pages, minIntervalMs: 13_000, maxResults }));
   }
   if (wanted.includes("flovia")) {
     if (!process.env.FLOVIA_KEY) console.error("FLOVIA_KEY が未設定のため Flovia は評価しません");
-    else console.error("Flovia Provider は Phase 0 の確認後に追加します");
+    else {
+      results.push(await evaluateProvider("flovia", new FloviaProvider(process.env.FLOVIA_KEY, secret), { pages, minIntervalMs: 1_000, maxResults, respectBudget: true }));
+    }
   }
 
   const output = {

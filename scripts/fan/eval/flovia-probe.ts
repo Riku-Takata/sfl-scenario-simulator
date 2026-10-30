@@ -9,16 +9,13 @@
  * 使用率 (used_pct / resets_at) と、件数の数値・真偽値だけは値を表示する。
  */
 import { pathToFileURL } from "node:url";
+import { FLOVIA_PURPOSE, FLOVIA_REQUEST_TEXT, FloviaMcpSession, toolPayload } from "../providers/flovia-mcp";
 
 if (typeof process.loadEnvFile === "function") {
   try {
     process.loadEnvFile();
   } catch {}
 }
-
-/** Flovia が保持・共有し得るので固定の汎用文にする (実装計画 §4) */
-export const FLOVIA_REQUEST_TEXT = "公開投稿の件数集計のための検索";
-export const FLOVIA_PURPOSE = "SFLチーム別の公開投稿の集計";
 
 const PROBE_QUERY =
   '("Crazy Raccoon" OR クレイジーラクーン) (ストリートファイターリーグ OR #SFリーグ OR SFL OR スト6) lang:ja -is:retweet';
@@ -41,73 +38,6 @@ export function shapeOf(value: unknown, key = "", depth = 0): unknown {
   if (typeof value === "string" && /resets_at/i.test(key)) return value;
   if (typeof value === "string") return `string(${value.length}${/^\d+$/.test(value) ? ",digits" : ""})`;
   return typeof value;
-}
-
-export class FloviaMcpSession {
-  private sessionId: string | null = null;
-  private nextId = 1;
-
-  constructor(private readonly key: string, private readonly url = process.env.FLOVIA_MCP_URL ?? "https://api.flovia.dev/mcp") {}
-
-  private async post(body: unknown): Promise<{ status: number; message: any }> {
-    const res = await fetch(this.url, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${this.key}`,
-        "Content-Type": "application/json",
-        Accept: "application/json, text/event-stream",
-        ...(this.sessionId ? { "Mcp-Session-Id": this.sessionId } : {}),
-      },
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(60_000),
-    });
-    this.sessionId = res.headers.get("mcp-session-id") ?? this.sessionId;
-    const text = await res.text();
-    if (!text) return { status: res.status, message: null };
-    if ((res.headers.get("content-type") ?? "").includes("text/event-stream")) {
-      // 最後の data: 行が JSON-RPC の応答
-      const data = text.split(/\r?\n/).filter((l) => l.startsWith("data:")).map((l) => l.slice(5).trim());
-      return { status: res.status, message: data.length ? JSON.parse(data.at(-1)!) : null };
-    }
-    try {
-      return { status: res.status, message: JSON.parse(text) };
-    } catch {
-      return { status: res.status, message: { nonJsonLength: text.length } };
-    }
-  }
-
-  async initialize() {
-    const r = await this.post({
-      jsonrpc: "2.0",
-      id: this.nextId++,
-      method: "initialize",
-      params: { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "sfl-fan-probe", version: "0.1.0" } },
-    });
-    await this.post({ jsonrpc: "2.0", method: "notifications/initialized" });
-    return r;
-  }
-
-  request(method: string, params: unknown) {
-    return this.post({ jsonrpc: "2.0", id: this.nextId++, method, params });
-  }
-
-  callTool(name: string, args: Record<string, unknown>) {
-    return this.request("tools/call", { name, arguments: args });
-  }
-}
-
-/** tools/call の結果から本体を取り出す (structuredContent、なければ text を JSON として読む) */
-export function toolPayload(message: any): unknown {
-  const result = message?.result;
-  if (!result) return message?.error ? { error: { code: message.error.code, messageLength: String(message.error.message ?? "").length } } : null;
-  if (result.structuredContent) return result.structuredContent;
-  const text = result.content?.find((c: any) => c.type === "text")?.text;
-  if (typeof text !== "string") return result;
-  try {
-    return JSON.parse(text);
-  } catch {
-    return { textLength: text.length, isError: result.isError ?? false };
-  }
 }
 
 function findCursor(payload: unknown): string | null {
