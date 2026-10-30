@@ -38,10 +38,16 @@ Buckler 連携（`scripts/buckler/`, README「Buckler (ランクマ) 連携」�
 - 公開は `scripts/fan/publish.ts` が `publish-repo` から `src/data/fan-engagement.json` だけを commit / push する（Buckler の `buckler-profiles.json` と同じ）。push 前に `FanSnapshotSchema` で検証し、§9 の漏えい検査も通す。通常の GitHub Actions・Vercel・HomeServer リリースの流れはそのまま使える。
 - `.gitignore` に保険として `*.sqlite` と `fan-raw*` を足す。
 
-**公開の扱い（決定 2026-10-30）:** このリポジトリは PUBLIC なので、`fan-engagement.json` を push した時点で集計値は一般公開になる。**Flovia の書面回答が来るまで push しない。**
-- `FAN_PUBLISH` の既定は `false`。`publish.ts` は false のとき commit も push もせず、ローカルの `snapshots/` に書き出すだけにする。
-- それまでの確認は HomeServer 上のローカルビルドで行う。ビルドは環境変数 `FAN_ENGAGEMENT_SNAPSHOT`（リポジトリ外のファイルパス）があればそこから読み、なければ `src/data/fan-engagement.json` を読む。リポジトリ内にファイルを置かないので、誤ってコミットされることがない。
-- Flovia から許可が出たら、回答を `docs/provider-verification.md` に記録し、`FAN_PUBLISH=true`・`PUBLIC_FAN_PAGES=true` にする（Phase 7）。許可が出なければ、Adapter を X 公式 API など別の Provider に差し替える（設計書 ADR-001）。
+**公開の扱い:** このリポジトリは PUBLIC なので、`fan-engagement.json` を push した時点で集計値は一般公開になる。
+
+- **Flovia の回答（2026-10-30）**: 規約などのページで Flovia の利用を明記すれば、スコアを算出した結果を公開してよい（詳細は `docs/provider-verification.md`）。
+- したがって公開の条件は **「サイトの規約・ページに Flovia の利用を明記していること」**。PR 5 で次の3か所に入れる。
+  - `src/pages/about.astro` の利用規約・免責事項の節: X 上の公開投稿の集計に Flovia を利用していること、本文・投稿者情報は保存・表示しないこと
+  - `/fans/methodology`: 収集範囲とあわせてデータ取得元として明記
+  - `/fans/` の各ページの注記（「X 上の観測にもとづく指数」の隣）
+- この明記がビルドに入るまでは `FAN_PUBLISH=false`（既定）のままにする。`publish.ts` は false のとき commit も push もせず、ローカルの `snapshots/` に書き出すだけにする。
+- 公開前の確認は HomeServer 上のローカルビルドで行う。ビルドは環境変数 `FAN_ENGAGEMENT_SNAPSHOT`（リポジトリ外のファイルパス）があればそこから読み、なければ `src/data/fan-engagement.json` を読む。
+- Flovia が条件を変えた場合や公開を取り消した場合は、Adapter を X 公式 API など別の Provider に差し替える（設計書 ADR-001）。
 
 ## 3. 配置
 
@@ -104,6 +110,20 @@ HMAC 鍵・Flovia キー・レビュー暗号鍵は `apps/sfl-scenario-simulator
 3. `tools/call name=flovia_x {action:"search_recent", query, max_results:100, cursor|since_id, sort_order:"recency", operation_id, request_text, purpose}`。
 4. レスポンスを `EphemeralPost` に正規化する。**このときに** 著者IDを `HMAC-SHA256(AUTHOR_HMAC_SECRET_<season>, id)` に変換し、ユーザー名・表示名は捨てる。
 5. HTTP 429 / 上限 → `RetryAt` 付きエラー、5xx・タイムアウト → `Unknown` エラー、401/403 → `Config` エラーに分類して Collector に返す（再送判断は Collector がする）。
+
+### 4.1 ほかの Provider 候補
+
+| 候補 | 判定 | 理由 |
+|---|---|---|
+| **Flovia**（`flovia_x`） | **採用** | 運営元と規約がはっきりしていて、書面で確認が取れた。`operation_id` による冪等性、使用率の確認手段がある |
+| X 公式 API | 予備 | Flovia が使えなくなったときの差し替え先。費用と取得量の上限は差し替えるときに確認する |
+| mdfromx.com（x.md, `pc-style/x-md`、2026-10-30 調査） | **不採用** | 下記 |
+
+mdfromx.com を採用しない理由:
+1. **取得経路が X の規約に沿っていない可能性が高い。** 検索は X 公式 API ではなく、ログイン済みの X アカウントのセッション（「Account-backed searches」、`X_SEARCH_SESSIONS_JSON`）で行う。投稿の読み取りは非公式の埋め込みプロキシ（FxTwitter）と syndication エンドポイント経由。
+2. **規約が定期収集を想定していない。** 「bulk or firehose collection」を禁止し、`llms.txt` でも多数アカウントにまたがるデータセット作りには向かないとしている。取得した内容の再利用は利用者の責任で、「public availability is not the same as permission to reuse」としている。
+3. **件数の指標が歪むおそれ。** ライブ検索が落ちると Web 検索の断片に自動で切り替わることがある。結果の遅れ・欠け・打ち切りがあり得ると明記されていて、どの取得元の結果かが分からない。
+4. **運用の保証がない。** 運営者名の記載なし、稼働の保証なし、予告なく停止し得る。`operation_id` のような冪等キーもない。セルフホストすると、自分の X アカウントのセッションでスクレイピングすることになる。
 
 ## 5. 収集・分類パイプライン
 
@@ -220,13 +240,20 @@ fan-engagement.json
 | 2 | `fan: store, mock provider, collector` | SQLite migration、Mock、collector、予算ガード、漏えいテスト | 1 |
 | 3 | `fan: Flovia MCP provider` | `flovia-mcp.ts`、実レスポンスの正規化 | Phase 0 の結果 |
 | 4 | `fan: classifier + review` | matcher、`fan-teams.json`、Claude CLI 分類器、一時レビュー画面、評価セット | §6.2 の確認（学習設定・ディスク残存） |
-| 5 | `fan: snapshot + pages` | score.ts、`src/data/fan-engagement.json` のスキーマ、`/fans/` 3ページ（`PUBLIC_FAN_PAGES` で出し分け） | 1, 2 |
+| 5 | `fan: snapshot + pages` | score.ts、`src/data/fan-engagement.json` のスキーマ、`/fans/` 3ページ（`PUBLIC_FAN_PAGES` で出し分け）、**Flovia 利用の明記**（about の利用規約・Methodology・各ページの注記、§2） | 1, 2 |
 | 6 | `fan: scheduled run + publish` | `register-sfl-fan-task.ps1`、`publish.ts`（`FAN_PUBLISH` が true のときだけ push）、監視・通知、保持期限削除 | 3, 4, 5 |
-| 7 | `fan: public release` | `FAN_PUBLISH=true`・`PUBLIC_FAN_PAGES=true` にする | **Flovia の書面許可** |
+| 7 | `fan: public release` | `FAN_PUBLISH=true`・`PUBLIC_FAN_PAGES=true` にする | Flovia 利用の明記が公開サイトに出ていること（Flovia の回答の条件） |
 
 PR 1 と 2 は Flovia の確認を待たずに進められる（Mock で下流を作る、設計書 §4.1 末尾の方針どおり）。
 
 PR 1 の範囲（実装済み）: `src/lib/fan/` の types / config / stats / aggregate / baseline / scoring / bootstrap / rank-band / quality / disclosure / team-score。`matcher.ts`・`query.ts` は PR 4、Zod の `schema.ts` はスナップショットの形を決める PR 5 で足す。`stale` は閲覧時点で決まるので、スナップショットには入れず表示側で `isStale` を使う。B=1000・1,200人のブートストラップは約80ms（設計書 §12.4 の 2秒以内）。
+
+PR 2 の範囲（実装済み）: `scripts/fan/` の providers（types・author-key・mock）/ ephemeral-buffer / classifier（types・mock）/ store / budget / lock / collect。
+- migration は別ファイルではなく `store.ts` の `MIGRATIONS`（`PRAGMA user_version` で管理）に置いた。チーム・検索語は `fan-teams.json`、試合日は `matches.json` から読むので、`teams`・`team_search_terms`・`match_events` テーブルは作らない。`review_buffer`・`classification_reviews` は PR 4。
+- 取得途中の続きは `collection_checkpoints` の `pending_cursor` / `pending_upper` で持つ。上限で打ち切ったら次の実行で続きから取り、取り切ったら `since_id` を `pending_upper` に進める。
+- 結果不明の operation_id は、リクエストの内容（チーム・クエリ・カーソル・since_id）が同じなら後の実行でも同じものを使う。異常終了で `pending` のまま残ったページも結果不明として扱う。
+- 保存済みの投稿が再び取れたら、分類はせずにエンゲージメントだけ追記する（§7-3 の観測時点の偏りを減らす）。
+- 実行の入口（`run.ts`）は、本物の Provider が入る PR 3 で作る。
 
 ## 11. MVP の対象チーム
 
@@ -241,4 +268,4 @@ PR 1 の範囲（実装済み）: `src/lib/fan/` の types / config / stats / ag
 ## 12. 残っている決めごと
 
 1. §6.2-1 の学習設定の確認（claude.ai のアカウント設定。本人にしかできない）。
-2. Flovia への書面問い合わせ（Phase 0）。回答が公開開始の条件になる。
+2. Phase 0 の残り: `search_recent` を1〜3回試して、返却フィールド・演算子・消費率を記録する。
