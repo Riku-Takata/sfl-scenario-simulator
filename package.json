@@ -11,7 +11,7 @@
     "build": "node scripts/write-build-info.mjs && astro build",
     "preview": "astro preview --port 3000 --host 0.0.0.0",
     "start": "node scripts/serve-static.mjs",
-    "test": "node --import tsx --test tests/simulator.test.ts tests/match-recap.test.ts tests/recap-quality.test.ts tests/recap-writer-integration.test.ts tests/startgg.test.ts tests/sfl-play-style.test.ts tests/buckler.test.ts tests/encyclopedia-v2.test.ts tests/model.test.ts tests/youtube-archive.test.ts tests/fan-scoring.test.ts tests/fan-disclosure.test.ts tests/fan-collector.test.ts tests/fan-leakage.test.ts",
+    "test": "node --import tsx --test tests/simulator.test.ts tests/match-recap.test.ts tests/recap-quality.test.ts tests/recap-writer-integration.test.ts tests/startgg.test.ts tests/sfl-play-style.test.ts tests/buckler.test.ts tests/encyclopedia-v2.test.ts tests/model.test.ts tests/youtube-archive.test.ts tests/fan-scoring.test.ts tests/fan-disclosure.test.ts tests/fan-collector.test.ts tests/fan-leakage.test.ts tests/fan-mdfromx.test.ts tests/fan-flovia.test.ts",
     "pipeline": "tsx scripts/run-pipeline.ts",
     "pipeline:force": "tsx scripts/run-pipeline.ts --force",
     "fetch-startgg": "tsx scripts/0a-fetch-startgg.ts",
