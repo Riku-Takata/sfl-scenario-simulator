@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-30T15:13:01.619Z",
+  "updatedAt": "2026-10-30T18:04:30.441Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -3037,6 +3037,102 @@
       "verifierVersion": "official-source-v1",
       "sourceModels": [],
       "createdAt": "2026-10-30T13:29:33.256Z"
+    },
+    "ev-4367cc40dac7e4f17b78": {
+      "id": "ev-4367cc40dac7e4f17b78",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 2957,
+      "endSec": 2984,
+      "playerIds": [
+        "かずのこ",
+        "ももち"
+      ],
+      "observation": "ももちは画面端付近でかずのこのバーニングキックをSA1（武頼漢）でかわしてダメージを奪い、最後はジャンプ着地後の攻防でOD無影螺旋をパニッシュカウンターでヒットさせてKOしマッチを制した。",
+      "officialRefs": [
+        "div-s-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-30T18:04:28.957Z"
+    },
+    "ev-f9847d247b8eee87dd2f": {
+      "id": "ev-f9847d247b8eee87dd2f",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 2826,
+      "endSec": 2851,
+      "playerIds": [
+        "かずのこ",
+        "ももち"
+      ],
+      "observation": "かずのこがSA3（アンラク・リジェクター）で割り込んで追い上げるも、ももちはかずのこのODバニッシュをバックジャンプで冷静にかわしてパニッシュカウンターを取り、SA3（月牙叉炮）へ繋いでKOした。",
+      "officialRefs": [
+        "div-s-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-30T18:04:28.957Z"
+    },
+    "ev-48a3e916ed824f00e9a7": {
+      "id": "ev-48a3e916ed824f00e9a7",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 2924,
+      "endSec": 2932,
+      "playerIds": [
+        "かずのこ",
+        "ももち"
+      ],
+      "observation": "ももちが画面端のプレッシャー下でかずのこの暴れを打撃でパニッシュカウンターに捉え、即座にCA（月牙叉炮）へ繋いでリーサルを奪い第2ゲームをフルカウントに持ち込んだ。",
+      "officialRefs": [
+        "div-s-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-30T18:04:28.957Z"
+    },
+    "ev-6f97ed3dcb677141c675": {
+      "id": "ev-6f97ed3dcb677141c675",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 2773,
+      "endSec": 2784,
+      "playerIds": [
+        "かずのこ",
+        "ももち"
+      ],
+      "observation": "ももちをバーンアウトに追い込んだかずのこが、前投げからの起き攻めで的確に画面端へ追い詰めてジャンプ攻撃を刈り取り、第1ゲームの第2ラウンドを取り返した。",
+      "officialRefs": [
+        "div-s-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.7-flash"
+      ],
+      "createdAt": "2026-10-30T18:04:28.957Z"
     }
   }
 }
