@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-29T23:15:58.683Z",
+  "updatedAt": "2026-10-30T13:29:33.268Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -2754,6 +2754,256 @@
         "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-29T23:13:05.325Z"
+    },
+    "ev-bb7f4dda61a82546566c": {
+      "id": "ev-bb7f4dda61a82546566c",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "kind": "official",
+      "playerIds": [
+        "かずのこ",
+        "ももち"
+      ],
+      "observation": "かずのことももちの先鋒戦は2-0。第1ゲームももちが勝利、第2ゲームももちが勝利",
+      "officialRefs": [
+        "div-s-sec6-m1-b0:score",
+        "div-s-sec6-m1-b0:game:0:winner-and-rounds",
+        "div-s-sec6-m1-b0:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.253Z"
+    },
+    "ev-772c16be1d84298ba39f": {
+      "id": "ev-772c16be1d84298ba39f",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b1",
+      "kind": "official",
+      "playerIds": [
+        "ボンちゃん",
+        "ひぐち"
+      ],
+      "observation": "ボンちゃんとひぐちの中堅戦は2-0。第1ゲームひぐちが勝利、第2ゲームひぐちが勝利",
+      "officialRefs": [
+        "div-s-sec6-m1-b1:score",
+        "div-s-sec6-m1-b1:game:0:winner-and-rounds",
+        "div-s-sec6-m1-b1:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.254Z"
+    },
+    "ev-3619cf8cad92533e4d3c": {
+      "id": "ev-3619cf8cad92533e4d3c",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b2",
+      "kind": "official",
+      "playerIds": [
+        "Shuto",
+        "MenaRD"
+      ],
+      "observation": "ShutoとMenaRDの大将戦は3-0。第1ゲームShutoが勝利、第2ゲームShutoが勝利、第3ゲームShutoが勝利",
+      "officialRefs": [
+        "div-s-sec6-m1-b2:score",
+        "div-s-sec6-m1-b2:game:0:winner-and-rounds",
+        "div-s-sec6-m1-b2:game:1:winner-and-rounds",
+        "div-s-sec6-m1-b2:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.254Z"
+    },
+    "ev-89c93634da31da37af78": {
+      "id": "ev-89c93634da31da37af78",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b3",
+      "kind": "official",
+      "playerIds": [
+        "どぐら",
+        "ヤマグチ"
+      ],
+      "observation": "どぐらとヤマグチの延長戦は2-1。第1ゲームどぐらが勝利、第2ゲームヤマグチが勝利、第3ゲームヤマグチが勝利",
+      "officialRefs": [
+        "div-s-sec6-m1-b3:score",
+        "div-s-sec6-m1-b3:game:0:winner-and-rounds",
+        "div-s-sec6-m1-b3:game:1:winner-and-rounds",
+        "div-s-sec6-m1-b3:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.254Z"
+    },
+    "ev-f2e5dca1f19d59a8dd3c": {
+      "id": "ev-f2e5dca1f19d59a8dd3c",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "official",
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "あきらとまちゃぼーの先鋒戦は2-0。第1ゲームまちゃぼーが勝利、第2ゲームまちゃぼーが勝利",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:score",
+        "div-s-sec6-m2-b0:game:0:winner-and-rounds",
+        "div-s-sec6-m2-b0:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.255Z"
+    },
+    "ev-707245867716b588c06a": {
+      "id": "ev-707245867716b588c06a",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b1",
+      "kind": "official",
+      "playerIds": [
+        "ACQUA",
+        "こばやん"
+      ],
+      "observation": "ACQUAとこばやんの中堅戦は2-1。第1ゲームこばやんが勝利、第2ゲームACQUAが勝利、第3ゲームこばやんが勝利",
+      "officialRefs": [
+        "div-s-sec6-m2-b1:score",
+        "div-s-sec6-m2-b1:game:0:winner-and-rounds",
+        "div-s-sec6-m2-b1:game:1:winner-and-rounds",
+        "div-s-sec6-m2-b1:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.255Z"
+    },
+    "ev-4c2ab156d4259f112717": {
+      "id": "ev-4c2ab156d4259f112717",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "official",
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "ひびきときんちょの大将戦は3-1。第1ゲームひびきが勝利、第2ゲームきんちょが勝利、第3ゲームひびきが勝利、第4ゲームひびきが勝利",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:score",
+        "div-s-sec6-m2-b2:game:0:winner-and-rounds",
+        "div-s-sec6-m2-b2:game:1:winner-and-rounds",
+        "div-s-sec6-m2-b2:game:2:winner-and-rounds",
+        "div-s-sec6-m2-b2:game:3:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.255Z"
+    },
+    "ev-059ae657e4bf560b2f33": {
+      "id": "ev-059ae657e4bf560b2f33",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b3",
+      "kind": "official",
+      "playerIds": [
+        "takepi",
+        "cosa"
+      ],
+      "observation": "takepiとcosaの延長戦は2-1。第1ゲームtakepiが勝利、第2ゲームcosaが勝利、第3ゲームcosaが勝利",
+      "officialRefs": [
+        "div-s-sec6-m2-b3:score",
+        "div-s-sec6-m2-b3:game:0:winner-and-rounds",
+        "div-s-sec6-m2-b3:game:1:winner-and-rounds",
+        "div-s-sec6-m2-b3:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.255Z"
+    },
+    "ev-060caff547e839f71d95": {
+      "id": "ev-060caff547e839f71d95",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m3",
+      "boutId": "div-s-sec6-m3-b0",
+      "kind": "official",
+      "playerIds": [
+        "もけ",
+        "鶏めし"
+      ],
+      "observation": "もけと鶏めしの先鋒戦は2-1。第1ゲーム鶏めしが勝利、第2ゲームもけが勝利、第3ゲーム鶏めしが勝利",
+      "officialRefs": [
+        "div-s-sec6-m3-b0:score",
+        "div-s-sec6-m3-b0:game:0:winner-and-rounds",
+        "div-s-sec6-m3-b0:game:1:winner-and-rounds",
+        "div-s-sec6-m3-b0:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.256Z"
+    },
+    "ev-fd2aa52700d68e0bfa79": {
+      "id": "ev-fd2aa52700d68e0bfa79",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m3",
+      "boutId": "div-s-sec6-m3-b1",
+      "kind": "official",
+      "playerIds": [
+        "藤村",
+        "ジョニィ"
+      ],
+      "observation": "藤村とジョニィの中堅戦は2-0。第1ゲーム藤村が勝利、第2ゲーム藤村が勝利",
+      "officialRefs": [
+        "div-s-sec6-m3-b1:score",
+        "div-s-sec6-m3-b1:game:0:winner-and-rounds",
+        "div-s-sec6-m3-b1:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.256Z"
+    },
+    "ev-0cf5614963d7cf290efd": {
+      "id": "ev-0cf5614963d7cf290efd",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m3",
+      "boutId": "div-s-sec6-m3-b2",
+      "kind": "official",
+      "playerIds": [
+        "りゅうきち",
+        "2BASSA"
+      ],
+      "observation": "りゅうきちと2BASSAの大将戦は3-0。第1ゲームりゅうきちが勝利、第2ゲームりゅうきちが勝利、第3ゲームりゅうきちが勝利",
+      "officialRefs": [
+        "div-s-sec6-m3-b2:score",
+        "div-s-sec6-m3-b2:game:0:winner-and-rounds",
+        "div-s-sec6-m3-b2:game:1:winner-and-rounds",
+        "div-s-sec6-m3-b2:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-10-30T13:29:33.256Z"
     }
   }
 }
