@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T18:04:28.955Z",
+  "updatedAt": "2026-10-30T22:59:35.691Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -3287,6 +3287,42 @@
               "endSec": 2784
             }
           ]
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-10-30T22:58:22.065Z",
+          "gameWinnersSeen": [
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲームのファイナルラウンド終盤、ももち（ジェイミー）がバーンアウト中のかずのこ（C.ヴァイパー）のODバニシングナックルによる攻めを垂直ジャンプで躱してパニッシュカウンターを取り、空中コンボからSA3月牙叉炮を決めてKO勝利する。",
+              "evidence": "両方",
+              "startSec": 2942,
+              "endSec": 2959
+            },
+            {
+              "topic": "第1ゲームの第2ラウンド、かずのこが画面端でももちをバーンアウトさせ、ジャンプ攻撃からSA3アンラックリジェクターを決めてラウンドを取り返す。",
+              "evidence": "両方",
+              "startSec": 2820,
+              "endSec": 2837
+            },
+            {
+              "topic": "第2ゲームの第2ラウンド、ももちが近距離の打撃戦でパニッシュカウンターを奪い、そのままCA月牙叉炮に繋いでラウンドを奪い返す。",
+              "evidence": "両方",
+              "startSec": 2973,
+              "endSec": 2983
+            },
+            {
+              "topic": "第2ゲームのファイナルラウンド、ももちが垂直ジャンプからの着地攻撃でパニッシュカウンターを奪ってチャンスを作り、起き上がりにOD無影蹴を重ねてKOし、2-0で試合を制する。",
+              "evidence": "両方",
+              "startSec": 3015,
+              "endSec": 3031
+            }
+          ]
         }
       ]
     },
@@ -3294,10 +3330,53 @@
       "videoId": "bHJ4IMV5cro",
       "startSec": 3254,
       "endSec": 3662,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-10-30T22:59:35.671Z",
+          "gameWinnersSeen": [
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド終盤、バーンアウトしたボンちゃんの波動拳にひぐちがドライブインパクトをパニッシュカウンターで合わせ、SA1（ソニックハリケーン）を叩き込んでKOした。",
+              "evidence": "両方",
+              "startSec": 3305,
+              "endSec": 3316
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド、バーンアウトから回復したひぐちがボンちゃんの空刃脚を前歩きで潜って着地硬直を捉え、CA（ソニックハリケーン）を決めて第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 3368,
+              "endSec": 3376
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、ひぐちが空対空などでボンちゃんのドライブゲージを削り切り、画面端のドライブインパクトでスタンを奪ってKOした。",
+              "evidence": "両方",
+              "startSec": 3422,
+              "endSec": 3437
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ボンちゃんが前強PのカウンターヒットからSA3（禍弑）を叩き込み、起き攻めの打撃を通してラウンドを取り返した。",
+              "evidence": "両方",
+              "startSec": 3460,
+              "endSec": 3476
+            },
+            {
+              "topic": "最終ラウンド、バーンアウトに追い込まれたひぐちがボンちゃんの波動拳の硬直にCA（ソニックハリケーン）を差し込み、見事にKOしてマッチ勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 3553,
+              "endSec": 3564
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec6-m1-b2": {
       "videoId": "bHJ4IMV5cro",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-30T18:04:30.441Z",
+  "updatedAt": "2026-10-30T23:00:21.475Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -3055,10 +3055,13 @@
       "officialRefs": [
         "div-s-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ジェイミー（1P・Kazunoko）とA.K.I.（2P・Momochi）の対戦。ジェイミーがパニッシュカウンターからSA3（レベル3スーパーアーツ）を発動して演出へ移行し、大ダメージを与えて薬湯（酔い）レベルが上昇します。その後、ドライブインパクトや着地攻めで圧力をかけ、最終的にOD必殺技等のコンボでA.K.I.をK.O.します。",
       "sourceModels": [
-        "gemini-3.7-flash"
+        "gemini-3.7-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-30T18:04:28.957Z"
     },
@@ -3079,10 +3082,13 @@
       "officialRefs": [
         "div-s-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ジェイミー（1P・Kazunoko）とA.K.I.（2P・Momochi）の対戦。A.K.I.がパニッシュカウンターからSA3（レベル3スーパーアーツ）を命中させ、演出後にジェイミーをハードダウンさせます。起き上がり後の攻防で飛び込みを捉えたA.K.I.が追撃コンボを決めてK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.7-flash"
+        "gemini-3.7-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-30T18:04:28.957Z"
     },
@@ -3103,10 +3109,13 @@
       "officialRefs": [
         "div-s-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ジェイミー（1P・Kazunoko）とA.K.I.（2P・Momochi）の対戦。互いに牽制し合う場面から、ジェイミーが差し返し等でパニッシュカウンターを獲得し、OD天昇脚を含むコンボでA.K.I.をK.O.します。ラウンド終了後、ファイナルラウンド（1-1）の表示へ移行します。",
       "sourceModels": [
-        "gemini-3.7-flash"
+        "gemini-3.7-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-30T18:04:28.957Z"
     },
@@ -3127,12 +3136,207 @@
       "officialRefs": [
         "div-s-sec6-m1-b0:winner-order-reviewed"
       ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "空母ステージでのジェイミー（1P・Kazunoko）とA.K.I.（2P・Momochi）の対戦。A.K.I.がバーンアウト状態に陥り、ジェイミーが投げからパニッシュカウンターの連続技（空中追撃含む）を叩き込んで撃破（K.O.）します。",
+      "sourceModels": [
+        "gemini-3.7-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-30T18:04:28.957Z"
+    },
+    "ev-2e0cca2d85b6b56cafe1": {
+      "id": "ev-2e0cca2d85b6b56cafe1",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 2942,
+      "endSec": 2959,
+      "playerIds": [
+        "かずのこ",
+        "ももち"
+      ],
+      "observation": "第1ゲームのファイナルラウンド終盤、ももち（ジェイミー）がバーンアウト中のかずのこ（C.ヴァイパー）のODバニシングナックルによる攻めを垂直ジャンプで躱してパニッシュカウンターを取り、空中コンボからSA3月牙叉炮を決めてKO勝利する。",
+      "officialRefs": [
+        "div-s-sec6-m1-b0:winner-order-reviewed"
+      ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
       "sourceModels": [
-        "gemini-3.7-flash"
+        "gemini-3.8-flash"
       ],
-      "createdAt": "2026-10-30T18:04:28.957Z"
+      "createdAt": "2026-10-30T22:58:22.065Z"
+    },
+    "ev-807d8a0cc823a090b5ae": {
+      "id": "ev-807d8a0cc823a090b5ae",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 2973,
+      "endSec": 2983,
+      "playerIds": [
+        "かずのこ",
+        "ももち"
+      ],
+      "observation": "第2ゲームの第2ラウンド、ももちが近距離の打撃戦でパニッシュカウンターを奪い、そのままCA月牙叉炮に繋いでラウンドを奪い返す。",
+      "officialRefs": [
+        "div-s-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-30T22:58:22.065Z"
+    },
+    "ev-1b9197a9b68903fefa60": {
+      "id": "ev-1b9197a9b68903fefa60",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 3015,
+      "endSec": 3031,
+      "playerIds": [
+        "かずのこ",
+        "ももち"
+      ],
+      "observation": "第2ゲームのファイナルラウンド、ももちが垂直ジャンプからの着地攻撃でパニッシュカウンターを奪ってチャンスを作り、起き上がりにOD無影蹴を重ねてKOし、2-0で試合を制する。",
+      "officialRefs": [
+        "div-s-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-30T22:58:22.065Z"
+    },
+    "ev-959fef6fc13190eac53e": {
+      "id": "ev-959fef6fc13190eac53e",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 3305,
+      "endSec": 3316,
+      "playerIds": [
+        "ボンちゃん",
+        "ひぐち"
+      ],
+      "observation": "第1ゲーム第1ラウンド終盤、バーンアウトしたボンちゃんの波動拳にひぐちがドライブインパクトをパニッシュカウンターで合わせ、SA1（ソニックハリケーン）を叩き込んでKOした。",
+      "officialRefs": [
+        "div-s-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-30T22:59:35.694Z"
+    },
+    "ev-d942125fe2868190fc0d": {
+      "id": "ev-d942125fe2868190fc0d",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 3368,
+      "endSec": 3376,
+      "playerIds": [
+        "ボンちゃん",
+        "ひぐち"
+      ],
+      "observation": "第1ゲーム第2ラウンド、バーンアウトから回復したひぐちがボンちゃんの空刃脚を前歩きで潜って着地硬直を捉え、CA（ソニックハリケーン）を決めて第1ゲームを先取した。",
+      "officialRefs": [
+        "div-s-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-30T22:59:35.694Z"
+    },
+    "ev-16e95210e244643d240e": {
+      "id": "ev-16e95210e244643d240e",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 3422,
+      "endSec": 3437,
+      "playerIds": [
+        "ボンちゃん",
+        "ひぐち"
+      ],
+      "observation": "第2ゲーム第1ラウンド、ひぐちが空対空などでボンちゃんのドライブゲージを削り切り、画面端のドライブインパクトでスタンを奪ってKOした。",
+      "officialRefs": [
+        "div-s-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-30T22:59:35.694Z"
+    },
+    "ev-307d5d5ca739476575b3": {
+      "id": "ev-307d5d5ca739476575b3",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 3460,
+      "endSec": 3476,
+      "playerIds": [
+        "ボンちゃん",
+        "ひぐち"
+      ],
+      "observation": "第2ゲーム第2ラウンド、ボンちゃんが前強PのカウンターヒットからSA3（禍弑）を叩き込み、起き攻めの打撃を通してラウンドを取り返した。",
+      "officialRefs": [
+        "div-s-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-30T22:59:35.694Z"
+    },
+    "ev-c48531fda36ba056562d": {
+      "id": "ev-c48531fda36ba056562d",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 3553,
+      "endSec": 3564,
+      "playerIds": [
+        "ボンちゃん",
+        "ひぐち"
+      ],
+      "observation": "最終ラウンド、バーンアウトに追い込まれたひぐちがボンちゃんの波動拳の硬直にCA（ソニックハリケーン）を差し込み、見事にKOしてマッチ勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-30T22:59:35.694Z"
     }
   }
 }

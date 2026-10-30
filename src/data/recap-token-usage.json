@@ -294,6 +294,40 @@
           "thoughtTokens": 1,
           "totalTokens": 1
         }
+      },
+      "gemini:verify:gemini-3.6-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 12076,
+          "cachedInputTokens": 0,
+          "outputTokens": 473,
+          "thoughtTokens": 1524,
+          "totalTokens": 14073
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      },
+      "gemini:extract:gemini-3.8-flash": {
+        "responses": 2,
+        "tokens": {
+          "inputTokens": 73139,
+          "cachedInputTokens": 0,
+          "outputTokens": 753,
+          "thoughtTokens": 1171,
+          "totalTokens": 75063
+        },
+        "observations": {
+          "inputTokens": 2,
+          "cachedInputTokens": 2,
+          "outputTokens": 2,
+          "thoughtTokens": 2,
+          "totalTokens": 2
+        }
       }
     }
   },
