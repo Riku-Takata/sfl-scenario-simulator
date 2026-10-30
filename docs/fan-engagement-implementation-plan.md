@@ -228,6 +228,13 @@ PR 1 と 2 は Flovia の確認を待たずに進められる（Mock で下流�
 
 PR 1 の範囲（実装済み）: `src/lib/fan/` の types / config / stats / aggregate / baseline / scoring / bootstrap / rank-band / quality / disclosure / team-score。`matcher.ts`・`query.ts` は PR 4、Zod の `schema.ts` はスナップショットの形を決める PR 5 で足す。`stale` は閲覧時点で決まるので、スナップショットには入れず表示側で `isStale` を使う。B=1000・1,200人のブートストラップは約80ms（設計書 §12.4 の 2秒以内）。
 
+PR 2 の範囲（実装済み）: `scripts/fan/` の providers（types・author-key・mock）/ ephemeral-buffer / classifier（types・mock）/ store / budget / lock / collect。
+- migration は別ファイルではなく `store.ts` の `MIGRATIONS`（`PRAGMA user_version` で管理）に置いた。チーム・検索語は `fan-teams.json`、試合日は `matches.json` から読むので、`teams`・`team_search_terms`・`match_events` テーブルは作らない。`review_buffer`・`classification_reviews` は PR 4。
+- 取得途中の続きは `collection_checkpoints` の `pending_cursor` / `pending_upper` で持つ。上限で打ち切ったら次の実行で続きから取り、取り切ったら `since_id` を `pending_upper` に進める。
+- 結果不明の operation_id は、リクエストの内容（チーム・クエリ・カーソル・since_id）が同じなら後の実行でも同じものを使う。異常終了で `pending` のまま残ったページも結果不明として扱う。
+- 保存済みの投稿が再び取れたら、分類はせずにエンゲージメントだけ追記する（§7-3 の観測時点の偏りを減らす）。
+- 実行の入口（`run.ts`）は、本物の Provider が入る PR 3 で作る。
+
 ## 11. MVP の対象チーム
 
 決定（2026-10-30）: **`cr`（Crazy Raccoon）・`zeta`（ZETA DIVISION Geekly）・`ibsg`（FUKUSHIMA IBUSHIGIN）**。3チームとも Division S なので、試合日が同じ（火・金）で、露出量の差が出にくい。

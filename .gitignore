@@ -10,3 +10,8 @@ out/
 .env.*.local
 *.log
 tsconfig.tsbuildinfo
+
+# ファン応援指数のローカルDB (Flovia 由来のデータは Git に入れない)
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
