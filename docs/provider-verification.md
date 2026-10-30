@@ -1,0 +1,38 @@
+# データ取得元の確認記録（ファン応援指数）
+
+設計書 §2.2・§4.1 の確認結果を残す。投稿本文・投稿ID・ユーザー名はここに書かない（伏せ字にする）。
+
+## Flovia
+
+### 規約・公開可否の問い合わせ
+
+| # | 問い合わせ内容 | 回答 | 記録日 |
+|---|---|---|---|
+| 1 | X 検索結果から算出した集計スコア・分類比率を、本文を含めずに一般公開してよいか | **可。** 規約などのページで Flovia の利用を明記することが条件（利用者からの報告による要約） | 2026-10-30 |
+| 2 | 定期バッチ（1日2回、チームごとに数ページ）での利用は想定内か | 未記入 | |
+| 3 | 投稿IDを内部の重複排除だけに使う目的で保持してよいか、その期間 | 未記入（回答があるまで保持期間は 35日のまま） | |
+
+- 回答の原文: 未添付（受け取ったメール等の日時・差出人をここに追記する。本文の転記は不要）
+- 明記の文言・場所の指定: 未確認。指定がなければ、`about.astro` の利用規約節・`/fans/methodology`・`/fans/` 各ページの注記の3か所に入れる（実装計画 §2）。
+
+### 公開サーバーカード（2026-10-30 取得、`https://api.flovia.dev/.well-known/mcp/server-card.json`）
+
+- X 系ツールは `flovia_x` の1つ。`action` で `search_recent` / `count_recent` / `post` / `quote_posts` / `user_by_username` / `user_posts` を切り替える。
+- 必須引数は `request_text`（1〜8192字）と `purpose`（1〜500字）。どちらも Flovia が保持・共有し得るので、固定の汎用文にする。
+- `max_results`: search_recent は 10〜100。ページ送りは `cursor`（前回の `next_cursor`）。差分は `since_id`。期間は `start_time` / `end_time`（UTC、直近7日以内）。`sort_order` は `recency` / `relevancy`。
+- `operation_id` を引数で渡せる。
+- 使用率は `flovia_status`（five_hour / week の `used_pct`, `resets_at`）。
+
+### 実呼び出しでの確認（未実施）
+
+| 項目 | 結果 |
+|---|---|
+| 返却フィールド（投稿ID・日時・著者ID・言語） | |
+| エンゲージメント数（like / repost / reply / quote） | |
+| `next_cursor` の形式 | |
+| 検索演算子（`OR`・`lang:ja`・`-is:retweet`） | |
+| 1回の search_recent で増える使用率（5時間窓・週次窓） | |
+
+## 採用しなかった候補
+
+- mdfromx.com（x.md）: 不採用。理由は実装計画 §4.1。
