@@ -313,20 +313,20 @@
         }
       },
       "gemini:extract:gemini-3.8-flash": {
-        "responses": 2,
+        "responses": 3,
         "tokens": {
-          "inputTokens": 73139,
+          "inputTokens": 143014,
           "cachedInputTokens": 0,
-          "outputTokens": 753,
+          "outputTokens": 1116,
           "thoughtTokens": 1171,
-          "totalTokens": 75063
+          "totalTokens": 145301
         },
         "observations": {
-          "inputTokens": 2,
-          "cachedInputTokens": 2,
-          "outputTokens": 2,
-          "thoughtTokens": 2,
-          "totalTokens": 2
+          "inputTokens": 3,
+          "cachedInputTokens": 3,
+          "outputTokens": 3,
+          "thoughtTokens": 3,
+          "totalTokens": 3
         }
       },
       "gemini:verify:gemini-3.7-flash": {
