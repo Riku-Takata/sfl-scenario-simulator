@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T18:00:54.644Z",
+  "updatedAt": "2026-10-31T19:18:01.656Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -3223,10 +3223,47 @@
       "videoId": "uJmB3lK0WNo",
       "startSec": 6177,
       "endSec": 6605,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-10-31T19:18:01.648Z",
+          "gameWinnersSeen": [
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド、マゴ（不知火舞）が開幕からOD花蝶扇をヒットさせて画面端へ運び、打撃と投げ、シミーの猛攻で体力を削り切ってパーフェクトKOを達成する。",
+              "evidence": "両方",
+              "startSec": 6189,
+              "endSec": 6211
+            },
+            {
+              "topic": "第1ゲーム第3ラウンド、マゴが対空ヒットからCAを叩き込んであでりい（エド）をバーンアウト状態に追い込み、最後は中足で削り倒して第1ゲームを制する。",
+              "evidence": "両方",
+              "startSec": 6315,
+              "endSec": 6332
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、あでりいが早い段階でSA3を発動して体力を大幅に奪い、さらに中Kからのドライブラッシュコンボを繋げて取り返し、ファイナルラウンドへ持ち込む。",
+              "evidence": "両方",
+              "startSec": 6421,
+              "endSec": 6452
+            },
+            {
+              "topic": "第2ゲーム第3ラウンド、あでりいの隙を逃さずマゴがCAをパニッシュカウンターで叩き込んでKOし、先鋒戦のストレート勝利を飾る。",
+              "evidence": "両方",
+              "startSec": 6502,
+              "endSec": 6511
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m2-b1": {
       "videoId": "uJmB3lK0WNo",

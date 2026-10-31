@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-31T15:31:48.762Z",
+  "updatedAt": "2026-10-31T19:20:43.381Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -3883,6 +3883,102 @@
         "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-31T15:31:48.689Z"
+    },
+    "ev-5c036385ca8db6b2c65b": {
+      "id": "ev-5c036385ca8db6b2c65b",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 6189,
+      "endSec": 6211,
+      "playerIds": [
+        "あでりい",
+        "マゴ"
+      ],
+      "observation": "第1ゲーム第1ラウンド、マゴ（不知火舞）が開幕からOD花蝶扇をヒットさせて画面端へ運び、打撃と投げ、シミーの猛攻で体力を削り切ってパーフェクトKOを達成する。",
+      "officialRefs": [
+        "div-f-sec5-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T19:18:01.657Z"
+    },
+    "ev-a379ecc7f6d96224726d": {
+      "id": "ev-a379ecc7f6d96224726d",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 6315,
+      "endSec": 6332,
+      "playerIds": [
+        "あでりい",
+        "マゴ"
+      ],
+      "observation": "第1ゲーム第3ラウンド、マゴが対空ヒットからCAを叩き込んであでりい（エド）をバーンアウト状態に追い込み、最後は中足で削り倒して第1ゲームを制する。",
+      "officialRefs": [
+        "div-f-sec5-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T19:18:01.657Z"
+    },
+    "ev-47b5c3e85ea4a90984f7": {
+      "id": "ev-47b5c3e85ea4a90984f7",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 6421,
+      "endSec": 6452,
+      "playerIds": [
+        "あでりい",
+        "マゴ"
+      ],
+      "observation": "第2ゲーム第2ラウンド、あでりいが早い段階でSA3を発動して体力を大幅に奪い、さらに中Kからのドライブラッシュコンボを繋げて取り返し、ファイナルラウンドへ持ち込む。",
+      "officialRefs": [
+        "div-f-sec5-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T19:18:01.657Z"
+    },
+    "ev-df41a556952dec578c4f": {
+      "id": "ev-df41a556952dec578c4f",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 6502,
+      "endSec": 6511,
+      "playerIds": [
+        "あでりい",
+        "マゴ"
+      ],
+      "observation": "第2ゲーム第3ラウンド、あでりいの隙を逃さずマゴがCAをパニッシュカウンターで叩き込んでKOし、先鋒戦のストレート勝利を飾る。",
+      "officialRefs": [
+        "div-f-sec5-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T19:18:01.657Z"
     }
   }
 }
