@@ -32,6 +32,10 @@
     "2026-10-31": {
       "calls": 56,
       "videoSeconds": 25127
+    },
+    "2026-11-01": {
+      "calls": 7,
+      "videoSeconds": 2453
     }
   }
 }

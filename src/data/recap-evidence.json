@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-31T04:04:08.138Z",
+  "updatedAt": "2026-10-31T15:31:48.762Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -3490,6 +3490,399 @@
         "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-31T02:18:31.206Z"
+    },
+    "ev-6e9d7d05e0e0ccff6f7d": {
+      "id": "ev-6e9d7d05e0e0ccff6f7d",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b3",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 4833,
+      "endSec": 4851,
+      "playerIds": [
+        "どぐら",
+        "ヤマグチ"
+      ],
+      "observation": "第1ゲームのファイナルラウンドにて、どぐら（エレナ）がヤマグチ（不知火舞）のバーンアウト状態での猛攻を凌ぎ切り、接戦の末にガードの上から反撃を決めて第1ゲームを先取する。",
+      "officialRefs": [
+        "div-s-sec6-m1-b3:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "エレナ（どぐら）と不知火舞（ヤマグチ）の対戦。80:37付近でエレナが舞の攻撃に対してパニッシュカウンターを奪い、ダウンを奪います。起き上がりにエレナがドライブラッシュから攻めを継続し、打撃の応酬からカウンターヒットを重ねて舞をバーンアウト状態に追い込みます。そのまま連続攻撃をヒットさせてK.O.を奪い、エレナがラウンドを取得します。",
+      "sourceModels": [
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:16:19.186Z"
+    },
+    "ev-02b453ca270523dc6d53": {
+      "id": "ev-02b453ca270523dc6d53",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b3",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 4950,
+      "endSec": 4966,
+      "playerIds": [
+        "どぐら",
+        "ヤマグチ"
+      ],
+      "observation": "第2ゲーム第2ラウンドにて、ヤマグチ（不知火舞）が立ち中パンチのヒットから正確にドライブラッシュへ繋ぎ、CA（Critical Art）を完走してどぐらを倒し第2ゲームを奪い返す。",
+      "officialRefs": [
+        "div-s-sec6-m1-b3:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "舞がドライブラッシュからの下段攻撃をエレナにヒットさせ、キャンセルドライブラッシュを絡めた連続技に移行します。そのままレベル3スーパーアーツ（クリティカルアーツ）へ繋ぎ、演出を経てエレナの体力を削り切ってK.O.となり、舞がラウンドを取得します。",
+      "sourceModels": [
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:16:19.186Z"
+    },
+    "ev-e10799cfd0522850f812": {
+      "id": "ev-e10799cfd0522850f812",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b3",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 5193,
+      "endSec": 5215,
+      "playerIds": [
+        "どぐら",
+        "ヤマグチ"
+      ],
+      "observation": "最終第3ゲーム第2ラウンドにて、ヤマグチ（不知火舞）が序盤の中段攻撃から連続技を決めて圧倒し、最後は画面端でSA2を組み込んだ高火力コンボによりPERFECT K.O.を達成してマッチ勝利を確定させる。",
+      "officialRefs": [
+        "div-s-sec6-m1-b3:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "舞がエレナに対してパニッシュカウンターから空中技を絡めた連続技を決め、画面端へと追い込みます。画面端の起き攻めで舞が通常投げを連続で通し、さらにエレナの暴れを潰してヒットさせます。最後は連続技からスーパーアーツへと繋ぎ、体力を削り切ってパーフェクトK.O.を達成します。",
+      "sourceModels": [
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:16:19.186Z"
+    },
+    "ev-9fa8c67f39c48b951fb0": {
+      "id": "ev-9fa8c67f39c48b951fb0",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7069,
+      "endSec": 7090,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "第1ゲーム第2ラウンド終盤、まちゃぼーがあきらのめくりハイジャンプを振り向き昇龍拳で迎撃し、直後にあきらがジャストパリィ後のしゃがみ強Pを空振りした隙へしゃがみ中KからCAを叩き込んで第1ゲームを先取した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:19:49.531Z"
+    },
+    "ev-a2cb2978099b56bb9eab": {
+      "id": "ev-a2cb2978099b56bb9eab",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7129,
+      "endSec": 7148,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "第2ゲーム第1ラウンド、まちゃぼーがあきらのハイジャンプを垂直ジャンプで迎撃してドライブゲージを削り、最後はあきらの暴れを潰してOD昇龍拳でKOした。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:19:49.531Z"
+    },
+    "ev-e40c1458ae8cdc406c2d": {
+      "id": "ev-e40c1458ae8cdc406c2d",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7179,
+      "endSec": 7190,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "第2ゲーム第2ラウンド、まちゃぼーの起き攻め連携に対してあきらがCAで割り込んでKOし、ラウンドカウントを1-1のイーブンに戻した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:19:49.531Z"
+    },
+    "ev-321d0f61ba4918ed1692": {
+      "id": "ev-321d0f61ba4918ed1692",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7199,
+      "endSec": 7212,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "第2ゲーム最終ラウンド序盤、まちゃぼーがあきらの突進技をガードしてパニッシュカウンターを取り、SA3（真・昇龍拳）を叩き込んで大ダメージを与え、あきらをバーンアウト寸前まで追い込んだ。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:19:49.531Z"
+    },
+    "ev-aef22c0941c76e217b25": {
+      "id": "ev-aef22c0941c76e217b25",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7220,
+      "endSec": 7233,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "最終ラウンド終盤、バーンアウトしたあきらに対し、まちゃぼーが波動拳を連打してプレッシャーをかけ続け、最後は波動拳の削りダメージでKOして勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:19:49.531Z"
+    },
+    "ev-6d7bf8ad869e4a71a81e": {
+      "id": "ev-6d7bf8ad869e4a71a81e",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7765,
+      "endSec": 7817,
+      "playerIds": [
+        "ACQUA",
+        "こばやん"
+      ],
+      "observation": "第3ゲーム第2ラウンド、こばやんはジャンプ強攻撃でパニッシュカウンターを取ってスクリューパイルドライバーを決め、最後はACQUAのドライブラッシュに対して立ち強キックで差し返してKOし、フルセットの激戦を制した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:25:48.668Z"
+    },
+    "ev-5a8ae06b65b3ddff2a46": {
+      "id": "ev-5a8ae06b65b3ddff2a46",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7620,
+      "endSec": 7673,
+      "playerIds": [
+        "ACQUA",
+        "こばやん"
+      ],
+      "observation": "第2ゲーム第1ラウンド、残り時間が僅かとなる中、ACQUAはこばやんのジャンプ攻撃に冷静に対処し、最後はドライブインパクトをパニッシュカウンターで返してクリティカルアーツ（CA）を叩き込み、時間切れ寸前でラウンドを取り返した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:25:48.668Z"
+    },
+    "ev-a3a8c28cb933d57ebd92": {
+      "id": "ev-a3a8c28cb933d57ebd92",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7557,
+      "endSec": 7573,
+      "playerIds": [
+        "ACQUA",
+        "こばやん"
+      ],
+      "observation": "第1ゲーム第1ラウンド、こばやんが立ち強パンチのパニッシュカウンターからコンボを繋ぎ、最後はドライブインパクトからのエリアルロシアンスラムでACQUAを瞬く間にKOして先制した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:25:48.668Z"
+    },
+    "ev-b208c75fc192e14152ee": {
+      "id": "ev-b208c75fc192e14152ee",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b1",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7725,
+      "endSec": 7768,
+      "playerIds": [
+        "ACQUA",
+        "こばやん"
+      ],
+      "observation": "第2ゲーム第3ラウンド、ACQUAがドライブインパクトでこばやんをバーンアウトに追い込みスタンさせた後、コンボからSA3を繋げてこのゲームを取り返した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-10-31T15:25:48.668Z"
+    },
+    "ev-6df56e5087f7dd8582b3": {
+      "id": "ev-6df56e5087f7dd8582b3",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 8283,
+      "endSec": 8295,
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "第1ゲーム第2ラウンド、ひびきが垂直ジャンプコンドルダイブで対空を決め、ODコンドルスパイアからCAへ繋げて先制のセットを獲得した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T15:31:48.689Z"
+    },
+    "ev-f8657d1ab62c5e6f2c61": {
+      "id": "ev-f8657d1ab62c5e6f2c61",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 8412,
+      "endSec": 8429,
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "第2ゲーム第2ラウンド、きんちょがCAまで盛り込んだコンボでひびきをミリ耐えまで追い込み、最後は飛び道具のパワーウェイブで体力を削り切ってゲームを取り返した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T15:31:48.689Z"
+    },
+    "ev-2e65c17407eaa1873d45": {
+      "id": "ev-2e65c17407eaa1873d45",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 8475,
+      "endSec": 8501,
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "第3ゲーム第1ラウンド、きんちょのCAコンボを耐え抜いたひびきが、起き攻めでODメキシカンタイフーンを通し土壇場で逆転KOを奪った。",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T15:31:48.689Z"
+    },
+    "ev-7178a094d2ad3d1b7b6e": {
+      "id": "ev-7178a094d2ad3d1b7b6e",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 8734,
+      "endSec": 8751,
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "第4ゲーム最終ラウンド、ひびきがきんちょの暴れを読み切ってパニッシュカウンターを奪い、ODコンドルスパイアからCAまで繋げパーフェクトKOで大将戦を制した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T15:31:48.689Z"
     }
   }
 }
