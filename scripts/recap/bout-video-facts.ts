@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { BoutVideoFacts, BoutVideoRun } from "../../src/lib/types";
-import { callGemini, isModelExhausted, isVideoQuotaExhausted, parseJsonLoose } from "./gemini-client";
+import { callGemini, isModelExhausted, isVideoDenied, isVideoQuotaExhausted, parseJsonLoose } from "./gemini-client";
 
 /**
  * Bout単位の動画解析。
@@ -191,7 +191,7 @@ export async function advanceBoutAnalysis(options: {
     facts.runs.length < MAX_RUNS_PER_BOUT
   ) {
     const order = pickModelOrder(facts, models);
-    if (order.length === 0 || !budgetAllows(budget, seconds)) return;
+    if (order.length === 0 || isVideoDenied(youtubeUrl) || !budgetAllows(budget, seconds)) return;
 
     console.log(
       `[Video] ${ctx.boutId} ${ctx.statusName} ${ctx.playerA.name} vs ${ctx.playerB.name} (${facts.startSec}-${facts.endSec}s) try ${order[0]}...`

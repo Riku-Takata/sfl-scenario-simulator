@@ -16,7 +16,7 @@ import { mergeEvidenceCandidate, pendingEvidenceCandidates, selectVerificationBa
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
-import { callGemini, classifyRateLimit, isModelExhausted, isVideoQuotaExhausted, resetGeminiRunState } from "../scripts/recap/gemini-client";
+import { activeModels, callGemini, classifyRateLimit, isModelExhausted, isVideoDenied, isVideoQuotaExhausted, resetGeminiRunState } from "../scripts/recap/gemini-client";
 import {
   isBoutVideoCacheStale,
   normalizeTopicWindow,
@@ -502,6 +502,31 @@ test("a project quota 429 on a video call stops every video call for the run, bu
   assert.equal(seen.length, 1);
   assert.equal((await callGemini({ apiKey: "test", models: ["video-a"], prompt: "p" }))?.model, "video-a");
   resetGeminiRunState();
+});
+
+test("a retired model is removed from the calling order", () => {
+  assert.deepEqual(activeModels(["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash"]), ["gemini-3.8-flash", "gemini-3.6-flash"]);
+});
+
+test("a video 403 stops that video for the run without trying other models", async (t) => {
+  resetGeminiRunState();
+  const seen: string[] = [];
+  t.mock.method(console, "warn", () => {});
+  t.mock.method(globalThis, "fetch", async (_url: string, options: RequestInit) => {
+    const { model, input } = JSON.parse(String(options.body)) as { model: string; input: Array<{ uri?: string }> };
+    seen.push(model);
+    return input[0].uri?.endsWith("deniedvideo")
+      ? new Response(JSON.stringify({ error: { message: "The caller does not have permission" } }), { status: 403 })
+      : new Response(JSON.stringify({ output_text: "done" }), { status: 200 });
+  });
+  const denied = { youtubeUrl: "https://www.youtube.com/watch?v=deniedvideo", startSec: 0, endSec: 10, fps: 1 };
+  const other = { ...denied, youtubeUrl: "https://www.youtube.com/watch?v=othervideo" };
+  assert.equal(await callGemini({ apiKey: "test", models: ["denied-a", "denied-b"], prompt: "p", video: denied }), null);
+  assert.equal(await callGemini({ apiKey: "test", models: ["denied-a", "denied-b"], prompt: "p", video: denied }), null);
+  assert.deepEqual(seen, ["denied-a"]);
+  assert.equal(isVideoDenied(denied.youtubeUrl), true);
+  assert.equal(isModelExhausted("denied-a"), false);
+  assert.equal((await callGemini({ apiKey: "test", models: ["denied-a"], prompt: "p", video: other }))?.text, "done");
 });
 
 test("a daily interactions 429 excludes the model and the model whose quota it shares", async (t) => {

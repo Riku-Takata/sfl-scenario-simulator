@@ -6,6 +6,7 @@
  * - 動画の呼び出しで "Your project has exceeded a quota" が返ったら、プロジェクト全体の動画の枠 (日次でリセット) が尽きているので、
  *   この実行中は動画の呼び出しをすべて止める。テキストの呼び出しはこの枠に掛からないので続ける
  * - 503 (混雑)・通信エラーは同じモデルで再試行せず次のモデルへ。全モデル混雑の呼び出しが2回続いたら、この実行では以降の呼び出しを送らない
+ * - 動画の呼び出しの 403 は再試行しても変わらず、失敗も日次上限を消費するので、この実行中はその動画を呼び出さない
  */
 
 import { geminiTokenCounts, recordTokenUsage } from "./token-usage";
@@ -35,6 +36,17 @@ const OVERLOADED_CALLS_BEFORE_PAUSE = 2;
 let overloadedCallStreak = 0;
 let lastFailureStatus: number | undefined;
 let videoQuotaExhausted = false;
+const deniedVideos = new Set<string>();
+
+/**
+ * 廃止されて別モデルへ転送されるモデル。呼び出しても転送先の日次上限を消費するだけで、独立した検証にもならない。
+ * gemini-3.7-flash は 2026-10-08 に廃止され gemini-3.8-flash へ転送される。
+ */
+const RETIRED_MODELS = new Set(["gemini-3.7-flash"]);
+
+export function activeModels(models: string[]): string[] {
+  return models.filter((model) => !RETIRED_MODELS.has(model));
+}
 
 /** 直前の callGemini が null を返したときの最後の HTTP ステータス (通信エラーなら undefined)。 */
 export function lastGeminiFailureStatus(): number | undefined {
@@ -46,8 +58,14 @@ export function isVideoQuotaExhausted(): boolean {
   return videoQuotaExhausted;
 }
 
+/** この実行中に 403 が返った動画か。 */
+export function isVideoDenied(youtubeUrl: string): boolean {
+  return deniedVideos.has(youtubeUrl);
+}
+
 /** テスト用: 実行単位で持っている状態を初期化する。 */
 export function resetGeminiRunState(): void {
+  deniedVideos.clear();
   exhaustedModels.clear();
   unknownRateLimitStreaks.clear();
   overloadedCallStreak = 0;
@@ -140,6 +158,10 @@ export async function callGemini(options: {
   lastFailureStatus = undefined;
   if (video && videoQuotaExhausted) {
     lastFailureStatus = 429;
+    return null;
+  }
+  if (video && deniedVideos.has(video.youtubeUrl)) {
+    lastFailureStatus = 403;
     return null;
   }
   if (overloadedCallStreak >= OVERLOADED_CALLS_BEFORE_PAUSE) {
@@ -240,6 +262,12 @@ export async function callGemini(options: {
           await sleep(waitMs);
           attempt--; // 分あたりの上限待ちは 503/通信エラーの再試行回数に数えない
           continue;
+        }
+        if (video && res.status === 403) {
+          const body = await res.text().catch(() => "");
+          deniedVideos.add(video.youtubeUrl);
+          console.warn(`[Gemini ${model}] HTTP 403 on ${video.youtubeUrl}; skipping this video for the rest of the run. Body: ${body.slice(0, 200)}`);
+          return null;
         }
         if (res.status === 503) {
           // 待って同じモデルを叩き直しても混雑が引くことは少ないので、すぐ次のモデルへ。

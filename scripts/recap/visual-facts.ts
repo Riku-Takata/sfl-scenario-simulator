@@ -11,7 +11,7 @@ import type {
 import type { BoutContext, VideoBudget } from "./bout-video-facts";
 import { budgetAllows } from "./bout-video-facts";
 import type { BoutGameDetail } from "./narration";
-import { callGemini, isModelExhausted, isVideoQuotaExhausted, parseJsonLoose } from "./gemini-client";
+import { callGemini, isModelExhausted, isVideoDenied, isVideoQuotaExhausted, parseJsonLoose } from "./gemini-client";
 
 /**
  * 映像からしか分からない画面上の事実（各ラウンドの決着方法・PERFECT・バーンアウト・
@@ -208,12 +208,13 @@ export async function advanceVisualAnalysis(options: {
 }): Promise<void> {
   const { apiKey, models, ctx, officialGames, facts, budget, fps } = options;
   const seconds = facts.endSec - facts.startSec;
+  const youtubeUrl = `https://www.youtube.com/watch?v=${facts.videoId}`;
 
   while (facts.status === "pending" && !isSettled(facts, officialGames.length)) {
     const used = new Set(facts.runs.filter((r) => r.matchedGames.length > 0).map((r) => r.model));
     const available = isVideoQuotaExhausted() ? [] : models.filter((m) => !isModelExhausted(m));
     const order = [...available.filter((m) => !used.has(m)), ...available.filter((m) => used.has(m))];
-    if (order.length === 0 || !budgetAllows(budget, seconds)) return;
+    if (order.length === 0 || isVideoDenied(youtubeUrl) || !budgetAllows(budget, seconds)) return;
 
     console.log(`[Visual] ${ctx.boutId} ${ctx.statusName} (${facts.startSec}-${facts.endSec}s) try ${order[0]}...`);
     budget.calls += 1;
@@ -224,7 +225,7 @@ export async function advanceVisualAnalysis(options: {
       models: order,
       prompt: buildVisualPrompt(ctx),
       video: {
-        youtubeUrl: `https://www.youtube.com/watch?v=${facts.videoId}`,
+        youtubeUrl,
         startSec: facts.startSec,
         endSec: facts.endSec,
         fps,
