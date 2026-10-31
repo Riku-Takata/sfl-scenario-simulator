@@ -362,6 +362,23 @@
           "thoughtTokens": 1,
           "totalTokens": 1
         }
+      },
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 8306,
+          "cachedInputTokens": 0,
+          "outputTokens": 286,
+          "thoughtTokens": 725,
+          "totalTokens": 9317
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
       }
     }
   },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-31T02:18:49.396Z",
+  "updatedAt": "2026-10-31T04:04:08.138Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -3376,10 +3376,13 @@
       "officialRefs": [
         "div-s-sec6-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ルーク対ブランカの対戦。画面端でルークが連続技を決め、ライジングアッパーからスーパーアーツ3「ペイルライダー」へ繋ぎます。演出後、ブランカの体力が尽きてルークがK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T02:18:31.206Z"
     },
@@ -3400,10 +3403,13 @@
       "officialRefs": [
         "div-s-sec6-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ルーク対ブランカの対戦。ルークが相手の攻撃に対してジャストパリィを成功させ、パニッシュカウンターから空中へ打ち上げるコンボを叩き込みます。さらにドライブラッシュを絡めてコンボを伸ばし、画面端付近へ追い詰めます。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T02:18:31.206Z"
     },
@@ -3424,10 +3430,13 @@
       "officialRefs": [
         "div-s-sec6-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "桜の舞う寺院ステージでのルーク対ブランカ。ルークが地上通常技のカウンターヒットからドライブラッシュを絡めた連続技を決め、相手を浮かせたところへスーパーアーツ3「ペイルライダー」を発動してヒットさせ、大ダメージを与えてハードノックダウンを奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T02:18:31.206Z"
     },
@@ -3448,10 +3457,13 @@
       "officialRefs": [
         "div-s-sec6-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ルーク対ブランカ。画面端でブランカの攻撃をかわしたルークが地上戦でプレッシャーをかけ、小技のカウンターヒットから連携を決めてブランカをK.O.し、ラウンド1を奪ってラウンド2の表示へ移行します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T02:18:31.206Z"
     },
