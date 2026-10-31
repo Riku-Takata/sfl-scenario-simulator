@@ -345,6 +345,23 @@
           "thoughtTokens": 2,
           "totalTokens": 2
         }
+      },
+      "gemini:extract:gemini-3.6-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 51216,
+          "cachedInputTokens": 0,
+          "outputTokens": 474,
+          "thoughtTokens": 1717,
+          "totalTokens": 53407
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
       }
     }
   },

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T22:59:35.691Z",
+  "updatedAt": "2026-10-31T02:18:31.204Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -3382,10 +3382,54 @@
       "videoId": "bHJ4IMV5cro",
       "startSec": 3900,
       "endSec": 4456,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-10-31T02:18:31.185Z",
+          "gameWinnersSeen": [
+            "A",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第3ゲーム第2ラウンド、Shuto（ルーク）がMenaRD（ブランカ）の猛攻を凌ぎ、崩しからのSA3（ペイルライダー）フルコンボを決めてKOし、ストレートで大将戦を制する。",
+              "evidence": "両方",
+              "startSec": 4346,
+              "endSec": 4360
+            },
+            {
+              "topic": "第3ゲーム第1ラウンド、Shutoが近距離の攻防でジャストパリィを成功させ、そこから画面端へ追い込む高火力コンボを決めて主導権を握る。",
+              "evidence": "両方",
+              "startSec": 4242,
+              "endSec": 4253
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、Shutoが立ち強パンチの差し返し・パニッシュカウンターからSA2（イレイザー）へ繋ぎ、大ダメージを与えつつ自身のドライブゲージを大幅に回復させる。",
+              "evidence": "両方",
+              "startSec": 4066,
+              "endSec": 4080
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、Shutoがしゃがみ強キックのパニッシュカウンターからDDTまで繋ぐコンボでラウンドを取り切る。",
+              "evidence": "両方",
+              "startSec": 4035,
+              "endSec": 4040
+            },
+            {
+              "topic": "第1ゲーム第1ラウンド開幕直後、ShutoがMenaRDの暴れに対してドライブインパクトを通し、1ラウンド目から序盤の主導権を完全に掌握する。",
+              "evidence": "両方",
+              "startSec": 3923,
+              "endSec": 3930
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec6-m1-b3": {
       "videoId": "bHJ4IMV5cro",

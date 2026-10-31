@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-31T02:00:05.861Z",
+  "updatedAt": "2026-10-31T02:18:49.396Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -3358,6 +3358,126 @@
         "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-30T22:59:35.694Z"
+    },
+    "ev-b1ebb134eb81127c61f8": {
+      "id": "ev-b1ebb134eb81127c61f8",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 4346,
+      "endSec": 4360,
+      "playerIds": [
+        "Shuto",
+        "MenaRD"
+      ],
+      "observation": "第3ゲーム第2ラウンド、Shuto（ルーク）がMenaRD（ブランカ）の猛攻を凌ぎ、崩しからのSA3（ペイルライダー）フルコンボを決めてKOし、ストレートで大将戦を制する。",
+      "officialRefs": [
+        "div-s-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T02:18:31.206Z"
+    },
+    "ev-950268fa0696aac832dd": {
+      "id": "ev-950268fa0696aac832dd",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 4242,
+      "endSec": 4253,
+      "playerIds": [
+        "Shuto",
+        "MenaRD"
+      ],
+      "observation": "第3ゲーム第1ラウンド、Shutoが近距離の攻防でジャストパリィを成功させ、そこから画面端へ追い込む高火力コンボを決めて主導権を握る。",
+      "officialRefs": [
+        "div-s-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T02:18:31.206Z"
+    },
+    "ev-76da8d3fc93b0327595a": {
+      "id": "ev-76da8d3fc93b0327595a",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 4066,
+      "endSec": 4080,
+      "playerIds": [
+        "Shuto",
+        "MenaRD"
+      ],
+      "observation": "第2ゲーム第2ラウンド、Shutoが立ち強パンチの差し返し・パニッシュカウンターからSA2（イレイザー）へ繋ぎ、大ダメージを与えつつ自身のドライブゲージを大幅に回復させる。",
+      "officialRefs": [
+        "div-s-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T02:18:31.206Z"
+    },
+    "ev-c8e2fd19b644e585e90f": {
+      "id": "ev-c8e2fd19b644e585e90f",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 4035,
+      "endSec": 4040,
+      "playerIds": [
+        "Shuto",
+        "MenaRD"
+      ],
+      "observation": "第2ゲーム第1ラウンド、Shutoがしゃがみ強キックのパニッシュカウンターからDDTまで繋ぐコンボでラウンドを取り切る。",
+      "officialRefs": [
+        "div-s-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T02:18:31.206Z"
+    },
+    "ev-91f30be7084ffe1c5f77": {
+      "id": "ev-91f30be7084ffe1c5f77",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 3923,
+      "endSec": 3930,
+      "playerIds": [
+        "Shuto",
+        "MenaRD"
+      ],
+      "observation": "第1ゲーム第1ラウンド開幕直後、ShutoがMenaRDの暴れに対してドライブインパクトを通し、1ラウンド目から序盤の主導権を完全に掌握する。",
+      "officialRefs": [
+        "div-s-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-10-31T02:18:31.206Z"
     }
   }
 }
