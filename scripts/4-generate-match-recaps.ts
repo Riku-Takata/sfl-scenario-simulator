@@ -33,7 +33,7 @@ import {
   findBoutWindow,
   findMatchStartSec,
 } from "./recap/youtube-chapters";
-import { isVideoQuotaExhausted, lastGeminiFailureStatus, parseModelList } from "./recap/gemini-client";
+import { activeModels, isVideoQuotaExhausted, lastGeminiFailureStatus, parseModelList } from "./recap/gemini-client";
 import {
   advanceBoutAnalysis,
   budgetAllows,
@@ -338,12 +338,14 @@ export async function generateAndSaveMatchRecaps(
   };
 
   const apiKey = process.env.GEMINI_API_KEY || "";
-  const videoModels = parseModelList(process.env.GEMINI_VIDEO_MODELS, DEFAULT_VIDEO_MODELS);
+  const configuredVideoModels = parseModelList(process.env.GEMINI_VIDEO_MODELS, DEFAULT_VIDEO_MODELS);
+  const videoModels = activeModels(configuredVideoModels);
   const textModels = parseModelList(process.env.GEMINI_TEXT_MODELS, DEFAULT_TEXT_MODELS);
   const textBackend = (process.env.RECAP_TEXT_BACKEND as import("./recap/writer-manager").TextBackendType) || "codex";
   const fullVisualAnalysis = process.env.RECAP_ENABLE_FULL_VISUAL_ANALYSIS === "true";
   const fps = Number(process.env.GEMINI_VIDEO_FPS || "1");
-  const analysisVersion = videoAnalysisFingerprint(videoModels, fps);
+  // 指紋が変わると解析済みの Bout がすべて再解析になるので、廃止モデルを除く前の一覧で計算する。
+  const analysisVersion = videoAnalysisFingerprint(configuredVideoModels, fps);
   const publicationMode = process.env.RECAP_PUBLICATION_MODE === "auto" ? "auto" : "shadow";
   // 複数区間の同時送信を API が受け付けなかったら、この実行では1区間ずつに戻す。
   let batchedVerificationRejected = false;
