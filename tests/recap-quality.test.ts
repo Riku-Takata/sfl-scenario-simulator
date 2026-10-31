@@ -261,6 +261,23 @@ test("a section waiting only for the local writer does not starve the next secti
   assert.equal(selectAutomaticSection({ ...context, writeRequests }), "div-s-sec5", "evidence verification still runs in Actions");
 });
 
+test("the section with the oldest match goes first, whichever one a run rewrote first", () => {
+  const matches = MatchesDataSchema.parse(JSON.parse(fs.readFileSync(new URL("../src/data/matches.json", import.meta.url), "utf8")));
+  const facts = VideoFactsDataSchema.parse({ updatedAt: "2026-10-24T00:00:00Z", videos: {}, bouts: {}, visual: {}, narratives: {}, pendingNarrations: [] });
+  const jobs: RecapJobsData = { schemaVersion: 1, updatedAt: "2026-10-24T00:00:00Z", jobs: {} };
+  const base = { jobs, inputHash: "source", hasVideo: true, hasWindow: true, apiAvailable: true, editorial: false, someBoutPassed: false, videoPending: true };
+  const older = matches.matches.find((match) => match.sectionSlug === "div-f-sec5")!;
+  const newer = matches.matches.find((match) => match.sectionSlug === "div-s-sec6")!;
+  upsertMatchJob({ ...base, sectionId: older.sectionSlug, matchId: older.id });
+  upsertMatchJob({ ...base, sectionId: newer.sectionSlug, matchId: newer.id });
+  jobs.jobs[newer.id + ":article"].updatedAt = "2026-10-31T04:04:20.009Z";
+  jobs.jobs[older.id + ":article"].updatedAt = "2026-10-31T04:04:20.456Z";
+  const context = { matches, facts, jobs, apiAvailable: true, now: Date.now() + 3600_000, allowArchiveCheck: false };
+  assert.equal(selectAutomaticSection(context), "div-f-sec5");
+  jobs.jobs[older.id + ":article"].stage = "completed";
+  assert.equal(selectAutomaticSection(context), "div-s-sec6");
+});
+
 test("writing waits for independently verified video evidence rather than generating a low-information draft", () => {
   assert.equal(articleEvidenceReady(evidenceSet.map((item) => ({ ...item, status: item.kind === "official" ? "verified" : "candidate" }))), false);
   assert.equal(articleEvidenceReady(evidenceSet), true);

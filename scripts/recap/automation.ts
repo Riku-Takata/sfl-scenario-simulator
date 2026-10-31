@@ -36,6 +36,7 @@ export function selectAutomaticSection(input: {
   writeRequests?: WriteRequests;
 }): string | undefined {
   const now = input.now ?? Date.now();
+  const scheduledAt = new Map(input.matches.matches.map((match) => [match.id, match.scheduledAt]));
   return Object.values(input.jobs.jobs)
     .filter((job) => AUTOMATIC_STAGES.has(job.stage))
     .filter((job) => job.stage !== "paused" || input.apiAvailable)
@@ -53,5 +54,7 @@ export function selectAutomaticSection(input: {
         bouts.every((bout) => findBoutWindow(video.chapters, match.matchNumber, bout.status)));
       return ready || (input.allowArchiveCheck && due);
     })
-    .sort((a, b) => a.updatedAt.localeCompare(b.updatedAt) || a.sectionId.localeCompare(b.sectionId))[0]?.sectionId;
+    // updatedAt alone keeps picking whichever section each run rewrites first, so the oldest match goes first.
+    .sort((a, b) => (scheduledAt.get(a.matchId) ?? "").localeCompare(scheduledAt.get(b.matchId) ?? "") ||
+      a.updatedAt.localeCompare(b.updatedAt) || a.sectionId.localeCompare(b.sectionId))[0]?.sectionId;
 }
