@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-30T15:10:44.072Z",
-  "generatorMode": "deterministic-rules",
+  "updatedAt": "2026-10-31T18:00:54.617Z",
+  "generatorMode": "mixed",
   "latestSection": {
     "s": 6,
     "f": 5
@@ -24,8 +24,8 @@
         "awayPoint": 20,
         "winner": "home",
         "isTiebreaker": true,
-        "matchHeadline": "ZETA DIVISION Geeklyが延長戦を制し勝ち点30",
-        "matchSummary": "第1試合【Crazy Raccoon vs ZETA DIVISION Geekly】は20-30でZETA DIVISION Geeklyの勝利。延長戦はヤマグチ選手が制した。",
+        "matchHeadline": "ZETAが延長戦を制し30-20で勝利",
+        "matchSummary": "ZETA DIVISION GeeklyがCrazy Raccoonに30-20で勝利した。先鋒のももち、中堅のひぐちがともに2-0で勝ち、ZETAが先行。Crazy Raccoonは大将のShutoがMenaRDを3-0で下し、延長戦へ持ち込んだ。決着を託されたヤマグチはどぐらに第1ゲームを取られたものの、第2・第3ゲームを連取。最終ラウンドは画面端で投げを重ね、最後はスーパーアーツへつなぐ連続技でパーフェクトKOを決め、ZETAの勝利を確定させた。",
         "bouts": [
           {
             "status": 0,
@@ -108,11 +108,12 @@
               "Game 2: [1-2] ひぐち選手がフルラウンド勝利"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "ひぐち選手（ガイル）がボンちゃん選手（豪鬼）を2-0で下した。",
+              "source": "gemini-video",
+              "summary": "中堅戦はひぐちがボンちゃんを2-0で下し、ZETA DIVISION Geeklyが連勝。第2ゲームでは画面端のドライブインパクトからスタンを奪い、KOにつなげる場面もあった。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームひぐち→第2ゲームひぐち",
-                "ひぐち選手がゲームを1つも落とさずに勝利した。"
+                "第1ゲーム第1ラウンドは、ひぐちがドライブインパクトでパニッシュカウンターを取り、ソニックハリケーンにつなげてKOした。",
+                "第2ゲーム第1ラウンドは、ひぐちが画面端のドライブインパクトでボンちゃんをスタンさせ、追撃でラウンドを奪った。",
+                "第2ゲーム第2ラウンドは、ボンちゃんがスーパーアーツを絡めた連続技から起き上がりに打撃を通し、KOを奪い返した。"
               ]
             },
             "games": [
@@ -147,7 +148,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -168,11 +169,11 @@
               "Game 3: [2-0] Shuto選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "Shuto選手（ルーク）がMenaRD選手（ブランカ）を3-0で下した。",
+              "source": "gemini-video",
+              "summary": "大将戦はShutoがMenaRDに3-0で勝利し、Crazy Raccoonが延長戦へ持ち込んだ。最後は画面端の連続技からSA3「ペイルライダー」を決めて締めくくった。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームShuto→第2ゲームShuto→第3ゲームShuto",
-                "Shuto選手が1ラウンドも落とさず全ゲームをストレートで取り切った。"
+                "第3ゲーム第1ラウンドは、Shutoがジャストパリィからパニッシュカウンターを取り、ドライブラッシュを絡めた連続技で画面端付近へ運んだ。",
+                "第3ゲーム第2ラウンドは、Shutoが画面端でライジングアッパーからSA3「ペイルライダー」へつなぎ、KOを奪った。"
               ]
             },
             "games": [
@@ -217,7 +218,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 3,

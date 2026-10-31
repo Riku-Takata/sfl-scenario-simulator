@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T15:31:48.687Z",
+  "updatedAt": "2026-10-31T18:00:54.644Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -4045,6 +4045,102 @@
               "text": "第5ゲーム最終ラウンドの決着では、ひびきがShutoの無敵技をガードし、パニッシュカウンターからの追撃でKOした。",
               "evidenceIds": [
                 "ev-8304f9e1d678ef6f6f46"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "div-s-sec6-m1": {
+      "inputHash": "10677c388249570d",
+      "model": "codex-cli",
+      "generatedAt": "2026-10-31T18:00:28.728Z",
+      "matchHeadline": "ZETAが延長戦を制し30-20で勝利",
+      "matchSummary": "ZETA DIVISION GeeklyがCrazy Raccoonに30-20で勝利した。先鋒のももち、中堅のひぐちがともに2-0で勝ち、ZETAが先行。Crazy Raccoonは大将のShutoがMenaRDを3-0で下し、延長戦へ持ち込んだ。決着を託されたヤマグチはどぐらに第1ゲームを取られたものの、第2・第3ゲームを連取。最終ラウンドは画面端で投げを重ね、最後はスーパーアーツへつなぐ連続技でパーフェクトKOを決め、ZETAの勝利を確定させた。",
+      "matchEvidenceIds": [
+        "ev-bb7f4dda61a82546566c",
+        "ev-772c16be1d84298ba39f",
+        "ev-3619cf8cad92533e4d3c",
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812"
+      ],
+      "bouts": [
+        {
+          "boutId": "div-s-sec6-m1-b0",
+          "summary": "先鋒戦はももちがかずのこに2-0で勝利し、ZETA DIVISION Geeklyが先制した。両ゲームとも最終ラウンドまでもつれたが、ももちが取り切った。",
+          "summaryEvidenceIds": [
+            "ev-bb7f4dda61a82546566c"
+          ],
+          "keyPoints": []
+        },
+        {
+          "boutId": "div-s-sec6-m1-b1",
+          "summary": "中堅戦はひぐちがボンちゃんを2-0で下し、ZETA DIVISION Geeklyが連勝。第2ゲームでは画面端のドライブインパクトからスタンを奪い、KOにつなげる場面もあった。",
+          "summaryEvidenceIds": [
+            "ev-772c16be1d84298ba39f",
+            "ev-16e95210e244643d240e"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム第1ラウンドは、ひぐちがドライブインパクトでパニッシュカウンターを取り、ソニックハリケーンにつなげてKOした。",
+              "evidenceIds": [
+                "ev-959fef6fc13190eac53e"
+              ]
+            },
+            {
+              "text": "第2ゲーム第1ラウンドは、ひぐちが画面端のドライブインパクトでボンちゃんをスタンさせ、追撃でラウンドを奪った。",
+              "evidenceIds": [
+                "ev-16e95210e244643d240e"
+              ]
+            },
+            {
+              "text": "第2ゲーム第2ラウンドは、ボンちゃんがスーパーアーツを絡めた連続技から起き上がりに打撃を通し、KOを奪い返した。",
+              "evidenceIds": [
+                "ev-307d5d5ca739476575b3"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec6-m1-b2",
+          "summary": "大将戦はShutoがMenaRDに3-0で勝利し、Crazy Raccoonが延長戦へ持ち込んだ。最後は画面端の連続技からSA3「ペイルライダー」を決めて締めくくった。",
+          "summaryEvidenceIds": [
+            "ev-3619cf8cad92533e4d3c",
+            "ev-b1ebb134eb81127c61f8"
+          ],
+          "keyPoints": [
+            {
+              "text": "第3ゲーム第1ラウンドは、Shutoがジャストパリィからパニッシュカウンターを取り、ドライブラッシュを絡めた連続技で画面端付近へ運んだ。",
+              "evidenceIds": [
+                "ev-950268fa0696aac832dd"
+              ]
+            },
+            {
+              "text": "第3ゲーム第2ラウンドは、Shutoが画面端でライジングアッパーからSA3「ペイルライダー」へつなぎ、KOを奪った。",
+              "evidenceIds": [
+                "ev-b1ebb134eb81127c61f8"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec6-m1-b3",
+          "summary": "",
+          "summaryEvidenceIds": [
+            "ev-89c93634da31da37af78",
+            "ev-e10799cfd0522850f812"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲームの最終ラウンドは、どぐらがパニッシュカウンターでダウンを奪い、ドライブラッシュから攻めを継続してKOにつなげた。",
+              "evidenceIds": [
+                "ev-6e9d7d05e0e0ccff6f7d"
+              ]
+            },
+            {
+              "text": "第3ゲーム第2ラウンドは、ヤマグチが画面端で通常投げを連続で通し、最後はスーパーアーツを組み込んだ連続技でパーフェクトKOを決めた。",
+              "evidenceIds": [
+                "ev-e10799cfd0522850f812"
               ]
             }
           ]
@@ -11476,7 +11572,5 @@
       "runs": []
     }
   },
-  "pendingNarrations": [
-    "div-s-sec6-m1"
-  ]
+  "pendingNarrations": []
 }
