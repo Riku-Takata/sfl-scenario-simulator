@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T22:49:16.446Z",
+  "updatedAt": "2026-11-01T19:42:01.059Z",
   "players": {
     "sako": {
       "playerKey": "sako",
@@ -645,7 +645,7 @@
       "subChars": [
         "chunli"
       ],
-      "eloRating": 1967,
+      "eloRating": 1961,
       "recentFormScore": 0.6034,
       "sfl2026": {
         "entry": 6,
@@ -660,12 +660,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1611,
-        "tournamentsCount": 16,
-        "top96Count": 13,
-        "totalSetsWon": 75,
-        "totalSetsPlayed": 106,
-        "overallWinRate": 0.708
+        "performanceRating": 1602,
+        "tournamentsCount": 15,
+        "top96Count": 12,
+        "totalSetsWon": 71,
+        "totalSetsPlayed": 101,
+        "overallWinRate": 0.703
       },
       "useCharStats": {
         "chunli": {
@@ -687,217 +687,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5336
+          "smoothedWinRate": 0.5312
         },
         "luke": {
           "vsChar": "luke",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5672
+          "smoothedWinRate": 0.5655
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5604
+          "smoothedWinRate": 0.5587
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5183
+          "smoothedWinRate": 0.5159
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5316
+          "smoothedWinRate": 0.5292
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5148
+          "smoothedWinRate": 0.5124
         },
         "juri": {
           "vsChar": "juri",
           "wins": 2,
           "losses": 6,
           "entries": 8,
-          "smoothedWinRate": 0.442
+          "smoothedWinRate": 0.4405
         },
         "ken": {
           "vsChar": "ken",
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6302
+          "smoothedWinRate": 0.6283
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5114
+          "smoothedWinRate": 0.509
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4392
+          "smoothedWinRate": 0.4375
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5005
+          "smoothedWinRate": 0.4981
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5217
+          "smoothedWinRate": 0.5193
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5148
+          "smoothedWinRate": 0.5124
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5043
+          "smoothedWinRate": 0.5019
         },
         "jp": {
           "vsChar": "jp",
           "wins": 1,
           "losses": 2,
           "entries": 3,
-          "smoothedWinRate": 0.4582
+          "smoothedWinRate": 0.4563
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4941
         },
         "lily": {
           "vsChar": "lily",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.558
+          "smoothedWinRate": 0.5563
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5077
+          "smoothedWinRate": 0.5053
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4302
+          "smoothedWinRate": 0.4281
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4934
+          "smoothedWinRate": 0.491
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.532
+          "smoothedWinRate": 0.5296
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5377
+          "smoothedWinRate": 0.5353
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5042
+          "smoothedWinRate": 0.5018
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5086
+          "smoothedWinRate": 0.5062
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5148
+          "smoothedWinRate": 0.5124
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5249
+          "smoothedWinRate": 0.5225
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6181
+          "smoothedWinRate": 0.6162
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5214
+          "smoothedWinRate": 0.519
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4976
+          "smoothedWinRate": 0.4952
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.5878
+          "smoothedWinRate": 0.5857
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5148
+          "smoothedWinRate": 0.5124
         }
       },
       "h2hStats": {
@@ -985,7 +985,7 @@
       "subChars": [
         "ken"
       ],
-      "eloRating": 2065,
+      "eloRating": 2059,
       "recentFormScore": 0.7682,
       "sfl2026": {
         "entry": 6,
@@ -1000,12 +1000,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1667,
-        "tournamentsCount": 13,
-        "top96Count": 11,
-        "totalSetsWon": 69,
-        "totalSetsPlayed": 95,
-        "overallWinRate": 0.726
+        "performanceRating": 1658,
+        "tournamentsCount": 12,
+        "top96Count": 10,
+        "totalSetsWon": 65,
+        "totalSetsPlayed": 89,
+        "overallWinRate": 0.73
       },
       "useCharStats": {
         "ken": {
@@ -1027,217 +1027,217 @@
           "wins": 4,
           "losses": 5,
           "entries": 9,
-          "smoothedWinRate": 0.5226
+          "smoothedWinRate": 0.5211
         },
         "luke": {
           "vsChar": "luke",
           "wins": 2,
           "losses": 3,
           "entries": 5,
-          "smoothedWinRate": 0.5207
+          "smoothedWinRate": 0.5189
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 2,
           "losses": 3,
           "entries": 5,
-          "smoothedWinRate": 0.5135
+          "smoothedWinRate": 0.5117
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 2,
           "losses": 1,
           "entries": 3,
-          "smoothedWinRate": 0.5768
+          "smoothedWinRate": 0.5748
         },
         "guile": {
           "vsChar": "guile",
           "wins": 4,
           "losses": 3,
           "entries": 7,
-          "smoothedWinRate": 0.571
+          "smoothedWinRate": 0.5694
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6098
+          "smoothedWinRate": 0.6077
         },
         "juri": {
           "vsChar": "juri",
           "wins": 6,
           "losses": 0,
           "entries": 6,
-          "smoothedWinRate": 0.7136
+          "smoothedWinRate": 0.712
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5637
+          "smoothedWinRate": 0.5613
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 2,
           "losses": 1,
           "entries": 3,
-          "smoothedWinRate": 0.5711
+          "smoothedWinRate": 0.5691
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5667
+          "smoothedWinRate": 0.565
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5397
+          "smoothedWinRate": 0.5373
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4908
+          "smoothedWinRate": 0.4887
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.554
+          "smoothedWinRate": 0.5516
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5435
+          "smoothedWinRate": 0.5411
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5242
+          "smoothedWinRate": 0.5218
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5357
+          "smoothedWinRate": 0.5333
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5506
+          "smoothedWinRate": 0.5482
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 6,
           "losses": 0,
           "entries": 6,
-          "smoothedWinRate": 0.6828
+          "smoothedWinRate": 0.6811
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5308
+          "smoothedWinRate": 0.5284
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5326
+          "smoothedWinRate": 0.5302
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5712
+          "smoothedWinRate": 0.5688
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5769
+          "smoothedWinRate": 0.5745
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5434
+          "smoothedWinRate": 0.541
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5478
+          "smoothedWinRate": 0.5454
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.554
+          "smoothedWinRate": 0.5516
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5641
+          "smoothedWinRate": 0.5617
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5482
+          "smoothedWinRate": 0.5458
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6582
+          "smoothedWinRate": 0.6564
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5368
+          "smoothedWinRate": 0.5344
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5681
+          "smoothedWinRate": 0.5657
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.554
+          "smoothedWinRate": 0.5516
         }
       },
       "h2hStats": {
@@ -1687,7 +1687,7 @@
       "subChars": [
         "luke"
       ],
-      "eloRating": 1972,
+      "eloRating": 1973,
       "recentFormScore": 0.4627,
       "sfl2026": {
         "entry": 6,
@@ -1729,217 +1729,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5168
+          "smoothedWinRate": 0.5172
         },
         "luke": {
           "vsChar": "luke",
           "wins": 1,
           "losses": 2,
           "entries": 3,
-          "smoothedWinRate": 0.4703
+          "smoothedWinRate": 0.4706
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5373
+          "smoothedWinRate": 0.5377
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5025
+          "smoothedWinRate": 0.5029
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4963
+          "smoothedWinRate": 0.4967
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4954
+          "smoothedWinRate": 0.4958
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5168
+          "smoothedWinRate": 0.5172
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5168
+          "smoothedWinRate": 0.5172
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 6,
           "losses": 0,
           "entries": 6,
-          "smoothedWinRate": 0.6718
+          "smoothedWinRate": 0.672
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.464
+          "smoothedWinRate": 0.4643
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5311
+          "smoothedWinRate": 0.5315
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5097
+          "smoothedWinRate": 0.5101
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5097
+          "smoothedWinRate": 0.5101
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5168
+          "smoothedWinRate": 0.5172
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5168
+          "smoothedWinRate": 0.5172
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5501
+          "smoothedWinRate": 0.5505
         },
         "lily": {
           "vsChar": "lily",
           "wins": 4,
           "losses": 6,
           "entries": 10,
-          "smoothedWinRate": 0.4681
+          "smoothedWinRate": 0.4684
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5025
+          "smoothedWinRate": 0.5029
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5097
+          "smoothedWinRate": 0.5101
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5168
+          "smoothedWinRate": 0.5172
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5168
+          "smoothedWinRate": 0.5172
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.464
+          "smoothedWinRate": 0.4643
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5069
+          "smoothedWinRate": 0.5073
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5431
+          "smoothedWinRate": 0.5435
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3874
+          "smoothedWinRate": 0.3877
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4993
+          "smoothedWinRate": 0.4997
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5098
+          "smoothedWinRate": 0.5102
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.6087
+          "smoothedWinRate": 0.609
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5239
+          "smoothedWinRate": 0.5243
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5097
+          "smoothedWinRate": 0.5101
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5025
+          "smoothedWinRate": 0.5029
         }
       },
       "h2hStats": {
@@ -3113,7 +3113,7 @@
       "division": "s",
       "mainChar": "zangief",
       "subChars": [],
-      "eloRating": 2058,
+      "eloRating": 2059,
       "recentFormScore": 0.4848,
       "sfl2026": {
         "entry": 4,
@@ -3128,12 +3128,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1781,
-        "tournamentsCount": 16,
-        "top96Count": 15,
-        "totalSetsWon": 114,
-        "totalSetsPlayed": 144,
-        "overallWinRate": 0.792
+        "performanceRating": 1782,
+        "tournamentsCount": 15,
+        "top96Count": 14,
+        "totalSetsWon": 111,
+        "totalSetsPlayed": 140,
+        "overallWinRate": 0.793
       },
       "useCharStats": {
         "zangief": {
@@ -3149,217 +3149,217 @@
           "wins": 2,
           "losses": 2,
           "entries": 4,
-          "smoothedWinRate": 0.5191
+          "smoothedWinRate": 0.5194
         },
         "luke": {
           "vsChar": "luke",
           "wins": 3,
           "losses": 9,
           "entries": 12,
-          "smoothedWinRate": 0.3894
+          "smoothedWinRate": 0.3896
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5512
+          "smoothedWinRate": 0.5516
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5775
+          "smoothedWinRate": 0.5779
         },
         "guile": {
           "vsChar": "guile",
           "wins": 5,
           "losses": 5,
           "entries": 10,
-          "smoothedWinRate": 0.5415
+          "smoothedWinRate": 0.5418
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5583
+          "smoothedWinRate": 0.5587
         },
         "juri": {
           "vsChar": "juri",
           "wins": 3,
           "losses": 0,
           "entries": 3,
-          "smoothedWinRate": 0.6333
+          "smoothedWinRate": 0.6336
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5477
+          "smoothedWinRate": 0.5481
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 5,
           "losses": 4,
           "entries": 9,
-          "smoothedWinRate": 0.5529
+          "smoothedWinRate": 0.5531
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4638
+          "smoothedWinRate": 0.4642
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5941
+          "smoothedWinRate": 0.5945
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5653
+          "smoothedWinRate": 0.5657
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5226
+          "smoothedWinRate": 0.523
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.595
+          "smoothedWinRate": 0.5953
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4869
+          "smoothedWinRate": 0.4873
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 6,
           "losses": 1,
           "entries": 7,
-          "smoothedWinRate": 0.6532
+          "smoothedWinRate": 0.6534
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3754
+          "smoothedWinRate": 0.3757
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.5059
+          "smoothedWinRate": 0.5063
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 5,
           "losses": 1,
           "entries": 6,
-          "smoothedWinRate": 0.6241
+          "smoothedWinRate": 0.6244
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5441
+          "smoothedWinRate": 0.5445
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.523
+          "smoothedWinRate": 0.5234
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5371
+          "smoothedWinRate": 0.5375
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5948
+          "smoothedWinRate": 0.5952
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4686
+          "smoothedWinRate": 0.4689
         },
         "mai": {
           "vsChar": "mai",
           "wins": 7,
           "losses": 4,
           "entries": 11,
-          "smoothedWinRate": 0.6023
+          "smoothedWinRate": 0.6026
         },
         "elena": {
           "vsChar": "elena",
           "wins": 9,
           "losses": 3,
           "entries": 12,
-          "smoothedWinRate": 0.65
+          "smoothedWinRate": 0.6502
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5577
+          "smoothedWinRate": 0.5581
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 2,
           "losses": 3,
           "entries": 5,
-          "smoothedWinRate": 0.4987
+          "smoothedWinRate": 0.499
         },
         "alex": {
           "vsChar": "alex",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6012
+          "smoothedWinRate": 0.6015
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 3,
           "losses": 2,
           "entries": 5,
-          "smoothedWinRate": 0.5515
+          "smoothedWinRate": 0.5518
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5583
+          "smoothedWinRate": 0.5587
         }
       },
       "h2hStats": {
@@ -3408,8 +3408,8 @@
         "cosa": {
           "opponentKey": "cosa",
           "wins": 0,
-          "losses": 2,
-          "smoothedWinRate": 0.3333
+          "losses": 1,
+          "smoothedWinRate": 0.4
         },
         "shuto": {
           "opponentKey": "shuto",
@@ -3495,7 +3495,7 @@
       "subChars": [
         "ken"
       ],
-      "eloRating": 2032,
+      "eloRating": 2024,
       "recentFormScore": 0.63,
       "sfl2026": {
         "entry": 4,
@@ -3510,12 +3510,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1716,
-        "tournamentsCount": 15,
-        "top96Count": 14,
-        "totalSetsWon": 98,
-        "totalSetsPlayed": 127,
-        "overallWinRate": 0.772
+        "performanceRating": 1706,
+        "tournamentsCount": 14,
+        "top96Count": 13,
+        "totalSetsWon": 94,
+        "totalSetsPlayed": 122,
+        "overallWinRate": 0.77
       },
       "useCharStats": {
         "ken": {
@@ -3537,217 +3537,217 @@
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.6148
+          "smoothedWinRate": 0.6128
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5408
+          "smoothedWinRate": 0.5376
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5203
+          "smoothedWinRate": 0.5171
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5194
+          "smoothedWinRate": 0.5162
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4246
+          "smoothedWinRate": 0.4218
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5265
+          "smoothedWinRate": 0.5233
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5408
+          "smoothedWinRate": 0.5376
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5408
+          "smoothedWinRate": 0.5376
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 1,
           "losses": 2,
           "entries": 3,
-          "smoothedWinRate": 0.474
+          "smoothedWinRate": 0.4714
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5194
+          "smoothedWinRate": 0.5162
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5337
+          "smoothedWinRate": 0.5305
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5194
+          "smoothedWinRate": 0.5162
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5408
+          "smoothedWinRate": 0.5376
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5337
+          "smoothedWinRate": 0.5305
         },
         "jp": {
           "vsChar": "jp",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5961
+          "smoothedWinRate": 0.5938
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6105
+          "smoothedWinRate": 0.6077
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5337
+          "smoothedWinRate": 0.5305
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5122
+          "smoothedWinRate": 0.509
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4704
+          "smoothedWinRate": 0.4676
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5265
+          "smoothedWinRate": 0.5233
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5479
+          "smoothedWinRate": 0.5447
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 2,
           "losses": 3,
           "entries": 5,
-          "smoothedWinRate": 0.5037
+          "smoothedWinRate": 0.5014
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5265
+          "smoothedWinRate": 0.5233
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5408
+          "smoothedWinRate": 0.5376
         },
         "mai": {
           "vsChar": "mai",
           "wins": 4,
           "losses": 7,
           "entries": 11,
-          "smoothedWinRate": 0.45
+          "smoothedWinRate": 0.4482
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5265
+          "smoothedWinRate": 0.5233
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6428
+          "smoothedWinRate": 0.6404
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5122
+          "smoothedWinRate": 0.509
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5265
+          "smoothedWinRate": 0.5233
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5265
+          "smoothedWinRate": 0.5233
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5265
+          "smoothedWinRate": 0.5233
         }
       },
       "h2hStats": {
@@ -3795,9 +3795,9 @@
         },
         "kobayan": {
           "opponentKey": "kobayan",
-          "wins": 2,
+          "wins": 1,
           "losses": 0,
-          "smoothedWinRate": 0.6667
+          "smoothedWinRate": 0.6
         },
         "fuudo": {
           "opponentKey": "fuudo",
@@ -3881,7 +3881,7 @@
       "division": "s",
       "mainChar": "terry",
       "subChars": [],
-      "eloRating": 1956,
+      "eloRating": 1959,
       "recentFormScore": 0.4086,
       "sfl2026": {
         "entry": 6,
@@ -3896,12 +3896,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1693,
-        "tournamentsCount": 13,
-        "top96Count": 12,
-        "totalSetsWon": 73,
-        "totalSetsPlayed": 96,
-        "overallWinRate": 0.76
+        "performanceRating": 1697,
+        "tournamentsCount": 12,
+        "top96Count": 11,
+        "totalSetsWon": 72,
+        "totalSetsPlayed": 94,
+        "overallWinRate": 0.766
       },
       "useCharStats": {
         "terry": {
@@ -3917,217 +3917,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4841
+          "smoothedWinRate": 0.4853
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5307
+          "smoothedWinRate": 0.5319
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5104
+          "smoothedWinRate": 0.5116
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5033
+          "smoothedWinRate": 0.5045
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4977
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5175
+          "smoothedWinRate": 0.5187
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5209
+          "smoothedWinRate": 0.5221
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5104
+          "smoothedWinRate": 0.5116
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5104
+          "smoothedWinRate": 0.5116
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5175
+          "smoothedWinRate": 0.5187
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4961
+          "smoothedWinRate": 0.4973
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5104
+          "smoothedWinRate": 0.5116
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4961
+          "smoothedWinRate": 0.4973
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5104
+          "smoothedWinRate": 0.5116
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5041
+          "smoothedWinRate": 0.5053
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5261
+          "smoothedWinRate": 0.5273
         },
         "lily": {
           "vsChar": "lily",
           "wins": 2,
           "losses": 6,
           "entries": 8,
-          "smoothedWinRate": 0.4115
+          "smoothedWinRate": 0.4123
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 6,
           "losses": 8,
           "entries": 14,
-          "smoothedWinRate": 0.474
+          "smoothedWinRate": 0.4746
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4961
+          "smoothedWinRate": 0.4973
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5104
+          "smoothedWinRate": 0.5116
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5175
+          "smoothedWinRate": 0.5187
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5104
+          "smoothedWinRate": 0.5116
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5247
+          "smoothedWinRate": 0.5259
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5104
+          "smoothedWinRate": 0.5116
         },
         "mai": {
           "vsChar": "mai",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4617
+          "smoothedWinRate": 0.4625
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3757
+          "smoothedWinRate": 0.3766
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4961
+          "smoothedWinRate": 0.4973
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 6,
           "losses": 0,
           "entries": 6,
-          "smoothedWinRate": 0.6617
+          "smoothedWinRate": 0.6625
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5318
+          "smoothedWinRate": 0.533
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5175
+          "smoothedWinRate": 0.5187
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5175
+          "smoothedWinRate": 0.5187
         }
       },
       "h2hStats": {
@@ -4973,7 +4973,7 @@
       "division": "s",
       "mainChar": "mai",
       "subChars": [],
-      "eloRating": 2065,
+      "eloRating": 2073,
       "recentFormScore": 0.7648,
       "sfl2026": {
         "entry": 4,
@@ -4988,12 +4988,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1707,
-        "tournamentsCount": 8,
-        "top96Count": 8,
+        "performanceRating": 1720,
+        "tournamentsCount": 7,
+        "top96Count": 7,
         "totalSetsWon": 50,
-        "totalSetsPlayed": 63,
-        "overallWinRate": 0.794
+        "totalSetsPlayed": 62,
+        "overallWinRate": 0.806
       },
       "useCharStats": {
         "mai": {
@@ -5009,217 +5009,217 @@
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6677
+          "smoothedWinRate": 0.6702
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5638
+          "smoothedWinRate": 0.567
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.554
+          "smoothedWinRate": 0.5572
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5575
+          "smoothedWinRate": 0.5607
         },
         "guile": {
           "vsChar": "guile",
           "wins": 1,
           "losses": 2,
           "entries": 3,
-          "smoothedWinRate": 0.5289
+          "smoothedWinRate": 0.5315
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.554
+          "smoothedWinRate": 0.5572
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5909
+          "smoothedWinRate": 0.5941
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5637
+          "smoothedWinRate": 0.5669
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6068
+          "smoothedWinRate": 0.6096
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5238
+          "smoothedWinRate": 0.527
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5397
+          "smoothedWinRate": 0.5429
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6158
+          "smoothedWinRate": 0.6186
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.554
+          "smoothedWinRate": 0.5572
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5435
+          "smoothedWinRate": 0.5467
         },
         "jp": {
           "vsChar": "jp",
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.6063
+          "smoothedWinRate": 0.6083
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5357
+          "smoothedWinRate": 0.5389
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5506
+          "smoothedWinRate": 0.5538
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5469
+          "smoothedWinRate": 0.5501
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5308
+          "smoothedWinRate": 0.534
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5326
+          "smoothedWinRate": 0.5358
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5712
+          "smoothedWinRate": 0.5744
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5769
+          "smoothedWinRate": 0.5801
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5434
+          "smoothedWinRate": 0.5466
         },
         "terry": {
           "vsChar": "terry",
           "wins": 5,
           "losses": 4,
           "entries": 9,
-          "smoothedWinRate": 0.5508
+          "smoothedWinRate": 0.5528
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.554
+          "smoothedWinRate": 0.5572
         },
         "elena": {
           "vsChar": "elena",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5949
+          "smoothedWinRate": 0.5971
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5482
+          "smoothedWinRate": 0.5514
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 1,
           "losses": 2,
           "entries": 3,
-          "smoothedWinRate": 0.5205
+          "smoothedWinRate": 0.5231
         },
         "alex": {
           "vsChar": "alex",
           "wins": 1,
           "losses": 2,
           "entries": 3,
-          "smoothedWinRate": 0.5009
+          "smoothedWinRate": 0.5035
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5681
+          "smoothedWinRate": 0.5713
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.554
+          "smoothedWinRate": 0.5572
         }
       },
       "h2hStats": {
@@ -5603,7 +5603,7 @@
       "division": "s",
       "mainChar": "blanka",
       "subChars": [],
-      "eloRating": 1830,
+      "eloRating": 1834,
       "recentFormScore": 0.3475,
       "sfl2026": {
         "entry": 5,
@@ -5618,12 +5618,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1564,
-        "tournamentsCount": 10,
-        "top96Count": 7,
+        "performanceRating": 1570,
+        "tournamentsCount": 9,
+        "top96Count": 6,
         "totalSetsWon": 50,
-        "totalSetsPlayed": 70,
-        "overallWinRate": 0.714
+        "totalSetsPlayed": 68,
+        "overallWinRate": 0.735
       },
       "useCharStats": {
         "blanka": {
@@ -5639,217 +5639,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4457
+          "smoothedWinRate": 0.4473
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4415
+          "smoothedWinRate": 0.4431
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4743
+          "smoothedWinRate": 0.4759
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4705
+          "smoothedWinRate": 0.4721
         },
         "guile": {
           "vsChar": "guile",
           "wins": 4,
           "losses": 6,
           "entries": 10,
-          "smoothedWinRate": 0.4183
+          "smoothedWinRate": 0.4192
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4919
+          "smoothedWinRate": 0.4935
         },
         "juri": {
           "vsChar": "juri",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5262
+          "smoothedWinRate": 0.5273
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4565
+          "smoothedWinRate": 0.4581
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.46
+          "smoothedWinRate": 0.4616
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4957
+          "smoothedWinRate": 0.4973
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.3743
+          "smoothedWinRate": 0.3759
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4392
+          "smoothedWinRate": 0.4408
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4886
+          "smoothedWinRate": 0.4902
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4814
+          "smoothedWinRate": 0.483
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4803
+          "smoothedWinRate": 0.4819
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.422
+          "smoothedWinRate": 0.4231
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4957
+          "smoothedWinRate": 0.4973
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5286
+          "smoothedWinRate": 0.5302
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4457
+          "smoothedWinRate": 0.4473
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.46
+          "smoothedWinRate": 0.4616
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4952
+          "smoothedWinRate": 0.4968
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4966
+          "smoothedWinRate": 0.4982
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4668
+          "smoothedWinRate": 0.4684
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.46
+          "smoothedWinRate": 0.4616
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4566
+          "smoothedWinRate": 0.4582
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3578
+          "smoothedWinRate": 0.359
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4495
+          "smoothedWinRate": 0.4511
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4049
+          "smoothedWinRate": 0.406
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4743
+          "smoothedWinRate": 0.4759
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4814
+          "smoothedWinRate": 0.483
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.46
+          "smoothedWinRate": 0.4616
         }
       },
       "h2hStats": {
@@ -5906,12 +5906,6 @@
           "wins": 0,
           "losses": 1,
           "smoothedWinRate": 0.4
-        },
-        "tokido": {
-          "opponentKey": "tokido",
-          "wins": 0,
-          "losses": 1,
-          "smoothedWinRate": 0.4
         }
       }
     },
@@ -5923,7 +5917,7 @@
       "division": "s",
       "mainChar": "lily",
       "subChars": [],
-      "eloRating": 1942,
+      "eloRating": 1941,
       "recentFormScore": 0.5749,
       "sfl2026": {
         "entry": 5,
@@ -5938,12 +5932,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1597,
-        "tournamentsCount": 10,
-        "top96Count": 8,
-        "totalSetsWon": 49,
-        "totalSetsPlayed": 68,
-        "overallWinRate": 0.721
+        "performanceRating": 1595,
+        "tournamentsCount": 9,
+        "top96Count": 7,
+        "totalSetsWon": 47,
+        "totalSetsPlayed": 65,
+        "overallWinRate": 0.723
       },
       "useCharStats": {
         "lily": {
@@ -5959,217 +5953,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5119
+          "smoothedWinRate": 0.5115
         },
         "luke": {
           "vsChar": "luke",
           "wins": 6,
           "losses": 4,
           "entries": 10,
-          "smoothedWinRate": 0.5501
+          "smoothedWinRate": 0.5499
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5262
+          "smoothedWinRate": 0.5258
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5262
+          "smoothedWinRate": 0.5258
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5119
+          "smoothedWinRate": 0.5115
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4834
+          "smoothedWinRate": 0.483
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5191
+          "smoothedWinRate": 0.5187
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5048
+          "smoothedWinRate": 0.5044
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4691
+          "smoothedWinRate": 0.4687
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 4,
           "losses": 6,
           "entries": 10,
-          "smoothedWinRate": 0.4141
+          "smoothedWinRate": 0.4139
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4691
+          "smoothedWinRate": 0.4687
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5191
+          "smoothedWinRate": 0.5187
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5191
+          "smoothedWinRate": 0.5187
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5262
+          "smoothedWinRate": 0.5258
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4548
+          "smoothedWinRate": 0.4544
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6681
+          "smoothedWinRate": 0.6678
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5048
+          "smoothedWinRate": 0.5044
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5334
+          "smoothedWinRate": 0.533
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4762
+          "smoothedWinRate": 0.4758
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4905
+          "smoothedWinRate": 0.4901
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5262
+          "smoothedWinRate": 0.5258
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5119
+          "smoothedWinRate": 0.5115
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5119
+          "smoothedWinRate": 0.5115
         },
         "terry": {
           "vsChar": "terry",
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.5982
+          "smoothedWinRate": 0.5979
         },
         "mai": {
           "vsChar": "mai",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4604
+          "smoothedWinRate": 0.4601
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5405
+          "smoothedWinRate": 0.5401
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4977
+          "smoothedWinRate": 0.4973
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4834
+          "smoothedWinRate": 0.483
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5048
+          "smoothedWinRate": 0.5044
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4619
+          "smoothedWinRate": 0.4615
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4977
+          "smoothedWinRate": 0.4973
         }
       },
       "h2hStats": {
@@ -6256,12 +6250,6 @@
           "wins": 0,
           "losses": 1,
           "smoothedWinRate": 0.4
-        },
-        "seiya": {
-          "opponentKey": "seiya",
-          "wins": 1,
-          "losses": 0,
-          "smoothedWinRate": 0.6
         }
       }
     },
@@ -6275,7 +6263,7 @@
       "subChars": [
         "cviper"
       ],
-      "eloRating": 1767,
+      "eloRating": 1762,
       "recentFormScore": 0.1974,
       "sfl2026": {
         "entry": 5,
@@ -6290,12 +6278,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1505,
-        "tournamentsCount": 10,
-        "top96Count": 4,
-        "totalSetsWon": 37,
-        "totalSetsPlayed": 57,
-        "overallWinRate": 0.649
+        "performanceRating": 1491,
+        "tournamentsCount": 9,
+        "top96Count": 3,
+        "totalSetsWon": 34,
+        "totalSetsPlayed": 52,
+        "overallWinRate": 0.654
       },
       "useCharStats": {
         "cammy": {
@@ -6317,217 +6305,217 @@
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3493
+          "smoothedWinRate": 0.3477
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4348
+          "smoothedWinRate": 0.4328
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4134
+          "smoothedWinRate": 0.4114
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4314
+          "smoothedWinRate": 0.4294
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4834
+          "smoothedWinRate": 0.4814
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4418
+          "smoothedWinRate": 0.4398
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4205
+          "smoothedWinRate": 0.4185
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 6,
           "entries": 6,
-          "smoothedWinRate": 0.2785
+          "smoothedWinRate": 0.2771
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.3609
+          "smoothedWinRate": 0.3595
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4705
+          "smoothedWinRate": 0.4685
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.3848
+          "smoothedWinRate": 0.3828
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4134
+          "smoothedWinRate": 0.4114
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4134
+          "smoothedWinRate": 0.4114
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4062
+          "smoothedWinRate": 0.4042
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.428
+          "smoothedWinRate": 0.426
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4078
+          "smoothedWinRate": 0.4058
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4062
+          "smoothedWinRate": 0.4042
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4348
+          "smoothedWinRate": 0.4328
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4414
+          "smoothedWinRate": 0.4394
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4491
+          "smoothedWinRate": 0.4471
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4419
+          "smoothedWinRate": 0.4399
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4634
+          "smoothedWinRate": 0.4614
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4348
+          "smoothedWinRate": 0.4328
         },
         "terry": {
           "vsChar": "terry",
           "wins": 2,
           "losses": 6,
           "entries": 8,
-          "smoothedWinRate": 0.3618
+          "smoothedWinRate": 0.3605
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4419
+          "smoothedWinRate": 0.4399
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4277
+          "smoothedWinRate": 0.4257
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.3973
+          "smoothedWinRate": 0.3959
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4062
+          "smoothedWinRate": 0.4042
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4205
+          "smoothedWinRate": 0.4185
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4777
+          "smoothedWinRate": 0.4757
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4277
+          "smoothedWinRate": 0.4257
         }
       },
       "h2hStats": {
@@ -6587,12 +6575,6 @@
         },
         "moke": {
           "opponentKey": "moke",
-          "wins": 1,
-          "losses": 0,
-          "smoothedWinRate": 0.6
-        },
-        "keib": {
-          "opponentKey": "keib",
           "wins": 1,
           "losses": 0,
           "smoothedWinRate": 0.6
@@ -7273,7 +7255,7 @@
       "division": "s",
       "mainChar": "elena",
       "subChars": [],
-      "eloRating": 1772,
+      "eloRating": 1773,
       "recentFormScore": 0.1791,
       "sfl2026": {
         "entry": 4,
@@ -7309,217 +7291,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4543
+          "smoothedWinRate": 0.4547
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4066
+          "smoothedWinRate": 0.407
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4368
+          "smoothedWinRate": 0.4372
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4297
+          "smoothedWinRate": 0.4301
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4536
+          "smoothedWinRate": 0.454
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4225
+          "smoothedWinRate": 0.4229
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4094
+          "smoothedWinRate": 0.4098
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4439
+          "smoothedWinRate": 0.4443
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4368
+          "smoothedWinRate": 0.4372
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4082
+          "smoothedWinRate": 0.4086
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4082
+          "smoothedWinRate": 0.4086
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4368
+          "smoothedWinRate": 0.4372
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4368
+          "smoothedWinRate": 0.4372
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4368
+          "smoothedWinRate": 0.4372
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4368
+          "smoothedWinRate": 0.4372
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3347
+          "smoothedWinRate": 0.335
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4011
+          "smoothedWinRate": 0.4015
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4439
+          "smoothedWinRate": 0.4443
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4297
+          "smoothedWinRate": 0.4301
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4225
+          "smoothedWinRate": 0.4229
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4439
+          "smoothedWinRate": 0.4443
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4511
+          "smoothedWinRate": 0.4515
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4297
+          "smoothedWinRate": 0.4301
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4642
+          "smoothedWinRate": 0.4646
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4267
+          "smoothedWinRate": 0.4271
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3397
+          "smoothedWinRate": 0.34
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4014
+          "smoothedWinRate": 0.4016
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3238
+          "smoothedWinRate": 0.3241
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4297
+          "smoothedWinRate": 0.4301
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4654
+          "smoothedWinRate": 0.4658
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4439
+          "smoothedWinRate": 0.4443
         }
       },
       "h2hStats": {
@@ -8277,7 +8259,7 @@
       "division": "f",
       "mainChar": "jp",
       "subChars": [],
-      "eloRating": 2037,
+      "eloRating": 2029,
       "recentFormScore": 0.5523,
       "sfl2026": {
         "entry": 5,
@@ -8292,12 +8274,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1718,
+        "performanceRating": 1708,
         "tournamentsCount": 16,
         "top96Count": 15,
-        "totalSetsWon": 97,
-        "totalSetsPlayed": 128,
-        "overallWinRate": 0.758
+        "totalSetsWon": 94,
+        "totalSetsPlayed": 125,
+        "overallWinRate": 0.752
       },
       "useCharStats": {
         "jp": {
@@ -8313,217 +8295,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5428
+          "smoothedWinRate": 0.5396
         },
         "luke": {
           "vsChar": "luke",
           "wins": 8,
           "losses": 0,
           "entries": 8,
-          "smoothedWinRate": 0.728
+          "smoothedWinRate": 0.726
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5571
+          "smoothedWinRate": 0.5539
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5785
+          "smoothedWinRate": 0.5753
         },
         "guile": {
           "vsChar": "guile",
           "wins": 1,
           "losses": 4,
           "entries": 5,
-          "smoothedWinRate": 0.4958
+          "smoothedWinRate": 0.4934
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4999
+          "smoothedWinRate": 0.4967
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5214
+          "smoothedWinRate": 0.5182
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5499
+          "smoothedWinRate": 0.5467
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4658
+          "smoothedWinRate": 0.4635
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4642
+          "smoothedWinRate": 0.461
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5214
+          "smoothedWinRate": 0.5182
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 2,
           "losses": 1,
           "entries": 3,
-          "smoothedWinRate": 0.5675
+          "smoothedWinRate": 0.5649
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5714
+          "smoothedWinRate": 0.5682
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5642
+          "smoothedWinRate": 0.561
         },
         "jp": {
           "vsChar": "jp",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6
+          "smoothedWinRate": 0.5972
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.6071
+          "smoothedWinRate": 0.6039
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5928
+          "smoothedWinRate": 0.5896
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.6225
+          "smoothedWinRate": 0.6204
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5357
+          "smoothedWinRate": 0.5325
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5285
+          "smoothedWinRate": 0.5253
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5499
+          "smoothedWinRate": 0.5467
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5625
+          "smoothedWinRate": 0.5602
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 4,
           "losses": 6,
           "entries": 10,
-          "smoothedWinRate": 0.453
+          "smoothedWinRate": 0.4512
         },
         "terry": {
           "vsChar": "terry",
           "wins": 7,
           "losses": 9,
           "entries": 16,
-          "smoothedWinRate": 0.4896
+          "smoothedWinRate": 0.4881
         },
         "mai": {
           "vsChar": "mai",
           "wins": 10,
           "losses": 3,
           "entries": 13,
-          "smoothedWinRate": 0.6673
+          "smoothedWinRate": 0.6656
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5428
+          "smoothedWinRate": 0.5396
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5571
+          "smoothedWinRate": 0.5539
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 1,
           "losses": 2,
           "entries": 3,
-          "smoothedWinRate": 0.5252
+          "smoothedWinRate": 0.5226
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5428
+          "smoothedWinRate": 0.5396
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5214
+          "smoothedWinRate": 0.5182
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5357
+          "smoothedWinRate": 0.5325
         }
       },
       "h2hStats": {
@@ -8541,9 +8523,9 @@
         },
         "nauman": {
           "opponentKey": "nauman",
-          "wins": 2,
+          "wins": 1,
           "losses": 0,
-          "smoothedWinRate": 0.6667
+          "smoothedWinRate": 0.6
         },
         "raoyamu": {
           "opponentKey": "raoyamu",
@@ -8622,12 +8604,6 @@
           "wins": 0,
           "losses": 1,
           "smoothedWinRate": 0.4
-        },
-        "acqua": {
-          "opponentKey": "acqua",
-          "wins": 1,
-          "losses": 0,
-          "smoothedWinRate": 0.6
         }
       }
     },
@@ -8939,7 +8915,7 @@
       "subChars": [
         "mai"
       ],
-      "eloRating": 1832,
+      "eloRating": 1833,
       "recentFormScore": 0.2133,
       "sfl2026": {
         "entry": 4,
@@ -8981,217 +8957,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4751
+          "smoothedWinRate": 0.4755
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4608
+          "smoothedWinRate": 0.4612
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4394
+          "smoothedWinRate": 0.4398
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4202
+          "smoothedWinRate": 0.4205
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5094
+          "smoothedWinRate": 0.5098
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4678
+          "smoothedWinRate": 0.4682
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4465
+          "smoothedWinRate": 0.4469
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4239
+          "smoothedWinRate": 0.4243
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.3987
+          "smoothedWinRate": 0.3991
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4969
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4108
+          "smoothedWinRate": 0.4112
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4394
+          "smoothedWinRate": 0.4398
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4394
+          "smoothedWinRate": 0.4398
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4322
+          "smoothedWinRate": 0.4326
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.454
+          "smoothedWinRate": 0.4544
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3374
+          "smoothedWinRate": 0.3377
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4322
+          "smoothedWinRate": 0.4326
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 1,
           "losses": 2,
           "entries": 3,
-          "smoothedWinRate": 0.4383
+          "smoothedWinRate": 0.4386
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4272
+          "smoothedWinRate": 0.4275
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4751
+          "smoothedWinRate": 0.4755
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4679
+          "smoothedWinRate": 0.4683
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4894
+          "smoothedWinRate": 0.4898
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4608
+          "smoothedWinRate": 0.4612
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.3952
+          "smoothedWinRate": 0.3956
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4679
+          "smoothedWinRate": 0.4683
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4537
+          "smoothedWinRate": 0.4541
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3505
+          "smoothedWinRate": 0.3509
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4322
+          "smoothedWinRate": 0.4326
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4465
+          "smoothedWinRate": 0.4469
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5037
+          "smoothedWinRate": 0.5041
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4537
+          "smoothedWinRate": 0.4541
         }
       },
       "h2hStats": {
@@ -9953,7 +9929,7 @@
       "division": "f",
       "mainChar": "luke",
       "subChars": [],
-      "eloRating": 2067,
+      "eloRating": 2075,
       "recentFormScore": 0.523,
       "sfl2026": {
         "entry": 4,
@@ -9968,12 +9944,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1775,
-        "tournamentsCount": 12,
-        "top96Count": 11,
+        "performanceRating": 1786,
+        "tournamentsCount": 11,
+        "top96Count": 10,
         "totalSetsWon": 82,
-        "totalSetsPlayed": 103,
-        "overallWinRate": 0.796
+        "totalSetsPlayed": 102,
+        "overallWinRate": 0.804
       },
       "useCharStats": {
         "luke": {
@@ -9989,217 +9965,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5789
+          "smoothedWinRate": 0.5821
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5548
+          "smoothedWinRate": 0.558
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5619
+          "smoothedWinRate": 0.5651
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5405
+          "smoothedWinRate": 0.5437
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5745
+          "smoothedWinRate": 0.5777
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5477
+          "smoothedWinRate": 0.5509
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5691
+          "smoothedWinRate": 0.5723
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5619
+          "smoothedWinRate": 0.5651
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5733
+          "smoothedWinRate": 0.5765
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5477
+          "smoothedWinRate": 0.5509
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5548
+          "smoothedWinRate": 0.558
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5691
+          "smoothedWinRate": 0.5723
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5619
+          "smoothedWinRate": 0.5651
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5477
+          "smoothedWinRate": 0.5509
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 6,
           "entries": 6,
-          "smoothedWinRate": 0.3675
+          "smoothedWinRate": 0.3697
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 8,
           "losses": 6,
           "entries": 14,
-          "smoothedWinRate": 0.5843
+          "smoothedWinRate": 0.5859
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5451
+          "smoothedWinRate": 0.5483
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5548
+          "smoothedWinRate": 0.558
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 2,
           "losses": 1,
           "entries": 3,
-          "smoothedWinRate": 0.589
+          "smoothedWinRate": 0.5916
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5477
+          "smoothedWinRate": 0.5509
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5447
+          "smoothedWinRate": 0.5479
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5548
+          "smoothedWinRate": 0.558
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5822
+          "smoothedWinRate": 0.5854
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4677
+          "smoothedWinRate": 0.4705
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4769
+          "smoothedWinRate": 0.4797
         },
         "elena": {
           "vsChar": "elena",
           "wins": 6,
           "losses": 0,
           "entries": 6,
-          "smoothedWinRate": 0.7095
+          "smoothedWinRate": 0.7117
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5513
+          "smoothedWinRate": 0.5545
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5325
+          "smoothedWinRate": 0.5357
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5762
+          "smoothedWinRate": 0.5794
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5548
+          "smoothedWinRate": 0.558
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5548
+          "smoothedWinRate": 0.558
         }
       },
       "h2hStats": {
@@ -10339,7 +10315,7 @@
       "division": "f",
       "mainChar": "cviper",
       "subChars": [],
-      "eloRating": 1983,
+      "eloRating": 1984,
       "recentFormScore": 0.84,
       "sfl2026": {
         "entry": 3,
@@ -10375,217 +10351,217 @@
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6189
+          "smoothedWinRate": 0.6192
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5435
+          "smoothedWinRate": 0.5439
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6327
+          "smoothedWinRate": 0.633
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5426
+          "smoothedWinRate": 0.543
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4964
+          "smoothedWinRate": 0.4968
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5141
+          "smoothedWinRate": 0.5145
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5212
+          "smoothedWinRate": 0.5216
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5212
+          "smoothedWinRate": 0.5216
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5517
+          "smoothedWinRate": 0.5521
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 2,
           "losses": 1,
           "entries": 3,
-          "smoothedWinRate": 0.5469
+          "smoothedWinRate": 0.5472
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5141
+          "smoothedWinRate": 0.5145
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5069
+          "smoothedWinRate": 0.5073
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5212
+          "smoothedWinRate": 0.5216
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5212
+          "smoothedWinRate": 0.5216
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4977
+          "smoothedWinRate": 0.4981
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5384
+          "smoothedWinRate": 0.5388
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5426
+          "smoothedWinRate": 0.543
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5498
+          "smoothedWinRate": 0.5502
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5212
+          "smoothedWinRate": 0.5216
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5212
+          "smoothedWinRate": 0.5216
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5146
+          "smoothedWinRate": 0.515
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5498
+          "smoothedWinRate": 0.5502
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6133
+          "smoothedWinRate": 0.6137
         },
         "terry": {
           "vsChar": "terry",
           "wins": 5,
           "losses": 2,
           "entries": 7,
-          "smoothedWinRate": 0.5814
+          "smoothedWinRate": 0.5817
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5146
+          "smoothedWinRate": 0.515
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5417
+          "smoothedWinRate": 0.5421
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.528
+          "smoothedWinRate": 0.5284
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5212
+          "smoothedWinRate": 0.5216
         },
         "alex": {
           "vsChar": "alex",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.5748
+          "smoothedWinRate": 0.5752
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5283
+          "smoothedWinRate": 0.5287
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5069
+          "smoothedWinRate": 0.5073
         }
       },
       "h2hStats": {
@@ -10661,7 +10637,7 @@
       "subChars": [
         "ryu"
       ],
-      "eloRating": 1939,
+      "eloRating": 1940,
       "recentFormScore": 0.4725,
       "sfl2026": {
         "entry": 5,
@@ -10703,217 +10679,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5036
+          "smoothedWinRate": 0.504
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5137
+          "smoothedWinRate": 0.5141
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5036
+          "smoothedWinRate": 0.504
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4679
+          "smoothedWinRate": 0.4683
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4893
+          "smoothedWinRate": 0.4897
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4536
+          "smoothedWinRate": 0.454
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5036
+          "smoothedWinRate": 0.504
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5036
+          "smoothedWinRate": 0.504
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4684
+          "smoothedWinRate": 0.4688
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4393
+          "smoothedWinRate": 0.4397
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4822
+          "smoothedWinRate": 0.4826
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4893
+          "smoothedWinRate": 0.4897
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5107
+          "smoothedWinRate": 0.5111
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5036
+          "smoothedWinRate": 0.504
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4969
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5318
+          "smoothedWinRate": 0.5322
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4822
+          "smoothedWinRate": 0.4826
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4969
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.475
+          "smoothedWinRate": 0.4754
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4398
+          "smoothedWinRate": 0.4402
         },
         "ed": {
           "vsChar": "ed",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4525
+          "smoothedWinRate": 0.4528
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4969
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4476
+          "smoothedWinRate": 0.4478
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4969
         },
         "mai": {
           "vsChar": "mai",
           "wins": 6,
           "losses": 6,
           "entries": 12,
-          "smoothedWinRate": 0.4927
+          "smoothedWinRate": 0.4929
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4969
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5002
+          "smoothedWinRate": 0.5006
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.5974
+          "smoothedWinRate": 0.5977
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4969
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4893
+          "smoothedWinRate": 0.4897
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4965
+          "smoothedWinRate": 0.4969
         }
       },
       "h2hStats": {
@@ -11385,7 +11361,7 @@
       "division": "f",
       "mainChar": "mai",
       "subChars": [],
-      "eloRating": 1858,
+      "eloRating": 1856,
       "recentFormScore": 0.38,
       "sfl2026": {
         "entry": 4,
@@ -11400,12 +11376,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1565,
-        "tournamentsCount": 10,
-        "top96Count": 6,
-        "totalSetsWon": 51,
-        "totalSetsPlayed": 71,
-        "overallWinRate": 0.718
+        "performanceRating": 1560,
+        "tournamentsCount": 9,
+        "top96Count": 5,
+        "totalSetsWon": 49,
+        "totalSetsPlayed": 67,
+        "overallWinRate": 0.731
       },
       "useCharStats": {
         "mai": {
@@ -11421,217 +11397,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.49
+          "smoothedWinRate": 0.4892
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.481
+          "smoothedWinRate": 0.4802
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4712
+          "smoothedWinRate": 0.4704
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4747
+          "smoothedWinRate": 0.4739
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.488
+          "smoothedWinRate": 0.4872
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4712
+          "smoothedWinRate": 0.4704
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5081
+          "smoothedWinRate": 0.5073
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4809
+          "smoothedWinRate": 0.4801
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4678
+          "smoothedWinRate": 0.467
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.441
+          "smoothedWinRate": 0.4402
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4569
+          "smoothedWinRate": 0.4561
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4781
+          "smoothedWinRate": 0.4773
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4712
+          "smoothedWinRate": 0.4704
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4607
+          "smoothedWinRate": 0.4599
         },
         "jp": {
           "vsChar": "jp",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.409
+          "smoothedWinRate": 0.4084
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3523
+          "smoothedWinRate": 0.3516
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4678
+          "smoothedWinRate": 0.467
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4641
+          "smoothedWinRate": 0.4633
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4136
+          "smoothedWinRate": 0.413
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4498
+          "smoothedWinRate": 0.449
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4884
+          "smoothedWinRate": 0.4876
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6065
+          "smoothedWinRate": 0.6059
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4606
+          "smoothedWinRate": 0.4598
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.465
+          "smoothedWinRate": 0.4642
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4712
+          "smoothedWinRate": 0.4704
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4813
+          "smoothedWinRate": 0.4805
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4654
+          "smoothedWinRate": 0.4646
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4778
+          "smoothedWinRate": 0.477
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.454
+          "smoothedWinRate": 0.4532
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4853
+          "smoothedWinRate": 0.4845
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4712
+          "smoothedWinRate": 0.4704
         }
       },
       "h2hStats": {
@@ -11644,8 +11620,8 @@
         "tokido": {
           "opponentKey": "tokido",
           "wins": 0,
-          "losses": 2,
-          "smoothedWinRate": 0.3333
+          "losses": 1,
+          "smoothedWinRate": 0.4
         },
         "daigo": {
           "opponentKey": "daigo",
@@ -12025,7 +12001,7 @@
       "division": "f",
       "mainChar": "mai",
       "subChars": [],
-      "eloRating": 1873,
+      "eloRating": 1863,
       "recentFormScore": 0.3648,
       "sfl2026": {
         "entry": 4,
@@ -12040,12 +12016,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1592,
-        "tournamentsCount": 11,
-        "top96Count": 7,
-        "totalSetsWon": 51,
-        "totalSetsPlayed": 72,
-        "overallWinRate": 0.708
+        "performanceRating": 1575,
+        "tournamentsCount": 10,
+        "top96Count": 6,
+        "totalSetsWon": 48,
+        "totalSetsPlayed": 68,
+        "overallWinRate": 0.706
       },
       "useCharStats": {
         "mai": {
@@ -12061,217 +12037,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.496
+          "smoothedWinRate": 0.492
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.487
+          "smoothedWinRate": 0.483
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4732
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4807
+          "smoothedWinRate": 0.4767
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.494
+          "smoothedWinRate": 0.49
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4732
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5141
+          "smoothedWinRate": 0.5101
         },
         "ken": {
           "vsChar": "ken",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4408
+          "smoothedWinRate": 0.438
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4738
+          "smoothedWinRate": 0.4698
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.447
+          "smoothedWinRate": 0.443
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4629
+          "smoothedWinRate": 0.4589
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4841
+          "smoothedWinRate": 0.4801
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4732
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4667
+          "smoothedWinRate": 0.4627
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4474
+          "smoothedWinRate": 0.4434
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4589
+          "smoothedWinRate": 0.4549
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4738
+          "smoothedWinRate": 0.4698
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4701
+          "smoothedWinRate": 0.4661
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.454
+          "smoothedWinRate": 0.45
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4558
+          "smoothedWinRate": 0.4518
         },
         "ed": {
           "vsChar": "ed",
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.5873
+          "smoothedWinRate": 0.5848
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5001
+          "smoothedWinRate": 0.4961
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 1,
           "losses": 0,
           "entries": 1,
-          "smoothedWinRate": 0.5022
+          "smoothedWinRate": 0.4984
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3663
+          "smoothedWinRate": 0.3632
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4732
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4873
+          "smoothedWinRate": 0.4833
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4714
+          "smoothedWinRate": 0.4674
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.3763
+          "smoothedWinRate": 0.3732
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4025
+          "smoothedWinRate": 0.399
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4913
+          "smoothedWinRate": 0.4873
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4732
         }
       },
       "h2hStats": {
@@ -12334,12 +12310,6 @@
           "wins": 0,
           "losses": 1,
           "smoothedWinRate": 0.4
-        },
-        "akira": {
-          "opponentKey": "akira",
-          "wins": 0,
-          "losses": 1,
-          "smoothedWinRate": 0.4
         }
       }
     },
@@ -12351,7 +12321,7 @@
       "division": "f",
       "mainChar": "chunli",
       "subChars": [],
-      "eloRating": 1873,
+      "eloRating": 1877,
       "recentFormScore": 0.4776,
       "sfl2026": {
         "entry": 2,
@@ -12366,12 +12336,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1554,
-        "tournamentsCount": 9,
-        "top96Count": 5,
+        "performanceRating": 1560,
+        "tournamentsCount": 8,
+        "top96Count": 4,
         "totalSetsWon": 42,
-        "totalSetsPlayed": 59,
-        "overallWinRate": 0.712
+        "totalSetsPlayed": 58,
+        "overallWinRate": 0.724
       },
       "useCharStats": {
         "chunli": {
@@ -12387,217 +12357,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4915
+          "smoothedWinRate": 0.4931
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4915
+          "smoothedWinRate": 0.4931
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4701
+          "smoothedWinRate": 0.4717
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4788
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4843
+          "smoothedWinRate": 0.4859
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4701
+          "smoothedWinRate": 0.4717
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4706
+          "smoothedWinRate": 0.4722
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4843
+          "smoothedWinRate": 0.4859
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4737
+          "smoothedWinRate": 0.4753
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4843
+          "smoothedWinRate": 0.4859
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4788
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4788
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4701
+          "smoothedWinRate": 0.4717
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4629
+          "smoothedWinRate": 0.4645
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4415
+          "smoothedWinRate": 0.4431
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 2,
           "losses": 6,
           "entries": 8,
-          "smoothedWinRate": 0.3778
+          "smoothedWinRate": 0.3789
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4558
+          "smoothedWinRate": 0.4574
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5364
+          "smoothedWinRate": 0.5375
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4629
+          "smoothedWinRate": 0.4645
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4772
+          "smoothedWinRate": 0.4788
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5129
+          "smoothedWinRate": 0.5145
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4986
+          "smoothedWinRate": 0.5002
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4701
+          "smoothedWinRate": 0.4717
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4843
+          "smoothedWinRate": 0.4859
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4737
+          "smoothedWinRate": 0.4753
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4843
+          "smoothedWinRate": 0.4859
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4701
+          "smoothedWinRate": 0.4717
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4558
+          "smoothedWinRate": 0.4574
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4629
+          "smoothedWinRate": 0.4645
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4701
+          "smoothedWinRate": 0.4717
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4701
+          "smoothedWinRate": 0.4717
         }
       },
       "h2hStats": {
@@ -12657,12 +12627,6 @@
         },
         "kazunoko": {
           "opponentKey": "kazunoko",
-          "wins": 0,
-          "losses": 1,
-          "smoothedWinRate": 0.4
-        },
-        "hibiki": {
-          "opponentKey": "hibiki",
           "wins": 0,
           "losses": 1,
           "smoothedWinRate": 0.4
@@ -13326,7 +13290,7 @@
       "division": "f",
       "mainChar": "vega_mbison",
       "subChars": [],
-      "eloRating": 1880,
+      "eloRating": 1886,
       "recentFormScore": 0.5046,
       "sfl2026": {
         "entry": 4,
@@ -13341,12 +13305,12 @@
       },
       "cptStats": {
         "source": "startgg",
-        "performanceRating": 1540,
-        "tournamentsCount": 8,
-        "top96Count": 3,
+        "performanceRating": 1550,
+        "tournamentsCount": 7,
+        "top96Count": 2,
         "totalSetsWon": 34,
-        "totalSetsPlayed": 49,
-        "overallWinRate": 0.694
+        "totalSetsPlayed": 48,
+        "overallWinRate": 0.708
       },
       "useCharStats": {
         "vega_mbison": {
@@ -13362,217 +13326,217 @@
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5429
+          "smoothedWinRate": 0.5446
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.352
+          "smoothedWinRate": 0.3539
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4657
+          "smoothedWinRate": 0.4681
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4871
+          "smoothedWinRate": 0.4895
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5236
+          "smoothedWinRate": 0.526
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4729
+          "smoothedWinRate": 0.4753
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.48
+          "smoothedWinRate": 0.4824
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4657
+          "smoothedWinRate": 0.4681
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4732
+          "smoothedWinRate": 0.4756
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5657
+          "smoothedWinRate": 0.5681
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4586
+          "smoothedWinRate": 0.461
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4729
+          "smoothedWinRate": 0.4753
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4657
+          "smoothedWinRate": 0.4681
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4657
+          "smoothedWinRate": 0.4681
         },
         "jp": {
           "vsChar": "jp",
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.6112
+          "smoothedWinRate": 0.6127
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4055
+          "smoothedWinRate": 0.4072
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.48
+          "smoothedWinRate": 0.4824
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.48
+          "smoothedWinRate": 0.4824
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4943
+          "smoothedWinRate": 0.4967
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5014
+          "smoothedWinRate": 0.5038
         },
         "ed": {
           "vsChar": "ed",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4871
+          "smoothedWinRate": 0.4895
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4943
+          "smoothedWinRate": 0.4967
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.48
+          "smoothedWinRate": 0.4824
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4657
+          "smoothedWinRate": 0.4681
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4906
+          "smoothedWinRate": 0.493
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4871
+          "smoothedWinRate": 0.4895
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.48
+          "smoothedWinRate": 0.4824
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4431
+          "smoothedWinRate": 0.4455
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4871
+          "smoothedWinRate": 0.4895
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.53
+          "smoothedWinRate": 0.5324
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4657
+          "smoothedWinRate": 0.4681
         }
       },
       "h2hStats": {
@@ -14617,7 +14581,7 @@
         "luke",
         "ryu"
       ],
-      "eloRating": 2045,
+      "eloRating": 2046,
       "recentFormScore": 0.505,
       "sfl2026": {
         "entry": 4,
@@ -14665,217 +14629,217 @@
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6089
+          "smoothedWinRate": 0.6092
         },
         "luke": {
           "vsChar": "luke",
           "wins": 2,
           "losses": 1,
           "entries": 3,
-          "smoothedWinRate": 0.5702
+          "smoothedWinRate": 0.5705
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5674
+          "smoothedWinRate": 0.5678
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5531
+          "smoothedWinRate": 0.5535
         },
         "guile": {
           "vsChar": "guile",
           "wins": 3,
           "losses": 2,
           "entries": 5,
-          "smoothedWinRate": 0.55
+          "smoothedWinRate": 0.5503
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 2,
           "losses": 0,
           "entries": 2,
-          "smoothedWinRate": 0.6089
+          "smoothedWinRate": 0.6092
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5531
+          "smoothedWinRate": 0.5535
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5323
+          "smoothedWinRate": 0.5327
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5565
+          "smoothedWinRate": 0.5569
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.546
+          "smoothedWinRate": 0.5464
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5246
+          "smoothedWinRate": 0.525
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5317
+          "smoothedWinRate": 0.5321
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5531
+          "smoothedWinRate": 0.5535
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.546
+          "smoothedWinRate": 0.5464
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5317
+          "smoothedWinRate": 0.5321
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 3,
           "losses": 8,
           "entries": 11,
-          "smoothedWinRate": 0.4258
+          "smoothedWinRate": 0.426
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5603
+          "smoothedWinRate": 0.5607
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5561
+          "smoothedWinRate": 0.5565
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.546
+          "smoothedWinRate": 0.5464
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.546
+          "smoothedWinRate": 0.5464
         },
         "ed": {
           "vsChar": "ed",
           "wins": 2,
           "losses": 4,
           "entries": 6,
-          "smoothedWinRate": 0.4846
+          "smoothedWinRate": 0.4849
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.546
+          "smoothedWinRate": 0.5464
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 4,
           "losses": 0,
           "entries": 4,
-          "smoothedWinRate": 0.6524
+          "smoothedWinRate": 0.6527
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5603
+          "smoothedWinRate": 0.5607
         },
         "mai": {
           "vsChar": "mai",
           "wins": 10,
           "losses": 8,
           "entries": 18,
-          "smoothedWinRate": 0.5539
+          "smoothedWinRate": 0.5541
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5523
+          "smoothedWinRate": 0.5527
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.546
+          "smoothedWinRate": 0.5464
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 2,
           "losses": 3,
           "entries": 5,
-          "smoothedWinRate": 0.5026
+          "smoothedWinRate": 0.5029
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5174
+          "smoothedWinRate": 0.5178
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5531
+          "smoothedWinRate": 0.5535
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5531
+          "smoothedWinRate": 0.5535
         }
       },
       "h2hStats": {
@@ -16053,7 +16017,7 @@
       "division": "f",
       "mainChar": "aki",
       "subChars": [],
-      "eloRating": 2049,
+      "eloRating": 2050,
       "recentFormScore": 0.7443,
       "sfl2026": {
         "entry": 3,
@@ -16089,217 +16053,217 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         },
         "luke": {
           "vsChar": "luke",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5547
+          "smoothedWinRate": 0.5551
         },
         "jamie": {
           "vsChar": "jamie",
           "wins": 6,
           "losses": 4,
           "entries": 10,
-          "smoothedWinRate": 0.5788
+          "smoothedWinRate": 0.5791
         },
         "chunli": {
           "vsChar": "chunli",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         },
         "guile": {
           "vsChar": "guile",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5405
+          "smoothedWinRate": 0.5409
         },
         "kimberly": {
           "vsChar": "kimberly",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.519
+          "smoothedWinRate": 0.5194
         },
         "juri": {
           "vsChar": "juri",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5405
+          "smoothedWinRate": 0.5409
         },
         "ken": {
           "vsChar": "ken",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5547
+          "smoothedWinRate": 0.5551
         },
         "blanka": {
           "vsChar": "blanka",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         },
         "dhalsim": {
           "vsChar": "dhalsim",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5619
+          "smoothedWinRate": 0.5623
         },
         "ehonda": {
           "vsChar": "ehonda",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5333
+          "smoothedWinRate": 0.5337
         },
         "dee_jay": {
           "vsChar": "dee_jay",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5547
+          "smoothedWinRate": 0.5551
         },
         "manon": {
           "vsChar": "manon",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5405
+          "smoothedWinRate": 0.5409
         },
         "marisa": {
           "vsChar": "marisa",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         },
         "jp": {
           "vsChar": "jp",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5619
+          "smoothedWinRate": 0.5623
         },
         "zangief": {
           "vsChar": "zangief",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5547
+          "smoothedWinRate": 0.5551
         },
         "lily": {
           "vsChar": "lily",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5619
+          "smoothedWinRate": 0.5623
         },
         "cammy": {
           "vsChar": "cammy",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5333
+          "smoothedWinRate": 0.5337
         },
         "rashid": {
           "vsChar": "rashid",
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5998
+          "smoothedWinRate": 0.6001
         },
         "aki": {
           "vsChar": "aki",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         },
         "ed": {
           "vsChar": "ed",
           "wins": 6,
           "losses": 0,
           "entries": 6,
-          "smoothedWinRate": 0.728
+          "smoothedWinRate": 0.7283
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5619
+          "smoothedWinRate": 0.5623
         },
         "vega_mbison": {
           "vsChar": "vega_mbison",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5262
+          "smoothedWinRate": 0.5266
         },
         "terry": {
           "vsChar": "terry",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         },
         "mai": {
           "vsChar": "mai",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.569
+          "smoothedWinRate": 0.5694
         },
         "elena": {
           "vsChar": "elena",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5619
+          "smoothedWinRate": 0.5623
         },
         "sagat": {
           "vsChar": "sagat",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         },
         "cviper": {
           "vsChar": "cviper",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         },
         "alex": {
           "vsChar": "alex",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5547
+          "smoothedWinRate": 0.5551
         },
         "ingrid": {
           "vsChar": "ingrid",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5547
+          "smoothedWinRate": 0.5551
         },
         "yasmine": {
           "vsChar": "yasmine",
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5476
+          "smoothedWinRate": 0.548
         }
       },
       "h2hStats": {
