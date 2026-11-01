@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T23:10:08.318Z",
+  "updatedAt": "2026-11-01T23:57:49.515Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -3937,6 +3937,42 @@
               "endSec": 7233
             }
           ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-01T23:52:43.552Z",
+          "gameWinnersSeen": [
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲームRound 1、あきら（C.ヴァイパー）の仕掛けに対し、まちゃぼー（リュウ）が歩きしゃがみ中足をカウンターヒットさせて一気にKOし、ラウンドを先制する。",
+              "evidence": "両方",
+              "startSec": 7040,
+              "endSec": 7048
+            },
+            {
+              "topic": "第1ゲームRound 2、あきらのジャンプ攻撃に対し、まちゃぼーが正確な振り向き昇竜拳で対空を決め、相手の反撃ミスからCAを叩き込んで第1ゲームを獲得する。",
+              "evidence": "両方",
+              "startSec": 7070,
+              "endSec": 7090
+            },
+            {
+              "topic": "第2ゲームRound 2、追いつめられたあきらがパニッシュカウンターからゲージを全投入したCAコンボを完走し、1本返しファイナルラウンドへ持ち込む。",
+              "evidence": "両方",
+              "startSec": 7179,
+              "endSec": 7188
+            },
+            {
+              "topic": "第2ゲームFinal Round、あきらをバーンアウト状態に追い込んだまちゃぼーが、波動拳での牽制と相手の空振りを逃さずKOを取り、先鋒戦を制する。",
+              "evidence": "両方",
+              "startSec": 7221,
+              "endSec": 7233
+            }
+          ]
         }
       ]
     },
@@ -4030,6 +4066,44 @@
               "evidence": "両方",
               "startSec": 8734,
               "endSec": 8751
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-01T23:56:09.500Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド、ひびき（リリー）がきんちょ（テリー）の牽制に対して打撃択を通し、最後はきんちょの暴れに対してCA（クリティカルアート）を叩き込んでKOし、第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 8280,
+              "endSec": 8296
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、きんちょ（テリー）がコンボからCAを叩き込んでひびきをバーンアウト状態へ追い込み、最後は起き上がりにパワーウェーブを重ねてKOを奪い、セットカウント1-1に追いついた。",
+              "evidence": "両方",
+              "startSec": 8412,
+              "endSec": 8429
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド終盤、きんちょのドライブラッシュからの攻めに対してひびきが冷静に対応し、暴れを潰してコンボからCAをフルヒットさせてラウンドを奪い、勝利へ王手をかけた。",
+              "evidence": "両方",
+              "startSec": 8563,
+              "endSec": 8579
+            },
+            {
+              "topic": "第4ゲーム最終ラウンド、ひびきがきんちょのリバーサル無敵技を完全に読んでパニッシュカウンターを獲得し、そのまま技を撃ち切ってパーフェクトKOを達成し、3-1で大将戦を制した。",
+              "evidence": "両方",
+              "startSec": 8733,
+              "endSec": 8753
             }
           ]
         }
@@ -12121,6 +12195,7 @@
     "div-f-sec5-m1",
     "div-f-sec5-m2",
     "div-f-sec5-m3",
-    "div-s-sec6-m1"
+    "div-s-sec6-m1",
+    "div-s-sec6-m3"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T23:10:08.494Z",
+  "updatedAt": "2026-11-01T23:57:49.498Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -3697,10 +3697,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "120:20.000から120:33.000の区間では、『ストリートファイター6』のP1側キャミィ（AKIRA）とP2側リュウ（MACHABO）の対戦が描かれています。序盤（120:20〜120:23）、キャミィがリュウに対してパニッシュカウンターを奪い攻撃を展開します。120:24付近でリュウが波動拳を放って牽制し、120:27〜120:29でキャミィの飛び込み・攻撃の隙に対してリュウがパニッシュカウンターを成立させます。そのままリュウがDrive Gaugeを活用した攻撃およびコンボを叩き込み、120:32.000にK.O.を奪ってラウンドが終了します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-31T15:19:49.531Z"
     },
@@ -3829,10 +3832,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "HIBIKI（リリー）対 KINCHO（ルーク）の対戦。ルークがリリーのジャンプをODライジングアッパーで対空し、続いて垂直ジャンプもしゃがみ強Pからライジングアッパーで落として画面端へ追い詰めます。しかし起き上がりにリリーがCA（レイジングタイフーン）を繰り出してルークを掴み、大ダメージを与えてK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:31:48.689Z"
     },
@@ -3853,10 +3859,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "HIBIKI（リリー）対 KINCHO（ルーク）の対戦。バーンアウト状態のルークがリリーの攻めを凌いでコンボからCA（ペイルライダー）を叩き込みます。CA演出終了時点でリリーの体力はわずかに残りますが、起き上がりにルークが放った飛び道具がヒットしてリリーがK.O.となります。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:31:48.689Z"
     },
@@ -3877,10 +3886,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "HIBIKI（リリー）対 KINCHO（ルーク）の対戦。中央付近での攻防でルークが通常投げを決めて位置を入れ替え、ドライブラッシュや牽制技で攻めを継続します。その後、ルークが繰り出したODライジングアッパーをリリーがガードしてパニッシュカウンターを取り、メキシカンタイフーン（コマンド投げ）を決めてルークをK.O.します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:31:48.689Z"
     },
@@ -3901,10 +3913,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "HIBIKI（リリー）対 KINCHO（ルーク）の対戦。リリーがリバーサルでルークにパニッシュカウンターを取り、画面端へ運びます。さらに起き上がりの攻防で再びパニッシュカウンターを奪ってコンボからSA3を発動。そのままSA3がヒットしきってPERFECT K.O.を達成します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:31:48.689Z"
     },
@@ -5233,10 +5248,13 @@
       "officialRefs": [
         "div-s-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P Ryukichi（春麗）対 2P 2BASSA（A.K.I.）。2P A.K.I.のリバーサル技に対し、1P 春麗がジャストパリー（JUST PARRY）を成功させてパニッシュカウンターからコンボを叩き込みます。その後ドライブゲージを使い切りバーンアウト（EMPTY）したA.K.I.に対し、春麗が画面端付近でドライブインパクトをヒットさせてスタン（STUN）を奪い、追加コンボを完走してK.O.を獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T23:10:08.320Z"
     },
@@ -5257,10 +5275,13 @@
       "officialRefs": [
         "div-s-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P Ryukichi（舞 / Mai）対 2P 2BASSA（A.K.I.）。1P Maiがカウンターヒットからコンボを繋ぎ、レベル3スーパーアーツ/クリティカルアート（CA）を発動します。CA演出を経て15ヒットのコンボでA.K.I.の体力を削りきり、K.O.でラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T23:10:08.320Z"
     },
@@ -5281,10 +5302,13 @@
       "officialRefs": [
         "div-s-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P Ryukichi（Mai）対 2P 2BASSA（A.K.I.）。バーンアウト状態の2P A.K.I.に対し、1P Maiが画面端でパニッシュカウンターを奪い、そのまま打撃を重ねてK.O.し「MAI WIN」の勝利画面へ移行します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T23:10:08.320Z"
     },
@@ -5305,12 +5329,111 @@
       "officialRefs": [
         "div-s-sec6-m3-b2:winner-order-reviewed"
       ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P Ryukichi（Mai）対 2P 2BASSA（A.K.I.）。画面右端で1P Maiがコンボからクリティカルアート（CA）を叩き込みます。暗転演出中に画面が選手・チームのカメラ映像へ切り替わり、チームメンバーが勝利を喜ぶ中でゲーム画面上でもK.O.が成立し、マッチ勝利となります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-01T23:10:08.320Z"
+    },
+    "ev-d9645bf03cefa46efd8f": {
+      "id": "ev-d9645bf03cefa46efd8f",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7040,
+      "endSec": 7048,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "第1ゲームRound 1、あきら（C.ヴァイパー）の仕掛けに対し、まちゃぼー（リュウ）が歩きしゃがみ中足をカウンターヒットさせて一気にKOし、ラウンドを先制する。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.6-flash"
       ],
-      "createdAt": "2026-11-01T23:10:08.320Z"
+      "createdAt": "2026-11-01T23:52:43.552Z"
+    },
+    "ev-729ed981f4490afceaff": {
+      "id": "ev-729ed981f4490afceaff",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7070,
+      "endSec": 7090,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "第1ゲームRound 2、あきらのジャンプ攻撃に対し、まちゃぼーが正確な振り向き昇竜拳で対空を決め、相手の反撃ミスからCAを叩き込んで第1ゲームを獲得する。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-01T23:52:43.552Z"
+    },
+    "ev-54a035202567c2fbf8d3": {
+      "id": "ev-54a035202567c2fbf8d3",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7179,
+      "endSec": 7188,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "第2ゲームRound 2、追いつめられたあきらがパニッシュカウンターからゲージを全投入したCAコンボを完走し、1本返しファイナルラウンドへ持ち込む。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-01T23:52:43.552Z"
+    },
+    "ev-1c435d793af611b70fca": {
+      "id": "ev-1c435d793af611b70fca",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 7221,
+      "endSec": 7233,
+      "playerIds": [
+        "あきら",
+        "まちゃぼー"
+      ],
+      "observation": "第2ゲームFinal Round、あきらをバーンアウト状態に追い込んだまちゃぼーが、波動拳での牽制と相手の空振りを逃さずKOを取り、先鋒戦を制する。",
+      "officialRefs": [
+        "div-s-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-01T23:52:43.552Z"
     }
   }
 }

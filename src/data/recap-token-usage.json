@@ -451,37 +451,37 @@
     },
     "2026-11-02": {
       "gemini:extract:gemini-3.6-flash": {
-        "responses": 3,
+        "responses": 5,
         "tokens": {
-          "inputTokens": 197613,
+          "inputTokens": 289780,
           "cachedInputTokens": 0,
-          "outputTokens": 1334,
-          "thoughtTokens": 6883,
-          "totalTokens": 205830
+          "outputTokens": 2170,
+          "thoughtTokens": 10444,
+          "totalTokens": 302394
         },
         "observations": {
-          "inputTokens": 3,
-          "cachedInputTokens": 3,
-          "outputTokens": 3,
-          "thoughtTokens": 3,
-          "totalTokens": 3
+          "inputTokens": 5,
+          "cachedInputTokens": 5,
+          "outputTokens": 5,
+          "thoughtTokens": 5,
+          "totalTokens": 5
         }
       },
       "gemini:verify:gemini-3.6-flash": {
-        "responses": 11,
+        "responses": 13,
         "tokens": {
-          "inputTokens": 157169,
+          "inputTokens": 169203,
           "cachedInputTokens": 0,
-          "outputTokens": 5290,
-          "thoughtTokens": 15731,
-          "totalTokens": 178190
+          "outputTokens": 5975,
+          "thoughtTokens": 17802,
+          "totalTokens": 192980
         },
         "observations": {
-          "inputTokens": 11,
-          "cachedInputTokens": 11,
-          "outputTokens": 11,
-          "thoughtTokens": 11,
-          "totalTokens": 11
+          "inputTokens": 13,
+          "cachedInputTokens": 13,
+          "outputTokens": 13,
+          "thoughtTokens": 13,
+          "totalTokens": 13
         }
       },
       "gemini:extract:gemini-3.8-flash": {
@@ -502,20 +502,20 @@
         }
       },
       "gemini:verify:gemini-3.8-flash": {
-        "responses": 2,
+        "responses": 3,
         "tokens": {
-          "inputTokens": 36239,
+          "inputTokens": 47688,
           "cachedInputTokens": 0,
-          "outputTokens": 907,
-          "thoughtTokens": 1927,
-          "totalTokens": 39073
+          "outputTokens": 1366,
+          "thoughtTokens": 3475,
+          "totalTokens": 52529
         },
         "observations": {
-          "inputTokens": 2,
-          "cachedInputTokens": 2,
-          "outputTokens": 2,
-          "thoughtTokens": 2,
-          "totalTokens": 2
+          "inputTokens": 3,
+          "cachedInputTokens": 3,
+          "outputTokens": 3,
+          "thoughtTokens": 3,
+          "totalTokens": 3
         }
       },
       "codex:narration:codex-cli": {
