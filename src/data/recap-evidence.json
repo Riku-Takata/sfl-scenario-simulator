@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T16:04:58.603Z",
+  "updatedAt": "2026-11-01T19:40:59.323Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -4765,10 +4765,13 @@
       "officialRefs": [
         "div-f-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "NAUMAN（豪鬼）とGACHIKUN（ラシード）の対戦。序盤、ラシードがSA3（アルタイル）を発動してガードさせ、画面端で豪鬼のドライブゲージを削る攻めを展開。豪鬼は切り返しとしてSA1（滅殺豪昇龍）をカウンターヒットさせて脱出します。仕切り直しの立ち回りから豪鬼がバーンアウト状態に追い込まれ、ラシードの攻撃がヒットしたところからCA（アルタイル）を発動。これがパニッシュカウンターでヒットして豪鬼がK.O.となり、ラシードがラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T16:04:58.569Z"
     },
@@ -4789,10 +4792,13 @@
       "officialRefs": [
         "div-f-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面端付近でNAUMAN（豪鬼）がGACHIKUN（ラシード）を攻め立て、コンボからSA3を発動して大ダメージを与えます。起き攻めで豪鬼がOD技を絡めた連携や投げを重ねてラシードを追い詰め、ラシードがバーンアウト。飛び込みを潜った豪鬼が着地へパニッシュカウンターからコンボを決め、K.O.して豪鬼がラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T16:04:58.569Z"
     },
@@ -4813,10 +4819,13 @@
       "officialRefs": [
         "div-f-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "GACHIKUN（ラシード）がSA2（イウサール）の巨大な竜巻を盾にして画面端へ攻め込み、NAUMAN（豪鬼）をバーンアウトに追い込んでパニッシュカウンターからコンボを決めます。起き上がりに投げ抜けが発生した後、ラシードが攻め継続を仕掛けますが、豪鬼がリバーサルでSA2を発動してパニッシュカウンターで迎撃。そのままコンボを完走してラシードをK.O.し、豪鬼が勝利します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T16:04:58.569Z"
     },
@@ -4837,10 +4846,13 @@
       "officialRefs": [
         "div-f-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "立ち回りの差し合いでNAUMAN（豪鬼）の牽制技の空振りに対し、GACHIKUN（ラシード）がSA3（アルタイル）をパニッシュカウンターでヒットさせて大ダメージを与えます。起き上がりにラシードがコンボを継続して画面端へ追い込み、最後は垂直ジャンプからの攻撃でパニッシュカウンターを取りK.O.。ラシード側が勝利して選手カメラ映像へ切り替わります。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T16:04:58.569Z"
     }
