@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T04:01:03.886Z",
+  "updatedAt": "2026-11-01T18:01:03.734Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -1803,6 +1803,248 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-01T04:01:03.542Z"
+    },
+    "div-s-sec6-m1-b0:877e7967d5fc7041:candidate": {
+      "articleId": "div-s-sec6-m1-b0:877e7967d5fc7041:candidate",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "revision": "877e7967d5fc7041",
+      "status": "insufficient",
+      "summary": "ももち選手がかずのこ選手に2-0で勝利し、ZETA DIVISION Geeklyが先制。第1・第2ゲームを続けて取り、チーム戦の最初の勝利を持ち帰った。",
+      "summaryEvidenceIds": [
+        "ev-bb7f4dda61a82546566c"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームでは、ももちがパニッシュカウンターから連続技で画面端へ運び、起き上がりへの打撃からCAにつないでKOを奪った。",
+          "evidenceIds": [
+            "ev-807d8a0cc823a090b5ae"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-bb7f4dda61a82546566c",
+        "ev-807d8a0cc823a090b5ae"
+      ],
+      "quality": {
+        "score": 0.7777777777777778,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": false,
+          "multipleVideoBackedPoints": false,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "enoughSpecificPoints",
+          "multipleVideoBackedPoints"
+        ],
+        "evaluatedAt": "2026-11-01T18:01:02.938Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-01T18:01:02.938Z"
+    },
+    "div-s-sec6-m1-b1:46bfc50a8cb91615:published": {
+      "articleId": "div-s-sec6-m1-b1:46bfc50a8cb91615:published",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b1",
+      "revision": "46bfc50a8cb91615",
+      "status": "passed",
+      "summary": "ひぐち選手がボンちゃん選手を2-0で下し、ZETA DIVISION Geeklyが先鋒に続いて勝利。画面端のドライブインパクトからスタンを奪う場面もあり、リードを広げた。",
+      "summaryEvidenceIds": [
+        "ev-772c16be1d84298ba39f",
+        "ev-16e95210e244643d240e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームはひぐちがドライブインパクトでパニッシュカウンターを取り、ドライブラッシュを絡めた連続技からソニックハリケーンでKOした。",
+          "evidenceIds": [
+            "ev-959fef6fc13190eac53e"
+          ]
+        },
+        {
+          "text": "第2ゲームはひぐちが画面端のドライブインパクトでボンちゃんをスタンさせ、ドライブラッシュから追撃してラウンドを取った。",
+          "evidenceIds": [
+            "ev-16e95210e244643d240e"
+          ]
+        },
+        {
+          "text": "ボンちゃんも第2ゲームで地上攻撃からスーパーアーツにつなぎ、起き上がりへの打撃を通してラウンドを取り返した。",
+          "evidenceIds": [
+            "ev-307d5d5ca739476575b3"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-772c16be1d84298ba39f",
+        "ev-16e95210e244643d240e",
+        "ev-959fef6fc13190eac53e",
+        "ev-307d5d5ca739476575b3"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-01T18:01:02.939Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-01T18:01:02.939Z"
+    },
+    "div-s-sec6-m1-b2:3759318e0ca9e03a:published": {
+      "articleId": "div-s-sec6-m1-b2:3759318e0ca9e03a:published",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b2",
+      "revision": "3759318e0ca9e03a",
+      "status": "passed",
+      "summary": "Shuto選手がMenaRD選手に3-0で勝ち、Crazy Raccoonが延長戦に持ち込んだ。第3ゲームはジャストパリィから好機を作り、最後は画面端の連続技からSA3で締めた。",
+      "summaryEvidenceIds": [
+        "ev-3619cf8cad92533e4d3c",
+        "ev-950268fa0696aac832dd",
+        "ev-b1ebb134eb81127c61f8"
+      ],
+      "keyPoints": [
+        {
+          "text": "第3ゲームはShutoがジャストパリィを成功させ、パニッシュカウンターからドライブラッシュを絡めて連続技を伸ばし、MenaRDを画面端付近へ追い込んだ。",
+          "evidenceIds": [
+            "ev-950268fa0696aac832dd"
+          ]
+        },
+        {
+          "text": "決着の場面では、Shutoが画面端でライジングアッパーからSA3「ペイルライダー」につなぎ、MenaRDの体力を削り切った。",
+          "evidenceIds": [
+            "ev-b1ebb134eb81127c61f8"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-3619cf8cad92533e4d3c",
+        "ev-950268fa0696aac832dd",
+        "ev-b1ebb134eb81127c61f8"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-01T18:01:02.939Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-01T18:01:02.939Z"
+    },
+    "div-s-sec6-m1-b3:b4fff5177034a3d2:candidate": {
+      "articleId": "div-s-sec6-m1-b3:b4fff5177034a3d2:candidate",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b3",
+      "revision": "b4fff5177034a3d2",
+      "status": "insufficient",
+      "summary": "",
+      "summaryEvidenceIds": [
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームはどぐらがパニッシュカウンターでダウンを奪い、ドライブラッシュから攻めを継続してヤマグチをバーンアウトに追い込み、連続攻撃でKOした。",
+          "evidenceIds": [
+            "ev-6e9d7d05e0e0ccff6f7d"
+          ]
+        },
+        {
+          "text": "最終ゲームの決着場面では、ヤマグチがパニッシュカウンターから画面端へ運び、通常投げを続けて通した後にどぐらの暴れを潰し、スーパーアーツでパーフェクトKOを完成させた。",
+          "evidenceIds": [
+            "ev-e10799cfd0522850f812"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812",
+        "ev-6e9d7d05e0e0ccff6f7d"
+      ],
+      "quality": {
+        "score": 0.8888888888888888,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "summaryHasSubstance"
+        ],
+        "evaluatedAt": "2026-11-01T18:01:02.939Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-01T18:01:02.939Z"
+    },
+    "div-s-sec6-m1:5ffab82bec9e0d0e:published": {
+      "articleId": "div-s-sec6-m1:5ffab82bec9e0d0e:published",
+      "matchId": "div-s-sec6-m1",
+      "revision": "5ffab82bec9e0d0e",
+      "status": "passed",
+      "headline": "ZETAが延長戦を制し30-20で勝利",
+      "summary": "ZETA DIVISION GeeklyがCrazy Raccoonに30-20で勝利した。先鋒のももち、中堅のひぐちがともに2-0で勝ち、ZETAが先行。しかし、大将戦ではShutoがMenaRDを3-0で下し、Crazy Raccoonが延長戦につないだ。Shutoは第3ゲームでジャストパリィから連続技を伸ばし、最後はSA3で決着。延長戦はどぐらが第1ゲームを取ったものの、ヤマグチが第2・第3ゲームを連取した。締めくくりは画面端で投げと打撃を通し、スーパーアーツにつなぐパーフェクトKOだった。",
+      "summaryEvidenceIds": [
+        "ev-bb7f4dda61a82546566c",
+        "ev-772c16be1d84298ba39f",
+        "ev-3619cf8cad92533e4d3c",
+        "ev-950268fa0696aac832dd",
+        "ev-b1ebb134eb81127c61f8",
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-bb7f4dda61a82546566c",
+        "ev-772c16be1d84298ba39f",
+        "ev-3619cf8cad92533e4d3c",
+        "ev-950268fa0696aac832dd",
+        "ev-b1ebb134eb81127c61f8",
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-01T18:01:02.940Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-01T18:01:02.940Z"
     }
   }
 }
