@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T19:31:55.484Z",
+  "updatedAt": "2026-11-01T02:11:55.932Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -3214,6 +3214,44 @@
               "evidence": "両方",
               "startSec": 4204,
               "endSec": 4215
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T02:11:55.906Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1セット第2ラウンド、ふ～どが画面端の守勢で大谷のラッシュ打撃にジャストパリィを合わせ、パニッシュカウンターからCAを叩き込んでKOし、第1セットを先取した。",
+              "evidence": "両方",
+              "startSec": 4126,
+              "endSec": 4142
+            },
+            {
+              "topic": "第2セット最終ラウンド、大谷がふ～どのバックジャンプ逃げに対してODライジングアッパーを完璧に対空で合わせ、CAまで繋いで大ダメージを奪い、第2セットを取り返した。",
+              "evidence": "両方",
+              "startSec": 4310,
+              "endSec": 4322
+            },
+            {
+              "topic": "第3セット最終ラウンド、ふ～どが大谷のリバーサルODライジングアッパーを的確にガードしてパニッシュカウンターを取り、CAを叩き込んでパーフェクトK.O.で第3セットを奪った。",
+              "evidence": "両方",
+              "startSec": 4457,
+              "endSec": 4471
+            },
+            {
+              "topic": "第4セット第2ラウンド、ふ～どが投げと固めで大谷を追い詰め、最後は大谷の反撃の出鼻をバックジャンプ強Kで迎撃してKOし、チームの40-0勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 4565,
+              "endSec": 4606
             }
           ]
         }

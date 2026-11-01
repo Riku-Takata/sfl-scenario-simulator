@@ -417,20 +417,20 @@
         }
       },
       "gemini:extract:gemini-3.8-flash": {
-        "responses": 3,
+        "responses": 4,
         "tokens": {
-          "inputTokens": 119817,
+          "inputTokens": 189692,
           "cachedInputTokens": 0,
-          "outputTokens": 1330,
-          "thoughtTokens": 3594,
-          "totalTokens": 124741
+          "outputTokens": 1642,
+          "thoughtTokens": 4865,
+          "totalTokens": 196199
         },
         "observations": {
-          "inputTokens": 3,
-          "cachedInputTokens": 3,
-          "outputTokens": 3,
-          "thoughtTokens": 3,
-          "totalTokens": 3
+          "inputTokens": 4,
+          "cachedInputTokens": 4,
+          "outputTokens": 4,
+          "thoughtTokens": 4,
+          "totalTokens": 4
         }
       },
       "codex:narration:codex-cli": {
