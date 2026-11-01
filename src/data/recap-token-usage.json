@@ -451,37 +451,37 @@
     },
     "2026-11-02": {
       "gemini:extract:gemini-3.6-flash": {
-        "responses": 1,
+        "responses": 2,
         "tokens": {
-          "inputTokens": 69875,
+          "inputTokens": 127287,
           "cachedInputTokens": 0,
-          "outputTokens": 422,
-          "thoughtTokens": 1703,
-          "totalTokens": 72000
+          "outputTokens": 837,
+          "thoughtTokens": 4534,
+          "totalTokens": 132658
         },
         "observations": {
-          "inputTokens": 1,
-          "cachedInputTokens": 1,
-          "outputTokens": 1,
-          "thoughtTokens": 1,
-          "totalTokens": 1
+          "inputTokens": 2,
+          "cachedInputTokens": 2,
+          "outputTokens": 2,
+          "thoughtTokens": 2,
+          "totalTokens": 2
         }
       },
       "gemini:verify:gemini-3.6-flash": {
-        "responses": 6,
+        "responses": 7,
         "tokens": {
-          "inputTokens": 78265,
+          "inputTokens": 95992,
           "cachedInputTokens": 0,
-          "outputTokens": 2926,
-          "thoughtTokens": 8359,
-          "totalTokens": 89550
+          "outputTokens": 3399,
+          "thoughtTokens": 9845,
+          "totalTokens": 109236
         },
         "observations": {
-          "inputTokens": 6,
-          "cachedInputTokens": 6,
-          "outputTokens": 6,
-          "thoughtTokens": 6,
-          "totalTokens": 6
+          "inputTokens": 7,
+          "cachedInputTokens": 7,
+          "outputTokens": 7,
+          "thoughtTokens": 7,
+          "totalTokens": 7
         }
       },
       "gemini:extract:gemini-3.8-flash": {
@@ -499,6 +499,23 @@
           "outputTokens": 6,
           "thoughtTokens": 6,
           "totalTokens": 6
+        }
+      },
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 17098,
+          "cachedInputTokens": 0,
+          "outputTokens": 405,
+          "thoughtTokens": 704,
+          "totalTokens": 18207
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
         }
       }
     }

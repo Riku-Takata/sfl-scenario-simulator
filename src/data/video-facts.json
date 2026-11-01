@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T15:19:24.768Z",
+  "updatedAt": "2026-11-01T16:04:58.588Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -3478,6 +3478,43 @@
               "evidence": "両方",
               "startSec": 10293,
               "endSec": 10305
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-01T16:04:58.569Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム FINAL ROUNDにて、ガチくんがSA2（イウサール）でナウマンをバーンアウトへ追い込み、ナウマンの切り返しSA2に対してもイウサールの削りと設置プレッシャーで押し切ってラウンドを獲得した。",
+              "evidence": "両方",
+              "startSec": 10260,
+              "endSec": 10305
+            },
+            {
+              "topic": "第2ゲーム ROUND 1にて、ガチくんが画面端でCAを発動してナウマンをバーンアウトさせるも、ナウマンが着地からの切り返しでSA2を成功させ逆転KOを果たした。",
+              "evidence": "両方",
+              "startSec": 10350,
+              "endSec": 10375
+            },
+            {
+              "topic": "第2ゲーム ROUND 2にて、ガチくんのSA2（イウサール）攻勢に対してナウマンがジャストパリィからSA2のパニッシュカウンターを叩き込んで逆転KOし、フルセットへ持ち込んだ。",
+              "evidence": "両方",
+              "startSec": 10413,
+              "endSec": 10442
+            },
+            {
+              "topic": "第3ゲーム FINAL ROUNDにて、ガチくんがナウマンの隙を見逃さずパニッシュカウンターからSA2（イウサール）絡みの高火力コンボを叩き込み、一気に勝負を決めた。",
+              "evidence": "両方",
+              "startSec": 10615,
+              "endSec": 10637
             }
           ]
         }
@@ -11936,6 +11973,7 @@
   },
   "pendingNarrations": [
     "div-s-sec6-m1",
+    "div-f-sec5-m1",
     "div-f-sec5-m2"
   ]
 }

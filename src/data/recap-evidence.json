@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T15:19:38.309Z",
+  "updatedAt": "2026-11-01T16:04:58.603Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -4009,10 +4009,13 @@
       "officialRefs": [
         "div-f-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "FUUDOが操作するエドとOTANIが操作するルークの対戦です。エドがジャストパリィからパニッシュカウンターを取り、空中への追撃コンボからレベル3スーパーアーツ（クリティカルアーツ）を発動します。演出が終了するとルークの体力が削り切られてK.O.となります。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T15:11:03.643Z"
     },
@@ -4033,10 +4036,13 @@
       "officialRefs": [
         "div-f-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "OTANIが操作するルークとFUUDOが操作するエドの対戦です。ルークがエドに対してレベル3スーパーアーツ（ペイルライダー）をヒットさせて大ダメージを与え、ハードノックダウンを奪います。起き上がり後は中距離での牽制や差し合いが続き、エドの通常技牽制に対してルークが踏み込んで攻撃をヒットさせ、パニッシュカウンターとなってエドをK.O.します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T15:11:03.643Z"
     },
@@ -4057,10 +4063,13 @@
       "officialRefs": [
         "div-f-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "エド（FUUDO）がルーク（OTANI）のリバーサル暴れに対してパニッシュカウンターを取り、地上コンボから浮かせ技へ繋いでレベル3スーパーアーツを発動します。演出終了時にルークの体力がゼロとなり、「PERFECT K.O.」が表示されてラウンドが決着します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T15:11:03.643Z"
     },
@@ -4081,10 +4090,13 @@
       "officialRefs": [
         "div-f-sec5-m1-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面端付近でエド（FUUDO）がパニッシュカウンターからコンボを叩き込み、ルーク（OTANI）を画面端に追い詰めて投げを決めます。その後ルークが脱出して互いに距離を取った差し合いが続き、残り時間が少なくなる中でエドの牽制に対してルークが踏み込もうとした瞬間、エドの攻撃がカウンターヒットしてK.O.が決着します。試合終了直後、FUUDO側のチームブースが立ち上がって勝利を喜ぶ様子が映し出されます。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T15:11:03.643Z"
     },
@@ -4321,10 +4333,13 @@
       "officialRefs": [
         "div-f-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのラシード（Nauman）と2Pの春麗（Gachikun）の対戦。ラシードが春麗の攻撃隙に対してパニッシュカウンターを取り、ドライブリッシュを交えた大ダメージコンボを始動。クリティカルアート（CA）までコンボを繋ぎ、春麗の残りの体力をすべて削りきってK.O.となります。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T15:15:55.533Z"
     },
@@ -4345,10 +4360,13 @@
       "officialRefs": [
         "div-f-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのラシードと2Pの春麗の対戦。序盤に春麗がパニッシュカウンターからSA1を組み込んだ大ダメージコンボを決めて大幅な体力リードを獲得。その後、中距離での牽制・間合い管理や投げ抜け、パリィを交えた攻防が続きます。残り時間が少なくなる中、ラシードが立ち回りから攻撃を当てて春麗をK.O.します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T15:15:55.533Z"
     },
@@ -4369,10 +4387,13 @@
       "officialRefs": [
         "div-f-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのラシードと2Pの春麗の対戦。ラシードがSA2「イウサール」を発動し、大きな竜巻を設置して攻め立てます。バーンアウト状態の春麗は防戦を強いられますが、ラシードの攻撃の合間にリバーサルでSA2「鳳扇扇」を合わせてパニッシュカウンターを獲得。そのまま追撃コンボを完走し、ラシードをK.O.します。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T15:15:55.533Z"
     },
@@ -4393,10 +4414,13 @@
       "officialRefs": [
         "div-f-sec5-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのラシードと2Pの春麗の対戦。ラシードが中段攻撃からクリティカルアート（CA）を発動しようとする立ち回りの中で、春麗が切り返しとしてリバーサルSA2を発動。パニッシュカウンターとなり、空中コンボによる追撃でラシードの体力を削りきり、春麗がK.O.を取ります。",
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T15:15:55.533Z"
     },
@@ -4723,6 +4747,102 @@
         "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T15:19:24.770Z"
+    },
+    "ev-f57ef3dcb9fc9b0548cd": {
+      "id": "ev-f57ef3dcb9fc9b0548cd",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 10260,
+      "endSec": 10305,
+      "playerIds": [
+        "ナウマン",
+        "ガチくん"
+      ],
+      "observation": "第1ゲーム FINAL ROUNDにて、ガチくんがSA2（イウサール）でナウマンをバーンアウトへ追い込み、ナウマンの切り返しSA2に対してもイウサールの削りと設置プレッシャーで押し切ってラウンドを獲得した。",
+      "officialRefs": [
+        "div-f-sec5-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-01T16:04:58.569Z"
+    },
+    "ev-d891ca8004b631c30d59": {
+      "id": "ev-d891ca8004b631c30d59",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 10350,
+      "endSec": 10375,
+      "playerIds": [
+        "ナウマン",
+        "ガチくん"
+      ],
+      "observation": "第2ゲーム ROUND 1にて、ガチくんが画面端でCAを発動してナウマンをバーンアウトさせるも、ナウマンが着地からの切り返しでSA2を成功させ逆転KOを果たした。",
+      "officialRefs": [
+        "div-f-sec5-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-01T16:04:58.569Z"
+    },
+    "ev-533e12bda54540110076": {
+      "id": "ev-533e12bda54540110076",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 10413,
+      "endSec": 10442,
+      "playerIds": [
+        "ナウマン",
+        "ガチくん"
+      ],
+      "observation": "第2ゲーム ROUND 2にて、ガチくんのSA2（イウサール）攻勢に対してナウマンがジャストパリィからSA2のパニッシュカウンターを叩き込んで逆転KOし、フルセットへ持ち込んだ。",
+      "officialRefs": [
+        "div-f-sec5-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-01T16:04:58.569Z"
+    },
+    "ev-86769d3c263382a564f4": {
+      "id": "ev-86769d3c263382a564f4",
+      "sectionId": "div-f-sec5",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b0",
+      "kind": "visual",
+      "videoId": "uJmB3lK0WNo",
+      "startSec": 10615,
+      "endSec": 10637,
+      "playerIds": [
+        "ナウマン",
+        "ガチくん"
+      ],
+      "observation": "第3ゲーム FINAL ROUNDにて、ガチくんがナウマンの隙を見逃さずパニッシュカウンターからSA2（イウサール）絡みの高火力コンボを叩き込み、一気に勝負を決めた。",
+      "officialRefs": [
+        "div-f-sec5-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-01T16:04:58.569Z"
     }
   }
 }
