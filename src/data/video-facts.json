@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T11:00:36.351Z",
+  "updatedAt": "2026-11-01T15:19:24.768Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -3254,6 +3254,44 @@
               "endSec": 4606
             }
           ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-01T15:11:03.643Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド、ふ～ど（C.ヴァイパー）が大谷の技に対しジャストパリィからパニッシュカウンターを取り、CA（レベル3スーパーアーツ）を叩き込んでKOを奪い第1ゲームを先制する。",
+              "evidence": "両方",
+              "startSec": 4127,
+              "endSec": 4142
+            },
+            {
+              "topic": "第2ゲーム最終ラウンド、大谷（ルーク）がドライブゲージとSAゲージを注ぎ込む高火力コンボからレベル3クリティカルアート（CA）を叩き込み、一気にふ～どの体力を奪って第2ゲームを奪い返す。",
+              "evidence": "両方",
+              "startSec": 4310,
+              "endSec": 4350
+            },
+            {
+              "topic": "第3ゲーム最終ラウンド、ふ～どが大谷の切り返しを見切ってパニッシュカウンターからCAへと繋ぎ、パーフェクトKOを達成して第3ゲームを獲得する。",
+              "evidence": "両方",
+              "startSec": 4458,
+              "endSec": 4471
+            },
+            {
+              "topic": "第4ゲーム第2ラウンド、ふ～どが大谷のリバーサル技に対してジャストパリィを成功させて有利を保ち、最後はバックジャンプからの攻撃で撃ち落としてマッチ勝利（3-1）を決める。",
+              "evidence": "両方",
+              "startSec": 4566,
+              "endSec": 4606
+            }
+          ]
         }
       ]
     },
@@ -3307,55 +3345,283 @@
       "videoId": "uJmB3lK0WNo",
       "startSec": 6815,
       "endSec": 7251,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T15:12:47.716Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第2ゲーム最終ラウンド、高木ブランカがときどJPの起き上がりリバーサルSA1を垂直ジャンプでかわしてパニッシュカウンターから大ダメージを与え、最後はときどのバーンアウトSA2の連携をパリィと無敵対空技で迎撃して勝利を収めた。",
+              "evidence": "両方",
+              "startSec": 7121,
+              "endSec": 7150
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド終盤、高木ブランカが対空迎撃から画面端でときどJPにドライブインパクトを叩き込んでスタンを奪い、CAでKOして第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 6985,
+              "endSec": 7003
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、高木ブランカが開幕から中段攻撃をヒットさせて画面端へ追い込み、ときどJPのアムネジアをジャストパリィで凌ぐなど猛攻を仕掛け、パニッシュカウンターからの小技コンボで圧倒してラウンドを奪った。",
+              "evidence": "両方",
+              "startSec": 7021,
+              "endSec": 7053
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ときどJPがSA2「ラヴーシュカ」から高木ブランカを画面端へ追い詰めてバーンアウトさせ、壁際でのドライブインパクトでスタンを奪ってCAを叩き込みKOして1-1に追いついた。",
+              "evidence": "両方",
+              "startSec": 7072,
+              "endSec": 7094
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m2-b2": {
       "videoId": "uJmB3lK0WNo",
       "startSec": 7438,
       "endSec": 8599,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T15:14:32.945Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "A",
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1セット最終ラウンド、Jr.の起き上がりリバーサルCAをわびいちがバックステップで回避してパニッシュカウンターを取り、SA3バスターウルフでリーサルを決めて先制する。",
+              "evidence": "両方",
+              "startSec": 7532,
+              "endSec": 7542
+            },
+            {
+              "topic": "第3セット最終ラウンド、CAを構えるJr.がわびいちのジャンプや攻めを警戒しつつ、起き上がりの暴れで放ったODダブルラリアットをヒットさせてKOし、逆転で王手をかける。",
+              "evidence": "両方",
+              "startSec": 8016,
+              "endSec": 8026
+            },
+            {
+              "topic": "第4セット第1ラウンド、追い込まれたわびいちがODパワーウェイブからの攻めや差し返しでJr.を画面端に追い詰め、ノーダメージのままパーフェクトKOを奪う。",
+              "evidence": "両方",
+              "startSec": 8193,
+              "endSec": 8218
+            },
+            {
+              "topic": "第5セット最終ラウンド、互いに体力ミリまで削り合う中、わびいちが中足からのファイヤーキックで押し返し、最後はドライブラッシュからの中段攻撃を通してSA3バスターウルフで劇的な勝利を収める。",
+              "evidence": "両方",
+              "startSec": 8450,
+              "endSec": 8473
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m3-b0": {
       "videoId": "uJmB3lK0WNo",
       "startSec": 10114,
       "endSec": 10738,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T15:15:55.518Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第3ゲーム最終ラウンド、ガチくんがナウマンの牽制の隙に立ち強Pでパニッシュカウンターを取り、SA2イウサールから画面端の特大コンボを完走して一気に体力を奪い切り、最後は追撃でKOして先鋒戦を制した。",
+              "evidence": "両方",
+              "startSec": 10616,
+              "endSec": 10636
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、劣勢に立たされていたナウマンがガチくんの牽制への差し返しからOD技およびSA3超必殺花蝶扇を叩き込んで逆転し、最後は立ち中KでKOしてフルカウントの最終ラウンドへ持ち込んだ。",
+              "evidence": "両方",
+              "startSec": 10547,
+              "endSec": 10598
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ガチくんのSA2イウサールをガードして凌ぎきったナウマンが、バーンアウトしたガチくんに対してジャストパリィからSA2陽炎の舞を叩き込んでKOし、ゲームカウント1-1に追いついた。",
+              "evidence": "両方",
+              "startSec": 10413,
+              "endSec": 10442
+            },
+            {
+              "topic": "第1ゲーム最終ラウンド、バーンアウトしたナウマンに対してガチくんが中段攻撃をヒットさせてからSA2イウサールを発動し、後退するナウマンを捉えてKOし第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 10293,
+              "endSec": 10305
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m3-b1": {
       "videoId": "uJmB3lK0WNo",
       "startSec": 10930,
       "endSec": 11318,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T15:16:28.388Z",
+          "gameWinnersSeen": [
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド、バーンアウトに追い込まれたカワノが、板橋ザンギエフのドライブインパクトを見てからSA1（バルカンブラスト）でパニッシュカウンターを取り逆転KOする",
+              "evidence": "両方",
+              "startSec": 10970,
+              "endSec": 10982
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド、カワノのCAを受けた板橋ザンギエフがリバーサルSA2で位置を入れ替えてカワノをバーンアウトさせるも、カワノが端の攻防を耐えきって前ステップからの投げで決着をつける",
+              "evidence": "両方",
+              "startSec": 11021,
+              "endSec": 11052
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド終盤、カワノが垂直ジャンプからの強パンチでパニッシュカウンターを奪い、そのままSA1へ繋いで先取する",
+              "evidence": "両方",
+              "startSec": 11104,
+              "endSec": 11114
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、板橋ザンギエフがSA3を決めて逆転を狙うが、仕掛けたODシベリアンエクスプレスに対してカワノがドライブインパクトでパニッシュカウンターを取り、コンボを決めて勝利を収める",
+              "evidence": "両方",
+              "startSec": 11132,
+              "endSec": 11160
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m3-b2": {
       "videoId": "uJmB3lK0WNo",
       "startSec": 11535,
       "endSec": 12566,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T15:17:44.070Z",
+          "gameWinnersSeen": [
+            "A",
+            "A",
+            "B",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第4ゲーム最終ラウンド、KEI.Bはしゃがみ中キックからSA2「陽炎の舞」でさはらをバーンアウトさせCAまで繋いだ後、さはらの起き上がり逆転狙いのSA3を動かずに冷静にガードし、確反を決めてパーフェクトK.O.で勝利を収めた。",
+              "evidence": "両方",
+              "startSec": 12423,
+              "endSec": 12445
+            },
+            {
+              "topic": "第1ゲーム最終ラウンド、KEI.Bが3ゲージを保持した状態でさはらの隙に対してしゃがみ中キックの差し返しパニッシュカウンターからCAを叩き込み、第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 11733,
+              "endSec": 11748
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、KEI.Bがさはらのフリッカー牽制の隙に生ラッシュからパニッシュカウンターを奪い、画面端に追い詰めて中下段のラッシュで崩しきりパーフェクトK.O.を獲得した。",
+              "evidence": "両方",
+              "startSec": 11915,
+              "endSec": 11939
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、さはらがドライブラッシュからのコンボを伸ばしてSA3「サイコチェンバー」に繋ぎ、KEI.BをK.O.してストレートで第3ゲームを取り返した。",
+              "evidence": "両方",
+              "startSec": 12090,
+              "endSec": 12106
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec5-m3-b3": {
       "videoId": "uJmB3lK0WNo",
       "startSec": 12824,
       "endSec": 13260,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T15:19:24.758Z",
+          "gameWinnersSeen": [
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第2ゲーム第3ラウンド、ドライブゲージが枯渇寸前の竹内ジョンが起死回生のリバーサルSA3を放つも、ぷげらに冷静にガードされパニッシュカウンターからCAコンボを叩き込まれてKO決着となる。",
+              "evidence": "両方",
+              "startSec": 13145,
+              "endSec": 13158
+            },
+            {
+              "topic": "第1ゲーム第3ラウンド、バーンアウトに追い込まれた竹内ジョンがリバーサルSA3で切り返しを狙うが、ぷげらにガードされてパニッシュカウンターからKOを奪われ、ぷげらが第1ゲームを先取する。",
+              "evidence": "両方",
+              "startSec": 12989,
+              "endSec": 12996
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド、ぷげらが立ち中Kのパニッシュカウンターから即座にCAへ繋いでパーフェクトKOを奪い、ラウンドカウントを1-1に戻す。",
+              "evidence": "両方",
+              "startSec": 12927,
+              "endSec": 12937
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、ぷげらのバウンサーステップの隙を突いて竹内ジョンがパニッシュカウンターからSA1を絡めて端へ運び、最後はぷげらのリバーサルSA1をガードしてパニッシュカウンターでKOを奪う。",
+              "evidence": "両方",
+              "startSec": 13040,
+              "endSec": 13081
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec6-m1-b0": {
       "videoId": "bHJ4IMV5cro",
@@ -11669,6 +11935,7 @@
     }
   },
   "pendingNarrations": [
-    "div-s-sec6-m1"
+    "div-s-sec6-m1",
+    "div-f-sec5-m2"
   ]
 }
