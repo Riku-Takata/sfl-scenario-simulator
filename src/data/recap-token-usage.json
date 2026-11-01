@@ -451,54 +451,54 @@
     },
     "2026-11-02": {
       "gemini:extract:gemini-3.6-flash": {
-        "responses": 2,
+        "responses": 3,
         "tokens": {
-          "inputTokens": 127287,
+          "inputTokens": 197613,
           "cachedInputTokens": 0,
-          "outputTokens": 837,
-          "thoughtTokens": 4534,
-          "totalTokens": 132658
+          "outputTokens": 1334,
+          "thoughtTokens": 6883,
+          "totalTokens": 205830
         },
         "observations": {
-          "inputTokens": 2,
-          "cachedInputTokens": 2,
-          "outputTokens": 2,
-          "thoughtTokens": 2,
-          "totalTokens": 2
+          "inputTokens": 3,
+          "cachedInputTokens": 3,
+          "outputTokens": 3,
+          "thoughtTokens": 3,
+          "totalTokens": 3
         }
       },
       "gemini:verify:gemini-3.6-flash": {
-        "responses": 7,
+        "responses": 11,
         "tokens": {
-          "inputTokens": 95992,
+          "inputTokens": 157169,
           "cachedInputTokens": 0,
-          "outputTokens": 3399,
-          "thoughtTokens": 9845,
-          "totalTokens": 109236
+          "outputTokens": 5290,
+          "thoughtTokens": 15731,
+          "totalTokens": 178190
         },
         "observations": {
-          "inputTokens": 7,
-          "cachedInputTokens": 7,
-          "outputTokens": 7,
-          "thoughtTokens": 7,
-          "totalTokens": 7
+          "inputTokens": 11,
+          "cachedInputTokens": 11,
+          "outputTokens": 11,
+          "thoughtTokens": 11,
+          "totalTokens": 11
         }
       },
       "gemini:extract:gemini-3.8-flash": {
-        "responses": 6,
+        "responses": 9,
         "tokens": {
-          "inputTokens": 374680,
+          "inputTokens": 515260,
           "cachedInputTokens": 0,
-          "outputTokens": 2395,
-          "thoughtTokens": 11355,
-          "totalTokens": 388430
+          "outputTokens": 3644,
+          "thoughtTokens": 16263,
+          "totalTokens": 535167
         },
         "observations": {
-          "inputTokens": 6,
-          "cachedInputTokens": 6,
-          "outputTokens": 6,
-          "thoughtTokens": 6,
-          "totalTokens": 6
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
         }
       },
       "gemini:verify:gemini-3.8-flash": {

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T20:27:17.802Z",
+  "updatedAt": "2026-11-01T23:10:08.318Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -4039,37 +4039,194 @@
       "videoId": "bHJ4IMV5cro",
       "startSec": 9040,
       "endSec": 9806,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-01T23:01:45.743Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲームのファイナルラウンドにて、takepi（JP）が近距離の切り返しとしてODアムネジアを成功させ、コンボからCAを叩き込んで第1ゲームを先取する。",
+              "evidence": "両方",
+              "startSec": 9180,
+              "endSec": 9203
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、cosa（豪鬼）が開幕からジャストパリィを決めてパニッシュカウンターコンボへ繋ぎ、怒涛のラッシュでパーフェクトK.O.を達成する。",
+              "evidence": "両方",
+              "startSec": 9366,
+              "endSec": 9394
+            },
+            {
+              "topic": "第2ゲームファイナルラウンド、cosa（豪鬼）がODアムネジアを警戒させた展開から中段攻撃を叩き込み、CA（瞬獄殺）まで繋いでラウンドを制しセットカウント1-1に追いつく。",
+              "evidence": "両方",
+              "startSec": 9520,
+              "endSec": 9535
+            },
+            {
+              "topic": "第3ゲーム第1ラウンド、takepi（JP）がcosa（豪鬼）をバーンアウトに追い込み、画面端でのOD必殺技による削り攻撃でラウンドを獲得する。",
+              "evidence": "両方",
+              "startSec": 9615,
+              "endSec": 9628
+            },
+            {
+              "topic": "最終ゲームの決定局、cosa（豪鬼）がガード崩しの手段として中段攻撃を通し、最後はCA（瞬獄殺）でパーフェクトK.O.を決め、BO3の戦いを2-1で制する。",
+              "evidence": "両方",
+              "startSec": 9690,
+              "endSec": 9707
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec6-m3-b0": {
       "videoId": "bHJ4IMV5cro",
       "startSec": 11434,
       "endSec": 11991,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T23:04:56.932Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第3ゲーム最終ラウンド、鶏めしがジャンプ強攻撃の飛び込みから確実に地上コンボを繋ぎ、CA（ヨガサンクション）で締めくくって2連続パーフェクトKOで試合を決めた。",
+              "evidence": "両方",
+              "startSec": 11871,
+              "endSec": 11886
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、鶏めしがラッシュで距離を詰めてきたもけにジャストパリィを合わせてパニッシュカウンターからコンボを叩き込み、パーフェクトKOで最終ラウンドへ持ち込んだ。",
+              "evidence": "両方",
+              "startSec": 11833,
+              "endSec": 11843
+            },
+            {
+              "topic": "第1ゲーム第3ラウンド、鶏めしがリバーサルSA3をパニッシュカウンターでヒットさせて大ダメージを奪い、もけをバーンアウトへ追い込んだ末に削り倒して先制した。",
+              "evidence": "両方",
+              "startSec": 11570,
+              "endSec": 11602
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、もけが画面端付近で相手の暴れをパニッシュカウンターで捉え、CA（不知火流・九尾の狐）を叩き込んで逆転KOし第2ゲームを奪い返した。",
+              "evidence": "両方",
+              "startSec": 11719,
+              "endSec": 11732
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec6-m3-b1": {
       "videoId": "bHJ4IMV5cro",
       "startSec": 12205,
       "endSec": 12514,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T23:07:44.448Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第2ゲーム第3ラウンド、SA3ゲージを保持した藤村がジョニィをバーンアウトに追い込み、ハイジャンプ強パンチのパニッシュカウンターからSA3を叩き込んでK.O.し勝利を決める。",
+              "evidence": "両方",
+              "startSec": 12412,
+              "endSec": 12429
+            },
+            {
+              "topic": "第1ゲーム第1ラウンド、ジョニィがエレナの長いリーチを活かした牽制と差し返しで藤村を完封し、パーフェクトK.O.で先制する。",
+              "evidence": "両方",
+              "startSec": 12220,
+              "endSec": 12251
+            },
+            {
+              "topic": "第1ゲーム第3ラウンド、藤村が対空迎撃から画面端にジョニィを追い詰めて脱出を許さず、起き攻めの読み合いからしゃがみ中キックをヒットさせて第1ゲームを逆転奪取する。",
+              "evidence": "両方",
+              "startSec": 12292,
+              "endSec": 12317
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、藤村が強パンチのねじ込みや暴れ潰しのODサイズモを機能させて主導権を握り、起き攻めで投げを通してラウンドを先取する。",
+              "evidence": "両方",
+              "startSec": 12352,
+              "endSec": 12363
+            }
+          ]
+        }
+      ]
     },
     "div-s-sec6-m3-b2": {
       "videoId": "bHJ4IMV5cro",
       "startSec": 12711,
       "endSec": 13369,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-01T23:10:08.311Z",
+          "gameWinnersSeen": [
+            "A",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド、りゅうきちが2BASSAの切り返しを冷静に対処してパニッシュカウンターから攻勢をかけ、バーンアウトに追い込んだ2BASSAを画面端のドライブインパクトでスタンさせてラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 12764,
+              "endSec": 12779
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド終盤、りゅうきちが2BASSAの技の空振りに的確に差し返してパニッシュカウンターを取り、CAまで繋ぐ高火力コンボで一気に体力を削り切って第1ゲームを獲得した。",
+              "evidence": "両方",
+              "startSec": 12815,
+              "endSec": 12831
+            },
+            {
+              "topic": "第2ゲーム第3ラウンド、2BASSAの無敵技による暴れをガードしたりゅうきちが、バーンアウト状態ながらも最後は2BASSAのドライブインパクトを打撃連動で押し切って第2ゲームを制した。",
+              "evidence": "両方",
+              "startSec": 13007,
+              "endSec": 13022
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、ドライブゲージが枯渇した2BASSAの足元へりゅうきちが下段の中足をヒットさせ、そのままCAへ繋げる確定コンボでKOして3-0のストレート勝利を収めた。",
+              "evidence": "両方",
+              "startSec": 13247,
+              "endSec": 13263
+            }
+          ]
+        }
+      ]
     }
   },
   "narratives": {
