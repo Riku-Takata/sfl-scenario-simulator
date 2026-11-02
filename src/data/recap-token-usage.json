@@ -519,18 +519,18 @@
         }
       },
       "codex:narration:codex-cli": {
-        "responses": 3,
+        "responses": 4,
         "tokens": {
-          "inputTokens": 59683,
+          "inputTokens": 78428,
           "cachedInputTokens": 0,
-          "outputTokens": 4619,
-          "thoughtTokens": 150
+          "outputTokens": 5945,
+          "thoughtTokens": 255
         },
         "observations": {
-          "inputTokens": 3,
-          "cachedInputTokens": 3,
-          "outputTokens": 3,
-          "thoughtTokens": 3
+          "inputTokens": 4,
+          "cachedInputTokens": 4,
+          "outputTokens": 4,
+          "thoughtTokens": 4
         }
       }
     }
@@ -542,6 +542,7 @@
     "9d0b79d3-7b93-4143-8438-d7be98f97091",
     "e8e9d9a6-2d79-4d59-a79d-7a41ffaf2904",
     "2da01b63-a75c-4352-9137-9c0f84750ef6",
-    "d81e6075-6b32-435e-89f5-79f36f8c37c4"
+    "d81e6075-6b32-435e-89f5-79f36f8c37c4",
+    "3c28f79f-9cec-4934-a4ea-a88d055f42f2"
   ]
 }

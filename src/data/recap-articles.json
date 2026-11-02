@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T07:55:58.795Z",
+  "updatedAt": "2026-11-02T08:01:40.838Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -2479,6 +2479,191 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-02T07:55:58.486Z"
+    },
+    "div-s-sec6-m3-b0:1c6223233503c3ba:published": {
+      "articleId": "div-s-sec6-m3-b0:1c6223233503c3ba:published",
+      "matchId": "div-s-sec6-m3",
+      "boutId": "div-s-sec6-m3-b0",
+      "revision": "1c6223233503c3ba",
+      "status": "passed",
+      "summary": "鶏めし選手がもけ選手を2-1で下し、FUKUSHIMA IBUSHIGINが先行。第1ゲームを先取し、第2ゲームを取り返された後、第3ゲームを勝ち切った。",
+      "summaryEvidenceIds": [
+        "ev-060caff547e839f71d95"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第3ラウンド、鶏めしがリバーサルSA3を当て、もけをバーンアウトに追い込んだ。",
+          "evidenceIds": [
+            "ev-d17c1dc4f36d3ff681f3"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンド、鶏めしがジャストパリィを成功させ、パニッシュカウンターからのコンボでパーフェクトKOを奪って最終ラウンドへ持ち込んだ。",
+          "evidenceIds": [
+            "ev-12445dda4ad565db328e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-060caff547e839f71d95",
+        "ev-d17c1dc4f36d3ff681f3",
+        "ev-12445dda4ad565db328e"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:01:40.820Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:01:40.820Z"
+    },
+    "div-s-sec6-m3-b1:0a4c8ff12e61c9ed:published": {
+      "articleId": "div-s-sec6-m3-b1:0a4c8ff12e61c9ed:published",
+      "matchId": "div-s-sec6-m3",
+      "boutId": "div-s-sec6-m3-b1",
+      "revision": "0a4c8ff12e61c9ed",
+      "status": "passed",
+      "summary": "藤村選手がジョニィ選手に2-0で勝利し、KADOKAWA FAV gamingが先鋒戦の敗戦から星を取り返した。ジョニィにパーフェクトKOを許す立ち上がりから、両ゲームを取り切った。",
+      "summaryEvidenceIds": [
+        "ev-fd2aa52700d68e0bfa79",
+        "ev-ba761090bc9f68009b3c"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第1ラウンド、ジョニィがパニッシュカウンターからコンボを決め、画面端で攻撃を継続してパーフェクトKOで先取した。",
+          "evidenceIds": [
+            "ev-ba761090bc9f68009b3c"
+          ]
+        },
+        {
+          "text": "第2ゲーム第3ラウンド、藤村がジャンプ攻撃でパニッシュカウンターを取り、コンボからCAにつないでジョニィの体力を削り切った。",
+          "evidenceIds": [
+            "ev-19819146e84d10aab4eb"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-fd2aa52700d68e0bfa79",
+        "ev-ba761090bc9f68009b3c",
+        "ev-19819146e84d10aab4eb"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:01:40.820Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:01:40.820Z"
+    },
+    "div-s-sec6-m3-b2:843409738f7a1961:published": {
+      "articleId": "div-s-sec6-m3-b2:843409738f7a1961:published",
+      "matchId": "div-s-sec6-m3",
+      "boutId": "div-s-sec6-m3-b2",
+      "revision": "843409738f7a1961",
+      "status": "passed",
+      "summary": "りゅうきち選手が2BASSA選手を3-0で下し、KADOKAWA FAV gamingの勝利を決めた。第1ゲームをCAにつなぐコンボで締め、その後もゲームを渡さず大将戦を取り切った。",
+      "summaryEvidenceIds": [
+        "ev-0cf5614963d7cf290efd",
+        "ev-00f41d96b85a7ce71190"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第1ラウンド、りゅうきちが2BASSAの切り返しに対応してパニッシュカウンターからコンボを決め、バーンアウトした相手を画面端のドライブインパクトでスタンさせて先取した。",
+          "evidenceIds": [
+            "ev-676f898bf8e8169f07c8"
+          ]
+        },
+        {
+          "text": "第1ゲーム第2ラウンド終盤、りゅうきちがCAまでつなぐコンボで2BASSAの体力を削り切り、第1ゲームを獲得した。",
+          "evidenceIds": [
+            "ev-00f41d96b85a7ce71190"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-0cf5614963d7cf290efd",
+        "ev-00f41d96b85a7ce71190",
+        "ev-676f898bf8e8169f07c8"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:01:40.820Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:01:40.820Z"
+    },
+    "div-s-sec6-m3:6fba205eb69d413d:published": {
+      "articleId": "div-s-sec6-m3:6fba205eb69d413d:published",
+      "matchId": "div-s-sec6-m3",
+      "revision": "6fba205eb69d413d",
+      "status": "passed",
+      "headline": "FAVが中堅・大将戦を連取し30-10で勝利",
+      "summary": "KADOKAWA FAV gamingがFUKUSHIMA IBUSHIGINに30-10で勝利した。先鋒戦は鶏めしが第1ゲームを取り、もけに第2ゲームを返されたものの、第3ゲームを制してIBUSHIGINが先行。最終ゲームではジャストパリィからのコンボでパーフェクトKOを奪う場面もあった。中堅戦はジョニィがパーフェクトKOで立ち上がったが、藤村がゲームを渡さず2-0で勝利。大将戦ではりゅうきちが第1ゲームをCAにつなぐコンボで取り、その後も連取して3-0で締めくくった。",
+      "summaryEvidenceIds": [
+        "ev-060caff547e839f71d95",
+        "ev-12445dda4ad565db328e",
+        "ev-fd2aa52700d68e0bfa79",
+        "ev-ba761090bc9f68009b3c",
+        "ev-0cf5614963d7cf290efd",
+        "ev-00f41d96b85a7ce71190"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-060caff547e839f71d95",
+        "ev-12445dda4ad565db328e",
+        "ev-fd2aa52700d68e0bfa79",
+        "ev-ba761090bc9f68009b3c",
+        "ev-0cf5614963d7cf290efd",
+        "ev-00f41d96b85a7ce71190"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:01:40.821Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:01:40.821Z"
     }
   }
 }
