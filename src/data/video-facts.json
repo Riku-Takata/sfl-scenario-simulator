@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T08:05:52.573Z",
+  "updatedAt": "2026-11-02T08:07:58.987Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -5075,6 +5075,109 @@
               "text": "第4ゲーム第1ラウンド、ふ～どは大谷のODライジングアッパーをガードし、確定反撃のパニッシュカウンターコンボでKOしてラウンドを先取した。",
               "evidenceIds": [
                 "ev-87c95592bf7d45efb644"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec5-m3": {
+      "inputHash": "a46356df4791fb19",
+      "model": "codex-cli",
+      "generatedAt": "2026-11-02T08:07:31.129Z",
+      "matchHeadline": "Good 8 Squad、延長戦を制して30対20で勝利",
+      "matchSummary": "Good 8 SquadがDetonatioN FocusMeとの延長戦を制し、30対20で勝利した。先鋒戦はガチくんがナウマンに2-1で勝利し、中堅戦もカワノが板橋ザンギエフを2-0で下して連勝。大将戦ではKEI.Bが第1・第2ゲームを連取し、さはらに第3ゲームを返されながらも3-1で勝ち、決着を延長戦へ持ち込んだ。最後はぷげらが竹内ジョンを2-0で下した。延長戦の第2ゲームでは、リバーサル技をガードしたぷげらがパニッシュカウンターからスーパーアーツにつなぎ、勝負を決めた。",
+      "matchEvidenceIds": [
+        "ev-10ddd75b13722aadbba2",
+        "ev-996603fc7046989b64c1",
+        "ev-7d902d80cbb135991e66",
+        "ev-83d01366a8ace04d5262",
+        "ev-9b8c872f12b6e96299a4"
+      ],
+      "bouts": [
+        {
+          "boutId": "div-f-sec5-m3-b0",
+          "summary": "先鋒戦はガチくんがナウマンを2-1で下し、Good 8 Squadが先制した。第1ゲームを取り、第2ゲームを返された後、最終ゲームを取り切った。",
+          "summaryEvidenceIds": [
+            "ev-10ddd75b13722aadbba2"
+          ],
+          "keyPoints": [
+            {
+              "text": "第2ゲーム第2ラウンドは、ガチくんのSA2「イウサール」による攻勢を受けたナウマンが、SA2をパニッシュカウンターで決めてKOし、ゲームを取り返した。",
+              "evidenceIds": [
+                "ev-533e12bda54540110076",
+                "ev-10ddd75b13722aadbba2"
+              ]
+            },
+            {
+              "text": "第3ゲーム最終ラウンドでは、ガチくんがナウマンの隙にパニッシュカウンターを取り、KOまでつなげて先鋒戦を締めくくった。",
+              "evidenceIds": [
+                "ev-86769d3c263382a564f4",
+                "ev-10ddd75b13722aadbba2"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-f-sec5-m3-b1",
+          "summary": "中堅戦はカワノが板橋ザンギエフに2-0で勝利した。先鋒戦に続いてGood 8 Squadが白星を重ね、DetonatioN FocusMeは大将戦での巻き返しを目指す展開となった。",
+          "summaryEvidenceIds": [
+            "ev-996603fc7046989b64c1"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム第1ラウンドは、カワノがパニッシュカウンターからコンボを決め、板橋ザンギエフをKOして先取した。",
+              "evidenceIds": [
+                "ev-8d88f69a671d4db7e081"
+              ]
+            },
+            {
+              "text": "第2ゲーム第1ラウンドでも、カワノはパニッシュカウンターを起点にスーパーアーツへつなぎ、KOを奪った。",
+              "evidenceIds": [
+                "ev-14b7225760c3bb005c00"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-f-sec5-m3-b2",
+          "summary": "大将戦はKEI.Bがさはらを3-1で下した。第1・第2ゲームを連取し、第3ゲームを返された後に第4ゲームを獲得して、DetonatioN FocusMeが延長戦へ持ち込んだ。",
+          "summaryEvidenceIds": [
+            "ev-7d902d80cbb135991e66"
+          ],
+          "keyPoints": [
+            {
+              "text": "第2ゲーム第2ラウンドは、KEI.Bが差し返しのパニッシュカウンターからドライブラッシュを組み込んだ攻めを続け、パーフェクトKOを奪った。",
+              "evidenceIds": [
+                "ev-1cb7daa8e54571ce9898"
+              ]
+            },
+            {
+              "text": "第3ゲーム第2ラウンドは、さはらがSA3を決めてKEI.BをKOし、このゲームを2ラウンド連取で取り返した。",
+              "evidenceIds": [
+                "ev-82073fd50cef96116017",
+                "ev-7d902d80cbb135991e66"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-f-sec5-m3-b3",
+          "summary": "延長戦はぷげらが竹内ジョンに2-0で勝利した。第1・第2ゲームを続けて取り、大将戦で追いつかれたGood 8 Squadのチーム戦勝利を決めた。",
+          "summaryEvidenceIds": [
+            "ev-83d01366a8ace04d5262"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム最終ラウンドは、リバーサル技がガードされ、パニッシュカウンターからKOに至る決着となった。",
+              "evidenceIds": [
+                "ev-11665dd6feef02864643"
+              ]
+            },
+            {
+              "text": "第2ゲーム最終ラウンドでは、ぷげらが竹内ジョンのリバーサル技を防ぎ、パニッシュカウンターからコンボをスーパーアーツにつないでKOした。",
+              "evidenceIds": [
+                "ev-9b8c872f12b6e96299a4"
               ]
             }
           ]
@@ -12506,7 +12609,5 @@
       "runs": []
     }
   },
-  "pendingNarrations": [
-    "div-f-sec5-m3"
-  ]
+  "pendingNarrations": []
 }
