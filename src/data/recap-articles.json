@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T08:01:40.838Z",
+  "updatedAt": "2026-11-02T08:03:43.294Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -2664,6 +2664,213 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-02T08:01:40.821Z"
+    },
+    "div-f-sec5-m1-b0:d4bb38a4351a97b5:published": {
+      "articleId": "div-f-sec5-m1-b0:d4bb38a4351a97b5:published",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b0",
+      "revision": "d4bb38a4351a97b5",
+      "status": "passed",
+      "summary": "先鋒戦はYASがもっちーを2-0で下し、REJECTが先制した。第2ゲームの最終ラウンドは、相手の切り返しの空振りにパニッシュカウンターを決めて締めた。",
+      "summaryEvidenceIds": [
+        "ev-86539a1f42273585fd1d",
+        "ev-766fcd4c3914584a1d7d"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第1ラウンド、YASはもっちーのリバーサル無敵技の空振りに立ち強Kでパニッシュカウンターを取り、OD波掌撃から昇龍拳につないだ。",
+          "evidenceIds": [
+            "ev-8f6d624ce552a9991681"
+          ]
+        },
+        {
+          "text": "第1ゲーム第2ラウンドは、YASがドライブインパクトをジャストパリィで受け止め、パニッシュカウンターからOD必殺技を絡めたコンボを決めたが、追撃は落とした。",
+          "evidenceIds": [
+            "ev-04681ed026ffbf8a131f"
+          ]
+        },
+        {
+          "text": "第2ゲーム第3ラウンド、YASは投げから起き上がりに技を重ね、もっちーのリバーサル技が空振りしたところへパニッシュカウンターからコンボを決めてKOした。",
+          "evidenceIds": [
+            "ev-766fcd4c3914584a1d7d"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-86539a1f42273585fd1d",
+        "ev-766fcd4c3914584a1d7d",
+        "ev-8f6d624ce552a9991681",
+        "ev-04681ed026ffbf8a131f"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:03:43.247Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:03:43.247Z"
+    },
+    "div-f-sec5-m1-b1:2d949dac77b1ced3:published": {
+      "articleId": "div-f-sec5-m1-b1:2d949dac77b1ced3:published",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b1",
+      "revision": "2d949dac77b1ced3",
+      "status": "passed",
+      "summary": "中堅のひなおはらおやむに2-0で勝ち、REJECTが先鋒に続いて勝利した。第2ゲームの決着ではCA「ペイルライダー」を決め、起き上がりへのODサンドブラストで取り切った。",
+      "summaryEvidenceIds": [
+        "ev-85fccab06915fad2479e",
+        "ev-c0b6deb0600d2f245f8e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第1ラウンド終盤、ひなおはバーンアウト状態の相手にODサンドブラストを当ててKOし、先制ラウンドを奪った。",
+          "evidenceIds": [
+            "ev-4d3a0706ea86ad3826ed"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンド、ひなおは前投げ後の起き上がりに立ち強Kをカウンターヒットさせ、自身がバーンアウトしながらもコンボをライジングアッパーで締めてKOした。",
+          "evidenceIds": [
+            "ev-108752058a40d56a0d40"
+          ]
+        },
+        {
+          "text": "第2ゲーム第2ラウンドは、画面端のコンボからCA「ペイルライダー」につなぎ、体力がわずかに残った相手の起き上がりにODサンドブラストを当てて決着させた。",
+          "evidenceIds": [
+            "ev-c0b6deb0600d2f245f8e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-85fccab06915fad2479e",
+        "ev-c0b6deb0600d2f245f8e",
+        "ev-4d3a0706ea86ad3826ed",
+        "ev-108752058a40d56a0d40"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:03:43.247Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:03:43.247Z"
+    },
+    "div-f-sec5-m1-b2:50e3ce70e8bbb0e9:published": {
+      "articleId": "div-f-sec5-m1-b2:50e3ce70e8bbb0e9:published",
+      "matchId": "div-f-sec5-m1",
+      "boutId": "div-f-sec5-m1-b2",
+      "revision": "50e3ce70e8bbb0e9",
+      "status": "passed",
+      "summary": "大将戦はふ～どが大谷に3-1で勝利した。第2ゲームを取り返された後、第3ゲーム最終ラウンドをCAによるパーフェクトKOで制し、第4ゲームも取ってREJECTの全勝を決めた。",
+      "summaryEvidenceIds": [
+        "ev-e02e9b6ce8c5644b9600",
+        "ev-8bbbc6a879e7a0f286b2"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンド、ふ～どはジャストパリィからパニッシュカウンターを取り、追撃をCAにつないでKOし、第1ゲームを先取した。",
+          "evidenceIds": [
+            "ev-84b2d491069a19bb2856"
+          ]
+        },
+        {
+          "text": "第3ゲーム最終ラウンドは、大谷のリバーサルにパニッシュカウンターを決め、コンボからCAにつないでパーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-8bbbc6a879e7a0f286b2"
+          ]
+        },
+        {
+          "text": "第4ゲーム第1ラウンド、ふ～どは大谷のODライジングアッパーをガードし、確定反撃のパニッシュカウンターコンボでKOしてラウンドを先取した。",
+          "evidenceIds": [
+            "ev-87c95592bf7d45efb644"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-e02e9b6ce8c5644b9600",
+        "ev-8bbbc6a879e7a0f286b2",
+        "ev-84b2d491069a19bb2856",
+        "ev-87c95592bf7d45efb644"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:03:43.248Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:03:43.248Z"
+    },
+    "div-f-sec5-m1:59d201e2fc153aba:published": {
+      "articleId": "div-f-sec5-m1:59d201e2fc153aba:published",
+      "matchId": "div-f-sec5-m1",
+      "revision": "59d201e2fc153aba",
+      "status": "passed",
+      "headline": "REJECTが全対戦を制し40-0で勝利",
+      "summary": "REJECTがAWAYで名古屋NTPOJAを40-0で下した。先鋒のYASはもっちーに2-0で勝利。決着場面では相手の切り返しが空振りした隙にパニッシュカウンターを決めた。中堅のひなおもらおやむを2-0で退け、REJECTが連勝。第2ゲームの締めはCAからODサンドブラストにつないだ。大将戦はふ～どが先取した後、大谷が第2ゲームを取り返したが、ふ～どが第3ゲーム最終ラウンドをCAによるパーフェクトKOで制し、第4ゲームも獲得。3-1で勝ち切り、チームの全勝を決めた。",
+      "summaryEvidenceIds": [
+        "ev-86539a1f42273585fd1d",
+        "ev-766fcd4c3914584a1d7d",
+        "ev-85fccab06915fad2479e",
+        "ev-c0b6deb0600d2f245f8e",
+        "ev-e02e9b6ce8c5644b9600",
+        "ev-8bbbc6a879e7a0f286b2"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-86539a1f42273585fd1d",
+        "ev-766fcd4c3914584a1d7d",
+        "ev-85fccab06915fad2479e",
+        "ev-c0b6deb0600d2f245f8e",
+        "ev-e02e9b6ce8c5644b9600",
+        "ev-8bbbc6a879e7a0f286b2"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:03:43.248Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:03:43.248Z"
     }
   }
 }
