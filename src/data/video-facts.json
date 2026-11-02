@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T04:01:09.222Z",
+  "updatedAt": "2026-11-02T05:52:06.920Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -12315,9 +12315,9 @@
     }
   },
   "pendingNarrations": [
-    "div-s-sec6-m1",
-    "div-s-sec6-m3",
     "div-f-sec5-m1",
-    "div-f-sec5-m3"
+    "div-f-sec5-m3",
+    "div-s-sec6-m1",
+    "div-s-sec6-m3"
   ]
 }
