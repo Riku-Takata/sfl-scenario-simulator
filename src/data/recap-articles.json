@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T08:03:43.294Z",
+  "updatedAt": "2026-11-02T08:05:52.599Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -2871,6 +2871,198 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-02T08:03:43.248Z"
+    },
+    "div-f-sec5-m2-b0:49f2fa016eece5b1:published": {
+      "articleId": "div-f-sec5-m2-b0:49f2fa016eece5b1:published",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b0",
+      "revision": "49f2fa016eece5b1",
+      "status": "passed",
+      "summary": "マゴ選手（不知火舞）があでりい選手（エド）を2-0で下し、VARRELが先制した。開幕ラウンドをパーフェクトKOで取り、両ゲームを勝ち切った。",
+      "summaryEvidenceIds": [
+        "ev-89135caa81ab92c51566",
+        "ev-5c036385ca8db6b2c65b"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第1ラウンド、マゴは開幕から攻撃を通し、画面端付近でシミーによって投げ抜けや暴れを咎め、一度もダメージを受けずにパーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-5c036385ca8db6b2c65b"
+          ]
+        },
+        {
+          "text": "第2ゲーム第2ラウンドは、あでりいが早い時間帯のSA3で大きく体力を奪い、さらにドライブラッシュを絡めたコンボをバーンアウトしながら完走して最終ラウンドへ持ち込んだ。",
+          "evidenceIds": [
+            "ev-47b5c3e85ea4a90984f7"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-89135caa81ab92c51566",
+        "ev-5c036385ca8db6b2c65b",
+        "ev-47b5c3e85ea4a90984f7"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:05:52.575Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:05:52.575Z"
+    },
+    "div-f-sec5-m2-b1:1b7996980e8f1c4a:published": {
+      "articleId": "div-f-sec5-m2-b1:1b7996980e8f1c4a:published",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b1",
+      "revision": "1b7996980e8f1c4a",
+      "status": "passed",
+      "summary": "高木選手（ブランカ）がときど選手（JP）に2-0で勝利し、RIDDLE ORDERが追いついた。画面端のスタンからCAで第1ゲームを取り、第2ゲームも奪った。",
+      "summaryEvidenceIds": [
+        "ev-e6e5ae552d5e96876fe9",
+        "ev-170ffae4af668506e355"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンド終盤、高木は画面端でときどをスタンさせ、人形を設置したコンボからCAにつないでゲームを先取した。",
+          "evidenceIds": [
+            "ev-170ffae4af668506e355"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンド、高木は序盤から画面端へ押し込み、ときどのリバーサル攻撃にジャストパリィからパニッシュカウンターを決め、終盤もコンボで取り切った。",
+          "evidenceIds": [
+            "ev-aa40f6c2c86065a25f4a"
+          ]
+        },
+        {
+          "text": "第2ゲーム第2ラウンドは、ときどが高木をバーンアウトに追い込み、画面端のドライブインパクトでスタンを奪ってCAでKOし、ラウンドを取り返した。",
+          "evidenceIds": [
+            "ev-8e65a3f02862d64984e5"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-e6e5ae552d5e96876fe9",
+        "ev-170ffae4af668506e355",
+        "ev-aa40f6c2c86065a25f4a",
+        "ev-8e65a3f02862d64984e5"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:05:52.575Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:05:52.575Z"
+    },
+    "div-f-sec5-m2-b2:4fa2cc965672fd33:published": {
+      "articleId": "div-f-sec5-m2-b2:4fa2cc965672fd33:published",
+      "matchId": "div-f-sec5-m2",
+      "boutId": "div-f-sec5-m2-b2",
+      "revision": "4fa2cc965672fd33",
+      "status": "passed",
+      "summary": "わびいち選手（テリー）がJr.選手（ザンギエフ）との大将戦を3-2で制した。先取後に2ゲームを連取されたが、第4・第5ゲームを取り返し、VARRELの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-e1fb1eab6dd76af1f582"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム最終ラウンド、わびいちは起き上がりのリバーサルCAをバックステップでかわし、空振りにパニッシュカウンターからコンボを決めて先取した。",
+          "evidenceIds": [
+            "ev-e302ff0bfa8b3623e3ef"
+          ]
+        },
+        {
+          "text": "第4ゲーム第1ラウンド、わびいちはパニッシュカウンターからコンボにつなぎ、画面端で攻めを重ねて無傷のままパーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-a024b38005167ebe7d2c"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-e1fb1eab6dd76af1f582",
+        "ev-e302ff0bfa8b3623e3ef",
+        "ev-a024b38005167ebe7d2c"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:05:52.575Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:05:52.575Z"
+    },
+    "div-f-sec5-m2:f5498db13dd98545:published": {
+      "articleId": "div-f-sec5-m2:f5498db13dd98545:published",
+      "matchId": "div-f-sec5-m2",
+      "revision": "f5498db13dd98545",
+      "status": "passed",
+      "headline": "VARRELが30-10で勝利、わびいちが大将戦を制す",
+      "summary": "VARRELがRIDDLE ORDERに30-10で勝利した。先鋒戦はマゴが開幕ラウンドにパーフェクトKOを奪い、あでりいを2-0で下して先制。中堅戦では高木が画面端のスタンからCAにつなぐなどしてときどに2-0で勝ち、RIDDLE ORDERが追いついた。大将戦はわびいちが先取した後、Jr.が2ゲームを連取。後がなくなったわびいちは第4ゲームの第1ラウンドをパーフェクトKOで取り、ゲームも奪い返した。最終第5ゲームも制して3-2で勝利し、VARRELのチーム勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-89135caa81ab92c51566",
+        "ev-5c036385ca8db6b2c65b",
+        "ev-e6e5ae552d5e96876fe9",
+        "ev-170ffae4af668506e355",
+        "ev-e1fb1eab6dd76af1f582",
+        "ev-a024b38005167ebe7d2c"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-89135caa81ab92c51566",
+        "ev-5c036385ca8db6b2c65b",
+        "ev-e6e5ae552d5e96876fe9",
+        "ev-170ffae4af668506e355",
+        "ev-e1fb1eab6dd76af1f582",
+        "ev-a024b38005167ebe7d2c"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:05:52.575Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:05:52.575Z"
     }
   }
 }
