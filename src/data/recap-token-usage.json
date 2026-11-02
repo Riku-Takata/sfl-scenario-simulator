@@ -485,37 +485,37 @@
         }
       },
       "gemini:extract:gemini-3.8-flash": {
-        "responses": 9,
+        "responses": 10,
         "tokens": {
-          "inputTokens": 515260,
+          "inputTokens": 575947,
           "cachedInputTokens": 0,
-          "outputTokens": 3644,
-          "thoughtTokens": 16263,
-          "totalTokens": 535167
+          "outputTokens": 3944,
+          "thoughtTokens": 17748,
+          "totalTokens": 597639
         },
         "observations": {
-          "inputTokens": 9,
-          "cachedInputTokens": 9,
-          "outputTokens": 9,
-          "thoughtTokens": 9,
-          "totalTokens": 9
+          "inputTokens": 10,
+          "cachedInputTokens": 10,
+          "outputTokens": 10,
+          "thoughtTokens": 10,
+          "totalTokens": 10
         }
       },
       "gemini:verify:gemini-3.8-flash": {
-        "responses": 3,
+        "responses": 5,
         "tokens": {
-          "inputTokens": 47688,
+          "inputTokens": 69174,
           "cachedInputTokens": 0,
-          "outputTokens": 1366,
-          "thoughtTokens": 3475,
-          "totalTokens": 52529
+          "outputTokens": 2350,
+          "thoughtTokens": 6611,
+          "totalTokens": 78135
         },
         "observations": {
-          "inputTokens": 3,
-          "cachedInputTokens": 3,
-          "outputTokens": 3,
-          "thoughtTokens": 3,
-          "totalTokens": 3
+          "inputTokens": 5,
+          "cachedInputTokens": 5,
+          "outputTokens": 5,
+          "thoughtTokens": 5,
+          "totalTokens": 5
         }
       },
       "codex:narration:codex-cli": {

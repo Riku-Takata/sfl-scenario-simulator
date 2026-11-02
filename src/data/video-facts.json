@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T23:57:49.515Z",
+  "updatedAt": "2026-11-02T02:04:49.007Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -4104,6 +4104,44 @@
               "evidence": "両方",
               "startSec": 8733,
               "endSec": 8753
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-02T02:02:33.425Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド、ひびきがきんちょの飛びを対空した後の起き攻めで打撃択を通し、SA3に繋いでKOし第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 8285,
+              "endSec": 8295
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、きんちょがひびきの無敵技をパリィしてパニッシュカウンターからCAを叩き込み、バーンアウトしたひびきの起き上がりにパワーウェイブを重ねてKOし1本を取り返した。",
+              "evidence": "両方",
+              "startSec": 8411,
+              "endSec": 8428
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、きんちょのドライブラッシュ中段攻撃に対してひびきが小技暴れを通し、そのままCAに繋げてKOを奪い王手をかけた。",
+              "evidence": "両方",
+              "startSec": 8563,
+              "endSec": 8577
+            },
+            {
+              "topic": "第4ゲーム最終ラウンド、きんちょのODライジングタックルでの切り返しをガードしたひびきが、パニッシュカウンターからコンボを伸ばしてSA3でパーフェクトKOを決め勝利を収めた。",
+              "evidence": "両方",
+              "startSec": 8733,
+              "endSec": 8751
             }
           ]
         }

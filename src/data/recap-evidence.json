@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T23:57:49.498Z",
+  "updatedAt": "2026-11-02T02:04:48.981Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -4912,10 +4912,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのTAKEPI（JP）対2PのCOSA（豪鬼）の対戦。バーンアウト状態の豪鬼に対し、JPがSA3の演出終了後からヴィーハト等を用いたコンボを継続して画面端へ追い込みます。起き上がりに豪鬼が繰り出した無敵技をJPがガードしてパニッシュカウンターを取り、追撃のコンボを決めて豪鬼をK.O.し、TAKEPIがラウンドを取得します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:01:45.751Z"
     },
@@ -4936,10 +4939,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのTAKEPI（JP）対2PのCOSA（豪鬼）のラウンド開始時。開幕直後から豪鬼がパニッシュカウンターを取り、ドライブラッシュを絡めた連続攻撃でJPを画面端に追い詰めます。画面端でも豪鬼が打撃やドライブラッシュによる固め・コンボを一方的に通し続け、JPにダメージを一切受けずに削り切り「PERFECT K.O.」を達成します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:01:45.751Z"
     },
@@ -4960,10 +4966,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのTAKEPI（JP）対2PのCOSA（豪鬼）の対戦。JPの跳び込みに対して豪鬼が対空攻撃で迎撃してパニッシュカウンターを奪います。豪鬼はドライブラッシュからコンボを繋いでJPを画面端へ運び、そのままSA3（CA）へ派生。大ダメージを与えてJPをK.O.します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:01:45.751Z"
     },
@@ -4984,10 +4993,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのTAKEPI（豪鬼）対2PのCOSA（JP）の対戦。JPのSA3演出終了後、バーンアウト状態で体力が僅かとなった豪鬼が無敵技で暴れますが、JPにガードされパニッシュカウンターを献上します。JPはそこからコンボを繋ぎ、最後はOD必殺技を放って豪鬼をK.O.します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:01:45.751Z"
     },
@@ -5356,10 +5368,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "玄武寺ステージにてAkira（ベガ）とMachabo（リュウ）の対戦。体力が残りわずかなリュウに対し、波動拳の撃ち合いからリュウがドライブラッシュを仕掛けますが、ベガがジャンプ攻撃でカウンターヒットを奪いコンボを決めてリュウをダウンさせます。起き上がり後の中距離の差し合いで、ベガが歩き込んだところへリュウがしゃがみ中Kを差し込み、そのままカウンターヒットとなってベガの体力を削りきり、リュウがK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:52:43.552Z"
     },
@@ -5380,10 +5395,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "玄武寺ステージにて画面端付近での攻防。リュウがベガを連続で3回前投げを決めてダウンを奪います。3回目の投げ後の起き上がりに対してリュウが小技を重ねにいきますが、ベガがリバーサルでSA1を発動。リュウはこれをジャストパリィで受け止め、パニッシュカウンターを取ってドライブラッシュからクリティカルアーツ（SA3「真・昇龍拳」）に繋ぎ、ベガをK.O.します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:52:43.552Z"
     },
@@ -5404,10 +5422,13 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "レンジャーズハットステージにて、画面端で起き上がったリュウがリバーサルでOD無敵技（OD昇龍拳）を放ちますが、ベガがガードしてパニッシュカウンターを奪います。ベガは通常技からの空中追撃コンボを決め、そのままSA3（サイコパニッシャー）へ繋ぐ演出に入り、リュウをK.O.してラウンドを取得します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:52:43.552Z"
     },
@@ -5428,12 +5449,111 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "レンジャーズハットステージにて、ベガのリバーサルOD技をリュウがガードしてパニッシュカウンターからコンボを叩き込みます。その後リュウは波動拳でベガのドライブゲージを削り、ベガの前ジャンプをしゃがみ強P対空で落とします。さらに起き上がりにベガがリバーサルで放ったOD技をリュウがスカしてバーンアウトさせ、ドライブラッシュからのコンボで昇龍拳を叩き込み、リュウがK.O.勝利します。",
+      "sourceModels": [
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-01T23:52:43.552Z"
+    },
+    "ev-16cdc81cac3c5efd8863": {
+      "id": "ev-16cdc81cac3c5efd8863",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 8285,
+      "endSec": 8295,
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "第1ゲーム第2ラウンド、ひびきがきんちょの飛びを対空した後の起き攻めで打撃択を通し、SA3に繋いでKOし第1ゲームを先取した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:winner-order-reviewed"
+      ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
-      "createdAt": "2026-11-01T23:52:43.552Z"
+      "createdAt": "2026-11-02T02:02:33.425Z"
+    },
+    "ev-fb6e5d51f2445397c7cb": {
+      "id": "ev-fb6e5d51f2445397c7cb",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 8411,
+      "endSec": 8428,
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "第2ゲーム第2ラウンド、きんちょがひびきの無敵技をパリィしてパニッシュカウンターからCAを叩き込み、バーンアウトしたひびきの起き上がりにパワーウェイブを重ねてKOし1本を取り返した。",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-02T02:02:33.425Z"
+    },
+    "ev-95c2cf7e502d0da70698": {
+      "id": "ev-95c2cf7e502d0da70698",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 8563,
+      "endSec": 8577,
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "第3ゲーム第2ラウンド、きんちょのドライブラッシュ中段攻撃に対してひびきが小技暴れを通し、そのままCAに繋げてKOを奪い王手をかけた。",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-02T02:02:33.425Z"
+    },
+    "ev-d7cdc123a229eef3a14a": {
+      "id": "ev-d7cdc123a229eef3a14a",
+      "sectionId": "div-s-sec6",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "bHJ4IMV5cro",
+      "startSec": 8733,
+      "endSec": 8751,
+      "playerIds": [
+        "ひびき",
+        "きんちょ"
+      ],
+      "observation": "第4ゲーム最終ラウンド、きんちょのODライジングタックルでの切り返しをガードしたひびきが、パニッシュカウンターからコンボを伸ばしてSA3でパーフェクトKOを決め勝利を収めた。",
+      "officialRefs": [
+        "div-s-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-02T02:02:33.425Z"
     }
   }
 }
