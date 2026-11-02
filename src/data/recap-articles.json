@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T08:07:59.014Z",
+  "updatedAt": "2026-11-02T08:10:30.368Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -3297,6 +3297,237 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-02T08:07:58.991Z"
+    },
+    "div-f-sec5-m3-b0:efaa341bc3717e55:published": {
+      "articleId": "div-f-sec5-m3-b0:efaa341bc3717e55:published",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b0",
+      "revision": "efaa341bc3717e55",
+      "status": "passed",
+      "summary": "ガチくん選手がナウマン選手との先鋒戦に2-1で勝利した。第1ゲームを先取し、第2ゲームを取り返されたものの、最終ゲームを押さえてGood 8 Squadが先制した。",
+      "summaryEvidenceIds": [
+        "ev-10ddd75b13722aadbba2"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第2ラウンドは、ガチくんのSA2「イウサール」による攻勢に対し、ナウマンがSA2をパニッシュカウンターで決めてKOを奪った。",
+          "evidenceIds": [
+            "ev-533e12bda54540110076"
+          ]
+        },
+        {
+          "text": "第3ゲーム最終ラウンドでは、ガチくんがナウマンの隙をパニッシュカウンターで捉えて大ダメージを与え、勝利につなげた。",
+          "evidenceIds": [
+            "ev-86769d3c263382a564f4"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-10ddd75b13722aadbba2",
+        "ev-533e12bda54540110076",
+        "ev-86769d3c263382a564f4"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:10:30.342Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:10:30.342Z"
+    },
+    "div-f-sec5-m3-b1:6c27fb67461fb2cc:published": {
+      "articleId": "div-f-sec5-m3-b1:6c27fb67461fb2cc:published",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b1",
+      "revision": "6c27fb67461fb2cc",
+      "status": "passed",
+      "summary": "カワノ選手が板橋ザンギエフ選手との中堅戦を2-0で制した。第1・第2ゲームを続けて取り、先鋒戦に続く勝利をGood 8 Squadにもたらした。",
+      "summaryEvidenceIds": [
+        "ev-996603fc7046989b64c1"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第1ラウンドは、カワノがパニッシュカウンターからコンボを決め、板橋ザンギエフをKOした。",
+          "evidenceIds": [
+            "ev-8d88f69a671d4db7e081"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンドでは、カワノがパニッシュカウンターからスーパーアーツにつなぎ、ラウンドを先取した。",
+          "evidenceIds": [
+            "ev-14b7225760c3bb005c00"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-996603fc7046989b64c1",
+        "ev-8d88f69a671d4db7e081",
+        "ev-14b7225760c3bb005c00"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:10:30.342Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:10:30.342Z"
+    },
+    "div-f-sec5-m3-b2:e98a343750377f53:published": {
+      "articleId": "div-f-sec5-m3-b2:e98a343750377f53:published",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b2",
+      "revision": "e98a343750377f53",
+      "status": "passed",
+      "summary": "KEI.B選手がさはら選手との大将戦に3-1で勝利した。第1・第2ゲームを連取し、第3ゲームを落としても第4ゲームを取り切り、DetonatioN FocusMeが延長戦へ持ち込んだ。",
+      "summaryEvidenceIds": [
+        "ev-7d902d80cbb135991e66"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第2ラウンドでは、KEI.Bが差し返しのパニッシュカウンターからドライブラッシュを絡めて攻めを継続し、パーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-1cb7daa8e54571ce9898"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドは、さはらがスーパーアーツ「サイコチェンバー」を決めてKOし、2ラウンド連取でこのゲームを取り返した。",
+          "evidenceIds": [
+            "ev-82073fd50cef96116017"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-7d902d80cbb135991e66",
+        "ev-1cb7daa8e54571ce9898",
+        "ev-82073fd50cef96116017"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:10:30.342Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:10:30.342Z"
+    },
+    "div-f-sec5-m3-b3:ab6c7aa3f630d966:candidate": {
+      "articleId": "div-f-sec5-m3-b3:ab6c7aa3f630d966:candidate",
+      "matchId": "div-f-sec5-m3",
+      "boutId": "div-f-sec5-m3-b3",
+      "revision": "ab6c7aa3f630d966",
+      "status": "insufficient",
+      "summary": "ぷげら選手が竹内ジョン選手との延長戦を2-0で制した。2ゲームを続けて獲得し、大将戦を取り返されたGood 8 Squadのチーム戦勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-83d01366a8ace04d5262"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム最終ラウンドは、リバーサル技をガードした側がパニッシュカウンターからKOを奪う決着となった。",
+          "evidenceIds": [
+            "ev-11665dd6feef02864643"
+          ]
+        },
+        {
+          "text": "第2ゲーム最終ラウンドでは、ぷげらが相手のリバーサル技を防ぎ、パニッシュカウンターからSA3につないでKOを奪った。",
+          "evidenceIds": [
+            "ev-9b8c872f12b6e96299a4"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-83d01366a8ace04d5262",
+        "ev-11665dd6feef02864643",
+        "ev-9b8c872f12b6e96299a4"
+      ],
+      "quality": {
+        "score": 0.8888888888888888,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": false
+        },
+        "reasons": [
+          "everyClaimOverlapsCitedEvidence"
+        ],
+        "evaluatedAt": "2026-11-02T08:10:30.343Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:10:30.343Z"
+    },
+    "div-f-sec5-m3:cdb2ab146b4bbc8a:published": {
+      "articleId": "div-f-sec5-m3:cdb2ab146b4bbc8a:published",
+      "matchId": "div-f-sec5-m3",
+      "revision": "cdb2ab146b4bbc8a",
+      "status": "passed",
+      "headline": "Good 8 Squadが延長戦を制し勝利",
+      "summary": "Good 8 SquadがDetonatioN FocusMeに30-20で勝利した。先鋒戦はガチくんが第2ゲームを取り返されながら2-1で勝ち、中堅戦もカワノが2-0で続いた。DetonatioN FocusMeは大将戦のKEI.Bが2ゲームを先取。さはらに第3ゲームを返されたものの、3-1で勝ち切って延長戦へつないだ。最後はぷげらが竹内ジョンに2-0で勝利。決着の場面ではリバーサル技を防いでパニッシュカウンターを取り、スーパーアーツにつないでKOを奪った。",
+      "summaryEvidenceIds": [
+        "ev-10ddd75b13722aadbba2",
+        "ev-996603fc7046989b64c1",
+        "ev-7d902d80cbb135991e66",
+        "ev-83d01366a8ace04d5262",
+        "ev-9b8c872f12b6e96299a4"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-10ddd75b13722aadbba2",
+        "ev-996603fc7046989b64c1",
+        "ev-7d902d80cbb135991e66",
+        "ev-83d01366a8ace04d5262",
+        "ev-9b8c872f12b6e96299a4"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T08:10:30.343Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T08:10:30.343Z"
     }
   }
 }
