@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T19:42:01.059Z",
+  "updatedAt": "2026-11-02T18:02:03.347Z",
   "totalPlayers": 48,
   "players": {
     "sako": {
@@ -72,7 +72,7 @@
         "luke"
       ],
       "startggSlug": "user/b66813f3",
-      "eloRating": 1973
+      "eloRating": 1972
     },
     "bonchan": {
       "key": "bonchan",
@@ -118,7 +118,7 @@
       "mainChar": "zangief",
       "subChars": [],
       "startggSlug": "user/ef64257e",
-      "eloRating": 2059
+      "eloRating": 2058
     },
     "cosa": {
       "key": "cosa",
@@ -258,7 +258,7 @@
       "mainChar": "elena",
       "subChars": [],
       "startggSlug": "user/18f9cd76",
-      "eloRating": 1773
+      "eloRating": 1772
     },
     "torimeshi": {
       "key": "torimeshi",
@@ -293,7 +293,7 @@
       "mainChar": "jp",
       "subChars": [],
       "startggSlug": "user/a4c7c2d4",
-      "eloRating": 2029
+      "eloRating": 2037
     },
     "mago": {
       "key": "mago",
@@ -516,7 +516,7 @@
         "ryu"
       ],
       "startggSlug": "user/1e05762a",
-      "eloRating": 2046
+      "eloRating": 2045
     },
     "jr": {
       "key": "jr",
