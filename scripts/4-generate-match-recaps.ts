@@ -658,6 +658,21 @@ export async function generateAndSaveMatchRecaps(
       const writerSourceHash = recapInputHash({ matchSourceHash, evidence: boutInputs.map((bout) => bout.evidence?.filter((item) => item.status === "verified")) });
       const previousRequest = writeRequests.requests[matchId];
       const writerAttempts = previousRequest?.sourceHash === writerSourceHash ? previousRequest.attempts : 0;
+      const buildQualityFeedback = (attempts: number) => Object.fromEntries([
+        ...(attempts > 0 ? [[matchId + ":writer", [`writer retry ${attempts}`]]] : []),
+        ...boutInputs.flatMap((input) => {
+        const previous = latestArticle(articlesData, input.ctx.boutId);
+        const job = jobsData.jobs[input.ctx.boutId];
+        return previous?.status === "insufficient" ? [[input.ctx.boutId, [...previous.quality.reasons, ...(textBackend === "gemini" ? ["retry " + (job?.attempts ?? 0)] : [])]]] : [];
+        }),
+        ...(() => {
+          const previous = latestMatchArticle(articlesData, matchId);
+          const job = jobsData.jobs[matchId + ":article"];
+          return previous?.status === "insufficient"
+            ? [[matchId + ":article", [...previous.quality.reasons, ...(textBackend === "gemini" ? ["retry " + (job?.attempts ?? 0)] : [])]]]
+            : [];
+        })(),
+      ]);
       const narrationInput: NarrationMatchInput = {
         matchId,
         awayTeam: awayName,
@@ -671,21 +686,16 @@ export async function generateAndSaveMatchRecaps(
           .filter(([boutId]) => boutId.startsWith(`div-${division}-`))
           .slice(0, 2)
           .map(([, item]) => ({ division: division.toUpperCase() as "S" | "F", summary: item.summary, keyPoints: item.keyPoints }))),
-        qualityFeedback: Object.fromEntries([
-          ...(writerAttempts > 0 ? [[matchId + ":writer", [`writer retry ${writerAttempts}`]]] : []),
-          ...boutInputs.flatMap((input) => {
-          const previous = latestArticle(articlesData, input.ctx.boutId);
-          const job = jobsData.jobs[input.ctx.boutId];
-          return previous?.status === "insufficient" ? [[input.ctx.boutId, [...previous.quality.reasons, ...(textBackend === "gemini" ? ["retry " + (job?.attempts ?? 0)] : [])]]] : [];
-          }),
-          ...(() => {
-            const previous = latestMatchArticle(articlesData, matchId);
-            const job = jobsData.jobs[matchId + ":article"];
-            return previous?.status === "insufficient"
-              ? [[matchId + ":article", [...previous.quality.reasons, ...(textBackend === "gemini" ? ["retry " + (job?.attempts ?? 0)] : [])]]]
-              : [];
-          })(),
-        ]),
+        qualityFeedback: buildQualityFeedback(writerAttempts),
+      };
+      // A rejected draft leaves the request on its old hash, so the local writer
+      // would resend the cached draft and waste a window. Queue the retry now.
+      const requeueRejectedDraft = () => {
+        const request = writeRequests.requests[matchId];
+        if (request?.stage !== "queued" || request.inputHash !== inputHash) return;
+        const retryInput = { ...narrationInput, qualityFeedback: buildQualityFeedback(request.attempts) };
+        queueWriteRequest(writeRequests, { matchId, sectionId: slug, inputHash: narrationInputHash(retryInput),
+          sourceHash: writerSourceHash, prompt: buildNarrationPrompt(retryInput) });
       };
 
       // 全Boutの動画解析が決着（complete/failed/区間なし）したら解説を1回だけ生成
@@ -734,6 +744,7 @@ export async function generateAndSaveMatchRecaps(
           } catch (error) {
             console.warn(`[Narration] ${matchId}: rejected prepared draft: ${(error as Error).message}`);
             finishWriteRequest(writeRequests, matchId, inputHash, false);
+            requeueRejectedDraft();
           }
         } else if (textBackend !== "gemini") {
           queueWriteRequest(writeRequests, { matchId, sectionId: slug, inputHash,
@@ -801,7 +812,10 @@ export async function generateAndSaveMatchRecaps(
         : undefined;
       if (matchArticle) putArticle(articlesData, matchArticle);
       const publishedMatchArticle = matchArticle?.status === "passed" ? matchArticle : currentPassedMatchArticle(articlesData, matchId);
-      if (acceptedPrepared) finishWriteRequest(writeRequests, matchId, inputHash, publishedMatchArticle?.status === "passed" && passedBoutArticles.length === boutInputs.length);
+      if (acceptedPrepared) {
+        finishWriteRequest(writeRequests, matchId, inputHash, publishedMatchArticle?.status === "passed" && passedBoutArticles.length === boutInputs.length);
+        requeueRejectedDraft();
+      }
       const editorialCoversBouts = boutInputs.every((input) => Boolean(editorial.bouts[input.ctx.boutId]));
       const videoPending = boutInputs.some((input) => input.facts?.status === "pending" || (videoId && !findBoutWindow(chapters, num,
         input.ctx.statusName.includes("延長") ? 3 : input.ctx.statusName.includes("大将") ? 2 : input.ctx.statusName.includes("中堅") ? 1 : 0)));
