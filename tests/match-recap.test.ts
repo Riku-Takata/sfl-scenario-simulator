@@ -139,6 +139,16 @@ test("comeback/straight claims are checked against the official round log", () =
     { winner: "A" as const, rounds: ["A", "A"] as Array<"A" | "B"> },
   ];
   assert.equal(contradictsOfficialRounds("どぐらが逆転のコンボを決めた。", sweep), true);
+  // Div S 第6節 第1試合 延長戦: どぐら(A)が第1ゲームを取り、ヤマグチ(B)が2-1でBout逆転
+  const yamaguchi = [
+    { winner: "A" as const, rounds: ["A", "B", "A"] as Array<"A" | "B"> },
+    { winner: "B" as const, rounds: ["B", "B"] as Array<"A" | "B"> },
+    { winner: "B" as const, rounds: ["B", "B"] as Array<"A" | "B"> },
+  ];
+  assert.equal(contradictsOfficialRounds("ヤマグチ選手がどぐら選手に第1ゲームを先取されながら、2-1で逆転勝利。", yamaguchi), false);
+  assert.equal(contradictsOfficialRounds("ヤマグチが第2ゲームで逆転した。", yamaguchi), true);
+  // 第1ゲームを取った側の勝利では、第1ゲームを名指ししても逆転にはならない
+  assert.equal(contradictsOfficialRounds("Shutoが第1ゲームを先取され逆転勝ちした。", sweep), true);
 });
 
 test("dedupeAnalyses removes repeated key points across bouts", () => {

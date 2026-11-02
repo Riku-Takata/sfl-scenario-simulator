@@ -48,9 +48,11 @@ for (const job of Object.values(jobs.jobs) as any[]) if (job.matchId === matchId
 write("recap-jobs", jobs);
 await submit(initialHash, "first");
 assert.equal(request().attempts, 1);
-await run();
 const retryHash = request().inputHash;
-assert.notEqual(retryHash, initialHash);
+assert.notEqual(retryHash, initialHash, "a rejected draft is requeued in the same run, so the writer never resends it");
+assert.match(request().prompt, /writer retry 1/);
+await run();
+assert.equal(request().inputHash, retryHash, "the next run computes the same retry hash");
 await run();
 assert.equal(request().inputHash, retryHash, "queued retries are stable across continuation ticks");
 await submit(initialHash, "first");

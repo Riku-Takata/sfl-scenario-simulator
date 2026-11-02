@@ -140,7 +140,7 @@ function boutPayload(b: NarrationBoutInput) {
 }
 
 export function narrationInputHash(match: NarrationMatchInput): string {
-  const payload = JSON.stringify({ v: 7, m: match.matchId, b: match.bouts.map(boutPayload), q: match.qualityFeedback ?? {}, s: match.styleExamples ?? [] });
+  const payload = JSON.stringify({ v: 8, m: match.matchId, b: match.bouts.map(boutPayload), q: match.qualityFeedback ?? {}, s: match.styleExamples ?? [] });
   return crypto.createHash("sha256").update(payload).digest("hex").slice(0, 16);
 }
 
@@ -162,6 +162,7 @@ ${JSON.stringify(match.styleExamples ?? [], null, 1)}
 - 各 summary / keyPoint / matchSummary に、根拠として実際に使った verifiedEvidence のIDを付ける。根拠の無い具体的な記述は出力しない。
 - 文体見本から引用・固有名詞・試合展開を流用しない。段落の組み立てと具体性の程度だけを参考にする。
 - keyPoints は2〜3件を目標にするが、使える根拠がなければ少なくしてよい。ひとつの文章の根拠を別の対戦から借りない。
+- verifiedEvidence に kind が visual / commentary の根拠が2件以上ある Bout では、別々の場面を1つの keyPoint にまとめず、根拠ごとに分けて keyPoints を2件以上書く。
 - officialRounds（公式ラウンド推移）と矛盾する記述は禁止。特に「逆転」「ストレート」「フルセット」「第Nゲーム」は officialRounds で確認できる場合だけ書く。
 - 具体的な出来事（技名・システム名・状況）を含まない要点は書かない。「対戦となった」「攻防を制した」「要所で技を当てた」のような中身の無い文を入れるくらいなら keyPoints を減らす（0件も可）。
 - 動画解析が「なし」のBoutは keyPoints を空にし、summary は公式結果だけで1文。
@@ -199,10 +200,12 @@ export function contradictsOfficialRounds(text: string, games: BoutGameDetail[])
   }
   if (/(最終|最後の)\s*(?:ゲーム|セット)/.test(text)) targets.push(games[games.length - 1]);
 
-  // 「逆転」は、ゲーム内のラウンド逆転か、第1ゲームを落としてからのBout逆転のどちらかなら許容
+  // 「逆転」は、ゲーム内のラウンド逆転か、第1ゲームを落としてからのBout逆転のどちらかなら許容。
+  // 「第1ゲームを先取されながら逆転」は第1ゲームを名指ししたBout逆転なので、ゲーム指定があっても認める。
   const boutComeback = games.length > 1 && games[0].winner !== games[games.length - 1].winner;
   if (/逆転/.test(text)) {
-    if (targets.length > 0 ? !targets.some(isComeback) : !(games.some(isComeback) || boutComeback)) {
+    const namesLostOpener = boutComeback && targets.includes(games[0]);
+    if (targets.length > 0 ? !(targets.some(isComeback) || namesLostOpener) : !(games.some(isComeback) || boutComeback)) {
       return true;
     }
   }
