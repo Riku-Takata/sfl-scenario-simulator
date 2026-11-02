@@ -195,6 +195,23 @@ test("calculateStandings produces valid 6-team tables for Division S and Divisio
   assert.equal(afterHome.remainingMatches, beforeHome.remainingMatches - 1);
 });
 
+test("generateOutcomesForTargetRank repairs the closest candidate when random search misses", () => {
+  // 乱数が常に「目標チームが負ける」側に振れても、修正手順で目標順位に届く
+  const random = Math.random;
+  Math.random = () => 0.999;
+  try {
+    for (const team of Object.values(TEAM_META_MAP)) {
+      for (const rank of [1, 2, 3] as const) {
+        const outcomes = generateOutcomesForTargetRank(team.division, matchesData.matches, team.key, rank);
+        const standings = calculateStandings(team.division, matchesData.matches, outcomes);
+        assert.equal(standings.find((t) => t.key === team.key)?.rank, rank, `Team ${team.key} should reach rank ${rank}`);
+      }
+    }
+  } finally {
+    Math.random = random;
+  }
+});
+
 test("generateOutcomesForTargetRank achieves exact target rank (1st, 2nd, 3rd) for all 12 teams", () => {
   for (const team of Object.values(TEAM_META_MAP)) {
     for (const rank of [1, 2, 3] as const) {
