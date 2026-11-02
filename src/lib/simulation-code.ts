@@ -74,6 +74,8 @@ export function generateOutcomesForTargetRank(
       : pickRandom(AWAY_WIN_PATTERNS);
   };
 
+  const misses: Array<{ gap: number; candidate: Record<string, ScorePatternId> }> = [];
+
   // 最大800回試行し、targetTeamKey がちょうど targetRank 位になる自然なスコア分布を探す
   for (let attempt = 0; attempt < 800; attempt++) {
     const candidate: Record<string, ScorePatternId> = {};
@@ -142,18 +144,77 @@ export function generateOutcomesForTargetRank(
       }
     }
 
-    const simResult = calculateStandings(division, allMatches, candidate);
-    const achievedRank = simResult.find((t) => t.key === targetTeamKey)?.rank;
-    if (achievedRank === targetRank) {
+    const gap = rankGap(division, allMatches, candidate, targetTeamKey, targetRank);
+    if (gap === 0) {
       return candidate;
     }
+    misses.push({ gap, candidate });
   }
 
-  const fallback: Record<string, ScorePatternId> = {};
-  for (const m of unplayed) {
-    fallback[m.id] = pickRandom(ALL_PATTERNS);
+  // 下位チームの「2位・3位」のように条件が厳しいと、ランダム探索だけでは
+  // 見つからないことがある。近かった候補から順に1試合ずつ直して目標順位に寄せる。
+  misses.sort((a, b) => a.gap - b.gap);
+  for (const { candidate } of misses.slice(0, 20)) {
+    const repaired = repairTowardRank(division, allMatches, unplayed, candidate, targetTeamKey, targetRank);
+    if (repaired) return repaired;
   }
-  return fallback;
+  return misses[0]?.candidate ?? {};
+}
+
+/**
+ * 目標順位までの距離。0 なら目標順位ちょうど。
+ * 抜く/抜かれる必要があるチームごとの勝ち点差（最低1）の合計。
+ */
+function rankGap(
+  division: DivisionId,
+  allMatches: MatchRecord[],
+  outcomes: Record<string, ScorePatternId>,
+  targetTeamKey: string,
+  targetRank: number
+): number {
+  const standings = calculateStandings(division, allMatches, outcomes);
+  const index = standings.findIndex((t) => t.key === targetTeamKey);
+  if (index < 0) return Number.POSITIVE_INFINITY;
+  const rank = standings[index].rank;
+  if (rank === targetRank) return 0;
+  const point = standings[index].point;
+  // 上にいてはいけないチーム、または上に来るべきチーム
+  const others = rank > targetRank
+    ? standings.slice(targetRank - 1, index)
+    : standings.slice(index + 1, targetRank);
+  // 同率順位では入れ替えるべきチームが範囲に入らないことがあるので、最低1にする
+  return Math.max(1, others.reduce((sum, team) => sum + Math.abs(team.point - point) + 1, 0));
+}
+
+function repairTowardRank(
+  division: DivisionId,
+  allMatches: MatchRecord[],
+  unplayed: MatchRecord[],
+  start: Record<string, ScorePatternId>,
+  targetTeamKey: string,
+  targetRank: number
+): Record<string, ScorePatternId> | undefined {
+  let current = { ...start };
+  let currentGap = rankGap(division, allMatches, current, targetTeamKey, targetRank);
+  for (let step = 0; step < unplayed.length * 4 && currentGap > 0; step++) {
+    let next: Record<string, ScorePatternId> | undefined;
+    let nextGap = currentGap;
+    for (const m of unplayed) {
+      for (const pattern of ALL_PATTERNS) {
+        if (current[m.id] === pattern) continue;
+        const candidate = { ...current, [m.id]: pattern };
+        const gap = rankGap(division, allMatches, candidate, targetTeamKey, targetRank);
+        if (gap < nextGap) {
+          nextGap = gap;
+          next = candidate;
+        }
+      }
+    }
+    if (!next) return undefined;
+    current = next;
+    currentGap = nextGap;
+  }
+  return currentGap === 0 ? current : undefined;
 }
 
 const B64_CHARS =
