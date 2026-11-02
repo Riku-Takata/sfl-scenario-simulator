@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T04:01:09.246Z",
+  "updatedAt": "2026-11-02T07:55:58.795Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -2236,6 +2236,249 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-02T04:01:09.207Z"
+    },
+    "div-s-sec6-m1-b0:af98213dcef7dd8c:published": {
+      "articleId": "div-s-sec6-m1-b0:af98213dcef7dd8c:published",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b0",
+      "revision": "af98213dcef7dd8c",
+      "status": "passed",
+      "summary": "先鋒戦はももちがかずのこに2-0で勝利し、ZETAが先制した。第2ゲームではパニッシュカウンターからの攻めとCAでラウンドを取り、勝利につなげた。",
+      "summaryEvidenceIds": [
+        "ev-bb7f4dda61a82546566c",
+        "ev-807d8a0cc823a090b5ae"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム終盤、ももちはかずのこの攻めをジャンプでかわし、パニッシュカウンターから連続技につなげた。",
+          "evidenceIds": [
+            "ev-2e0cca2d85b6b56cafe1"
+          ]
+        },
+        {
+          "text": "第2ゲームでは、ももちがパニッシュカウンターから画面端の攻めにつなぎ、CAを決めてラウンドを奪った。",
+          "evidenceIds": [
+            "ev-807d8a0cc823a090b5ae"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-bb7f4dda61a82546566c",
+        "ev-807d8a0cc823a090b5ae",
+        "ev-2e0cca2d85b6b56cafe1"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T07:55:58.484Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T07:55:58.484Z"
+    },
+    "div-s-sec6-m1-b1:f5dcecec1da7eab9:published": {
+      "articleId": "div-s-sec6-m1-b1:f5dcecec1da7eab9:published",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b1",
+      "revision": "f5dcecec1da7eab9",
+      "status": "passed",
+      "summary": "中堅戦はひぐちがボンちゃんを2-0で下し、先鋒戦に続いてZETAが勝利した。画面端のドライブインパクトでスタンを奪うなど、KOにつながる機会を作った。",
+      "summaryEvidenceIds": [
+        "ev-772c16be1d84298ba39f",
+        "ev-16e95210e244643d240e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第1ラウンド終盤、ひぐちはドライブインパクトでパニッシュカウンターを取り、コンボからソニックハリケーンにつないでKOした。",
+          "evidenceIds": [
+            "ev-959fef6fc13190eac53e"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンドは、ひぐちが画面端のドライブインパクトでボンちゃんをスタンさせ、追撃を決めて取り切った。",
+          "evidenceIds": [
+            "ev-16e95210e244643d240e"
+          ]
+        },
+        {
+          "text": "第2ゲーム第2ラウンド、ボンちゃんは地上攻撃からスーパーアーツにつなぎ、続く起き攻めの打撃も通してラウンドを取り返した。",
+          "evidenceIds": [
+            "ev-307d5d5ca739476575b3"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-772c16be1d84298ba39f",
+        "ev-16e95210e244643d240e",
+        "ev-959fef6fc13190eac53e",
+        "ev-307d5d5ca739476575b3"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T07:55:58.485Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T07:55:58.485Z"
+    },
+    "div-s-sec6-m1-b2:4c3fe16d02ddd1cb:published": {
+      "articleId": "div-s-sec6-m1-b2:4c3fe16d02ddd1cb:published",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b2",
+      "revision": "4c3fe16d02ddd1cb",
+      "status": "passed",
+      "summary": "大将戦はShutoがMenaRDに3-0で勝ち、Crazy Raccoonが延長戦へ持ち込んだ。第3ゲームはジャストパリィから好機を作り、最後はSA3につないで締めた。",
+      "summaryEvidenceIds": [
+        "ev-3619cf8cad92533e4d3c",
+        "ev-950268fa0696aac832dd",
+        "ev-b1ebb134eb81127c61f8"
+      ],
+      "keyPoints": [
+        {
+          "text": "第3ゲーム第1ラウンド、Shutoはジャストパリィからパニッシュカウンターを取り、ドライブラッシュを絡めたコンボでMenaRDを画面端付近へ運んだ。",
+          "evidenceIds": [
+            "ev-950268fa0696aac832dd"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドは、Shutoが画面端のコンボをライジングアッパーからSA3「ペイルライダー」へつなぎ、KOで大将戦を決めた。",
+          "evidenceIds": [
+            "ev-b1ebb134eb81127c61f8"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-3619cf8cad92533e4d3c",
+        "ev-950268fa0696aac832dd",
+        "ev-b1ebb134eb81127c61f8"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T07:55:58.485Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T07:55:58.485Z"
+    },
+    "div-s-sec6-m1-b3:7d285f79950cfd78:published": {
+      "articleId": "div-s-sec6-m1-b3:7d285f79950cfd78:published",
+      "matchId": "div-s-sec6-m1",
+      "boutId": "div-s-sec6-m1-b3",
+      "revision": "7d285f79950cfd78",
+      "status": "passed",
+      "summary": "延長戦は第1ゲームを落としたヤマグチが2ゲームを連取し、どぐらに2-1で逆転勝ちした。最後は画面端のコンボからパーフェクトKOを決め、ZETAのチーム戦勝利を確定させた。",
+      "summaryEvidenceIds": [
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームのファイナルラウンド、どぐらはヤマグチをバーンアウトに追い込み、連続攻撃でKOして先取した。",
+          "evidenceIds": [
+            "ev-6e9d7d05e0e0ccff6f7d"
+          ]
+        },
+        {
+          "text": "最終第3ゲーム第2ラウンド、ヤマグチは連続技で画面端へ運び、最後もスーパーアーツにつないでパーフェクトKOを達成した。",
+          "evidenceIds": [
+            "ev-e10799cfd0522850f812"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812",
+        "ev-6e9d7d05e0e0ccff6f7d"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T07:55:58.485Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T07:55:58.485Z"
+    },
+    "div-s-sec6-m1:ac6627c29c87db66:published": {
+      "articleId": "div-s-sec6-m1:ac6627c29c87db66:published",
+      "matchId": "div-s-sec6-m1",
+      "revision": "ac6627c29c87db66",
+      "status": "passed",
+      "headline": "ZETAが延長戦を制し30-20で勝利",
+      "summary": "ZETA DIVISION GeeklyがCrazy Raccoonとの延長戦を制し、30-20で勝利した。先鋒戦はももち、中堅戦はひぐちがそれぞれ2-0で勝ち、ZETAが先行。Crazy Raccoonは大将のShutoがMenaRDを3-0で下し、決着を延長戦へ持ち込んだ。Shutoは最後を画面端のコンボからSA3で締めた。延長戦はどぐらが第1ゲームを先取したものの、ヤマグチが続く2ゲームを連取。最終ラウンドを画面端の連続技からパーフェクトKOで取り切り、ZETAの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-bb7f4dda61a82546566c",
+        "ev-772c16be1d84298ba39f",
+        "ev-3619cf8cad92533e4d3c",
+        "ev-b1ebb134eb81127c61f8",
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-bb7f4dda61a82546566c",
+        "ev-772c16be1d84298ba39f",
+        "ev-3619cf8cad92533e4d3c",
+        "ev-b1ebb134eb81127c61f8",
+        "ev-89c93634da31da37af78",
+        "ev-e10799cfd0522850f812"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-02T07:55:58.486Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-02T07:55:58.486Z"
     }
   }
 }
