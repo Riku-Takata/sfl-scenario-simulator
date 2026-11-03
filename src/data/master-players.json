@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T18:02:03.347Z",
+  "updatedAt": "2026-11-03T14:00:42.159Z",
   "totalPlayers": 48,
   "players": {
     "sako": {
@@ -293,7 +293,7 @@
       "mainChar": "jp",
       "subChars": [],
       "startggSlug": "user/a4c7c2d4",
-      "eloRating": 2037
+      "eloRating": 2021
     },
     "mago": {
       "key": "mago",
@@ -306,7 +306,7 @@
         "juri"
       ],
       "startggSlug": "user/980ad764",
-      "eloRating": 1869
+      "eloRating": 1849
     },
     "mizuha": {
       "key": "mizuha",
@@ -319,7 +319,7 @@
         "mai"
       ],
       "startggSlug": "user/ed773e44",
-      "eloRating": 1833
+      "eloRating": 1817
     },
     "wabiichi": {
       "key": "wabiichi",
@@ -330,7 +330,7 @@
       "mainChar": "terry",
       "subChars": [],
       "startggSlug": "user/e14bf28c",
-      "eloRating": 1981
+      "eloRating": 2001
     },
     "gachikun": {
       "key": "gachikun",
@@ -341,7 +341,7 @@
       "mainChar": "rashid",
       "subChars": [],
       "startggSlug": "user/7fc0306f",
-      "eloRating": 2025
+      "eloRating": 2041
     },
     "kawano": {
       "key": "kawano",
@@ -350,9 +350,11 @@
       "teamKey": "good8",
       "division": "f",
       "mainChar": "luke",
-      "subChars": [],
+      "subChars": [
+        "gouki_akuma"
+      ],
       "startggSlug": "user/84491299",
-      "eloRating": 2075
+      "eloRating": 2055
     },
     "pugera": {
       "key": "pugera",
@@ -363,7 +365,7 @@
       "mainChar": "cviper",
       "subChars": [],
       "startggSlug": "user/9594efe4",
-      "eloRating": 1984
+      "eloRating": 2000
     },
     "sahara": {
       "key": "sahara",
@@ -398,7 +400,7 @@
       "mainChar": "mai",
       "subChars": [],
       "startggSlug": "user/245de7b9",
-      "eloRating": 1856
+      "eloRating": 1872
     },
     "takeuchi": {
       "key": "takeuchi",
@@ -409,7 +411,7 @@
       "mainChar": "jamie",
       "subChars": [],
       "startggSlug": "user/ec195ece",
-      "eloRating": 1890
+      "eloRating": 1874
     },
     "keib": {
       "key": "keib",
@@ -420,7 +422,7 @@
       "mainChar": "mai",
       "subChars": [],
       "startggSlug": "user/36b29fd8",
-      "eloRating": 1863
+      "eloRating": 1843
     },
     "seiya": {
       "key": "seiya",
@@ -431,7 +433,7 @@
       "mainChar": "chunli",
       "subChars": [],
       "startggSlug": "user/bf1fa486",
-      "eloRating": 1877
+      "eloRating": 1897
     },
     "otani": {
       "key": "otani",
@@ -445,7 +447,7 @@
         "elena"
       ],
       "startggSlug": "user/9a7fe756",
-      "eloRating": 1859
+      "eloRating": 1843
     },
     "mocchi": {
       "key": "mocchi",
@@ -467,7 +469,7 @@
       "mainChar": "vega_mbison",
       "subChars": [],
       "startggSlug": "user/39f0e566",
-      "eloRating": 1886
+      "eloRating": 1870
     },
     "daigo": {
       "key": "daigo",
@@ -478,7 +480,7 @@
       "mainChar": "gouki_akuma",
       "subChars": [],
       "startggSlug": "user/7f5507aa",
-      "eloRating": 1909
+      "eloRating": 1925
     },
     "fuudo": {
       "key": "fuudo",
@@ -491,7 +493,7 @@
         "ed"
       ],
       "startggSlug": "user/173c6283",
-      "eloRating": 1970
+      "eloRating": 1990
     },
     "yas": {
       "key": "yas",
@@ -502,7 +504,7 @@
       "mainChar": "ryu",
       "subChars": [],
       "startggSlug": "user/fabefccb",
-      "eloRating": 1993
+      "eloRating": 2009
     },
     "hinao": {
       "key": "hinao",
@@ -516,7 +518,7 @@
         "ryu"
       ],
       "startggSlug": "user/1e05762a",
-      "eloRating": 2045
+      "eloRating": 2025
     },
     "jr": {
       "key": "jr",
@@ -527,7 +529,7 @@
       "mainChar": "zangief",
       "subChars": [],
       "startggSlug": "user/126a661a",
-      "eloRating": 2031
+      "eloRating": 2015
     },
     "takagi": {
       "key": "takagi",
@@ -538,7 +540,7 @@
       "mainChar": "blanka",
       "subChars": [],
       "startggSlug": "user/a6f5628d",
-      "eloRating": 1954
+      "eloRating": 1974
     },
     "adelie": {
       "key": "adelie",
@@ -560,7 +562,7 @@
       "mainChar": "aki",
       "subChars": [],
       "startggSlug": "user/4965ba08",
-      "eloRating": 2050
+      "eloRating": 2066
     }
   }
 }

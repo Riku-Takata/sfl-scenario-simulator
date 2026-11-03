@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-02T02:04:48.981Z",
+  "updatedAt": "2026-11-03T14:00:52.378Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -5554,6 +5554,238 @@
         "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-02T02:02:33.425Z"
+    },
+    "ev-714a438e0100abef363f": {
+      "id": "ev-714a438e0100abef363f",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b0",
+      "kind": "official",
+      "playerIds": [
+        "ウメハラ",
+        "水派"
+      ],
+      "observation": "ウメハラと水派の先鋒戦は2-1。第1ゲームウメハラが勝利、第2ゲーム水派が勝利、第3ゲームウメハラが勝利",
+      "officialRefs": [
+        "div-f-sec6-m1-b0:score",
+        "div-f-sec6-m1-b0:game:0:winner-and-rounds",
+        "div-f-sec6-m1-b0:game:1:winner-and-rounds",
+        "div-f-sec6-m1-b0:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.359Z"
+    },
+    "ev-6598c2426ae1ad5104a1": {
+      "id": "ev-6598c2426ae1ad5104a1",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b1",
+      "kind": "official",
+      "playerIds": [
+        "ふ～ど",
+        "マゴ"
+      ],
+      "observation": "ふ～どとマゴの中堅戦は2-0。第1ゲームふ～どが勝利、第2ゲームふ～どが勝利",
+      "officialRefs": [
+        "div-f-sec6-m1-b1:score",
+        "div-f-sec6-m1-b1:game:0:winner-and-rounds",
+        "div-f-sec6-m1-b1:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.359Z"
+    },
+    "ev-e5c3a3de84112fdb7281": {
+      "id": "ev-e5c3a3de84112fdb7281",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b2",
+      "kind": "official",
+      "playerIds": [
+        "ひなお",
+        "わびいち"
+      ],
+      "observation": "ひなおとわびいちの大将戦は3-1。第1ゲームひなおが勝利、第2ゲームわびいちが勝利、第3ゲームわびいちが勝利、第4ゲームわびいちが勝利",
+      "officialRefs": [
+        "div-f-sec6-m1-b2:score",
+        "div-f-sec6-m1-b2:game:0:winner-and-rounds",
+        "div-f-sec6-m1-b2:game:1:winner-and-rounds",
+        "div-f-sec6-m1-b2:game:2:winner-and-rounds",
+        "div-f-sec6-m1-b2:game:3:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.359Z"
+    },
+    "ev-a6a52b3c98d0e473f6ca": {
+      "id": "ev-a6a52b3c98d0e473f6ca",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b3",
+      "kind": "official",
+      "playerIds": [
+        "YAS",
+        "ときど"
+      ],
+      "observation": "YASとときどの延長戦は2-1。第1ゲームときどが勝利、第2ゲームYASが勝利、第3ゲームYASが勝利",
+      "officialRefs": [
+        "div-f-sec6-m1-b3:score",
+        "div-f-sec6-m1-b3:game:0:winner-and-rounds",
+        "div-f-sec6-m1-b3:game:1:winner-and-rounds",
+        "div-f-sec6-m1-b3:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.359Z"
+    },
+    "ev-9afad2b1f975379f147e": {
+      "id": "ev-9afad2b1f975379f147e",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b0",
+      "kind": "official",
+      "playerIds": [
+        "ガチくん",
+        "らおやむ"
+      ],
+      "observation": "ガチくんとらおやむの先鋒戦は2-1。第1ゲームらおやむが勝利、第2ゲームガチくんが勝利、第3ゲームガチくんが勝利",
+      "officialRefs": [
+        "div-f-sec6-m2-b0:score",
+        "div-f-sec6-m2-b0:game:0:winner-and-rounds",
+        "div-f-sec6-m2-b0:game:1:winner-and-rounds",
+        "div-f-sec6-m2-b0:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.360Z"
+    },
+    "ev-11f0514822c8d0793e8e": {
+      "id": "ev-11f0514822c8d0793e8e",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b1",
+      "kind": "official",
+      "playerIds": [
+        "カワノ",
+        "Seiya"
+      ],
+      "observation": "カワノとSeiyaの中堅戦は2-0。第1ゲームSeiyaが勝利、第2ゲームSeiyaが勝利",
+      "officialRefs": [
+        "div-f-sec6-m2-b1:score",
+        "div-f-sec6-m2-b1:game:0:winner-and-rounds",
+        "div-f-sec6-m2-b1:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.360Z"
+    },
+    "ev-218eca50a88a99df834a": {
+      "id": "ev-218eca50a88a99df834a",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b2",
+      "kind": "official",
+      "playerIds": [
+        "ぷげら",
+        "大谷"
+      ],
+      "observation": "ぷげらと大谷の大将戦は3-2。第1ゲーム大谷が勝利、第2ゲームぷげらが勝利、第3ゲームぷげらが勝利、第4ゲーム大谷が勝利、第5ゲームぷげらが勝利",
+      "officialRefs": [
+        "div-f-sec6-m2-b2:score",
+        "div-f-sec6-m2-b2:game:0:winner-and-rounds",
+        "div-f-sec6-m2-b2:game:1:winner-and-rounds",
+        "div-f-sec6-m2-b2:game:2:winner-and-rounds",
+        "div-f-sec6-m2-b2:game:3:winner-and-rounds",
+        "div-f-sec6-m2-b2:game:4:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.360Z"
+    },
+    "ev-8688f1ad4996bf34b35b": {
+      "id": "ev-8688f1ad4996bf34b35b",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b0",
+      "kind": "official",
+      "playerIds": [
+        "竹内ジョン",
+        "ひかる"
+      ],
+      "observation": "竹内ジョンとひかるの先鋒戦は2-1。第1ゲームひかるが勝利、第2ゲーム竹内ジョンが勝利、第3ゲームひかるが勝利",
+      "officialRefs": [
+        "div-f-sec6-m3-b0:score",
+        "div-f-sec6-m3-b0:game:0:winner-and-rounds",
+        "div-f-sec6-m3-b0:game:1:winner-and-rounds",
+        "div-f-sec6-m3-b0:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.360Z"
+    },
+    "ev-bd332568cc1abcc24f4d": {
+      "id": "ev-bd332568cc1abcc24f4d",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b1",
+      "kind": "official",
+      "playerIds": [
+        "ナウマン",
+        "Jr."
+      ],
+      "observation": "ナウマンとJr.の中堅戦は2-1。第1ゲームJr.が勝利、第2ゲームナウマンが勝利、第3ゲームナウマンが勝利",
+      "officialRefs": [
+        "div-f-sec6-m3-b1:score",
+        "div-f-sec6-m3-b1:game:0:winner-and-rounds",
+        "div-f-sec6-m3-b1:game:1:winner-and-rounds",
+        "div-f-sec6-m3-b1:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.361Z"
+    },
+    "ev-a7dc6271f3afe4f7b808": {
+      "id": "ev-a7dc6271f3afe4f7b808",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b2",
+      "kind": "official",
+      "playerIds": [
+        "KEI.B",
+        "高木"
+      ],
+      "observation": "KEI.Bと高木の大将戦は3-1。第1ゲーム高木が勝利、第2ゲーム高木が勝利、第3ゲームKEI.Bが勝利、第4ゲーム高木が勝利",
+      "officialRefs": [
+        "div-f-sec6-m3-b2:score",
+        "div-f-sec6-m3-b2:game:0:winner-and-rounds",
+        "div-f-sec6-m3-b2:game:1:winner-and-rounds",
+        "div-f-sec6-m3-b2:game:2:winner-and-rounds",
+        "div-f-sec6-m3-b2:game:3:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-03T14:00:52.361Z"
     }
   }
 }
