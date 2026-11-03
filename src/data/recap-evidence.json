@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-03T14:00:52.378Z",
+  "updatedAt": "2026-11-03T15:10:46.242Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -5561,6 +5561,9 @@
       "matchId": "div-f-sec6-m1",
       "boutId": "div-f-sec6-m1-b0",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 2702,
+      "endSec": 3372,
       "playerIds": [
         "ウメハラ",
         "水派"
@@ -5584,6 +5587,9 @@
       "matchId": "div-f-sec6-m1",
       "boutId": "div-f-sec6-m1-b1",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3372,
+      "endSec": 3983,
       "playerIds": [
         "ふ～ど",
         "マゴ"
@@ -5606,6 +5612,9 @@
       "matchId": "div-f-sec6-m1",
       "boutId": "div-f-sec6-m1-b2",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 4170,
+      "endSec": 4984,
       "playerIds": [
         "ひなお",
         "わびいち"
@@ -5630,6 +5639,9 @@
       "matchId": "div-f-sec6-m1",
       "boutId": "div-f-sec6-m1-b3",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 5209,
+      "endSec": 5963,
       "playerIds": [
         "YAS",
         "ときど"
@@ -5653,6 +5665,9 @@
       "matchId": "div-f-sec6-m2",
       "boutId": "div-f-sec6-m2-b0",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 7598,
+      "endSec": 8190,
       "playerIds": [
         "ガチくん",
         "らおやむ"
@@ -5676,6 +5691,9 @@
       "matchId": "div-f-sec6-m2",
       "boutId": "div-f-sec6-m2-b1",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 8347,
+      "endSec": 8655,
       "playerIds": [
         "カワノ",
         "Seiya"
@@ -5698,6 +5716,9 @@
       "matchId": "div-f-sec6-m2",
       "boutId": "div-f-sec6-m2-b2",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 8927,
+      "endSec": 10134,
       "playerIds": [
         "ぷげら",
         "大谷"
@@ -5723,6 +5744,9 @@
       "matchId": "div-f-sec6-m3",
       "boutId": "div-f-sec6-m3-b0",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 11658,
+      "endSec": 12244,
       "playerIds": [
         "竹内ジョン",
         "ひかる"
@@ -5746,6 +5770,9 @@
       "matchId": "div-f-sec6-m3",
       "boutId": "div-f-sec6-m3-b1",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 12458,
+      "endSec": 12903,
       "playerIds": [
         "ナウマン",
         "Jr."
@@ -5769,6 +5796,9 @@
       "matchId": "div-f-sec6-m3",
       "boutId": "div-f-sec6-m3-b2",
       "kind": "official",
+      "videoId": "6AialyrOq6U",
+      "startSec": 13125,
+      "endSec": 13927,
       "playerIds": [
         "KEI.B",
         "高木"

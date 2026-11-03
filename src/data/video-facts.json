@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T08:10:30.339Z",
+  "updatedAt": "2026-11-03T15:10:46.229Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -971,6 +971,163 @@
         },
         {
           "startSec": 14540,
+          "title": "選手音声入り本日のハイライト"
+        }
+      ]
+    },
+    "div-f-sec6": {
+      "videoId": "6AialyrOq6U",
+      "chapters": [
+        {
+          "startSec": 0,
+          "title": "配信開始"
+        },
+        {
+          "startSec": 587,
+          "title": "番組開始"
+        },
+        {
+          "startSec": 638,
+          "title": "久保's セミナー"
+        },
+        {
+          "startSec": 1260,
+          "title": "KEY MATCH"
+        },
+        {
+          "startSec": 1577,
+          "title": "eSportsニュース"
+        },
+        {
+          "startSec": 1805,
+          "title": "オープニング"
+        },
+        {
+          "startSec": 2277,
+          "title": "TEAM MATCH 1 選手入場"
+        },
+        {
+          "startSec": 2436,
+          "title": "アウェイ側オーダー発表"
+        },
+        {
+          "startSec": 2475,
+          "title": "先鋒戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 2702,
+          "title": "TEAM MATCH 1 先鋒戦"
+        },
+        {
+          "startSec": 3372,
+          "title": "中堅戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 3983,
+          "title": "大将戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 4170,
+          "title": "TEAM MATCH 1 大将戦"
+        },
+        {
+          "startSec": 4984,
+          "title": "延長戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 5209,
+          "title": "TEAM MATCH 1 延長戦"
+        },
+        {
+          "startSec": 5963,
+          "title": "勝利チームインタビュー"
+        },
+        {
+          "startSec": 6417,
+          "title": "番組からのお知らせ"
+        },
+        {
+          "startSec": 7235,
+          "title": "TEAM MATCH 2 選手入場"
+        },
+        {
+          "startSec": 7403,
+          "title": "アウェイ側オーダー発表"
+        },
+        {
+          "startSec": 7598,
+          "title": "TEAM MATCH 2 先鋒戦"
+        },
+        {
+          "startSec": 8190,
+          "title": "中堅戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 8347,
+          "title": "TEAM MATCH 2 中堅戦"
+        },
+        {
+          "startSec": 8655,
+          "title": "大将戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 8927,
+          "title": "TEAM MATCH 2 大将戦"
+        },
+        {
+          "startSec": 10134,
+          "title": "勝利チームインタビュー"
+        },
+        {
+          "startSec": 10570,
+          "title": "番組からのお知らせ"
+        },
+        {
+          "startSec": 11255,
+          "title": "TEAM MATCH 3 選手入場"
+        },
+        {
+          "startSec": 11420,
+          "title": "アウェイ側オーダー発表"
+        },
+        {
+          "startSec": 11455,
+          "title": "先鋒戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 11539,
+          "title": "竹内ジョン一発ギャグ"
+        },
+        {
+          "startSec": 11658,
+          "title": "TEAM MATCH 3 先鋒戦"
+        },
+        {
+          "startSec": 12244,
+          "title": "中堅戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 12458,
+          "title": "TEAM MATCH 3 中堅戦"
+        },
+        {
+          "startSec": 12903,
+          "title": "大将戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 13125,
+          "title": "TEAM MATCH 3 大将戦"
+        },
+        {
+          "startSec": 13927,
+          "title": "勝利チームインタビュー"
+        },
+        {
+          "startSec": 14303,
+          "title": "エンディング"
+        },
+        {
+          "startSec": 14909,
           "title": "選手音声入り本日のハイライト"
         }
       ]
@@ -4339,6 +4496,96 @@
           ]
         }
       ]
+    },
+    "div-f-sec6-m1-b0": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 2702,
+      "endSec": 3372,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m1-b1": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 3372,
+      "endSec": 3983,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m1-b2": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 4170,
+      "endSec": 4984,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m1-b3": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 5209,
+      "endSec": 5963,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m2-b0": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 7598,
+      "endSec": 8190,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m2-b1": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 8347,
+      "endSec": 8655,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m2-b2": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 8927,
+      "endSec": 10134,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m3-b0": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 11658,
+      "endSec": 12244,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m3-b1": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 12458,
+      "endSec": 12903,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
+    },
+    "div-f-sec6-m3-b2": {
+      "videoId": "6AialyrOq6U",
+      "startSec": 13125,
+      "endSec": 13927,
+      "status": "pending",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": []
     }
   },
   "narratives": {
