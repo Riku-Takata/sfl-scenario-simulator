@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06T04:32:36.474Z",
+  "updatedAt": "2026-11-06T04:33:48.532Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -5476,9 +5476,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
-      "verificationFailures": 2,
+      "verifierVersion": "independent-description-v3",
+      "verificationFailures": 4,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5503,7 +5504,7 @@
       ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verificationFailures": 1,
+      "verificationFailures": 2,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5528,7 +5529,7 @@
       ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verificationFailures": 1,
+      "verificationFailures": 2,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5553,7 +5554,7 @@
       ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verificationFailures": 1,
+      "verificationFailures": 2,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
