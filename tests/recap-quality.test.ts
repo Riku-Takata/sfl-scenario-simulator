@@ -12,11 +12,11 @@ import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
 import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
-import { mergeEvidenceCandidate, pendingEvidenceCandidates, selectVerificationBatch, verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
+import { mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, MAX_VERIFICATION_FAILURES, selectVerificationBatch, verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
-import { activeModels, callGemini, classifyRateLimit, isModelExhausted, isVideoDenied, isVideoQuotaExhausted, resetGeminiRunState } from "../scripts/recap/gemini-client";
+import { activeModels, callGemini, classifyRateLimit, isModelExhausted, isVideoDenied, isVideoQuotaExhausted, lastGeminiCallReachedApi, resetGeminiRunState } from "../scripts/recap/gemini-client";
 import {
   isBoutVideoCacheStale,
   normalizeTopicWindow,
@@ -636,5 +636,39 @@ test("503s move straight to the next model, and two fully overloaded calls pause
   assert.equal(requests, 4);
   assert.equal(await call(), null);
   assert.equal(requests, 4);
+  resetGeminiRunState();
+});
+
+test("a candidate whose verification keeps failing is given up after a bounded number of failures", () => {
+  let item = { ...evidence("stuck", "visual", "画面端でブランカのローリングが相手にヒットした。"), status: "candidate" as const, sourceModels: ["gemini-3.8-flash"] };
+  for (let i = 1; i < MAX_VERIFICATION_FAILURES; i++) {
+    item = recordVerificationFailure(item) as typeof item;
+    assert.equal(item.status, "candidate");
+    assert.equal(item.verificationFailures, i);
+    // Re-extraction rebuilds the candidate each run; the count must survive it.
+    const fresh = { ...item, verificationFailures: undefined, createdAt: "2026-11-06T00:00:00.000Z" };
+    item = mergeEvidenceCandidate(fresh, item) as typeof item;
+    assert.equal(item.verificationFailures, i);
+  }
+  const given = recordVerificationFailure(item);
+  assert.equal(given.status, "disputed");
+  assert.equal(given.verifierVersion, EVIDENCE_VERIFIER_VERSION);
+  // A later run keeps it given up instead of reverting it to a candidate.
+  const rebuilt = { ...item, verificationFailures: undefined };
+  assert.equal(mergeEvidenceCandidate(rebuilt, given).status, "disputed");
+  assert.deepEqual(pendingEvidenceCandidates([mergeEvidenceCandidate(rebuilt, given)]), []);
+});
+
+test("the caller can tell a failed request from a call that was never sent", async (t) => {
+  resetGeminiRunState();
+  t.mock.method(console, "warn", () => {});
+  t.mock.method(globalThis, "fetch", async () => new Response("overloaded", { status: 503 }));
+  const call = () => callGemini({ apiKey: "test", models: ["busy"], prompt: "p" });
+  assert.equal(await call(), null);
+  assert.equal(lastGeminiCallReachedApi(), true);
+  assert.equal(await call(), null);
+  // Two fully overloaded calls pause the run; the third is not sent and must not count as a failure.
+  assert.equal(await call(), null);
+  assert.equal(lastGeminiCallReachedApi(), false);
   resetGeminiRunState();
 });

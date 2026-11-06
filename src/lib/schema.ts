@@ -775,6 +775,8 @@ export const RecapEvidenceSchema = z.object({
   extractorVersion: z.string(),
   verifierVersion: z.string().optional(),
   verificationObservation: z.string().optional(),
+  /** Verification requests that reached the API and failed (not daily quota). */
+  verificationFailures: z.number().int().nonnegative().optional(),
   sourceModels: z.array(z.string()).default([]),
   createdAt: z.string(),
 });
