@@ -2,7 +2,7 @@ import crypto from "node:crypto";
 import type { BoutVideoFacts, RecapEvidence } from "../../src/lib/types";
 import { passedRuns, type BoutContext } from "./bout-video-facts";
 import type { BoutGameDetail } from "./narration";
-import { callGemini, parseJsonLoose } from "./gemini-client";
+import { callGemini, clearLastGeminiCall, isVideoModelPaused, parseJsonLoose } from "./gemini-client";
 import { z } from "zod";
 
 export const EVIDENCE_EXTRACTOR_VERSION = "recap-evidence-v2";
@@ -61,8 +61,21 @@ export function verificationWindow(candidate: RecapEvidence): { startSec: number
 }
 
 /**
+ * 検証に使うモデルの順番。抽出に使っていない非 lite モデルを先に試し、それが使えなければ (503・上限など)
+ * 抽出と同じモデルに、候補の主張を見せない別の呼び出しで観察させる。
+ * 2026-11 には別モデルの gemini-3.6-flash がどの動画にも 503 を返し続け、無料枠で動画に使える非 lite モデルが
+ * 3.8-flash だけになった。同じモデルを2回呼んで一致したものだけ残す方法は、以前の測定で精度の確認に効いていた。
+ * lite は 2026-11-06 の評価で、人が確認済みの候補を半数以上否定し、キャラクター名も取り違えたので検証に使わない。
+ * 実行をまたいで失敗が続いているモデルは除く (model-health)。
+ */
+export function verifierModelOrder(sourceModels: string[], videoModels: string[]): string[] {
+  const capable = videoModels.filter((model) => !/lite/i.test(model) && !isVideoModelPaused(model));
+  return [...capable.filter((model) => !sourceModels.includes(model)), ...capable.filter((model) => sourceModels.includes(model))];
+}
+
+/**
  * 1回の呼び出しでまとめて検証する候補と、使えるモデルを選ぶ。
- * 検証は抽出に使っていないモデルで行うので、最も多くの候補を受け持てるモデルを基準にする。
+ * 抽出に使っていないモデルが最も多くの候補を受け持てるように候補を選び、そのモデルを先頭にする。
  */
 export function selectVerificationBatch(candidates: RecapEvidence[], videoModels: string[]): { candidates: RecapEvidence[]; models: string[] } {
   const verifiable = candidates.filter((item) => item.videoId && item.startSec !== undefined && item.endSec !== undefined && item.endSec > item.startSec);
@@ -78,8 +91,17 @@ export function selectVerificationBatch(candidates: RecapEvidence[], videoModels
     const compatible = verifiable.filter((item) => !item.sourceModels.includes(model) && item.videoId === verifiable[0]?.videoId);
     if (compatible.length > best.length || (compatible.length === best.length && earlier(rank(compatible), rank(best)))) best = compatible;
   }
+  // どのモデルも抽出に使われている候補だけなら、同じモデルの別の呼び出しで検証する。
+  if (best.length === 0) best = verifiable.filter((item) => item.videoId === verifiable[0]?.videoId);
   const batch = best.slice(0, MAX_VERIFICATION_BATCH);
-  return { candidates: batch, models: capable.filter((model) => batch.every((item) => !item.sourceModels.includes(model))) };
+  const sources = [...new Set(batch.flatMap((item) => item.sourceModels))];
+  return { candidates: batch, models: batch.length ? verifierModelOrder(sources, videoModels) : [] };
+}
+
+function logSameModelVerification(result: { model: string }, candidates: RecapEvidence[]): void {
+  if (candidates.some((item) => item.sourceModels.includes(result.model))) {
+    console.log(`[Evidence] verified with ${result.model}, which also extracted the candidates, in a separate blind request.`);
+  }
 }
 
 const BatchVerifierOutputSchema = z.object({
@@ -96,7 +118,7 @@ export async function verifyEvidenceBatch(options: {
   candidates: RecapEvidence[];
 }): Promise<RecapEvidence[] | null> {
   const { apiKey, models, candidates } = options;
-  if (candidates.length === 0 || models.length === 0) return null;
+  if (candidates.length === 0 || models.length === 0) { clearLastGeminiCall(); return null; }
   const clips = candidates.map(verificationWindow);
   const result = await callGemini({
     purpose: "verify",
@@ -107,6 +129,7 @@ export async function verifyEvidenceBatch(options: {
     temperature: 0,
   });
   if (!result) return null;
+  logSameModelVerification(result, candidates);
   let observations: Map<number, string>;
   try {
     observations = new Map(BatchVerifierOutputSchema.parse(parseJsonLoose(result.text)).observations
@@ -234,8 +257,9 @@ export async function verifyEvidenceCandidate(options: {
   candidate: RecapEvidence;
 }): Promise<RecapEvidence> {
   const { apiKey, candidate } = options;
+  clearLastGeminiCall();
   if (!candidate.videoId || candidate.startSec === undefined || candidate.endSec === undefined || candidate.endSec <= candidate.startSec) return candidate;
-  const models = options.models.filter((model) => !/lite/i.test(model) && !candidate.sourceModels.includes(model));
+  const models = verifierModelOrder(candidate.sourceModels, options.models);
   if (models.length === 0) return candidate;
   // Blind pass: independently describe the clip before showing the model the claim.
   const clip = verificationWindow(candidate);
@@ -248,6 +272,7 @@ export async function verifyEvidenceCandidate(options: {
     temperature: 0,
   });
   if (!result) return candidate;
+  logSameModelVerification(result, [candidate]);
   try {
     const parsed = VerifierOutputSchema.parse(parseJsonLoose(result.text));
     const compatibleObservation = observationSupported(candidate.observation, parsed.observation);

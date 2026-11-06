@@ -49,6 +49,7 @@ import {
 } from "./recap/evidence-ledger";
 import { articleEvidenceReady } from "./recap/automation";
 import { persistentVideoBudget } from "./recap/usage";
+import { useModelHealthFile } from "./recap/model-health";
 import { finishWriteRequest, loadWriteRequests, queueWriteRequest, readPreparedNarratives, saveWriteRequests } from "./recap/writer-state";
 import { recordTokenUsage } from "./recap/token-usage";
 import { applyPublicationMode, evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
@@ -78,6 +79,7 @@ const SEED_FILE = path.join(DATA_DIR, "raw-capcom-seed.json");
 const RECAPS_FILE = path.join(DATA_DIR, "match-recaps.json");
 const VIDEO_FACTS_FILE = path.join(DATA_DIR, "video-facts.json");
 const EDITORIAL_FILE = path.join(DATA_DIR, "editorial-recaps.json");
+const MODEL_HEALTH_FILE = path.join(DATA_DIR, "gemini-model-health.json");
 
 const DEFAULT_VIDEO_MODELS = [
   "gemini-3.8-flash",
@@ -338,6 +340,8 @@ export async function generateAndSaveMatchRecaps(
   };
 
   const apiKey = process.env.GEMINI_API_KEY || "";
+  // 動画モデルの失敗の連続を実行をまたいで覚え、壊れたモデルで1日の枠を使い切らないようにする。
+  useModelHealthFile(MODEL_HEALTH_FILE);
   const configuredVideoModels = parseModelList(process.env.GEMINI_VIDEO_MODELS, DEFAULT_VIDEO_MODELS);
   const videoModels = activeModels(configuredVideoModels);
   const textModels = parseModelList(process.env.GEMINI_TEXT_MODELS, DEFAULT_TEXT_MODELS);
@@ -553,17 +557,20 @@ export async function generateAndSaveMatchRecaps(
             if (results) {
               for (const item of results) evidenceData.evidence[item.id] = item;
               saveRecapEvidence(evidenceData);
+            } else if (!lastGeminiCallReachedApi()) {
+              // 上限・混雑で送らなかった呼び出しは日次の予算に数えない。
+              budget.calls -= 1;
+              budget.videoSeconds -= batchSeconds;
             } else {
               const status = lastGeminiFailureStatus();
-              if (lastGeminiCallReachedApi() && status !== 429) {
+              if (status !== 429) {
                 for (const item of batch.candidates) evidenceData.evidence[item.id] = recordVerificationFailure(item);
                 saveRecapEvidence(evidenceData);
               }
-              if (status === 400 || (lastGeminiCallReachedApi() && status === 503)) {
+              if (status === 400) {
                 // 失敗したリクエストも Google の日次上限に数えられるので、予約は戻さない。
-                // 2026-11 には 3.6-flash がまとめ送りだけに 503 を返し続けた可能性があるので、503 でも1区間ずつに切り替える。
                 batchedVerificationRejected = true;
-                console.warn(`[Evidence] the API returned ${status} for several clips in one request; verifying one clip per request for the rest of this run.`);
+                console.warn("[Evidence] the API rejected several clips in one request; verifying one clip per request for the rest of this run.");
               }
             }
           }
@@ -576,8 +583,10 @@ export async function generateAndSaveMatchRecaps(
               budget.videoSeconds += clip.endSec - clip.startSec;
               const verified = await verifyEvidenceCandidate({ apiKey, models: videoModels, candidate });
               if (verified === candidate) {
-                const independent = videoModels.some((model) => !/lite/i.test(model) && !candidate.sourceModels.includes(model));
-                if (independent && lastGeminiCallReachedApi() && lastGeminiFailureStatus() !== 429) {
+                if (!lastGeminiCallReachedApi()) {
+                  budget.calls -= 1;
+                  budget.videoSeconds -= clip.endSec - clip.startSec;
+                } else if (lastGeminiFailureStatus() !== 429) {
                   evidenceData.evidence[candidate.id] = recordVerificationFailure(candidate);
                   saveRecapEvidence(evidenceData);
                 }

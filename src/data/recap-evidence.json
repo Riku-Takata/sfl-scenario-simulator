@@ -5476,10 +5476,8 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationFailures": 4,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5502,10 +5500,8 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationFailures": 4,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5528,10 +5524,8 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationFailures": 4,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5554,10 +5548,8 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationFailures": 4,
       "sourceModels": [
         "gemini-3.8-flash"
       ],

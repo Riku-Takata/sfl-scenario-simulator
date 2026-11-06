@@ -10,6 +10,9 @@
  */
 
 import { geminiTokenCounts, recordTokenUsage } from "./token-usage";
+import { isVideoModelPaused, recordVideoOutcome } from "./model-health";
+
+export { isVideoModelPaused } from "./model-health";
 
 export interface GeminiVideoInput {
   youtubeUrl: string;
@@ -53,6 +56,12 @@ export function activeModels(models: string[]): string[] {
 /** 直前の callGemini が null を返したときの最後の HTTP ステータス (通信エラーなら undefined)。 */
 export function lastGeminiFailureStatus(): number | undefined {
   return lastFailureStatus;
+}
+
+/** callGemini を呼ばずに諦めたことを示す。直前の呼び出しの結果が残って失敗と数えられないようにする。 */
+export function clearLastGeminiCall(): void {
+  lastCallReachedApi = false;
+  lastFailureStatus = undefined;
 }
 
 /** 直前の callGemini が少なくとも1回 API に要求を送ったか。送らずに諦めた失敗を候補の失敗に数えないために使う。 */
@@ -183,6 +192,8 @@ export async function callGemini(options: {
 
   for (const model of models) {
     if (exhaustedModels.has(model)) continue;
+    // 実行をまたいで動画の失敗が続いているモデルは、止めている間は送らない (model-health)。
+    if (video && isVideoModelPaused(model)) continue;
     attempted++;
 
     let rateLimitRetries = 0;
@@ -282,6 +293,7 @@ export async function callGemini(options: {
         if (res.status === 503) {
           // 待って同じモデルを叩き直しても混雑が引くことは少ないので、すぐ次のモデルへ。
           console.warn(`[Gemini ${model}] HTTP 503; trying the next model.`);
+          if (video) recordVideoOutcome(model, { ok: false, status: 503 });
           lastFailureStatus = 503;
           break;
         }
@@ -312,6 +324,7 @@ export async function callGemini(options: {
         }
         unknownRateLimitStreaks.delete(model);
         overloadedCallStreak = 0;
+        if (video) recordVideoOutcome(model, { ok: true });
         return {
           model,
           text,
@@ -320,6 +333,7 @@ export async function callGemini(options: {
       } catch (err) {
         console.warn(`[Gemini ${model}] ${(err as Error).message}; trying the next model.`);
         lastFailureStatus = undefined;
+        if (video) recordVideoOutcome(model, { ok: false });
         break;
       }
     }

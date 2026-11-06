@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { BoutVideoFacts, BoutVideoRun } from "../../src/lib/types";
-import { callGemini, isModelExhausted, isVideoDenied, isVideoQuotaExhausted, parseJsonLoose } from "./gemini-client";
+import { callGemini, isModelExhausted, isVideoDenied, isVideoQuotaExhausted, lastGeminiCallReachedApi, parseJsonLoose } from "./gemini-client";
 
 /**
  * Bout単位の動画解析。
@@ -204,7 +204,14 @@ export async function advanceBoutAnalysis(options: {
       prompt: buildBoutPrompt(ctx),
       video: { youtubeUrl, startSec: facts.startSec, endSec: facts.endSec, fps },
     });
-    if (!result) return; // 全モデル混雑・上限。次回の実行で再開する
+    if (!result) {
+      // 上限・混雑で送らなかった呼び出しは日次の予算に数えない。送って失敗したものは Google の上限にも数えられる。
+      if (!lastGeminiCallReachedApi()) {
+        budget.calls -= 1;
+        budget.videoSeconds -= seconds;
+      }
+      return; // 全モデル混雑・上限。次回の実行で再開する
+    }
 
     let run: BoutVideoRun;
     try {

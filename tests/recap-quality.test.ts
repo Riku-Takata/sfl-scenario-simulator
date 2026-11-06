@@ -12,10 +12,11 @@ import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
 import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
-import { mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, MAX_VERIFICATION_FAILURES, selectVerificationBatch, verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
+import { mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, MAX_VERIFICATION_FAILURES, selectVerificationBatch, verifierModelOrder, verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
+import { isVideoModelPaused, modelHealthState, recordVideoOutcome, setModelHealthState, VIDEO_FAILURES_BEFORE_PAUSE } from "../scripts/recap/model-health";
 import { activeModels, callGemini, classifyRateLimit, isModelExhausted, isVideoDenied, isVideoQuotaExhausted, lastGeminiCallReachedApi, resetGeminiRunState } from "../scripts/recap/gemini-client";
 import {
   isBoutVideoCacheStale,
@@ -597,7 +598,34 @@ test("a verification batch uses a model none of its candidates came from", () =>
   const models = ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-3.7-flash", "gemini-3.6-flash"];
   const batch = selectVerificationBatch([make("a", ["gemini-3.8-flash"]), make("b", ["gemini-3.8-flash", "gemini-3.7-flash"]), make("c", ["gemini-3.6-flash"])], models);
   assert.deepEqual(batch.candidates.map((item) => item.id), ["a", "b"]);
-  assert.deepEqual(batch.models, ["gemini-3.6-flash"]);
+  // The independent model goes first; the extracting models follow as a blind same-model fallback.
+  assert.deepEqual(batch.models, ["gemini-3.6-flash", "gemini-3.8-flash", "gemini-3.7-flash"]);
+  assert.deepEqual(verifierModelOrder(["gemini-3.8-flash"], ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-3.6-flash"]), ["gemini-3.6-flash", "gemini-3.8-flash"]);
+  // Candidates every capable model already extracted are still verified, by a separate request.
+  const both = selectVerificationBatch([make("d", ["gemini-3.8-flash", "gemini-3.6-flash"])], ["gemini-3.8-flash", "gemini-3.6-flash"]);
+  assert.deepEqual(both.candidates.map((item) => item.id), ["d"]);
+  assert.deepEqual(both.models, ["gemini-3.8-flash", "gemini-3.6-flash"]);
+});
+
+test("when the independent verifier is overloaded, the extracting model verifies the clip blind", async (t) => {
+  resetGeminiRunState();
+  t.mock.method(console, "warn", () => {});
+  t.mock.method(console, "log", () => {});
+  const supported = "ブランカが画面端でローリングを当て、相手の体力ゲージが残りわずかになった。";
+  const candidate = { ...evidence("one", "visual", supported), status: "candidate" as const, sourceModels: ["gemini-3.8-flash"] };
+  const called: string[] = [];
+  t.mock.method(globalThis, "fetch", async (_url: string, options: RequestInit) => {
+    const body = JSON.parse(String(options.body));
+    called.push(body.model);
+    if (body.model === "gemini-3.6-flash") return new Response("overloaded", { status: 503 });
+    assert.equal(JSON.stringify(body).includes(supported), false); // the claim is not shown to the verifier
+    return new Response(JSON.stringify({ output_text: JSON.stringify({ observation: supported }) }));
+  });
+  const verified = await verifyEvidenceCandidate({ apiKey: "test", models: ["gemini-3.8-flash", "gemini-3.6-flash"], candidate });
+  assert.deepEqual(called, ["gemini-3.6-flash", "gemini-3.8-flash"]);
+  assert.equal(verified.status, "verified");
+  assert.deepEqual(verified.sourceModels, ["gemini-3.8-flash"]);
+  resetGeminiRunState();
 });
 
 test("batched verification sends every clip in one request and judges each clip on its own", async (t) => {
@@ -670,5 +698,41 @@ test("the caller can tell a failed request from a call that was never sent", asy
   // Two fully overloaded calls pause the run; the third is not sent and must not count as a failure.
   assert.equal(await call(), null);
   assert.equal(lastGeminiCallReachedApi(), false);
+  resetGeminiRunState();
+});
+
+test("a model whose video calls keep failing is paused across runs, longer each time", () => {
+  setModelHealthState({ schemaVersion: 1, models: {} });
+  const now = Date.parse("2026-11-06T00:00:00Z");
+  for (let i = 1; i < VIDEO_FAILURES_BEFORE_PAUSE; i++) recordVideoOutcome("gemini-3.6-flash", { ok: false, status: 503 }, now);
+  assert.equal(isVideoModelPaused("gemini-3.6-flash", now), false);
+  recordVideoOutcome("gemini-3.6-flash", { ok: false, status: 503 }, now);
+  assert.equal(isVideoModelPaused("gemini-3.6-flash", now + 60_000), true);
+  assert.equal(isVideoModelPaused("gemini-3.6-flash", now + 2 * 3600_000), false);
+  // The first call after the pause fails again: pause twice as long at once.
+  const later = now + 2 * 3600_000;
+  recordVideoOutcome("gemini-3.6-flash", { ok: false, status: 503 }, later);
+  assert.equal(isVideoModelPaused("gemini-3.6-flash", later + 3 * 3600_000), true);
+  assert.equal(isVideoModelPaused("gemini-3.6-flash", later + 4 * 3600_000), false);
+  recordVideoOutcome("gemini-3.6-flash", { ok: true }, later + 4 * 3600_000);
+  assert.equal(modelHealthState().models["gemini-3.6-flash"].videoFailures, 0);
+  setModelHealthState({ schemaVersion: 1, models: {} });
+});
+
+test("paused models are skipped for video calls and verification falls back to the extracting model", async (t) => {
+  resetGeminiRunState();
+  t.mock.method(console, "warn", () => {});
+  t.mock.method(console, "log", () => {});
+  setModelHealthState({ schemaVersion: 1, models: { "gemini-3.6-flash": { videoFailures: 30, pauses: 4, pausedUntil: new Date(Date.now() + 3600_000).toISOString(), updatedAt: new Date().toISOString() } } });
+  assert.deepEqual(verifierModelOrder(["gemini-3.8-flash"], ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-3.6-flash"]), ["gemini-3.8-flash"]);
+  const called: string[] = [];
+  t.mock.method(globalThis, "fetch", async (url: string, options: RequestInit) => {
+    called.push(JSON.parse(String(options.body)).model ?? url.match(/models\/([^:]+):/)?.[1]);
+    return new Response(JSON.stringify({ output_text: "{}", candidates: [{ content: { parts: [{ text: "{}" }] } }] }));
+  });
+  await callGemini({ apiKey: "test", models: ["gemini-3.6-flash", "gemini-3.8-flash"], prompt: "p", video: { youtubeUrl: "https://www.youtube.com/watch?v=x", startSec: 0, endSec: 12, fps: 1 } });
+  await callGemini({ apiKey: "test", models: ["gemini-3.6-flash"], prompt: "p" }); // text calls are not paused
+  assert.deepEqual(called, ["gemini-3.8-flash", "gemini-3.6-flash"]);
+  setModelHealthState({ schemaVersion: 1, models: {} });
   resetGeminiRunState();
 });
