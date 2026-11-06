@@ -12,7 +12,7 @@ import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
 import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
-import { mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, MAX_VERIFICATION_FAILURES, selectVerificationBatch, verifierModelOrder, verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
+import { mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, countsAsVerificationFailure, MAX_VERIFICATION_FAILURES, selectVerificationBatch, verifierModelOrder, verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
@@ -735,4 +735,13 @@ test("paused models are skipped for video calls and verification falls back to t
   assert.deepEqual(called, ["gemini-3.8-flash", "gemini-3.6-flash"]);
   setModelHealthState({ schemaVersion: 1, models: {} });
   resetGeminiRunState();
+});
+
+test("only failures that point at the request itself count against a candidate", () => {
+  assert.equal(countsAsVerificationFailure(503), false); // congestion: model-health pauses the model instead
+  assert.equal(countsAsVerificationFailure(undefined), false); // network error
+  assert.equal(countsAsVerificationFailure(429), false); // daily quota
+  assert.equal(countsAsVerificationFailure(400), true);
+  assert.equal(countsAsVerificationFailure(403), true);
+  assert.equal(countsAsVerificationFailure(500), true);
 });
