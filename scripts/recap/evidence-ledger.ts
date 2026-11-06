@@ -2,7 +2,7 @@ import crypto from "node:crypto";
 import type { BoutVideoFacts, RecapEvidence } from "../../src/lib/types";
 import { passedRuns, type BoutContext } from "./bout-video-facts";
 import type { BoutGameDetail } from "./narration";
-import { callGemini, parseJsonLoose } from "./gemini-client";
+import { callGemini, clearLastGeminiCall, isVideoModelPaused, parseJsonLoose } from "./gemini-client";
 import { z } from "zod";
 
 export const EVIDENCE_EXTRACTOR_VERSION = "recap-evidence-v2";
@@ -61,13 +61,15 @@ export function verificationWindow(candidate: RecapEvidence): { startSec: number
 }
 
 /**
- * 検証に使うモデルの順番。抽出に使っていないモデルを先に試し、それが使えなければ (503・上限など)
+ * 検証に使うモデルの順番。抽出に使っていない非 lite モデルを先に試し、それが使えなければ (503・上限など)
  * 抽出と同じモデルに、候補の主張を見せない別の呼び出しで観察させる。
- * 2026-11 には別モデルの gemini-3.6-flash がどの動画にも 503 を返し続け、3.8-flash の候補が1件も検証できなかった。
- * 同じモデルを2回呼んで一致したものだけ残す方法は、以前の測定で精度の確認に効いていた。
+ * 2026-11 には別モデルの gemini-3.6-flash がどの動画にも 503 を返し続け、無料枠で動画に使える非 lite モデルが
+ * 3.8-flash だけになった。同じモデルを2回呼んで一致したものだけ残す方法は、以前の測定で精度の確認に効いていた。
+ * lite は 2026-11-06 の評価で、人が確認済みの候補を半数以上否定し、キャラクター名も取り違えたので検証に使わない。
+ * 実行をまたいで失敗が続いているモデルは除く (model-health)。
  */
 export function verifierModelOrder(sourceModels: string[], videoModels: string[]): string[] {
-  const capable = videoModels.filter((model) => !/lite/i.test(model));
+  const capable = videoModels.filter((model) => !/lite/i.test(model) && !isVideoModelPaused(model));
   return [...capable.filter((model) => !sourceModels.includes(model)), ...capable.filter((model) => sourceModels.includes(model))];
 }
 
@@ -93,7 +95,7 @@ export function selectVerificationBatch(candidates: RecapEvidence[], videoModels
   if (best.length === 0) best = verifiable.filter((item) => item.videoId === verifiable[0]?.videoId);
   const batch = best.slice(0, MAX_VERIFICATION_BATCH);
   const sources = [...new Set(batch.flatMap((item) => item.sourceModels))];
-  return { candidates: batch, models: batch.length ? verifierModelOrder(sources, capable) : [] };
+  return { candidates: batch, models: batch.length ? verifierModelOrder(sources, videoModels) : [] };
 }
 
 function logSameModelVerification(result: { model: string }, candidates: RecapEvidence[]): void {
@@ -116,7 +118,7 @@ export async function verifyEvidenceBatch(options: {
   candidates: RecapEvidence[];
 }): Promise<RecapEvidence[] | null> {
   const { apiKey, models, candidates } = options;
-  if (candidates.length === 0 || models.length === 0) return null;
+  if (candidates.length === 0 || models.length === 0) { clearLastGeminiCall(); return null; }
   const clips = candidates.map(verificationWindow);
   const result = await callGemini({
     purpose: "verify",
@@ -255,6 +257,7 @@ export async function verifyEvidenceCandidate(options: {
   candidate: RecapEvidence;
 }): Promise<RecapEvidence> {
   const { apiKey, candidate } = options;
+  clearLastGeminiCall();
   if (!candidate.videoId || candidate.startSec === undefined || candidate.endSec === undefined || candidate.endSec <= candidate.startSec) return candidate;
   const models = verifierModelOrder(candidate.sourceModels, options.models);
   if (models.length === 0) return candidate;

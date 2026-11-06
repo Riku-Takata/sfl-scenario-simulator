@@ -92,7 +92,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/recap-evidence.json src/data/recap-articles.json src/data/recap-jobs.json src/data/video-facts.json src/data/match-recaps.json src/data/recap-usage.json src/data/recap-token-usage.json src/data/recap-write-requests.json
+          git add src/data/recap-evidence.json src/data/recap-articles.json src/data/recap-jobs.json src/data/video-facts.json src/data/match-recaps.json src/data/recap-usage.json src/data/recap-token-usage.json src/data/recap-write-requests.json src/data/gemini-model-health.json
           if git diff --cached --quiet; then
             echo "No recap state changed."
           else

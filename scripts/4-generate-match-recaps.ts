@@ -49,6 +49,7 @@ import {
 } from "./recap/evidence-ledger";
 import { articleEvidenceReady } from "./recap/automation";
 import { persistentVideoBudget } from "./recap/usage";
+import { useModelHealthFile } from "./recap/model-health";
 import { finishWriteRequest, loadWriteRequests, queueWriteRequest, readPreparedNarratives, saveWriteRequests } from "./recap/writer-state";
 import { recordTokenUsage } from "./recap/token-usage";
 import { applyPublicationMode, evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
@@ -78,6 +79,7 @@ const SEED_FILE = path.join(DATA_DIR, "raw-capcom-seed.json");
 const RECAPS_FILE = path.join(DATA_DIR, "match-recaps.json");
 const VIDEO_FACTS_FILE = path.join(DATA_DIR, "video-facts.json");
 const EDITORIAL_FILE = path.join(DATA_DIR, "editorial-recaps.json");
+const MODEL_HEALTH_FILE = path.join(DATA_DIR, "gemini-model-health.json");
 
 const DEFAULT_VIDEO_MODELS = [
   "gemini-3.8-flash",
@@ -338,6 +340,8 @@ export async function generateAndSaveMatchRecaps(
   };
 
   const apiKey = process.env.GEMINI_API_KEY || "";
+  // 動画モデルの失敗の連続を実行をまたいで覚え、壊れたモデルで1日の枠を使い切らないようにする。
+  useModelHealthFile(MODEL_HEALTH_FILE);
   const configuredVideoModels = parseModelList(process.env.GEMINI_VIDEO_MODELS, DEFAULT_VIDEO_MODELS);
   const videoModels = activeModels(configuredVideoModels);
   const textModels = parseModelList(process.env.GEMINI_TEXT_MODELS, DEFAULT_TEXT_MODELS);
