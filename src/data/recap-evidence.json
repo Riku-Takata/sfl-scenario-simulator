@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-03T15:10:46.242Z",
+  "updatedAt": "2026-11-06T04:32:36.474Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -5478,6 +5478,7 @@
       ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
+      "verificationFailures": 2,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5502,6 +5503,7 @@
       ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
+      "verificationFailures": 1,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5526,6 +5528,7 @@
       ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
+      "verificationFailures": 1,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
@@ -5550,6 +5553,7 @@
       ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
+      "verificationFailures": 1,
       "sourceModels": [
         "gemini-3.8-flash"
       ],
