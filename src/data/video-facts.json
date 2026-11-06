@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T15:10:46.229Z",
+  "updatedAt": "2026-11-06T04:38:43.456Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -4501,10 +4501,54 @@
       "videoId": "6AialyrOq6U",
       "startSec": 2702,
       "endSec": 3372,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-06T04:38:43.442Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第3ゲーム第3ラウンド、バーンアウト寸前まで追い詰められたウメハラ豪鬼が、水派キャミィのジャンプ攻撃をバックステップで空振らせ、立ち弱KからのドライブラッシュコンボでCAまで繋いで逆転KO勝利を決める。",
+              "evidence": "両方",
+              "startSec": 3233,
+              "endSec": 3249
+            },
+            {
+              "topic": "第2ゲーム第3ラウンド、ウメハラ豪鬼の溜め波動拳の隙に水派キャミィが差し返しを決め、ドライブラッシュからCAまで一気に叩き込んでリーサルを奪い、ゲームカウントを1-1に戻す。",
+              "evidence": "両方",
+              "startSec": 3065,
+              "endSec": 3082
+            },
+            {
+              "topic": "第3ゲーム第1ラウンド、水派キャミィがウメハラ豪鬼を画面端に追い詰めて圧倒し、最後はパリィの隙を見逃さず投げを決めてパーフェクトKOを奪う。",
+              "evidence": "映像",
+              "startSec": 3110,
+              "endSec": 3127
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、水派キャミィのアクセルスピンナックルをガードしたウメハラ豪鬼がパニッシュカウンターから画面端へ運び、OD昇龍拳からSA2を繋いで大ダメージを与えてラウンドを取り返す。",
+              "evidence": "両方",
+              "startSec": 3158,
+              "endSec": 3173
+            },
+            {
+              "topic": "第1ゲーム第1ラウンド、水派キャミィが仕掛けたドライブインパクトに対してウメハラ豪鬼が即座にインパクト返しを成功させ、パニッシュカウンターからKOを奪う。",
+              "evidence": "両方",
+              "startSec": 2795,
+              "endSec": 2802
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec6-m1-b1": {
       "videoId": "6AialyrOq6U",

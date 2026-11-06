@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06T04:36:09.680Z",
+  "updatedAt": "2026-11-06T04:38:44.051Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -5824,6 +5824,130 @@
       "verifierVersion": "official-source-v1",
       "sourceModels": [],
       "createdAt": "2026-11-03T14:00:52.361Z"
+    },
+    "ev-f22abb62b702f0f9e8b3": {
+      "id": "ev-f22abb62b702f0f9e8b3",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3233,
+      "endSec": 3249,
+      "playerIds": [
+        "ウメハラ",
+        "水派"
+      ],
+      "observation": "第3ゲーム第3ラウンド、バーンアウト寸前まで追い詰められたウメハラ豪鬼が、水派キャミィのジャンプ攻撃をバックステップで空振らせ、立ち弱KからのドライブラッシュコンボでCAまで繋いで逆転KO勝利を決める。",
+      "officialRefs": [
+        "div-f-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "verificationFailures": 2,
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-06T04:38:43.458Z"
+    },
+    "ev-6bd61f80d9783f8a6057": {
+      "id": "ev-6bd61f80d9783f8a6057",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3065,
+      "endSec": 3082,
+      "playerIds": [
+        "ウメハラ",
+        "水派"
+      ],
+      "observation": "第2ゲーム第3ラウンド、ウメハラ豪鬼の溜め波動拳の隙に水派キャミィが差し返しを決め、ドライブラッシュからCAまで一気に叩き込んでリーサルを奪い、ゲームカウントを1-1に戻す。",
+      "officialRefs": [
+        "div-f-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "verificationFailures": 1,
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-06T04:38:43.458Z"
+    },
+    "ev-07d1a8b113488d72106b": {
+      "id": "ev-07d1a8b113488d72106b",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3110,
+      "endSec": 3127,
+      "playerIds": [
+        "ウメハラ",
+        "水派"
+      ],
+      "observation": "第3ゲーム第1ラウンド、水派キャミィがウメハラ豪鬼を画面端に追い詰めて圧倒し、最後はパリィの隙を見逃さず投げを決めてパーフェクトKOを奪う。",
+      "officialRefs": [
+        "div-f-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "verificationFailures": 1,
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-06T04:38:43.458Z"
+    },
+    "ev-be3814aa3fdc460a2225": {
+      "id": "ev-be3814aa3fdc460a2225",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3158,
+      "endSec": 3173,
+      "playerIds": [
+        "ウメハラ",
+        "水派"
+      ],
+      "observation": "第3ゲーム第2ラウンド、水派キャミィのアクセルスピンナックルをガードしたウメハラ豪鬼がパニッシュカウンターから画面端へ運び、OD昇龍拳からSA2を繋いで大ダメージを与えてラウンドを取り返す。",
+      "officialRefs": [
+        "div-f-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "verificationFailures": 1,
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-06T04:38:43.458Z"
+    },
+    "ev-5ddf7e4730038bfb8470": {
+      "id": "ev-5ddf7e4730038bfb8470",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 2795,
+      "endSec": 2802,
+      "playerIds": [
+        "ウメハラ",
+        "水派"
+      ],
+      "observation": "第1ゲーム第1ラウンド、水派キャミィが仕掛けたドライブインパクトに対してウメハラ豪鬼が即座にインパクト返しを成功させ、パニッシュカウンターからKOを奪う。",
+      "officialRefs": [
+        "div-f-sec6-m1-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-06T04:38:43.458Z"
     }
   }
 }
