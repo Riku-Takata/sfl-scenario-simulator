@@ -44,7 +44,7 @@ import {
   type VideoBudget,
 } from "./recap/bout-video-facts";
 import {
-  buildBoutEvidence, MAX_VERIFICATION_BATCH, mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, selectVerificationBatch,
+  buildBoutEvidence, MAX_VERIFICATION_BATCH, mergeEvidenceCandidate, countsAsVerificationFailure, pendingEvidenceCandidates, recordVerificationFailure, selectVerificationBatch,
   verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate,
 } from "./recap/evidence-ledger";
 import { articleEvidenceReady } from "./recap/automation";
@@ -563,7 +563,7 @@ export async function generateAndSaveMatchRecaps(
               budget.videoSeconds -= batchSeconds;
             } else {
               const status = lastGeminiFailureStatus();
-              if (status !== 429) {
+              if (countsAsVerificationFailure(status)) {
                 for (const item of batch.candidates) evidenceData.evidence[item.id] = recordVerificationFailure(item);
                 saveRecapEvidence(evidenceData);
               }
@@ -586,7 +586,7 @@ export async function generateAndSaveMatchRecaps(
                 if (!lastGeminiCallReachedApi()) {
                   budget.calls -= 1;
                   budget.videoSeconds -= clip.endSec - clip.startSec;
-                } else if (lastGeminiFailureStatus() !== 429) {
+                } else if (countsAsVerificationFailure(lastGeminiFailureStatus())) {
                   evidenceData.evidence[candidate.id] = recordVerificationFailure(candidate);
                   saveRecapEvidence(evidenceData);
                 }

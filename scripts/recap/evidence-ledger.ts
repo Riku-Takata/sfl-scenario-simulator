@@ -30,6 +30,15 @@ export function mergeEvidenceCandidate(candidate: RecapEvidence, prior?: RecapEv
  */
 export const MAX_VERIFICATION_FAILURES = 4;
 
+/**
+ * 候補の失敗に数える検証の失敗か。混雑 (503)・通信エラー・上限 (429) は候補のせいではないので数えない。
+ * 503 が続くモデルは model-health が止めるので、数えなくても同じ要求を繰り返し続けることはない。
+ * 数えると、混雑の日に正しい候補まで打ち切ってしまう。
+ */
+export function countsAsVerificationFailure(status: number | undefined): boolean {
+  return status !== undefined && status !== 429 && status !== 503;
+}
+
 /** 検証の要求が API に届いて失敗した (日次上限以外) ことを記録する。上限に達したら disputed にして打ち切る。 */
 export function recordVerificationFailure(candidate: RecapEvidence): RecapEvidence {
   const failures = (candidate.verificationFailures ?? 0) + 1;
