@@ -9,11 +9,11 @@
       "updatedAt": "2026-11-06T08:00:00.000Z"
     },
     "gemini-3.8-flash": {
-      "videoFailures": 4,
-      "pauses": 2,
-      "pausedUntil": "2026-11-06T14:43:31.339Z",
+      "videoFailures": 5,
+      "pauses": 3,
+      "pausedUntil": "2026-11-06T23:10:52.479Z",
       "lastStatus": 503,
-      "updatedAt": "2026-11-06T10:43:31.339Z"
+      "updatedAt": "2026-11-06T15:10:52.479Z"
     }
   }
 }
