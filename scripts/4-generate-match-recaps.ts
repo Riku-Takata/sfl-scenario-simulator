@@ -33,7 +33,7 @@ import {
   findBoutWindow,
   findMatchStartSec,
 } from "./recap/youtube-chapters";
-import { activeModels, isVideoQuotaExhausted, lastGeminiFailureStatus, parseModelList } from "./recap/gemini-client";
+import { activeModels, isVideoQuotaExhausted, lastGeminiCallReachedApi, lastGeminiFailureStatus, parseModelList } from "./recap/gemini-client";
 import {
   advanceBoutAnalysis,
   budgetAllows,
@@ -44,7 +44,7 @@ import {
   type VideoBudget,
 } from "./recap/bout-video-facts";
 import {
-  buildBoutEvidence, MAX_VERIFICATION_BATCH, mergeEvidenceCandidate, pendingEvidenceCandidates, selectVerificationBatch,
+  buildBoutEvidence, MAX_VERIFICATION_BATCH, mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, selectVerificationBatch,
   verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate,
 } from "./recap/evidence-ledger";
 import { articleEvidenceReady } from "./recap/automation";
@@ -553,20 +553,36 @@ export async function generateAndSaveMatchRecaps(
             if (results) {
               for (const item of results) evidenceData.evidence[item.id] = item;
               saveRecapEvidence(evidenceData);
-            } else if (lastGeminiFailureStatus() === 400) {
-              // 失敗したリクエストも Google の日次上限に数えられるので、予約は戻さない。
-              batchedVerificationRejected = true;
-              console.warn("[Evidence] the API rejected several clips in one request; verifying one clip per request for the rest of this run.");
+            } else {
+              const status = lastGeminiFailureStatus();
+              if (lastGeminiCallReachedApi() && status !== 429) {
+                for (const item of batch.candidates) evidenceData.evidence[item.id] = recordVerificationFailure(item);
+                saveRecapEvidence(evidenceData);
+              }
+              if (status === 400 || (lastGeminiCallReachedApi() && status === 503)) {
+                // 失敗したリクエストも Google の日次上限に数えられるので、予約は戻さない。
+                // 2026-11 には 3.6-flash がまとめ送りだけに 503 を返し続けた可能性があるので、503 でも1区間ずつに切り替える。
+                batchedVerificationRejected = true;
+                console.warn(`[Evidence] the API returned ${status} for several clips in one request; verifying one clip per request for the rest of this run.`);
+              }
             }
           }
           if (batchedVerificationRejected || batch.candidates.length === 1) {
-            for (const candidate of pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId))) {
+            for (const listed of pendingEvidenceCandidates(evidenceForBout(evidenceData, ctx.boutId))) {
+              const candidate = evidenceData.evidence[listed.id] ?? listed;
               const clip = verificationWindow(candidate);
               if (!budgetAllows(budget, clip.endSec - clip.startSec)) break;
               budget.calls += 1;
               budget.videoSeconds += clip.endSec - clip.startSec;
               const verified = await verifyEvidenceCandidate({ apiKey, models: videoModels, candidate });
-              if (verified === candidate) break;
+              if (verified === candidate) {
+                const independent = videoModels.some((model) => !/lite/i.test(model) && !candidate.sourceModels.includes(model));
+                if (independent && lastGeminiCallReachedApi() && lastGeminiFailureStatus() !== 429) {
+                  evidenceData.evidence[candidate.id] = recordVerificationFailure(candidate);
+                  saveRecapEvidence(evidenceData);
+                }
+                break;
+              }
               evidenceData.evidence[verified.id] = verified;
               saveRecapEvidence(evidenceData);
               if (articleEvidenceReady(evidenceForBout(evidenceData, ctx.boutId))) break;
@@ -851,6 +867,13 @@ export async function generateAndSaveMatchRecaps(
         if (writeRequests.requests[matchId]?.stage === "needs_review" && candidate?.status !== "passed" && !editorial.bouts[input.ctx.boutId]) {
           recapJob.stage = "needs_review";
           recapJob.failureReason = "local_writer_quality_retry_limit";
+          delete recapJob.nextAttemptAt;
+        } else if (evidenceExhaustedBouts.size > 0 && !evidenceExhaustedBouts.has(input.ctx.boutId) &&
+            recapJob.stage === "writing" && candidate?.status !== "passed" && !editorial.bouts[input.ctx.boutId]) {
+          // 試合の解説は全Boutの根拠がそろうまで書けない。待たせたままだと最古の節として選ばれ続け、
+          // 新しい節の解析が始まらないので、打ち切ったBoutと一緒に確認待ちへ回す。
+          recapJob.stage = "needs_review";
+          recapJob.failureReason = "sibling_bout_evidence_exhausted";
           delete recapJob.nextAttemptAt;
         }
         recap.videoStatus = editorial.bouts[input.ctx.boutId] || candidate?.status === "passed"

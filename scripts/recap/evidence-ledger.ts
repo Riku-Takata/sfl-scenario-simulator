@@ -18,7 +18,24 @@ export function mergeEvidenceCandidate(candidate: RecapEvidence, prior?: RecapEv
   const reviewed = prior?.verifierVersion === EVIDENCE_VERIFIER_VERSION ||
     prior?.verifierVersion === MANUAL_REVIEW_VERIFIER_VERSION ||
     (prior?.status === "verified" && prior.verifierVersion === "independent-description-v2");
-  return prior && reviewed ? prior : { ...candidate, createdAt: prior?.createdAt ?? candidate.createdAt };
+  if (prior && reviewed) return prior;
+  // 検証の失敗回数は再抽出で消さない。消すと検証できない候補が毎回の実行を止め続ける。
+  const failures = prior?.status === "candidate" ? prior.verificationFailures : undefined;
+  return { ...candidate, createdAt: prior?.createdAt ?? candidate.createdAt, ...(failures ? { verificationFailures: failures } : {}) };
+}
+
+/**
+ * 検証の要求がこの回数失敗した候補は打ち切る。2026-11 には検証に使える唯一のモデルが
+ * 3日以上 503 を返し続け、その Bout が最古の節を占有して新しい節の解析が始まらなかった。
+ */
+export const MAX_VERIFICATION_FAILURES = 4;
+
+/** 検証の要求が API に届いて失敗した (日次上限以外) ことを記録する。上限に達したら disputed にして打ち切る。 */
+export function recordVerificationFailure(candidate: RecapEvidence): RecapEvidence {
+  const failures = (candidate.verificationFailures ?? 0) + 1;
+  if (failures < MAX_VERIFICATION_FAILURES) return { ...candidate, verificationFailures: failures };
+  // verificationObservation が無いので、merge で verified に戻ることも再検証されることもない。
+  return { ...candidate, verificationFailures: failures, status: "disputed", verifierVersion: EVIDENCE_VERIFIER_VERSION };
 }
 
 export function pendingEvidenceCandidates(evidence: RecapEvidence[], limit = 3): RecapEvidence[] {

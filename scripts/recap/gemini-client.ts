@@ -35,6 +35,8 @@ const unknownRateLimitStreaks = new Map<string, number>();
 const OVERLOADED_CALLS_BEFORE_PAUSE = 2;
 let overloadedCallStreak = 0;
 let lastFailureStatus: number | undefined;
+// 直前の callGemini が実際に API へ要求を送ったか (上限・混雑で送らずに返した場合は false)。
+let lastCallReachedApi = false;
 let videoQuotaExhausted = false;
 const deniedVideos = new Set<string>();
 
@@ -51,6 +53,11 @@ export function activeModels(models: string[]): string[] {
 /** 直前の callGemini が null を返したときの最後の HTTP ステータス (通信エラーなら undefined)。 */
 export function lastGeminiFailureStatus(): number | undefined {
   return lastFailureStatus;
+}
+
+/** 直前の callGemini が少なくとも1回 API に要求を送ったか。送らずに諦めた失敗を候補の失敗に数えないために使う。 */
+export function lastGeminiCallReachedApi(): boolean {
+  return lastCallReachedApi;
 }
 
 /** プロジェクト全体の動画の枠が尽きたか。尽きていれば、この実行中は動画の呼び出しを送らない。 */
@@ -70,6 +77,7 @@ export function resetGeminiRunState(): void {
   unknownRateLimitStreaks.clear();
   overloadedCallStreak = 0;
   lastFailureStatus = undefined;
+  lastCallReachedApi = false;
   videoQuotaExhausted = false;
 }
 
@@ -156,6 +164,7 @@ export async function callGemini(options: {
 }): Promise<GeminiCallResult | null> {
   const { apiKey, models, prompt, video, temperature = 0.3 } = options;
   lastFailureStatus = undefined;
+  lastCallReachedApi = false;
   if (video && videoQuotaExhausted) {
     lastFailureStatus = 429;
     return null;
@@ -210,6 +219,7 @@ export async function callGemini(options: {
                 // Gemini 3.6+ ignores temperature; omit it rather than implying determinism.
               },
             };
+        lastCallReachedApi = true;
         const res = await fetch(request.endpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
