@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T11:07:27.806Z",
+  "updatedAt": "2026-11-07T15:11:33.341Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -4655,6 +4655,36 @@
               "endSec": 3827
             }
           ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-07T15:10:51.389Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド終盤、マゴ（舞）がドライブゲージを使い切りバーンアウト状態に追い込まれ、ふ〜ど（C.ヴァイパー）が画面端でプレッシャーをかけて打撃でラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 3648,
+              "endSec": 3665
+            },
+            {
+              "topic": "第1ゲーム第2ラウンド、ふ〜ど（C.ヴァイパー）がコンボからリミッター解除を決めてドライブゲージを高速回復し、マゴ（舞）の足元を崩して一気にラウンドとゲームを勝ち取った。",
+              "evidence": "両方",
+              "startSec": 3685,
+              "endSec": 3700
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ふ〜ど（C.ヴァイパー）がSA3をヒットさせてマゴ（舞）をバーンアウトに追い込んだ後、マゴの反撃SA3を耐え抜き、ゲージのないマゴをドライブラッシュと連続打撃で仕留めて2-0のストレート勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 3797,
+              "endSec": 3826
+            }
+          ]
         }
       ]
     },
@@ -5011,10 +5041,48 @@
       "videoId": "6AialyrOq6U",
       "startSec": 12458,
       "endSec": 12903,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-07T15:11:33.330Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド終盤、JR（ザンギエフ）はナウマン（舞）の仕掛けた生ドライブラッシュに対してコマンド投げ（スクリュープロシード）を直接合わせ、ラウンドを連取して第1ゲームを先制した。",
+              "evidence": "両方",
+              "startSec": 12566,
+              "endSec": 12573
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ナウマン（舞）は立ち回りでの確実な牽制からコンボを叩き込み、CA（陽炎の舞）でJR（ザンギエフ）をKOしてゲームカウントを1-1のタイに戻した。",
+              "evidence": "両方",
+              "startSec": 12686,
+              "endSec": 12702
+            },
+            {
+              "topic": "最終第3ゲーム第1ラウンド、ナウマン（舞）はJR（ザンギエフ）に一切の反撃を許さず、連続攻撃から最後はODむささびの舞でパーフェクトKOを達成した。",
+              "evidence": "映像",
+              "startSec": 12741,
+              "endSec": 12754
+            },
+            {
+              "topic": "第3ゲーム第2ラウンドの決着局面、ナウマン（舞）はJR（ザンギエフ）の暴れやガードの隙を見極めて下段や投げを通し切り、最後は後ろ投げでKOして逆転勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 12793,
+              "endSec": 12813
+            }
+          ]
+        }
+      ]
     },
     "div-f-sec6-m3-b2": {
       "videoId": "6AialyrOq6U",

@@ -588,6 +588,42 @@
           "totalTokens": 11
         }
       }
+    },
+    "2026-11-08": {
+      "gemini:extract:gemini-3.6-flash": {
+        "responses": 2,
+        "tokens": {
+          "inputTokens": 97346,
+          "cachedInputTokens": 0,
+          "outputTokens": 797,
+          "thoughtTokens": 2664,
+          "totalTokens": 100807
+        },
+        "observations": {
+          "inputTokens": 2,
+          "cachedInputTokens": 2,
+          "outputTokens": 2,
+          "thoughtTokens": 2,
+          "totalTokens": 2
+        }
+      },
+      "gemini:verify:gemini-3.6-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 21181,
+          "cachedInputTokens": 0,
+          "outputTokens": 473,
+          "thoughtTokens": 1439,
+          "totalTokens": 23093
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      }
     }
   },
   "seenIds": [

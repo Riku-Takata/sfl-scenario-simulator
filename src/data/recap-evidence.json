@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-07T11:07:27.997Z",
+  "updatedAt": "2026-11-07T15:11:33.507Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -6556,8 +6556,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P側のジェイミー（JOHN TAKEUCHI）と2P側のA.K.I.（HIKARU）によるラウンド2。序盤にA.K.I.が蛇軽功やドライブラッシュからコンボを決めて有利を展開。体力優勢のまま画面端付近でA.K.I.がSA3（紫煙螺旋）の単発ヒット確認から発動し、フルヒットさせてPERFECT K.O.でラウンドを獲得する。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6580,8 +6582,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ジェイミー対A.K.I.の対戦。A.K.I.がパニッシュカウンターからのコンボで先制するも、ジェイミーが空対空やコマンド投げ（魔身）を決めて反撃。最後はA.K.I.がドライブゲージを使い切りバーンアウト状態となったところへ、ジェイミーが頭上からの飛び込み攻撃を決めてK.O.を奪う。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6604,8 +6608,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ジェイミーがA.K.I.にコマンド投げを決めた直後からスタート。毒状態になりながらもジェイミーがドライブラッシュや立ち回りでの猛攻を継続。A.K.I.をバーンアウト状態へ追い込み、画面端付近でパニッシュカウンターからの連続攻撃を決めてK.O.を奪う。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6628,12 +6634,110 @@
       "officialRefs": [
         "div-f-sec6-m3-b0:winner-order-reviewed"
       ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ジェイミーがOD技からのドライブラッシュコンボでA.K.I.を大きく打ち上げ画面端へ追い詰める。その後A.K.I.が画面中央へ脱出し返し、差し合いの中でA.K.I.がSA3（紫煙螺旋）をヒットさせる。SA3の演出終了とともに画面上にK.O.が表示され、ワイプ画面のHIKARU選手らが喜ぶ姿が映し出される。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:07:27.809Z"
+    },
+    "ev-308c72c22e4859625fed": {
+      "id": "ev-308c72c22e4859625fed",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 12566,
+      "endSec": 12573,
+      "playerIds": [
+        "ナウマン",
+        "Jr."
+      ],
+      "observation": "第1ゲーム第2ラウンド終盤、JR（ザンギエフ）はナウマン（舞）の仕掛けた生ドライブラッシュに対してコマンド投げ（スクリュープロシード）を直接合わせ、ラウンドを連取して第1ゲームを先制した。",
+      "officialRefs": [
+        "div-f-sec6-m3-b1:winner-order-reviewed"
+      ],
       "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
-      "createdAt": "2026-11-07T11:07:27.809Z"
+      "createdAt": "2026-11-07T15:11:33.343Z"
+    },
+    "ev-a68cee04ef6858eca630": {
+      "id": "ev-a68cee04ef6858eca630",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 12686,
+      "endSec": 12702,
+      "playerIds": [
+        "ナウマン",
+        "Jr."
+      ],
+      "observation": "第2ゲーム第2ラウンド、ナウマン（舞）は立ち回りでの確実な牽制からコンボを叩き込み、CA（陽炎の舞）でJR（ザンギエフ）をKOしてゲームカウントを1-1のタイに戻した。",
+      "officialRefs": [
+        "div-f-sec6-m3-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T15:11:33.343Z"
+    },
+    "ev-6f69c26efe593bc1541b": {
+      "id": "ev-6f69c26efe593bc1541b",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 12741,
+      "endSec": 12754,
+      "playerIds": [
+        "ナウマン",
+        "Jr."
+      ],
+      "observation": "最終第3ゲーム第1ラウンド、ナウマン（舞）はJR（ザンギエフ）に一切の反撃を許さず、連続攻撃から最後はODむささびの舞でパーフェクトKOを達成した。",
+      "officialRefs": [
+        "div-f-sec6-m3-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T15:11:33.343Z"
+    },
+    "ev-c151fa4a04d53a9ba1e8": {
+      "id": "ev-c151fa4a04d53a9ba1e8",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 12793,
+      "endSec": 12813,
+      "playerIds": [
+        "ナウマン",
+        "Jr."
+      ],
+      "observation": "第3ゲーム第2ラウンドの決着局面、ナウマン（舞）はJR（ザンギエフ）の暴れやガードの隙を見極めて下段や投げを通し切り、最後は後ろ投げでKOして逆転勝利を決めた。",
+      "officialRefs": [
+        "div-f-sec6-m3-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T15:11:33.343Z"
     }
   }
 }
