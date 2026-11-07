@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-07T15:11:33.507Z",
+  "updatedAt": "2026-11-07T19:25:01.177Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -6660,8 +6660,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ザンギエフ（1P側）とA.K.I.（2P側）の戦い。209:27.000付近でザンギエフがドライブラッシュを発動して一気に間合いを詰め、A.K.I.に投げ技を決めて体力を削り切り、209:29.500頃に「K.O.」となります。「HARD KNOCKDOWN」および「ZANGIEF WIN」の画面表示でラウンドが終了します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6684,8 +6686,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "A.K.I.（1P側）とザンギエフ（2P側）の戦い。211:33.500頃にA.K.I.がドライブラッシュから打撃コンボを始動し、キャンセルしてSA3（レベル3スーパーコンボ）を発動します。暗転演出後に技がヒットし、211:39.000頃に「K.O.」が表示されてA.K.I.がラウンドを取得します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6708,8 +6712,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "A.K.I.（1P側）とザンギエフ（2P側）の戦い。212:23.500頃からA.K.I.がドライブラッシュを絡めて攻撃を仕掛け、212:29.000に「PUNISH COUNTER」が発生します。そのままコンボを繋いでダメージを与え、212:32.000に「PERFECT K.O.」が画面に表示されます。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6732,8 +6738,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "A.K.I.（1P側）とザンギエフ（2P側）の戦い。近距離での打撃・ドライブラッシュの応酬から、213:20.000頃にA.K.I.が通常投げを決めます。213:26.500頃に再びA.K.I.がドライブラッシュから立ち回りを展開し、投げから崩して攻撃を継続。213:31.000頃に「K.O.」が取られ、試合終了後に画面上にプレイヤー陣の映像が表示されます。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],

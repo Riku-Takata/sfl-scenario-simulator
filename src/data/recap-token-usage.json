@@ -608,20 +608,20 @@
         }
       },
       "gemini:verify:gemini-3.6-flash": {
-        "responses": 1,
+        "responses": 2,
         "tokens": {
-          "inputTokens": 21181,
+          "inputTokens": 30902,
           "cachedInputTokens": 0,
-          "outputTokens": 473,
-          "thoughtTokens": 1439,
-          "totalTokens": 23093
+          "outputTokens": 1047,
+          "thoughtTokens": 3713,
+          "totalTokens": 35662
         },
         "observations": {
-          "inputTokens": 1,
-          "cachedInputTokens": 1,
-          "outputTokens": 1,
-          "thoughtTokens": 1,
-          "totalTokens": 1
+          "inputTokens": 2,
+          "cachedInputTokens": 2,
+          "outputTokens": 2,
+          "thoughtTokens": 2,
+          "totalTokens": 2
         }
       },
       "codex:narration:codex-cli": {

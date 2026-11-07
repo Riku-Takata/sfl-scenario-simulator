@@ -2,17 +2,16 @@
   "schemaVersion": 1,
   "models": {
     "gemini-3.6-flash": {
-      "videoFailures": 1,
+      "videoFailures": 0,
       "pauses": 0,
-      "lastStatus": 503,
-      "updatedAt": "2026-11-07T16:22:20.667Z"
+      "updatedAt": "2026-11-07T19:25:01.167Z"
     },
     "gemini-3.8-flash": {
-      "videoFailures": 6,
-      "pauses": 4,
-      "pausedUntil": "2026-11-07T18:29:42.003Z",
+      "videoFailures": 7,
+      "pauses": 5,
+      "pausedUntil": "2026-11-08T19:24:40.331Z",
       "lastStatus": 503,
-      "updatedAt": "2026-11-07T02:29:42.003Z"
+      "updatedAt": "2026-11-07T19:24:40.331Z"
     }
   }
 }
