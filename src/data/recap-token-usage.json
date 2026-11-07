@@ -591,20 +591,20 @@
     },
     "2026-11-08": {
       "gemini:extract:gemini-3.6-flash": {
-        "responses": 2,
+        "responses": 3,
         "tokens": {
-          "inputTokens": 97346,
-          "cachedInputTokens": 0,
-          "outputTokens": 797,
-          "thoughtTokens": 2664,
-          "totalTokens": 100807
+          "inputTokens": 153570,
+          "cachedInputTokens": 54220,
+          "outputTokens": 1156,
+          "thoughtTokens": 3995,
+          "totalTokens": 158721
         },
         "observations": {
-          "inputTokens": 2,
-          "cachedInputTokens": 2,
-          "outputTokens": 2,
-          "thoughtTokens": 2,
-          "totalTokens": 2
+          "inputTokens": 3,
+          "cachedInputTokens": 3,
+          "outputTokens": 3,
+          "thoughtTokens": 3,
+          "totalTokens": 3
         }
       },
       "gemini:verify:gemini-3.6-flash": {

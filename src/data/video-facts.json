@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T15:11:33.341Z",
+  "updatedAt": "2026-11-07T16:21:49.469Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -4685,6 +4685,17 @@
               "endSec": 3826
             }
           ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-07T16:21:49.435Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": []
         }
       ]
     },
