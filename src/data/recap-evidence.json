@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-07T09:57:09.976Z",
+  "updatedAt": "2026-11-07T11:07:27.997Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -5850,11 +5850,14 @@
       "officialRefs": [
         "div-f-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pの豪鬼（DAIGO）と2Pのキャミィ（MIZUHA）の対戦。両者ともに体力が残り僅かな状況で、豪鬼が攻撃をヒットさせてクリティカルアーツ（CA）を発動します。CAの演出が完走し、画面に「K.O.」と表示され豪鬼側がラウンドを獲得します。画面上部にはチームメンバーが勝利を喜ぶカメラ映像が表示されます。",
       "verificationFailures": 2,
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-06T04:38:43.458Z"
     },
@@ -5875,11 +5878,14 @@
       "officialRefs": [
         "div-f-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "豪鬼（1P）とキャミィ（2P）の対戦。豪鬼の隙に対してキャミィがパニッシュカウンターを取り、コンボからキャミィのクリティカルアーツ（CA）を発動します。演出後に豪鬼の体力がゼロになり、「K.O.」が表示されてキャミィがラウンドを獲得します。",
       "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-06T04:38:43.458Z"
     },
@@ -5900,11 +5906,14 @@
       "officialRefs": [
         "div-f-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "キャミィ（2P）が豪鬼（1P）に対して攻撃を重ね、画面端へ追い詰めていきます。最後はキャミィが投げ技（パニッシュカウンター）を決めて豪鬼の体力を削りきり、一度もダメージを受けずに「PERFECT K.O.」を獲得します。",
       "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-06T04:38:43.458Z"
     },
@@ -5925,11 +5934,14 @@
       "officialRefs": [
         "div-f-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面端付近の攻防で、豪鬼（1P）が相手の攻撃に対してジャストパリィ（JUST PARRY）を成功させます。そのままパニッシュカウンターからスーパーアーツ2（SA2「赫頂業火」）のコンボをキャミィ（2P）に叩き込み、大ダメージを与えて起き攻めの状況を作ります。",
       "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-06T04:38:43.458Z"
     },
@@ -5956,6 +5968,672 @@
         "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-06T04:38:43.458Z"
+    },
+    "ev-462763245306716c896b": {
+      "id": "ev-462763245306716c896b",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3650,
+      "endSec": 3665,
+      "playerIds": [
+        "ふ～ど",
+        "マゴ"
+      ],
+      "observation": "第1ゲームRound 1終盤、ふ〜ど（C.ヴァイパー）がマゴ（不知火舞）をバーンアウト状態へ追い込み、最後はガード崩しの投げからラウンドを先取する。",
+      "officialRefs": [
+        "div-f-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P（ふ～ど：A.K.I.）と2P（マゴ：A.K.I.）による同キャラクター対戦です。1Pが連続技からパニッシュカウンター（Punish Counter）を取り、投げ技を止めてハードダウン（HARD KNOCKDOWN）を奪います。この攻撃により2Pのドライブゲージが尽きてバーンアウト（Burnout）状態となり、1Pが画面端付近でさらに攻撃を重ねて圧力をかける攻防が展開されます。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:01:26.989Z"
+    },
+    "ev-3babf3ba710ed2a3bc03": {
+      "id": "ev-3babf3ba710ed2a3bc03",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3688,
+      "endSec": 3701,
+      "playerIds": [
+        "ふ～ど",
+        "マゴ"
+      ],
+      "observation": "第1ゲームRound 2、ふ〜どが浮かせからのコンボで大ダメージを与えてSA3を叩き込み、そのまま立ち足払いでマゴの体力を削り切ってストレートで第1ゲームを制する。",
+      "officialRefs": [
+        "div-f-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P A.K.I.がパニッシュカウンターから空中コンボを成立させてダメージを与えます。体力が大きく減った2P A.K.I.ですが、割り込みからクリティカルアート（CA）を発動して1Pにヒットさせ、そのままK.O.を獲得します。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:01:26.989Z"
+    },
+    "ev-326bdb782bb8ffaf9b3b": {
+      "id": "ev-326bdb782bb8ffaf9b3b",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3720,
+      "endSec": 3730,
+      "playerIds": [
+        "ふ～ど",
+        "マゴ"
+      ],
+      "observation": "第2ゲームRound 1開幕、マゴの花扇牽制に対してふ〜どが正確にパニッシュカウンターを奪い、序盤のドライブゲージ差と主導権を握る。",
+      "officialRefs": [
+        "div-f-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ラウンド開始直後の攻防です。1P A.K.I.が相手の技の隙にパニッシュカウンターを合わせてコンボに移行します。その後は互いに間合いを取り直しつつ、OD（オーバードライブ）技や中距離での牽制技を差し合い、カウンターヒットが発生する攻防が行われます。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:01:26.989Z"
+    },
+    "ev-4ba9982dc7a5efce8d72": {
+      "id": "ev-4ba9982dc7a5efce8d72",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 3798,
+      "endSec": 3827,
+      "playerIds": [
+        "ふ～ど",
+        "マゴ"
+      ],
+      "observation": "第2ゲームRound 2、マゴがバーンアウト中にSA3を発動して逆転を狙うが、ふ〜どが冷静に対処し最後はドライブラッシュからの攻撃で押し切ってKO勝利を収める。",
+      "officialRefs": [
+        "div-f-sec6-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P A.K.I.がSA3（またはCA）を発動してヒットさせ、2Pを追い詰めます。しかし起き上がり時に2P A.K.I.がリバーサルでSAを繰り出し、パニッシュカウンターで反撃に成功します。2P A.K.I.はそのまま起攻めで打撃を重ね、1PをK.O.します。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:01:26.989Z"
+    },
+    "ev-bbcfdff1c79760e78482": {
+      "id": "ev-bbcfdff1c79760e78482",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 4242,
+      "endSec": 4278,
+      "playerIds": [
+        "ひなお",
+        "わびいち"
+      ],
+      "observation": "第1ゲーム第2ラウンド、ひなお（ルーク）はわびいち（テリー）のパワーウェーブ出かかりを弱・強打撃で潰し、ドライブラッシュを交えたコンボで一気に追い詰めてSA3を叩き込み、連取で第1ゲームを制する。",
+      "officialRefs": [
+        "div-f-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P「HINAO」（ルーク）と2P「WABIICHI」（ケン）の対戦。ルークがカウンターヒットからコンボを決めてダウンを奪い、立ち回りでケン側がバーンアウト状態に陥る。ルークがドライブラッシュを交えたコンボで押し切り、最後は空中追撃でKOを獲得する。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:02:41.730Z"
+    },
+    "ev-d15f74ed391f5204c638": {
+      "id": "ev-d15f74ed391f5204c638",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 4396,
+      "endSec": 4428,
+      "playerIds": [
+        "ひなお",
+        "わびいち"
+      ],
+      "observation": "第2ゲームファイナルラウンド、わびいち（テリー）はひなお（ルーク）の隙に対してパニッシュカウンターからSA3（バスターウルフ）を決めて大ダメージを与え、最後はパワーウェーブで留めを刺してセットカウント1-1に戻す。",
+      "officialRefs": [
+        "div-f-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pルークと2Pケンの対戦。ケンがバーンアウト状態の中、ルークの攻撃に対してリバーサルでLV3/CA（超必殺技）を発動してパニッシュカウンターを取り、大ダメージを与える。その後、起き攻めの攻防を経てケンが打撃でKOを獲得する。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:02:41.730Z"
+    },
+    "ev-366322c00ffe49ef0478": {
+      "id": "ev-366322c00ffe49ef0478",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 4531,
+      "endSec": 4559,
+      "playerIds": [
+        "ひなお",
+        "わびいち"
+      ],
+      "observation": "第3ゲーム第2ラウンド、CAを喰らい体力を削られたひなお（ルーク）だったが、着地後の差し返しからCAをヒットさせ、わびいち（テリー）をバーンアウト状態へ追い込むとドライブインパクトでスタンを奪い返してラウンドを取り返す。",
+      "officialRefs": [
+        "div-f-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pルークと2Pケンの対戦。ルークがパニッシュカウンターからCA（ルークのレベル3SA）をヒットさせて大ダメージを与え、ケンを画面端へ追いつめる。起き上がり後にケンを画面端でドライブインパクトによりスタン状態へ追い込み、コンボを叩き込む。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:02:41.730Z"
+    },
+    "ev-a62eab73a0c793c072c9": {
+      "id": "ev-a62eab73a0c793c072c9",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 4787,
+      "endSec": 4797,
+      "playerIds": [
+        "ひなお",
+        "わびいち"
+      ],
+      "observation": "第4ゲーム第1ラウンド、バーンアウト状態となったひなお（ルーク）に対し、わびいち（テリー）は小技を交えた暴れ潰しからSA1を確定させて確実にKOを勝ち取る。",
+      "officialRefs": [
+        "div-f-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pルークと2Pケンの対戦。ケンが繰り出したドライブインパクトをルークがパリィで受け止め、返しにドライブラッシュからコンボを始動。そのまま空中追撃を決めてKOを獲得する。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:02:41.730Z"
+    },
+    "ev-2d305ec6e1ac355cb88a": {
+      "id": "ev-2d305ec6e1ac355cb88a",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 4831,
+      "endSec": 4852,
+      "playerIds": [
+        "ひなお",
+        "わびいち"
+      ],
+      "observation": "第4ゲーム第2ラウンド、ひなお（ルーク）がSA3でドライブゲージを回復させ画面端へ押し込むものの、わびいち（テリー）が鋭いパニッシュカウンターからCA（ライジングファング/CA）までコンボを繋ぎ切って大将戦を勝利で締めくくる。",
+      "officialRefs": [
+        "div-f-sec6-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:02:41.730Z"
+    },
+    "ev-8c0f75ca778e658a1df7": {
+      "id": "ev-8c0f75ca778e658a1df7",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b3",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 5344,
+      "endSec": 5368,
+      "playerIds": [
+        "YAS",
+        "ときど"
+      ],
+      "observation": "第1ゲームのファイナルラウンドにて、ときど（JP）がYAS（リュウ）の技の隙に対してパニッシュカウンターを取り、高威力コンボからクリティカルアート（CA）まで叩き込んでKOし、第1ゲームを先制した。",
+      "officialRefs": [
+        "div-f-sec6-m1-b3:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "JP（TOKIDO）とリュウ（YAS）の対戦。JPがパニッシュカウンターからコンボを開始し、SA3/CAを発動してヒットさせる。コンボ終了後も画面端付近で追撃を行い、リュウをバーンアウト状態に追い込む。最後はJPが再びCAをヒットさせてK.O.を奪い、勝利する。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:03:19.937Z"
+    },
+    "ev-f0013256a59a01cec30c": {
+      "id": "ev-f0013256a59a01cec30c",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b3",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 5525,
+      "endSec": 5558,
+      "playerIds": [
+        "YAS",
+        "ときど"
+      ],
+      "observation": "第2ゲームのファイナルラウンド、YAS（リュウ）が差し返しからパニッシュカウンターを奪いSA3（真・昇竜拳）を発動、さらに追い込まれたときど（JP）をスタンさせてCAで撃破しセットカウントを1-1に戻した。",
+      "officialRefs": [
+        "div-f-sec6-m1-b3:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "リュウ（YAS）がJP（TOKIDO）の攻撃に対してパニッシュカウンターを奪い、SA3「真・昇龍拳」を組み込んだコンボを叩き込む。起き攻めと攻防のなかでドライブゲージのないJPをスタン状態に追い込み、スタン中のJPに対してジャンプからのコンボでK.O.を奪い、リュウが勝利する。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:03:19.937Z"
+    },
+    "ev-4660ba2f1e952e559617": {
+      "id": "ev-4660ba2f1e952e559617",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b3",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 5828,
+      "endSec": 5852,
+      "playerIds": [
+        "YAS",
+        "ときど"
+      ],
+      "observation": "第3ゲーム第2ラウンド、YAS（リュウ）がアグレッシブな攻撃からコンボを叩き込み、締めのアクションとしてSA3（真・昇竜拳）を命中させてパーフェクトKOを達成し勝利を決めた。",
+      "officialRefs": [
+        "div-f-sec6-m1-b3:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ラウンド開始直後、リュウ（YAS）がJP（TOKIDO）に対してパニッシュカウンターを決め、ドライブラッシュを交えたコンボを開始する。強化技を組み込んだ連続攻撃からSA3「真・昇龍拳」へと繋ぎ、体力を削り切って「PERFECT K.O.」で勝利する。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:03:19.937Z"
+    },
+    "ev-46a6682bef05a3a61fab": {
+      "id": "ev-46a6682bef05a3a61fab",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 7782,
+      "endSec": 7793,
+      "playerIds": [
+        "ガチくん",
+        "らおやむ"
+      ],
+      "observation": "第1ゲーム第3ラウンド、ガチくんがSA2（イウサール）を設置して立ち回りでの優位を狙うが、らおやむが竜巻を突っ切る形でSA3（アンリミテッドサイコクラッシャー）を発動し、ガチくんを削りきって第1ゲームを先取した。",
+      "officialRefs": [
+        "div-f-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "M.ベガ（P2: RADYAMU）がラシード（P1: ガチくん）に対してSA3「アンリミテッド・サイコクラッシャー」をヒットさせて大ダメージを与え、起き上がりに技を重ねてラウンドをK.O.勝ちします。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:04:01.198Z"
+    },
+    "ev-670c1e29516123eb3803": {
+      "id": "ev-670c1e29516123eb3803",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 8023,
+      "endSec": 8056,
+      "playerIds": [
+        "ガチくん",
+        "らおやむ"
+      ],
+      "observation": "第3ゲーム第2ラウンド、らおやむのCAを受けてバーンアウトかつミリ体まて追い込まれたガチくんだったが、画面端の相手の攻めに対してリバーサルでドライブインパクトを通し、自身のCA（アルタイル）まで繋げて劇的な逆転KOを決めた。",
+      "officialRefs": [
+        "div-f-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面端付近での差し合いの末、ラシード（P1: ガチくん）がM.ベガ（P2: RADYAMU）の隙に対してパニッシュカウンターを取り、CA（クリティカルアート）を発動してコンボを完走し、K.O.で勝利します。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:04:01.198Z"
+    },
+    "ev-35eb025571fce4a483e4": {
+      "id": "ev-35eb025571fce4a483e4",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 8066,
+      "endSec": 8087,
+      "playerIds": [
+        "ガチくん",
+        "らおやむ"
+      ],
+      "observation": "最終ゲームの最終ラウンド、ガチくんが立ち回りから一気にらおやむを画面端に追い詰め、ドライブコンボから最後はパニッシュカウンターにSA1（スーパー・ラシード・キック）を合わせてパーフェクトKOで試合を締めくくった。",
+      "officialRefs": [
+        "div-f-sec6-m2-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ラシード（P1: ガチくん）が画面端でM.ベガ（P2: RADYAMU）へコンボを決め、投げ抜け（Throw Escape）が発生した直後の隙にパニッシュカウンターからSA1をヒットさせます。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:04:01.198Z"
+    },
+    "ev-3ecd523e6cb1c31d16f1": {
+      "id": "ev-3ecd523e6cb1c31d16f1",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 8441,
+      "endSec": 8457,
+      "playerIds": [
+        "カワノ",
+        "Seiya"
+      ],
+      "observation": "Seiya（春麗）がカワノ（豪鬼）の波動拳の隙にSA1でパニッシュカウンターを決め、コンボから一気に画面端へ追い詰めてパーフェクトK.O.で第1ゲームを先取した。",
+      "officialRefs": [
+        "div-f-sec6-m2-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "2P春麗（SEIYA）が1P豪鬼（KAWANO）に対してSA2「鳳扇華」をパニッシュカウンターで発動し、空中追撃コンボを決めます。そのまま起き上がりに技を重ねてコンボを継続し、PERFECT K.O.でラウンドを獲得します。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:04:29.300Z"
+    },
+    "ev-49c84adac80ed95513ec": {
+      "id": "ev-49c84adac80ed95513ec",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 8496,
+      "endSec": 8533,
+      "playerIds": [
+        "カワノ",
+        "Seiya"
+      ],
+      "observation": "Seiyaが近距離の攻防でカワノの連携に対して冷静なガードと切り返しを見せ、画面端に追い込まれつつも暴れを通し切って第2ゲーム第1ラウンドを連取した。",
+      "officialRefs": [
+        "div-f-sec6-m2-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P豪鬼（KAWANO）と2P春麗（SEIYA）の立ち回り。豪鬼が波動拳やドライブラッシュで牽制するのに対し、春麗は堅実なガードと地上技の差し返しで対応します。中盤、春麗がカウンターヒットからコンボを叩き込み、豪鬼を画面端へ追い詰めてバーンアウト状態にさせます。最後は春麗が追い打ちをかけて豪鬼をK.O.します。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:04:29.300Z"
+    },
+    "ev-2c23f8c8d56c7fdb8522": {
+      "id": "ev-2c23f8c8d56c7fdb8522",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b1",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 8545,
+      "endSec": 8566,
+      "playerIds": [
+        "カワノ",
+        "Seiya"
+      ],
+      "observation": "Seiyaがカワノの技の隙にSA2（鳳翼扇）をパニッシュカウンターで叩き込んで大ダメージを与え、そのままパーフェクトK.O.でストレート勝利を決めた。",
+      "officialRefs": [
+        "div-f-sec6-m2-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "2P春麗（SEIYA）が1P豪鬼（KAWANO）の攻撃の隙にSA2「鳳扇華」をパニッシュカウンターで叩き込み、大ダメージコンボを完走します。さらに豪鬼のリバーサルに対して春麗がパニッシュカウンターを取り、追撃コンボで体力を瀕死まで削った後、歩み寄って投げを決めるなど画面端で圧倒します。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:04:29.300Z"
+    },
+    "ev-33f4b05cb2bfe969b7c6": {
+      "id": "ev-33f4b05cb2bfe969b7c6",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 9045,
+      "endSec": 9101,
+      "playerIds": [
+        "ぷげら",
+        "大谷"
+      ],
+      "observation": "第1ゲーム第2ラウンド、両者が慎重な間合い管理でドライブゲージと体力を維持したままタイムアップを迎え、体力残量で勝る大谷（ケン）がラウンドを奪取する。",
+      "officialRefs": [
+        "div-f-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "PUGERA（C. VIPER）とOTANI（KEN）の対戦終盤。残り時間約52秒からスタート。両者ゲージを保持した状態での差し合いから、ドライブラッシュや投げ抜け、ドライブリバーサルなどの攻防が展開される。OTANI（KEN）がパニッシュカウンターや連続技で画面端へ追い詰めるが、PUGERA（C. VIPER）は防御を固めてタイムオーバーまで耐え抜き、体力勝ちを収める。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:06:02.544Z"
+    },
+    "ev-96d9a590a6da6c6097dc": {
+      "id": "ev-96d9a590a6da6c6097dc",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 9267,
+      "endSec": 9297,
+      "playerIds": [
+        "ぷげら",
+        "大谷"
+      ],
+      "observation": "第2ゲーム第1ラウンド、大谷（ケン）が開幕から果敢に画面端へ追い込み、空中コンボからノーダメージのままパーフェクトKOを達成する。",
+      "officialRefs": [
+        "div-f-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ラウンド1の開始。OTANI（KEN）が立ち上がりからドライブラッシュやカウンター攻撃でPUGERA（C. VIPER）を画面端に追い詰め、一方的に大ダメージコンボを叩き込む。一度もダメージを受けることなく連続攻撃を完走し、PERFECT K.O.を達成する。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:06:02.544Z"
+    },
+    "ev-4d1b56f6892a6cd12483": {
+      "id": "ev-4d1b56f6892a6cd12483",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 9831,
+      "endSec": 9911,
+      "playerIds": [
+        "ぷげら",
+        "大谷"
+      ],
+      "observation": "第4ゲーム第2ラウンド、大谷（ケン）が画面端での圧力と昇竜拳のパニッシュカウンター迎撃を的確に決め、ストレートで第4ゲームを取ってセットカウント2-2へ追いつく。",
+      "officialRefs": [
+        "div-f-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ラウンド2の攻防。OTANI（KEN）が序盤にラッシュからの攻撃をヒットさせて先行するが、PUGERA（C. VIPER）も投げやコンボで画面端へ押し戻す。終盤、互いに体力が削られる中、飛び込みや反撃の読み合いとなり、最後はOTANI（KEN）がPUGERA（C. VIPER）の攻撃に対して対空・パニッシュカウンターを決め、ラウンドを獲得する。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:06:02.544Z"
+    },
+    "ev-c5dc55df123a0facab2f": {
+      "id": "ev-c5dc55df123a0facab2f",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 9981,
+      "endSec": 10018,
+      "playerIds": [
+        "ぷげら",
+        "大谷"
+      ],
+      "observation": "最終第5ゲーム第2ラウンド、ぷげら（C.ヴァイパー）が立ち中パンチからのヒット確認コンボでクリティカルアーツ（CA）を叩き込み、フルセットの激戦を制して勝利を決める。",
+      "officialRefs": [
+        "div-f-sec6-m2-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ラウンド2の決着。OTANI（KEN）の攻撃に対し、PUGERA（C. VIPER）がパニッシュカウンターから空中コンボを決めて位置を入れ替え、画面端へ追い詰める。PUGERA（C. VIPER）は連続攻撃からクリティカルアーツ（CA）を発動し、OTANI（KEN）を倒し切ってK.O.勝利を収める。",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:06:02.544Z"
+    },
+    "ev-92da0d9ce3b9bd10845d": {
+      "id": "ev-92da0d9ce3b9bd10845d",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 11734,
+      "endSec": 11775,
+      "playerIds": [
+        "竹内ジョン",
+        "ひかる"
+      ],
+      "observation": "第1ゲーム第2ラウンド、ひかる（A.K.I.）が竹内ジョン（ジェイミー）に飲酒の隙を与えず攻め立て、単発確認からSA3を叩き込んでパーフェクトKOを達成する。",
+      "officialRefs": [
+        "div-f-sec6-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:07:27.809Z"
+    },
+    "ev-6bd11525861c7b33ff7a": {
+      "id": "ev-6bd11525861c7b33ff7a",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 11833,
+      "endSec": 11864,
+      "playerIds": [
+        "竹内ジョン",
+        "ひかる"
+      ],
+      "observation": "第2ゲーム第1ラウンド、ひかるのジャストパリィから画面端に追い詰められた竹内ジョン（ジェイミー）だったが、空対空の攻防を制して逆転でラウンドを奪い返す。",
+      "officialRefs": [
+        "div-f-sec6-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:07:27.809Z"
+    },
+    "ev-34e28bdfb763e310057e": {
+      "id": "ev-34e28bdfb763e310057e",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 11964,
+      "endSec": 11993,
+      "playerIds": [
+        "竹内ジョン",
+        "ひかる"
+      ],
+      "observation": "第2ゲーム第3ラウンド、竹内ジョン（ジェイミー）がSA2を発動してひかる（A.K.I.）をバーンアウトへ追い込み、連続攻撃で押し切ってセットカウントを1-1に戻す。",
+      "officialRefs": [
+        "div-f-sec6-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:07:27.809Z"
+    },
+    "ev-ff25969c5e53a71f6801": {
+      "id": "ev-ff25969c5e53a71f6801",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b0",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 12127,
+      "endSec": 12160,
+      "playerIds": [
+        "竹内ジョン",
+        "ひかる"
+      ],
+      "observation": "第3ゲーム最終ラウンド、竹内ジョンのSA2による猛攻を耐え切ったひかる（A.K.I.）が、飛び込みへの引っ掛けからSA3（CA）を確実に叩き込んで激戦を制する。",
+      "officialRefs": [
+        "div-f-sec6-m3-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T11:07:27.809Z"
     }
   }
 }
