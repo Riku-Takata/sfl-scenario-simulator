@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T20:28:56.329Z",
+  "updatedAt": "2026-11-07T23:02:02.961Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -5135,6 +5135,43 @@
               "endSec": 12813
             }
           ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-07T23:01:24.800Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド、JR（ザンギエフ）はナウマン（不知火舞）の前進生ラッシュに対して直接コマンド投げ（スクリュー）を合わせ、第1ゲームをストレートで先取した。",
+              "evidence": "両方",
+              "startSec": 12562,
+              "endSec": 12573
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、ナウマン（不知火舞）はドライブラッシュからのコンボをCA（陽炎の舞）まで完走し、JR（ザンギエフ）をKOしてゲームカウントを1-1のタイに戻した。",
+              "evidence": "両方",
+              "startSec": 12675,
+              "endSec": 12703
+            },
+            {
+              "topic": "第3ゲーム第1ラウンド、ナウマン（不知火舞）は立ち回りからJR（ザンギエフ）に主導権を渡さず、パニッシュカウンターからODムササビの舞を絡めた連続攻撃でパーフェクトKO（PERFECT K.O.）を達成した。",
+              "evidence": "両方",
+              "startSec": 12728,
+              "endSec": 12754
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、ナウマン（不知火舞）はJR（ザンギエフ）のアーマー技や対空意識をかわしつつ近距離のプレッシャーを維持し、最後は投げでKOを奪って2-1の逆転勝利を収めた。",
+              "evidence": "両方",
+              "startSec": 12794,
+              "endSec": 12813
+            }
+          ]
         }
       ]
     },
@@ -5142,10 +5179,55 @@
       "videoId": "6AialyrOq6U",
       "startSec": 13125,
       "endSec": 13927,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-07T23:02:02.946Z",
+          "gameWinnersSeen": [
+            "B",
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム最終ラウンド、KEI.B（舞）がラッシュ中段やSA1で高木（ブランカ）をバーンアウトさせて画面端に追い込むが、高木が投げでの切り返しから連続攻撃を叩き込み、逆転で第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 13234,
+              "endSec": 13296
+            },
+            {
+              "topic": "第2ゲームラウンド2、高木（ブランカ）が立ち回りから主導権を握り続け、最後はコンボからSA3を叩き込んでダメージを奪いきり、PERFECT KOでゲームカウント2-0とした。",
+              "evidence": "映像",
+              "startSec": 13526,
+              "endSec": 13558
+            },
+            {
+              "topic": "第3ゲームラウンド1、あとがないKEI.B（舞）が高木の攻撃をインパクトで返して画面端でラッシュをかけ、SA1を組み込んだコンボでラウンドを取り返した。",
+              "evidence": "両方",
+              "startSec": 13584,
+              "endSec": 13641
+            },
+            {
+              "topic": "第4ゲームラウンド1、高木（ブランカ）がKEI.Bの技の隙にドライブインパクトを合わせてパニッシュカウンターを奪い、バーンアウト・スタンへ追い込んで起き攻めからラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 13750,
+              "endSec": 13770
+            },
+            {
+              "topic": "第4ゲーム最終ラウンド、高木（ブランカ）がSA2を発動してプレッシャーをかけ、KEI.Bの反撃の無敵技（SA3）を誘い出してガードし、確定のパニッシュカウンターコンボでKOして3-1の勝利を決め切った。",
+              "evidence": "両方",
+              "startSec": 13796,
+              "endSec": 13831
+            }
+          ]
+        }
+      ]
     }
   },
   "narratives": {

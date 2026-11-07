@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-07T19:25:01.177Z",
+  "updatedAt": "2026-11-07T23:02:03.207Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -6746,6 +6746,126 @@
         "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-07T15:11:33.343Z"
+    },
+    "ev-a8b26759e0ddf808bf4a": {
+      "id": "ev-a8b26759e0ddf808bf4a",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 13234,
+      "endSec": 13296,
+      "playerIds": [
+        "KEI.B",
+        "高木"
+      ],
+      "observation": "第1ゲーム最終ラウンド、KEI.B（舞）がラッシュ中段やSA1で高木（ブランカ）をバーンアウトさせて画面端に追い込むが、高木が投げでの切り返しから連続攻撃を叩き込み、逆転で第1ゲームを先取した。",
+      "officialRefs": [
+        "div-f-sec6-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T23:02:02.964Z"
+    },
+    "ev-7825f63e64487516a22d": {
+      "id": "ev-7825f63e64487516a22d",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 13526,
+      "endSec": 13558,
+      "playerIds": [
+        "KEI.B",
+        "高木"
+      ],
+      "observation": "第2ゲームラウンド2、高木（ブランカ）が立ち回りから主導権を握り続け、最後はコンボからSA3を叩き込んでダメージを奪いきり、PERFECT KOでゲームカウント2-0とした。",
+      "officialRefs": [
+        "div-f-sec6-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T23:02:02.964Z"
+    },
+    "ev-bb78ef7722beceeb8e69": {
+      "id": "ev-bb78ef7722beceeb8e69",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 13584,
+      "endSec": 13641,
+      "playerIds": [
+        "KEI.B",
+        "高木"
+      ],
+      "observation": "第3ゲームラウンド1、あとがないKEI.B（舞）が高木の攻撃をインパクトで返して画面端でラッシュをかけ、SA1を組み込んだコンボでラウンドを取り返した。",
+      "officialRefs": [
+        "div-f-sec6-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T23:02:02.964Z"
+    },
+    "ev-2fed04d305ff5cd49229": {
+      "id": "ev-2fed04d305ff5cd49229",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 13750,
+      "endSec": 13770,
+      "playerIds": [
+        "KEI.B",
+        "高木"
+      ],
+      "observation": "第4ゲームラウンド1、高木（ブランカ）がKEI.Bの技の隙にドライブインパクトを合わせてパニッシュカウンターを奪い、バーンアウト・スタンへ追い込んで起き攻めからラウンドを先取した。",
+      "officialRefs": [
+        "div-f-sec6-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T23:02:02.964Z"
+    },
+    "ev-e6a0da1d7579106881d3": {
+      "id": "ev-e6a0da1d7579106881d3",
+      "sectionId": "div-f-sec6",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b2",
+      "kind": "visual",
+      "videoId": "6AialyrOq6U",
+      "startSec": 13796,
+      "endSec": 13831,
+      "playerIds": [
+        "KEI.B",
+        "高木"
+      ],
+      "observation": "第4ゲーム最終ラウンド、高木（ブランカ）がSA2を発動してプレッシャーをかけ、KEI.Bの反撃の無敵技（SA3）を誘い出してガードし、確定のパニッシュカウンターコンボでKOして3-1の勝利を決め切った。",
+      "officialRefs": [
+        "div-f-sec6-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-07T23:02:02.964Z"
     }
   }
 }
