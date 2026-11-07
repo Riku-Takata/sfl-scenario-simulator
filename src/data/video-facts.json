@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T23:02:02.961Z",
+  "updatedAt": "2026-11-07T23:55:08.534Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -5170,6 +5170,49 @@
               "evidence": "両方",
               "startSec": 12794,
               "endSec": 12813
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-07T23:55:08.523Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム・第2ラウンド、Jr.（ザンギエフ）が相手のドライブラッシュでの仕掛けに対してスクリュープロシードで直接掴み取り、KOで1ゲーム目を先攻する。",
+              "evidence": "両方",
+              "startSec": 12562,
+              "endSec": 12572
+            },
+            {
+              "topic": "第2ゲーム・第1ラウンド、ナウマン（舞）が相手の攻勢をガードで耐えた後、めくり飛び（ジャンプ中K）を通しパニッシュカウンターからKOを奪う。",
+              "evidence": "両方",
+              "startSec": 12636,
+              "endSec": 12643
+            },
+            {
+              "topic": "第2ゲーム・第2ラウンド、ナウマン（舞）が立ち回りで主導権を握りコンボからSA3「陽炎の舞」を完走してフルラウンドに持ち込む。",
+              "evidence": "両方",
+              "startSec": 12675,
+              "endSec": 12704
+            },
+            {
+              "topic": "第3ゲーム・第1ラウンド、ナウマン（舞）が開幕から下段攻撃のヒットからコンボを重ね、Jr.（ザンギエフ）に反撃を許さずパーフェクトKOを達成する。",
+              "evidence": "両方",
+              "startSec": 12728,
+              "endSec": 12755
+            },
+            {
+              "topic": "第3ゲーム・第2ラウンド、ナウマン（舞）がJr.（ザンギエフ）のガードや反撃の隙を逃さず追い詰め、最後は投げで決着をつけて試合を制する。",
+              "evidence": "両方",
+              "startSec": 12800,
+              "endSec": 12815
             }
           ]
         }

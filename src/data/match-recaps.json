@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T18:01:09.425Z",
+  "updatedAt": "2026-11-07T23:54:45.045Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 6,
@@ -1533,7 +1533,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "unavailable"
           },
           {
             "status": 1,
@@ -1603,7 +1603,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "unavailable"
           },
           {
             "status": 2,
@@ -1690,10 +1690,10 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "unavailable"
           }
         ],
-        "narrationStatus": "pending"
+        "narrationStatus": "unavailable"
       }
     ]
   },
