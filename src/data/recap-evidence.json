@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06T05:28:51.122Z",
+  "updatedAt": "2026-11-07T09:57:09.976Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -5476,11 +5476,14 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのキンバリー（HIBIKI）と2Pのルーク（KINCHO）の対戦。ロンドンステージ。キンバリーがルークの空中攻撃や行動に対してカウンターを取り、OD技からCritical Art（CA）を叩き込み、演出を経てルークをK.O.してラウンドを取得した。",
       "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-02T02:02:33.425Z"
     },
@@ -5501,11 +5504,14 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのキンバリー（HIBIKI）と2Pのルーク（KINCHO）の対戦。神社ステージ。ルークがパニッシュカウンターからコンボを伸ばし、Critical Art（CA）を発動。CA演出終了時にキンバリーの体力はわずかに残ったが、起き上がりにルークが技（サンドブラスト等）を重ねてK.O.を取った。",
       "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-02T02:02:33.425Z"
     },
@@ -5526,11 +5532,14 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのキンバリー（HIBIKI）と2Pのルーク（KINCHO）の対戦。キンバリーが中段・崩しからのカウンターでコンボを始動し、OD技からCritical Art（CA）へキャンセル接続。CA演出によってルークの残体力を削り切り、K.O.となった。",
       "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-02T02:02:33.425Z"
     },
@@ -5551,11 +5560,14 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのキンバリー（HIBIKI）と2Pのルーク（KINCHO）の対戦。中華街ステージ。ルークのリバーサル行動に対し、キンバリーがパニッシュカウンターを取って画面端でコンボを展開。さらに追撃のパニッシュカウンターからCAコンボを完走し、ダメージを受けることなくPERFECT K.O.を達成した。",
       "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash"
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-02T02:02:33.425Z"
     },

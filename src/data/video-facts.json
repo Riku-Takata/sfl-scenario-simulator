@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T04:38:43.456Z",
+  "updatedAt": "2026-11-07T09:58:15.738Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -4299,6 +4299,38 @@
               "evidence": "両方",
               "startSec": 8733,
               "endSec": 8751
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-07T09:58:15.725Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム・第2ラウンドにおいて、ひびき（リリー）はきんちょ（テリー）の攻めを凌ぎつつ風ストックを活かしたコンボで体力を削り、最後はCAをヒットさせて第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 8284,
+              "endSec": 8302
+            },
+            {
+              "topic": "第3ゲーム・第2ラウンド終盤、きんちょのドライブラッシュ中段攻撃に対してひびきが冷静に対応して反撃を叩き込み、CAへ繋げて勝負を決めた。",
+              "evidence": "両方",
+              "startSec": 8562,
+              "endSec": 8580
+            },
+            {
+              "topic": "第4ゲーム・最終ラウンド、ひびきがきんちょのリバーサル無敵技を完璧に読み切ってパニッシュカウンターを奪い、大ダメージコンボからSA3を完走してパーフェクトKOで勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 8733,
+              "endSec": 8755
             }
           ]
         }

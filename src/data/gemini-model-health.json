@@ -2,11 +2,9 @@
   "schemaVersion": 1,
   "models": {
     "gemini-3.6-flash": {
-      "videoFailures": 30,
-      "pauses": 4,
-      "pausedUntil": "2026-11-07T08:00:00.000Z",
-      "lastStatus": 503,
-      "updatedAt": "2026-11-06T08:00:00.000Z"
+      "videoFailures": 0,
+      "pauses": 0,
+      "updatedAt": "2026-11-07T09:58:15.724Z"
     },
     "gemini-3.8-flash": {
       "videoFailures": 6,
