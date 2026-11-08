@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-07T23:02:03.207Z",
+  "updatedAt": "2026-11-08T04:02:09.380Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -6764,8 +6764,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "A.K.I.（P1/KEI.B）対ブランカ（P2/TAKAGI）の対戦。A.K.I.がコンボからSA3を発動してヒットさせ、ブランカの体力を大きく削ります。その後A.K.I.はドライブゲージを消費し尽くしてバーンアウト状態になり、画面端付近に追い詰められます。ブランカがSA2（ライティングビースト）を発動して攻め立てますが、A.K.I.がリバーサルSA（紫煙縛）を合わせてパニッシュカウンターを獲得。そのままコンボを完走してブランカをKOします。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6788,8 +6790,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "A.K.I.対ブランカのラウンド。ブランカが開幕から中攻撃やローリングアタックで立ち回りの主導権を握り、A.K.I.のリバーサル技をパニッシュカウンターで投げ飛ばします。勢いそのままにブランカがドライブラッシュや打撃コンボで画面端へ押し込み、最後はSA3を発動して大ダメージを与え、ノーダメージの「PERFECT K.O.」を獲得します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6812,8 +6816,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "A.K.I.対ブランカのラウンド。ブランカが空中からの攻めやコマンド投げでリードを広げ、A.K.I.を揺さぶります。A.K.I.側は牽制技やリバーサルで反撃を試みつつ距離を調整。ラウンド終盤、A.K.I.がドライブラッシュから相手のガードを崩す攻撃を当て、コンボからSAを叩き込んで一気に体力を削り切り、KOでラウンドを奪います。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6836,8 +6842,10 @@
       "officialRefs": [
         "div-f-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "A.K.I.対ブランカの攻防。ブランカがA.K.I.の技の隙に対してリバーサル/パニッシュカウンターからドライブインパクトをヒットさせ、画面端でスタン（STUN）を誘発させます。スタン状態のA.K.I.に対し、ブランカはブランカちゃん人形設置を経由した最大コンボ・投げ追撃を叩き込み、一気に体力を削り切ってKOします。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],

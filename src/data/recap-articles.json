@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-07T18:01:09.785Z",
+  "updatedAt": "2026-11-08T04:02:09.411Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -3724,6 +3724,193 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-07T18:01:09.476Z"
+    },
+    "div-f-sec6-m2-b0:086e816fda1853a2:published": {
+      "articleId": "div-f-sec6-m2-b0:086e816fda1853a2:published",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b0",
+      "revision": "086e816fda1853a2",
+      "status": "passed",
+      "summary": "先鋒戦はガチくんがらおやむに2-1で勝利し、Good 8 Squadが先制した。第1ゲームを奪われたものの、第2・第3ゲームを続けて取り返した。",
+      "summaryEvidenceIds": [
+        "ev-9afad2b1f975379f147e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第3ラウンドは、らおやむがSA3「アンリミテッドサイコクラッシャー」を当て、起き上がりにも攻撃を重ねて先取した。",
+          "evidenceIds": [
+            "ev-46a6682bef05a3a61fab"
+          ]
+        },
+        {
+          "text": "最終ゲームの最終ラウンドは、ガチくんが画面端でコンボを決め、パニッシュカウンターからSA1をつないでパーフェクトKOで締めくくった。",
+          "evidenceIds": [
+            "ev-35eb025571fce4a483e4"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-9afad2b1f975379f147e",
+        "ev-46a6682bef05a3a61fab",
+        "ev-35eb025571fce4a483e4"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-08T04:01:15.737Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-08T04:01:15.737Z"
+    },
+    "div-f-sec6-m2-b1:3c411be95d12f3f0:published": {
+      "articleId": "div-f-sec6-m2-b1:3c411be95d12f3f0:published",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b1",
+      "revision": "3c411be95d12f3f0",
+      "status": "passed",
+      "summary": "中堅戦はSeiyaがカワノを2-0で下し、名古屋NTPOJAが先鋒戦の敗戦を取り返した。第1・第2ゲームをともに獲得し、大将戦へつないだ。",
+      "summaryEvidenceIds": [
+        "ev-11f0514822c8d0793e8e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームはSeiyaがスーパーアーツでパニッシュカウンターを取り、追撃と起き上がりへの攻撃をつないでパーフェクトKOを決めた。",
+          "evidenceIds": [
+            "ev-3ecd523e6cb1c31d16f1"
+          ]
+        },
+        {
+          "text": "第2ゲームではSeiyaがカワノの攻撃の隙にSA2をパニッシュカウンターで叩き込み、大ダメージのコンボを決めた。",
+          "evidenceIds": [
+            "ev-2c23f8c8d56c7fdb8522",
+            "ev-11f0514822c8d0793e8e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-11f0514822c8d0793e8e",
+        "ev-3ecd523e6cb1c31d16f1",
+        "ev-2c23f8c8d56c7fdb8522"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-08T04:01:15.738Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-08T04:01:15.738Z"
+    },
+    "div-f-sec6-m2-b2:65f985203d235bfb:published": {
+      "articleId": "div-f-sec6-m2-b2:65f985203d235bfb:published",
+      "matchId": "div-f-sec6-m2",
+      "boutId": "div-f-sec6-m2-b2",
+      "revision": "65f985203d235bfb",
+      "status": "passed",
+      "summary": "大将戦はぷげらが大谷とのフルセットを3-2で制した。第2・第3ゲームを連取した後、第4ゲームを取り返されたが、最終ゲームを奪ってチームの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-218eca50a88a99df834a"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第1ラウンドは、大谷がドライブラッシュやカウンター攻撃からぷげらを画面端へ追い込み、パーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-96d9a590a6da6c6097dc"
+          ]
+        },
+        {
+          "text": "第4ゲーム第2ラウンドは、大谷が終盤に対空・パニッシュカウンターを決めて取り切り、ゲームカウントを2-2に戻した。",
+          "evidenceIds": [
+            "ev-4d1b56f6892a6cd12483"
+          ]
+        },
+        {
+          "text": "最終第5ゲーム第2ラウンドは、ぷげらがパニッシュカウンターから空中コンボで位置を入れ替え、画面端で連続攻撃からCAにつないで決着をつけた。",
+          "evidenceIds": [
+            "ev-c5dc55df123a0facab2f"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-218eca50a88a99df834a",
+        "ev-96d9a590a6da6c6097dc",
+        "ev-4d1b56f6892a6cd12483",
+        "ev-c5dc55df123a0facab2f"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-08T04:01:15.739Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-08T04:01:15.739Z"
+    },
+    "div-f-sec6-m2:09cc964e99c5e698:published": {
+      "articleId": "div-f-sec6-m2:09cc964e99c5e698:published",
+      "matchId": "div-f-sec6-m2",
+      "revision": "09cc964e99c5e698",
+      "status": "passed",
+      "headline": "Good 8 Squadが大将戦を取り30-10で勝利",
+      "summary": "Good 8 Squadが名古屋NTPOJAに30-10で勝利した。先鋒戦はガチくんが第1ゲームを落としてから2ゲームを連取し、先制。中堅戦ではSeiyaがカワノを2-0で下し、名古屋NTPOJAが取り返した。大将戦はぷげらが第2・第3ゲームを連取して先行するも、大谷が第4ゲームを奪って2-2に追いつく展開に。最終ゲームはぷげらが取り、第2ラウンドの連続攻撃からCAで倒し切って、チームの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-9afad2b1f975379f147e",
+        "ev-11f0514822c8d0793e8e",
+        "ev-218eca50a88a99df834a",
+        "ev-c5dc55df123a0facab2f"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-9afad2b1f975379f147e",
+        "ev-11f0514822c8d0793e8e",
+        "ev-218eca50a88a99df834a",
+        "ev-c5dc55df123a0facab2f"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-08T04:01:15.739Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-08T04:01:15.739Z"
     }
   }
 }

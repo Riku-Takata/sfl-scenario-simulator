@@ -608,35 +608,35 @@
         }
       },
       "gemini:verify:gemini-3.6-flash": {
+        "responses": 3,
+        "tokens": {
+          "inputTokens": 57892,
+          "cachedInputTokens": 0,
+          "outputTokens": 1605,
+          "thoughtTokens": 5142,
+          "totalTokens": 64639
+        },
+        "observations": {
+          "inputTokens": 3,
+          "cachedInputTokens": 3,
+          "outputTokens": 3,
+          "thoughtTokens": 3,
+          "totalTokens": 3
+        }
+      },
+      "codex:narration:codex-cli": {
         "responses": 2,
         "tokens": {
-          "inputTokens": 30902,
+          "inputTokens": 43331,
           "cachedInputTokens": 0,
-          "outputTokens": 1047,
-          "thoughtTokens": 3713,
-          "totalTokens": 35662
+          "outputTokens": 2717,
+          "thoughtTokens": 82
         },
         "observations": {
           "inputTokens": 2,
           "cachedInputTokens": 2,
           "outputTokens": 2,
-          "thoughtTokens": 2,
-          "totalTokens": 2
-        }
-      },
-      "codex:narration:codex-cli": {
-        "responses": 1,
-        "tokens": {
-          "inputTokens": 21658,
-          "cachedInputTokens": 0,
-          "outputTokens": 1418,
-          "thoughtTokens": 29
-        },
-        "observations": {
-          "inputTokens": 1,
-          "cachedInputTokens": 1,
-          "outputTokens": 1,
-          "thoughtTokens": 1
+          "thoughtTokens": 2
         }
       }
     }
@@ -654,6 +654,7 @@
     "cd776077-bc63-491c-8074-5eb7522a0f96",
     "8ed31993-a84a-459e-861a-73b4759e5bbf",
     "a4c91c1c-4ae4-4d57-9641-ea464bd8bcfc",
-    "5c2a502a-7550-4cce-b273-666d158fa570"
+    "5c2a502a-7550-4cce-b273-666d158fa570",
+    "7d420fb5-c5b1-41b4-b722-001f22af8e98"
   ]
 }
