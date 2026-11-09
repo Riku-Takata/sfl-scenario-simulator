@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T03:38:59.294Z",
+  "updatedAt": "2026-11-09T03:43:12.294Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -4954,6 +4954,196 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-09T03:38:59.223Z"
+    },
+    "div-s-sec7-m3-b0:34d5f4d351a44db1:published": {
+      "articleId": "div-s-sec7-m3-b0:34d5f4d351a44db1:published",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b0",
+      "revision": "34d5f4d351a44db1",
+      "status": "passed",
+      "summary": "先鋒戦はMenaRD選手（ルーク）がひびき選手（リリー）に2-1で勝利。第1ゲームを落とした後、第2・第3ゲームを連取し、ZETA DIVISION Geeklyに先制をもたらした。",
+      "summaryEvidenceIds": [
+        "ev-d8c1f13159ef80c821c4"
+      ],
+      "keyPoints": [
+        {
+          "text": "ひびきはドライブゲージやSAを使った連続攻撃を決め、ルークを倒してラウンドを奪う場面を作った。",
+          "evidenceIds": [
+            "ev-d6bb3302755a465dcfe9"
+          ]
+        },
+        {
+          "text": "リリーが空中攻撃から攻め込んだ場面では、ルークのリバーサル行動にパニッシュカウンターを取り、コンドルスパイアを組み込んだSA1へのコンボで体力を大きく削った。",
+          "evidenceIds": [
+            "ev-23f1d05bd83183f3ba06"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-d8c1f13159ef80c821c4",
+        "ev-d6bb3302755a465dcfe9",
+        "ev-23f1d05bd83183f3ba06"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:43:12.247Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:43:12.247Z"
+    },
+    "div-s-sec7-m3-b1:4d8ff471855c6f17:published": {
+      "articleId": "div-s-sec7-m3-b1:4d8ff471855c6f17:published",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b1",
+      "revision": "4d8ff471855c6f17",
+      "status": "passed",
+      "summary": "中堅戦はヤマグチ選手（不知火舞）がACQUA選手（ブランカ）を2-1で下した。第1ゲームを先取し、第2ゲームを返されたものの、第3ゲームを取り切ってZETA DIVISION Geeklyの連勝につなげた。",
+      "summaryEvidenceIds": [
+        "ev-56a9e5ce84408fbc9917"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームの決着場面では、ヤマグチがOD必殺技によるリバーサルでパニッシュカウンターを取り、ドライブラッシュを交えたコンボからスーパーアーツにつないでKOした。",
+          "evidenceIds": [
+            "ev-63573d7afd0e298dcb67"
+          ]
+        },
+        {
+          "text": "第3ゲーム最終ラウンドは、ACQUAのSA2「ライトニングビースト」による攻めをガードとパリィで凌ぎ、技の隙にパニッシュカウンターからスーパーアーツを決め、その後も攻めを続けてKOした。",
+          "evidenceIds": [
+            "ev-67066d59ac8db1e82610"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-56a9e5ce84408fbc9917",
+        "ev-63573d7afd0e298dcb67",
+        "ev-67066d59ac8db1e82610"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:43:12.247Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:43:12.247Z"
+    },
+    "div-s-sec7-m3-b2:d6c12fef5f0f7dc1:published": {
+      "articleId": "div-s-sec7-m3-b2:d6c12fef5f0f7dc1:published",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b2",
+      "revision": "d6c12fef5f0f7dc1",
+      "status": "passed",
+      "summary": "大将戦はひぐち選手（ガイル）があきら選手（C.ヴァイパー）に3-1で勝利。第1・第2ゲームを連取し、第3ゲームを返されても第4ゲームで決着をつけ、ZETA DIVISION Geeklyが全3戦を制した。",
+      "summaryEvidenceIds": [
+        "ev-19bcbf72e7921a699f20"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームの最終ラウンドは、ひぐちがODサマーソルトキックをパニッシュカウンターで当ててKOし、先取につなげた。",
+          "evidenceIds": [
+            "ev-80ff36f4e6e7db977463"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンドでは、ソニックブームやサマーソルトキック、投げを交えて攻め、あきらにダメージを許さずパーフェクトKOを達成した。",
+          "evidenceIds": [
+            "ev-b38b3664628d5b23f781"
+          ]
+        },
+        {
+          "text": "第4ゲーム最終ラウンドは、ひぐちがSA2「ソリッドパンチャー」で画面端の攻めを続け、あきらの割り込みの大技が通らなかった隙にパニッシュカウンターからKOを奪った。",
+          "evidenceIds": [
+            "ev-d762c59fbb6effbd8d74"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-19bcbf72e7921a699f20",
+        "ev-80ff36f4e6e7db977463",
+        "ev-b38b3664628d5b23f781",
+        "ev-d762c59fbb6effbd8d74"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:43:12.247Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:43:12.247Z"
+    },
+    "div-s-sec7-m3:26284abf46c5fb15:published": {
+      "articleId": "div-s-sec7-m3:26284abf46c5fb15:published",
+      "matchId": "div-s-sec7-m3",
+      "revision": "26284abf46c5fb15",
+      "status": "passed",
+      "headline": "ZETAが全3戦を制し40-0で勝利",
+      "summary": "ZETA DIVISION Geeklyが広島 TEAM iXAを40-0で下した。先鋒戦はMenaRDがひびきに第1ゲームを先取されたものの、続く2ゲームを取り返して勝利。中堅戦ではヤマグチがACQUAに第2ゲームを奪われながらも、最終ゲームを制してつないだ。ブランカのライトニングビーストをガードとパリィで凌ぎ、反撃につなげた場面が勝利を支えた。大将戦のひぐちは第2ゲームにパーフェクトKOを記録。あきらに第3ゲームを返されたが、第4ゲームの最終ラウンドで大技の隙を突いてKOし、全3戦の勝利を締めくくった。",
+      "summaryEvidenceIds": [
+        "ev-d8c1f13159ef80c821c4",
+        "ev-56a9e5ce84408fbc9917",
+        "ev-67066d59ac8db1e82610",
+        "ev-19bcbf72e7921a699f20",
+        "ev-b38b3664628d5b23f781",
+        "ev-d762c59fbb6effbd8d74"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-d8c1f13159ef80c821c4",
+        "ev-56a9e5ce84408fbc9917",
+        "ev-67066d59ac8db1e82610",
+        "ev-19bcbf72e7921a699f20",
+        "ev-b38b3664628d5b23f781",
+        "ev-d762c59fbb6effbd8d74"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:43:12.248Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:43:12.248Z"
     }
   }
 }
