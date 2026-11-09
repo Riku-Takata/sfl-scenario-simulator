@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T03:45:14.680Z",
+  "updatedAt": "2026-11-09T03:47:36.660Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -5332,6 +5332,194 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-09T03:45:14.629Z"
+    },
+    "div-f-sec6-m3-b0:dbc7550158c15dd1:published": {
+      "articleId": "div-f-sec6-m3-b0:dbc7550158c15dd1:published",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b0",
+      "revision": "dbc7550158c15dd1",
+      "status": "passed",
+      "summary": "先鋒戦はひかる選手が竹内ジョン選手に2-1で勝利した。第1ゲームを先取し、第2ゲームを取り返されたものの、最終第3ゲームを奪ってRIDDLE ORDERに先制をもたらした。",
+      "summaryEvidenceIds": [
+        "ev-8688f1ad4996bf34b35b"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンド、ひかるは単発ヒット確認からSA3を決め、パーフェクトKOでゲームを先取した。",
+          "evidenceIds": [
+            "ev-92da0d9ce3b9bd10845d"
+          ]
+        },
+        {
+          "text": "第2ゲーム第3ラウンド、竹内ジョンは毒状態でも攻めを続け、ひかるをバーンアウトに追い込むと、画面端付近でパニッシュカウンターから連続攻撃を決めて1-1に戻した。",
+          "evidenceIds": [
+            "ev-34e28bdfb763e310057e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-8688f1ad4996bf34b35b",
+        "ev-92da0d9ce3b9bd10845d",
+        "ev-34e28bdfb763e310057e"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:47:36.634Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:47:36.634Z"
+    },
+    "div-f-sec6-m3-b1:66c10c32a59a37eb:published": {
+      "articleId": "div-f-sec6-m3-b1:66c10c32a59a37eb:published",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b1",
+      "revision": "66c10c32a59a37eb",
+      "status": "passed",
+      "summary": "中堅戦はナウマン選手がJr.選手に2-1で逆転勝利した。第1ゲームをJr.に奪われた後、第2・第3ゲームを連取し、DetonatioN FocusMeが中堅戦で勝利を返した。",
+      "summaryEvidenceIds": [
+        "ev-bd332568cc1abcc24f4d"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第2ラウンド、ナウマンは地上コンボから陽炎の舞につなぎ、Jr.の体力を削り切ってゲームカウントを1-1に戻した。",
+          "evidenceIds": [
+            "ev-a68cee04ef6858eca630"
+          ]
+        },
+        {
+          "text": "第3ゲーム第1ラウンド、ナウマンは技の隙へのパニッシュカウンターからOD必殺技を絡めた連続技を決め、パーフェクトKOを達成した。",
+          "evidenceIds": [
+            "ev-6f69c26efe593bc1541b"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンド、ナウマンはバーンアウト状態のJr.に通常投げを続けて通し、最後も投げでKOして勝利を決めた。",
+          "evidenceIds": [
+            "ev-c151fa4a04d53a9ba1e8"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-bd332568cc1abcc24f4d",
+        "ev-a68cee04ef6858eca630",
+        "ev-6f69c26efe593bc1541b",
+        "ev-c151fa4a04d53a9ba1e8"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:47:36.634Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:47:36.634Z"
+    },
+    "div-f-sec6-m3-b2:1bf0445cba6c1e84:published": {
+      "articleId": "div-f-sec6-m3-b2:1bf0445cba6c1e84:published",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b2",
+      "revision": "1bf0445cba6c1e84",
+      "status": "passed",
+      "summary": "大将戦は高木選手がKEI.B選手を3-1で下した。第1・第2ゲームを連取し、第3ゲームこそ取り返されたが、第4ゲームを勝ち切ってRIDDLE ORDERの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-a7dc6271f3afe4f7b808"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第2ラウンド、高木は攻めの主導権を握り、最後はコンボからSA3を決めてパーフェクトKOでゲームカウントを2-0とした。",
+          "evidenceIds": [
+            "ev-7825f63e64487516a22d"
+          ]
+        },
+        {
+          "text": "第4ゲーム第1ラウンド、高木は技の隙にドライブインパクトを当てて画面端でスタンを誘発し、追撃を決めてラウンドを先取した。",
+          "evidenceIds": [
+            "ev-2fed04d305ff5cd49229"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-a7dc6271f3afe4f7b808",
+        "ev-7825f63e64487516a22d",
+        "ev-2fed04d305ff5cd49229"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:47:36.634Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:47:36.634Z"
+    },
+    "div-f-sec6-m3:4bba0f06b935dd81:published": {
+      "articleId": "div-f-sec6-m3:4bba0f06b935dd81:published",
+      "matchId": "div-f-sec6-m3",
+      "revision": "4bba0f06b935dd81",
+      "status": "passed",
+      "headline": "RIDDLE ORDER、高木の大将戦勝利で30-10",
+      "summary": "RIDDLE ORDERがDetonatioN FocusMeを30-10で下した。先鋒戦はひかるが第1ゲームを先取し、竹内ジョンに追いつかれながらも第3ゲームを取って勝利。第1ゲーム第2ラウンドにはSA3からパーフェクトKOを決めた。中堅戦はナウマンが第1ゲームを落としてから2ゲームを取り返し、DetonatioN FocusMeが勝利を返す。ナウマンは最終ゲームでパーフェクトKOも記録した。大将戦は高木が2ゲームを先行。KEI.Bが第3ゲームを取り返したものの、高木が第4ゲームを奪って3-1で勝ち、チームの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-8688f1ad4996bf34b35b",
+        "ev-92da0d9ce3b9bd10845d",
+        "ev-bd332568cc1abcc24f4d",
+        "ev-6f69c26efe593bc1541b",
+        "ev-a7dc6271f3afe4f7b808"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-8688f1ad4996bf34b35b",
+        "ev-92da0d9ce3b9bd10845d",
+        "ev-bd332568cc1abcc24f4d",
+        "ev-6f69c26efe593bc1541b",
+        "ev-a7dc6271f3afe4f7b808"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:47:36.634Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:47:36.634Z"
     }
   }
 }
