@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T03:10:59.009Z",
+  "updatedAt": "2026-11-09T03:28:16.303Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -5947,6 +5947,38 @@
               "topic": "Game 4 Final Round、画面端でバーンアウト寸前まで追い詰められたひぐちが、あきらの中段技の出掛かりを小技で迎撃してパニッシュカウンターを奪い、コンボで逆転KOを決める。",
               "evidence": "両方",
               "startSec": 12212,
+              "endSec": 12221
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-09T03:28:16.289Z",
+          "gameWinnersSeen": [
+            "A",
+            "A",
+            "B",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第3ラウンド、バーンアウト状態となったあきらの逆転を狙った切り返しCA（クリティカルアート）をひぐちが冷静にガードし、隙に対してODサマーソルトキックで確定パニッシュカウンターを取ってKOし第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 11612,
+              "endSec": 11621
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、ひぐちが開幕から飛び道具や対空迎撃で主導権を握り続け、相手に一切のダメージを許さないパーフェクトKOを達成した。",
+              "evidence": "両方",
+              "startSec": 11635,
+              "endSec": 11676
+            },
+            {
+              "topic": "第4ゲーム第3ラウンド（試合決着局面）、あきらが仕掛けた大技の攻勢をひぐちがガードで凌ぎ、パニッシュカウンターから確実なコンボを決めてKOし、チームの勝利を決定づけた。",
+              "evidence": "両方",
+              "startSec": 12213,
               "endSec": 12221
             }
           ]
@@ -14307,6 +14339,8 @@
   "pendingNarrations": [
     "div-s-sec6-m2",
     "div-f-sec6-m1",
-    "div-f-sec6-m3"
+    "div-f-sec6-m3",
+    "div-s-sec7-m1",
+    "div-s-sec7-m2"
   ]
 }
