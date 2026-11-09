@@ -83,6 +83,10 @@ export function calculateAndSaveScenarios(iterations = 10000): ScenariosData {
       ...divS.teams,
       ...divF.teams,
     },
+    matchPredictions: {
+      ...divS.matchPredictions,
+      ...divF.matchPredictions,
+    },
   });
 
   fs.writeFileSync(

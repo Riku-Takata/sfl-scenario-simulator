@@ -421,6 +421,39 @@ export const ScenarioRouteDetailSchema = z.object({
   isRecommendedTarget: z.boolean().optional(),
 });
 
+/** 到達可能性の厳密判定 (src/lib/feasibility.ts)。設計: docs/simulator-feasibility-and-realistic-fill.md */
+export const TargetStatusSchema = z.enum(["clinched", "possible", "tiny", "tiebreak", "impossible", "unknown"]);
+
+export const TargetFeasibilityDetailSchema = z.object({
+  status: TargetStatusSchema,
+  /** 画面に出す文字列 (例: "18.5%", "不可能", "0.1%未満（可能性あり）") */
+  label: z.string(),
+  /** 不可能・得失差次第・確定のときの理由 */
+  reason: z.string().optional(),
+});
+
+export const RankBoundsSchema = z.object({
+  bestRank: z.number().int(),
+  bestRankNeedsTiebreak: z.boolean(),
+  bestRankWithoutTiebreak: z.number().int(),
+  worstRank: z.number().int(),
+  worstRankNeedsTiebreak: z.boolean(),
+  maxPoints: z.number(),
+  exhaustive: z.boolean(),
+  targets: z.object({
+    first: TargetFeasibilityDetailSchema,
+    top2: TargetFeasibilityDetailSchema,
+    playoff: TargetFeasibilityDetailSchema,
+  }),
+});
+
+/** 未消化の試合ごとのスコア確率 (実力値の不確かさで平均したもの)。自動埋めと根拠表示に使う。 */
+export const MatchOutcomePredictionSchema = z.object({
+  weights: z.record(ScorePatternIdSchema, z.number()),
+  homeWinProbability: z.number(),
+  mostLikely: ScorePatternIdSchema,
+});
+
 export const TeamScenarioAnalysisSchema = z.object({
   teamKey: z.string(),
   teamName: z.string(),
@@ -468,6 +501,7 @@ export const TeamScenarioAnalysisSchema = z.object({
   nextSectionCheeringGuide: z.array(CheeringMatchGuideSchema),
   nextMatchPrediction: NextMatchOrderRecommendationSchema.optional(),
   remainingMatchPredictions: z.array(RemainingMatchPredictionSchema).optional(),
+  feasibility: RankBoundsSchema.optional(),
 });
 
 export const ScenariosDataSchema = z.object({
@@ -490,6 +524,7 @@ export const ScenariosDataSchema = z.object({
     }),
   }),
   teams: z.record(z.string(), TeamScenarioAnalysisSchema),
+  matchPredictions: z.record(z.string(), MatchOutcomePredictionSchema).optional(),
 });
 
 export const VideoHighlightMomentSchema = z.object({
