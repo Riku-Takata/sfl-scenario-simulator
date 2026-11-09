@@ -32,8 +32,12 @@ import {
 import type { TeamStanding } from "../src/lib/types";
 
 const dataDir = path.resolve(process.cwd(), "src/data");
+// シナリオ計算のテストは、11/3 (div-f-sec6) 時点の結果を固定して使う。
+// 生の matches.json を読むと、シーズンが進んで順位が決まるだけで「全チームが1〜3位に届く」などの前提が崩れ、
+// 2026-11-06 の div-s-sec7 取り込み以降、結果取り込みのワークフローがテストで止まり続けた。
+// 生データの形式は Zod の検証テストが引き続き確かめる。
 const matchesData = MatchesDataSchema.parse(
-  JSON.parse(fs.readFileSync(path.join(dataDir, "matches.json"), "utf8"))
+  JSON.parse(fs.readFileSync(path.resolve(process.cwd(), "tests/fixtures/simulator/matches-2026-11-03.json"), "utf8"))
 );
 const standingsData = StandingsDataSchema.parse(
   JSON.parse(fs.readFileSync(path.join(dataDir, "standings.json"), "utf8"))
@@ -65,6 +69,8 @@ const matchRecapsData = MatchRecapsDataSchema.parse(
 );
 
 test("Zod schemas validate all 8 generated JSON datasets cleanly", () => {
+  const liveMatches = MatchesDataSchema.parse(JSON.parse(fs.readFileSync(path.join(dataDir, "matches.json"), "utf8")));
+  assert.equal(liveMatches.matches.length, 60);
   assert.equal(matchesData.matches.length, 60);
   assert.equal(standingsData.divisions.s.length, 6);
   assert.equal(standingsData.divisions.f.length, 6);
