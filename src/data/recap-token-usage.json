@@ -691,6 +691,23 @@
           "thoughtTokens": 3,
           "totalTokens": 3
         }
+      },
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 11505,
+          "cachedInputTokens": 0,
+          "outputTokens": 385,
+          "thoughtTokens": 1986,
+          "totalTokens": 13876
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
       }
     }
   },
@@ -747,6 +764,26 @@
           "outputTokens": 3,
           "thoughtTokens": 3,
           "totalTokens": 3
+        },
+        "failures": {}
+      }
+    },
+    "div-s-sec6": {
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 11505,
+          "cachedInputTokens": 0,
+          "outputTokens": 385,
+          "thoughtTokens": 1986,
+          "totalTokens": 13876
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
         },
         "failures": {}
       }

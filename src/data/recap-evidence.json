@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T03:04:15.287Z",
+  "updatedAt": "2026-11-09T03:08:31.382Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -3055,13 +3055,10 @@
       "officialRefs": [
         "div-s-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ジェイミー（1P・Kazunoko）とA.K.I.（2P・Momochi）の対戦。ジェイミーがパニッシュカウンターからSA3（レベル3スーパーアーツ）を発動して演出へ移行し、大ダメージを与えて薬湯（酔い）レベルが上昇します。その後、ドライブインパクトや着地攻めで圧力をかけ、最終的にOD必殺技等のコンボでA.K.I.をK.O.します。",
       "sourceModels": [
-        "gemini-3.7-flash",
-        "gemini-3.6-flash"
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-30T18:04:28.957Z"
     },
@@ -3082,13 +3079,10 @@
       "officialRefs": [
         "div-s-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ジェイミー（1P・Kazunoko）とA.K.I.（2P・Momochi）の対戦。A.K.I.がパニッシュカウンターからSA3（レベル3スーパーアーツ）を命中させ、演出後にジェイミーをハードダウンさせます。起き上がり後の攻防で飛び込みを捉えたA.K.I.が追撃コンボを決めてK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.7-flash",
-        "gemini-3.6-flash"
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-30T18:04:28.957Z"
     },
@@ -3109,13 +3103,10 @@
       "officialRefs": [
         "div-s-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ジェイミー（1P・Kazunoko）とA.K.I.（2P・Momochi）の対戦。互いに牽制し合う場面から、ジェイミーが差し返し等でパニッシュカウンターを獲得し、OD天昇脚を含むコンボでA.K.I.をK.O.します。ラウンド終了後、ファイナルラウンド（1-1）の表示へ移行します。",
       "sourceModels": [
-        "gemini-3.7-flash",
-        "gemini-3.6-flash"
+        "gemini-3.7-flash"
       ],
       "createdAt": "2026-10-30T18:04:28.957Z"
     },
@@ -3271,13 +3262,10 @@
       "officialRefs": [
         "div-s-sec6-m1-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "豪鬼（1P）とガイル（2P）の対戦。ガイルがソニックブレイク等で牽制し、飛び込んできた豪鬼に対空攻撃をヒットさせてパニッシュカウンターを奪います。そこからドライブラッシュを絡めた連続打撃を叩き込み、豪鬼の体力を削りきってK.O.し、「GUILE WIN」が決着画面に表示されます。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.7-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-30T22:59:35.694Z"
     },
@@ -3457,13 +3445,10 @@
       "officialRefs": [
         "div-s-sec6-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ルーク対ブランカ。画面端でブランカの攻撃をかわしたルークが地上戦でプレッシャーをかけ、小技のカウンターヒットから連携を決めてブランカをK.O.し、ラウンド1を奪ってラウンド2の表示へ移行します。",
       "sourceModels": [
-        "gemini-3.6-flash",
-        "gemini-3.8-flash"
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-31T02:18:31.206Z"
     },
@@ -3535,13 +3520,10 @@
       "officialRefs": [
         "div-s-sec6-m1-b3:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "舞がドライブラッシュからの下段攻撃をエレナにヒットさせ、キャンセルドライブラッシュを絡めた連続技に移行します。そのままレベル3スーパーアーツ（クリティカルアーツ）へ繋ぎ、演出を経てエレナの体力を削り切ってK.O.となり、舞がラウンドを取得します。",
       "sourceModels": [
-        "gemini-3.6-flash",
-        "gemini-3.8-flash"
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-10-31T15:16:19.186Z"
     },
@@ -3589,13 +3571,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1Pのキャミィ（AKIRA）と2Pのリュウ（MACHABO）の対戦。近距離の打撃やガード揺さぶりの攻防から、リュウがパニッシュカウンターをきっかけにSA3/CA（真・昇竜拳）をヒットさせ、演出を経てキャミィをK.O.しラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:19:49.531Z"
     },
@@ -3616,13 +3595,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1Pのキャミィ（AKIRA）と2Pのリュウ（MACHABO）の対戦。リュウが波動拳やドライブシステムを絡めた立ち回りで圧力をかけ、最後は反撃技をヒットさせてキャミィをK.O.しラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:19:49.531Z"
     },
@@ -3643,13 +3619,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1Pのキャミィ（AKIRA）と2Pのリュウ（MACHABO）の対戦。キャミィがリュウの隙に対してパニッシュカウンターからコンボを伸ばし、SA3/CAを発動。CA演出がヒットしてリュウの体力を削りきり、キャミィがK.O.してラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:19:49.531Z"
     },
@@ -3697,13 +3670,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "120:20.000から120:33.000の区間では、『ストリートファイター6』のP1側キャミィ（AKIRA）とP2側リュウ（MACHABO）の対戦が描かれています。序盤（120:20〜120:23）、キャミィがリュウに対してパニッシュカウンターを奪い攻撃を展開します。120:24付近でリュウが波動拳を放って牽制し、120:27〜120:29でキャミィの飛び込み・攻撃の隙に対してリュウがパニッシュカウンターを成立させます。そのままリュウがDrive Gaugeを活用した攻撃およびコンボを叩き込み、120:32.000にK.O.を奪ってラウンドが終了します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:19:49.531Z"
     },
@@ -3751,13 +3721,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "127:00.000からブランカ（ACQUA）とザンギエフ（KOBAYAN）の攻防が映し出されます。ザンギエフがスクリューパイルドライバーを決めてダウンを奪い、起き上がりにプレッシャーをかけます。127:14.000付近でザンギエフの打撃コンボがヒットし、ブランカをKOして「ZANGIEF WIN」の勝利演出へと移行します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:25:48.668Z"
     },
@@ -3778,13 +3745,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "127:31.000からROUND 1の「FIGHT」の合図とともに試合が開始されます。中央での牽制からブランカがパニッシュカウンターを取って攻め立てますが、127:42.500でザンギエフが反撃のスクリューパイルドライバーを決め、さらに127:49.500でも再度スクリューパイルドライバーを成功させて大ダメージを与えます。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-10-31T15:25:48.668Z"
     },
@@ -3834,8 +3798,8 @@
       ],
       "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "HIBIKI（リリー）対 KINCHO（ルーク）の対戦。ルークがリリーのジャンプをODライジングアッパーで対空し、続いて垂直ジャンプもしゃがみ強Pからライジングアッパーで落として画面端へ追い詰めます。しかし起き上がりにリリーがCA（レイジングタイフーン）を繰り出してルークを掴み、大ダメージを与えてK.O.を奪います。",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "ひびき（リリー）がきんちょ（テリー）のジャンプ攻撃を対空で迎撃してダウンを奪い、起き上がりに打撃を重ねてコンボを繋ぎます。そこからキャンセルでCA（クリティカルアーツ「レイジングタイフーン」）を発動して全段ヒットさせ、テリーの体力を削りきってK.O.を奪います。",
       "sourceModels": [
         "gemini-3.6-flash",
         "gemini-3.8-flash"
@@ -3859,10 +3823,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "HIBIKI（リリー）対 KINCHO（ルーク）の対戦。バーンアウト状態のルークがリリーの攻めを凌いでコンボからCA（ペイルライダー）を叩き込みます。CA演出終了時点でリリーの体力はわずかに残りますが、起き上がりにルークが放った飛び道具がヒットしてリリーがK.O.となります。",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "きんちょ（テリー）が画面端付近でひびき（リリー）に対してコンボからCA（クリティカルアーツ「バスターウルフ」）を発動・ヒットさせます。この攻撃でリリーの体力はわずかに残るものの、テリーはドライブゲージを使い切ってバーンアウト状態になります。リリーの起き上がり直後、テリーがパワーウェイブを放ち、それがヒットしてK.O.となります。",
       "sourceModels": [
         "gemini-3.6-flash",
         "gemini-3.8-flash"
@@ -3886,10 +3850,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "HIBIKI（リリー）対 KINCHO（ルーク）の対戦。中央付近での攻防でルークが通常投げを決めて位置を入れ替え、ドライブラッシュや牽制技で攻めを継続します。その後、ルークが繰り出したODライジングアッパーをリリーがガードしてパニッシュカウンターを取り、メキシカンタイフーン（コマンド投げ）を決めてルークをK.O.します。",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "画面端に追い詰められたひびき（リリー）に対し、きんちょ（テリー）が攻め立てますが、テリーの繰り出した技の隙に対してリリーがパニッシュカウンターからODメキシカンタイフーン（コマンド投げ）を決めて叩きつけ、逆転K.O.を奪います。",
       "sourceModels": [
         "gemini-3.6-flash",
         "gemini-3.8-flash"
@@ -3913,10 +3877,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "HIBIKI（リリー）対 KINCHO（ルーク）の対戦。リリーがリバーサルでルークにパニッシュカウンターを取り、画面端へ運びます。さらに起き上がりの攻防で再びパニッシュカウンターを奪ってコンボからSA3を発動。そのままSA3がヒットしきってPERFECT K.O.を達成します。",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "ひびき（リリー）がきんちょ（テリー）の無敵技リバーサルをガードしてパニッシュカウンターからコンボを決めて画面端に追い詰めます。さらにテリーの反撃の出鼻を挫いてパニッシュカウンターを取り、コンボからSA3（レイジングタイフーン）を叩き込んでノーダメージのままPERFECT K.O.を達成します。",
       "sourceModels": [
         "gemini-3.6-flash",
         "gemini-3.8-flash"
@@ -4966,13 +4930,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b3:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1PのTAKEPI（JP）対2PのCOSA（豪鬼）の対戦。JPの跳び込みに対して豪鬼が対空攻撃で迎撃してパニッシュカウンターを奪います。豪鬼はドライブラッシュからコンボを繋いでJPを画面端へ運び、そのままSA3（CA）へ派生。大ダメージを与えてJPをK.O.します。",
       "sourceModels": [
-        "gemini-3.6-flash",
-        "gemini-3.8-flash"
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T23:01:45.751Z"
     },
@@ -5044,13 +5005,10 @@
       "officialRefs": [
         "div-s-sec6-m3-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "Moke選手（春麗）とTorimeshi選手（ダルシム）の対戦。Moke（春麗）がジャンプ攻撃を引っかけてコンボを始動し、ドライブラッシュを絡めた強力な連続技から最後はCA（クリティカルアーツ）を繋げてTorimeshi（ダルシム）を倒し、PERFECT K.O.を獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:04:56.948Z"
     },
@@ -5125,13 +5083,10 @@
       "officialRefs": [
         "div-s-sec6-m3-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "Moke選手（春麗）とTorimeshi選手（ダルシム）の対戦。Moke（春麗）が相手の技の隙をガードしてパニッシュカウンターを奪い、ドライブゲージを絡めたコンボからSAを発動してTorimeshi（ダルシム）の体力を削りきり、K.O.をとります。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:04:56.948Z"
     },
@@ -5206,13 +5161,10 @@
       "officialRefs": [
         "div-s-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P Fujimura（C.ヴァイパー）対2P Johnny（エレナ）の対戦。C.ヴァイパーがカウンターヒットから大ダメージのコンボ（14HITS）を決めてダウンを奪います。仕切り直しの地上戦で互いに下段攻撃やスライディングなどを繰り出し、最後はC.ヴァイパーが下段攻撃を差し込んでK.O.を奪い、「C. VIPER WIN」の表示とともにラウンドを制します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:07:44.459Z"
     },
@@ -5233,13 +5185,10 @@
       "officialRefs": [
         "div-s-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "コロシアムステージでの1P Fujimura（C.ヴァイパー）対2P Johnny（エレナ）の対戦。C.ヴァイパーが立ち強攻撃やODセイスモを交えた積極的な攻めでカウンターを獲得し、エレナを画面端付近まで押し込みます。密着状態からの崩しで最後は投げを決めてK.O.となり、1PのFujimura（C.ヴァイパー）がラウンドを取得します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:07:44.459Z"
     },
@@ -5314,13 +5263,10 @@
       "officialRefs": [
         "div-s-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P Ryukichi（Mai）対 2P 2BASSA（A.K.I.）。バーンアウト状態の2P A.K.I.に対し、1P Maiが画面端でパニッシュカウンターを奪い、そのまま打撃を重ねてK.O.し「MAI WIN」の勝利画面へ移行します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:10:08.320Z"
     },
@@ -5341,13 +5287,10 @@
       "officialRefs": [
         "div-s-sec6-m3-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P Ryukichi（Mai）対 2P 2BASSA（A.K.I.）。画面右端で1P Maiがコンボからクリティカルアート（CA）を叩き込みます。暗転演出中に画面が選手・チームのカメラ映像へ切り替わり、チームメンバーが勝利を喜ぶ中でゲーム画面上でもK.O.が成立し、マッチ勝利となります。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-01T23:10:08.320Z"
     },
@@ -5395,13 +5338,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "玄武寺ステージにて画面端付近での攻防。リュウがベガを連続で3回前投げを決めてダウンを奪います。3回目の投げ後の起き上がりに対してリュウが小技を重ねにいきますが、ベガがリバーサルでSA1を発動。リュウはこれをジャストパリィで受け止め、パニッシュカウンターを取ってドライブラッシュからクリティカルアーツ（SA3「真・昇龍拳」）に繋ぎ、ベガをK.O.します。",
       "sourceModels": [
-        "gemini-3.6-flash",
-        "gemini-3.8-flash"
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T23:52:43.552Z"
     },
@@ -5449,13 +5389,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "レンジャーズハットステージにて、ベガのリバーサルOD技をリュウがガードしてパニッシュカウンターからコンボを叩き込みます。その後リュウは波動拳でベガのドライブゲージを削り、ベガの前ジャンプをしゃがみ強P対空で落とします。さらに起き上がりにベガがリバーサルで放ったOD技をリュウがスカしてバーンアウトさせ、ドライブラッシュからのコンボで昇龍拳を叩き込み、リュウがK.O.勝利します。",
       "sourceModels": [
-        "gemini-3.6-flash",
-        "gemini-3.8-flash"
+        "gemini-3.6-flash"
       ],
       "createdAt": "2026-11-01T23:52:43.552Z"
     },
@@ -5476,14 +5413,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1Pのキンバリー（HIBIKI）と2Pのルーク（KINCHO）の対戦。ロンドンステージ。キンバリーがルークの空中攻撃や行動に対してカウンターを取り、OD技からCritical Art（CA）を叩き込み、演出を経てルークをK.O.してラウンドを取得した。",
-      "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-02T02:02:33.425Z"
     },
@@ -5532,14 +5465,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1Pのキンバリー（HIBIKI）と2Pのルーク（KINCHO）の対戦。キンバリーが中段・崩しからのカウンターでコンボを始動し、OD技からCritical Art（CA）へキャンセル接続。CA演出によってルークの残体力を削り切り、K.O.となった。",
-      "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-02T02:02:33.425Z"
     },
@@ -5560,14 +5489,10 @@
       "officialRefs": [
         "div-s-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1Pのキンバリー（HIBIKI）と2Pのルーク（KINCHO）の対戦。中華街ステージ。ルークのリバーサル行動に対し、キンバリーがパニッシュカウンターを取って画面端でコンボを展開。さらに追撃のパニッシュカウンターからCAコンボを完走し、ダメージを受けることなくPERFECT K.O.を達成した。",
-      "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-02T02:02:33.425Z"
     },
@@ -5850,14 +5775,10 @@
       "officialRefs": [
         "div-f-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1Pの豪鬼（DAIGO）と2Pのキャミィ（MIZUHA）の対戦。両者ともに体力が残り僅かな状況で、豪鬼が攻撃をヒットさせてクリティカルアーツ（CA）を発動します。CAの演出が完走し、画面に「K.O.」と表示され豪鬼側がラウンドを獲得します。画面上部にはチームメンバーが勝利を喜ぶカメラ映像が表示されます。",
-      "verificationFailures": 2,
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-06T04:38:43.458Z"
     },
@@ -5878,14 +5799,10 @@
       "officialRefs": [
         "div-f-sec6-m1-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "豪鬼（1P）とキャミィ（2P）の対戦。豪鬼の隙に対してキャミィがパニッシュカウンターを取り、コンボからキャミィのクリティカルアーツ（CA）を発動します。演出後に豪鬼の体力がゼロになり、「K.O.」が表示されてキャミィがラウンドを獲得します。",
-      "verificationFailures": 1,
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-06T04:38:43.458Z"
     },
@@ -5986,10 +5903,8 @@
       "officialRefs": [
         "div-f-sec6-m1-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P（ふ～ど：A.K.I.）と2P（マゴ：A.K.I.）による同キャラクター対戦です。1Pが連続技からパニッシュカウンター（Punish Counter）を取り、投げ技を止めてハードダウン（HARD KNOCKDOWN）を奪います。この攻撃により2Pのドライブゲージが尽きてバーンアウト（Burnout）状態となり、1Pが画面端付近でさらに攻撃を重ねて圧力をかける攻防が展開されます。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6012,10 +5927,8 @@
       "officialRefs": [
         "div-f-sec6-m1-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P A.K.I.がパニッシュカウンターから空中コンボを成立させてダメージを与えます。体力が大きく減った2P A.K.I.ですが、割り込みからクリティカルアート（CA）を発動して1Pにヒットさせ、そのままK.O.を獲得します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6064,10 +5977,8 @@
       "officialRefs": [
         "div-f-sec6-m1-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P A.K.I.がSA3（またはCA）を発動してヒットさせ、2Pを追い詰めます。しかし起き上がり時に2P A.K.I.がリバーサルでSAを繰り出し、パニッシュカウンターで反撃に成功します。2P A.K.I.はそのまま起攻めで打撃を重ね、1PをK.O.します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6168,10 +6079,8 @@
       "officialRefs": [
         "div-f-sec6-m1-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1Pルークと2Pケンの対戦。ケンが繰り出したドライブインパクトをルークがパリィで受け止め、返しにドライブラッシュからコンボを始動。そのまま空中追撃を決めてKOを獲得する。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6322,10 +6231,8 @@
       "officialRefs": [
         "div-f-sec6-m2-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "画面端付近での差し合いの末、ラシード（P1: ガチくん）がM.ベガ（P2: RADYAMU）の隙に対してパニッシュカウンターを取り、CA（クリティカルアート）を発動してコンボを完走し、K.O.で勝利します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6400,10 +6307,8 @@
       "officialRefs": [
         "div-f-sec6-m2-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "1P豪鬼（KAWANO）と2P春麗（SEIYA）の立ち回り。豪鬼が波動拳やドライブラッシュで牽制するのに対し、春麗は堅実なガードと地上技の差し返しで対応します。中盤、春麗がカウンターヒットからコンボを叩き込み、豪鬼を画面端へ追い詰めてバーンアウト状態にさせます。最後は春麗が追い打ちをかけて豪鬼をK.O.します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6452,10 +6357,8 @@
       "officialRefs": [
         "div-f-sec6-m2-b2:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "PUGERA（C. VIPER）とOTANI（KEN）の対戦終盤。残り時間約52秒からスタート。両者ゲージを保持した状態での差し合いから、ドライブラッシュや投げ抜け、ドライブリバーサルなどの攻防が展開される。OTANI（KEN）がパニッシュカウンターや連続技で画面端へ追い詰めるが、PUGERA（C. VIPER）は防御を固めてタイムオーバーまで耐え抜き、体力勝ちを収める。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6582,10 +6485,8 @@
       "officialRefs": [
         "div-f-sec6-m3-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ジェイミー対A.K.I.の対戦。A.K.I.がパニッシュカウンターからのコンボで先制するも、ジェイミーが空対空やコマンド投げ（魔身）を決めて反撃。最後はA.K.I.がドライブゲージを使い切りバーンアウト状態となったところへ、ジェイミーが頭上からの飛び込み攻撃を決めてK.O.を奪う。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6634,10 +6535,8 @@
       "officialRefs": [
         "div-f-sec6-m3-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ジェイミーがOD技からのドライブラッシュコンボでA.K.I.を大きく打ち上げ画面端へ追い詰める。その後A.K.I.が画面中央へ脱出し返し、差し合いの中でA.K.I.がSA3（紫煙螺旋）をヒットさせる。SA3の演出終了とともに画面上にK.O.が表示され、ワイプ画面のHIKARU選手らが喜ぶ姿が映し出される。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6660,10 +6559,8 @@
       "officialRefs": [
         "div-f-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "ザンギエフ（1P側）とA.K.I.（2P側）の戦い。209:27.000付近でザンギエフがドライブラッシュを発動して一気に間合いを詰め、A.K.I.に投げ技を決めて体力を削り切り、209:29.500頃に「K.O.」となります。「HARD KNOCKDOWN」および「ZANGIEF WIN」の画面表示でラウンドが終了します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6686,10 +6583,8 @@
       "officialRefs": [
         "div-f-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "A.K.I.（1P側）とザンギエフ（2P側）の戦い。211:33.500頃にA.K.I.がドライブラッシュから打撃コンボを始動し、キャンセルしてSA3（レベル3スーパーコンボ）を発動します。暗転演出後に技がヒットし、211:39.000頃に「K.O.」が表示されてA.K.I.がラウンドを取得します。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6712,10 +6607,8 @@
       "officialRefs": [
         "div-f-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "A.K.I.（1P側）とザンギエフ（2P側）の戦い。212:23.500頃からA.K.I.がドライブラッシュを絡めて攻撃を仕掛け、212:29.000に「PUNISH COUNTER」が発生します。そのままコンボを繋いでダメージを与え、212:32.000に「PERFECT K.O.」が画面に表示されます。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
@@ -6738,10 +6631,8 @@
       "officialRefs": [
         "div-f-sec6-m3-b1:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v3",
-      "verificationObservation": "A.K.I.（1P側）とザンギエフ（2P側）の戦い。近距離での打撃・ドライブラッシュの応酬から、213:20.000頃にA.K.I.が通常投げを決めます。213:26.500頃に再びA.K.I.がドライブラッシュから立ち回りを展開し、投げから崩して攻撃を継続。213:31.000頃に「K.O.」が取られ、試合終了後に画面上にプレイヤー陣の映像が表示されます。",
       "sourceModels": [
         "gemini-3.6-flash"
       ],
