@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T02:38:35.722Z",
+  "updatedAt": "2026-11-09T03:04:15.287Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -6881,6 +6881,9 @@
       "matchId": "div-s-sec7-m1",
       "boutId": "div-s-sec7-m1-b0",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 2561,
+      "endSec": 2921,
       "playerIds": [
         "藤村",
         "まちゃぼー"
@@ -6904,6 +6907,9 @@
       "matchId": "div-s-sec7-m1",
       "boutId": "div-s-sec7-m1-b1",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3096,
+      "endSec": 3626,
       "playerIds": [
         "りゅうきち",
         "きんちょ"
@@ -6927,6 +6933,9 @@
       "matchId": "div-s-sec7-m1",
       "boutId": "div-s-sec7-m1-b2",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3834,
+      "endSec": 4992,
       "playerIds": [
         "もけ",
         "こばやん"
@@ -6952,6 +6961,9 @@
       "matchId": "div-s-sec7-m2",
       "boutId": "div-s-sec7-m2-b0",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 6492,
+      "endSec": 6997,
       "playerIds": [
         "ヤナイ",
         "どぐら"
@@ -6974,6 +6986,9 @@
       "matchId": "div-s-sec7-m2",
       "boutId": "div-s-sec7-m2-b1",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7177,
+      "endSec": 7525,
       "playerIds": [
         "2BASSA",
         "Shuto"
@@ -6996,6 +7011,9 @@
       "matchId": "div-s-sec7-m2",
       "boutId": "div-s-sec7-m2-b2",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7787,
+      "endSec": 8292,
       "playerIds": [
         "鶏めし",
         "かずのこ"
@@ -7019,6 +7037,9 @@
       "matchId": "div-s-sec7-m3",
       "boutId": "div-s-sec7-m3-b0",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 9830,
+      "endSec": 10427,
       "playerIds": [
         "MenaRD",
         "ひびき"
@@ -7042,6 +7063,9 @@
       "matchId": "div-s-sec7-m3",
       "boutId": "div-s-sec7-m3-b1",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 10655,
+      "endSec": 11300,
       "playerIds": [
         "ヤマグチ",
         "ACQUA"
@@ -7065,6 +7089,9 @@
       "matchId": "div-s-sec7-m3",
       "boutId": "div-s-sec7-m3-b2",
       "kind": "official",
+      "videoId": "WVSMETYIztc",
+      "startSec": 11464,
+      "endSec": 12348,
       "playerIds": [
         "ひぐち",
         "あきら"
@@ -7082,6 +7109,1233 @@
       "verifierVersion": "official-source-v1",
       "sourceModels": [],
       "createdAt": "2026-11-09T02:38:35.704Z"
+    },
+    "ev-4a58ad89af14190d44b7": {
+      "id": "ev-4a58ad89af14190d44b7",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 2808,
+      "endSec": 2825,
+      "playerIds": [
+        "藤村",
+        "まちゃぼー"
+      ],
+      "observation": "バーンアウト状態に追い込まれたまちゃぼーが、覇衝撃の単発ヒット確認からCA（真・昇龍拳）を叩き込み、逆転リーサルで先鋒戦の勝利を決める。",
+      "officialRefs": [
+        "div-s-sec7-m1-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "リュウ（Machabo）とC.ヴァイパー（Fujimura）の対戦中、画面中央付近でリュウがクリティカルアート（CA）を発動。技がクリーンヒットして演出に入り、そのまま相手の体力を削り切って「K.O.」を獲得します。その後、画面が配信レイアウト（選手・解説のカメラ枠付き）に切り替わり、「RYU WIN」が表示されます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:57:28.072Z"
+    },
+    "ev-4d34f91c1aa32fa6225b": {
+      "id": "ev-4d34f91c1aa32fa6225b",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 2634,
+      "endSec": 2652,
+      "playerIds": [
+        "藤村",
+        "まちゃぼー"
+      ],
+      "observation": "藤村の画面端での投げ攻めを後ろ投げで脱出したまちゃぼーが、カウンターヒットからCA（真・昇龍拳）を直撃させて第1ゲームを先取する。",
+      "officialRefs": [
+        "div-s-sec7-m1-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面端付近での攻防中、リュウ（Machabo）がドライブラッシュを交えた通常技キャンセルからコンボを継続し、クリティカルアート（CA）を発動。CAのヒット演出を経てC.ヴァイパーを撃破し、「K.O.」となります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:57:28.072Z"
+    },
+    "ev-50f6a936574dfe5dc5e9": {
+      "id": "ev-50f6a936574dfe5dc5e9",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 2712,
+      "endSec": 2718,
+      "playerIds": [
+        "藤村",
+        "まちゃぼー"
+      ],
+      "observation": "藤村がまちゃぼーのOD昇龍拳リバーサルをガードしてパニッシュカウンターを取り、大ダメージコンボでパーフェクトKOを達成して第2ゲームを取り返す。",
+      "officialRefs": [
+        "div-s-sec7-m1-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "C.ヴァイパー（Fujimura）が空中からの攻撃やパニッシュカウンターを絡めた連続技でリュウ（Machabo）を圧倒し、体力ゲージを減らされることなくダメージを与え続けて「PERFECT K.O.」を達成。「C.VIPER WIN」の勝利演出が挿入されます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:57:28.072Z"
+    },
+    "ev-404387fa51f8b3d5fb93": {
+      "id": "ev-404387fa51f8b3d5fb93",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 2770,
+      "endSec": 2776,
+      "playerIds": [
+        "藤村",
+        "まちゃぼー"
+      ],
+      "observation": "第3ゲーム第1ラウンド、まちゃぼーが画面端でバックステップにより藤村の投げ抜け動作を空振らせ、パニッシュカウンターからラウンドを奪う。",
+      "officialRefs": [
+        "div-s-sec7-m1-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "インドステージにて、リュウ（Machabo）がC.ヴァイパー（Fujimura）の技の隙に対してパニッシュカウンターからコンボを叩き込み、そのまま相手を倒して「K.O.」を獲得します。直後にラウンドリセット画面（ROUND 2、カウント0-1）へと切り替わり、試合が継続します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:57:28.072Z"
+    },
+    "ev-2a3839351b322bc0d122": {
+      "id": "ev-2a3839351b322bc0d122",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3510,
+      "endSec": 3523,
+      "playerIds": [
+        "りゅうきち",
+        "きんちょ"
+      ],
+      "observation": "第3ゲーム第2ラウンド、バーンアウトから回復したきんちょが放ったドライブインパクトをりゅうきちがジャストパリィで受け止め、そのままSA3（陽炎の舞）に繋ぐコンボでKOし中堅戦の勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec7-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのRyukichi（不知火舞）と2PのKINCHO（テリー）による対戦映像。序盤に2Pテリーがパニッシュカウンターからコンボを叩き込みますが、その後1P舞がカウンターヒットからドライブシステムや連続技をヒットさせ、2Pテリーの残体力を削りきりK.O.を奪います。試合決着後、画面が「STREET FIGHTER LEAGUE JAPAN 2026」のチームリアクション枠に切り替わり、1P側プレイヤーおよびチームメンバーがガッツポーズやハイタッチをして勝利を喜ぶ様子が映し出されます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:58:06.677Z"
+    },
+    "ev-532a43a969a674e9c8ac": {
+      "id": "ev-532a43a969a674e9c8ac",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3408,
+      "endSec": 3415,
+      "playerIds": [
+        "りゅうきち",
+        "きんちょ"
+      ],
+      "observation": "第2ゲーム第2ラウンド終盤、きんちょが放ったリバーサルOD技をりゅうきちが完璧にガードし、パニッシュカウンターから確定反撃を決めてKOしセットカウントをタイに戻した。",
+      "officialRefs": [
+        "div-s-sec7-m1-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "赤い溶岩が広がるステージでの1P舞と2Pテリーの対戦映像。2Pテリーが切り返しとしてリバーサル技（SA等）を発動しますが、1P舞にガードされます。隙が生じた2Pテリーに対し、1P舞がパニッシュカウンターから反撃を決め、そのまま体力を削りきってK.O.を獲得。「MAI WIN」の勝利演出が表示されます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:58:06.677Z"
+    },
+    "ev-d39faba52250c9c54a20": {
+      "id": "ev-d39faba52250c9c54a20",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3290,
+      "endSec": 3300,
+      "playerIds": [
+        "りゅうきち",
+        "きんちょ"
+      ],
+      "observation": "第1ゲーム第3ラウンドの体力ミリ削り合いの局面で、きんちょがりゅうきちのパリィを誘いパニッシュカウンターで投げを決めて第1ゲームを先取した。",
+      "officialRefs": [
+        "div-s-sec7-m1-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "タイマー残り23秒付近からの1P舞と2Pテリーの対戦映像。2Pテリーが空中攻撃やドライブラッシュを交えたコンボで攻め立てます。1P舞の技の隙を突いて2Pテリーがパニッシュカウンターを獲得し、クリティカルアート（CA）を組み込んだ連続技を完走して1P舞をK.O.します。最後は「TERRY WIN」の勝利画面が表示されます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:58:06.677Z"
+    },
+    "ev-878e829d2a936cb164bf": {
+      "id": "ev-878e829d2a936cb164bf",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3195,
+      "endSec": 3204,
+      "playerIds": [
+        "りゅうきち",
+        "きんちょ"
+      ],
+      "observation": "第1ゲーム第2ラウンド、きんちょ（テリー）がSA3（クリティカルアート）を組み込んだ大ダメージコンボを叩き込み、ラウンドを取り返す。",
+      "officialRefs": [
+        "div-s-sec7-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:58:43.827Z"
+    },
+    "ev-a0b2e984688116d34370": {
+      "id": "ev-a0b2e984688116d34370",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3292,
+      "endSec": 3299,
+      "playerIds": [
+        "りゅうきち",
+        "きんちょ"
+      ],
+      "observation": "第1ゲーム最終ラウンド、接戦の末にきんちょ（テリー）が投げでりゅうきち（舞）の守りを崩してKOを奪い、第1ゲームを先取する。",
+      "officialRefs": [
+        "div-s-sec7-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:58:43.827Z"
+    },
+    "ev-1c45beebf49fea24576c": {
+      "id": "ev-1c45beebf49fea24576c",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3443,
+      "endSec": 3451,
+      "playerIds": [
+        "りゅうきち",
+        "きんちょ"
+      ],
+      "observation": "第3ゲーム第1ラウンド、りゅうきち（舞）が画面端で相手のドライブゲージを削りつつ、高火力の連続攻撃で主導権を握る。",
+      "officialRefs": [
+        "div-s-sec7-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:58:43.827Z"
+    },
+    "ev-4fd1479bc4016fed0513": {
+      "id": "ev-4fd1479bc4016fed0513",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3516,
+      "endSec": 3523,
+      "playerIds": [
+        "りゅうきち",
+        "きんちょ"
+      ],
+      "observation": "第3ゲーム第2ラウンド、りゅうきち（舞）が渾身のジャストパリィを成功させて確定反撃のコンボを決め、勝利を確定させる。",
+      "officialRefs": [
+        "div-s-sec7-m1-b1:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:58:43.827Z"
+    },
+    "ev-22ccb25a673fb66627f2": {
+      "id": "ev-22ccb25a673fb66627f2",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 4874,
+      "endSec": 4904,
+      "playerIds": [
+        "もけ",
+        "こばやん"
+      ],
+      "observation": "第5ゲーム第3ラウンド、互いにドライブゲージが枯渇寸前の極限状況のなか、こばやんがもけのバーンアウトを誘発させ、画面端で位置を入れ替えさせずにパニッシュカウンターからCAを決めて勝負を決める。",
+      "officialRefs": [
+        "div-s-sec7-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "対戦終了後のインターバルおよび結果表示画面の映像です。画面右上に「STREET FIGHTER LEAGUE JAPAN 2026」のロゴが配置され、中央には対戦を終えたKOBAYAN選手（Saishunkan Sol KUMAMOTO、使用キャラ：ザンギエフ）が感極まった表情で顔を覆う映像や、対戦相手のMOKE選手（KADOKAWA FAV gaming）、チームメンバーのカメラ映像が表示されています。大将戦でKOBAYAN選手が勝利し、チームが勝利（WIN）した旨のスコアボードが提示されています。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:59:00.582Z"
+    },
+    "ev-7743cdc0ce10ca911dda": {
+      "id": "ev-7743cdc0ce10ca911dda",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 4819,
+      "endSec": 4874,
+      "playerIds": [
+        "もけ",
+        "こばやん"
+      ],
+      "observation": "第4ゲーム第3ラウンド、もけが画面端へ追い詰められてCAを食らいバーンアウトするも、距離を保ってこばやんの不用意な前進や技振りに龍炎舞を差し返して逆転KOを奪う。",
+      "officialRefs": [
+        "div-s-sec7-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "MOKE選手（不知火舞）とKOBAYAN選手（ザンギエフ）による大将戦第3プレイヤーマッチのゲームプレイ映像です。ラウンド終盤、KOBAYAN選手がクリティカルアート（CA）「ボリショイ・ストームバスター」を発動して大ダメージを与えます。MOKE選手はドライブゲージが枯渇してバーンアウト状態となり、体力僅かで粘りを見せますが、最後はKOBAYAN選手がパニッシュカウンターを確定させてK.O.を奪い、ラウンドおよび試合に勝利します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:59:00.582Z"
+    },
+    "ev-65b6d64bc386dc25dc52": {
+      "id": "ev-65b6d64bc386dc25dc52",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 4274,
+      "endSec": 4309,
+      "playerIds": [
+        "もけ",
+        "こばやん"
+      ],
+      "observation": "第3ゲーム第2ラウンド、こばやんが溜め強パンチやジャストパリィからのスクリューパイルドライバーで攻め立て、最後は起き上がりのリバーサルスクリューパイルドライバーを通してセットを先取する。",
+      "officialRefs": [
+        "div-s-sec7-m1-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "MOKE選手（不知火舞）のラウンド勝利演出画面から、続く第3セット・ラウンド1の対戦映像です。ラウンド開始直後、MOKE選手が立ち回りから牽制を行いますが、KOBAYAN選手（ザンギエフ）が溜め立ち強パンチやパニッシュカウンターを合わせて主導権を握り、ドライブインパクトからコンボおよびコマンド投げ（スクリューボム等）を決めて大ダメージを与え、MOKE選手を画面端へ追い詰めます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:59:00.582Z"
+    },
+    "ev-193be146828776b3e6c7": {
+      "id": "ev-193be146828776b3e6c7",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 4114,
+      "endSec": 4154,
+      "playerIds": [
+        "もけ",
+        "こばやん"
+      ],
+      "observation": "第2ゲーム第3ラウンド、こばやんが立ち回りで前進を仕掛け、もけのバックステップに小足を合わせてスクリューパイルドライバーを決めるなど圧倒し、追いつく。",
+      "officialRefs": [
+        "div-s-sec7-m1-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "第3プレイヤーマッチ（MOKE選手：不知火舞 vs KOBAYAN選手：ザンギエフ）のラウンド1序盤の映像です。MOKE選手は花蝶扇などの遠距離技や牽制攻撃で間合いを保ちながら慎重にラインを押し戻そうとし、KOBAYAN選手はアーマー付きの技や前進動作で間合いを詰めようと試みます。中盤、MOKE選手の連続技がヒットし、ゲージを管理しながらダメージを与える展開となります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:59:00.582Z"
+    },
+    "ev-76370657972405ab7c7e": {
+      "id": "ev-76370657972405ab7c7e",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 3849,
+      "endSec": 3890,
+      "playerIds": [
+        "もけ",
+        "こばやん"
+      ],
+      "observation": "第1ゲーム第1ラウンド、もけが花蝶扇で距離を取りつつ攻め込もうとするが、こばやんが中パンチの牽制からドライブインパクトをパニッシュカウンターで叩き込んでバーンアウトさせ、スタンから一気にラウンドを奪う。",
+      "officialRefs": [
+        "div-s-sec7-m1-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-09T02:59:00.582Z"
+    },
+    "ev-94add041cf4c66cad531": {
+      "id": "ev-94add041cf4c66cad531",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 6633,
+      "endSec": 6648,
+      "playerIds": [
+        "ヤナイ",
+        "どぐら"
+      ],
+      "observation": "第1セット第3ラウンド、どぐらが地上戦でヤナイの牽制技の隙に差し返しを決めてパニッシュカウンターを取り、CAを叩き込んでパーフェクトKOで第1セットを先取した。",
+      "officialRefs": [
+        "div-s-sec7-m2-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのブランカ（YANAI）と2Pのエレナ（DOGURA）の対戦。110:34付近でエレナの攻撃がパニッシュカウンター（PUNISH COUNTER）となり、そのままクリティカルアート（CRITICAL ART / CA）を発動します。空中への打ち上げや連続蹴りを含むCA演出が13ヒットまで繋がり、最終的に「PERFECT K.O.」の表示が出てブランカがダウンします。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:59:45.392Z"
+    },
+    "ev-682bacd4cd5f6670240d": {
+      "id": "ev-682bacd4cd5f6670240d",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 6883,
+      "endSec": 6912,
+      "playerIds": [
+        "ヤナイ",
+        "どぐら"
+      ],
+      "observation": "第2セット第2ラウンド、ヤナイのODアッパーでの切り返しに対してどぐらがリバーサルOD技で応酬し、中段攻撃でダウンを奪った後の起き攻めでヤナイの暴れを小技で潰してCAに繋ぎKO勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec7-m2-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのブランカ（YANAI）と2Pのエレナ（DOGURA）の対戦。冒頭でエレナがパニッシュカウンターからのコンボをヒットさせ、その後も足払いや中段技で牽制・前進を行います。115:00付近でエレナが技を引っかけてクリティカルアート（CA）を発動し、ワイプ画面を交えた演出の中で13ヒットまで攻撃が繋がり、「K.O.」表示となります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:59:45.392Z"
+    },
+    "ev-9b06fcda8272341c5955": {
+      "id": "ev-9b06fcda8272341c5955",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 6540,
+      "endSec": 6551,
+      "playerIds": [
+        "ヤナイ",
+        "どぐら"
+      ],
+      "observation": "第1セット第1ラウンド、ヤナイはバーンアウトに追い込まれどぐらの中段崩しを受けるが、垂直ジャンプからの打撃でパニッシュカウンターを取ってKOを奪いラウンドを先取した。",
+      "officialRefs": [
+        "div-s-sec7-m2-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "画面右端付近での1Pブランカ（YANAI）と2Pエレナ（DOGURA）の攻防。ブランカ側の動きに対してエレナがパニッシュカウンターを取り、ブランカのDriveゲージがEMPTY状態となります。エレナは中段攻撃などを経由して109:07付近で再びパニッシュカウンターからのコンボを繋げ、4ヒット目で「K.O.」となります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T02:59:45.392Z"
+    },
+    "ev-e4363b1d03ae28cb8d6b": {
+      "id": "ev-e4363b1d03ae28cb8d6b",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 6543,
+      "endSec": 6550,
+      "playerIds": [
+        "ヤナイ",
+        "どぐら"
+      ],
+      "observation": "第1ゲーム第1ラウンド、ヤナイ選手はバーンアウト状態に追い込まれながらも中段攻撃のカウンターから垂直ジャンプでの対空攻撃を合わせ、第1ラウンドを先取する。",
+      "officialRefs": [
+        "div-s-sec7-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:00:22.231Z"
+    },
+    "ev-69676d3dc2c36a900cdc": {
+      "id": "ev-69676d3dc2c36a900cdc",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 6605,
+      "endSec": 6612,
+      "playerIds": [
+        "ヤナイ",
+        "どぐら"
+      ],
+      "observation": "第1ゲーム第2ラウンド、ヤナイ選手の攻撃でミリ体力まで削られたどぐら選手だが、暴れからの連続技で逆転KOしラウンドを取り返す。",
+      "officialRefs": [
+        "div-s-sec7-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:00:22.231Z"
+    },
+    "ev-b3d4b9d452492cdcec38": {
+      "id": "ev-b3d4b9d452492cdcec38",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 6635,
+      "endSec": 6646,
+      "playerIds": [
+        "ヤナイ",
+        "どぐら"
+      ],
+      "observation": "第1ゲーム最終ラウンド、どぐら選手が確定反撃のコンボからクリティカルアーツ（CA）に繋いでパーフェクトKOを達成し第1ゲームを獲得する。",
+      "officialRefs": [
+        "div-s-sec7-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:00:22.231Z"
+    },
+    "ev-6b6b8cef327e958a2bcf": {
+      "id": "ev-6b6b8cef327e958a2bcf",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 6898,
+      "endSec": 6904,
+      "playerIds": [
+        "ヤナイ",
+        "どぐら"
+      ],
+      "observation": "第2ゲーム第2ラウンド、どぐら選手が近距離の攻防で小技の暴れを通し、そのままCAまで繋ぎきってKOし、2-0で勝利を決める。",
+      "officialRefs": [
+        "div-s-sec7-m2-b0:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:00:22.231Z"
+    },
+    "ev-edbc3729ca1014341eee": {
+      "id": "ev-edbc3729ca1014341eee",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7265,
+      "endSec": 7271,
+      "playerIds": [
+        "2BASSA",
+        "Shuto"
+      ],
+      "observation": "第1ゲーム第2ラウンド、2BASSAがShutoのしゃがみ強P空振りに差し返しを成功させ、CAまで繋ぐ高火力コンボでパーフェクトK.O.を奪ってラウンドを取り返す。",
+      "officialRefs": [
+        "div-s-sec7-m2-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pのキャミィ（2BASSA）と2Pのルーク（SHUTO）の対戦。キャミィがルークの攻撃の隙に対してパニッシュカウンターを取り、コンボを始動します。ルークのドライブゲージが削られてバーンアウト状態（EMPTY）となり、キャミィが空中技からの連続攻撃を決めて「PERFECT K.O.」でラウンドを獲得します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:00:48.162Z"
+    },
+    "ev-d36ea6a5751702031fc4": {
+      "id": "ev-d36ea6a5751702031fc4",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7304,
+      "endSec": 7318,
+      "playerIds": [
+        "2BASSA",
+        "Shuto"
+      ],
+      "observation": "第1ゲーム最終ラウンド、Shutoがドライブインパクトを通すも、2BASSAがShutoの前ジャンプを潜って着地硬直にパニッシュカウンターを奪い、SA1で仕留めて第1ゲームを先取する。",
+      "officialRefs": [
+        "div-s-sec7-m2-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ファイナルラウンド、残り82秒時点。ルークがドライブインパクトを出し、キャミィに対してパニッシュカウンターを発生させます。ルークはそこから連続コンボを繋げ、ダメージを与え続けてキャミィをK.O.し、ラウンドを獲得します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:00:48.162Z"
+    },
+    "ev-e833dfa34bf33ce8c8b4": {
+      "id": "ev-e833dfa34bf33ce8c8b4",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7350,
+      "endSec": 7359,
+      "playerIds": [
+        "2BASSA",
+        "Shuto"
+      ],
+      "observation": "第2ゲーム第1ラウンド、2BASSAがドライブラッシュやインパクトを絡めた猛攻で画面端へ運び、SA3を叩き込んでこの試合2度目のパーフェクトK.O.を達成する。",
+      "officialRefs": [
+        "div-s-sec7-m2-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "残り85秒付近。キャミィがカウンターヒットからドライブラッシュを交えたコンボを開始し、ルークを画面端へ追い詰めます。コンボの締めにレベル3スーパーアーツ（クリティカルアーツ）を発動し、大演出とともに「PERFECT K.O.」を獲得します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:00:48.162Z"
+    },
+    "ev-06048d5b025f4cbb3463": {
+      "id": "ev-06048d5b025f4cbb3463",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7428,
+      "endSec": 7439,
+      "playerIds": [
+        "2BASSA",
+        "Shuto"
+      ],
+      "observation": "第2ゲーム最終ラウンド、画面端で2BASSAがパリィを構えたShutoにパニッシュカウンター投げを決めてバーンアウトに追い込み、起死回生のドライブインパクトを冷静にインパクトで返して勝利を決める。",
+      "officialRefs": [
+        "div-s-sec7-m2-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "残り84秒付近。キャミィがルークを投げで崩してパニッシュカウンターを奪い、ルークがバーンアウト（EMPTY）状態になります。起き上がりの攻防でルーク側がリバーサル技を発動してキャミィにヒットさせ、K.O.を奪って逆転勝利します。試合直後、選手たちの映像と大会ロゴ画面に切り替わります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:00:48.162Z"
+    },
+    "ev-a3970601addd5947beb9": {
+      "id": "ev-a3970601addd5947beb9",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7958,
+      "endSec": 7971,
+      "playerIds": [
+        "鶏めし",
+        "かずのこ"
+      ],
+      "observation": "第1ゲームのファイナルラウンド終盤、かずのこがバーンアウトに追い込まれながらも、画面端の攻防で鶏めしの手出しに対してSA3をパニッシュカウンターでヒットさせ、逆転で先制ゲームをもぎ取った。",
+      "officialRefs": [
+        "div-s-sec7-m2-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのTorimeshi（キンバリー）と2PのKazunoko（ダルシム）の対戦。画面中央でダルシムの牽制技に対し、キンバリーがパニッシュカウンター（PUNISH COUNTER）を獲得してコンボを決めます。その後、キンバリーがクリティカルアート（CA）を発動し、ヒット演出を経てダルシムの体力を削りきり「K.O.」でラウンドを獲得します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:01:28.612Z"
+    },
+    "ev-2fd8025c12bdd16ef1cf": {
+      "id": "ev-2fd8025c12bdd16ef1cf",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 8060,
+      "endSec": 8092,
+      "playerIds": [
+        "鶏めし",
+        "かずのこ"
+      ],
+      "observation": "第2ゲームのラウンド2、かずのこが画面端のプレッシャーで鶏めしをバーンアウトさせ、位置入れ替えの攻防から的確にCA（SA3）へ繋ぐ高火力コンボを決めて2ゲーム連取とした。",
+      "officialRefs": [
+        "div-s-sec7-m2-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのTorimeshi（ダルシム）と2PのKazunoko（キンバリー）の対戦。画面中央から画面端付近での攻防中、キンバリーがパニッシュカウンターからコンボを繋げます。ダルシムの反撃を交わしてキンバリーがクリティカルアート（CA）を発動し、一連のヒット演出でダルシムの体力をゼロにして「K.O.」勝利を収めます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:01:28.612Z"
+    },
+    "ev-8c45249e264cfffb1605": {
+      "id": "ev-8c45249e264cfffb1605",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 8165,
+      "endSec": 8182,
+      "playerIds": [
+        "鶏めし",
+        "かずのこ"
+      ],
+      "observation": "第3ゲームのラウンド2、鶏めしのODリバーサルによる切り返しを受けながらも、かずのこが怯まずハイジャンプ等で攻勢を維持し、最後は飛び込みからの連続技でKOして3-0のストレート勝利を収めた。",
+      "officialRefs": [
+        "div-s-sec7-m2-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのTorimeshi（ダルシム）と2PのKazunoko（キンバリー）の対戦。画面端に追い詰められたダルシムに対し、キンバリーがパニッシュカウンターを奪いコンボを開始します。そのまま連続攻撃を叩き込み、ダルシムの残体力を削りきって「K.O.」で勝利します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:01:28.612Z"
+    },
+    "ev-2e4956aa793bf799eaad": {
+      "id": "ev-2e4956aa793bf799eaad",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7872,
+      "endSec": 7880,
+      "playerIds": [
+        "鶏めし",
+        "かずのこ"
+      ],
+      "observation": "第1ゲームのラウンド1、バーンアウトしたかずのこに対して鶏めしが的確に対空ジャストパリィを成功させ、パニッシュカウンターから反撃を叩き込んでラウンドを先取した。",
+      "officialRefs": [
+        "div-s-sec7-m2-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1PのTorimeshi（キンバリー）と2PのKazunoko（ダルシム）の対戦。両者ともに残り体力が少ない状況で、空中から攻め込んできたキンバリーの攻撃に対しダルシムがジャストパリィ（パニッシュカウンター）を決め、そのまま確定反撃をヒットさせて「K.O.」を獲得し、ROUND 2の画面へ移行します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:01:28.612Z"
+    },
+    "ev-0e6f4be7d11ab96dee5e": {
+      "id": "ev-0e6f4be7d11ab96dee5e",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7873,
+      "endSec": 7879,
+      "playerIds": [
+        "鶏めし",
+        "かずのこ"
+      ],
+      "observation": "第1ゲーム第1ラウンド、鶏めし（ダルシム）のSA3発動に対してかずのこ（C.ヴァイパー）がジャストパリィを取り、パニッシュカウンターからコンボを叩き込んでKOし、先制ラウンドを獲得した。",
+      "officialRefs": [
+        "div-s-sec7-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:02:04.556Z"
+    },
+    "ev-1d00ce24d6026919ffec": {
+      "id": "ev-1d00ce24d6026919ffec",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 7958,
+      "endSec": 7971,
+      "playerIds": [
+        "鶏めし",
+        "かずのこ"
+      ],
+      "observation": "第1ゲーム最終ラウンド、かずのこ（C.ヴァイパー）がバーンアウト状態に追い込まれるも、鶏めしの攻撃の隙を捉えてパニッシュカウンターからCAを叩き込んで逆転KOし、第1ゲームを先取した。",
+      "officialRefs": [
+        "div-s-sec7-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:02:04.556Z"
+    },
+    "ev-1453a2c18b7c7086cda1": {
+      "id": "ev-1453a2c18b7c7086cda1",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 8076,
+      "endSec": 8090,
+      "playerIds": [
+        "鶏めし",
+        "かずのこ"
+      ],
+      "observation": "第2ゲーム第2ラウンド、互いにドライブゲージが削れ合う接戦の中で、かずのこ（C.ヴァイパー）が鶏めしの差し込みに対してSA3を合わせて切り返し、KOを奪って2ゲーム連取した。",
+      "officialRefs": [
+        "div-s-sec7-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:02:04.556Z"
+    },
+    "ev-3b5e404fe1eb39422278": {
+      "id": "ev-3b5e404fe1eb39422278",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m2",
+      "boutId": "div-s-sec7-m2-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 8168,
+      "endSec": 8181,
+      "playerIds": [
+        "鶏めし",
+        "かずのこ"
+      ],
+      "observation": "第3ゲーム第2ラウンド、かずのこ（C.ヴァイパー）が鶏めしの攻撃の隙を見逃さずパニッシュカウンターを奪い、そのままコンボを決めてKOし、ストレート（3-0）で大将戦の勝利を決めた。",
+      "officialRefs": [
+        "div-s-sec7-m2-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:02:04.556Z"
+    },
+    "ev-d6bb3302755a465dcfe9": {
+      "id": "ev-d6bb3302755a465dcfe9",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 10274,
+      "endSec": 10290,
+      "playerIds": [
+        "MenaRD",
+        "ひびき"
+      ],
+      "observation": "第2ゲーム第1ラウンド、ひびきが画面端へ追い詰められるも、MenaRDをバーンアウトに追い込んでからスタンを奪い、コンボで削り切って先取した。",
+      "officialRefs": [
+        "div-s-sec7-m3-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ルーク（1P・MenaRD）とリリー（2P・ひびき）の対戦映像。冒頭、インドステージでルークが空中からの攻撃とコンボを決め、ハードダウンからKOを獲得してラウンドを制します。続いてファイナルラウンドが開始された後、画面が切り替わり、リリーがドライブゲージやSA（スーパーアーツ）を活用した連続攻撃でルークを撃破するラウンドが流れます。さらにビーチステージなどでルークがリリーの技に対してパニッシュカウンターからCA（クリティカルアート）を叩き込み、PERFECT KOを獲得するシーンが収められており、最終的にZETA DIVISION（MenaRD）の勝利を示す試合結果画面（MATCH RESULT 10-0）が表示されます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:02:20.615Z"
+    },
+    "ev-23f1d05bd83183f3ba06": {
+      "id": "ev-23f1d05bd83183f3ba06",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 10366,
+      "endSec": 10410,
+      "playerIds": [
+        "MenaRD",
+        "ひびき"
+      ],
+      "observation": "第2ゲーム第3ラウンド、MenaRDはひびきのコンドルスパイアをガードした直後にドライブリバーサルで切り返し、最後はコンドルダイブをガードしてCAでパニッシュカウンターを取ってKOし、第2ゲームを取り返した。",
+      "officialRefs": [
+        "div-s-sec7-m3-b0:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "バー・鉄檻ステージにおけるルーク（1P）とリリー（2P）の攻防。リリーが空中攻撃からルークに攻め込み、ルークのリバーサル行動に対してパニッシュカウンターを獲得。その後、リリーはコンドルスパイアを組み込んだSA1（スーパーアーツ1）に繋げる多段コンボを完走し、ルークの体力を大きく削ります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:02:20.615Z"
+    },
+    "ev-c411729a5686192bf79c": {
+      "id": "ev-c411729a5686192bf79c",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b0",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 9894,
+      "endSec": 9901,
+      "playerIds": [
+        "MenaRD",
+        "ひびき"
+      ],
+      "observation": "第1ゲーム第1ラウンド、ひびきがMenaRDの無敵技による暴れをガードしてドライブインパクトでパニッシュカウンターを取り、コンドルスパイアからSA3へ繋げてそのままKOしラウンドを先取した。",
+      "officialRefs": [
+        "div-s-sec7-m3-b0:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "バー・鉄檻ステージでのルーク（1P）とリリー（2P）の戦い。残り時間53秒付近から、リリーが空中から接近して攻撃を仕掛けます。ルークがリバーサルで割り込みを試みますが、リリーの攻撃がパニッシュカウンターとなり、リリーがコンドルスパイアを含む連続コンボをルークにヒットさせて大ダメージを与えます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:02:20.615Z"
+    },
+    "ev-63573d7afd0e298dcb67": {
+      "id": "ev-63573d7afd0e298dcb67",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 10786,
+      "endSec": 10805,
+      "playerIds": [
+        "ヤマグチ",
+        "ACQUA"
+      ],
+      "observation": "第1ゲーム最終ラウンド、ヤマグチはACQUAのドライブ削り連携に対しOD飛翔龍炎陣で割り込んで窮地を脱し、直後にACQUAの牽制技の空振りにパニッシュカウンターを取ってSA3まで繋ぎ切り第1ゲームを先取した。",
+      "officialRefs": [
+        "div-s-sec7-m3-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P ヤマグチ（ Mai ）と 2P ACQUA（ Blanka ）の対戦。画面中央付近にて、Blankaの攻撃に対してMaiがリバーサルでOD必殺技を合わせてパニッシュカウンターを獲得します。Maiはそこからドライブラッシュを組み込んだコンボを展開し、SA2（レベル2超必殺技）に繋げてBlankaの体力を削りきり、K.O.となります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:03:11.011Z"
+    },
+    "ev-4b69ed6e6c0e3e3c5c36": {
+      "id": "ev-4b69ed6e6c0e3e3c5c36",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 10992,
+      "endSec": 11004,
+      "playerIds": [
+        "ヤマグチ",
+        "ACQUA"
+      ],
+      "observation": "第2ゲーム最終ラウンド、ACQUAが2ゲージ溜まった瞬間にSA2「ライトニングビースト」を発動し、変幻自在の突進でヤマグチの暴れをパニッシュカウンターで狩り取って1-1のタイに追いついた。",
+      "officialRefs": [
+        "div-s-sec7-m3-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P Mai と 2P Blanka の対戦。画面左端付近にてBlankaが攻勢をかけますが、Maiがガード・パリィ等で耐え、Blankaの攻撃の隙に対してリバーサル技を命中させてパニッシュカウンターを獲得し、そのままK.O.となります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:03:11.011Z"
+    },
+    "ev-10bc47675228127a30ac": {
+      "id": "ev-10bc47675228127a30ac",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 11102,
+      "endSec": 11123,
+      "playerIds": [
+        "ヤマグチ",
+        "ACQUA"
+      ],
+      "observation": "第3ゲーム第2ラウンド、バーンアウト中に画面端でドライブインパクトを浴びてスタンしたヤマグチだったが、スタンコンボを耐え抜いた後に後ろ投げで位置を入れ替え、ACQUAの攻めに対してリバーサルOD飛翔龍炎陣をヒットさせて逆転勝利しフルセットへ持ち込んだ。",
+      "officialRefs": [
+        "div-s-sec7-m3-b1:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P Mai と 2P Blanka の対戦。画面右端にてBlankaがドライブインパクトを当て、Maiがスタン（STUN）状態になります。BlankaはスタンしたMaiに対して連続攻撃を叩き込み、体力を大幅に減らします。その後、Maiの反撃の出かかりにBlankaが攻撃を合わせてK.O.を奪います。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:03:11.011Z"
+    },
+    "ev-67066d59ac8db1e82610": {
+      "id": "ev-67066d59ac8db1e82610",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b1",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 11136,
+      "endSec": 11183,
+      "playerIds": [
+        "ヤマグチ",
+        "ACQUA"
+      ],
+      "observation": "第3ゲーム最終ラウンド、ACQUAのSA2「ライトニングビースト」をパリィで耐え切ったヤマグチが、効果終了直後に差し返しからCA（超必殺忍蜂）を叩き込んで瀕死に追い込み、最後は花蝶扇でKOして中堅戦を制した。",
+      "officialRefs": [
+        "div-s-sec7-m3-b1:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1P Mai と 2P Blanka の対戦。BlankaがSA2（ライトニングビースト）を発動してラッシュを仕掛け、Maiを画面端へ追い詰めます。Maiはガードとパリィでこれを凌ぎ、Blankaの技の隙に対してパニッシュカウンターからSA3（レベル3超必殺技）を叩き込みます。演出後、Maiはラインを押し戻しつつ攻勢を維持し、最後は打撃をヒットさせてK.O.を奪います。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:03:11.011Z"
+    },
+    "ev-80ff36f4e6e7db977463": {
+      "id": "ev-80ff36f4e6e7db977463",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 11613,
+      "endSec": 11621,
+      "playerIds": [
+        "ひぐち",
+        "あきら"
+      ],
+      "observation": "Game 1 Final Round、ひぐちがあきらのCA（クリティカルアーツ）の暗転に対してODサマーソルトでパニッシュカウンターを取り、そのままKOして第1セットを先取する。",
+      "officialRefs": [
+        "div-s-sec7-m3-b2:winner-order-reviewed"
+      ],
+      "status": "verified",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pガイル（HIGUCHI）と2P C.ヴァイパー（AKIRA）の攻防。ガイルが相手の攻撃隙に対してODサマーソルトキックをパニッシュカウンターでヒットさせ、K.O.を奪い「GUILE WIN」でラウンドを獲得します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:04:02.482Z"
+    },
+    "ev-7ad5ac6974292586f5e4": {
+      "id": "ev-7ad5ac6974292586f5e4",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 11635,
+      "endSec": 11675,
+      "playerIds": [
+        "ひぐち",
+        "あきら"
+      ],
+      "observation": "Game 2 Round 1、ひぐちが強ソニックブームによる牽制と的確な対空迎撃で主導権を握り続け、あきらにダメージを許さずパーフェクトKOを達成する。",
+      "officialRefs": [
+        "div-s-sec7-m3-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "ラウンド1開始直後、1Pガイルと2P C.ヴァイパーが地上戦を展開。ガイルが技の差し合いからコンボを決めて押し込み、ダメージを受けずに「PERFECT K.O.」を獲得します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:04:02.482Z"
+    },
+    "ev-f44fbd7b952555521d1e": {
+      "id": "ev-f44fbd7b952555521d1e",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 11730,
+      "endSec": 11740,
+      "playerIds": [
+        "ひぐち",
+        "あきら"
+      ],
+      "observation": "Game 2 Round 2、ひぐちがドライブゲージを枯渇させたあきらに対し、近距離の打撃連係からCA（ソニックハリケーン）を繋いでリーサルを決める。",
+      "officialRefs": [
+        "div-s-sec7-m3-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "1Pガイルが2P C.ヴァイパーに対してコンボを決め、クリティカルアーツ（SAレベル3）へ繋いで大ダメージを与え、K.O.を奪います。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:04:02.482Z"
+    },
+    "ev-f50dc81dfa585a6e6130": {
+      "id": "ev-f50dc81dfa585a6e6130",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 11956,
+      "endSec": 11970,
+      "playerIds": [
+        "ひぐち",
+        "あきら"
+      ],
+      "observation": "Game 3 Round 2、あきらがSA2から前ダッシュで攻め込み、最後はひぐちの無敵技による暴れを読んでCAでパニッシュカウンターを取り1セットを取り返す。",
+      "officialRefs": [
+        "div-s-sec7-m3-b2:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v3",
+      "verificationObservation": "2P C.ヴァイパーがリバーサルでSA（スーパーアーツ）を発動してガイルにヒットさせ、ハードノックダウンを取った後の起き攻めでパニッシュカウンターの攻撃をヒットさせてK.O.を奪います。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-09T03:04:02.482Z"
+    },
+    "ev-70b35f2d1b5e6c7d4533": {
+      "id": "ev-70b35f2d1b5e6c7d4533",
+      "sectionId": "div-s-sec7",
+      "matchId": "div-s-sec7-m3",
+      "boutId": "div-s-sec7-m3-b2",
+      "kind": "visual",
+      "videoId": "WVSMETYIztc",
+      "startSec": 12212,
+      "endSec": 12221,
+      "playerIds": [
+        "ひぐち",
+        "あきら"
+      ],
+      "observation": "Game 4 Final Round、画面端でバーンアウト寸前まで追い詰められたひぐちが、あきらの中段技の出掛かりを小技で迎撃してパニッシュカウンターを奪い、コンボで逆転KOを決める。",
+      "officialRefs": [
+        "div-s-sec7-m3-b2:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.8-flash"
+      ],
+      "createdAt": "2026-11-09T03:04:02.482Z"
     }
   }
 }

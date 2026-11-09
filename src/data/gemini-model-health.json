@@ -4,14 +4,12 @@
     "gemini-3.6-flash": {
       "videoFailures": 0,
       "pauses": 0,
-      "updatedAt": "2026-11-08T04:02:09.369Z"
+      "updatedAt": "2026-11-09T03:04:15.274Z"
     },
     "gemini-3.8-flash": {
-      "videoFailures": 7,
-      "pauses": 5,
-      "pausedUntil": "2026-11-08T19:24:40.331Z",
-      "lastStatus": 503,
-      "updatedAt": "2026-11-07T19:24:40.331Z"
+      "videoFailures": 0,
+      "pauses": 0,
+      "updatedAt": "2026-11-09T03:04:02.467Z"
     }
   }
 }
