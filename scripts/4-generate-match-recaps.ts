@@ -45,7 +45,7 @@ import {
 } from "./recap/bout-video-facts";
 import {
   buildBoutEvidence, MAX_VERIFICATION_BATCH, mergeEvidenceCandidate, countsAsVerificationFailure, pendingEvidenceCandidates, recordVerificationFailure, selectVerificationBatch,
-  verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate,
+  verificationWindow, verifierContext, verifyEvidenceBatch, verifyEvidenceCandidate,
 } from "./recap/evidence-ledger";
 import { articleEvidenceReady } from "./recap/automation";
 import { persistentVideoBudget } from "./recap/usage";
@@ -554,7 +554,7 @@ export async function generateAndSaveMatchRecaps(
           if (!batchedVerificationRejected && batch.candidates.length > 1 && budgetAllows(budget, batchSeconds)) {
             budget.calls += 1;
             budget.videoSeconds += batchSeconds;
-            const results = await verifyEvidenceBatch({ apiKey, models: batch.models, candidates: batch.candidates });
+            const results = await verifyEvidenceBatch({ apiKey, models: batch.models, candidates: batch.candidates, context: verifierContext(ctx) });
             if (results) {
               for (const item of results) evidenceData.evidence[item.id] = item;
               saveRecapEvidence(evidenceData);
@@ -582,7 +582,7 @@ export async function generateAndSaveMatchRecaps(
               if (!budgetAllows(budget, clip.endSec - clip.startSec)) break;
               budget.calls += 1;
               budget.videoSeconds += clip.endSec - clip.startSec;
-              const verified = await verifyEvidenceCandidate({ apiKey, models: videoModels, candidate });
+              const verified = await verifyEvidenceCandidate({ apiKey, models: videoModels, candidate, context: verifierContext(ctx) });
               if (verified === candidate) {
                 if (!lastGeminiCallReachedApi()) {
                   budget.calls -= 1;

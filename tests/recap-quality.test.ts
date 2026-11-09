@@ -12,7 +12,7 @@ import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
 import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
 import { prepareChapters } from "../scripts/prepare-recap-chapters";
-import { mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, countsAsVerificationFailure, MAX_VERIFICATION_FAILURES, selectVerificationBatch, verifierModelOrder, verificationWindow, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
+import { mergeEvidenceCandidate, pendingEvidenceCandidates, recordVerificationFailure, countsAsVerificationFailure, MAX_VERIFICATION_FAILURES, selectVerificationBatch, verifierModelOrder, verificationWindow, verifierContext, verifyEvidenceBatch, verifyEvidenceCandidate, EVIDENCE_VERIFIER_VERSION, MANUAL_REVIEW_VERIFIER_VERSION } from "../scripts/recap/evidence-ledger";
 import { MatchesDataSchema, VideoFactsDataSchema } from "../src/lib/schema";
 import { articleEvidenceReady, mergePreparedChapters, selectAutomaticSection } from "../scripts/recap/automation";
 import { persistentVideoBudget, remainingDailyUsage, usageDay, type RecapUsage, DAILY_VIDEO_LIMIT } from "../scripts/recap/usage";
@@ -769,4 +769,26 @@ test("token usage is also totalled per section, with failed requests counted by 
     if (previous === undefined) delete process.env.RECAP_TOKEN_USAGE_FILE; else process.env.RECAP_TOKEN_USAGE_FILE = previous;
     fs.rmSync(directory, { recursive: true, force: true });
   }
+});
+
+test("the verifier is told the official players and characters, and v3 disputes are verified again", async (t) => {
+  resetGeminiRunState();
+  t.mock.method(console, "log", () => {});
+  const claim = "ふ～どのC.ヴァイパーが画面端でマゴの舞をバーンアウトに追い込み、投げでラウンドを取った。";
+  const candidate = { ...evidence("ctx", "visual", claim), status: "candidate" as const, sourceModels: ["gemini-3.8-flash"] };
+  let prompt = "";
+  t.mock.method(globalThis, "fetch", async (_url: string, options: RequestInit) => {
+    const body = JSON.parse(String(options.body));
+    prompt = body.input.find((item: { type: string }) => item.type === "text").text;
+    return new Response(JSON.stringify({ output_text: JSON.stringify({ observation: claim }) }));
+  });
+  const context = verifierContext({ playerA: { name: "ふ～ど", chara: "C.ヴァイパー" }, playerB: { name: "マゴ", chara: "舞" } });
+  const verified = await verifyEvidenceCandidate({ apiKey: "test", models: ["gemini-3.6-flash"], candidate, context });
+  assert.match(prompt, /公式記録の対戦: ふ～ど（C.ヴァイパー）と マゴ（舞）/);
+  assert.equal(prompt.includes("画面端でマゴの舞をバーンアウト"), false, "the claim itself stays hidden");
+  assert.equal(verified.verifierVersion, EVIDENCE_VERIFIER_VERSION);
+  const fresh = { ...candidate };
+  assert.equal(mergeEvidenceCandidate(fresh, { ...candidate, status: "disputed", verifierVersion: "independent-description-v3", verificationObservation: "A.K.I.同士の対戦" }).status, "candidate");
+  assert.equal(mergeEvidenceCandidate(fresh, { ...candidate, status: "verified", verifierVersion: "independent-description-v3", verificationObservation: claim }).status, "verified");
+  resetGeminiRunState();
 });

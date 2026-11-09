@@ -6,7 +6,10 @@ import { callGemini, clearLastGeminiCall, isVideoModelPaused, parseJsonLoose } f
 import { z } from "zod";
 
 export const EVIDENCE_EXTRACTOR_VERSION = "recap-evidence-v2";
-export const EVIDENCE_VERIFIER_VERSION = "independent-description-v3";
+// v4: 検証役に公式記録の選手名とキャラクターを渡す (候補の主張は見せない)。
+// v3 は何も知らせずに観察させたため、2026-11 にキャラクターを取り違えて正しい候補を否定していた
+// (公式記録で マゴ=舞・ふ～ど=C.ヴァイパー の Bout を「A.K.I. 同士」と観察した)。
+export const EVIDENCE_VERIFIER_VERSION = "independent-description-v4";
 // Evidence a person checked against the video; re-extraction must not reset it.
 export const MANUAL_REVIEW_VERIFIER_VERSION = "manual-review-v1";
 const VerifierOutputSchema = z.object({ observation: z.string().min(8) });
@@ -15,9 +18,10 @@ export function mergeEvidenceCandidate(candidate: RecapEvidence, prior?: RecapEv
   if (prior && prior.verificationObservation && prior.status === "disputed" && observationSupported(prior.observation, prior.verificationObservation)) {
     return { ...prior, status: "verified", verifierVersion: EVIDENCE_VERIFIER_VERSION };
   }
+  // 以前の版で verified になったものはそのまま使う。v3 までの disputed は取り違えの可能性があるので検証し直す。
   const reviewed = prior?.verifierVersion === EVIDENCE_VERIFIER_VERSION ||
     prior?.verifierVersion === MANUAL_REVIEW_VERIFIER_VERSION ||
-    (prior?.status === "verified" && prior.verifierVersion === "independent-description-v2");
+    (prior?.status === "verified" && ["independent-description-v2", "independent-description-v3"].includes(prior.verifierVersion ?? ""));
   if (prior && reviewed) return prior;
   // 検証の失敗回数は再抽出で消さない。消すと検証できない候補が毎回の実行を止め続ける。
   const failures = prior?.status === "candidate" ? prior.verificationFailures : undefined;
@@ -113,6 +117,12 @@ function logSameModelVerification(result: { model: string }, candidates: RecapEv
   }
 }
 
+/** 検証役に渡す公式記録の対戦情報。候補の主張は含めない。 */
+export function verifierContext(ctx: { playerA: { name: string; chara: string }; playerB: { name: string; chara: string } }): string {
+  return `公式記録の対戦: ${ctx.playerA.name}（${ctx.playerA.chara}）と ${ctx.playerB.name}（${ctx.playerB.chara}）。` +
+    "キャラクター名と選手名はこの記録に従い、画面の見た目から別のキャラクター名を推測しないでください。どちらがどちらの側かは画面で確認してください。";
+}
+
 const BatchVerifierOutputSchema = z.object({
   observations: z.array(z.object({ clip: z.number().int().positive(), observation: z.string() })),
 });
@@ -125,6 +135,7 @@ export async function verifyEvidenceBatch(options: {
   apiKey: string;
   models: string[];
   candidates: RecapEvidence[];
+  context?: string;
 }): Promise<RecapEvidence[] | null> {
   const { apiKey, models, candidates } = options;
   if (candidates.length === 0 || models.length === 0) { clearLastGeminiCall(); return null; }
@@ -134,7 +145,7 @@ export async function verifyEvidenceBatch(options: {
     apiKey,
     models,
     video: { youtubeUrl: "https://www.youtube.com/watch?v=" + candidates[0].videoId, startSec: clips[0].startSec, endSec: clips[0].endSec, fps: 2, clips },
-    prompt: `ストリートファイター6の映像区間が${clips.length}本、区間1から順に渡されます。区間ごとに独立に観察してください。識別できるキャラクター名、具体的な技・システム、画面端や体力・ゲージの状況、攻防の順序を、画面・音声で直接確認できる範囲で記述してください。一般的な「キャラクターが攻撃した」だけに省略せず、識別できない部分は不明としてください。区間外の結果・勝敗、心理、意図を推測せず、他の区間の内容を混ぜないでください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observations":[{"clip":1,"observation":"観察内容"}]}`,
+    prompt: `${options.context ? options.context + "\n" : ""}ストリートファイター6の映像区間が${clips.length}本、区間1から順に渡されます。区間ごとに独立に観察してください。識別できるキャラクター名、具体的な技・システム、画面端や体力・ゲージの状況、攻防の順序を、画面・音声で直接確認できる範囲で記述してください。一般的な「キャラクターが攻撃した」だけに省略せず、識別できない部分は不明としてください。区間外の結果・勝敗、心理、意図を推測せず、他の区間の内容を混ぜないでください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observations":[{"clip":1,"observation":"観察内容"}]}`,
     temperature: 0,
   });
   if (!result) return null;
@@ -264,6 +275,7 @@ export async function verifyEvidenceCandidate(options: {
   apiKey: string;
   models: string[];
   candidate: RecapEvidence;
+  context?: string;
 }): Promise<RecapEvidence> {
   const { apiKey, candidate } = options;
   clearLastGeminiCall();
@@ -277,7 +289,7 @@ export async function verifyEvidenceCandidate(options: {
     apiKey,
     models,
     video: { youtubeUrl: "https://www.youtube.com/watch?v=" + candidate.videoId, startSec: clip.startSec, endSec: clip.endSec, fps: 2 },
-    prompt: `ストリートファイター6のこの指定区間を独立に観察してください。識別できるキャラクター名、具体的な技・システム、画面端や体力・ゲージの状況、攻防の順序を、画面・音声で直接確認できる範囲で記述してください。一般的な「キャラクターが攻撃した」だけに省略せず、識別できない部分は不明としてください。指定区間外の結果・勝敗、心理、意図を推測しないでください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observation":"観察内容"}`,
+    prompt: `${options.context ? options.context + "\n" : ""}ストリートファイター6のこの指定区間を独立に観察してください。識別できるキャラクター名、具体的な技・システム、画面端や体力・ゲージの状況、攻防の順序を、画面・音声で直接確認できる範囲で記述してください。一般的な「キャラクターが攻撃した」だけに省略せず、識別できない部分は不明としてください。指定区間外の結果・勝敗、心理、意図を推測しないでください。候補の主張は知らされていない前提で観察します。JSONのみ: {"observation":"観察内容"}`,
     temperature: 0,
   });
   if (!result) return candidate;
