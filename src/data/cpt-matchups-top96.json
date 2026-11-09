@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-06T07:03:08.945Z",
-  "source": "Capcom公式ダイアグラム (202610, Master帯) + SFL 2026 公式戦 + start.gg プレミア大会 (2025-11-06〜, キャラ登録447ゲーム)",
+  "updatedAt": "2026-11-09T02:38:30.565Z",
+  "source": "Capcom公式ダイアグラム (202610, Master帯) + SFL 2026 公式戦 + start.gg プレミア大会 (2025-11-09〜, キャラ登録447ゲーム)",
   "topPlacementThreshold": 96,
   "bayesianPriorAlpha": 20,
   "characters": [
@@ -350,10 +350,10 @@
       "cviper": {
         "charA": "ryu",
         "charB": "cviper",
-        "rawWinsA": 44,
-        "rawTotalGames": 78,
-        "rawWinRate": 0.5641,
-        "smoothedWinRate": 0.551
+        "rawWinsA": 50,
+        "rawTotalGames": 87,
+        "rawWinRate": 0.5747,
+        "smoothedWinRate": 0.5607
       },
       "alex": {
         "charA": "ryu",
@@ -512,18 +512,18 @@
       "lily": {
         "charA": "luke",
         "charB": "lily",
-        "rawWinsA": 26,
-        "rawTotalGames": 55,
-        "rawWinRate": 0.4727,
-        "smoothedWinRate": 0.48
+        "rawWinsA": 32,
+        "rawTotalGames": 64,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
       },
       "cammy": {
         "charA": "luke",
         "charB": "cammy",
         "rawWinsA": 20,
-        "rawTotalGames": 40,
-        "rawWinRate": 0.5,
-        "smoothedWinRate": 0.5
+        "rawTotalGames": 46,
+        "rawWinRate": 0.4348,
+        "smoothedWinRate": 0.4545
       },
       "rashid": {
         "charA": "luke",
@@ -1350,10 +1350,10 @@
       "cviper": {
         "charA": "guile",
         "charB": "cviper",
-        "rawWinsA": 21,
-        "rawTotalGames": 41,
-        "rawWinRate": 0.5122,
-        "smoothedWinRate": 0.5082
+        "rawWinsA": 30,
+        "rawTotalGames": 53,
+        "rawWinRate": 0.566,
+        "smoothedWinRate": 0.5479
       },
       "alex": {
         "charA": "guile",
@@ -2326,10 +2326,10 @@
       "mai": {
         "charA": "blanka",
         "charB": "mai",
-        "rawWinsA": 33,
-        "rawTotalGames": 59,
-        "rawWinRate": 0.5593,
-        "smoothedWinRate": 0.5443
+        "rawWinsA": 36,
+        "rawTotalGames": 68,
+        "rawWinRate": 0.5294,
+        "smoothedWinRate": 0.5227
       },
       "elena": {
         "charA": "blanka",
@@ -2601,9 +2601,9 @@
         "charA": "dhalsim",
         "charB": "cviper",
         "rawWinsA": 18,
-        "rawTotalGames": 40,
-        "rawWinRate": 0.45,
-        "smoothedWinRate": 0.4667
+        "rawTotalGames": 49,
+        "rawWinRate": 0.3673,
+        "smoothedWinRate": 0.4058
       },
       "alex": {
         "charA": "dhalsim",
@@ -4076,10 +4076,10 @@
       "mai": {
         "charA": "zangief",
         "charB": "mai",
-        "rawWinsA": 39,
-        "rawTotalGames": 73,
-        "rawWinRate": 0.5342,
-        "smoothedWinRate": 0.5269
+        "rawWinsA": 48,
+        "rawTotalGames": 88,
+        "rawWinRate": 0.5455,
+        "smoothedWinRate": 0.537
       },
       "elena": {
         "charA": "zangief",
@@ -4142,10 +4142,10 @@
       "luke": {
         "charA": "lily",
         "charB": "luke",
-        "rawWinsA": 29,
-        "rawTotalGames": 55,
-        "rawWinRate": 0.5273,
-        "smoothedWinRate": 0.52
+        "rawWinsA": 32,
+        "rawTotalGames": 64,
+        "rawWinRate": 0.5,
+        "smoothedWinRate": 0.5
       },
       "jamie": {
         "charA": "lily",
@@ -4392,10 +4392,10 @@
       "luke": {
         "charA": "cammy",
         "charB": "luke",
-        "rawWinsA": 20,
-        "rawTotalGames": 40,
-        "rawWinRate": 0.5,
-        "smoothedWinRate": 0.5
+        "rawWinsA": 26,
+        "rawTotalGames": 46,
+        "rawWinRate": 0.5652,
+        "smoothedWinRate": 0.5455
       },
       "jamie": {
         "charA": "cammy",
@@ -6076,10 +6076,10 @@
       "mai": {
         "charA": "terry",
         "charB": "mai",
-        "rawWinsA": 30,
-        "rawTotalGames": 60,
-        "rawWinRate": 0.5,
-        "smoothedWinRate": 0.5
+        "rawWinsA": 33,
+        "rawTotalGames": 69,
+        "rawWinRate": 0.4783,
+        "smoothedWinRate": 0.4831
       },
       "elena": {
         "charA": "terry",
@@ -6198,10 +6198,10 @@
       "blanka": {
         "charA": "mai",
         "charB": "blanka",
-        "rawWinsA": 26,
-        "rawTotalGames": 59,
-        "rawWinRate": 0.4407,
-        "smoothedWinRate": 0.4557
+        "rawWinsA": 32,
+        "rawTotalGames": 68,
+        "rawWinRate": 0.4706,
+        "smoothedWinRate": 0.4773
       },
       "dhalsim": {
         "charA": "mai",
@@ -6254,10 +6254,10 @@
       "zangief": {
         "charA": "mai",
         "charB": "zangief",
-        "rawWinsA": 34,
-        "rawTotalGames": 73,
-        "rawWinRate": 0.4658,
-        "smoothedWinRate": 0.4731
+        "rawWinsA": 40,
+        "rawTotalGames": 88,
+        "rawWinRate": 0.4545,
+        "smoothedWinRate": 0.463
       },
       "lily": {
         "charA": "mai",
@@ -6318,10 +6318,10 @@
       "terry": {
         "charA": "mai",
         "charB": "terry",
-        "rawWinsA": 30,
-        "rawTotalGames": 60,
-        "rawWinRate": 0.5,
-        "smoothedWinRate": 0.5
+        "rawWinsA": 36,
+        "rawTotalGames": 69,
+        "rawWinRate": 0.5217,
+        "smoothedWinRate": 0.5169
       },
       "mai": {
         "charA": "mai",
@@ -6592,10 +6592,10 @@
       "sagat": {
         "charA": "elena",
         "charB": "sagat",
-        "rawWinsA": 27,
-        "rawTotalGames": 58,
-        "rawWinRate": 0.4655,
-        "smoothedWinRate": 0.4744
+        "rawWinsA": 33,
+        "rawTotalGames": 64,
+        "rawWinRate": 0.5156,
+        "smoothedWinRate": 0.5119
       },
       "cviper": {
         "charA": "elena",
@@ -6835,9 +6835,9 @@
         "charA": "sagat",
         "charB": "elena",
         "rawWinsA": 31,
-        "rawTotalGames": 58,
-        "rawWinRate": 0.5345,
-        "smoothedWinRate": 0.5256
+        "rawTotalGames": 64,
+        "rawWinRate": 0.4844,
+        "smoothedWinRate": 0.4881
       },
       "sagat": {
         "charA": "sagat",
@@ -6884,10 +6884,10 @@
       "ryu": {
         "charA": "cviper",
         "charB": "ryu",
-        "rawWinsA": 34,
-        "rawTotalGames": 78,
-        "rawWinRate": 0.4359,
-        "smoothedWinRate": 0.449
+        "rawWinsA": 37,
+        "rawTotalGames": 87,
+        "rawWinRate": 0.4253,
+        "smoothedWinRate": 0.4393
       },
       "luke": {
         "charA": "cviper",
@@ -6916,10 +6916,10 @@
       "guile": {
         "charA": "cviper",
         "charB": "guile",
-        "rawWinsA": 20,
-        "rawTotalGames": 41,
-        "rawWinRate": 0.4878,
-        "smoothedWinRate": 0.4918
+        "rawWinsA": 23,
+        "rawTotalGames": 53,
+        "rawWinRate": 0.434,
+        "smoothedWinRate": 0.4521
       },
       "kimberly": {
         "charA": "cviper",
@@ -6956,10 +6956,10 @@
       "dhalsim": {
         "charA": "cviper",
         "charB": "dhalsim",
-        "rawWinsA": 22,
-        "rawTotalGames": 40,
-        "rawWinRate": 0.55,
-        "smoothedWinRate": 0.5333
+        "rawWinsA": 31,
+        "rawTotalGames": 49,
+        "rawWinRate": 0.6327,
+        "smoothedWinRate": 0.5942
       },
       "ehonda": {
         "charA": "cviper",

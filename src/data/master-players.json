@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T07:03:08.945Z",
+  "updatedAt": "2026-11-09T02:38:30.565Z",
   "totalPlayers": 48,
   "players": {
     "sako": {
@@ -22,7 +22,7 @@
       "mainChar": "cviper",
       "subChars": [],
       "startggSlug": "user/d83e268d",
-      "eloRating": 1967
+      "eloRating": 1951
     },
     "moke": {
       "key": "moke",
@@ -35,7 +35,7 @@
         "chunli"
       ],
       "startggSlug": "user/47e6da2a",
-      "eloRating": 1961
+      "eloRating": 1945
     },
     "ryukichi": {
       "key": "ryukichi",
@@ -48,7 +48,7 @@
         "ken"
       ],
       "startggSlug": "user/9f36f82b",
-      "eloRating": 2059
+      "eloRating": 2075
     },
     "dogura": {
       "key": "dogura",
@@ -59,7 +59,7 @@
       "mainChar": "elena",
       "subChars": [],
       "startggSlug": "user/2464d654",
-      "eloRating": 1979
+      "eloRating": 1999
     },
     "shuto": {
       "key": "shuto",
@@ -72,7 +72,7 @@
         "luke"
       ],
       "startggSlug": "user/b66813f3",
-      "eloRating": 1972
+      "eloRating": 1952
     },
     "bonchan": {
       "key": "bonchan",
@@ -96,7 +96,7 @@
       "mainChar": "cviper",
       "subChars": [],
       "startggSlug": "user/52cd5765",
-      "eloRating": 1925
+      "eloRating": 1949
     },
     "machabo": {
       "key": "machabo",
@@ -107,7 +107,7 @@
       "mainChar": "ryu",
       "subChars": [],
       "startggSlug": "user/acbbf204",
-      "eloRating": 2012
+      "eloRating": 2028
     },
     "kobayan": {
       "key": "kobayan",
@@ -118,7 +118,7 @@
       "mainChar": "zangief",
       "subChars": [],
       "startggSlug": "user/ef64257e",
-      "eloRating": 2058
+      "eloRating": 2074
     },
     "cosa": {
       "key": "cosa",
@@ -142,7 +142,7 @@
       "mainChar": "terry",
       "subChars": [],
       "startggSlug": "user/c5bc27ca",
-      "eloRating": 1959
+      "eloRating": 1943
     },
     "momochi": {
       "key": "momochi",
@@ -164,7 +164,7 @@
       "mainChar": "guile",
       "subChars": [],
       "startggSlug": "user/fee94c73",
-      "eloRating": 2082
+      "eloRating": 2102
     },
     "yamaguchi": {
       "key": "yamaguchi",
@@ -175,7 +175,7 @@
       "mainChar": "mai",
       "subChars": [],
       "startggSlug": "user/6bfc4c78",
-      "eloRating": 2073
+      "eloRating": 2089
     },
     "mena": {
       "key": "mena",
@@ -188,7 +188,7 @@
         "luke"
       ],
       "startggSlug": "user/31a13177",
-      "eloRating": 2093
+      "eloRating": 2109
     },
     "acqua": {
       "key": "acqua",
@@ -199,7 +199,7 @@
       "mainChar": "blanka",
       "subChars": [],
       "startggSlug": "user/20f90017",
-      "eloRating": 1834
+      "eloRating": 1818
     },
     "hibiki": {
       "key": "hibiki",
@@ -210,7 +210,7 @@
       "mainChar": "lily",
       "subChars": [],
       "startggSlug": "user/362536f6",
-      "eloRating": 1941
+      "eloRating": 1925
     },
     "akira": {
       "key": "akira",
@@ -223,7 +223,7 @@
         "cviper"
       ],
       "startggSlug": "user/ea580e86",
-      "eloRating": 1762
+      "eloRating": 1742
     },
     "takepi": {
       "key": "takepi",
@@ -247,7 +247,7 @@
         "vega_mbison"
       ],
       "startggSlug": "user/0b55a51c",
-      "eloRating": 1862
+      "eloRating": 1842
     },
     "johnny": {
       "key": "johnny",
@@ -269,7 +269,7 @@
       "mainChar": "dhalsim",
       "subChars": [],
       "startggSlug": "user/5be8e15c",
-      "eloRating": 2011
+      "eloRating": 1987
     },
     "2bassa": {
       "key": "2bassa",
@@ -282,7 +282,7 @@
         "cammy"
       ],
       "startggSlug": "user/d8c5c1e8",
-      "eloRating": 1964
+      "eloRating": 1984
     },
     "tokido": {
       "key": "tokido",
