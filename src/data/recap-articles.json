@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T03:43:12.294Z",
+  "updatedAt": "2026-11-09T03:45:14.680Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -5144,6 +5144,194 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-09T03:43:12.248Z"
+    },
+    "div-s-sec7-m1-b0:cbee55476a7f2c68:published": {
+      "articleId": "div-s-sec7-m1-b0:cbee55476a7f2c68:published",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b0",
+      "revision": "cbee55476a7f2c68",
+      "status": "passed",
+      "summary": "先鋒戦はまちゃぼーが藤村を2-1で下し、熊本が先勝。第1ゲームを取ったまちゃぼーは、第2ゲームを藤村に取り返されながらも、第3ゲームを押さえた。",
+      "summaryEvidenceIds": [
+        "ev-384a709568c86e498b0d"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームは藤村がOD昇龍拳のリバーサルをガードし、パニッシュカウンターから大ダメージコンボを決めてパーフェクトKOで取り返した。",
+          "evidenceIds": [
+            "ev-50f6a936574dfe5dc5e9"
+          ]
+        },
+        {
+          "text": "第3ゲーム第1ラウンドは、まちゃぼーが画面端でバックステップから藤村の投げ抜け動作を空振らせ、パニッシュカウンターを起点にラウンドを奪った。",
+          "evidenceIds": [
+            "ev-404387fa51f8b3d5fb93"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-384a709568c86e498b0d",
+        "ev-50f6a936574dfe5dc5e9",
+        "ev-404387fa51f8b3d5fb93"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:45:14.627Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:45:14.627Z"
+    },
+    "div-s-sec7-m1-b1:6d1720e565630673:published": {
+      "articleId": "div-s-sec7-m1-b1:6d1720e565630673:published",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b1",
+      "revision": "6d1720e565630673",
+      "status": "passed",
+      "summary": "中堅戦はりゅうきちがきんちょに2-1で逆転勝ちし、FAVが星を返した。第1ゲームを落としてから第2、第3ゲームを連取し、大将戦へつないだ。",
+      "summaryEvidenceIds": [
+        "ev-f9857682fab7773675c3"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームの最終ラウンドは、きんちょがCAを当ててもわずかに体力を残したりゅうきちに対し、起き上がりに投げのパニッシュカウンターを決めて先取した。",
+          "evidenceIds": [
+            "ev-d39faba52250c9c54a20"
+          ]
+        },
+        {
+          "text": "第2ゲーム第2ラウンド終盤、りゅうきちはきんちょのリバーサル技をガードし、パニッシュカウンターからの反撃でKOしてゲームカウントをタイに戻した。",
+          "evidenceIds": [
+            "ev-532a43a969a674e9c8ac"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドは、りゅうきちがきんちょの攻撃にジャストパリィを成功させ、反撃からKOまで持ち込んで中堅戦を締めくくった。",
+          "evidenceIds": [
+            "ev-2a3839351b322bc0d122"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-f9857682fab7773675c3",
+        "ev-d39faba52250c9c54a20",
+        "ev-532a43a969a674e9c8ac",
+        "ev-2a3839351b322bc0d122"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:45:14.628Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:45:14.628Z"
+    },
+    "div-s-sec7-m1-b2:03e18b2afce8d682:published": {
+      "articleId": "div-s-sec7-m1-b2:03e18b2afce8d682:published",
+      "matchId": "div-s-sec7-m1",
+      "boutId": "div-s-sec7-m1-b2",
+      "revision": "03e18b2afce8d682",
+      "status": "passed",
+      "summary": "大将戦はこばやんがもけとのフルセットを3-2で制した。第1、第3ゲームをこばやん、第2、第4ゲームをもけが取り合い、最終第5ゲームをこばやんが勝ち切った。",
+      "summaryEvidenceIds": [
+        "ev-f63bfd0c033143ad7839"
+      ],
+      "keyPoints": [
+        {
+          "text": "こばやんは溜め強パンチやパニッシュカウンターで攻めのきっかけをつかみ、ドライブインパクトやコマンド投げを絡めてもけを画面端へ追い込んだ。",
+          "evidenceIds": [
+            "ev-65b6d64bc386dc25dc52"
+          ]
+        },
+        {
+          "text": "最終ゲームの決着場面では、こばやんがCAでもけの体力をわずかまで削り、両者バーンアウトとなった後の攻撃を当ててKOした。",
+          "evidenceIds": [
+            "ev-22ccb25a673fb66627f2"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-f63bfd0c033143ad7839",
+        "ev-65b6d64bc386dc25dc52",
+        "ev-22ccb25a673fb66627f2"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:45:14.628Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:45:14.628Z"
+    },
+    "div-s-sec7-m1:eb2d5d8a8ae46d44:published": {
+      "articleId": "div-s-sec7-m1:eb2d5d8a8ae46d44:published",
+      "matchId": "div-s-sec7-m1",
+      "revision": "eb2d5d8a8ae46d44",
+      "status": "passed",
+      "headline": "熊本が大将戦を取り切りFAVに30-10で勝利",
+      "summary": "KADOKAWA FAV gamingとSaishunkan Sol 熊本の一戦は、熊本が30-10で勝利した。先鋒戦は藤村がパーフェクトKOで第2ゲームを取り返したものの、まちゃぼーが第3ゲームを押さえて先勝。中堅戦では、きんちょに先取されたりゅうきちが2ゲームを連取し、勝負を大将戦へつないだ。もけとこばやんの大将戦は交互にゲームを取り合う展開となり、こばやんが3-2で決着。最終盤はCAで体力を削り、両者バーンアウトの状況から最後の一撃を通してチームの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-384a709568c86e498b0d",
+        "ev-50f6a936574dfe5dc5e9",
+        "ev-f9857682fab7773675c3",
+        "ev-f63bfd0c033143ad7839",
+        "ev-22ccb25a673fb66627f2"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-384a709568c86e498b0d",
+        "ev-50f6a936574dfe5dc5e9",
+        "ev-f9857682fab7773675c3",
+        "ev-f63bfd0c033143ad7839",
+        "ev-22ccb25a673fb66627f2"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:45:14.629Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:45:14.629Z"
     }
   }
 }
