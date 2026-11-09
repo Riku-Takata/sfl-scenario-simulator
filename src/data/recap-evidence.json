@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T03:28:16.316Z",
+  "updatedAt": "2026-11-09T03:36:35.968Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -8243,10 +8243,13 @@
       "officialRefs": [
         "div-s-sec7-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "1P側のひぐち（ガイル）がドライブダッシュからあきら（C.ヴァイパー）を投げでダウンさせます。起き上がりにあきらがリバーサルでクリティカルアーツ（CA）を発動しますが、ひぐちはバックジャンプで回避。着地後にCAの隙へパニッシュカウンターからコンボ（ODサマーソルトキック等）を叩き込み、K.O.を奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-09T03:28:16.289Z"
     },
@@ -8267,10 +8270,13 @@
       "officialRefs": [
         "div-s-sec7-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "第2セットの第1ラウンド。序盤であきら（C.ヴァイパー）がドライブインパクトを仕掛けますが、ひぐち（ガイル）が対応し、投げやサマーソルトキック、ソニックブームを交えた立ち回りと連続技で終始圧倒します。あきらに攻撃を当てさせないまま体力を削り切り、最後はソニックブームから攻撃を繋げてPERFECT K.O.を達成します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-09T03:28:16.289Z"
     },
@@ -8291,10 +8297,13 @@
       "officialRefs": [
         "div-s-sec7-m3-b2:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "画面端付近でひぐち（ガイル）がSA2（ソリッドパンチャー）によるソニックの連続連動からソニックブレイド設置を絡めて固めます。あきら（C.ヴァイパー）が割り込みでSA3/CAを発動して暗転演出が入るものの、技が通らず、ひぐちが隙にパニッシュカウンターから打撃を叩き込んでK.O.。ひぐちの勝利となり「GUILE WIN」が表示され、チームメンバーが喜ぶ様子が映し出されます。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-09T03:28:16.289Z"
     }
