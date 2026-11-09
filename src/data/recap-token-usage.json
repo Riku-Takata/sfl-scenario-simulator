@@ -708,6 +708,21 @@
           "thoughtTokens": 3,
           "totalTokens": 3
         }
+      },
+      "codex:narration:codex-cli": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 23308,
+          "cachedInputTokens": 0,
+          "outputTokens": 1725,
+          "thoughtTokens": 161
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1
+        }
       }
     }
   },
@@ -823,6 +838,7 @@
     "8ed31993-a84a-459e-861a-73b4759e5bbf",
     "a4c91c1c-4ae4-4d57-9641-ea464bd8bcfc",
     "5c2a502a-7550-4cce-b273-666d158fa570",
-    "7d420fb5-c5b1-41b4-b722-001f22af8e98"
+    "7d420fb5-c5b1-41b4-b722-001f22af8e98",
+    "2c5c8959-9ab4-429d-8f2c-34534e878c85"
   ]
 }

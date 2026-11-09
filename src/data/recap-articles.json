@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-08T04:02:09.411Z",
+  "updatedAt": "2026-11-09T03:30:26.147Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -3911,6 +3911,238 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-08T04:01:15.739Z"
+    },
+    "div-s-sec6-m2-b0:5705eabf77ccb94f:published": {
+      "articleId": "div-s-sec6-m2-b0:5705eabf77ccb94f:published",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b0",
+      "revision": "5705eabf77ccb94f",
+      "status": "passed",
+      "summary": "まちゃぼーがあきらを2-0で下し、熊本が先制した。第1ゲームを取り、第2ゲームもあきらに1ラウンドを返されながら勝ち切った。",
+      "summaryEvidenceIds": [
+        "ev-f2e5dca1f19d59a8dd3c"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームの第1ラウンドは、まちゃぼーが歩き込むあきらにしゃがみ中キックをカウンターヒットさせ、KOを奪った。",
+          "evidenceIds": [
+            "ev-d9645bf03cefa46efd8f"
+          ]
+        },
+        {
+          "text": "第2ゲーム最終ラウンド序盤、まちゃぼーがパニッシュカウンターからSA3の真・昇龍拳につなぎ、大ダメージを与えた。",
+          "evidenceIds": [
+            "ev-321d0f61ba4918ed1692"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-f2e5dca1f19d59a8dd3c",
+        "ev-d9645bf03cefa46efd8f",
+        "ev-321d0f61ba4918ed1692"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:30:26.100Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:30:26.100Z"
+    },
+    "div-s-sec6-m2-b1:5328ac9cf1cedc91:published": {
+      "articleId": "div-s-sec6-m2-b1:5328ac9cf1cedc91:published",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b1",
+      "revision": "5328ac9cf1cedc91",
+      "status": "passed",
+      "summary": "こばやんがACQUAとの中堅戦を2-1で制し、熊本が先鋒戦に続いて勝利した。第2ゲームを奪い返されたものの、最終ゲームを取り切った。",
+      "summaryEvidenceIds": [
+        "ev-707245867716b588c06a"
+      ],
+      "keyPoints": [
+        {
+          "text": "ACQUAはこばやんのドライブインパクトにインパクトを返し、CAまでつないでKOを奪った。",
+          "evidenceIds": [
+            "ev-b208c75fc192e14152ee"
+          ]
+        },
+        {
+          "text": "こばやんはスクリューパイルドライバーを決めてラウンドを取り、パニッシュカウンターからの攻撃でもダメージを重ねた。",
+          "evidenceIds": [
+            "ev-6d7bf8ad869e4a71a81e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-707245867716b588c06a",
+        "ev-b208c75fc192e14152ee",
+        "ev-6d7bf8ad869e4a71a81e"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:30:26.100Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:30:26.100Z"
+    },
+    "div-s-sec6-m2-b2:7e3476e314491991:published": {
+      "articleId": "div-s-sec6-m2-b2:7e3476e314491991:published",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b2",
+      "revision": "7e3476e314491991",
+      "status": "passed",
+      "summary": "ひびきがきんちょを3-1で下し、iXAが延長戦へつないだ。第2ゲームこそ取り返されたが、第3・第4ゲームを連取し、最後はパーフェクトKOで締めた。",
+      "summaryEvidenceIds": [
+        "ev-4c2ab156d4259f112717",
+        "ev-7178a094d2ad3d1b7b6e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第2ラウンド、きんちょはCAを組み込んだコンボでひびきの体力をわずかまで減らし、起き上がりにパワーウェイブを当ててゲームを取り返した。",
+          "evidenceIds": [
+            "ev-f8657d1ab62c5e6f2c61"
+          ]
+        },
+        {
+          "text": "第4ゲーム最終ラウンド、ひびきは無敵技をガードして反撃し、さらにパニッシュカウンターからSA3につないでパーフェクトKOを決めた。",
+          "evidenceIds": [
+            "ev-7178a094d2ad3d1b7b6e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-4c2ab156d4259f112717",
+        "ev-7178a094d2ad3d1b7b6e",
+        "ev-f8657d1ab62c5e6f2c61"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:30:26.101Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:30:26.101Z"
+    },
+    "div-s-sec6-m2-b3:55ba62c9e0339ae2:published": {
+      "articleId": "div-s-sec6-m2-b3:55ba62c9e0339ae2:published",
+      "matchId": "div-s-sec6-m2",
+      "boutId": "div-s-sec6-m2-b3",
+      "revision": "55ba62c9e0339ae2",
+      "status": "passed",
+      "summary": "cosaがtakepiに2-1で逆転勝ちし、熊本の30-20での勝利を決めた。第1ゲームを落とした後、第2・第3ゲームを続けて取り、延長戦を勝ち切った。",
+      "summaryEvidenceIds": [
+        "ev-059ae657e4bf560b2f33"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームの最終ラウンド、takepiはcosaの無敵技をガードしてパニッシュカウンターを取り、追撃のコンボでKOして先取した。",
+          "evidenceIds": [
+            "ev-7c33e49e5afa966b4b47"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンド、cosaは開幕直後のパニッシュカウンターからドライブラッシュを絡めて画面端へ運び、攻撃を重ねてパーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-14da3d83efd4921f0ad5"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-059ae657e4bf560b2f33",
+        "ev-7c33e49e5afa966b4b47",
+        "ev-14da3d83efd4921f0ad5"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:30:26.101Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:30:26.101Z"
+    },
+    "div-s-sec6-m2:ecab8bab7a636dea:published": {
+      "articleId": "div-s-sec6-m2:ecab8bab7a636dea:published",
+      "matchId": "div-s-sec6-m2",
+      "revision": "ecab8bab7a636dea",
+      "status": "passed",
+      "headline": "熊本が延長戦を制し、iXAに30-20で勝利",
+      "summary": "Saishunkan Sol 熊本が広島 TEAM iXAを30-20で下した。先鋒戦はまちゃぼーが2ゲームを連取し、中堅戦もACQUAに第2ゲームを取り返されながら、こばやんが2-1で勝利。大将戦ではひびきがきんちょを3-1で下し、iXAが延長戦へ持ち込んだ。ひびきは決着のラウンドをパニッシュカウンターからのコンボとSA3でパーフェクトKO。しかし延長戦は、第1ゲームを取ったtakepiに対し、cosaが第2ゲームでパーフェクトKOのラウンドを作って応戦し、2ゲームを連取。熊本がチーム戦の勝利を収めた。",
+      "summaryEvidenceIds": [
+        "ev-f2e5dca1f19d59a8dd3c",
+        "ev-707245867716b588c06a",
+        "ev-4c2ab156d4259f112717",
+        "ev-7178a094d2ad3d1b7b6e",
+        "ev-059ae657e4bf560b2f33",
+        "ev-14da3d83efd4921f0ad5"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-f2e5dca1f19d59a8dd3c",
+        "ev-707245867716b588c06a",
+        "ev-4c2ab156d4259f112717",
+        "ev-7178a094d2ad3d1b7b6e",
+        "ev-059ae657e4bf560b2f33",
+        "ev-14da3d83efd4921f0ad5"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:30:26.101Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:30:26.101Z"
     }
   }
 }
