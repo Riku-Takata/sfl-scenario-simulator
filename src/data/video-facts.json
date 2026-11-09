@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T03:36:35.986Z",
+  "updatedAt": "2026-11-09T03:38:59.239Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -7289,6 +7289,89 @@
               "text": "第5ゲーム最終ラウンド、こばやんはCAでもけの体力をわずかまで削り、両者がバーンアウトした状況で最後の攻撃を当ててKOした。",
               "evidenceIds": [
                 "ev-22ccb25a673fb66627f2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "div-s-sec7-m2": {
+      "inputHash": "b5fec9ad2f5b4ef4",
+      "model": "codex-cli",
+      "generatedAt": "2026-11-09T03:38:34.136Z",
+      "matchHeadline": "Crazy Raccoonが30-10で勝利",
+      "matchSummary": "Crazy RaccoonがFUKUSHIMA IBUSHIGINを30-10で下した。先鋒戦はどぐらがヤナイに2-0で勝利。パニッシュカウンターからCAを完走し、パーフェクトKOで第1ゲームを取った。中堅戦では2BASSAがShutoに2-0で勝ち、FUKUSHIMA IBUSHIGINが同点に追いつく。2BASSAは相手の攻撃の隙を突くコンボからパーフェクトKOを記録した。大将戦はかずのこが鶏めしに3-0で勝利。第1ゲーム終盤の画面端付近でパニッシュカウンターから連続技を決めてKOを奪い、全3ゲームを取り切ってチームの勝利を決めた。",
+      "matchEvidenceIds": [
+        "ev-c27e35f93e044e193e82",
+        "ev-94add041cf4c66cad531",
+        "ev-383ff096e1371255856e",
+        "ev-edbc3729ca1014341eee",
+        "ev-4fea488b6532b2c5eefd",
+        "ev-a3970601addd5947beb9"
+      ],
+      "bouts": [
+        {
+          "boutId": "div-s-sec7-m2-b0",
+          "summary": "どぐら選手（エレナ）がヤナイ選手（サガット）を2-0で下し、Crazy Raccoonが先制。第1ゲームはパニッシュカウンターからCAにつなぐパーフェクトKOで取り、第2ゲームも獲得した。",
+          "summaryEvidenceIds": [
+            "ev-c27e35f93e044e193e82",
+            "ev-94add041cf4c66cad531"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム序盤、どぐらは中段攻撃でヤナイの体力を削った。",
+              "evidenceIds": [
+                "ev-9b06fcda8272341c5955"
+              ]
+            },
+            {
+              "text": "第1ゲーム第3ラウンド、どぐらがパニッシュカウンターからCAを最後まで決め、パーフェクトKOでゲームを先取した。",
+              "evidenceIds": [
+                "ev-94add041cf4c66cad531"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec7-m2-b1",
+          "summary": "2BASSA選手（キャミィ）がShuto選手（ルーク）に2-0で勝利し、FUKUSHIMA IBUSHIGINが同点に戻した。第1ゲームでは攻撃の隙への反撃からパーフェクトKOを奪い、続く第2ゲームも取った。",
+          "summaryEvidenceIds": [
+            "ev-383ff096e1371255856e",
+            "ev-edbc3729ca1014341eee"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム第2ラウンド、2BASSAがShutoの攻撃の隙にパニッシュカウンターを取り、連続攻撃でパーフェクトKOを奪った。",
+              "evidenceIds": [
+                "ev-edbc3729ca1014341eee"
+              ]
+            },
+            {
+              "text": "第1ゲームの最終ラウンドには、Shutoがドライブインパクトを通す場面もあった。",
+              "evidenceIds": [
+                "ev-d36ea6a5751702031fc4"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec7-m2-b2",
+          "summary": "かずのこ選手（C.ヴァイパー）が鶏めし選手（ダルシム）を3-0で破り、Crazy Raccoonの勝利を決めた。第1ゲーム終盤は画面端付近で反撃を決めて取り切り、第2・第3ゲームも獲得した。",
+          "summaryEvidenceIds": [
+            "ev-4fea488b6532b2c5eefd",
+            "ev-a3970601addd5947beb9"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム序盤には、空中からの攻撃にジャストパリィを合わせ、反撃でKOに至る場面があった。",
+              "evidenceIds": [
+                "ev-2e4956aa793bf799eaad"
+              ]
+            },
+            {
+              "text": "第1ゲームの最終ラウンド終盤、かずのこが画面端付近でパニッシュカウンターから連続技をつなぎ、鶏めしをKOして先制ゲームを取った。",
+              "evidenceIds": [
+                "ev-a3970601addd5947beb9"
               ]
             }
           ]
@@ -14721,7 +14804,7 @@
     }
   },
   "pendingNarrations": [
-    "div-s-sec7-m2",
+    "div-s-sec7-m1",
     "div-s-sec7-m3"
   ]
 }
