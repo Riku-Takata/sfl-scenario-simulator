@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T03:32:21.043Z",
+  "updatedAt": "2026-11-09T03:34:13.126Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 7,
@@ -1375,8 +1375,8 @@
         "awayPoint": 10,
         "winner": "home",
         "isTiebreaker": false,
-        "matchHeadline": "RIDDLE ORDERが30-10で勝利",
-        "matchSummary": "第3試合【DetonatioN FocusMe vs RIDDLE ORDER】は10-30でRIDDLE ORDERの勝利。大将戦は高木選手が制した。",
+        "matchHeadline": "RIDDLE ORDER、大将・高木の勝利で30-10",
+        "matchSummary": "RIDDLE ORDERがDetonatioN FocusMeを30-10で下した。先鋒戦はひかるが第1ゲームを先取。竹内ジョンに第2ゲームを返されたが、第3ゲームを取り切って先制した。中堅戦はJr.が先行するも、ナウマンが第2ゲームを陽炎の舞で締めて追いつき、第3ゲームも奪ってチーム戦をタイに戻した。大将戦では高木が2ゲームを連取し、第2ゲームにはSA3からパーフェクトKOを記録。KEI.Bが第3ゲームを取り返したものの、高木が第4ゲームを制して3-1で勝利し、RIDDLE ORDERの勝利を決めた。",
         "bouts": [
           {
             "status": 0,
@@ -1397,12 +1397,11 @@
               "Game 3: [1-2] ひかる選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "ひかる選手（A.K.I.）が竹内ジョン選手（ジェイミー）を2-1で下した。",
+              "source": "gemini-video",
+              "summary": "ひかるが竹内ジョンとの先鋒戦を2-1で制し、RIDDLE ORDERが先制した。第1ゲームを奪った後、第2ゲームを返されたが、最終第3ゲームを取り切った。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームひかる→第2ゲーム竹内ジョン→第3ゲームひかる",
-                "最終ゲームまでもつれたフルセットをひかる選手が制した。",
-                "第3ゲームはひかる選手が1ラウンド目を落としてから逆転。"
+                "第1ゲーム第2ラウンド、ひかるのA.K.I.が画面端付近で単発ヒット確認からSA3を決め、パーフェクトKOでゲームを先取した。",
+                "第2ゲーム第3ラウンドは、竹内ジョンのジェイミーが毒状態でも攻めを継続し、ひかるをバーンアウトに追い込んでパニッシュカウンターからの連続攻撃で1-1に戻した。"
               ]
             },
             "games": [
@@ -1453,7 +1452,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -1545,11 +1544,11 @@
               "Game 4: [0-2] 高木選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "高木選手（ブランカ）がKEI.B選手（不知火舞）を3-1で下した。",
+              "source": "gemini-video",
+              "summary": "高木が大将戦でKEI.Bを3-1で下し、RIDDLE ORDERの勝利を決めた。第1・第2ゲームを連取し、第3ゲームを返されても、第4ゲームを取り切った。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲーム高木→第2ゲーム高木→第3ゲームKEI.B→第4ゲーム高木",
-                "第1ゲームは高木選手が1ラウンド目を落としてから逆転。"
+                "第2ゲーム第2ラウンド、高木のブランカが打撃コンボからSA3を決め、パーフェクトKOでゲームカウントを2-0に広げた。",
+                "第4ゲーム第1ラウンド、高木は相手の技の隙にドライブインパクトを合わせ、画面端でスタンを奪ってラウンドを先取した。"
               ]
             },
             "games": [
@@ -1610,7 +1609,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           }
         ],
         "narrationStatus": "pending"

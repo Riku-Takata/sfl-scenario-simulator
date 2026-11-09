@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T03:32:21.160Z",
+  "updatedAt": "2026-11-09T03:34:13.221Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -4384,6 +4384,196 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-09T03:32:21.091Z"
+    },
+    "div-f-sec6-m3-b0:f42ce816c1124dbe:published": {
+      "articleId": "div-f-sec6-m3-b0:f42ce816c1124dbe:published",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b0",
+      "revision": "f42ce816c1124dbe",
+      "status": "passed",
+      "summary": "ひかるが竹内ジョンとの先鋒戦を2-1で制し、RIDDLE ORDERが先制した。第1ゲームを奪った後、第2ゲームを返されたが、最終第3ゲームを取り切った。",
+      "summaryEvidenceIds": [
+        "ev-8688f1ad4996bf34b35b"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンド、ひかるのA.K.I.が画面端付近で単発ヒット確認からSA3を決め、パーフェクトKOでゲームを先取した。",
+          "evidenceIds": [
+            "ev-92da0d9ce3b9bd10845d"
+          ]
+        },
+        {
+          "text": "第2ゲーム第3ラウンドは、竹内ジョンのジェイミーが毒状態でも攻めを継続し、ひかるをバーンアウトに追い込んでパニッシュカウンターからの連続攻撃で1-1に戻した。",
+          "evidenceIds": [
+            "ev-34e28bdfb763e310057e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-8688f1ad4996bf34b35b",
+        "ev-92da0d9ce3b9bd10845d",
+        "ev-34e28bdfb763e310057e"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:34:13.189Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:34:13.189Z"
+    },
+    "div-f-sec6-m3-b1:13f04fe1880939ca:candidate": {
+      "articleId": "div-f-sec6-m3-b1:13f04fe1880939ca:candidate",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b1",
+      "revision": "13f04fe1880939ca",
+      "status": "insufficient",
+      "summary": "ナウマンがJr.に第1ゲームを先取されながら、続く2ゲームを奪って2-1で逆転勝利。DetonatioN FocusMeが中堅戦を取り、チーム戦をタイに戻した。",
+      "summaryEvidenceIds": [
+        "ev-bd332568cc1abcc24f4d"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第2ラウンド、ナウマンの不知火舞がドライブラッシュを絡めた地上コンボから陽炎の舞につなぎ、Jr.のザンギエフをKOして1-1に追いついた。",
+          "evidenceIds": [
+            "ev-a68cee04ef6858eca630"
+          ]
+        },
+        {
+          "text": "第3ゲーム第1ラウンドは、ナウマンが技の隙にパニッシュカウンターを取り、OD必殺技を絡めた連続技でパーフェクトKOを決めた。",
+          "evidenceIds": [
+            "ev-6f69c26efe593bc1541b"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンド、ナウマンはバーンアウトしたJr.に間合いを詰め、通常投げを続けて通して勝負を決めた。",
+          "evidenceIds": [
+            "ev-c151fa4a04d53a9ba1e8"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-bd332568cc1abcc24f4d",
+        "ev-a68cee04ef6858eca630",
+        "ev-6f69c26efe593bc1541b",
+        "ev-c151fa4a04d53a9ba1e8"
+      ],
+      "quality": {
+        "score": 0.8888888888888888,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": false
+        },
+        "reasons": [
+          "everyClaimOverlapsCitedEvidence"
+        ],
+        "evaluatedAt": "2026-11-09T03:34:13.189Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:34:13.189Z"
+    },
+    "div-f-sec6-m3-b2:851e03e6b19713e4:published": {
+      "articleId": "div-f-sec6-m3-b2:851e03e6b19713e4:published",
+      "matchId": "div-f-sec6-m3",
+      "boutId": "div-f-sec6-m3-b2",
+      "revision": "851e03e6b19713e4",
+      "status": "passed",
+      "summary": "高木が大将戦でKEI.Bを3-1で下し、RIDDLE ORDERの勝利を決めた。第1・第2ゲームを連取し、第3ゲームを返されても、第4ゲームを取り切った。",
+      "summaryEvidenceIds": [
+        "ev-a7dc6271f3afe4f7b808"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第2ラウンド、高木のブランカが打撃コンボからSA3を決め、パーフェクトKOでゲームカウントを2-0に広げた。",
+          "evidenceIds": [
+            "ev-7825f63e64487516a22d"
+          ]
+        },
+        {
+          "text": "第4ゲーム第1ラウンド、高木は相手の技の隙にドライブインパクトを合わせ、画面端でスタンを奪ってラウンドを先取した。",
+          "evidenceIds": [
+            "ev-2fed04d305ff5cd49229"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-a7dc6271f3afe4f7b808",
+        "ev-7825f63e64487516a22d",
+        "ev-2fed04d305ff5cd49229"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:34:13.190Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:34:13.190Z"
+    },
+    "div-f-sec6-m3:f43b8c4c1a8ff4b1:published": {
+      "articleId": "div-f-sec6-m3:f43b8c4c1a8ff4b1:published",
+      "matchId": "div-f-sec6-m3",
+      "revision": "f43b8c4c1a8ff4b1",
+      "status": "passed",
+      "headline": "RIDDLE ORDER、大将・高木の勝利で30-10",
+      "summary": "RIDDLE ORDERがDetonatioN FocusMeを30-10で下した。先鋒戦はひかるが第1ゲームを先取。竹内ジョンに第2ゲームを返されたが、第3ゲームを取り切って先制した。中堅戦はJr.が先行するも、ナウマンが第2ゲームを陽炎の舞で締めて追いつき、第3ゲームも奪ってチーム戦をタイに戻した。大将戦では高木が2ゲームを連取し、第2ゲームにはSA3からパーフェクトKOを記録。KEI.Bが第3ゲームを取り返したものの、高木が第4ゲームを制して3-1で勝利し、RIDDLE ORDERの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-8688f1ad4996bf34b35b",
+        "ev-bd332568cc1abcc24f4d",
+        "ev-a68cee04ef6858eca630",
+        "ev-a7dc6271f3afe4f7b808",
+        "ev-7825f63e64487516a22d"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-8688f1ad4996bf34b35b",
+        "ev-bd332568cc1abcc24f4d",
+        "ev-a68cee04ef6858eca630",
+        "ev-a7dc6271f3afe4f7b808",
+        "ev-7825f63e64487516a22d"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:34:13.190Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:34:13.190Z"
     }
   }
 }

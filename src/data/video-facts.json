@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T03:32:21.121Z",
+  "updatedAt": "2026-11-09T03:34:13.183Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -7117,6 +7117,91 @@
               "text": "第3ゲーム第2ラウンドは、YASのリュウがパニッシュカウンターからドライブラッシュを交えた連続攻撃を仕掛け、SA3でパーフェクトKOを決めた。",
               "evidenceIds": [
                 "ev-4660ba2f1e952e559617"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec6-m3": {
+      "inputHash": "00b6d4a0b7257817",
+      "model": "codex-cli",
+      "generatedAt": "2026-11-09T03:33:49.493Z",
+      "matchHeadline": "RIDDLE ORDER、大将・高木の勝利で30-10",
+      "matchSummary": "RIDDLE ORDERがDetonatioN FocusMeを30-10で下した。先鋒戦はひかるが第1ゲームを先取。竹内ジョンに第2ゲームを返されたが、第3ゲームを取り切って先制した。中堅戦はJr.が先行するも、ナウマンが第2ゲームを陽炎の舞で締めて追いつき、第3ゲームも奪ってチーム戦をタイに戻した。大将戦では高木が2ゲームを連取し、第2ゲームにはSA3からパーフェクトKOを記録。KEI.Bが第3ゲームを取り返したものの、高木が第4ゲームを制して3-1で勝利し、RIDDLE ORDERの勝利を決めた。",
+      "matchEvidenceIds": [
+        "ev-8688f1ad4996bf34b35b",
+        "ev-bd332568cc1abcc24f4d",
+        "ev-a68cee04ef6858eca630",
+        "ev-a7dc6271f3afe4f7b808",
+        "ev-7825f63e64487516a22d"
+      ],
+      "bouts": [
+        {
+          "boutId": "div-f-sec6-m3-b0",
+          "summary": "ひかるが竹内ジョンとの先鋒戦を2-1で制し、RIDDLE ORDERが先制した。第1ゲームを奪った後、第2ゲームを返されたが、最終第3ゲームを取り切った。",
+          "summaryEvidenceIds": [
+            "ev-8688f1ad4996bf34b35b"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム第2ラウンド、ひかるのA.K.I.が画面端付近で単発ヒット確認からSA3を決め、パーフェクトKOでゲームを先取した。",
+              "evidenceIds": [
+                "ev-92da0d9ce3b9bd10845d"
+              ]
+            },
+            {
+              "text": "第2ゲーム第3ラウンドは、竹内ジョンのジェイミーが毒状態でも攻めを継続し、ひかるをバーンアウトに追い込んでパニッシュカウンターからの連続攻撃で1-1に戻した。",
+              "evidenceIds": [
+                "ev-34e28bdfb763e310057e"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-f-sec6-m3-b1",
+          "summary": "ナウマンがJr.に第1ゲームを先取されながら、続く2ゲームを奪って2-1で逆転勝利。DetonatioN FocusMeが中堅戦を取り、チーム戦をタイに戻した。",
+          "summaryEvidenceIds": [
+            "ev-bd332568cc1abcc24f4d"
+          ],
+          "keyPoints": [
+            {
+              "text": "第2ゲーム第2ラウンド、ナウマンの不知火舞がドライブラッシュを絡めた地上コンボから陽炎の舞につなぎ、Jr.のザンギエフをKOして1-1に追いついた。",
+              "evidenceIds": [
+                "ev-a68cee04ef6858eca630"
+              ]
+            },
+            {
+              "text": "第3ゲーム第1ラウンドは、ナウマンが技の隙にパニッシュカウンターを取り、OD必殺技を絡めた連続技でパーフェクトKOを決めた。",
+              "evidenceIds": [
+                "ev-6f69c26efe593bc1541b"
+              ]
+            },
+            {
+              "text": "第3ゲーム第2ラウンド、ナウマンはバーンアウトしたJr.に間合いを詰め、通常投げを続けて通して勝負を決めた。",
+              "evidenceIds": [
+                "ev-c151fa4a04d53a9ba1e8"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-f-sec6-m3-b2",
+          "summary": "高木が大将戦でKEI.Bを3-1で下し、RIDDLE ORDERの勝利を決めた。第1・第2ゲームを連取し、第3ゲームを返されても、第4ゲームを取り切った。",
+          "summaryEvidenceIds": [
+            "ev-a7dc6271f3afe4f7b808"
+          ],
+          "keyPoints": [
+            {
+              "text": "第2ゲーム第2ラウンド、高木のブランカが打撃コンボからSA3を決め、パーフェクトKOでゲームカウントを2-0に広げた。",
+              "evidenceIds": [
+                "ev-7825f63e64487516a22d"
+              ]
+            },
+            {
+              "text": "第4ゲーム第1ラウンド、高木は相手の技の隙にドライブインパクトを合わせ、画面端でスタンを奪ってラウンドを先取した。",
+              "evidenceIds": [
+                "ev-2fed04d305ff5cd49229"
               ]
             }
           ]
@@ -14550,7 +14635,6 @@
   },
   "pendingNarrations": [
     "div-s-sec7-m1",
-    "div-s-sec7-m2",
-    "div-f-sec6-m3"
+    "div-s-sec7-m2"
   ]
 }
