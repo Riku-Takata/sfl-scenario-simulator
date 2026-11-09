@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T03:38:59.297Z",
+  "updatedAt": "2026-11-09T03:40:58.639Z",
   "jobs": {
     "div-s-sec4-m1:article": {
       "jobId": "div-s-sec4-m1:article",
@@ -1189,7 +1189,7 @@
         "ev-4660ba2f1e952e559617"
       ],
       "publishedRevision": "1d74b3d7bea3684d",
-      "updatedAt": "2026-11-09T03:38:59.247Z"
+      "updatedAt": "2026-11-09T03:40:58.566Z"
     },
     "div-f-sec6-m1-b0": {
       "jobId": "div-f-sec6-m1-b0",
@@ -1208,7 +1208,7 @@
         "ev-be3814aa3fdc460a2225"
       ],
       "publishedRevision": "50b7be1c492d7f35",
-      "updatedAt": "2026-11-09T03:38:59.247Z"
+      "updatedAt": "2026-11-09T03:40:58.566Z"
     },
     "div-f-sec6-m1-b1": {
       "jobId": "div-f-sec6-m1-b1",
@@ -1227,7 +1227,7 @@
         "ev-462763245306716c896b"
       ],
       "publishedRevision": "e3a54c876cc45fbe",
-      "updatedAt": "2026-11-09T03:38:59.247Z"
+      "updatedAt": "2026-11-09T03:40:58.566Z"
     },
     "div-f-sec6-m1-b2": {
       "jobId": "div-f-sec6-m1-b2",
@@ -1246,7 +1246,7 @@
         "ev-366322c00ffe49ef0478"
       ],
       "publishedRevision": "00cfb697134b3e15",
-      "updatedAt": "2026-11-09T03:38:59.247Z"
+      "updatedAt": "2026-11-09T03:40:58.566Z"
     },
     "div-f-sec6-m1-b3": {
       "jobId": "div-f-sec6-m1-b3",
@@ -1266,7 +1266,7 @@
         "ev-f0013256a59a01cec30c"
       ],
       "publishedRevision": "596b878429c3496b",
-      "updatedAt": "2026-11-09T03:38:59.247Z"
+      "updatedAt": "2026-11-09T03:40:58.566Z"
     },
     "div-f-sec6-m2:article": {
       "jobId": "div-f-sec6-m2:article",
@@ -1285,7 +1285,7 @@
         "ev-c5dc55df123a0facab2f"
       ],
       "publishedRevision": "09cc964e99c5e698",
-      "updatedAt": "2026-11-09T03:38:59.256Z"
+      "updatedAt": "2026-11-09T03:40:58.576Z"
     },
     "div-f-sec6-m2-b0": {
       "jobId": "div-f-sec6-m2-b0",
@@ -1304,7 +1304,7 @@
         "ev-35eb025571fce4a483e4"
       ],
       "publishedRevision": "086e816fda1853a2",
-      "updatedAt": "2026-11-09T03:38:59.256Z"
+      "updatedAt": "2026-11-09T03:40:58.576Z"
     },
     "div-f-sec6-m2-b1": {
       "jobId": "div-f-sec6-m2-b1",
@@ -1323,7 +1323,7 @@
         "ev-2c23f8c8d56c7fdb8522"
       ],
       "publishedRevision": "3c411be95d12f3f0",
-      "updatedAt": "2026-11-09T03:38:59.256Z"
+      "updatedAt": "2026-11-09T03:40:58.576Z"
     },
     "div-f-sec6-m2-b2": {
       "jobId": "div-f-sec6-m2-b2",
@@ -1343,7 +1343,7 @@
         "ev-c5dc55df123a0facab2f"
       ],
       "publishedRevision": "65f985203d235bfb",
-      "updatedAt": "2026-11-09T03:38:59.256Z"
+      "updatedAt": "2026-11-09T03:40:58.576Z"
     },
     "div-f-sec6-m3:article": {
       "jobId": "div-f-sec6-m3:article",
@@ -1363,7 +1363,7 @@
         "ev-7825f63e64487516a22d"
       ],
       "publishedRevision": "f43b8c4c1a8ff4b1",
-      "updatedAt": "2026-11-09T03:38:59.257Z"
+      "updatedAt": "2026-11-09T03:40:58.602Z"
     },
     "div-f-sec6-m3-b0": {
       "jobId": "div-f-sec6-m3-b0",
@@ -1382,7 +1382,7 @@
         "ev-34e28bdfb763e310057e"
       ],
       "publishedRevision": "f42ce816c1124dbe",
-      "updatedAt": "2026-11-09T03:38:59.258Z"
+      "updatedAt": "2026-11-09T03:40:58.602Z"
     },
     "div-f-sec6-m3-b1": {
       "jobId": "div-f-sec6-m3-b1",
@@ -1395,9 +1395,9 @@
       "inputHash": "a34c89cf86224a571c1dadc83ccdbc6750c78717fd4b0e3d9d071053b00a0ea6",
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
-      "nextAttemptAt": "2026-11-09T03:53:59.258Z",
+      "nextAttemptAt": "2026-11-09T03:55:58.602Z",
       "evidenceIds": [],
-      "updatedAt": "2026-11-09T03:38:59.258Z"
+      "updatedAt": "2026-11-09T03:40:58.602Z"
     },
     "div-f-sec6-m3-b2": {
       "jobId": "div-f-sec6-m3-b2",
@@ -1416,7 +1416,7 @@
         "ev-2fed04d305ff5cd49229"
       ],
       "publishedRevision": "851e03e6b19713e4",
-      "updatedAt": "2026-11-09T03:38:59.258Z"
+      "updatedAt": "2026-11-09T03:40:58.602Z"
     },
     "div-s-sec7-m1:article": {
       "jobId": "div-s-sec7-m1:article",
@@ -1438,7 +1438,7 @@
         "ev-22ccb25a673fb66627f2"
       ],
       "publishedRevision": "2ad014efcfb15d1a",
-      "updatedAt": "2026-11-09T03:38:59.195Z"
+      "updatedAt": "2026-11-09T03:40:58.552Z"
     },
     "div-s-sec7-m1-b0": {
       "jobId": "div-s-sec7-m1-b0",
@@ -1457,7 +1457,7 @@
         "ev-404387fa51f8b3d5fb93"
       ],
       "publishedRevision": "8174a797dc9ce19b",
-      "updatedAt": "2026-11-09T03:38:59.196Z"
+      "updatedAt": "2026-11-09T03:40:58.553Z"
     },
     "div-s-sec7-m1-b1": {
       "jobId": "div-s-sec7-m1-b1",
@@ -1477,7 +1477,7 @@
         "ev-2a3839351b322bc0d122"
       ],
       "publishedRevision": "bde272d0233f471d",
-      "updatedAt": "2026-11-09T03:38:59.196Z"
+      "updatedAt": "2026-11-09T03:40:58.553Z"
     },
     "div-s-sec7-m1-b2": {
       "jobId": "div-s-sec7-m1-b2",
@@ -1490,9 +1490,9 @@
       "inputHash": "5a55666f50584adee6629630d7f599df53600ae253595d3f24e43259e1b2cbdb",
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
-      "nextAttemptAt": "2026-11-09T03:53:59.196Z",
+      "nextAttemptAt": "2026-11-09T03:55:58.553Z",
       "evidenceIds": [],
-      "updatedAt": "2026-11-09T03:38:59.196Z"
+      "updatedAt": "2026-11-09T03:40:58.553Z"
     },
     "div-s-sec7-m2:article": {
       "jobId": "div-s-sec7-m2:article",
@@ -1513,7 +1513,7 @@
         "ev-a3970601addd5947beb9"
       ],
       "publishedRevision": "3e2addaf73866968",
-      "updatedAt": "2026-11-09T03:38:59.223Z"
+      "updatedAt": "2026-11-09T03:40:58.559Z"
     },
     "div-s-sec7-m2-b0": {
       "jobId": "div-s-sec7-m2-b0",
@@ -1532,7 +1532,7 @@
         "ev-9b06fcda8272341c5955"
       ],
       "publishedRevision": "50bb2a01be481a1c",
-      "updatedAt": "2026-11-09T03:38:59.223Z"
+      "updatedAt": "2026-11-09T03:40:58.559Z"
     },
     "div-s-sec7-m2-b1": {
       "jobId": "div-s-sec7-m2-b1",
@@ -1551,7 +1551,7 @@
         "ev-d36ea6a5751702031fc4"
       ],
       "publishedRevision": "ecfb6ba2914b7d1c",
-      "updatedAt": "2026-11-09T03:38:59.223Z"
+      "updatedAt": "2026-11-09T03:40:58.559Z"
     },
     "div-s-sec7-m2-b2": {
       "jobId": "div-s-sec7-m2-b2",
@@ -1570,7 +1570,7 @@
         "ev-2e4956aa793bf799eaad"
       ],
       "publishedRevision": "bf51c3b6dbf95bb4",
-      "updatedAt": "2026-11-09T03:38:59.223Z"
+      "updatedAt": "2026-11-09T03:40:58.560Z"
     },
     "div-s-sec7-m3:article": {
       "jobId": "div-s-sec7-m3:article",
@@ -1582,9 +1582,9 @@
       "inputHash": "17e18288f4f86c0ee7e98ceb2e1e4d016c65e60b2223fb51dddfd98aa0e54099",
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
-      "nextAttemptAt": "2026-11-09T03:53:59.242Z",
+      "nextAttemptAt": "2026-11-09T03:55:58.562Z",
       "evidenceIds": [],
-      "updatedAt": "2026-11-09T03:38:59.242Z"
+      "updatedAt": "2026-11-09T03:40:58.562Z"
     },
     "div-s-sec7-m3-b0": {
       "jobId": "div-s-sec7-m3-b0",
@@ -1597,9 +1597,9 @@
       "inputHash": "25d2efbefcb1252498d893f5a809d3b1d44d6d62bb76ed157954f7947c8cc67c",
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
-      "nextAttemptAt": "2026-11-09T03:53:59.242Z",
+      "nextAttemptAt": "2026-11-09T03:55:58.562Z",
       "evidenceIds": [],
-      "updatedAt": "2026-11-09T03:38:59.242Z"
+      "updatedAt": "2026-11-09T03:40:58.562Z"
     },
     "div-s-sec7-m3-b1": {
       "jobId": "div-s-sec7-m3-b1",
@@ -1612,9 +1612,9 @@
       "inputHash": "1018d1b38a661567338176cbb93ae4d85b7d377be898266e16de6a866c8f752d",
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
-      "nextAttemptAt": "2026-11-09T03:53:59.243Z",
+      "nextAttemptAt": "2026-11-09T03:55:58.562Z",
       "evidenceIds": [],
-      "updatedAt": "2026-11-09T03:38:59.243Z"
+      "updatedAt": "2026-11-09T03:40:58.562Z"
     },
     "div-s-sec7-m3-b2": {
       "jobId": "div-s-sec7-m3-b2",
@@ -1627,9 +1627,9 @@
       "inputHash": "d336b6022c5d936a02a7f6614c6beb0dcec1144172640008a75f963b15244c54",
       "pipelineVersion": "recap-pipeline-v3",
       "attempts": 0,
-      "nextAttemptAt": "2026-11-09T03:53:59.243Z",
+      "nextAttemptAt": "2026-11-09T03:55:58.562Z",
       "evidenceIds": [],
-      "updatedAt": "2026-11-09T03:38:59.243Z"
+      "updatedAt": "2026-11-09T03:40:58.562Z"
     }
   }
 }
