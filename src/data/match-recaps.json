@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T02:56:51.986Z",
+  "updatedAt": "2026-11-09T03:09:42.051Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 7,
@@ -868,7 +868,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "unavailable"
+            "videoStatus": "pending"
           },
           {
             "status": 1,
@@ -924,7 +924,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "unavailable"
+            "videoStatus": "pending"
           },
           {
             "status": 2,
@@ -1014,7 +1014,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "unavailable"
+            "videoStatus": "pending"
           },
           {
             "status": 3,
@@ -1091,10 +1091,10 @@
               }
             ],
             "tags": [],
-            "videoStatus": "unavailable"
+            "videoStatus": "pending"
           }
         ],
-        "narrationStatus": "unavailable"
+        "narrationStatus": "pending"
       },
       {
         "matchId": "div-f-sec6-m2",
@@ -1454,7 +1454,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "unavailable"
+            "videoStatus": "pending"
           },
           {
             "status": 1,
@@ -1524,7 +1524,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "unavailable"
+            "videoStatus": "pending"
           },
           {
             "status": 2,
@@ -1611,10 +1611,10 @@
               }
             ],
             "tags": [],
-            "videoStatus": "unavailable"
+            "videoStatus": "pending"
           }
         ],
-        "narrationStatus": "unavailable"
+        "narrationStatus": "pending"
       }
     ]
   },
