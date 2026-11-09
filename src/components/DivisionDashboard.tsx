@@ -155,6 +155,9 @@ export default function DivisionDashboard({
                 const sc = scenariosData.teams[team.key];
                 const poProb = sc?.probabilities.playoffTop3 ?? 0;
                 const firstProb = sc?.probabilities.firstPlace ?? 0;
+                // 厳密判定があれば「不可能」「確定」「0.1%未満（可能性あり）」などをそのまま出す
+                const poTarget = sc?.feasibility?.targets.playoff;
+                const firstTarget = sc?.feasibility?.targets.first;
 
                 return (
                   <React.Fragment key={team.key}>
@@ -248,8 +251,11 @@ export default function DivisionDashboard({
                         </span>
                       </td>
                       <td>
-                        <div style={{ fontWeight: 800, color: poProb >= 50 ? "var(--success)" : "var(--text-main)" }}>
-                          {poProb.toFixed(1)}%
+                        <div
+                          title={poTarget?.reason}
+                          style={{ fontWeight: 800, color: poTarget?.status === "impossible" ? "var(--danger)" : poProb >= 50 || poTarget?.status === "clinched" ? "var(--success)" : "var(--text-main)" }}
+                        >
+                          {poTarget?.label ?? `${poProb.toFixed(1)}%`}
                         </div>
                         <div className="prob-bar-wrap">
                           <div
@@ -266,8 +272,11 @@ export default function DivisionDashboard({
                           />
                         </div>
                       </td>
-                      <td style={{ fontWeight: 700, color: firstProb >= 25 ? "var(--warning)" : "var(--text-muted)" }}>
-                        {firstProb.toFixed(1)}%
+                      <td
+                        title={firstTarget?.reason}
+                        style={{ fontWeight: 700, color: firstTarget?.status === "impossible" ? "var(--danger)" : firstProb >= 25 ? "var(--warning)" : "var(--text-muted)" }}
+                      >
+                        {firstTarget?.label ?? `${firstProb.toFixed(1)}%`}
                       </td>
                       <td>
                         <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", alignItems: "flex-start" }}>

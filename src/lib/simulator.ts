@@ -1229,7 +1229,11 @@ export function analyzeDivisionScenarios(
         ? `現在首位のアドバンテージを維持して1位通過を果たせば、プレイオフFINALへシード直行（HOME権確定）となります。`
         : st.rank <= 3
           ? `現在プレイオフ圏内（${st.rank}位）。2位確保なら準決勝で奇数巡目HOME権を獲得、1位逆転ならFINALシード直行が見えてきます。`
-          : `3位ボーダー（現在${thirdTeam.shortName}・${thirdTeam.point}pt）まで${diffFromThird}pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。`;
+          : feasibility?.targets.playoff.status === "impossible"
+            ? `3位ボーダー（現在${thirdTeam.shortName}・${thirdTeam.point}pt）まで${diffFromThird}pt差。${feasibility.targets.playoff.reason ?? "プレイオフ進出は数学的に消滅しています。"}`
+            : feasibility?.targets.playoff.status === "tiny" || feasibility?.targets.playoff.status === "tiebreak" || top3Prob < 2
+              ? `3位ボーダー（現在${thirdTeam.shortName}・${thirdTeam.point}pt）まで${diffFromThird}pt差。数字の上では届く組み合わせが残っていますが、残り全勝に加えて上位チームの大敗が重なる必要があります。`
+              : `3位ボーダー（現在${thirdTeam.shortName}・${thirdTeam.point}pt）まで${diffFromThird}pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。`;
 
     const personalizedOutlook = buildPersonalizedOutlook({
       st,

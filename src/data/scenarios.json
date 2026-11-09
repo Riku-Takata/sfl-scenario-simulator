@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T04:44:55.081Z",
+  "updatedAt": "2026-11-09T04:53:02.472Z",
   "simulationRuns": 10000,
   "generatorMode": "deterministic-engine",
   "predictorEnabled": true,
@@ -4714,7 +4714,7 @@
         "divisionThirdBorderAvg": 233.7
       },
       "statusSummary": "広島 TEAM iXAは現在Division S 6位（70pt / バトル得失-16 / ラウンド得失-20）。残り3試合（HOME 2戦・AWAY 1戦）を残し、プレイオフ進出は0.1%未満（可能性あり）、1位突破は不可能です。",
-      "playoffOutlook": "3位ボーダー（現在SOL・180pt）まで110pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。",
+      "playoffOutlook": "3位ボーダー（現在SOL・180pt）まで110pt差。数字の上では届く組み合わせが残っていますが、残り全勝に加えて上位チームの大敗が重なる必要があります。",
       "personalizedOutlook": {
         "realisticTargetRank": 3,
         "realisticTargetTitle": "奇跡の3位滑り込み（極めて厳しい崖っぷちからの逆転）",
@@ -11393,7 +11393,7 @@
         "divisionThirdBorderAvg": 230.7
       },
       "statusSummary": "名古屋NTPOJAは現在Division F 6位（60pt / バトル得失-14 / ラウンド得失-23）。残り4試合（HOME 2戦・AWAY 2戦）を残し、プレイオフ進出は0.1%、1位突破は0.1%未満（可能性あり）です。",
-      "playoffOutlook": "3位ボーダー（現在RC・140pt）まで80pt差。直接対決での30pt〜40pt勝利とバトル得失差の改善で十分に逆転可能な射程圏内です。",
+      "playoffOutlook": "3位ボーダー（現在RC・140pt）まで80pt差。数字の上では届く組み合わせが残っていますが、残り全勝に加えて上位チームの大敗が重なる必要があります。",
       "personalizedOutlook": {
         "realisticTargetRank": 3,
         "realisticTargetTitle": "奇跡の3位滑り込み（極めて厳しい崖っぷちからの逆転）",

@@ -44,6 +44,10 @@ const routeList = [
   analysis.routes.route3Third,
 ];
 const pOutlook = analysis.personalizedOutlook;
+// 厳密判定 (scenarios.json の feasibility) があれば、確率の代わりに「不可能」「確定」などを出す
+const targets = analysis.feasibility?.targets;
+const probText = (kind: "first" | "top2" | "playoff", prob: number) => targets?.[kind].label ?? `${prob.toFixed(1)}%`;
+const rankTargetKind = { 1: "first", 2: "top2", 3: "playoff" } as const;
 const primaryTargetRank = pOutlook?.realisticTargetRank ?? 3;
 const targetRouteForSchedule =
   primaryTargetRank === 1
@@ -119,9 +123,10 @@ const targetRouteForSchedule =
 
       <div class="stat-card" style="background: var(--bg-subtle);">
         <div class="stat-label">プレイオフ進出率 (3位以内)</div>
-        <div class="stat-value" style="color: var(--success);">
-          {analysis.probabilities.playoffTop3.toFixed(1)}%
+        <div class="stat-value" style={`color: ${targets?.playoff.status === "impossible" ? "var(--danger)" : "var(--success)"};`}>
+          {probText("playoff", analysis.probabilities.playoffTop3)}
         </div>
+        {targets?.playoff.reason && <div class="stat-sub">{targets.playoff.reason}</div>}
         <div class="stat-sub">
           最大到達可能ポイント: {analysis.maxPossiblePoints}pt
         </div>
@@ -130,10 +135,10 @@ const targetRouteForSchedule =
       <div class="stat-card" style="background: var(--bg-subtle);">
         <div class="stat-label">2位以内確保率 (準決勝HOME権)</div>
         <div class="stat-value">
-          {analysis.probabilities.top2HomeAdvantage.toFixed(1)}%
+          {probText("top2", analysis.probabilities.top2HomeAdvantage)}
         </div>
         <div class="stat-sub">
-          1位突破率: <strong>{analysis.probabilities.firstPlace.toFixed(1)}%</strong>
+          1位突破率: <strong>{probText("first", analysis.probabilities.firstPlace)}</strong>
         </div>
       </div>
 
@@ -172,7 +177,7 @@ const targetRouteForSchedule =
         <div style="text-align: right;">
           <div style="font-size: 0.8rem; color: var(--text-muted);">現在のプレイオフ進出確率</div>
           <div style={`font-size: 1.6rem; font-weight: 900; color: ${analysis.probabilities.playoffTop3 >= 50 ? 'var(--success)' : analysis.probabilities.playoffTop3 >= 20 ? 'var(--warning)' : 'var(--danger)'};`}>
-            {analysis.probabilities.playoffTop3.toFixed(1)}%
+            {probText("playoff", analysis.probabilities.playoffTop3)}
           </div>
         </div>
       </div>
@@ -262,7 +267,7 @@ const targetRouteForSchedule =
                 <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
                   <span style="font-size: 0.78rem; color: var(--text-muted);">目安: <strong>{data.targetPoints}pt</strong></span>
                   <span style={`font-size: 0.95rem; font-weight: 800; color: ${data.probability >= 50 ? 'var(--success)' : data.probability >= 20 ? 'var(--text-main)' : 'var(--danger)'};`}>
-                    確率 {data.probability.toFixed(1)}%
+                    {targets ? probText(rankTargetKind[rank as 1 | 2 | 3], data.probability) : `確率 ${data.probability.toFixed(1)}%`}
                   </span>
                 </div>
                 <div style="font-size: 0.76rem; color: var(--text-sub); line-height: 1.4;">
