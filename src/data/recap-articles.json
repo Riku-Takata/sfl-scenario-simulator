@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-09T03:30:26.147Z",
+  "updatedAt": "2026-11-09T03:32:21.160Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -4143,6 +4143,247 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-09T03:30:26.101Z"
+    },
+    "div-f-sec6-m1-b0:50b7be1c492d7f35:published": {
+      "articleId": "div-f-sec6-m1-b0:50b7be1c492d7f35:published",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b0",
+      "revision": "50b7be1c492d7f35",
+      "status": "passed",
+      "summary": "ウメハラが水派との先鋒戦を2-1で制し、REJECTが先制した。第2ゲームを取り返され、第3ゲームではパーフェクトKOも許したが、勝利をつかんだ。",
+      "summaryEvidenceIds": [
+        "ev-714a438e0100abef363f",
+        "ev-07d1a8b113488d72106b"
+      ],
+      "keyPoints": [
+        {
+          "text": "第3ゲーム第1ラウンドは、水派のキャミィが豪鬼を画面端へ追い込み、最後はパニッシュカウンターの投げでパーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-07d1a8b113488d72106b"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドでは、ウメハラがパニッシュカウンターからSA2につなぐコンボで大ダメージを与えた。",
+          "evidenceIds": [
+            "ev-be3814aa3fdc460a2225"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-714a438e0100abef363f",
+        "ev-07d1a8b113488d72106b",
+        "ev-be3814aa3fdc460a2225"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:32:21.089Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:32:21.089Z"
+    },
+    "div-f-sec6-m1-b1:e3a54c876cc45fbe:published": {
+      "articleId": "div-f-sec6-m1-b1:e3a54c876cc45fbe:published",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b1",
+      "revision": "e3a54c876cc45fbe",
+      "status": "passed",
+      "summary": "ふ～どがマゴを2-0で下し、REJECTが先鋒戦に続いて勝利した。第2ゲームの締めでは、マゴのSA3を受けた後に自身もSA3で反撃し、KOまでつないだ。",
+      "summaryEvidenceIds": [
+        "ev-6598c2426ae1ad5104a1",
+        "ev-4ba9982dc7a5efce8d72"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第1ラウンド終盤、ふ～どはマゴをバーンアウトに追い込み、画面端で攻めを継続した。",
+          "evidenceIds": [
+            "ev-462763245306716c896b"
+          ]
+        },
+        {
+          "text": "第2ゲーム第2ラウンドは、マゴのSA3でダウンしたふ～どが起き上がりにSA3を返してパニッシュカウンターを取り、最後はドライブラッシュからのコンボでKOした。",
+          "evidenceIds": [
+            "ev-4ba9982dc7a5efce8d72"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-6598c2426ae1ad5104a1",
+        "ev-4ba9982dc7a5efce8d72",
+        "ev-462763245306716c896b"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:32:21.090Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:32:21.090Z"
+    },
+    "div-f-sec6-m1-b2:00cfb697134b3e15:published": {
+      "articleId": "div-f-sec6-m1-b2:00cfb697134b3e15:published",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b2",
+      "revision": "00cfb697134b3e15",
+      "status": "passed",
+      "summary": "わびいちがひなおとの大将戦を3-1で制し、VARRELが延長戦へつないだ。ひなおに第1ゲームを先取されたものの、第2ゲームから3ゲームを連取して逆転した。",
+      "summaryEvidenceIds": [
+        "ev-e5c3a3de84112fdb7281"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームの最終ラウンド、わびいちはパニッシュカウンターでSA3を当てて大ダメージを奪い、このゲームを取って1-1に戻した。",
+          "evidenceIds": [
+            "ev-d15f74ed391f5204c638"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドでは、ひなおがパニッシュカウンターからCAを決め、画面端のドライブインパクトでスタンを奪ってコンボにつないだ。",
+          "evidenceIds": [
+            "ev-366322c00ffe49ef0478"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-e5c3a3de84112fdb7281",
+        "ev-d15f74ed391f5204c638",
+        "ev-366322c00ffe49ef0478"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:32:21.090Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:32:21.090Z"
+    },
+    "div-f-sec6-m1-b3:596b878429c3496b:published": {
+      "articleId": "div-f-sec6-m1-b3:596b878429c3496b:published",
+      "matchId": "div-f-sec6-m1",
+      "boutId": "div-f-sec6-m1-b3",
+      "revision": "596b878429c3496b",
+      "status": "passed",
+      "summary": "YASがときどに第1ゲームを先取されながら2-1で逆転勝利し、延長戦を決着させた。最終ゲームはSA3でパーフェクトKOを奪い、REJECTの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-a6a52b3c98d0e473f6ca",
+        "ev-4660ba2f1e952e559617"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームの最終ラウンドは、ときどのJPがパニッシュカウンターからコンボを決め、CAを当ててKOを奪った。",
+          "evidenceIds": [
+            "ev-8c0f75ca778e658a1df7"
+          ]
+        },
+        {
+          "text": "第2ゲームの最終ラウンド、YASはパニッシュカウンターからSA3を組み込み、さらにJPをスタンさせてコンボで倒し、ゲームカウントを1-1に戻した。",
+          "evidenceIds": [
+            "ev-f0013256a59a01cec30c"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドは、YASのリュウがパニッシュカウンターからドライブラッシュを交えた連続攻撃を仕掛け、SA3でパーフェクトKOを決めた。",
+          "evidenceIds": [
+            "ev-4660ba2f1e952e559617"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-a6a52b3c98d0e473f6ca",
+        "ev-4660ba2f1e952e559617",
+        "ev-8c0f75ca778e658a1df7",
+        "ev-f0013256a59a01cec30c"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:32:21.091Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:32:21.091Z"
+    },
+    "div-f-sec6-m1:1d74b3d7bea3684d:published": {
+      "articleId": "div-f-sec6-m1:1d74b3d7bea3684d:published",
+      "matchId": "div-f-sec6-m1",
+      "revision": "1d74b3d7bea3684d",
+      "status": "passed",
+      "headline": "REJECTが延長戦を制し30-20で勝利",
+      "summary": "REJECTは先鋒のウメハラが水派を2-1で下し、中堅のふ～どもマゴに2-0で勝利。連勝で先行したが、大将戦では第1ゲームを取ったひなおに対し、わびいちが3ゲームを連取して勝負を延長戦へ持ち込んだ。延長戦はときどが先取するも、YASが第2ゲームの最終ラウンドでSA3を絡めた反撃とスタンからのコンボを決めて追いつく。最後は第3ゲーム第2ラウンドをSA3によるパーフェクトKOで締め、REJECTが30-20で勝利した。",
+      "summaryEvidenceIds": [
+        "ev-714a438e0100abef363f",
+        "ev-6598c2426ae1ad5104a1",
+        "ev-e5c3a3de84112fdb7281",
+        "ev-a6a52b3c98d0e473f6ca",
+        "ev-f0013256a59a01cec30c",
+        "ev-4660ba2f1e952e559617"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-714a438e0100abef363f",
+        "ev-6598c2426ae1ad5104a1",
+        "ev-e5c3a3de84112fdb7281",
+        "ev-a6a52b3c98d0e473f6ca",
+        "ev-f0013256a59a01cec30c",
+        "ev-4660ba2f1e952e559617"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-09T03:32:21.091Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-09T03:32:21.091Z"
     }
   }
 }
