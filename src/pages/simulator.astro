@@ -4,6 +4,7 @@ import InteractiveSimulator from "@/components/InteractiveSimulator";
 import rawMatches from "@/data/matches.json";
 import rawStandings from "@/data/standings.json";
 import rawScenarios from "@/data/scenarios.json";
+import evalReport from "../../docs/model-eval-report.md?raw";
 import {
   MatchesDataSchema,
   ScenariosDataSchema,
@@ -13,6 +14,19 @@ import {
 const matchesData = MatchesDataSchema.parse(rawMatches);
 const standingsData = StandingsDataSchema.parse(rawStandings);
 const scenariosData = ScenariosDataSchema.parse(rawScenarios);
+
+// 予測モデルの過去の精度を、バックテストのレポートから読む (根拠パネルに出す)。
+// 本番のモデルは実力・相性・HOME だけを使い、節ごとに学習し直すので、その行を使う。
+const reportRow = (pattern: RegExp) => {
+  const line = evalReport.split(/\r?\n/).find((l) => l.startsWith("|") && pattern.test(l));
+  const cells = line?.split("|").map((c) => c.trim()).filter(Boolean);
+  return cells && cells.length >= 5 ? { bouts: Number(cells[2]), logLoss: Number(cells[3]), brier: Number(cells[4]) } : undefined;
+};
+const production = reportRow(/節ごとに学習し直し/) ?? reportRow(/v2 単純版/);
+const baseline = reportRow(/常に50%/);
+const modelEvidence = production && baseline && [production.bouts, production.logLoss, production.brier, baseline.logLoss, baseline.brier].every(Number.isFinite)
+  ? { bouts: production.bouts, logLoss: production.logLoss, brier: production.brier, baselineLogLoss: baseline.logLoss, baselineBrier: baseline.brier }
+  : undefined;
 ---
 
 <BaseLayout title="残り試合 順位シミュレーター | SFL 2026">
@@ -20,6 +34,7 @@ const scenariosData = ScenariosDataSchema.parse(rawScenarios);
     <h1 class="page-title">SFL 2026 残り試合 順位シミュレーター</h1>
     <p class="page-desc">
       未消化の試合にスコア（40-0 / 30-10 / 30-20）をクリックして入力すると、右側の順位表にリアルタイムで反映されます。
+      自動入力は、これまでの結果から学習した予測モデルで最も起こりやすい展開を選びます（根拠は下のパネル）。
     </p>
   </div>
 
@@ -28,5 +43,6 @@ const scenariosData = ScenariosDataSchema.parse(rawScenarios);
     matchesData={matchesData}
     standingsData={standingsData}
     scenariosData={scenariosData}
+    modelEvidence={modelEvidence}
   />
 </BaseLayout>
