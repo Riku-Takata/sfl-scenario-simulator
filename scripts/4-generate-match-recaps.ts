@@ -51,7 +51,7 @@ import { articleEvidenceReady } from "./recap/automation";
 import { persistentVideoBudget } from "./recap/usage";
 import { useModelHealthFile } from "./recap/model-health";
 import { finishWriteRequest, loadWriteRequests, queueWriteRequest, readPreparedNarratives, saveWriteRequests } from "./recap/writer-state";
-import { recordTokenUsage } from "./recap/token-usage";
+import { recordTokenUsage, setTokenUsageSection } from "./recap/token-usage";
 import { applyPublicationMode, evaluateBoutArticle, evaluateMatchArticle } from "./recap/article-quality";
 import {
   currentPassedArticle, currentPassedMatchArticle, latestArticle, latestMatchArticle, evidenceForBout, loadRecapArticles, loadRecapEvidence, loadRecapJobs, recapInputHash,
@@ -430,6 +430,7 @@ export async function generateAndSaveMatchRecaps(
     // 最新節の詳細
     const latestEntry = (options.onlySection && completed.find((entry) => entry.post_name === options.onlySection)) || completed.at(-1)!;
     const slug = latestEntry.post_name;
+    setTokenUsageSection(slug);
     const sec = latestEntry.fields.section;
     const videoId =
       resolveVideoId(slug) || extractYoutubeVideoId(sec.links?.live?.url || "") || null;
