@@ -6,7 +6,7 @@ import path from "node:path";
 import { normalizeMatchNarrative, narrationInputHash, type NarrationMatchInput } from "../scripts/recap/narration";
 import { queueWriteRequest, finishWriteRequest, readPreparedNarratives, type WriteRequests } from "../scripts/recap/writer-state";
 import { codexUsage, writeWithCodex } from "../scripts/recap/codex-writer";
-import { geminiTokenCounts, recordTokenUsage } from "../scripts/recap/token-usage";
+import { geminiTokenCounts, recordFailedRequest, recordTokenUsage, setTokenUsageSection } from "../scripts/recap/token-usage";
 import { applyPublicationMode, evaluateBoutArticle } from "../scripts/recap/article-quality";
 import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
@@ -744,4 +744,29 @@ test("only failures that point at the request itself count against a candidate",
   assert.equal(countsAsVerificationFailure(400), true);
   assert.equal(countsAsVerificationFailure(403), true);
   assert.equal(countsAsVerificationFailure(500), true);
+});
+
+test("token usage is also totalled per section, with failed requests counted by status", () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "sfl-token-section-test-"));
+  const file = path.join(directory, "tokens.json");
+  const previous = process.env.RECAP_TOKEN_USAGE_FILE;
+  process.env.RECAP_TOKEN_USAGE_FILE = file;
+  try {
+    recordTokenUsage({ provider: "gemini", model: "gemini-3.8-flash", purpose: "extract", usage: { inputTokens: 1000, outputTokens: 10 } });
+    recordFailedRequest({ provider: "gemini", model: "gemini-3.8-flash", purpose: "extract", status: 503 });
+    setTokenUsageSection("div-f-sec7");
+    recordTokenUsage({ provider: "gemini", model: "gemini-3.8-flash", purpose: "extract", usage: { inputTokens: 2000, outputTokens: 20 } });
+    recordFailedRequest({ provider: "gemini", model: "gemini-3.8-flash", purpose: "extract", status: 503 });
+    recordFailedRequest({ provider: "gemini", model: "gemini-3.8-flash", purpose: "extract" });
+    const data = JSON.parse(fs.readFileSync(file, "utf8"));
+    assert.equal(data.days[usageDay()]["gemini:extract:gemini-3.8-flash"].tokens.inputTokens, 3000);
+    const section = data.sections["div-f-sec7"]["gemini:extract:gemini-3.8-flash"];
+    assert.equal(section.responses, 1);
+    assert.equal(section.tokens.inputTokens, 2000);
+    assert.deepEqual(section.failures, { "503": 1, network: 1 });
+  } finally {
+    setTokenUsageSection(undefined);
+    if (previous === undefined) delete process.env.RECAP_TOKEN_USAGE_FILE; else process.env.RECAP_TOKEN_USAGE_FILE = previous;
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
 });

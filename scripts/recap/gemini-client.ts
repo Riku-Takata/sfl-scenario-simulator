@@ -9,7 +9,7 @@
  * - 動画の呼び出しの 403 は再試行しても変わらず、失敗も日次上限を消費するので、この実行中はその動画を呼び出さない
  */
 
-import { geminiTokenCounts, recordTokenUsage } from "./token-usage";
+import { geminiTokenCounts, recordFailedRequest, recordTokenUsage } from "./token-usage";
 import { isVideoModelPaused, recordVideoOutcome } from "./model-health";
 
 export { isVideoModelPaused } from "./model-health";
@@ -241,6 +241,7 @@ export async function callGemini(options: {
           onlyOverloaded = false;
           lastFailureStatus = res.status;
         }
+        if (!res.ok) recordFailedRequest({ provider: "gemini", model, purpose: options.purpose ?? (video ? "extract" : "narration"), status: res.status });
         if (res.status === 429) {
           const body = await res.text().catch(() => "");
           const limit = classifyRateLimit(body);
@@ -333,6 +334,7 @@ export async function callGemini(options: {
       } catch (err) {
         console.warn(`[Gemini ${model}] ${(err as Error).message}; trying the next model.`);
         lastFailureStatus = undefined;
+        recordFailedRequest({ provider: "gemini", model, purpose: options.purpose ?? (video ? "extract" : "narration") });
         if (video) recordVideoOutcome(model, { ok: false });
         break;
       }
