@@ -23,6 +23,9 @@ import {
   Sf6TournamentMatchupsDataSchema,
   ScenarioRouteDetailSchema,
   TargetFeasibilitySchema,
+  TargetStatusSchema,
+  RankBoundsSchema,
+  MatchOutcomePredictionSchema,
   RankFeasibilityEvaluationSchema,
   PersonalizedOutlookSchema,
   ScenariosDataSchema,
@@ -110,6 +113,9 @@ export type RemainingMatchPrediction = z.infer<typeof RemainingMatchPredictionSc
 export type TargetMatchPlan = z.infer<typeof TargetMatchPlanSchema>;
 export type CheeringMatchGuide = z.infer<typeof CheeringMatchGuideSchema>;
 export type TargetFeasibility = z.infer<typeof TargetFeasibilitySchema>;
+export type TargetStatusValue = z.infer<typeof TargetStatusSchema>;
+export type RankBoundsSummary = z.infer<typeof RankBoundsSchema>;
+export type MatchOutcomePrediction = z.infer<typeof MatchOutcomePredictionSchema>;
 export type RankFeasibilityEvaluation = z.infer<typeof RankFeasibilityEvaluationSchema>;
 export type PersonalizedOutlook = z.infer<typeof PersonalizedOutlookSchema>;
 export type ScenarioRouteDetail = z.infer<typeof ScenarioRouteDetailSchema>;

@@ -18,6 +18,15 @@ import {
   predictTeamMatchOutcomeWeights,
 } from "./predictor";
 import type { ProductionModel } from "./model/production";
+import {
+  computeRankBounds,
+  explainTarget,
+  formatTargetProbability,
+  targetStatus,
+  type TargetStatus,
+  type TeamRankBounds,
+} from "./feasibility";
+import type { MatchOutcomePrediction, PersonalizedOutlook, RankBoundsSummary, TargetFeasibility } from "./types";
 import { sampleRatingWorlds } from "./model/uncertainty";
 import rawModelV2 from "../data/model-v2.json";
 
@@ -453,6 +462,8 @@ function pickWeightedOutcome(
 }
 
 export interface DivisionSimulationSummary {
+  /** 未消化の試合ごとのスコア確率 (予測モデルがあるときだけ) */
+  matchPredictions: Record<string, MatchOutcomePrediction>;
   firstAvgPoints: number;
   secondAvgPoints: number;
   thirdAvgPoints: number;
@@ -465,12 +476,48 @@ export interface DivisionSimulationSummary {
  * CPT Top 96相性マトリクス & 48選手統計データが渡された場合は、試合ごとの選手・キャラ相性予測確率を適用する
  */
 
-function evaluateRankFeasibility(prob: number): { feasibility: TargetFeasibility; label: string } {
+/**
+ * 確率と厳密判定の状態から、目標順位の見通しを決める。
+ * 「不可能」は厳密判定で不可能なときだけ。確率が低くても可能なら「奇跡的・要他力」とする。
+ */
+function evaluateRankFeasibility(prob: number, status?: TargetStatus): { feasibility: TargetFeasibility; label: string } {
+  if (status === "impossible") return { feasibility: "impossible", label: "不可能（数学的に消滅）" };
+  if (status === "clinched") return { feasibility: "favorite", label: "確定" };
+  if (status === "tiebreak") return { feasibility: "miracle", label: "得失差次第で可能" };
+  if (status === "tiny") return { feasibility: "miracle", label: "奇跡的・要他力（0.1%未満）" };
   if (prob >= 60) return { feasibility: "favorite", label: "本命ターゲット" };
   if (prob >= 35) return { feasibility: "realistic", label: "現実的な射程" };
   if (prob >= 10) return { feasibility: "challenging", label: "厳しい挑戦" };
-  if (prob >= 0.3) return { feasibility: "miracle", label: "奇跡的・要他力" };
+  if (prob >= 0.3 || status) return { feasibility: "miracle", label: "奇跡的・要他力" };
+  // 厳密判定が無い (古い呼び出し) ときだけ、確率から推定する
   return { feasibility: "impossible", label: "絶望的（ほぼ不可能）" };
+}
+
+/** 1位・2位以内・プレイオフ (3位以内) それぞれの状態、表示文字列、理由。 */
+export function summarizeRankBounds(
+  bounds: TeamRankBounds,
+  probabilities: { first: number; top2: number; playoff: number }
+): RankBoundsSummary {
+  const detail = (rank: number, prob: number, label: string) => {
+    const status = targetStatus(bounds, rank, prob);
+    const reason = status === "impossible" || status === "tiebreak" ? explainTarget(bounds, rank, label)
+      : status === "clinched" ? `残り試合の結果がどうなっても${label}以上が決まっている。` : undefined;
+    return { status, label: formatTargetProbability(status, prob), ...(reason ? { reason } : {}) };
+  };
+  return {
+    bestRank: bounds.bestRank,
+    bestRankNeedsTiebreak: bounds.bestRankNeedsTiebreak,
+    bestRankWithoutTiebreak: bounds.bestRankWithoutTiebreak,
+    worstRank: bounds.worstRank,
+    worstRankNeedsTiebreak: bounds.worstRankNeedsTiebreak,
+    maxPoints: bounds.maxPoints,
+    exhaustive: bounds.exhaustive,
+    targets: {
+      first: detail(1, probabilities.first, "1位"),
+      top2: detail(2, probabilities.top2, "2位"),
+      playoff: detail(3, probabilities.playoff, "プレイオフ（3位以内）"),
+    },
+  };
 }
 
 export function buildPersonalizedOutlook(params: {
@@ -488,6 +535,8 @@ export function buildPersonalizedOutlook(params: {
   plan1?: { schedule: TargetMatchPlan[]; reqWins: number; reqLosses: number };
   plan2?: { schedule: TargetMatchPlan[]; reqWins: number; reqLosses: number };
   plan3?: { schedule: TargetMatchPlan[]; reqWins: number; reqLosses: number };
+  /** 厳密判定。渡されたときは「不可能」「確定」をこれで決める */
+  bounds?: TeamRankBounds;
 }): PersonalizedOutlook {
   const {
     st,
@@ -504,14 +553,18 @@ export function buildPersonalizedOutlook(params: {
     plan1,
     plan2,
     plan3,
+    bounds,
   } = params;
 
   const diffFromFirst = leader.point - st.point;
   const diffFromThird = thirdTeam.point - st.point;
 
-  const firstEval = evaluateRankFeasibility(firstPlaceProb);
-  const secondEval = evaluateRankFeasibility(top2Prob);
-  const thirdEval = evaluateRankFeasibility(top3Prob);
+  const firstStatus = bounds ? targetStatus(bounds, 1, firstPlaceProb) : undefined;
+  const secondStatus = bounds ? targetStatus(bounds, 2, top2Prob) : undefined;
+  const thirdStatus = bounds ? targetStatus(bounds, 3, top3Prob) : undefined;
+  const firstEval = evaluateRankFeasibility(firstPlaceProb, firstStatus);
+  const secondEval = evaluateRankFeasibility(top2Prob, secondStatus);
+  const thirdEval = evaluateRankFeasibility(top3Prob, thirdStatus);
 
   let realisticTargetRank: 1 | 2 | 3 | "eliminated" = 3;
   let feasibilityLevel: TargetFeasibility = "challenging";
@@ -520,7 +573,14 @@ export function buildPersonalizedOutlook(params: {
   let coreNarrative = "";
   let primaryConditionSummary = "";
 
-  if (st.rank === 1 || firstPlaceProb >= 40) {
+  if (thirdStatus === "impossible" && bounds) {
+    realisticTargetRank = "eliminated";
+    feasibilityLevel = "impossible";
+    realisticTargetTitle = "プレイオフ進出の可能性は消滅";
+    feasibilityBadgeText = "プレイオフ進出: 消滅";
+    coreNarrative = `${explainTarget(bounds, 3, "プレイオフ（3位以内）")}残り${remCount}試合は、最終順位（最高${bounds.bestRank}位）と得失差の上積み、そして来季につながる内容が焦点になります。`;
+    primaryConditionSummary = `プレイオフ進出は数学的に消滅。最終順位は最高${bounds.bestRank}位`;
+  } else if (st.rank === 1 || firstPlaceProb >= 40) {
     realisticTargetRank = 1;
     feasibilityLevel = firstPlaceProb >= 50 ? "favorite" : "realistic";
     realisticTargetTitle = "首位防衛＆1位突破（FINALシード直行）が本命ターゲット";
@@ -550,33 +610,41 @@ export function buildPersonalizedOutlook(params: {
     feasibilityLevel = top3Prob >= 2 ? "challenging" : "miracle";
     realisticTargetTitle = "奇跡の3位滑り込み（極めて厳しい崖っぷちからの逆転）";
     feasibilityBadgeText = top3Prob >= 2 ? "要・大逆転: 3位滑り込み" : "奇跡の崖っぷち: 3位滑り込み";
-    coreNarrative = `プレイオフ進出確率${top3Prob}%と、極めて厳しい崖っぷちに立たされています。1位・2位突破は絶望的であり、残された道は「奇跡の3位滑り込み」のみです。自力での突破は不可能に近く、残り試合全勝（特に40-0の完勝）で駆け抜けつつ、3位〜5位の上位ライバルが総崩れ・大敗を重ねる他力本願が絶対条件となります。`;
+    const topTwoText = firstStatus === "impossible" && secondStatus === "impossible"
+      ? "1位・2位は数学的に届かず"
+      : firstStatus === "impossible"
+        ? "1位は数学的に届かず、2位も極めて厳しく"
+        : "1位・2位突破は極めて厳しく";
+    coreNarrative = `プレイオフ進出確率${formatTargetProbability(thirdStatus ?? "possible", top3Prob)}と、極めて厳しい崖っぷちに立たされています。${topTwoText}、残された道は「奇跡の3位滑り込み」のみです。自力での突破は不可能に近く、残り試合全勝（特に40-0の完勝）で駆け抜けつつ、3位〜5位の上位ライバルが総崩れ・大敗を重ねる他力本願が絶対条件となります。`;
     primaryConditionSummary = `残り全勝（40-0推奨）＋上位ライバルの連続大敗・共倒れが絶対条件`;
   }
 
-  const firstNote = st.rank === 1 || firstPlaceProb >= 40
+  const statusNote = (status: TargetStatus | undefined, rank: number, label: string) =>
+    bounds && (status === "impossible" || status === "tiebreak") ? explainTarget(bounds, rank, label)
+      : status === "clinched" ? `残り試合の結果がどうなっても${label}以上が決まっている` : undefined;
+  const firstNote = statusNote(firstStatus, 1, "1位") ?? (st.rank === 1 || firstPlaceProb >= 40
     ? "現在首位のアドバンテージを活かし、自力でFINAL直行を決める本命ルート"
     : firstPlaceProb >= 20
       ? `首位${leader.shortName}との直接対決を制せば十分逆転可能な射程圏内`
       : firstPlaceProb >= 5
         ? "上位が連敗し自チームが全勝ペースで初めて届く厳しい挑戦"
-        : "点数差および他チームの勝点推移から、現実的な到達はほぼ不可能";
+        : "点数差および他チームの勝点推移から、届くのは上位の大崩れが重なった場合だけ");
 
-  const secondNote = top2Prob >= 60
+  const secondNote = statusNote(secondStatus, 2, "2位") ?? (top2Prob >= 60
     ? "準決勝での奇数巡目HOME優先権をがっちり確保できる現実的本命ルート"
     : top2Prob >= 25
       ? "直接対決で30pt奪取できれば一気に浮上可能な現実的ターゲット"
       : top2Prob >= 5
         ? "残り試合での大量得点＋上位の失速が必要な高難度ルート"
-        : "計算上ほぼ絶望的。現実的なターゲット外";
+        : "届くのは上位の失速が重なった場合だけ。現実的なターゲット外");
 
-  const thirdNote = top3Prob >= 85
+  const thirdNote = statusNote(thirdStatus, 3, "プレイオフ（3位以内）") ?? (top3Prob >= 85
     ? "最低防衛ライン。ここを下回る可能性は極めて低い安全圏"
     : top3Prob >= 40
       ? "ボーダー直接対決を制することで自力確保できる最重要ライン"
       : top3Prob >= 15
         ? "3位チームとの直接対決で30-40ptを奪い得失差で競り勝つ逆転ルート"
-        : "残り全勝が必須かつライバル総崩れを祈る奇跡のデッドライン";
+        : "残り全勝が必須かつライバル総崩れを祈る奇跡のデッドライン");
 
   // Milestones and tactical focus
   const targetPlan = realisticTargetRank === 1 ? plan1 : realisticTargetRank === 2 ? plan2 : plan3;
@@ -687,6 +755,8 @@ export function analyzeDivisionScenarios(
   }
 ): DivisionSimulationSummary {
   const currentStandings = calculateStandings(division, matches);
+  // 到達可能性の厳密判定 (feasibility.ts)。確率が 0% でも可能か、本当に不可能かを区別する
+  const rankBounds = computeRankBounds(division, matches);
   const unplayedMatches = matches
     .filter((m) => m.division === division && !m.played)
     .sort((a, b) =>
@@ -736,6 +806,23 @@ export function analyzeDivisionScenarios(
         );
       }
       worldOutcomeWeights.push(weightsMap);
+    }
+  }
+
+  // モンテカルロと同じ分布 (実力値の不確かさの世界で平均) を、試合ごとのスコア確率として残す
+  const matchPredictions: Record<string, MatchOutcomePrediction> = {};
+  if (worldOutcomeWeights.length) {
+    for (const m of unplayedMatches) {
+      const weights = Object.fromEntries(
+        SCORE_OUTCOMES.map((o) => [o.id, worldOutcomeWeights.reduce((sum, w) => sum + (w[m.id]?.[o.id] ?? 0), 0) / worldOutcomeWeights.length])
+      ) as Record<ScorePatternId, number>;
+      const mostLikely = SCORE_OUTCOMES.reduce((best, o) => (weights[o.id] > weights[best.id] ? o : best), SCORE_OUTCOMES[0]).id;
+      const homeWin = SCORE_OUTCOMES.filter((o) => o.winner === "home").reduce((sum, o) => sum + weights[o.id], 0);
+      matchPredictions[m.id] = {
+        weights: Object.fromEntries(Object.entries(weights).map(([k, v]) => [k, Math.round(v * 10000) / 10000])) as Record<ScorePatternId, number>,
+        homeWinProbability: Math.round(homeWin * 1000) / 10,
+        mostLikely,
+      };
     }
   }
 
@@ -1129,7 +1216,13 @@ export function analyzeDivisionScenarios(
     const diffFromFirst = leader.point - st.point;
     const diffFromThird = thirdTeam.point - st.point;
 
-    const statusSummary = `${st.name}は現在Division ${division.toUpperCase()} ${st.rank}位（${st.point}pt / バトル得失${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff} / ラウンド得失${st.roundDiff >= 0 ? "+" : ""}${st.roundDiff}）。残り${remCount}試合（HOME ${st.remainingHome}戦・AWAY ${st.remainingAway}戦）を残し、プレイオフ進出率は${top3Prob}%、1位突破率は${firstPlaceProb}%です。`;
+    const bounds = rankBounds[key];
+    const feasibility = bounds
+      ? summarizeRankBounds(bounds, { first: firstPlaceProb, top2: top2Prob, playoff: top3Prob })
+      : undefined;
+    const playoffText = feasibility?.targets.playoff.label ?? `${top3Prob}%`;
+    const firstText = feasibility?.targets.first.label ?? `${firstPlaceProb}%`;
+    const statusSummary = `${st.name}は現在Division ${division.toUpperCase()} ${st.rank}位（${st.point}pt / バトル得失${st.battleDiff >= 0 ? "+" : ""}${st.battleDiff} / ラウンド得失${st.roundDiff >= 0 ? "+" : ""}${st.roundDiff}）。残り${remCount}試合（HOME ${st.remainingHome}戦・AWAY ${st.remainingAway}戦）を残し、プレイオフ進出は${playoffText}、1位突破は${firstText}です。`;
 
     const playoffOutlook =
       st.rank === 1
@@ -1153,6 +1246,7 @@ export function analyzeDivisionScenarios(
       plan1,
       plan2,
       plan3,
+      bounds,
     });
 
     teamsResult[key] = {
@@ -1266,10 +1360,12 @@ export function analyzeDivisionScenarios(
       nextSectionCheeringGuide: cheeringGuide,
       nextMatchPrediction,
       remainingMatchPredictions,
+      ...(feasibility ? { feasibility } : {}),
     };
   }
 
   return {
+    matchPredictions,
     firstAvgPoints,
     secondAvgPoints,
     thirdAvgPoints,
