@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T03:47:36.631Z",
+  "updatedAt": "2026-11-10T15:18:25.648Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -1281,6 +1281,163 @@
         },
         {
           "startSec": 13607,
+          "title": "選手音声入り本日のハイライト"
+        }
+      ]
+    },
+    "div-f-sec7": {
+      "videoId": "BDKiKN1KD0s",
+      "chapters": [
+        {
+          "startSec": 0,
+          "title": "配信開始"
+        },
+        {
+          "startSec": 597,
+          "title": "番組開始"
+        },
+        {
+          "startSec": 641,
+          "title": "久保's セミナー"
+        },
+        {
+          "startSec": 1050,
+          "title": "KEY MATCH"
+        },
+        {
+          "startSec": 1370,
+          "title": "eSportsニュース"
+        },
+        {
+          "startSec": 1798,
+          "title": "オープニング"
+        },
+        {
+          "startSec": 2207,
+          "title": "TEAM MATCH 1 選手入場"
+        },
+        {
+          "startSec": 2378,
+          "title": "アウェイ側オーダー発表"
+        },
+        {
+          "startSec": 2420,
+          "title": "先鋒戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 2559,
+          "title": "竹内ジョン 一発ギャグ"
+        },
+        {
+          "startSec": 2664,
+          "title": "TEAM MATCH 1 先鋒戦"
+        },
+        {
+          "startSec": 3023,
+          "title": "中堅戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 3219,
+          "title": "TEAM MATCH 1 中堅戦"
+        },
+        {
+          "startSec": 3759,
+          "title": "大将戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 3926,
+          "title": "TEAM MATCH 1 大将戦"
+        },
+        {
+          "startSec": 5011,
+          "title": "勝利チームインタビュー"
+        },
+        {
+          "startSec": 5549,
+          "title": "番組からのお知らせ"
+        },
+        {
+          "startSec": 6251,
+          "title": "TEAM MATCH 2 選手入場"
+        },
+        {
+          "startSec": 6417,
+          "title": "アウェイ側オーダー発表"
+        },
+        {
+          "startSec": 6460,
+          "title": "先鋒戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 6693,
+          "title": "TEAM MATCH 2 先鋒戦"
+        },
+        {
+          "startSec": 7350,
+          "title": "中堅戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 7551,
+          "title": "TEAM MATCH 2 中堅戦"
+        },
+        {
+          "startSec": 8383,
+          "title": "大将戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 8534,
+          "title": "TEAM MATCH 2 大将戦"
+        },
+        {
+          "startSec": 9225,
+          "title": "勝利チームインタビュー"
+        },
+        {
+          "startSec": 9645,
+          "title": "番組からのお知らせ"
+        },
+        {
+          "startSec": 10305,
+          "title": "TEAM MATCH 3 選手入場"
+        },
+        {
+          "startSec": 10478,
+          "title": "アウェイ側オーダー発表"
+        },
+        {
+          "startSec": 10516,
+          "title": "先鋒戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 10734,
+          "title": "TEAM MATCH 3 先鋒戦"
+        },
+        {
+          "startSec": 11102,
+          "title": "中堅戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 11272,
+          "title": "TEAM MATCH 3 中堅戦"
+        },
+        {
+          "startSec": 11831,
+          "title": "大将戦ホーム側オーダー発表"
+        },
+        {
+          "startSec": 12221,
+          "title": "TEAM MATCH 3 大将戦"
+        },
+        {
+          "startSec": 13148,
+          "title": "勝利チームインタビュー"
+        },
+        {
+          "startSec": 13598,
+          "title": "エンディング"
+        },
+        {
+          "startSec": 14338,
           "title": "選手音声入り本日のハイライト"
         }
       ]
@@ -5980,6 +6137,478 @@
               "evidence": "両方",
               "startSec": 12213,
               "endSec": 12221
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m1-b0": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 2664,
+      "endSec": 3023,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:11:14.514Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第2ラウンド終盤、竹内ジョンはもっちーの波動拳に対してOD点撃（OD抜開）で弾抜けを決めてパニッシュカウンターを取り、そのままCA（月歩穿弧）を叩き込んでKOした。",
+              "evidence": "両方",
+              "startSec": 2769,
+              "endSec": 2803
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド終盤、竹内ジョンは酒レベル3・SA3ゲージを保持した状態で、起き上がりの無敵技を警戒して前ジャンプでかわし、降り際からのコンボをSA3（月歩穿弧）まで繋げてラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 2868,
+              "endSec": 2898
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド終盤、もっちーのドライブラッシュや牽制に対して竹内ジョンが屈強Pでパニッシュカウンターを奪い、最後は下段小技からのコンボを決めてストレート勝利を収めた。",
+              "evidence": "両方",
+              "startSec": 2941,
+              "endSec": 2969
+            },
+            {
+              "topic": "第1ゲーム第1ラウンド中盤、画面端に追い詰められた竹内ジョンがもっちーのOD斬空波動拳による対空ずらしをしゃがみ強K（魔身）で潜り抜け、反撃の起点を作った。",
+              "evidence": "両方",
+              "startSec": 2699,
+              "endSec": 2708
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-10T15:12:02.404Z",
+          "gameWinnersSeen": [
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "竹内ジョンがもっちーの波動拳に対してOD張弓腿での弾抜けを決めてKOし、第1ゲーム第1ラウンドを制する。",
+              "evidence": "両方",
+              "startSec": 2730,
+              "endSec": 2736
+            },
+            {
+              "topic": "酒レベル4に到達した竹内ジョンが、もっちーの波動拳に対してCA（点穴）での弾抜けを完璧に決めてKOし、第1ゲームを獲得する。",
+              "evidence": "両方",
+              "startSec": 2767,
+              "endSec": 2780
+            },
+            {
+              "topic": "第2ゲーム第2ラウンド、竹内ジョンがもっちーの隙に対してパニッシュカウンターからコンボを決め、一気に酒レベル3まで上昇させて優位に立つ。",
+              "evidence": "映像",
+              "startSec": 2893,
+              "endSec": 2900
+            },
+            {
+              "topic": "竹内ジョンが画面端でガードを固めるもっちーの足元を足払いで崩してKOし、2-0のストレートで勝利を決める。",
+              "evidence": "両方",
+              "startSec": 2940,
+              "endSec": 2945
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m1-b1": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 3219,
+      "endSec": 3759,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:12:35.609Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "SeiyaがKEI.Bのラッシュ攻撃をジャストパリィからSA2鳳翼扇へ繋ぎ、残り時間を使い切ってタイムオーバーによる判定勝ちを収めた",
+              "evidence": "両方",
+              "startSec": 3322,
+              "endSec": 3339
+            },
+            {
+              "topic": "SeiyaがKEI.Bの焔ストックを使った空中ODムササビの舞をOD天昇脚で的確に対空迎撃し、そのままコンボを決めてKOし第1ゲームを先取した",
+              "evidence": "両方",
+              "startSec": 3390,
+              "endSec": 3398
+            },
+            {
+              "topic": "SeiyaのCA（鳳扇華）でKEI.Bの体力がわずかにミリ残り、削りを狙ってきたSeiyaに対してKEI.Bがしゃがみ中足での暴れを通して劇的な逆転KOで第2ゲームを取り返した",
+              "evidence": "両方",
+              "startSec": 3523,
+              "endSec": 3541
+            },
+            {
+              "topic": "SeiyaがKEI.Bの小技の隙を突いてパニッシュカウンターから画面端へ運び、最後は中段攻撃を通してパーフェクトK.O.を奪った",
+              "evidence": "両方",
+              "startSec": 3585,
+              "endSec": 3598
+            },
+            {
+              "topic": "SeiyaがKEI.Bの中攻撃の空振りにしゃがみ中Pでの差し返しを成功させ、そのままSA3（鳳扇華）まで繋ぎ切ってKOし勝利を決めた",
+              "evidence": "両方",
+              "startSec": 3642,
+              "endSec": 3660
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m1-b2": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 3926,
+      "endSec": 5011,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:13:26.840Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "板橋ザンギエフが大谷の立ち弱Kドライブラッシュを正確に捉え、リバーサルCA「ボリショイ・ストームブリンガー」をパニッシュカウンターで叩き込んで逆転KOを奪う。",
+              "evidence": "両方",
+              "startSec": 4426,
+              "endSec": 4442
+            },
+            {
+              "topic": "板橋ザンギエフが狙ったリバーサルSA3「ボリショイ・ストームブリンガー」を大谷がバックジャンプで冷静にスカし、着地後の大きな隙にパニッシュカウンターコンボを決めてラウンドを奪取する。",
+              "evidence": "両方",
+              "startSec": 4678,
+              "endSec": 4688
+            },
+            {
+              "topic": "第4ゲーム第1ラウンド、大谷が開幕早々に立ち強Pのパニッシュカウンターから画面端へ追い込み、最後はSA1「バルカンブラスト」を繋いで一切の反撃を許さずパーフェクトKOを達成する。",
+              "evidence": "両方",
+              "startSec": 4830,
+              "endSec": 4858
+            },
+            {
+              "topic": "板橋ザンギエフが起死回生で放ったリバーサルSA2「サイクロンラリアット」に対し、大谷が裏回りで完全に回避して硬直にパニッシュカウンターを叩き込み勝利を掴み取る。",
+              "evidence": "両方",
+              "startSec": 4904,
+              "endSec": 4913
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m2-b0": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 6693,
+      "endSec": 7350,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:14:10.408Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド、ひかるのラッシュ中段からのドライブインパクトに対し、ウメハラがドライブインパクトを返してパニッシュカウンターを奪いKOする。",
+              "evidence": "両方",
+              "startSec": 6753,
+              "endSec": 6760
+            },
+            {
+              "topic": "第1ゲームのファイナルラウンド、バーンアウトしたひかるが反撃のSA2を発動するが、ウメハラの放っていた波動拳が相殺されずにヒットしウメハラが先取する。",
+              "evidence": "両方",
+              "startSec": 6908,
+              "endSec": 6926
+            },
+            {
+              "topic": "第2ゲーム、ひかるが空対空のジャンプ強Kで迎撃して第2ラウンドを取り返すと、最終ラウンドではSA3をパニッシュカウンターで叩き込んで第2ゲームを奪い返す。",
+              "evidence": "両方",
+              "startSec": 7078,
+              "endSec": 7148
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、ウメハラが空中からのジャンプ攻撃を連続で通してペースを握り、起き攻めの投げを重ねた後に打撃で押し切って勝利を決める。",
+              "evidence": "両方",
+              "startSec": 7216,
+              "endSec": 7257
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m2-b1": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 7551,
+      "endSec": 8383,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:15:02.399Z",
+          "gameWinnersSeen": [
+            "A",
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第3ラウンド、YASがCA真・昇龍拳でJr.を瀕死に追い込むも、Jr.がSA3でパニッシュカウンターを取って逆転の契機を作り、最後はYASのOD昇龍拳ガードからのパニッシュカウンターで第1ゲームを先取した。",
+              "evidence": "両方",
+              "startSec": 7728,
+              "endSec": 7771
+            },
+            {
+              "topic": "第2ゲーム第3ラウンド、Jr.が放ったリバーサルSA3に対してYASが垂直ジャンプで回避し、着地からのパニッシュカウンターでKOして試合を1-1のタイに戻した。",
+              "evidence": "両方",
+              "startSec": 8007,
+              "endSec": 8024
+            },
+            {
+              "topic": "第3ゲーム第1ラウンド、Jr.のドライブインパクトに対してYASが完璧なジャストパリィを合わせて反撃し、ラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 8085,
+              "endSec": 8102
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、YASのCA真・昇龍拳で瀕死となったJr.が生CAをヒットさせて体力を巻き返し、最後はスクリューパイルドライバーを決めて逆転で最終ラウンドへ繋いだ。",
+              "evidence": "両方",
+              "startSec": 8142,
+              "endSec": 8195
+            },
+            {
+              "topic": "最終ラウンド、YASが立ち強PからSA1真空波動拳でJr.の体力を削り落とし、最後は接近を試みるJr.に対して立ち強Pでカウンターヒットを奪ってKO勝利を収めた。",
+              "evidence": "両方",
+              "startSec": 8228,
+              "endSec": 8259
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m2-b2": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 8534,
+      "endSec": 9225,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:15:59.035Z",
+          "gameWinnersSeen": [
+            "B",
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "Game 1 第2ラウンド、あでりいを画面端に追い詰めたふ～どが、あでりいのリバーサル無敵技を冷静にガードしてパニッシュカウンターからCAを叩き込み、Game 1を先取する。",
+              "evidence": "両方",
+              "startSec": 8643,
+              "endSec": 8659
+            },
+            {
+              "topic": "Game 2 第1ラウンド、ふ～どがあでりいの牽制に対して差し返しや確反を的確に決め続け、一度も攻撃を受けることなくパーフェクトK.O.を奪う。",
+              "evidence": "両方",
+              "startSec": 8813,
+              "endSec": 8839
+            },
+            {
+              "topic": "Game 2 第2ラウンド、あでりいのラッシュやフリッカーの出鼻にセイスモを合わせ、浮いたところに対空からSA3アンロック・リジェクターを決めてふ～どが2ゲーム連取で王手をかける。",
+              "evidence": "両方",
+              "startSec": 8870,
+              "endSec": 8889
+            },
+            {
+              "topic": "Game 3 最終ラウンド、あでりいがCAをヒットさせてふ～どをバーンアウトに追い込むが、バーンアウトしたふ～どが強気な切り返しを通してあでりいをKOし、3-0ストレートでマッチ勝利を決める。",
+              "evidence": "両方",
+              "startSec": 9098,
+              "endSec": 9119
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m3-b0": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 10734,
+      "endSec": 11102,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:16:44.057Z",
+          "gameWinnersSeen": [
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "さはらがパニッシュカウンターからマゴを画面端へ追い込んでバーンアウトさせ、最後は焦るマゴの牽制技を冷静に立ち強Pで差し返してパーフェクトKOで勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 11003,
+              "endSec": 11024
+            },
+            {
+              "topic": "マゴのドライブリバーサルをさはらがしゃがみ中Pでパニッシュカウンターを取り、そのままCAへ繋いで第2ゲーム第2ラウンドを取り返した。",
+              "evidence": "両方",
+              "startSec": 10977,
+              "endSec": 10991
+            },
+            {
+              "topic": "第1ゲームの最終ラウンドで、さはらが前ジャンプからの攻めで主導権を握り、小技のヒット確認からCA（ペイルライダー）まで完璧に叩き込んでパーフェクトKOを奪った。",
+              "evidence": "両方",
+              "startSec": 10840,
+              "endSec": 10870
+            },
+            {
+              "topic": "第2ゲーム第1ラウンドで、マゴがドライブラッシュを起点とした近距離の打撃と投げの揺さぶりを完璧に通し続け、パーフェクトKOでラウンドを先取した。",
+              "evidence": "両方",
+              "startSec": 10886,
+              "endSec": 10926
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m3-b1": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 11272,
+      "endSec": 11831,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:17:24.453Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第3ゲームRound 2、ガチくんはSA2イウサールから画面端で連続して投げを通し、ときどの反撃が届かなかった隙を逃さずSA3を決めてパーフェクトKOで勝利を収めた",
+              "evidence": "両方",
+              "startSec": 11704,
+              "endSec": 11728
+            },
+            {
+              "topic": "第1ゲームRound 2、ガチくんは画面端付近でSA2イウサールを発動してときどをバーンアウトに追い込み、CAまで繋げてKOし第1ゲームを先取した",
+              "evidence": "両方",
+              "startSec": 11386,
+              "endSec": 11407
+            },
+            {
+              "topic": "第2ゲームRound 2、ときどは画面端付近でSA2ラヴーシュカを発動して中下段の二択から下段で崩し、ODヴィハトでガチくんをKOしてフルセットに持ち込んだ",
+              "evidence": "両方",
+              "startSec": 11540,
+              "endSec": 11553
+            },
+            {
+              "topic": "第2ゲームRound 1終盤、バーンアウトしたガチくんがSA2イウサールで時間稼ぎを図るも、ときどがしゃがみ強Pでの対空相打ちでKOした",
+              "evidence": "両方",
+              "startSec": 11487,
+              "endSec": 11502
+            }
+          ]
+        }
+      ]
+    },
+    "div-f-sec7-m3-b2": {
+      "videoId": "BDKiKN1KD0s",
+      "startSec": 12221,
+      "endSec": 13148,
+      "status": "complete",
+      "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
+      "staleRuns": [],
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-10T15:18:07.462Z",
+          "gameWinnersSeen": [
+            "A",
+            "A",
+            "B",
+            "B",
+            "B"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "Game 2第2ラウンド、わびいちが立ち中Pからのフェイント下段（しゃがみ中K）をヒットさせてドライブラッシュからSA3トリプルゲイザーを叩き込み、開幕から2ゲーム連取に成功する。",
+              "evidence": "両方",
+              "startSec": 12378,
+              "endSec": 12387
+            },
+            {
+              "topic": "Game 3第3ラウンド、後がないカワノがわびいちの仕掛けたドライブインパクトに対して冷静にドライブインパクトを返し、パニッシュカウンターからのKOで1ゲームを取り返す。",
+              "evidence": "両方",
+              "startSec": 12646,
+              "endSec": 12653
+            },
+            {
+              "topic": "Game 4第2ラウンド、カワノが画面端で後ろ投げを決めた直後、起き攻めを読み切った前ジャンプ攻撃でパニッシュカウンターを奪ってKOし、2ゲーム連取で2-2のフルセットに追いつく。",
+              "evidence": "両方",
+              "startSec": 12740,
+              "endSec": 12747
+            },
+            {
+              "topic": "Game 5第3ラウンド、カワノが相手のドライブインパクトを返してSA3イレイザーを叩き込みわびいちをバーンアウトに追い込むと、回復直後の牽制戦でしゃがみ中Kキャンセルラッシュを通し切って逆転勝利を決めた。",
+              "evidence": "両方",
+              "startSec": 13002,
+              "endSec": 13046
             }
           ]
         }
@@ -14887,5 +15516,8 @@
       "runs": []
     }
   },
-  "pendingNarrations": []
+  "pendingNarrations": [
+    "div-f-sec7-m2",
+    "div-f-sec7-m3"
+  ]
 }

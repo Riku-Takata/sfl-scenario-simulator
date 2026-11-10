@@ -724,6 +724,59 @@
           "thoughtTokens": 9
         }
       }
+    },
+    "2026-11-11": {
+      "gemini:extract:gemini-3.8-flash": {
+        "responses": 9,
+        "tokens": {
+          "inputTokens": 553253,
+          "cachedInputTokens": 0,
+          "outputTokens": 3540,
+          "thoughtTokens": 11691,
+          "totalTokens": 568484
+        },
+        "observations": {
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
+        }
+      },
+      "gemini:verify:gemini-3.6-flash": {
+        "responses": 9,
+        "tokens": {
+          "inputTokens": 134171,
+          "cachedInputTokens": 0,
+          "outputTokens": 4464,
+          "thoughtTokens": 14521,
+          "totalTokens": 153156
+        },
+        "observations": {
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
+        }
+      },
+      "gemini:extract:gemini-3.6-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 33295,
+          "cachedInputTokens": 0,
+          "outputTokens": 353,
+          "thoughtTokens": 2027,
+          "totalTokens": 35675
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
+      }
     }
   },
   "sections": {
@@ -837,6 +890,62 @@
           "outputTokens": 2,
           "thoughtTokens": 2,
           "totalTokens": 2
+        },
+        "failures": {}
+      }
+    },
+    "div-f-sec7": {
+      "gemini:extract:gemini-3.8-flash": {
+        "responses": 9,
+        "tokens": {
+          "inputTokens": 553253,
+          "cachedInputTokens": 0,
+          "outputTokens": 3540,
+          "thoughtTokens": 11691,
+          "totalTokens": 568484
+        },
+        "observations": {
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
+        },
+        "failures": {}
+      },
+      "gemini:verify:gemini-3.6-flash": {
+        "responses": 9,
+        "tokens": {
+          "inputTokens": 134171,
+          "cachedInputTokens": 0,
+          "outputTokens": 4464,
+          "thoughtTokens": 14521,
+          "totalTokens": 153156
+        },
+        "observations": {
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
+        },
+        "failures": {}
+      },
+      "gemini:extract:gemini-3.6-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 33295,
+          "cachedInputTokens": 0,
+          "outputTokens": 353,
+          "thoughtTokens": 2027,
+          "totalTokens": 35675
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
         },
         "failures": {}
       }
