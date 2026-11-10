@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-09T03:47:36.589Z",
-  "generatorMode": "gemini-video",
+  "updatedAt": "2026-11-10T14:00:41.197Z",
+  "generatorMode": "mixed",
   "latestSection": {
     "s": 7,
-    "f": 6
+    "f": 7
   },
   "recentSections": {
     "s": [
@@ -770,108 +770,30 @@
     ],
     "f": [
       {
-        "matchId": "div-f-sec6-m1",
+        "matchId": "div-f-sec7-m1",
         "division": "f",
-        "sectionNumber": 6,
-        "sectionTitle": "Division F 第6節",
+        "sectionNumber": 7,
+        "sectionTitle": "Division F 第7節",
         "matchNumber": 1,
-        "scheduledAt": "2026-11-03 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/watch?v=6AialyrOq6U",
-        "matchVideoUrl": "https://www.youtube.com/watch?v=6AialyrOq6U&t=2277s",
-        "matchStartTime": 2277,
-        "matchStartLabel": "37:57",
-        "home": "varrel",
-        "away": "rc",
-        "homePoint": 20,
-        "awayPoint": 30,
-        "winner": "away",
-        "isTiebreaker": true,
-        "matchHeadline": "REJECTが延長戦を制し30-20で勝利",
-        "matchSummary": "REJECTは先鋒のウメハラが水派を2-1で下し、中堅のふ～どもマゴに2-0で勝利。連勝で先行したが、大将戦では第1ゲームを取ったひなおに対し、わびいちが3ゲームを連取して勝負を延長戦へ持ち込んだ。延長戦はときどが先取するも、YASが第2ゲームの最終ラウンドでSA3を絡めた反撃とスタンからのコンボを決めて追いつく。最後は第3ゲーム第2ラウンドをSA3によるパーフェクトKOで締め、REJECTが30-20で勝利した。",
+        "scheduledAt": "2026-11-10 00:00:00",
+        "youtubeUrl": "https://www.youtube.com/watch?v=BDKiKN1KD0s",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=BDKiKN1KD0s",
+        "home": "oja",
+        "away": "dng",
+        "homePoint": 30,
+        "awayPoint": 10,
+        "winner": "home",
+        "isTiebreaker": false,
+        "matchHeadline": "名古屋NTPOJAが30-10で勝利",
+        "matchSummary": "第1試合【DetonatioN FocusMe vs 名古屋NTPOJA】は10-30で名古屋NTPOJAの勝利。大将戦は大谷選手が制した。",
         "bouts": [
           {
             "status": 0,
             "statusName": "先鋒戦",
-            "homePlayer": "mizuha",
-            "awayPlayer": "daigo",
-            "homeChara": "cammy",
-            "awayChara": "gouki_akuma",
-            "homeBattle": 1,
-            "awayBattle": 2,
-            "homePoint": 0,
-            "awayPoint": 10,
-            "winner": "away",
-            "isFullSet": true,
-            "roundFlow": [
-              "Game 1: [2-0] ウメハラ選手がストレート先取",
-              "Game 2: [1-2] 水派選手がフルラウンド勝利（先制されるも逆転）",
-              "Game 3: [2-1] ウメハラ選手がフルラウンド勝利（先制されるも逆転）"
-            ],
-            "analysis": {
-              "source": "gemini-video",
-              "summary": "ウメハラが水派との先鋒戦を2-1で制し、REJECTが先制した。第2ゲームを取り返され、第3ゲームではパーフェクトKOも許したが、勝利をつかんだ。",
-              "keyPoints": [
-                "第3ゲーム第1ラウンドは、水派のキャミィが豪鬼を画面端へ追い込み、最後はパニッシュカウンターの投げでパーフェクトKOを奪った。",
-                "第3ゲーム第2ラウンドでは、ウメハラがパニッシュカウンターからSA2につなぐコンボで大ダメージを与えた。"
-              ]
-            },
-            "games": [
-              {
-                "winner": "away",
-                "homeChara": "cammy",
-                "awayChara": "gouki_akuma",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              },
-              {
-                "winner": "home",
-                "homeChara": "cammy",
-                "awayChara": "gouki_akuma",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "home"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "cammy",
-                "awayChara": "gouki_akuma",
-                "rounds": [
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              }
-            ],
-            "tags": [],
-            "videoStatus": "complete"
-          },
-          {
-            "status": 1,
-            "statusName": "中堅戦",
-            "homePlayer": "mago",
-            "awayPlayer": "fuudo",
-            "homeChara": "mai",
-            "awayChara": "cviper",
+            "homePlayer": "mocchi",
+            "awayPlayer": "takeuchi",
+            "homeChara": "gouki_akuma",
+            "awayChara": "jamie",
             "homeBattle": 0,
             "awayBattle": 2,
             "homePoint": 0,
@@ -879,22 +801,22 @@
             "winner": "away",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [2-0] ふ～ど選手がストレート先取",
-              "Game 2: [2-0] ふ～ど選手がストレート先取"
+              "Game 1: [2-0] 竹内ジョン選手がストレート先取",
+              "Game 2: [2-0] 竹内ジョン選手がストレート先取"
             ],
             "analysis": {
-              "source": "gemini-video",
-              "summary": "ふ～どがマゴを2-0で下し、REJECTが先鋒戦に続いて勝利した。第2ゲームの締めでは、マゴのSA3を受けた後に自身もSA3で反撃し、KOまでつないだ。",
+              "source": "official-data",
+              "summary": "竹内ジョン選手（ジェイミー）がもっちー選手（豪鬼）を2-0で下した。",
               "keyPoints": [
-                "第1ゲーム第1ラウンド終盤、ふ～どはマゴをバーンアウトに追い込み、画面端で攻めを継続した。",
-                "第2ゲーム第2ラウンドは、マゴのSA3でダウンしたふ～どが起き上がりにSA3を返してパニッシュカウンターを取り、最後はドライブラッシュからのコンボでKOした。"
+                "ゲーム推移: 第1ゲーム竹内ジョン→第2ゲーム竹内ジョン",
+                "竹内ジョン選手が1ラウンドも落とさず全ゲームをストレートで取り切った。"
               ]
             },
             "games": [
               {
                 "winner": "away",
-                "homeChara": "mai",
-                "awayChara": "cviper",
+                "homeChara": "gouki_akuma",
+                "awayChara": "jamie",
                 "rounds": [
                   {
                     "winner": "away"
@@ -906,8 +828,8 @@
               },
               {
                 "winner": "away",
-                "homeChara": "mai",
-                "awayChara": "cviper",
+                "homeChara": "gouki_akuma",
+                "awayChara": "jamie",
                 "rounds": [
                   {
                     "winner": "away"
@@ -919,15 +841,85 @@
               }
             ],
             "tags": [],
-            "videoStatus": "complete"
+            "videoStatus": "pending"
+          },
+          {
+            "status": 1,
+            "statusName": "中堅戦",
+            "homePlayer": "seiya",
+            "awayPlayer": "keib",
+            "homeChara": "chunli",
+            "awayChara": "mai",
+            "homeBattle": 2,
+            "awayBattle": 1,
+            "homePoint": 10,
+            "awayPoint": 0,
+            "winner": "home",
+            "isFullSet": true,
+            "roundFlow": [
+              "Game 1: [0-2] Seiya選手がストレート先取",
+              "Game 2: [2-0] KEI.B選手がストレート先取",
+              "Game 3: [0-2] Seiya選手がストレート先取"
+            ],
+            "analysis": {
+              "source": "official-data",
+              "summary": "Seiya選手（春麗）がKEI.B選手（不知火舞）を2-1で下した。",
+              "keyPoints": [
+                "ゲーム推移: 第1ゲームSeiya→第2ゲームKEI.B→第3ゲームSeiya",
+                "最終ゲームまでもつれたフルセットをSeiya選手が制した。"
+              ]
+            },
+            "games": [
+              {
+                "winner": "home",
+                "homeChara": "chunli",
+                "awayChara": "mai",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "away",
+                "homeChara": "chunli",
+                "awayChara": "mai",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "chunli",
+                "awayChara": "mai",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              }
+            ],
+            "tags": [],
+            "videoStatus": "pending"
           },
           {
             "status": 2,
             "statusName": "大将戦",
-            "homePlayer": "wabiichi",
-            "awayPlayer": "hinao",
-            "homeChara": "terry",
-            "awayChara": "luke",
+            "homePlayer": "otani",
+            "awayPlayer": "itazan",
+            "homeChara": "luke",
+            "awayChara": "zangief",
             "homeBattle": 3,
             "awayBattle": 1,
             "homePoint": 20,
@@ -935,27 +927,31 @@
             "winner": "home",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [2-0] ひなお選手がストレート先取",
-              "Game 2: [1-2] わびいち選手がフルラウンド勝利",
-              "Game 3: [1-2] わびいち選手がフルラウンド勝利",
-              "Game 4: [0-2] わびいち選手がストレート先取"
+              "Game 1: [2-1] 板橋ザンギエフ選手がフルラウンド勝利",
+              "Game 2: [1-2] 大谷選手がフルラウンド勝利",
+              "Game 3: [1-2] 大谷選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 4: [0-2] 大谷選手がストレート先取"
             ],
             "analysis": {
-              "source": "gemini-video",
-              "summary": "わびいちがひなおとの大将戦を3-1で制し、VARRELが延長戦へつないだ。ひなおに第1ゲームを先取されたものの、第2ゲームから3ゲームを連取して逆転した。",
+              "source": "official-data",
+              "summary": "大谷選手（ルーク）が板橋ザンギエフ選手（ザンギエフ）を3-1で下した。",
               "keyPoints": [
-                "第2ゲームの最終ラウンド、わびいちはパニッシュカウンターでSA3を当てて大ダメージを奪い、このゲームを取って1-1に戻した。",
-                "第3ゲーム第2ラウンドでは、ひなおがパニッシュカウンターからCAを決め、画面端のドライブインパクトでスタンを奪ってコンボにつないだ。"
+                "ゲーム推移: 第1ゲーム板橋ザンギエフ→第2ゲーム大谷→第3ゲーム大谷→第4ゲーム大谷",
+                "第1ゲームを板橋ザンギエフ選手に先取されてからの逆転勝利。",
+                "第3ゲームは大谷選手が1ラウンド目を落としてから逆転。"
               ]
             },
             "games": [
               {
                 "winner": "away",
-                "homeChara": "terry",
-                "awayChara": "luke",
+                "homeChara": "luke",
+                "awayChara": "zangief",
                 "rounds": [
                   {
                     "winner": "away"
+                  },
+                  {
+                    "winner": "home"
                   },
                   {
                     "winner": "away"
@@ -964,24 +960,8 @@
               },
               {
                 "winner": "home",
-                "homeChara": "terry",
-                "awayChara": "luke",
-                "rounds": [
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "home"
-                  }
-                ]
-              },
-              {
-                "winner": "home",
-                "homeChara": "terry",
-                "awayChara": "luke",
+                "homeChara": "luke",
+                "awayChara": "zangief",
                 "rounds": [
                   {
                     "winner": "home"
@@ -996,8 +976,24 @@
               },
               {
                 "winner": "home",
-                "homeChara": "terry",
-                "awayChara": "luke",
+                "homeChara": "luke",
+                "awayChara": "zangief",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "luke",
+                "awayChara": "zangief",
                 "rounds": [
                   {
                     "winner": "home"
@@ -1009,145 +1005,67 @@
               }
             ],
             "tags": [],
-            "videoStatus": "complete"
-          },
-          {
-            "status": 3,
-            "statusName": "延長戦",
-            "homePlayer": "tokido",
-            "awayPlayer": "yas",
-            "homeChara": "jp",
-            "awayChara": "ryu",
-            "homeBattle": 1,
-            "awayBattle": 2,
-            "homePoint": 0,
-            "awayPoint": 10,
-            "winner": "away",
-            "isFullSet": true,
-            "roundFlow": [
-              "Game 1: [1-2] ときど選手がフルラウンド勝利（先制されるも逆転）",
-              "Game 2: [2-1] YAS選手がフルラウンド勝利（先制されるも逆転）",
-              "Game 3: [2-0] YAS選手がストレート先取"
-            ],
-            "analysis": {
-              "source": "gemini-video",
-              "summary": "YASがときどに第1ゲームを先取されながら2-1で逆転勝利し、延長戦を決着させた。最終ゲームはSA3でパーフェクトKOを奪い、REJECTの勝利を決めた。",
-              "keyPoints": [
-                "第1ゲームの最終ラウンドは、ときどのJPがパニッシュカウンターからコンボを決め、CAを当ててKOを奪った。",
-                "第2ゲームの最終ラウンド、YASはパニッシュカウンターからSA3を組み込み、さらにJPをスタンさせてコンボで倒し、ゲームカウントを1-1に戻した。",
-                "第3ゲーム第2ラウンドは、YASのリュウがパニッシュカウンターからドライブラッシュを交えた連続攻撃を仕掛け、SA3でパーフェクトKOを決めた。"
-              ]
-            },
-            "games": [
-              {
-                "winner": "home",
-                "homeChara": "jp",
-                "awayChara": "ryu",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "home"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "jp",
-                "awayChara": "ryu",
-                "rounds": [
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "jp",
-                "awayChara": "ryu",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              }
-            ],
-            "tags": [],
-            "videoStatus": "complete"
+            "videoStatus": "pending"
           }
         ],
-        "narrationStatus": "complete"
+        "narrationStatus": "pending"
       },
       {
-        "matchId": "div-f-sec6-m2",
+        "matchId": "div-f-sec7-m2",
         "division": "f",
-        "sectionNumber": 6,
-        "sectionTitle": "Division F 第6節",
+        "sectionNumber": 7,
+        "sectionTitle": "Division F 第7節",
         "matchNumber": 2,
-        "scheduledAt": "2026-11-03 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/watch?v=6AialyrOq6U",
-        "matchVideoUrl": "https://www.youtube.com/watch?v=6AialyrOq6U&t=7235s",
-        "matchStartTime": 7235,
-        "matchStartLabel": "2:00:35",
-        "home": "oja",
-        "away": "good8",
-        "homePoint": 10,
-        "awayPoint": 30,
-        "winner": "away",
+        "scheduledAt": "2026-11-10 00:00:00",
+        "youtubeUrl": "https://www.youtube.com/watch?v=BDKiKN1KD0s",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=BDKiKN1KD0s",
+        "home": "rc",
+        "away": "rid",
+        "homePoint": 40,
+        "awayPoint": 0,
+        "winner": "home",
         "isTiebreaker": false,
-        "matchHeadline": "Good 8 Squadが大将戦を取り30-10で勝利",
-        "matchSummary": "Good 8 Squadが名古屋NTPOJAに30-10で勝利した。先鋒戦はガチくんが第1ゲームを落としてから2ゲームを連取し、先制。中堅戦ではSeiyaがカワノを2-0で下し、名古屋NTPOJAが取り返した。大将戦はぷげらが第2・第3ゲームを連取して先行するも、大谷が第4ゲームを奪って2-2に追いつく展開に。最終ゲームはぷげらが取り、第2ラウンドの連続攻撃からCAで倒し切って、チームの勝利を決めた。",
+        "matchHeadline": "REJECTが40-0で勝利",
+        "matchSummary": "第2試合【RIDDLE ORDER vs REJECT】は0-40でREJECTの勝利。大将戦はふ～ど選手が制した。",
         "bouts": [
           {
             "status": 0,
             "statusName": "先鋒戦",
-            "homePlayer": "raoyamu",
-            "awayPlayer": "gachikun",
-            "homeChara": "vega_mbison",
-            "awayChara": "rashid",
-            "homeBattle": 1,
-            "awayBattle": 2,
-            "homePoint": 0,
-            "awayPoint": 10,
-            "winner": "away",
+            "homePlayer": "daigo",
+            "awayPlayer": "hikaru",
+            "homeChara": "gouki_akuma",
+            "awayChara": "aki",
+            "homeBattle": 2,
+            "awayBattle": 1,
+            "homePoint": 10,
+            "awayPoint": 0,
+            "winner": "home",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [1-2] らおやむ選手がフルラウンド勝利（先制されるも逆転）",
-              "Game 2: [2-0] ガチくん選手がストレート先取",
-              "Game 3: [2-1] ガチくん選手がフルラウンド勝利（先制されるも逆転）"
+              "Game 1: [1-2] ウメハラ選手がフルラウンド勝利",
+              "Game 2: [2-1] ひかる選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 3: [0-2] ウメハラ選手がストレート先取"
             ],
             "analysis": {
-              "source": "gemini-video",
-              "summary": "先鋒戦はガチくんがらおやむに2-1で勝利し、Good 8 Squadが先制した。第1ゲームを奪われたものの、第2・第3ゲームを続けて取り返した。",
+              "source": "official-data",
+              "summary": "ウメハラ選手（豪鬼）がひかる選手（A.K.I.）を2-1で下した。",
               "keyPoints": [
-                "第1ゲーム第3ラウンドは、らおやむがSA3「アンリミテッドサイコクラッシャー」を当て、起き上がりにも攻撃を重ねて先取した。",
-                "最終ゲームの最終ラウンドは、ガチくんが画面端でコンボを決め、パニッシュカウンターからSA1をつないでパーフェクトKOで締めくくった。"
+                "ゲーム推移: 第1ゲームウメハラ→第2ゲームひかる→第3ゲームウメハラ",
+                "最終ゲームまでもつれたフルセットをウメハラ選手が制した。",
+                "第2ゲームはひかる選手が1ラウンド目を落としてから逆転。"
               ]
             },
             "games": [
               {
                 "winner": "home",
-                "homeChara": "vega_mbison",
-                "awayChara": "rashid",
+                "homeChara": "gouki_akuma",
+                "awayChara": "aki",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "home"
                   },
                   {
-                    "winner": "home"
+                    "winner": "away"
                   },
                   {
                     "winner": "home"
@@ -1156,21 +1074,8 @@
               },
               {
                 "winner": "away",
-                "homeChara": "vega_mbison",
-                "awayChara": "rashid",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "vega_mbison",
-                "awayChara": "rashid",
+                "homeChara": "gouki_akuma",
+                "awayChara": "aki",
                 "rounds": [
                   {
                     "winner": "home"
@@ -1180,20 +1085,208 @@
                   },
                   {
                     "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "gouki_akuma",
+                "awayChara": "aki",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
                   }
                 ]
               }
             ],
             "tags": [],
-            "videoStatus": "complete"
+            "videoStatus": "pending"
           },
           {
             "status": 1,
             "statusName": "中堅戦",
-            "homePlayer": "seiya",
-            "awayPlayer": "kawano",
-            "homeChara": "chunli",
-            "awayChara": "gouki_akuma",
+            "homePlayer": "yas",
+            "awayPlayer": "jr",
+            "homeChara": "ryu",
+            "awayChara": "zangief",
+            "homeBattle": 2,
+            "awayBattle": 1,
+            "homePoint": 10,
+            "awayPoint": 0,
+            "winner": "home",
+            "isFullSet": true,
+            "roundFlow": [
+              "Game 1: [2-1] Jr.選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 2: [1-2] YAS選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 3: [1-2] YAS選手がフルラウンド勝利"
+            ],
+            "analysis": {
+              "source": "official-data",
+              "summary": "YAS選手（リュウ）がJr.選手（ザンギエフ）を2-1で下した。",
+              "keyPoints": [
+                "ゲーム推移: 第1ゲームJr.→第2ゲームYAS→第3ゲームYAS",
+                "第1ゲームをJr.選手に先取されてからの逆転勝利。",
+                "第1ゲームはJr.選手が1ラウンド目を落としてから逆転、第2ゲームはYAS選手が1ラウンド目を落としてから逆転。"
+              ]
+            },
+            "games": [
+              {
+                "winner": "away",
+                "homeChara": "ryu",
+                "awayChara": "zangief",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "away"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "ryu",
+                "awayChara": "zangief",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "ryu",
+                "awayChara": "zangief",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              }
+            ],
+            "tags": [],
+            "videoStatus": "pending"
+          },
+          {
+            "status": 2,
+            "statusName": "大将戦",
+            "homePlayer": "fuudo",
+            "awayPlayer": "adelie",
+            "homeChara": "cviper",
+            "awayChara": "ed",
+            "homeBattle": 3,
+            "awayBattle": 0,
+            "homePoint": 20,
+            "awayPoint": 0,
+            "winner": "home",
+            "isFullSet": false,
+            "roundFlow": [
+              "Game 1: [0-2] ふ～ど選手がストレート先取",
+              "Game 2: [0-2] ふ～ど選手がストレート先取",
+              "Game 3: [1-2] ふ～ど選手がフルラウンド勝利（先制されるも逆転）"
+            ],
+            "analysis": {
+              "source": "official-data",
+              "summary": "ふ～ど選手（C.ヴァイパー）があでりい選手（エド）を3-0で下した。",
+              "keyPoints": [
+                "ゲーム推移: 第1ゲームふ～ど→第2ゲームふ～ど→第3ゲームふ～ど",
+                "ふ～ど選手がゲームを1つも落とさずに勝利した。",
+                "第3ゲームはふ～ど選手が1ラウンド目を落としてから逆転。"
+              ]
+            },
+            "games": [
+              {
+                "winner": "home",
+                "homeChara": "cviper",
+                "awayChara": "ed",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "cviper",
+                "awayChara": "ed",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "cviper",
+                "awayChara": "ed",
+                "rounds": [
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              }
+            ],
+            "tags": [],
+            "videoStatus": "pending"
+          }
+        ],
+        "narrationStatus": "pending"
+      },
+      {
+        "matchId": "div-f-sec7-m3",
+        "division": "f",
+        "sectionNumber": 7,
+        "sectionTitle": "Division F 第7節",
+        "matchNumber": 3,
+        "scheduledAt": "2026-11-10 00:00:00",
+        "youtubeUrl": "https://www.youtube.com/watch?v=BDKiKN1KD0s",
+        "matchVideoUrl": "https://www.youtube.com/watch?v=BDKiKN1KD0s",
+        "home": "good8",
+        "away": "varrel",
+        "homePoint": 40,
+        "awayPoint": 0,
+        "winner": "home",
+        "isTiebreaker": false,
+        "matchHeadline": "Good 8 Squadが40-0で勝利",
+        "matchSummary": "第3試合【VARREL vs Good 8 Squad】は0-40でGood 8 Squadの勝利。大将戦はカワノ選手が制した。",
+        "bouts": [
+          {
+            "status": 0,
+            "statusName": "先鋒戦",
+            "homePlayer": "sahara",
+            "awayPlayer": "mago",
+            "homeChara": "ed",
+            "awayChara": "mai",
             "homeBattle": 2,
             "awayBattle": 0,
             "homePoint": 10,
@@ -1201,23 +1294,27 @@
             "winner": "home",
             "isFullSet": false,
             "roundFlow": [
-              "Game 1: [0-2] Seiya選手がストレート先取",
-              "Game 2: [0-2] Seiya選手がストレート先取"
+              "Game 1: [1-2] さはら選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 2: [1-2] さはら選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "analysis": {
-              "source": "gemini-video",
-              "summary": "中堅戦はSeiyaがカワノを2-0で下し、名古屋NTPOJAが先鋒戦の敗戦を取り返した。第1・第2ゲームをともに獲得し、大将戦へつないだ。",
+              "source": "official-data",
+              "summary": "さはら選手（エド）がマゴ選手（不知火舞）を2-0で下した。",
               "keyPoints": [
-                "第1ゲームはSeiyaがスーパーアーツでパニッシュカウンターを取り、追撃と起き上がりへの攻撃をつないでパーフェクトKOを決めた。",
-                "第2ゲームではSeiyaがカワノの攻撃の隙にSA2をパニッシュカウンターで叩き込み、大ダメージのコンボを決めた。"
+                "ゲーム推移: 第1ゲームさはら→第2ゲームさはら",
+                "さはら選手がゲームを1つも落とさずに勝利した。",
+                "第1ゲームはさはら選手が1ラウンド目を落としてから逆転、第2ゲームはさはら選手が1ラウンド目を落としてから逆転。"
               ]
             },
             "games": [
               {
                 "winner": "home",
-                "homeChara": "chunli",
-                "awayChara": "gouki_akuma",
+                "homeChara": "ed",
+                "awayChara": "mai",
                 "rounds": [
+                  {
+                    "winner": "away"
+                  },
                   {
                     "winner": "home"
                   },
@@ -1228,9 +1325,12 @@
               },
               {
                 "winner": "home",
-                "homeChara": "chunli",
-                "awayChara": "gouki_akuma",
+                "homeChara": "ed",
+                "awayChara": "mai",
                 "rounds": [
+                  {
+                    "winner": "away"
+                  },
                   {
                     "winner": "home"
                   },
@@ -1241,146 +1341,15 @@
               }
             ],
             "tags": [],
-            "videoStatus": "complete"
+            "videoStatus": "pending"
           },
           {
-            "status": 2,
-            "statusName": "大将戦",
-            "homePlayer": "otani",
-            "awayPlayer": "pugera",
-            "homeChara": "ken",
-            "awayChara": "cviper",
-            "homeBattle": 2,
-            "awayBattle": 3,
-            "homePoint": 0,
-            "awayPoint": 20,
-            "winner": "away",
-            "isFullSet": true,
-            "roundFlow": [
-              "Game 1: [1-2] 大谷選手がフルラウンド勝利（先制されるも逆転）",
-              "Game 2: [2-1] ぷげら選手がフルラウンド勝利（先制されるも逆転）",
-              "Game 3: [2-1] ぷげら選手がフルラウンド勝利",
-              "Game 4: [0-2] 大谷選手がストレート先取",
-              "Game 5: [2-0] ぷげら選手がストレート先取"
-            ],
-            "analysis": {
-              "source": "gemini-video",
-              "summary": "大将戦はぷげらが大谷とのフルセットを3-2で制した。第2・第3ゲームを連取した後、第4ゲームを取り返されたが、最終ゲームを奪ってチームの勝利を決めた。",
-              "keyPoints": [
-                "第2ゲーム第1ラウンドは、大谷がドライブラッシュやカウンター攻撃からぷげらを画面端へ追い込み、パーフェクトKOを奪った。",
-                "第4ゲーム第2ラウンドは、大谷が終盤に対空・パニッシュカウンターを決めて取り切り、ゲームカウントを2-2に戻した。",
-                "最終第5ゲーム第2ラウンドは、ぷげらがパニッシュカウンターから空中コンボで位置を入れ替え、画面端で連続攻撃からCAにつないで決着をつけた。"
-              ]
-            },
-            "games": [
-              {
-                "winner": "home",
-                "homeChara": "ken",
-                "awayChara": "cviper",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "home"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "ken",
-                "awayChara": "cviper",
-                "rounds": [
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "ken",
-                "awayChara": "cviper",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              },
-              {
-                "winner": "home",
-                "homeChara": "ken",
-                "awayChara": "cviper",
-                "rounds": [
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "home"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "ken",
-                "awayChara": "cviper",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              }
-            ],
-            "tags": [],
-            "videoStatus": "complete"
-          }
-        ],
-        "narrationStatus": "complete"
-      },
-      {
-        "matchId": "div-f-sec6-m3",
-        "division": "f",
-        "sectionNumber": 6,
-        "sectionTitle": "Division F 第6節",
-        "matchNumber": 3,
-        "scheduledAt": "2026-11-03 00:00:00",
-        "youtubeUrl": "https://www.youtube.com/watch?v=6AialyrOq6U",
-        "matchVideoUrl": "https://www.youtube.com/watch?v=6AialyrOq6U&t=11255s",
-        "matchStartTime": 11255,
-        "matchStartLabel": "3:07:35",
-        "home": "rid",
-        "away": "dng",
-        "homePoint": 30,
-        "awayPoint": 10,
-        "winner": "home",
-        "isTiebreaker": false,
-        "matchHeadline": "RIDDLE ORDER、高木の大将戦勝利で30-10",
-        "matchSummary": "RIDDLE ORDERがDetonatioN FocusMeを30-10で下した。先鋒戦はひかるが第1ゲームを先取し、竹内ジョンに追いつかれながらも第3ゲームを取って勝利。第1ゲーム第2ラウンドにはSA3からパーフェクトKOを決めた。中堅戦はナウマンが第1ゲームを落としてから2ゲームを取り返し、DetonatioN FocusMeが勝利を返す。ナウマンは最終ゲームでパーフェクトKOも記録した。大将戦は高木が2ゲームを先行。KEI.Bが第3ゲームを取り返したものの、高木が第4ゲームを奪って3-1で勝ち、チームの勝利を決めた。",
-        "bouts": [
-          {
-            "status": 0,
-            "statusName": "先鋒戦",
-            "homePlayer": "hikaru",
-            "awayPlayer": "takeuchi",
-            "homeChara": "aki",
-            "awayChara": "jamie",
+            "status": 1,
+            "statusName": "中堅戦",
+            "homePlayer": "gachikun",
+            "awayPlayer": "tokido",
+            "homeChara": "rashid",
+            "awayChara": "jp",
             "homeBattle": 2,
             "awayBattle": 1,
             "homePoint": 10,
@@ -1388,23 +1357,24 @@
             "winner": "home",
             "isFullSet": true,
             "roundFlow": [
-              "Game 1: [0-2] ひかる選手がストレート先取",
-              "Game 2: [2-1] 竹内ジョン選手がフルラウンド勝利",
-              "Game 3: [1-2] ひかる選手がフルラウンド勝利（先制されるも逆転）"
+              "Game 1: [0-2] ガチくん選手がストレート先取",
+              "Game 2: [2-1] ときど選手がフルラウンド勝利（先制されるも逆転）",
+              "Game 3: [0-2] ガチくん選手がストレート先取"
             ],
             "analysis": {
-              "source": "gemini-video",
-              "summary": "先鋒戦はひかる選手が竹内ジョン選手に2-1で勝利した。第1ゲームを先取し、第2ゲームを取り返されたものの、最終第3ゲームを奪ってRIDDLE ORDERに先制をもたらした。",
+              "source": "official-data",
+              "summary": "ガチくん選手（ラシード）がときど選手（JP）を2-1で下した。",
               "keyPoints": [
-                "第1ゲーム第2ラウンド、ひかるは単発ヒット確認からSA3を決め、パーフェクトKOでゲームを先取した。",
-                "第2ゲーム第3ラウンド、竹内ジョンは毒状態でも攻めを続け、ひかるをバーンアウトに追い込むと、画面端付近でパニッシュカウンターから連続攻撃を決めて1-1に戻した。"
+                "ゲーム推移: 第1ゲームガチくん→第2ゲームときど→第3ゲームガチくん",
+                "最終ゲームまでもつれたフルセットをガチくん選手が制した。",
+                "第2ゲームはときど選手が1ラウンド目を落としてから逆転。"
               ]
             },
             "games": [
               {
                 "winner": "home",
-                "homeChara": "aki",
-                "awayChara": "jamie",
+                "homeChara": "rashid",
+                "awayChara": "jp",
                 "rounds": [
                   {
                     "winner": "home"
@@ -1416,14 +1386,14 @@
               },
               {
                 "winner": "away",
-                "homeChara": "aki",
-                "awayChara": "jamie",
+                "homeChara": "rashid",
+                "awayChara": "jp",
                 "rounds": [
                   {
-                    "winner": "away"
+                    "winner": "home"
                   },
                   {
-                    "winner": "home"
+                    "winner": "away"
                   },
                   {
                     "winner": "away"
@@ -1432,12 +1402,9 @@
               },
               {
                 "winner": "home",
-                "homeChara": "aki",
-                "awayChara": "jamie",
+                "homeChara": "rashid",
+                "awayChara": "jp",
                 "rounds": [
-                  {
-                    "winner": "away"
-                  },
                   {
                     "winner": "home"
                   },
@@ -1448,140 +1415,54 @@
               }
             ],
             "tags": [],
-            "videoStatus": "complete"
-          },
-          {
-            "status": 1,
-            "statusName": "中堅戦",
-            "homePlayer": "jr",
-            "awayPlayer": "nauman",
-            "homeChara": "zangief",
-            "awayChara": "mai",
-            "homeBattle": 1,
-            "awayBattle": 2,
-            "homePoint": 0,
-            "awayPoint": 10,
-            "winner": "away",
-            "isFullSet": true,
-            "roundFlow": [
-              "Game 1: [0-2] Jr.選手がストレート先取",
-              "Game 2: [2-0] ナウマン選手がストレート先取",
-              "Game 3: [2-0] ナウマン選手がストレート先取"
-            ],
-            "analysis": {
-              "source": "gemini-video",
-              "summary": "中堅戦はナウマン選手がJr.選手に2-1で逆転勝利した。第1ゲームをJr.に奪われた後、第2・第3ゲームを連取し、DetonatioN FocusMeが中堅戦で勝利を返した。",
-              "keyPoints": [
-                "第2ゲーム第2ラウンド、ナウマンは地上コンボから陽炎の舞につなぎ、Jr.の体力を削り切ってゲームカウントを1-1に戻した。",
-                "第3ゲーム第1ラウンド、ナウマンは技の隙へのパニッシュカウンターからOD必殺技を絡めた連続技を決め、パーフェクトKOを達成した。",
-                "第3ゲーム第2ラウンド、ナウマンはバーンアウト状態のJr.に通常投げを続けて通し、最後も投げでKOして勝利を決めた。"
-              ]
-            },
-            "games": [
-              {
-                "winner": "home",
-                "homeChara": "zangief",
-                "awayChara": "mai",
-                "rounds": [
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "home"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "zangief",
-                "awayChara": "mai",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              },
-              {
-                "winner": "away",
-                "homeChara": "zangief",
-                "awayChara": "mai",
-                "rounds": [
-                  {
-                    "winner": "away"
-                  },
-                  {
-                    "winner": "away"
-                  }
-                ]
-              }
-            ],
-            "tags": [],
-            "videoStatus": "complete"
+            "videoStatus": "pending"
           },
           {
             "status": 2,
             "statusName": "大将戦",
-            "homePlayer": "takagi",
-            "awayPlayer": "keib",
-            "homeChara": "blanka",
-            "awayChara": "mai",
+            "homePlayer": "kawano",
+            "awayPlayer": "wabiichi",
+            "homeChara": "luke",
+            "awayChara": "terry",
             "homeBattle": 3,
-            "awayBattle": 1,
+            "awayBattle": 2,
             "homePoint": 20,
             "awayPoint": 0,
             "winner": "home",
-            "isFullSet": false,
+            "isFullSet": true,
             "roundFlow": [
-              "Game 1: [1-2] 高木選手がフルラウンド勝利（先制されるも逆転）",
-              "Game 2: [0-2] 高木選手がストレート先取",
-              "Game 3: [2-0] KEI.B選手がストレート先取",
-              "Game 4: [0-2] 高木選手がストレート先取"
+              "Game 1: [2-0] わびいち選手がストレート先取",
+              "Game 2: [2-0] わびいち選手がストレート先取",
+              "Game 3: [1-2] カワノ選手がフルラウンド勝利",
+              "Game 4: [0-2] カワノ選手がストレート先取",
+              "Game 5: [1-2] カワノ選手がフルラウンド勝利"
             ],
             "analysis": {
-              "source": "gemini-video",
-              "summary": "大将戦は高木選手がKEI.B選手を3-1で下した。第1・第2ゲームを連取し、第3ゲームこそ取り返されたが、第4ゲームを勝ち切ってRIDDLE ORDERの勝利を決めた。",
+              "source": "official-data",
+              "summary": "カワノ選手（ルーク）がわびいち選手（テリー）を3-2で下した。",
               "keyPoints": [
-                "第2ゲーム第2ラウンド、高木は攻めの主導権を握り、最後はコンボからSA3を決めてパーフェクトKOでゲームカウントを2-0とした。",
-                "第4ゲーム第1ラウンド、高木は技の隙にドライブインパクトを当てて画面端でスタンを誘発し、追撃を決めてラウンドを先取した。"
+                "ゲーム推移: 第1ゲームわびいち→第2ゲームわびいち→第3ゲームカワノ→第4ゲームカワノ→第5ゲームカワノ",
+                "第1ゲームをわびいち選手に先取されてからの逆転勝利。"
               ]
             },
             "games": [
               {
-                "winner": "home",
-                "homeChara": "blanka",
-                "awayChara": "mai",
+                "winner": "away",
+                "homeChara": "luke",
+                "awayChara": "terry",
                 "rounds": [
                   {
                     "winner": "away"
                   },
                   {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "home"
-                  }
-                ]
-              },
-              {
-                "winner": "home",
-                "homeChara": "blanka",
-                "awayChara": "mai",
-                "rounds": [
-                  {
-                    "winner": "home"
-                  },
-                  {
-                    "winner": "home"
+                    "winner": "away"
                   }
                 ]
               },
               {
                 "winner": "away",
-                "homeChara": "blanka",
-                "awayChara": "mai",
+                "homeChara": "luke",
+                "awayChara": "terry",
                 "rounds": [
                   {
                     "winner": "away"
@@ -1593,11 +1474,43 @@
               },
               {
                 "winner": "home",
-                "homeChara": "blanka",
-                "awayChara": "mai",
+                "homeChara": "luke",
+                "awayChara": "terry",
                 "rounds": [
                   {
                     "winner": "home"
+                  },
+                  {
+                    "winner": "away"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "luke",
+                "awayChara": "terry",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "home"
+                  }
+                ]
+              },
+              {
+                "winner": "home",
+                "homeChara": "luke",
+                "awayChara": "terry",
+                "rounds": [
+                  {
+                    "winner": "home"
+                  },
+                  {
+                    "winner": "away"
                   },
                   {
                     "winner": "home"
@@ -1606,10 +1519,10 @@
               }
             ],
             "tags": [],
-            "videoStatus": "complete"
+            "videoStatus": "pending"
           }
         ],
-        "narrationStatus": "complete"
+        "narrationStatus": "pending"
       }
     ]
   },
@@ -1939,6 +1852,36 @@
             "away": "dng",
             "homePoint": 30,
             "awayPoint": 20,
+            "winner": "home"
+          }
+        ]
+      },
+      {
+        "sectionNumber": 6,
+        "sectionTitle": "Division F 第6節",
+        "scheduledAt": "2026-11-03 00:00:00",
+        "youtubeUrl": "https://www.youtube.com/watch?v=6AialyrOq6U",
+        "playlistUrl": "https://www.youtube.com/playlist?list=PLRGFN0FuZQ-c",
+        "matches": [
+          {
+            "home": "varrel",
+            "away": "rc",
+            "homePoint": 20,
+            "awayPoint": 30,
+            "winner": "away"
+          },
+          {
+            "home": "oja",
+            "away": "good8",
+            "homePoint": 10,
+            "awayPoint": 30,
+            "winner": "away"
+          },
+          {
+            "home": "rid",
+            "away": "dng",
+            "homePoint": 30,
+            "awayPoint": 10,
             "winner": "home"
           }
         ]

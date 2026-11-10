@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T01:01:16.731Z",
+  "updatedAt": "2026-11-10T14:00:41.269Z",
   "source": "SFL 2026 Pro-JP 公式戦実戦対戦ログ（※実在の公式戦のみを集計。未対戦キャラクターは0戦表示）",
   "sf6ReleaseDate": "2023-06-02",
   "players": {
@@ -2261,6 +2261,22 @@
     ],
     "tokido": [
       {
+        "id": "sfl26-div-f-sec7-m3-1-tokido",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "中堅戦",
+        "playerKey": "tokido",
+        "myChar": "jp",
+        "opponentPlayerKey": "gachikun",
+        "opponentPlayerName": "ガチくん",
+        "opponentTeam": "G8S",
+        "opponentChar": "rashid",
+        "myScore": 1,
+        "opponentScore": 2,
+        "won": false
+      },
+      {
         "id": "sfl26-div-f-sec6-m1-3-tokido",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
         "category": "SFL",
@@ -2358,6 +2374,22 @@
       }
     ],
     "mago": [
+      {
+        "id": "sfl26-div-f-sec7-m3-0-mago",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "先鋒戦",
+        "playerKey": "mago",
+        "myChar": "mai",
+        "opponentPlayerKey": "sahara",
+        "opponentPlayerName": "さはら",
+        "opponentTeam": "G8S",
+        "opponentChar": "ed",
+        "myScore": 0,
+        "opponentScore": 2,
+        "won": false
+      },
       {
         "id": "sfl26-div-f-sec6-m1-1-mago",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
@@ -2507,6 +2539,22 @@
     ],
     "wabiichi": [
       {
+        "id": "sfl26-div-f-sec7-m3-2-wabiichi",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "大将戦",
+        "playerKey": "wabiichi",
+        "myChar": "terry",
+        "opponentPlayerKey": "kawano",
+        "opponentPlayerName": "カワノ",
+        "opponentTeam": "G8S",
+        "opponentChar": "luke",
+        "myScore": 2,
+        "opponentScore": 3,
+        "won": false
+      },
+      {
         "id": "sfl26-div-f-sec6-m1-2-wabiichi",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
         "category": "SFL",
@@ -2605,6 +2653,22 @@
     ],
     "gachikun": [
       {
+        "id": "sfl26-div-f-sec7-m3-1-gachikun",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "中堅戦",
+        "playerKey": "gachikun",
+        "myChar": "rashid",
+        "opponentPlayerKey": "tokido",
+        "opponentPlayerName": "ときど",
+        "opponentTeam": "VARREL",
+        "opponentChar": "jp",
+        "myScore": 2,
+        "opponentScore": 1,
+        "won": true
+      },
+      {
         "id": "sfl26-div-f-sec6-m2-0-gachikun",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
         "category": "SFL",
@@ -2702,6 +2766,22 @@
       }
     ],
     "kawano": [
+      {
+        "id": "sfl26-div-f-sec7-m3-2-kawano",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "大将戦",
+        "playerKey": "kawano",
+        "myChar": "luke",
+        "opponentPlayerKey": "wabiichi",
+        "opponentPlayerName": "わびいち",
+        "opponentTeam": "VARREL",
+        "opponentChar": "terry",
+        "myScore": 3,
+        "opponentScore": 2,
+        "won": true
+      },
       {
         "id": "sfl26-div-f-sec6-m2-1-kawano",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
@@ -2851,6 +2931,22 @@
     ],
     "sahara": [
       {
+        "id": "sfl26-div-f-sec7-m3-0-sahara",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "先鋒戦",
+        "playerKey": "sahara",
+        "myChar": "ed",
+        "opponentPlayerKey": "mago",
+        "opponentPlayerName": "マゴ",
+        "opponentTeam": "VARREL",
+        "opponentChar": "mai",
+        "myScore": 2,
+        "opponentScore": 0,
+        "won": true
+      },
+      {
         "id": "sfl26-div-f-sec5-m3-2-sahara",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第5節)",
         "category": "SFL",
@@ -2932,6 +3028,22 @@
       }
     ],
     "itazan": [
+      {
+        "id": "sfl26-div-f-sec7-m1-2-itazan",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "大将戦",
+        "playerKey": "itazan",
+        "myChar": "zangief",
+        "opponentPlayerKey": "otani",
+        "opponentPlayerName": "大谷",
+        "opponentTeam": "OJA",
+        "opponentChar": "luke",
+        "myScore": 1,
+        "opponentScore": 3,
+        "won": false
+      },
       {
         "id": "sfl26-div-f-sec5-m3-1-itazan",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第5節)",
@@ -3097,6 +3209,22 @@
     ],
     "takeuchi": [
       {
+        "id": "sfl26-div-f-sec7-m1-0-takeuchi",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "先鋒戦",
+        "playerKey": "takeuchi",
+        "myChar": "jamie",
+        "opponentPlayerKey": "mocchi",
+        "opponentPlayerName": "もっちー",
+        "opponentTeam": "OJA",
+        "opponentChar": "gouki_akuma",
+        "myScore": 2,
+        "opponentScore": 0,
+        "won": true
+      },
+      {
         "id": "sfl26-div-f-sec6-m3-0-takeuchi",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
         "category": "SFL",
@@ -3195,6 +3323,22 @@
     ],
     "keib": [
       {
+        "id": "sfl26-div-f-sec7-m1-1-keib",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "中堅戦",
+        "playerKey": "keib",
+        "myChar": "mai",
+        "opponentPlayerKey": "seiya",
+        "opponentPlayerName": "Seiya",
+        "opponentTeam": "OJA",
+        "opponentChar": "chunli",
+        "myScore": 1,
+        "opponentScore": 2,
+        "won": false
+      },
+      {
         "id": "sfl26-div-f-sec6-m3-2-keib",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
         "category": "SFL",
@@ -3277,6 +3421,22 @@
     ],
     "seiya": [
       {
+        "id": "sfl26-div-f-sec7-m1-1-seiya",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "中堅戦",
+        "playerKey": "seiya",
+        "myChar": "chunli",
+        "opponentPlayerKey": "keib",
+        "opponentPlayerName": "KEI.B",
+        "opponentTeam": "DFM",
+        "opponentChar": "mai",
+        "myScore": 2,
+        "opponentScore": 1,
+        "won": true
+      },
+      {
         "id": "sfl26-div-f-sec6-m2-1-seiya",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
         "category": "SFL",
@@ -3326,6 +3486,22 @@
       }
     ],
     "otani": [
+      {
+        "id": "sfl26-div-f-sec7-m1-2-otani",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "大将戦",
+        "playerKey": "otani",
+        "myChar": "luke",
+        "opponentPlayerKey": "itazan",
+        "opponentPlayerName": "板橋ザンギエフ",
+        "opponentTeam": "DFM",
+        "opponentChar": "zangief",
+        "myScore": 3,
+        "opponentScore": 1,
+        "won": true
+      },
       {
         "id": "sfl26-div-f-sec6-m2-2-otani",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
@@ -3424,6 +3600,22 @@
       }
     ],
     "mocchi": [
+      {
+        "id": "sfl26-div-f-sec7-m1-0-mocchi",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "先鋒戦",
+        "playerKey": "mocchi",
+        "myChar": "gouki_akuma",
+        "opponentPlayerKey": "takeuchi",
+        "opponentPlayerName": "竹内ジョン",
+        "opponentTeam": "DFM",
+        "opponentChar": "jamie",
+        "myScore": 0,
+        "opponentScore": 2,
+        "won": false
+      },
       {
         "id": "sfl26-div-f-sec5-m1-0-mocchi",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第5節)",
@@ -3573,6 +3765,22 @@
     ],
     "daigo": [
       {
+        "id": "sfl26-div-f-sec7-m2-0-daigo",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "先鋒戦",
+        "playerKey": "daigo",
+        "myChar": "gouki_akuma",
+        "opponentPlayerKey": "hikaru",
+        "opponentPlayerName": "ひかる",
+        "opponentTeam": "RID",
+        "opponentChar": "aki",
+        "myScore": 2,
+        "opponentScore": 1,
+        "won": true
+      },
+      {
         "id": "sfl26-div-f-sec6-m1-0-daigo",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
         "category": "SFL",
@@ -3638,6 +3846,22 @@
       }
     ],
     "fuudo": [
+      {
+        "id": "sfl26-div-f-sec7-m2-2-fuudo",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "大将戦",
+        "playerKey": "fuudo",
+        "myChar": "cviper",
+        "opponentPlayerKey": "adelie",
+        "opponentPlayerName": "あでりい",
+        "opponentTeam": "RID",
+        "opponentChar": "ed",
+        "myScore": 3,
+        "opponentScore": 0,
+        "won": true
+      },
       {
         "id": "sfl26-div-f-sec6-m1-1-fuudo",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
@@ -3720,6 +3944,22 @@
       }
     ],
     "yas": [
+      {
+        "id": "sfl26-div-f-sec7-m2-1-yas",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "中堅戦",
+        "playerKey": "yas",
+        "myChar": "ryu",
+        "opponentPlayerKey": "jr",
+        "opponentPlayerName": "Jr.",
+        "opponentTeam": "RID",
+        "opponentChar": "zangief",
+        "myScore": 2,
+        "opponentScore": 1,
+        "won": true
+      },
       {
         "id": "sfl26-div-f-sec6-m1-3-yas",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
@@ -3901,6 +4141,22 @@
     ],
     "jr": [
       {
+        "id": "sfl26-div-f-sec7-m2-1-jr",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "中堅戦",
+        "playerKey": "jr",
+        "myChar": "zangief",
+        "opponentPlayerKey": "yas",
+        "opponentPlayerName": "YAS",
+        "opponentTeam": "RC",
+        "opponentChar": "ryu",
+        "myScore": 1,
+        "opponentScore": 2,
+        "won": false
+      },
+      {
         "id": "sfl26-div-f-sec6-m3-1-jr",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
         "category": "SFL",
@@ -4065,6 +4321,22 @@
     ],
     "adelie": [
       {
+        "id": "sfl26-div-f-sec7-m2-2-adelie",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "大将戦",
+        "playerKey": "adelie",
+        "myChar": "ed",
+        "opponentPlayerKey": "fuudo",
+        "opponentPlayerName": "ふ～ど",
+        "opponentTeam": "RC",
+        "opponentChar": "cviper",
+        "myScore": 0,
+        "opponentScore": 3,
+        "won": false
+      },
+      {
         "id": "sfl26-div-f-sec5-m2-0-adelie",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第5節)",
         "category": "SFL",
@@ -4130,6 +4402,22 @@
       }
     ],
     "hikaru": [
+      {
+        "id": "sfl26-div-f-sec7-m2-0-hikaru",
+        "tournamentName": "SFL 2026 Pro-JP (Division F 第7節)",
+        "category": "SFL",
+        "date": "2026-11-10",
+        "round": "先鋒戦",
+        "playerKey": "hikaru",
+        "myChar": "aki",
+        "opponentPlayerKey": "daigo",
+        "opponentPlayerName": "ウメハラ",
+        "opponentTeam": "RC",
+        "opponentChar": "gouki_akuma",
+        "myScore": 1,
+        "opponentScore": 2,
+        "won": false
+      },
       {
         "id": "sfl26-div-f-sec6-m3-0-hikaru",
         "tournamentName": "SFL 2026 Pro-JP (Division F 第6節)",
