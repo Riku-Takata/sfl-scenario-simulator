@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T15:18:25.626Z",
+  "updatedAt": "2026-11-10T18:01:20.944Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -8667,10 +8667,13 @@
       "officialRefs": [
         "div-f-sec7-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "1P側のジェイミー（竹内ジョン）と2P側の豪鬼（もっちー）の対戦。豪鬼の放った飛び道具に対し、ジェイミーがOD爆廻で弾抜けを行ってパニッシュカウンターを取り、そのままヒットさせて豪鬼をK.O.しラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-10T15:12:02.404Z"
     },
@@ -8691,10 +8694,13 @@
       "officialRefs": [
         "div-f-sec7-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "ジェイミーが豪鬼の飛び道具（豪波動拳）に対してOD爆廻を合わせて弾抜けし、パニッシュカウンターを取ります。そこからクリティカルアーツ（CA）へ繋ぎ、連続攻撃の演出を経て豪鬼をK.O.します。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-10T15:12:02.404Z"
     },
@@ -8715,10 +8721,13 @@
       "officialRefs": [
         "div-f-sec7-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "豪鬼の飛び道具の隙に対し、ジェイミーが攻撃をヒットさせてパニッシュカウンターを奪い、コンボから吹き飛ばした後に薬湯を飲んで酔いレベルを上げます。さらにドライブラッシュから追撃を仕掛け、豪鬼を画面端側へ追い詰めていきます。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-10T15:12:02.404Z"
     },
@@ -8739,10 +8748,13 @@
       "officialRefs": [
         "div-f-sec7-m1-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "酔いレベル4のジェイミーが画面端付近で豪鬼を攻め立て、技をヒットさせてパニッシュカウンターを奪います。豪鬼がバーンアウト状態に陥る中、ジェイミーがコンボを継続して浮かせ、最後は下段攻撃をヒットさせてK.O.を奪い、ジェイミーの勝利（JAMIE WIN）画面となります。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-10T15:12:02.404Z"
     },

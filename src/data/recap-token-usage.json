@@ -776,6 +776,38 @@
           "thoughtTokens": 1,
           "totalTokens": 1
         }
+      },
+      "codex:narration:codex-cli": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 19897,
+          "cachedInputTokens": 0,
+          "outputTokens": 1417,
+          "thoughtTokens": 59
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1
+        }
+      },
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 7894,
+          "cachedInputTokens": 0,
+          "outputTokens": 315,
+          "thoughtTokens": 825,
+          "totalTokens": 9034
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        }
       }
     }
   },
@@ -948,6 +980,24 @@
           "totalTokens": 1
         },
         "failures": {}
+      },
+      "gemini:verify:gemini-3.8-flash": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 7894,
+          "cachedInputTokens": 0,
+          "outputTokens": 315,
+          "thoughtTokens": 825,
+          "totalTokens": 9034
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1,
+          "totalTokens": 1
+        },
+        "failures": {}
       }
     }
   },
@@ -974,6 +1024,7 @@
     "a142990c-d0b4-4ade-8713-dd66c4826f21",
     "8b2a77e9-0fed-4127-a21f-a2c6a948048c",
     "ee40b8a6-2e65-4e3a-af80-3337514bdef3",
-    "58610947-540b-4c3f-80fa-755bc2a6efc8"
+    "58610947-540b-4c3f-80fa-755bc2a6efc8",
+    "d0c59c3c-ec12-424b-ad24-295771a7a154"
   ]
 }
