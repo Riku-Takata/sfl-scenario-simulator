@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11T11:01:08.725Z",
+  "updatedAt": "2026-11-11T18:01:04.847Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -6006,6 +6006,198 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-11T11:01:08.657Z"
+    },
+    "div-f-sec7-m3-b0:bb80428047a826aa:published": {
+      "articleId": "div-f-sec7-m3-b0:bb80428047a826aa:published",
+      "matchId": "div-f-sec7-m3",
+      "boutId": "div-f-sec7-m3-b0",
+      "revision": "bb80428047a826aa",
+      "status": "passed",
+      "summary": "先鋒戦はさはら選手がマゴ選手を2-0で下し、Good 8 Squadが先制した。締めくくりは画面端で攻めを重ね、パーフェクトKOで勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-4a2d66b5fbb8daff7ea0",
+        "ev-312f3c757b14517024c5"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームはさはらがしゃがみ中攻撃でパニッシュカウンターを取り、そこからコンボをつないでラウンドを奪った。",
+          "evidenceIds": [
+            "ev-8a91085b5d1cda18d26f"
+          ]
+        },
+        {
+          "text": "決着のラウンドでは、さはらがパニッシュカウンターからマゴを画面端へ運び、中段攻撃も交えた攻めからパーフェクトKOに持ち込んだ。",
+          "evidenceIds": [
+            "ev-312f3c757b14517024c5"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-4a2d66b5fbb8daff7ea0",
+        "ev-312f3c757b14517024c5",
+        "ev-8a91085b5d1cda18d26f"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-11T18:01:04.807Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-11T18:01:04.807Z"
+    },
+    "div-f-sec7-m3-b1:6e28f033160fa16c:published": {
+      "articleId": "div-f-sec7-m3-b1:6e28f033160fa16c:published",
+      "matchId": "div-f-sec7-m3",
+      "boutId": "div-f-sec7-m3-b1",
+      "revision": "6e28f033160fa16c",
+      "status": "passed",
+      "summary": "中堅戦はガチくん選手がときど選手を2-1で破り、Good 8 Squadが連勝。第1ゲームを先取し、第2ゲームを取り返された後、最終ゲームを獲得して勝ち切った。",
+      "summaryEvidenceIds": [
+        "ev-b807781f7bbc22285e7b"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームではガチくんがイウサールの竜巻とともにときどを画面端へ追い込み、打撃をガードさせ続けてバーンアウトさせた。",
+          "evidenceIds": [
+            "ev-e043ee8d7b3ddea0ce13"
+          ]
+        },
+        {
+          "text": "第2ゲームではときどがSA2ラヴーシュカを展開し、中段と下段の攻めを重ねながらガチくんを画面端へ押し込んだ。",
+          "evidenceIds": [
+            "ev-6b653908d874662e810c"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドは、ガチくんがイウサールを盾に画面端で打撃と投げを重ね、ときどの体力とドライブゲージを削った。",
+          "evidenceIds": [
+            "ev-3d9c0f75e55d53e5c55c"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-b807781f7bbc22285e7b",
+        "ev-e043ee8d7b3ddea0ce13",
+        "ev-6b653908d874662e810c",
+        "ev-3d9c0f75e55d53e5c55c"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-11T18:01:04.807Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-11T18:01:04.807Z"
+    },
+    "div-f-sec7-m3-b2:54036205150ff27d:candidate": {
+      "articleId": "div-f-sec7-m3-b2:54036205150ff27d:candidate",
+      "matchId": "div-f-sec7-m3",
+      "boutId": "div-f-sec7-m3-b2",
+      "revision": "54036205150ff27d",
+      "status": "insufficient",
+      "summary": "",
+      "summaryEvidenceIds": [
+        "ev-c111d16c230aa7d0172b"
+      ],
+      "keyPoints": [
+        {
+          "text": "第3ゲーム最終ラウンドは、カワノがドライブインパクトでパニッシュカウンターを奪い、追撃でKOして最初の1ゲームを取り返した。",
+          "evidenceIds": [
+            "ev-98b03af50d7cfb14f470",
+            "ev-c111d16c230aa7d0172b"
+          ]
+        },
+        {
+          "text": "第5ゲーム最終ラウンドでは、カワノがドライブインパクトから大技につないでわびいちをバーンアウトに追い込み、相手のゲージ回復後も中距離からの差し込みを決めてKOした。",
+          "evidenceIds": [
+            "ev-cf69336ef3eb4c416b77"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-c111d16c230aa7d0172b",
+        "ev-98b03af50d7cfb14f470",
+        "ev-cf69336ef3eb4c416b77"
+      ],
+      "quality": {
+        "score": 0.8888888888888888,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": false,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [
+          "summaryHasSubstance"
+        ],
+        "evaluatedAt": "2026-11-11T18:01:04.808Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-11T18:01:04.808Z"
+    },
+    "div-f-sec7-m3:f1281c7fd61708be:published": {
+      "articleId": "div-f-sec7-m3:f1281c7fd61708be:published",
+      "matchId": "div-f-sec7-m3",
+      "revision": "f1281c7fd61708be",
+      "status": "passed",
+      "headline": "Good 8 Squadが全勝、40-0でVARRELを下す",
+      "summary": "Good 8 SquadがVARRELに40-0で勝利した。先鋒戦はさはらがマゴを2-0で下し、最後は画面端での攻めからパーフェクトKOを決めた。中堅戦はガチくんが第1ゲームを取り、ときどに第2ゲームを返されながらも、最終ゲームを獲得して2-1で勝利。大将戦ではわびいちが2ゲームを先行したが、カワノがそこから3ゲームを連取した。最終ゲームの最終ラウンドは、カワノがドライブインパクトから大技につなぎ、バーンアウトから回復したわびいちにも差し込みを通して逆転勝利を締めくくった。",
+      "summaryEvidenceIds": [
+        "ev-4a2d66b5fbb8daff7ea0",
+        "ev-312f3c757b14517024c5",
+        "ev-b807781f7bbc22285e7b",
+        "ev-c111d16c230aa7d0172b",
+        "ev-cf69336ef3eb4c416b77"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-4a2d66b5fbb8daff7ea0",
+        "ev-312f3c757b14517024c5",
+        "ev-b807781f7bbc22285e7b",
+        "ev-c111d16c230aa7d0172b",
+        "ev-cf69336ef3eb4c416b77"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-11T18:01:04.808Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-11T18:01:04.808Z"
     }
   }
 }
