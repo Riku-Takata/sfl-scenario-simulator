@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-10T18:01:20.944Z",
+  "updatedAt": "2026-11-11T11:01:08.712Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -9417,13 +9417,10 @@
       "officialRefs": [
         "div-f-sec7-m3-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v4",
-      "verificationObservation": "180:40.000〜181:10.000の区間：ラウンド開始後、マゴ選手（不知火舞）の花蝶扇に対し、さはら選手（エド）がジャストパリィを成功させて飛び込みからコンボを叩き込みます。その後もエドが攻勢を維持し、バーンアウトした舞に対してしゃがみ中攻撃からCA（クリティカルアート）を接続し、181:06.000頃にPERFECT K.O.でエドがラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-10T15:16:44.072Z"
     },
@@ -9444,13 +9441,10 @@
       "officialRefs": [
         "div-f-sec7-m3-b0:winner-order-reviewed"
       ],
-      "status": "disputed",
+      "status": "candidate",
       "extractorVersion": "recap-evidence-v2",
-      "verifierVersion": "independent-description-v4",
-      "verificationObservation": "181:26.000〜182:05.500の区間：ラウンド開始直後からマゴ選手（不知火舞）がドライブラッシュや空中攻撃、花蝶扇を用いて優位に立ち回ります。さはら選手（エド）の反撃を捌きつつ、最後はドライブラッシュからの下段攻撃で体力を削りきり、182:04.000頃にPERFECT K.O.で舞がラウンドを獲得します。",
       "sourceModels": [
-        "gemini-3.8-flash",
-        "gemini-3.6-flash"
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-10T15:16:44.072Z"
     },

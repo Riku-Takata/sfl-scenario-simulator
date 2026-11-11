@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T04:00:59.235Z",
+  "updatedAt": "2026-11-11T11:01:08.608Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 7,
@@ -786,8 +786,8 @@
         "awayPoint": 10,
         "winner": "home",
         "isTiebreaker": false,
-        "matchHeadline": "名古屋NTPOJAが30-10で勝利",
-        "matchSummary": "第1試合【DetonatioN FocusMe vs 名古屋NTPOJA】は10-30で名古屋NTPOJAの勝利。大将戦は大谷選手が制した。",
+        "matchHeadline": "名古屋NTPOJA、先鋒戦を落とすも30-10で勝利",
+        "matchSummary": "名古屋NTPOJAがDetonatioN FocusMeに30-10で勝利した。先鋒戦は竹内ジョンがもっちーの波動拳に弾抜けを合わせ、2-0で先取。中堅戦はSeiyaが第1ゲームを取り、KEI.Bに体力わずかからの逆転で第2ゲームを返されたが、最終ゲームを制して勝利した。大将戦も板橋ザンギエフが第1ゲームを取る展開となったが、大谷が続く3ゲームを連取。第4ゲームはSA1を組み込んだコンボでパーフェクトKOを奪い、最後もリバーサル技を回避して反撃を決め、名古屋NTPOJAの勝利を締めくくった。",
         "bouts": [
           {
             "status": 0,
@@ -807,11 +807,12 @@
               "Game 2: [2-0] 竹内ジョン選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "竹内ジョン選手（ジェイミー）がもっちー選手（豪鬼）を2-0で下した。",
+              "source": "gemini-video",
+              "summary": "竹内ジョン選手（ジェイミー）がもっちー選手（豪鬼）を2-0で下し、DetonatioN FocusMeが先制した。第1ゲームは波動拳への弾抜けからCAにつなぐなど、反撃を得点に結びつけた。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲーム竹内ジョン→第2ゲーム竹内ジョン",
-                "竹内ジョン選手が1ラウンドも落とさず全ゲームをストレートで取り切った。"
+                "第1ゲーム第1ラウンドは、竹内ジョンが波動拳にOD技で弾抜けを合わせ、パニッシュカウンターからKOを奪った。",
+                "第1ゲーム第2ラウンドも波動拳への弾抜けでパニッシュカウンターを取り、竹内ジョンがCAまでつないでゲームを先取した。",
+                "第2ゲーム第2ラウンドは、竹内ジョンが飛び道具の隙にパニッシュカウンターを奪い、コンボ後の飲酒からドライブラッシュで追撃して画面端側へ押し込んだ。"
               ]
             },
             "games": [
@@ -843,7 +844,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -864,11 +865,11 @@
               "Game 3: [0-2] Seiya選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "Seiya選手（春麗）がKEI.B選手（不知火舞）を2-1で下した。",
+              "source": "gemini-video",
+              "summary": "Seiya選手（春麗）がKEI.B選手（不知火舞）を2-1で下し、名古屋NTPOJAが取り返した。第1ゲームを先取した後、第2ゲームはKEI.Bに返されたが、最終ゲームを取って勝ち切った。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームSeiya→第2ゲームKEI.B→第3ゲームSeiya",
-                "最終ゲームまでもつれたフルセットをSeiya選手が制した。"
+                "SeiyaはKEI.Bのドライブラッシュからの攻撃をジャストパリィで受け、SA2につなぐコンボで体力を削ってタイムオーバーでの勝利を収めた。",
+                "SeiyaはKEI.Bの隙をパニッシュカウンターで捉えて画面端へ運び、中段攻撃も絡めてパーフェクトKOを奪った。"
               ]
             },
             "games": [
@@ -913,7 +914,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -935,12 +936,12 @@
               "Game 4: [0-2] 大谷選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "大谷選手（ルーク）が板橋ザンギエフ選手（ザンギエフ）を3-1で下した。",
+              "source": "gemini-video",
+              "summary": "大谷選手（ルーク）が板橋ザンギエフ選手（ザンギエフ）に3-1で勝利した。第1ゲームを落としてから3ゲームを連取し、名古屋NTPOJAのチーム戦勝利を決めた。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲーム板橋ザンギエフ→第2ゲーム大谷→第3ゲーム大谷→第4ゲーム大谷",
-                "第1ゲームを板橋ザンギエフ選手に先取されてからの逆転勝利。",
-                "第3ゲームは大谷選手が1ラウンド目を落としてから逆転。"
+                "板橋ザンギエフのリバーサルでの大技を大谷がかわし、空振りの隙にパニッシュカウンターからコンボを入れてラウンドを取った。",
+                "第4ゲーム第1ラウンドは、大谷が立ち強Pから画面端へ追い込み、リバーサル技をガードした後の反撃をSA1につないでパーフェクトKOを達成した。",
+                "最後は板橋ザンギエフのリバーサル技を大谷が回避し、残った隙へパニッシュカウンターからのコンボを決めてKOした。"
               ]
             },
             "games": [
@@ -1007,10 +1008,10 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           }
         ],
-        "narrationStatus": "pending"
+        "narrationStatus": "complete"
       },
       {
         "matchId": "div-f-sec7-m2",
@@ -1280,15 +1281,15 @@
         "awayPoint": 0,
         "winner": "home",
         "isTiebreaker": false,
-        "matchHeadline": "Good 8 Squadが全戦を制し40-0で勝利",
-        "matchSummary": "Good 8 SquadがVARRELに40-0で勝利した。先鋒戦はさはらがマゴを2-0で下して先制。最後は画面端で攻めを重ね、パーフェクトKOで締めた。中堅戦はガチくんが第1ゲームを取り、ときどに第2ゲームを返されたものの、最終ゲームを制して2-1で勝利。大将戦ではわびいちが2ゲームを先取したが、カワノがそこから3ゲームを連取した。最終ラウンドはドライブインパクトから大技につなぎ、わびいちのバーンアウト回復後にも差し込みを決めて逆転勝利。Good 8 Squadが全3戦を取り切った。",
+        "matchHeadline": "Good 8 Squadが40-0で勝利",
+        "matchSummary": "第3試合【VARREL vs Good 8 Squad】は0-40でGood 8 Squadの勝利。大将戦はカワノ選手が制した。",
         "bouts": [
           {
             "status": 0,
             "statusName": "先鋒戦",
             "homePlayer": "sahara",
             "awayPlayer": "mago",
-            "homeChara": "ed",
+            "homeChara": "luke",
             "awayChara": "mai",
             "homeBattle": 2,
             "awayBattle": 0,
@@ -1301,17 +1302,18 @@
               "Game 2: [1-2] さはら選手がフルラウンド勝利（先制されるも逆転）"
             ],
             "analysis": {
-              "source": "gemini-video",
-              "summary": "さはら選手（エド）がマゴ選手（不知火舞）を2-0で下し、Good 8 Squadが先制した。最後は画面端で攻めを重ね、パーフェクトKOで勝利を決めた。",
+              "source": "official-data",
+              "summary": "さはら選手（ルーク）がマゴ選手（不知火舞）を2-0で下した。",
               "keyPoints": [
-                "第2ゲーム第2ラウンドは、さはらがしゃがみ中攻撃のパニッシュカウンターからSA2につなぎ、ラウンドを取り返した。",
-                "最終ラウンドは、さはらがパニッシュカウンターからマゴを画面端へ追い込み、中段攻撃も交えた攻めからパーフェクトKOを奪った。"
+                "ゲーム推移: 第1ゲームさはら→第2ゲームさはら",
+                "さはら選手がゲームを1つも落とさずに勝利した。",
+                "第1ゲームはさはら選手が1ラウンド目を落としてから逆転、第2ゲームはさはら選手が1ラウンド目を落としてから逆転。"
               ]
             },
             "games": [
               {
                 "winner": "home",
-                "homeChara": "ed",
+                "homeChara": "luke",
                 "awayChara": "mai",
                 "rounds": [
                   {
@@ -1327,7 +1329,7 @@
               },
               {
                 "winner": "home",
-                "homeChara": "ed",
+                "homeChara": "luke",
                 "awayChara": "mai",
                 "rounds": [
                   {
@@ -1343,7 +1345,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "complete"
+            "videoStatus": "pending"
           },
           {
             "status": 1,
