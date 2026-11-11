@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T21:04:49.723Z",
+  "updatedAt": "2026-11-11T17:23:31.089Z",
   "simulationRuns": 10000,
   "generatorMode": "deterministic-engine",
   "predictorEnabled": true,
@@ -5626,20 +5626,20 @@
       "remainingAway": 1,
       "maxPossiblePoints": 310,
       "probabilities": {
-        "firstPlace": 42.9,
+        "firstPlace": 43,
         "top2HomeAdvantage": 73.3,
         "playoffTop3": 97.7,
         "rankDistribution": [
-          42.9,
-          30.3,
-          24.5,
+          43,
+          30.4,
+          24.4,
           2.3,
           0,
           0
         ]
       },
       "projectedPoints": {
-        "expected": 260.6,
+        "expected": 260.7,
         "p10": 230,
         "p50": 260,
         "p90": 290,
@@ -5647,7 +5647,7 @@
         "divisionSecondBorderAvg": 255.6,
         "divisionThirdBorderAvg": 235.8
       },
-      "statusSummary": "Good 8 Squadは現在Division F 1位（190pt / バトル得失+11 / ラウンド得失+12）。残り3試合（HOME 2戦・AWAY 1戦）を残し、プレイオフ進出は97.7%、1位突破は42.9%です。",
+      "statusSummary": "Good 8 Squadは現在Division F 1位（190pt / バトル得失+11 / ラウンド得失+12）。残り3試合（HOME 2戦・AWAY 1戦）を残し、プレイオフ進出は97.7%、1位突破は43.0%です。",
       "playoffOutlook": "現在首位のアドバンテージを維持して1位通過を果たせば、プレイオフFINALへシード直行（HOME権確定）となります。",
       "personalizedOutlook": {
         "realisticTargetRank": 1,
@@ -5672,7 +5672,7 @@
           "first": {
             "rank": 1,
             "targetPoints": 280,
-            "probability": 42.9,
+            "probability": 43,
             "feasibility": "realistic",
             "feasibilityLabel": "現実的な射程",
             "note": "現在首位のアドバンテージを活かし、自力でFINAL直行を決める本命ルート"
@@ -5703,7 +5703,7 @@
           "targetPoints": 280,
           "requiredWins": 2,
           "requiredLosses": 1,
-          "probability": 42.9,
+          "probability": 43,
           "headline": "最終280pt到達（残り3戦で2勝1敗ペース）が1位突破のターゲットライン",
           "narrative": "G8SがDivision F 1位突破（予想ボーダー平均 275.9pt）を果たすには、残り3試合で+90ptを上積みし合計280ptへ到達することが目標となります。特に残り2試合あるHOME戦で確実に30pt〜40ptを稼ぎ、首位G8S（現在190pt）との首位防衛戦を制することが最短ルートです。",
           "keyConditions": [
@@ -5753,8 +5753,8 @@
               "recommendedScore": "30 - 10",
               "teamPointGain": 10,
               "opponentPointGain": 30,
-              "predictedWinProb": 66.3,
-              "keyMatchupNote": "大将推奨: さはら(ED) vs KEI.B(MAI) [勝率60.8%]",
+              "predictedWinProb": 66.4,
+              "keyMatchupNote": "大将推奨: さはら(ED) vs KEI.B(MAI) [勝率55.9%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
           ],
@@ -5818,8 +5818,8 @@
               "recommendedScore": "30 - 10",
               "teamPointGain": 10,
               "opponentPointGain": 30,
-              "predictedWinProb": 66.3,
-              "keyMatchupNote": "大将推奨: さはら(ED) vs KEI.B(MAI) [勝率60.8%]",
+              "predictedWinProb": 66.4,
+              "keyMatchupNote": "大将推奨: さはら(ED) vs KEI.B(MAI) [勝率55.9%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
           ],
@@ -5883,8 +5883,8 @@
               "recommendedScore": "30 - 10",
               "teamPointGain": 10,
               "opponentPointGain": 30,
-              "predictedWinProb": 66.3,
-              "keyMatchupNote": "大将推奨: さはら(ED) vs KEI.B(MAI) [勝率60.8%]",
+              "predictedWinProb": 66.4,
+              "keyMatchupNote": "大将推奨: さはら(ED) vs KEI.B(MAI) [勝率55.9%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
           ],
@@ -5920,7 +5920,7 @@
           "recommendedWinnerName": "VARREL",
           "recommendedScoreLabel": "DFM 10 - 30 VARREL",
           "playoffProbDelta": 1.3,
-          "firstPlaceProbDelta": 0.2,
+          "firstPlaceProbDelta": 0.1,
           "bestPlayoffProb": 99,
           "worstPlayoffProb": 95,
           "reason": "競合ライバルであるDFMの追い上げを阻止し、ボーダーラインを引き下げるためVARRELの勝利（理想は10-30）が最も有利に働きます。"
@@ -5937,7 +5937,7 @@
           "recommendedWinnerName": "OJA",
           "recommendedScoreLabel": "OJA 40 - 0 RID",
           "playoffProbDelta": 0.3,
-          "firstPlaceProbDelta": 6.4,
+          "firstPlaceProbDelta": 6.3,
           "bestPlayoffProb": 98,
           "worstPlayoffProb": 97.3,
           "reason": "現在3位（180pt）のRIDのポイント加算とバトル得失差を抑え込むことで、G8Sの上位浮上・PO進出確率が最大+0.5%向上します。"
@@ -6355,7 +6355,7 @@
           "opponentKey": "dng",
           "opponentName": "DFM",
           "side": "away",
-          "winProbability": 66.3,
+          "winProbability": 66.4,
           "expectedPoints": 26,
           "mostLikelyScore": "G8S 30 - 10 DFM",
           "orderRecommendation": {
@@ -6365,7 +6365,7 @@
             "opponentKey": "dng",
             "opponentName": "DFM",
             "side": "away",
-            "teamWinProbability": 66.3,
+            "teamWinProbability": 66.4,
             "expectedTeamPoints": 26,
             "mostLikelyScore": "G8S 30 - 10 DFM",
             "recommendedLineup": [
@@ -6407,15 +6407,15 @@
                 "playerBKey": "keib",
                 "playerBName": "KEI.B",
                 "charB": "MAI",
-                "macroMatchupTop96": 51,
-                "playerVsCharRate": 44.2,
+                "macroMatchupTop96": 47.9,
+                "playerVsCharRate": 42.2,
                 "h2hAndHomeRate": 55,
-                "expectedWinRateA": 60.8,
+                "expectedWinRateA": 55.9,
                 "isHomeCounterPick": false,
-                "rationale": "キャラ相性(ED vs MAI): 51% / AWAY先出し時の対KEI.B予測勝率: 60.8%"
+                "rationale": "キャラ相性(ED vs MAI): 47.9% / AWAY先出し時の対KEI.B予測勝率: 55.9%"
               }
             ],
-            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 さはら(ED) 対 KEI.B(MAI) の勝率が60.8%。出場選手の組み合わせ全体で平均したチーム勝率は66.3%（期待獲得 26pt）です。"
+            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 さはら(ED) 対 KEI.B(MAI) の勝率が55.9%。出場選手の組み合わせ全体で平均したチーム勝率は66.4%（期待獲得 26pt）です。"
           },
           "lineupBreakdown": {
             "slotAppearance": {
@@ -6476,7 +6476,7 @@
                 "boutHomeWin": [
                   0.326,
                   0.336,
-                  0.392
+                  0.441
                 ]
               },
               {
@@ -6493,7 +6493,7 @@
                 "prob": 0.002716791875787863,
                 "boutHomeWin": [
                   0.326,
-                  0.335,
+                  0.29,
                   0.46299999999999997
                 ]
               },
@@ -6511,12 +6511,12 @@
                 "prob": 0.002716791875787863,
                 "boutHomeWin": [
                   0.39299999999999996,
-                  0.371,
-                  0.392
+                  0.32299999999999995,
+                  0.441
                 ]
               }
             ],
-            "tiebreakHomeWin": 0.4355
+            "tiebreakHomeWin": 0.44001
           }
         }
       ],
@@ -6531,7 +6531,7 @@
         "targets": {
           "first": {
             "status": "possible",
-            "label": "42.9%"
+            "label": "43.0%"
           },
           "top2": {
             "status": "possible",
@@ -6559,11 +6559,11 @@
       "maxPossiblePoints": 300,
       "probabilities": {
         "firstPlace": 39.8,
-        "top2HomeAdvantage": 76,
+        "top2HomeAdvantage": 76.1,
         "playoffTop3": 97.5,
         "rankDistribution": [
           39.8,
-          36.2,
+          36.3,
           21.5,
           2.4,
           0.1,
@@ -6612,7 +6612,7 @@
           "second": {
             "rank": 2,
             "targetPoints": 260,
-            "probability": 76,
+            "probability": 76.1,
             "feasibility": "favorite",
             "feasibilityLabel": "本命ターゲット",
             "note": "準決勝での奇数巡目HOME優先権をがっちり確保できる現実的本命ルート"
@@ -6700,9 +6700,9 @@
           "targetPoints": 260,
           "requiredWins": 2,
           "requiredLosses": 1,
-          "probability": 76,
+          "probability": 76.1,
           "headline": "合計260pt確保（残り2勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均255.6ptであり、RCは残り試合で手堅く2勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在76%）を大きく引き上げられます。",
+          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均255.6ptであり、RCは残り試合で手堅く2勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在76.1%）を大きく引き上げられます。",
           "keyConditions": [
             "目標合計ポイント: 260pt（2位予想ボーダー平均 255.6pt）",
             "残り3戦の目安戦績: 2勝1敗",
@@ -7467,7 +7467,7 @@
           },
           "top2": {
             "status": "possible",
-            "label": "76.0%"
+            "label": "76.1%"
           },
           "playoff": {
             "status": "possible",
@@ -7491,19 +7491,19 @@
       "maxPossiblePoints": 300,
       "probabilities": {
         "firstPlace": 17.1,
-        "top2HomeAdvantage": 49.2,
+        "top2HomeAdvantage": 49.1,
         "playoffTop3": 95.6,
         "rankDistribution": [
           17.1,
           32,
-          46.4,
+          46.5,
           4.1,
           0.4,
           0
         ]
       },
       "projectedPoints": {
-        "expected": 249.3,
+        "expected": 249.2,
         "p10": 220,
         "p50": 250,
         "p90": 280,
@@ -7544,7 +7544,7 @@
           "second": {
             "rank": 2,
             "targetPoints": 260,
-            "probability": 49.2,
+            "probability": 49.1,
             "feasibility": "realistic",
             "feasibilityLabel": "現実的な射程",
             "note": "直接対決で30pt奪取できれば一気に浮上可能な現実的ターゲット"
@@ -7617,9 +7617,9 @@
               "recommendedScore": "40 - 0",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 60.1,
+              "predictedWinProb": 59.7,
               "keyMatchupNote": "大将推奨: ひかる(AKI) vs わびいち(TERRY) [勝率46.8%]",
-              "note": "HOME被せ有利（予測勝率60.1%）を活かし40pt完勝狙い"
+              "note": "HOME被せ有利（予測勝率59.7%）を活かし40pt完勝狙い"
             }
           ],
           "feasibility": "challenging",
@@ -7632,9 +7632,9 @@
           "targetPoints": 260,
           "requiredWins": 2,
           "requiredLosses": 1,
-          "probability": 49.2,
+          "probability": 49.1,
           "headline": "合計260pt確保（残り2勝1敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均255.6ptであり、RIDは残り試合で手堅く2勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在49.2%）を大きく引き上げられます。",
+          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均255.6ptであり、RIDは残り試合で手堅く2勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在49.1%）を大きく引き上げられます。",
           "keyConditions": [
             "目標合計ポイント: 260pt（2位予想ボーダー平均 255.6pt）",
             "残り3戦の目安戦績: 2勝1敗",
@@ -7682,7 +7682,7 @@
               "recommendedScore": "10 - 30",
               "teamPointGain": 10,
               "opponentPointGain": 30,
-              "predictedWinProb": 60.1,
+              "predictedWinProb": 59.7,
               "keyMatchupNote": "大将推奨: ひかる(AKI) vs わびいち(TERRY) [勝率46.8%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
@@ -7747,7 +7747,7 @@
               "recommendedScore": "10 - 30",
               "teamPointGain": 10,
               "opponentPointGain": 30,
-              "predictedWinProb": 60.1,
+              "predictedWinProb": 59.7,
               "keyMatchupNote": "大将推奨: ひかる(AKI) vs わびいち(TERRY) [勝率46.8%]",
               "note": "強敵相手でも0pt完封負けを回避し10pt積み上げ"
             }
@@ -7767,7 +7767,7 @@
           "narrative": "次節（Division F 第8節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でRIDにとって最も有利になるスコアを算出しました。【G8S vs RC】では「G8S 30 - 10 RC」で決着するとPO進出率が96.1%（+0.5%変動）となります。【DFM vs VARREL】では「DFM 10 - 30 VARREL」で決着するとPO進出率が98%（+2.4%変動）となります。",
           "keyConditions": [
             "G8S vs RC: 「G8S 30 - 10 RC」を応援（PO進出率 94.9%〜96.1%の変動幅）",
-            "DFM vs VARREL: 「DFM 10 - 30 VARREL」を応援（PO進出率 89.6%〜98%の変動幅）"
+            "DFM vs VARREL: 「DFM 10 - 30 VARREL」を応援（PO進出率 89.5%〜98%の変動幅）"
           ]
         }
       },
@@ -7784,7 +7784,7 @@
           "recommendedWinnerName": "G8S",
           "recommendedScoreLabel": "G8S 30 - 10 RC",
           "playoffProbDelta": 0.5,
-          "firstPlaceProbDelta": 3.1,
+          "firstPlaceProbDelta": 3,
           "bestPlayoffProb": 96.1,
           "worstPlayoffProb": 94.9,
           "reason": "現在2位（180pt）のRCのポイント加算とバトル得失差を抑え込むことで、RIDの上位浮上・PO進出確率が最大+0.5%向上します。"
@@ -7803,7 +7803,7 @@
           "playoffProbDelta": 2.4,
           "firstPlaceProbDelta": -0.7,
           "bestPlayoffProb": 98,
-          "worstPlayoffProb": 89.6,
+          "worstPlayoffProb": 89.5,
           "reason": "競合ライバルであるDFMの追い上げを阻止し、ボーダーラインを引き下げるためVARRELの勝利（理想は10-30）が最も有利に働きます。"
         }
       ],
@@ -8219,8 +8219,8 @@
           "opponentKey": "varrel",
           "opponentName": "VARREL",
           "side": "home",
-          "winProbability": 60.1,
-          "expectedPoints": 23.9,
+          "winProbability": 59.7,
+          "expectedPoints": 23.8,
           "mostLikelyScore": "RID 30 - 10 VARREL",
           "orderRecommendation": {
             "matchId": "div-f-sec10-m1",
@@ -8229,8 +8229,8 @@
             "opponentKey": "varrel",
             "opponentName": "VARREL",
             "side": "home",
-            "teamWinProbability": 60.1,
-            "expectedTeamPoints": 23.9,
+            "teamWinProbability": 59.7,
+            "expectedTeamPoints": 23.8,
             "mostLikelyScore": "RID 30 - 10 VARREL",
             "recommendedLineup": [
               {
@@ -8256,12 +8256,12 @@
                 "playerBKey": "mago",
                 "playerBName": "マゴ",
                 "charB": "MAI",
-                "macroMatchupTop96": 51,
-                "playerVsCharRate": 41.1,
+                "macroMatchupTop96": 47.9,
+                "playerVsCharRate": 38.7,
                 "h2hAndHomeRate": 60.1,
-                "expectedWinRateA": 66.1,
+                "expectedWinRateA": 62.4,
                 "isHomeCounterPick": true,
-                "rationale": "実力差 +86（実力のみの1ゲーム勝率 60.1%） / キャラ相性(ED vs MAI): 51% / HOME後出し → 1ゲーム勝率 60.9% → 2本先取 66.1%"
+                "rationale": "実力差 +86（実力のみの1ゲーム勝率 60.1%） / キャラ相性(ED vs MAI): 47.9% / HOME後出し → 1ゲーム勝率 58.4% → 2本先取 62.4%"
               },
               {
                 "roleName": "大将戦 (20pt)",
@@ -8279,7 +8279,7 @@
                 "rationale": "実力差 -26（実力のみの1ゲーム勝率 48.3%） / キャラ相性(AKI vs TERRY): 50% / HOME後出し → 1ゲーム勝率 48.3% → 3本先取 46.8%"
               }
             ],
-            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 ひかる(AKI) 対 わびいち(TERRY) の勝率が46.8%。出場選手の組み合わせ全体で平均したチーム勝率は60.1%（期待獲得ポイント 23.9pt）です。"
+            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 ひかる(AKI) 対 わびいち(TERRY) の勝率が46.8%。出場選手の組み合わせ全体で平均したチーム勝率は59.7%（期待獲得ポイント 23.8pt）です。"
           },
           "lineupBreakdown": {
             "slotAppearance": {
@@ -8339,7 +8339,7 @@
                 "prob": 0.002458084469456724,
                 "boutHomeWin": [
                   0.43,
-                  0.6609999999999999,
+                  0.624,
                   0.46799999999999997
                 ]
               },
@@ -8380,7 +8380,7 @@
                 ]
               }
             ],
-            "tiebreakHomeWin": 0.5932545454545455
+            "tiebreakHomeWin": 0.5905636363636364
           }
         }
       ],
@@ -8399,7 +8399,7 @@
           },
           "top2": {
             "status": "possible",
-            "label": "49.2%"
+            "label": "49.1%"
           },
           "playoff": {
             "status": "possible",
@@ -8429,8 +8429,8 @@
           0.2,
           1.3,
           6.4,
-          61.2,
-          28.8,
+          61.1,
+          28.9,
           2.1
         ]
       },
@@ -8549,9 +8549,9 @@
               "recommendedScore": "40 - 0",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 33.7,
-              "keyMatchupNote": "大将推奨: KEI.B(MAI) vs さはら(ED) [勝率39.2%]",
-              "note": "HOME被せ有利（予測勝率33.7%）を活かし40pt完勝狙い"
+              "predictedWinProb": 33.6,
+              "keyMatchupNote": "大将推奨: KEI.B(MAI) vs さはら(ED) [勝率44.1%]",
+              "note": "HOME被せ有利（予測勝率33.6%）を活かし40pt完勝狙い"
             }
           ],
           "feasibility": "miracle",
@@ -8614,9 +8614,9 @@
               "recommendedScore": "40 - 0",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 33.7,
-              "keyMatchupNote": "大将推奨: KEI.B(MAI) vs さはら(ED) [勝率39.2%]",
-              "note": "HOME被せ有利（予測勝率33.7%）を活かし40pt完勝狙い"
+              "predictedWinProb": 33.6,
+              "keyMatchupNote": "大将推奨: KEI.B(MAI) vs さはら(ED) [勝率44.1%]",
+              "note": "HOME被せ有利（予測勝率33.6%）を活かし40pt完勝狙い"
             }
           ],
           "feasibility": "miracle",
@@ -8679,9 +8679,9 @@
               "recommendedScore": "40 - 0",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 33.7,
-              "keyMatchupNote": "大将推奨: KEI.B(MAI) vs さはら(ED) [勝率39.2%]",
-              "note": "HOME被せ有利（予測勝率33.7%）を活かし40pt完勝狙い"
+              "predictedWinProb": 33.6,
+              "keyMatchupNote": "大将推奨: KEI.B(MAI) vs さはら(ED) [勝率44.1%]",
+              "note": "HOME被せ有利（予測勝率33.6%）を活かし40pt完勝狙い"
             }
           ],
           "feasibility": "miracle",
@@ -8694,12 +8694,12 @@
           "targetPoints": 170,
           "requiredWins": 1,
           "requiredLosses": 0,
-          "probability": 11,
+          "probability": 10.9,
           "headline": "次節は「RC勝利（理想: G8S 0 - 40 RC） ＆ OJA勝利（理想: OJA 40 - 0 RID）」を全力応援！",
-          "narrative": "次節（Division F 第8節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でDFMにとって最も有利になるスコアを算出しました。【G8S vs RC】では「G8S 0 - 40 RC」で決着するとPO進出率が11%（+3.1%変動）となります。【OJA vs RID】では「OJA 40 - 0 RID」で決着するとPO進出率が17.3%（+9.4%変動）となります。",
+          "narrative": "次節（Division F 第8節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でDFMにとって最も有利になるスコアを算出しました。【G8S vs RC】では「G8S 0 - 40 RC」で決着するとPO進出率が10.9%（+3%変動）となります。【OJA vs RID】では「OJA 40 - 0 RID」で決着するとPO進出率が17.5%（+9.6%変動）となります。",
           "keyConditions": [
-            "G8S vs RC: 「G8S 0 - 40 RC」を応援（PO進出率 6.1%〜11%の変動幅）",
-            "OJA vs RID: 「OJA 40 - 0 RID」を応援（PO進出率 5.7%〜17.3%の変動幅）"
+            "G8S vs RC: 「G8S 0 - 40 RC」を応援（PO進出率 6.2%〜10.9%の変動幅）",
+            "OJA vs RID: 「OJA 40 - 0 RID」を応援（PO進出率 5.7%〜17.5%の変動幅）"
           ]
         }
       },
@@ -8715,11 +8715,11 @@
           "recommendedWinnerKey": "rc",
           "recommendedWinnerName": "RC",
           "recommendedScoreLabel": "G8S 0 - 40 RC",
-          "playoffProbDelta": 3.1,
+          "playoffProbDelta": 3,
           "firstPlaceProbDelta": 0,
-          "bestPlayoffProb": 11,
-          "worstPlayoffProb": 6.1,
-          "reason": "現在1位（190pt）のG8Sのポイント加算とバトル得失差を抑え込むことで、DFMの上位浮上・PO進出確率が最大+3.1%向上します。"
+          "bestPlayoffProb": 10.9,
+          "worstPlayoffProb": 6.2,
+          "reason": "現在1位（190pt）のG8Sのポイント加算とバトル得失差を抑え込むことで、DFMの上位浮上・PO進出確率が最大+3%向上します。"
         },
         {
           "matchId": "div-f-sec8-m3",
@@ -8732,11 +8732,11 @@
           "recommendedWinnerKey": "oja",
           "recommendedWinnerName": "OJA",
           "recommendedScoreLabel": "OJA 40 - 0 RID",
-          "playoffProbDelta": 9.4,
+          "playoffProbDelta": 9.6,
           "firstPlaceProbDelta": 0.5,
-          "bestPlayoffProb": 17.3,
+          "bestPlayoffProb": 17.5,
           "worstPlayoffProb": 5.7,
-          "reason": "現在3位（180pt）のRIDのポイント加算とバトル得失差を抑え込むことで、DFMの上位浮上・PO進出確率が最大+9.4%向上します。"
+          "reason": "現在3位（180pt）のRIDのポイント加算とバトル得失差を抑え込むことで、DFMの上位浮上・PO進出確率が最大+9.6%向上します。"
         }
       ],
       "nextMatchPrediction": {
@@ -9151,8 +9151,8 @@
           "opponentKey": "good8",
           "opponentName": "G8S",
           "side": "home",
-          "winProbability": 33.7,
-          "expectedPoints": 16.4,
+          "winProbability": 33.6,
+          "expectedPoints": 16.3,
           "mostLikelyScore": "DFM 10 - 30 G8S",
           "orderRecommendation": {
             "matchId": "div-f-sec10-m2",
@@ -9161,8 +9161,8 @@
             "opponentKey": "good8",
             "opponentName": "G8S",
             "side": "home",
-            "teamWinProbability": 33.7,
-            "expectedTeamPoints": 16.4,
+            "teamWinProbability": 33.6,
+            "expectedTeamPoints": 16.3,
             "mostLikelyScore": "DFM 10 - 30 G8S",
             "recommendedLineup": [
               {
@@ -9203,15 +9203,15 @@
                 "playerBKey": "sahara",
                 "playerBName": "さはら",
                 "charB": "ED",
-                "macroMatchupTop96": 49,
-                "playerVsCharRate": 55.8,
+                "macroMatchupTop96": 52.1,
+                "playerVsCharRate": 57.8,
                 "h2hAndHomeRate": 45,
-                "expectedWinRateA": 39.2,
+                "expectedWinRateA": 44.1,
                 "isHomeCounterPick": true,
-                "rationale": "実力差 -56（実力のみの1ゲーム勝率 45%） / キャラ相性(MAI vs ED): 49% / HOME後出し → 1ゲーム勝率 44.2% → 3本先取 39.2%"
+                "rationale": "実力差 -56（実力のみの1ゲーム勝率 45%） / キャラ相性(MAI vs ED): 52.1% / HOME後出し → 1ゲーム勝率 46.9% → 3本先取 44.1%"
               }
             ],
-            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 KEI.B(MAI) 対 さはら(ED) の勝率が39.2%。出場選手の組み合わせ全体で平均したチーム勝率は33.7%（期待獲得ポイント 16.4pt）です。"
+            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 KEI.B(MAI) 対 さはら(ED) の勝率が44.1%。出場選手の組み合わせ全体で平均したチーム勝率は33.6%（期待獲得ポイント 16.3pt）です。"
           },
           "lineupBreakdown": {
             "slotAppearance": {
@@ -9272,7 +9272,7 @@
                 "boutHomeWin": [
                   0.326,
                   0.336,
-                  0.392
+                  0.441
                 ]
               },
               {
@@ -9289,7 +9289,7 @@
                 "prob": 0.002716791875787863,
                 "boutHomeWin": [
                   0.326,
-                  0.335,
+                  0.29,
                   0.46299999999999997
                 ]
               },
@@ -9307,12 +9307,12 @@
                 "prob": 0.002716791875787863,
                 "boutHomeWin": [
                   0.39299999999999996,
-                  0.371,
-                  0.392
+                  0.32299999999999995,
+                  0.441
                 ]
               }
             ],
-            "tiebreakHomeWin": 0.4355
+            "tiebreakHomeWin": 0.44001
           }
         }
       ],
@@ -9355,15 +9355,15 @@
       "maxPossiblePoints": 230,
       "probabilities": {
         "firstPlace": 0,
-        "top2HomeAdvantage": 0.1,
+        "top2HomeAdvantage": 0,
         "playoffTop3": 1.3,
         "rankDistribution": [
           0,
-          0.1,
+          0,
           1.2,
-          28.3,
-          55.2,
-          15.2
+          28.4,
+          55.1,
+          15.3
         ]
       },
       "projectedPoints": {
@@ -9408,9 +9408,9 @@
           "second": {
             "rank": 2,
             "targetPoints": 230,
-            "probability": 0.1,
+            "probability": 0,
             "feasibility": "miracle",
-            "feasibilityLabel": "奇跡的・要他力",
+            "feasibilityLabel": "奇跡的・要他力（0.1%未満）",
             "note": "届くのは上位の失速が重なった場合だけ。現実的なターゲット外"
           },
           "third": {
@@ -9466,9 +9466,9 @@
               "recommendedScore": "40 - 0",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 68,
+              "predictedWinProb": 67.4,
               "keyMatchupNote": "大将推奨: わびいち(TERRY) vs らおやむ(VEGA_MBISON) [勝率74.1%]",
-              "note": "HOME被せ有利（予測勝率68%）を活かし40pt完勝狙い"
+              "note": "HOME被せ有利（予測勝率67.4%）を活かし40pt完勝狙い"
             },
             {
               "matchId": "div-f-sec10-m1",
@@ -9481,7 +9481,7 @@
               "recommendedScore": "0 - 40",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 39.9,
+              "predictedWinProb": 40.3,
               "keyMatchupNote": "大将推奨: わびいち(TERRY) vs ひかる(AKI) [勝率53.2%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             }
@@ -9496,9 +9496,9 @@
           "targetPoints": 230,
           "requiredWins": 3,
           "requiredLosses": 0,
-          "probability": 0.1,
+          "probability": 0,
           "headline": "合計230pt確保（残り3勝0敗ペース）で準決勝ホーム権を手中に",
-          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均255.6ptであり、VARRELは残り試合で手堅く3勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在0.1%）を大きく引き上げられます。",
+          "narrative": "SFLのプレイオフ準決勝では、2位通過チームが3位チームに対して「奇数巡目（第1・第3セット等）のホーム＆アウェイ優先権」を握るため、3位通過と2位通過の間には極めて大きな戦略的格差が存在します。Division Fの2位予想ボーダーは平均255.6ptであり、VARRELは残り試合で手堅く3勝を挙げつつ、敗戦時も延長20ptや10ptを拾い集めることで2位以内確保率（現在0%）を大きく引き上げられます。",
           "keyConditions": [
             "目標合計ポイント: 230pt（2位予想ボーダー平均 255.6pt）",
             "残り3戦の目安戦績: 3勝0敗",
@@ -9531,9 +9531,9 @@
               "recommendedScore": "40 - 0",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 68,
+              "predictedWinProb": 67.4,
               "keyMatchupNote": "大将推奨: わびいち(TERRY) vs らおやむ(VEGA_MBISON) [勝率74.1%]",
-              "note": "HOME被せ有利（予測勝率68%）を活かし40pt完勝狙い"
+              "note": "HOME被せ有利（予測勝率67.4%）を活かし40pt完勝狙い"
             },
             {
               "matchId": "div-f-sec10-m1",
@@ -9546,7 +9546,7 @@
               "recommendedScore": "0 - 40",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 39.9,
+              "predictedWinProb": 40.3,
               "keyMatchupNote": "大将推奨: わびいち(TERRY) vs ひかる(AKI) [勝率53.2%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             }
@@ -9596,9 +9596,9 @@
               "recommendedScore": "40 - 0",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 68,
+              "predictedWinProb": 67.4,
               "keyMatchupNote": "大将推奨: わびいち(TERRY) vs らおやむ(VEGA_MBISON) [勝率74.1%]",
-              "note": "HOME被せ有利（予測勝率68%）を活かし40pt完勝狙い"
+              "note": "HOME被せ有利（予測勝率67.4%）を活かし40pt完勝狙い"
             },
             {
               "matchId": "div-f-sec10-m1",
@@ -9611,7 +9611,7 @@
               "recommendedScore": "0 - 40",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 39.9,
+              "predictedWinProb": 40.3,
               "keyMatchupNote": "大将推奨: わびいち(TERRY) vs ひかる(AKI) [勝率53.2%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             }
@@ -9631,7 +9631,7 @@
           "narrative": "次節（Division F 第8節）における他チームの対戦カード2試合について、条件付きモンテカルロ推計でVARRELにとって最も有利になるスコアを算出しました。【G8S vs RC】では「G8S 40 - 0 RC」で決着するとPO進出率が1.6%（+0.3%変動）となります。【OJA vs RID】では「OJA 40 - 0 RID」で決着するとPO進出率が6.3%（+5%変動）となります。",
           "keyConditions": [
             "G8S vs RC: 「G8S 40 - 0 RC」を応援（PO進出率 1%〜1.6%の変動幅）",
-            "OJA vs RID: 「OJA 40 - 0 RID」を応援（PO進出率 0.3%〜6.3%の変動幅）"
+            "OJA vs RID: 「OJA 40 - 0 RID」を応援（PO進出率 0.2%〜6.3%の変動幅）"
           ]
         }
       },
@@ -9667,7 +9667,7 @@
           "playoffProbDelta": 5,
           "firstPlaceProbDelta": 0,
           "bestPlayoffProb": 6.3,
-          "worstPlayoffProb": 0.3,
+          "worstPlayoffProb": 0.2,
           "reason": "現在3位（180pt）のRIDのポイント加算とバトル得失差を抑え込むことで、VARRELの上位浮上・PO進出確率が最大+5%向上します。"
         }
       ],
@@ -9911,8 +9911,8 @@
           "opponentKey": "oja",
           "opponentName": "OJA",
           "side": "home",
-          "winProbability": 68,
-          "expectedPoints": 26.4,
+          "winProbability": 67.4,
+          "expectedPoints": 26.3,
           "mostLikelyScore": "VARREL 30 - 10 OJA",
           "orderRecommendation": {
             "matchId": "div-f-sec9-m1",
@@ -9921,8 +9921,8 @@
             "opponentKey": "oja",
             "opponentName": "OJA",
             "side": "home",
-            "teamWinProbability": 68,
-            "expectedTeamPoints": 26.4,
+            "teamWinProbability": 67.4,
+            "expectedTeamPoints": 26.3,
             "mostLikelyScore": "VARREL 30 - 10 OJA",
             "recommendedLineup": [
               {
@@ -9971,7 +9971,7 @@
                 "rationale": "実力差 +119（実力のみの1ゲーム勝率 63.5%） / キャラ相性(TERRY vs VEGA_MBISON): 50% / HOME後出し → 1ゲーム勝率 63.5% → 3本先取 74.1%"
               }
             ],
-            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 わびいち(TERRY) 対 らおやむ(VEGA_MBISON) の勝率が74.1%。出場選手の組み合わせ全体で平均したチーム勝率は68%（期待獲得ポイント 26.4pt）です。"
+            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 わびいち(TERRY) 対 らおやむ(VEGA_MBISON) の勝率が74.1%。出場選手の組み合わせ全体で平均したチーム勝率は67.4%（期待獲得ポイント 26.3pt）です。"
           },
           "lineupBreakdown": {
             "slotAppearance": {
@@ -10072,7 +10072,7 @@
                 ]
               }
             ],
-            "tiebreakHomeWin": 0.58212987012987
+            "tiebreakHomeWin": 0.5767272727272726
           }
         },
         {
@@ -10083,8 +10083,8 @@
           "opponentKey": "rid",
           "opponentName": "RID",
           "side": "away",
-          "winProbability": 39.9,
-          "expectedPoints": 18.6,
+          "winProbability": 40.3,
+          "expectedPoints": 18.7,
           "mostLikelyScore": "VARREL 10 - 30 RID",
           "orderRecommendation": {
             "matchId": "div-f-sec10-m1",
@@ -10093,8 +10093,8 @@
             "opponentKey": "rid",
             "opponentName": "RID",
             "side": "away",
-            "teamWinProbability": 39.9,
-            "expectedTeamPoints": 18.6,
+            "teamWinProbability": 40.3,
+            "expectedTeamPoints": 18.7,
             "mostLikelyScore": "VARREL 10 - 30 RID",
             "recommendedLineup": [
               {
@@ -10120,12 +10120,12 @@
                 "playerBKey": "adelie",
                 "playerBName": "あでりい ",
                 "charB": "ED",
-                "macroMatchupTop96": 49,
-                "playerVsCharRate": 58.9,
+                "macroMatchupTop96": 52.1,
+                "playerVsCharRate": 61.3,
                 "h2hAndHomeRate": 39.9,
-                "expectedWinRateA": 33.9,
+                "expectedWinRateA": 37.6,
                 "isHomeCounterPick": false,
-                "rationale": "キャラ相性(MAI vs ED): 49% / AWAY先出し時の対あでりい 予測勝率: 33.9%"
+                "rationale": "キャラ相性(MAI vs ED): 52.1% / AWAY先出し時の対あでりい 予測勝率: 37.6%"
               },
               {
                 "roleName": "大将戦 (20pt)",
@@ -10143,7 +10143,7 @@
                 "rationale": "キャラ相性(TERRY vs AKI): 50% / AWAY先出し時の対ひかる予測勝率: 53.2%"
               }
             ],
-            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 わびいち(TERRY) 対 ひかる(AKI) の勝率が53.2%。出場選手の組み合わせ全体で平均したチーム勝率は39.9%（期待獲得 18.6pt）です。"
+            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 わびいち(TERRY) 対 ひかる(AKI) の勝率が53.2%。出場選手の組み合わせ全体で平均したチーム勝率は40.3%（期待獲得 18.7pt）です。"
           },
           "lineupBreakdown": {
             "slotAppearance": {
@@ -10203,7 +10203,7 @@
                 "prob": 0.002458084469456724,
                 "boutHomeWin": [
                   0.43,
-                  0.6609999999999999,
+                  0.624,
                   0.46799999999999997
                 ]
               },
@@ -10244,7 +10244,7 @@
                 ]
               }
             ],
-            "tiebreakHomeWin": 0.5932545454545455
+            "tiebreakHomeWin": 0.5905636363636364
           }
         }
       ],
@@ -10262,8 +10262,8 @@
             "label": "0.1%未満（可能性あり）"
           },
           "top2": {
-            "status": "possible",
-            "label": "0.1%"
+            "status": "tiny",
+            "label": "0.1%未満（可能性あり）"
           },
           "playoff": {
             "status": "possible",
@@ -10293,13 +10293,13 @@
           0,
           0,
           0,
-          1.7,
-          15.6,
-          82.7
+          1.8,
+          15.7,
+          82.6
         ]
       },
       "projectedPoints": {
-        "expected": 136.2,
+        "expected": 136.4,
         "p10": 110,
         "p50": 140,
         "p90": 160,
@@ -10398,7 +10398,7 @@
               "recommendedScore": "0 - 40",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 32,
+              "predictedWinProb": 32.6,
               "keyMatchupNote": "大将推奨: らおやむ(VEGA_MBISON) vs わびいち(TERRY) [勝率25.9%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             },
@@ -10463,7 +10463,7 @@
               "recommendedScore": "0 - 40",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 32,
+              "predictedWinProb": 32.6,
               "keyMatchupNote": "大将推奨: らおやむ(VEGA_MBISON) vs わびいち(TERRY) [勝率25.9%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             },
@@ -10528,7 +10528,7 @@
               "recommendedScore": "0 - 40",
               "teamPointGain": 40,
               "opponentPointGain": 0,
-              "predictedWinProb": 32,
+              "predictedWinProb": 32.6,
               "keyMatchupNote": "大将推奨: らおやむ(VEGA_MBISON) vs わびいち(TERRY) [勝率25.9%]",
               "note": "AWAYで40pt奪取（ライバル直接対決のビッグイニング）"
             },
@@ -10843,8 +10843,8 @@
           "opponentKey": "varrel",
           "opponentName": "VARREL",
           "side": "away",
-          "winProbability": 32,
-          "expectedPoints": 16,
+          "winProbability": 32.6,
+          "expectedPoints": 16.1,
           "mostLikelyScore": "OJA 10 - 30 VARREL",
           "orderRecommendation": {
             "matchId": "div-f-sec9-m1",
@@ -10853,8 +10853,8 @@
             "opponentKey": "varrel",
             "opponentName": "VARREL",
             "side": "away",
-            "teamWinProbability": 32,
-            "expectedTeamPoints": 16,
+            "teamWinProbability": 32.6,
+            "expectedTeamPoints": 16.1,
             "mostLikelyScore": "OJA 10 - 30 VARREL",
             "recommendedLineup": [
               {
@@ -10903,7 +10903,7 @@
                 "rationale": "キャラ相性(VEGA_MBISON vs TERRY): 50% / AWAY先出し時の対わびいち予測勝率: 25.9%"
               }
             ],
-            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 らおやむ(VEGA_MBISON) 対 わびいち(TERRY) の勝率が25.9%。出場選手の組み合わせ全体で平均したチーム勝率は32%（期待獲得 16pt）です。"
+            "tacticalSummary": "起用実績から最も起こりやすい組み合わせでは、大将戦 らおやむ(VEGA_MBISON) 対 わびいち(TERRY) の勝率が25.9%。出場選手の組み合わせ全体で平均したチーム勝率は32.6%（期待獲得 16.1pt）です。"
           },
           "lineupBreakdown": {
             "slotAppearance": {
@@ -11004,7 +11004,7 @@
                 ]
               }
             ],
-            "tiebreakHomeWin": 0.58212987012987
+            "tiebreakHomeWin": 0.5767272727272726
           }
         },
         {
@@ -11353,14 +11353,14 @@
     },
     "div-f-sec9-m1": {
       "weights": {
-        "HOME_40_0": 0.2217,
-        "HOME_30_10": 0.3097,
-        "HOME_30_20": 0.1383,
-        "AWAY_30_20": 0.103,
-        "AWAY_30_10": 0.1778,
-        "AWAY_40_0": 0.0494
+        "HOME_40_0": 0.2177,
+        "HOME_30_10": 0.3087,
+        "HOME_30_20": 0.1377,
+        "AWAY_30_20": 0.1047,
+        "AWAY_30_10": 0.1804,
+        "AWAY_40_0": 0.0508
       },
-      "homeWinProbability": 67,
+      "homeWinProbability": 66.4,
       "mostLikely": "HOME_30_10"
     },
     "div-f-sec9-m2": {
@@ -11389,24 +11389,24 @@
     },
     "div-f-sec10-m1": {
       "weights": {
-        "HOME_40_0": 0.1621,
-        "HOME_30_10": 0.2867,
-        "HOME_30_20": 0.1505,
-        "AWAY_30_20": 0.1035,
-        "AWAY_30_10": 0.2188,
-        "AWAY_40_0": 0.0784
+        "HOME_40_0": 0.1603,
+        "HOME_30_10": 0.2854,
+        "HOME_30_20": 0.1498,
+        "AWAY_30_20": 0.1042,
+        "AWAY_30_10": 0.2202,
+        "AWAY_40_0": 0.0801
       },
-      "homeWinProbability": 59.9,
+      "homeWinProbability": 59.6,
       "mostLikely": "HOME_30_10"
     },
     "div-f-sec10-m2": {
       "weights": {
-        "HOME_40_0": 0.0575,
-        "HOME_30_10": 0.1793,
-        "HOME_30_20": 0.1031,
-        "AWAY_30_20": 0.133,
-        "AWAY_30_10": 0.3015,
-        "AWAY_40_0": 0.2256
+        "HOME_40_0": 0.0563,
+        "HOME_30_10": 0.1789,
+        "HOME_30_20": 0.1044,
+        "AWAY_30_20": 0.1323,
+        "AWAY_30_10": 0.3026,
+        "AWAY_40_0": 0.2254
       },
       "homeWinProbability": 34,
       "mostLikely": "AWAY_30_10"

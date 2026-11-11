@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T21:04:46.636Z",
+  "updatedAt": "2026-11-11T17:23:28.807Z",
   "players": {
     "sako": {
       "playerKey": "sako",
@@ -694,7 +694,7 @@
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5781
+          "smoothedWinRate": 0.5498
         },
         "jamie": {
           "vsChar": "jamie",
@@ -827,7 +827,7 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.496
+          "smoothedWinRate": 0.5273
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
@@ -1040,7 +1040,7 @@
           "wins": 2,
           "losses": 3,
           "entries": 5,
-          "smoothedWinRate": 0.5416
+          "smoothedWinRate": 0.5118
         },
         "jamie": {
           "vsChar": "jamie",
@@ -1173,7 +1173,7 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.548
+          "smoothedWinRate": 0.5793
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
@@ -5040,7 +5040,7 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5978
+          "smoothedWinRate": 0.5573
         },
         "jamie": {
           "vsChar": "jamie",
@@ -5173,7 +5173,7 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.5536
+          "smoothedWinRate": 0.5849
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
@@ -8730,9 +8730,9 @@
         "luke": {
           "vsChar": "luke",
           "wins": 0,
-          "losses": 0,
-          "entries": 0,
-          "smoothedWinRate": 0.4938
+          "losses": 4,
+          "entries": 4,
+          "smoothedWinRate": 0.3526
         },
         "jamie": {
           "vsChar": "jamie",
@@ -8863,9 +8863,9 @@
         "ed": {
           "vsChar": "ed",
           "wins": 4,
-          "losses": 8,
-          "entries": 12,
-          "smoothedWinRate": 0.3959
+          "losses": 4,
+          "entries": 8,
+          "smoothedWinRate": 0.4878
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
@@ -10237,7 +10237,7 @@
           "wins": 0,
           "losses": 2,
           "entries": 2,
-          "smoothedWinRate": 0.4569
+          "smoothedWinRate": 0.4924
         },
         "elena": {
           "vsChar": "elena",
@@ -10757,7 +10757,8 @@
       "division": "f",
       "mainChar": "ed",
       "subChars": [
-        "ryu"
+        "ryu",
+        "luke"
       ],
       "eloRating": 1960,
       "recentFormScore": 0.5311,
@@ -10789,10 +10790,16 @@
           "winRate": 0.4444
         },
         "ed": {
-          "wins": 9,
+          "wins": 7,
           "losses": 6,
-          "entries": 15,
-          "winRate": 0.5714
+          "entries": 13,
+          "winRate": 0.5263
+        },
+        "luke": {
+          "wins": 2,
+          "losses": 0,
+          "entries": 2,
+          "winRate": 0.625
         }
       },
       "vsCharStats": {
@@ -10969,7 +10976,7 @@
           "wins": 10,
           "losses": 6,
           "entries": 16,
-          "smoothedWinRate": 0.5769
+          "smoothedWinRate": 0.5623
         },
         "elena": {
           "vsChar": "elena",
@@ -11526,7 +11533,7 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.511
+          "smoothedWinRate": 0.4705
         },
         "jamie": {
           "vsChar": "jamie",
@@ -11659,7 +11666,7 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.4668
+          "smoothedWinRate": 0.4981
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
@@ -12166,7 +12173,7 @@
           "wins": 0,
           "losses": 0,
           "entries": 0,
-          "smoothedWinRate": 0.493
+          "smoothedWinRate": 0.4525
         },
         "jamie": {
           "vsChar": "jamie",
@@ -12299,7 +12306,7 @@
           "wins": 6,
           "losses": 2,
           "entries": 8,
-          "smoothedWinRate": 0.5583
+          "smoothedWinRate": 0.5782
         },
         "gouki_akuma": {
           "vsChar": "gouki_akuma",
@@ -13006,7 +13013,7 @@
           "wins": 4,
           "losses": 2,
           "entries": 6,
-          "smoothedWinRate": 0.5073
+          "smoothedWinRate": 0.5357
         },
         "elena": {
           "vsChar": "elena",
@@ -16083,7 +16090,7 @@
           "wins": 0,
           "losses": 4,
           "entries": 4,
-          "smoothedWinRate": 0.411
+          "smoothedWinRate": 0.3866
         },
         "elena": {
           "vsChar": "elena",

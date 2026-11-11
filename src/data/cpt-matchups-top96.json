@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-10T21:04:46.636Z",
-  "source": "Capcom公式ダイアグラム (202610, Master帯) + SFL 2026 公式戦 + start.gg プレミア大会 (2025-11-10〜, キャラ登録447ゲーム)",
+  "updatedAt": "2026-11-11T17:23:28.807Z",
+  "source": "Capcom公式ダイアグラム (202610, Master帯) + SFL 2026 公式戦 + start.gg プレミア大会 (2025-11-11〜, キャラ登録447ゲーム)",
   "topPlacementThreshold": 96,
   "bayesianPriorAlpha": 20,
   "characters": [
@@ -576,10 +576,10 @@
       "mai": {
         "charA": "luke",
         "charB": "mai",
-        "rawWinsA": 24,
-        "rawTotalGames": 53,
-        "rawWinRate": 0.4528,
-        "smoothedWinRate": 0.4658
+        "rawWinsA": 30,
+        "rawTotalGames": 59,
+        "rawWinRate": 0.5085,
+        "smoothedWinRate": 0.5063
       },
       "elena": {
         "charA": "luke",
@@ -5326,10 +5326,10 @@
       "mai": {
         "charA": "ed",
         "charB": "mai",
-        "rawWinsA": 41,
-        "rawTotalGames": 80,
-        "rawWinRate": 0.5125,
-        "smoothedWinRate": 0.51
+        "rawWinsA": 35,
+        "rawTotalGames": 74,
+        "rawWinRate": 0.473,
+        "smoothedWinRate": 0.4787
       },
       "elena": {
         "charA": "ed",
@@ -6143,9 +6143,9 @@
         "charA": "mai",
         "charB": "luke",
         "rawWinsA": 29,
-        "rawTotalGames": 53,
-        "rawWinRate": 0.5472,
-        "smoothedWinRate": 0.5342
+        "rawTotalGames": 59,
+        "rawWinRate": 0.4915,
+        "smoothedWinRate": 0.4937
       },
       "jamie": {
         "charA": "mai",
@@ -6295,9 +6295,9 @@
         "charA": "mai",
         "charB": "ed",
         "rawWinsA": 39,
-        "rawTotalGames": 80,
-        "rawWinRate": 0.4875,
-        "smoothedWinRate": 0.49
+        "rawTotalGames": 74,
+        "rawWinRate": 0.527,
+        "smoothedWinRate": 0.5213
       },
       "gouki_akuma": {
         "charA": "mai",

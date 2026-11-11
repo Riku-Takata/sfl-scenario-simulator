@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T21:04:46.636Z",
+  "updatedAt": "2026-11-11T17:23:28.807Z",
   "totalPlayers": 48,
   "players": {
     "sako": {
@@ -375,7 +375,8 @@
       "division": "f",
       "mainChar": "ed",
       "subChars": [
-        "ryu"
+        "ryu",
+        "luke"
       ],
       "startggSlug": "user/a0062bed",
       "eloRating": 1960
