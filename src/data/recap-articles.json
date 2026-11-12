@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-11T18:01:04.847Z",
+  "updatedAt": "2026-11-12T04:01:09.257Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -6198,6 +6198,196 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-11T18:01:04.808Z"
+    },
+    "div-f-sec7-m3-b0:f40982a0ddfa5328:published": {
+      "articleId": "div-f-sec7-m3-b0:f40982a0ddfa5328:published",
+      "matchId": "div-f-sec7-m3",
+      "boutId": "div-f-sec7-m3-b0",
+      "revision": "f40982a0ddfa5328",
+      "status": "passed",
+      "summary": "さはら選手がマゴ選手（不知火舞）を2-0で下し、Good 8 Squadが先制した。最後はパニッシュカウンターから画面端へ運び、パーフェクトKOで勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-4a2d66b5fbb8daff7ea0",
+        "ev-312f3c757b14517024c5"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームでは、さはらがマゴの攻撃にパニッシュカウンターを取り、しゃがみ中攻撃からスーパーアーツにつないでラウンドを奪った。",
+          "evidenceIds": [
+            "ev-8a91085b5d1cda18d26f"
+          ]
+        },
+        {
+          "text": "決着の場面では、さはらがパニッシュカウンターからマゴを画面端へ追い詰め、中段攻撃も交えた崩しからパーフェクトKOに持ち込んだ。",
+          "evidenceIds": [
+            "ev-312f3c757b14517024c5"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-4a2d66b5fbb8daff7ea0",
+        "ev-312f3c757b14517024c5",
+        "ev-8a91085b5d1cda18d26f"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-12T04:01:09.227Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-12T04:01:09.227Z"
+    },
+    "div-f-sec7-m3-b1:30b3c11f691dda01:published": {
+      "articleId": "div-f-sec7-m3-b1:30b3c11f691dda01:published",
+      "matchId": "div-f-sec7-m3",
+      "boutId": "div-f-sec7-m3-b1",
+      "revision": "30b3c11f691dda01",
+      "status": "passed",
+      "summary": "ガチくん選手（ラシード）がときど選手（JP）との中堅戦を2-1で制した。第1ゲームを先取し、第2ゲームを取り返されても最終ゲームを取り切り、Good 8 Squadが連勝した。",
+      "summaryEvidenceIds": [
+        "ev-b807781f7bbc22285e7b"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームはガチくんがイウサールの竜巻とともにときどを画面端へ追い込み、ガードの上からドライブゲージを削り切ってバーンアウトさせ、壁バウンドからスタンを奪った。",
+          "evidenceIds": [
+            "ev-e043ee8d7b3ddea0ce13"
+          ]
+        },
+        {
+          "text": "第2ゲームでは、ときどがガチくんの攻撃にドライブインパクトでパニッシュカウンターを取り、コンボからSA2ラヴーシュカを展開して中下段の攻めを仕掛けた。",
+          "evidenceIds": [
+            "ev-6b653908d874662e810c"
+          ]
+        },
+        {
+          "text": "第3ゲームでは、ガチくんがパニッシュカウンターからイウサールを展開し、竜巻を盾にときどを画面端へ押し込んで打撃と投げを重ね、体力とドライブゲージを削った。",
+          "evidenceIds": [
+            "ev-3d9c0f75e55d53e5c55c"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-b807781f7bbc22285e7b",
+        "ev-e043ee8d7b3ddea0ce13",
+        "ev-6b653908d874662e810c",
+        "ev-3d9c0f75e55d53e5c55c"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-12T04:01:09.227Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-12T04:01:09.227Z"
+    },
+    "div-f-sec7-m3-b2:d91f97c2683ac573:published": {
+      "articleId": "div-f-sec7-m3-b2:d91f97c2683ac573:published",
+      "matchId": "div-f-sec7-m3",
+      "boutId": "div-f-sec7-m3-b2",
+      "revision": "d91f97c2683ac573",
+      "status": "passed",
+      "summary": "カワノ選手（ルーク）がわびいち選手（テリー）に2ゲームを先行されながら、3連取で大将戦を3-2で制した。最終ラウンドはドライブインパクトから大技につなぎ、最後の差し込みでGood 8 Squadの全戦勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-c111d16c230aa7d0172b",
+        "ev-cf69336ef3eb4c416b77"
+      ],
+      "keyPoints": [
+        {
+          "text": "第3ゲーム最終ラウンドは、カワノがわびいちの下段攻撃にドライブインパクトを合わせ、パニッシュカウンターから追撃を決めて最初の1ゲームを取り返した。",
+          "evidenceIds": [
+            "ev-98b03af50d7cfb14f470"
+          ]
+        },
+        {
+          "text": "第5ゲーム最終ラウンドでは、カワノがドライブインパクトから大技につないでわびいちをバーンアウトへ追い込み、耐えてゲージを回復した相手に中距離からの差し込みとコンボを決めて勝ち切った。",
+          "evidenceIds": [
+            "ev-cf69336ef3eb4c416b77"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-c111d16c230aa7d0172b",
+        "ev-cf69336ef3eb4c416b77",
+        "ev-98b03af50d7cfb14f470"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-12T04:01:09.227Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-12T04:01:09.227Z"
+    },
+    "div-f-sec7-m3:559e9a6c0480a2b9:published": {
+      "articleId": "div-f-sec7-m3:559e9a6c0480a2b9:published",
+      "matchId": "div-f-sec7-m3",
+      "revision": "559e9a6c0480a2b9",
+      "status": "passed",
+      "headline": "Good 8 Squadが全戦勝利、40-0でVARRELを下す",
+      "summary": "Good 8 SquadがHOMEでVARRELに40-0で勝利した。先鋒戦はさはらがマゴを2-0で下し、最後は画面端の攻めからパーフェクトKOで決着。中堅戦はガチくんが第1ゲームを取り、ときどに第2ゲームを返されながらも、最終ゲームを制して2-1で続いた。大将戦はわびいちが2ゲームを先行したが、カワノが第3ゲームから3連取。最終ラウンドではドライブインパクトから大技につなぎ、わびいちをバーンアウトへ追い込むと、ゲージ回復後も中距離からの差し込みを決め、逆転勝ちでチームの全戦勝利を締めくくった。",
+      "summaryEvidenceIds": [
+        "ev-4a2d66b5fbb8daff7ea0",
+        "ev-312f3c757b14517024c5",
+        "ev-b807781f7bbc22285e7b",
+        "ev-c111d16c230aa7d0172b",
+        "ev-cf69336ef3eb4c416b77"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-4a2d66b5fbb8daff7ea0",
+        "ev-312f3c757b14517024c5",
+        "ev-b807781f7bbc22285e7b",
+        "ev-c111d16c230aa7d0172b",
+        "ev-cf69336ef3eb4c416b77"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-12T04:01:09.228Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-12T04:01:09.228Z"
     }
   }
 }
