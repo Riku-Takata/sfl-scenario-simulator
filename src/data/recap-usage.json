@@ -1,10 +1,6 @@
 {
   "schemaVersion": 1,
   "days": {
-    "2026-10-28": {
-      "calls": 48,
-      "videoSeconds": 6730
-    },
     "2026-10-29": {
       "calls": 8,
       "videoSeconds": 540
@@ -56,6 +52,10 @@
     "2026-11-11": {
       "calls": 20,
       "videoSeconds": 7269
+    },
+    "2026-11-14": {
+      "calls": 24,
+      "videoSeconds": 8924
     }
   }
 }
