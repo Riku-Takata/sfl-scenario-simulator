@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13T23:08:57.298Z",
+  "updatedAt": "2026-11-13T23:51:38.290Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -10506,10 +10506,13 @@
       "officialRefs": [
         "div-s-sec8-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "玄武寺ステージ、残り30秒付近でACQUA（ブランカ）がsako（エレナ）の攻撃に対してしゃがみ強パンチでパニッシュカウンターを取り、エレナを吹き飛ばす。飛び越えてめくり（CROSS UP）からコンボを繋ぎ、CA（クリティカルアーツ）を発動して全段ヒットさせ、K.O.を奪う。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:04:35.581Z"
     },
@@ -10530,10 +10533,13 @@
       "officialRefs": [
         "div-s-sec8-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "残り51秒付近でsako（エレナ）の攻撃がカウンターヒットし、コンボを継続してブランカを打ち上げる。そのままSA3を発動して演出へ移行し、大ダメージを与えてK.O.を決める。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:04:35.581Z"
     },
@@ -10554,10 +10560,13 @@
       "officialRefs": [
         "div-s-sec8-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "残り51秒付近でエレナの攻撃がパニッシュカウンターとなり、連続技でブランカを画面端へ追い込みつつ大ダメージを与える。一度距離が開いて地上での牽制合戦となった後、残り31秒付近でエレナの攻撃がカウンターヒットし、コンボを繋げてK.O.を奪う。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:04:35.581Z"
     },
@@ -10578,10 +10587,13 @@
       "officialRefs": [
         "div-s-sec8-m2-b0:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "残り51秒付近でブランカの攻撃がカウンターヒットして攻め込むが、画面端付近での起き上がりにエレナがリバーサルでSA3を発動する。画面が選手カメラメインに切り替わり、ワイプ内でSA3の演出が決まってK.O.となり、エレナがラウンドを制する。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:04:35.581Z"
     },
@@ -10926,10 +10938,13 @@
       "officialRefs": [
         "div-s-sec8-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "藤村（C.ヴァイパー）がパニッシュカウンターからクリティカルアーツ（CA）を発動し、あきら（C.ヴァイパー）に連続ヒットさせます。あきらはドライブゲージを全て失いバーンアウト状態となり、体力も残りわずかまで削られてハードノックダウンを奪われます。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:06:54.678Z"
     },
@@ -10950,10 +10965,13 @@
       "officialRefs": [
         "div-s-sec8-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "画面端で藤村（C.ヴァイパー）が空中コンボからSA3を発動してあきら（C.ヴァイパー）をロックし、演出技を決めて体力を削り切りK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:06:54.678Z"
     },
@@ -10974,10 +10992,13 @@
       "officialRefs": [
         "div-s-sec8-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "disputed",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "あきら（C.ヴァイパー）がOD必殺技を絡めた連続攻撃で藤村（C.ヴァイパー）を攻め立て、起き上がりのリバーサル行動に対してもカウンターヒットからコンボを繋ぎ、最後は相打ちの打撃で藤村の体力を削り切ってK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:06:54.678Z"
     },
@@ -10998,10 +11019,13 @@
       "officialRefs": [
         "div-s-sec8-m2-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "藤村（C.ヴァイパー）が先にCAをヒットさせてあきら（C.ヴァイパー）の体力を瀕死まで追い込みますが、直後の差し合いであきらがパニッシュカウンターからCAを叩き込み返して藤村をバーンアウトに追い込みます。CA演出終了後の起き上がりにあきらがさらにOD必殺技をヒットさせ、逆転でK.O.を奪います。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:06:54.678Z"
     },
@@ -11373,6 +11397,210 @@
         "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:08:46.618Z"
+    },
+    "ev-b8bb3bbc274cae2910d7": {
+      "id": "ev-b8bb3bbc274cae2910d7",
+      "sectionId": "div-s-sec8",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "kind": "visual",
+      "videoId": "eNlppthzST4",
+      "startSec": 14895,
+      "endSec": 14904,
+      "playerIds": [
+        "きんちょ",
+        "ボンちゃん"
+      ],
+      "observation": "Game1第1ラウンド、ボンちゃんが弾の打ち合いでテリーをバーンアウトに追い込み、飛びを冷静にSA1で落として先取する",
+      "officialRefs": [
+        "div-s-sec8-m3-b3:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "タイムスタンプ248:13.000 - 248:24.500の区間：\n画面左側の1P・きんちょ（テリー）と画面右側の2P・ボンちゃん（サガット）の攻防。248:16辺りで2Pの空中からの攻めや技の隙に対し、1PテリーがPunish Counterを獲得して撃墜・反撃に成功します。1PはそのままSA1（バスターウルフ）へ繋ぎ、248:20.5付近でK.O.画面となりラウンドを制します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-13T23:51:03.017Z"
+    },
+    "ev-e5ba06ea9d08ecb4075e": {
+      "id": "ev-e5ba06ea9d08ecb4075e",
+      "sectionId": "div-s-sec8",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "kind": "visual",
+      "videoId": "eNlppthzST4",
+      "startSec": 15055,
+      "endSec": 15078,
+      "playerIds": [
+        "きんちょ",
+        "ボンちゃん"
+      ],
+      "observation": "Game2第1ラウンド、きんちょが鋭い立ち回りから画面端へ一気に追い込み、一切の反撃を許さずパーフェクトKOを達成する",
+      "officialRefs": [
+        "div-s-sec8-m3-b3:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "タイムスタンプ250:55.000 - 251:24.500の区間：\nパリステージでのRound 1開幕。250:57の「FIGHT!」コール後、1Pテリーが序盤からドライブラッシュを絡めた攻撃でPunish Counterを取り、攻勢に立ちます。251:06付近で2Pサガットのリバーサル技ガード後に再びPunish Counterから怒涛のラッシュコンボを叩き込み、251:15.5でダメージを受けることなく「PERFECT K.O.」を達成します。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-13T23:51:03.017Z"
+    },
+    "ev-e07db7c649427dd94875": {
+      "id": "ev-e07db7c649427dd94875",
+      "sectionId": "div-s-sec8",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "kind": "visual",
+      "videoId": "eNlppthzST4",
+      "startSec": 15106,
+      "endSec": 15115,
+      "playerIds": [
+        "きんちょ",
+        "ボンちゃん"
+      ],
+      "observation": "Game2第2ラウンド、勢いに乗るきんちょが序盤からアグレッシブに攻め込み、最後は中足を差し込んでSA3へ繋ぎ完勝で追いつく",
+      "officialRefs": [
+        "div-s-sec8-m3-b3:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "タイムスタンプ251:44.000 - 251:55.500の区間：\n夜の街ステージでの攻防。251:46.5付近で1Pテリーがカウンターヒットを起点にドライブラッシュコンボを繋げます。そのまま251:50.5でSA技を発動してダメージを削り切り、251:52.0でK.O.を勝ち取ります。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-13T23:51:03.017Z"
+    },
+    "ev-ebbb038eeadc906cdcd4": {
+      "id": "ev-ebbb038eeadc906cdcd4",
+      "sectionId": "div-s-sec8",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "kind": "visual",
+      "videoId": "eNlppthzST4",
+      "startSec": 15286,
+      "endSec": 15313,
+      "playerIds": [
+        "きんちょ",
+        "ボンちゃん"
+      ],
+      "observation": "Game3第3ラウンド、互いに体力僅差のなかきんちょがラッシュ強P相打ちからSA3を叩き込み、最後は対空迎撃から押し切って延長戦を制する",
+      "officialRefs": [
+        "div-s-sec8-m3-b3:winner-order-reviewed"
+      ],
+      "status": "disputed",
+      "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "タイムスタンプ254:46.000 - 255:12.500の区間：\n空母ステージでの試合終盤。254:48に1PテリーがコンボからSA3（大技）を発動し、45HITSの大ダメージを与えて2Pサガットをハードダウンさせます。起き上がり後、255:01付近で1Pテリーが対空やガードで2Pの反撃を凌ぎ、255:07から下段攻撃からの怒涛のラッシュで押し切って255:11.5にK.O.で勝利を決めます。",
+      "sourceModels": [
+        "gemini-3.8-flash",
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-13T23:51:03.017Z"
+    },
+    "ev-0d24b3d03bd7af5c96f9": {
+      "id": "ev-0d24b3d03bd7af5c96f9",
+      "sectionId": "div-s-sec8",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "kind": "visual",
+      "videoId": "eNlppthzST4",
+      "startSec": 14895,
+      "endSec": 14904,
+      "playerIds": [
+        "きんちょ",
+        "ボンちゃん"
+      ],
+      "observation": "第1ゲーム第1ラウンド終盤、ドライブゲージが枯渇してバーンアウトしたきんちょ（テリー）に対し、ボンちゃん（サガット）が隙を見逃さずSA1を叩き込んでKOし、第1ラウンドを先取する。",
+      "officialRefs": [
+        "div-s-sec8-m3-b3:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-13T23:51:38.259Z"
+    },
+    "ev-f4f778a9e7c0c37ef0a6": {
+      "id": "ev-f4f778a9e7c0c37ef0a6",
+      "sectionId": "div-s-sec8",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "kind": "visual",
+      "videoId": "eNlppthzST4",
+      "startSec": 15060,
+      "endSec": 15078,
+      "playerIds": [
+        "きんちょ",
+        "ボンちゃん"
+      ],
+      "observation": "第2ゲーム第1ラウンド、きんちょ（テリー）がパニッシュカウンターからのラッシュコンボでボンちゃん（サガット）を画面端へ一気に押し込み、ダメージを一切受けずにパーフェクトKOを達成する。",
+      "officialRefs": [
+        "div-s-sec8-m3-b3:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-13T23:51:38.259Z"
+    },
+    "ev-c600ba38aa7d8e786cac": {
+      "id": "ev-c600ba38aa7d8e786cac",
+      "sectionId": "div-s-sec8",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "kind": "visual",
+      "videoId": "eNlppthzST4",
+      "startSec": 15234,
+      "endSec": 15267,
+      "playerIds": [
+        "きんちょ",
+        "ボンちゃん"
+      ],
+      "observation": "第3ゲーム第2ラウンド、ボンちゃん（サガット）がSA3を含めた大コンボできんちょ（テリー）の体力を削り取り、最後は相手の暴れに対してローキックを的確にヒットさせてラウンドを取り返す。",
+      "officialRefs": [
+        "div-s-sec8-m3-b3:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-13T23:51:38.259Z"
+    },
+    "ev-b0c8924d76673f315ee7": {
+      "id": "ev-b0c8924d76673f315ee7",
+      "sectionId": "div-s-sec8",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "kind": "visual",
+      "videoId": "eNlppthzST4",
+      "startSec": 15287,
+      "endSec": 15312,
+      "playerIds": [
+        "きんちょ",
+        "ボンちゃん"
+      ],
+      "observation": "第3ゲーム最終ラウンド、きんちょ（テリー）が中距離の技の相打ちからSA3を叩き込んでボンちゃん（サガット）をバーンアウトに追い込み、怒涛のラッシュで押し切って延長戦の勝利を決める。",
+      "officialRefs": [
+        "div-s-sec8-m3-b3:winner-order-reviewed"
+      ],
+      "status": "candidate",
+      "extractorVersion": "recap-evidence-v2",
+      "sourceModels": [
+        "gemini-3.6-flash"
+      ],
+      "createdAt": "2026-11-13T23:51:38.259Z"
     }
   }
 }

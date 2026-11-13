@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T23:08:57.248Z",
+  "updatedAt": "2026-11-13T23:51:38.269Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -7391,10 +7391,85 @@
       "videoId": "eNlppthzST4",
       "startSec": 14833,
       "endSec": 15410,
-      "status": "pending",
+      "status": "complete",
       "analysisVersion": "bout-video-relative-time-v2:gemini-3.8-flash,gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.7-flash,gemini-3.1-flash-lite:fps1",
       "staleRuns": [],
-      "runs": []
+      "runs": [
+        {
+          "model": "gemini-3.8-flash",
+          "analyzedAt": "2026-11-13T23:51:03.003Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "Game1第1ラウンド、ボンちゃんが弾の打ち合いでテリーをバーンアウトに追い込み、飛びを冷静にSA1で落として先取する",
+              "evidence": "両方",
+              "startSec": 14895,
+              "endSec": 14904
+            },
+            {
+              "topic": "Game2第1ラウンド、きんちょが鋭い立ち回りから画面端へ一気に追い込み、一切の反撃を許さずパーフェクトKOを達成する",
+              "evidence": "両方",
+              "startSec": 15055,
+              "endSec": 15078
+            },
+            {
+              "topic": "Game2第2ラウンド、勢いに乗るきんちょが序盤からアグレッシブに攻め込み、最後は中足を差し込んでSA3へ繋ぎ完勝で追いつく",
+              "evidence": "両方",
+              "startSec": 15106,
+              "endSec": 15115
+            },
+            {
+              "topic": "Game3第3ラウンド、互いに体力僅差のなかきんちょがラッシュ強P相打ちからSA3を叩き込み、最後は対空迎撃から押し切って延長戦を制する",
+              "evidence": "両方",
+              "startSec": 15286,
+              "endSec": 15313
+            }
+          ]
+        },
+        {
+          "model": "gemini-3.6-flash",
+          "analyzedAt": "2026-11-13T23:51:38.259Z",
+          "gameWinnersSeen": [
+            "B",
+            "A",
+            "A"
+          ],
+          "gatePassed": true,
+          "gateReason": "game winners match official log",
+          "topics": [
+            {
+              "topic": "第1ゲーム第1ラウンド終盤、ドライブゲージが枯渇してバーンアウトしたきんちょ（テリー）に対し、ボンちゃん（サガット）が隙を見逃さずSA1を叩き込んでKOし、第1ラウンドを先取する。",
+              "evidence": "両方",
+              "startSec": 14895,
+              "endSec": 14904
+            },
+            {
+              "topic": "第2ゲーム第1ラウンド、きんちょ（テリー）がパニッシュカウンターからのラッシュコンボでボンちゃん（サガット）を画面端へ一気に押し込み、ダメージを一切受けずにパーフェクトKOを達成する。",
+              "evidence": "両方",
+              "startSec": 15060,
+              "endSec": 15078
+            },
+            {
+              "topic": "第3ゲーム第2ラウンド、ボンちゃん（サガット）がSA3を含めた大コンボできんちょ（テリー）の体力を削り取り、最後は相手の暴れに対してローキックを的確にヒットさせてラウンドを取り返す。",
+              "evidence": "両方",
+              "startSec": 15234,
+              "endSec": 15267
+            },
+            {
+              "topic": "第3ゲーム最終ラウンド、きんちょ（テリー）が中距離の技の相打ちからSA3を叩き込んでボンちゃん（サガット）をバーンアウトに追い込み、怒涛のラッシュで押し切って延長戦の勝利を決める。",
+              "evidence": "両方",
+              "startSec": 15287,
+              "endSec": 15312
+            }
+          ]
+        }
+      ]
     }
   },
   "narratives": {
@@ -16559,6 +16634,7 @@
     }
   },
   "pendingNarrations": [
-    "div-s-sec8-m1"
+    "div-s-sec8-m1",
+    "div-s-sec8-m2"
   ]
 }
