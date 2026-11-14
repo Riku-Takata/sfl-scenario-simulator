@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T02:50:41.531Z",
+  "updatedAt": "2026-11-14T04:01:10.641Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -9207,6 +9207,121 @@
           ]
         }
       ]
+    },
+    "div-s-sec8-m1": {
+      "inputHash": "3bba870ece2806ef",
+      "model": "codex-cli",
+      "generatedAt": "2026-11-14T04:00:44.163Z",
+      "matchHeadline": "IBUSHIGINが延長戦を制し30-20で勝利",
+      "matchSummary": "FUKUSHIMA IBUSHIGINがZETA DIVISION Geeklyに30-20で勝利した。先鋒戦はひぐちがヤナイを2-1で下し、中堅戦もももちがジョニィに2-0で勝利。ZETAが連勝したが、大将戦では2BASSAがMenaRDを3-1で破り、延長戦へつないだ。2BASSAはジュリの風水エンジンを絡めた連続攻撃でルークをバーンアウトに追い込み、勝ち切った。延長戦は鶏めしが第1ゲームを取り、ヤマグチが第2ゲームを奪い返す展開。最後は鶏めしが空中で拾うコンボからCAにつなげて決着をつけた。",
+      "matchEvidenceIds": [
+        "ev-c2621f5dae8b8096d4a6",
+        "ev-87ebe83b8233f1569fec",
+        "ev-2eeff5aae00ab43080bb",
+        "ev-5f04048eba168d565438",
+        "ev-e39405ff0178f040bb5e",
+        "ev-383c5301ef2ce12b6535"
+      ],
+      "bouts": [
+        {
+          "boutId": "div-s-sec8-m1-b0",
+          "summary": "ひぐち選手（ガイル）がヤナイ選手（ベガ）を2-1で下し、ZETAが先制した。第1ゲームを取ったひぐちは第2ゲームを奪い返されたものの、最終ゲームを取り切った。",
+          "summaryEvidenceIds": [
+            "ev-c2621f5dae8b8096d4a6"
+          ],
+          "keyPoints": [
+            {
+              "text": "ひぐちは中距離の牽制でベガのドライブゲージを削り、画面端付近まで圧迫すると、最後は相打ちで第1ラウンドを先取した。",
+              "evidenceIds": [
+                "ev-56f7723c916102165c0d"
+              ]
+            },
+            {
+              "text": "ヤナイはカウンターからのコンボと画面端での崩しを重ね、ひぐちにダメージを与える隙を作らせずパーフェクトKOを奪った。",
+              "evidenceIds": [
+                "ev-64de24394328c4fe992c"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec8-m1-b1",
+          "summary": "ももち選手（ジェイミー）がジョニィ選手（エレナ）に2-0で勝利し、ZETAが先鋒戦に続いて白星を重ねた。コンボから酔いレベルを上げ、コマンド投げでもラウンドを奪った。",
+          "summaryEvidenceIds": [
+            "ev-87ebe83b8233f1569fec",
+            "ev-71fc273f240400b21d81"
+          ],
+          "keyPoints": [
+            {
+              "text": "ももちはコンボでダメージを与えながら酔いレベルを上げ、最後はコマンド投げを通してKOを奪った。",
+              "evidenceIds": [
+                "ev-71fc273f240400b21d81"
+              ]
+            },
+            {
+              "text": "ももちはジョニィの隙にパニッシュカウンターを決め、コンボをSA3（CA）まで伸ばしてKOにつなげた。",
+              "evidenceIds": [
+                "ev-bbf99b0e6c3e86677a9e"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec8-m1-b2",
+          "summary": "2BASSA選手がMenaRD選手を3-1で破り、IBUSHIGINが延長戦へ持ち込んだ。第2ゲームを取り返された後に第3・第4ゲームを連取し、ジュリの攻めで大将戦を締めた。",
+          "summaryEvidenceIds": [
+            "ev-2eeff5aae00ab43080bb",
+            "ev-5f04048eba168d565438"
+          ],
+          "keyPoints": [
+            {
+              "text": "ブランカに変更したMenaRDは、キャミィへのパニッシュカウンターからSA3につなげ、KOを奪った。",
+              "evidenceIds": [
+                "ev-c5c94ec2ed1d7ce82acd"
+              ]
+            },
+            {
+              "text": "2BASSAのジュリは、体力が残り少ないブランカの隙にパニッシュカウンターを決めて倒し切った。",
+              "evidenceIds": [
+                "ev-19edf443ac1bb531d2d0"
+              ]
+            },
+            {
+              "text": "2BASSAはジュリの風水エンジンを発動して連続攻撃を展開し、MenaRDのルークをバーンアウトに追い込んでKOした。",
+              "evidenceIds": [
+                "ev-5f04048eba168d565438"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec8-m1-b3",
+          "summary": "鶏めし選手（ダルシム）がヤマグチ選手を2-1で下し、IBUSHIGINの30-20での勝利を決めた。第2ゲームを奪われて並ばれたが、最終ゲームを取り切った。",
+          "summaryEvidenceIds": [
+            "ev-e39405ff0178f040bb5e"
+          ],
+          "keyPoints": [
+            {
+              "text": "鶏めしはバーンアウトしたヤマグチにヨガファイアやヨガアーチで牽制を重ね、CAを当てた後の起き上がりにもパニッシュカウンターを決めてKOした。",
+              "evidenceIds": [
+                "ev-08f1adf98752d59468e2"
+              ]
+            },
+            {
+              "text": "ヤマグチは下段攻撃などからコンボを始動し、ドライブラッシュを絡めてCAまでつなぎ、鶏めしの残り体力を削り切った。",
+              "evidenceIds": [
+                "ev-680bba7d75932d52eb81"
+              ]
+            },
+            {
+              "text": "決着の場面では鶏めしが空中で拾うコンボからCAへ移行し、そのまま完走してKOを奪った。",
+              "evidenceIds": [
+                "ev-383c5301ef2ce12b6535"
+              ]
+            }
+          ]
+        }
+      ]
     }
   },
   "visual": {
@@ -16634,7 +16749,6 @@
     }
   },
   "pendingNarrations": [
-    "div-s-sec8-m1",
     "div-s-sec8-m2",
     "div-s-sec8-m3"
   ]

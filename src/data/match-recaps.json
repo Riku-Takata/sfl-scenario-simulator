@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T23:00:40.285Z",
+  "updatedAt": "2026-11-14T04:01:10.554Z",
   "generatorMode": "mixed",
   "latestSection": {
     "s": 8,
@@ -24,8 +24,8 @@
         "awayPoint": 20,
         "winner": "home",
         "isTiebreaker": true,
-        "matchHeadline": "FUKUSHIMA IBUSHIGINが延長戦を制し勝ち点30",
-        "matchSummary": "第1試合【ZETA DIVISION Geekly vs FUKUSHIMA IBUSHIGIN】は20-30でFUKUSHIMA IBUSHIGINの勝利。延長戦は鶏めし選手が制した。",
+        "matchHeadline": "IBUSHIGINが延長戦を制し30-20で勝利",
+        "matchSummary": "FUKUSHIMA IBUSHIGINがZETA DIVISION Geeklyに30-20で勝利した。先鋒戦はひぐちがヤナイを2-1で下し、中堅戦もももちがジョニィに2-0で勝利。ZETAが連勝したが、大将戦では2BASSAがMenaRDを3-1で破り、延長戦へつないだ。2BASSAはジュリの風水エンジンを絡めた連続攻撃でルークをバーンアウトに追い込み、勝ち切った。延長戦は鶏めしが第1ゲームを取り、ヤマグチが第2ゲームを奪い返す展開。最後は鶏めしが空中で拾うコンボからCAにつなげて決着をつけた。",
         "bouts": [
           {
             "status": 0,
@@ -46,11 +46,11 @@
               "Game 3: [2-1] ひぐち選手がフルラウンド勝利"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "ひぐち選手（ガイル）がヤナイ選手（ベガ）を2-1で下した。",
+              "source": "gemini-video",
+              "summary": "ひぐち選手（ガイル）がヤナイ選手（ベガ）を2-1で下し、ZETAが先制した。第1ゲームを取ったひぐちは第2ゲームを奪い返されたものの、最終ゲームを取り切った。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームひぐち→第2ゲームヤナイ→第3ゲームひぐち",
-                "最終ゲームまでもつれたフルセットをひぐち選手が制した。"
+                "ひぐちは中距離の牽制でベガのドライブゲージを削り、画面端付近まで圧迫すると、最後は相打ちで第1ラウンドを先取した。",
+                "ヤナイはカウンターからのコンボと画面端での崩しを重ね、ひぐちにダメージを与える隙を作らせずパーフェクトKOを奪った。"
               ]
             },
             "games": [
@@ -98,7 +98,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 1,
@@ -118,12 +118,11 @@
               "Game 2: [2-0] ももち選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "ももち選手（ジェイミー）がジョニィ選手（エレナ）を2-0で下した。",
+              "source": "gemini-video",
+              "summary": "ももち選手（ジェイミー）がジョニィ選手（エレナ）に2-0で勝利し、ZETAが先鋒戦に続いて白星を重ねた。コンボから酔いレベルを上げ、コマンド投げでもラウンドを奪った。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲームももち→第2ゲームももち",
-                "ももち選手がゲームを1つも落とさずに勝利した。",
-                "第1ゲームはももち選手が1ラウンド目を落としてから逆転。"
+                "ももちはコンボでダメージを与えながら酔いレベルを上げ、最後はコマンド投げを通してKOを奪った。",
+                "ももちはジョニィの隙にパニッシュカウンターを決め、コンボをSA3（CA）まで伸ばしてKOにつなげた。"
               ]
             },
             "games": [
@@ -158,7 +157,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 2,
@@ -180,10 +179,12 @@
               "Game 4: [0-2] 2BASSA選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "2BASSA選手（キャミィ）がMenaRD選手（ルーク）を3-1で下した。",
+              "source": "gemini-video",
+              "summary": "2BASSA選手がMenaRD選手を3-1で破り、IBUSHIGINが延長戦へ持ち込んだ。第2ゲームを取り返された後に第3・第4ゲームを連取し、ジュリの攻めで大将戦を締めた。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲーム2BASSA→第2ゲームMenaRD→第3ゲーム2BASSA→第4ゲーム2BASSA"
+                "ブランカに変更したMenaRDは、キャミィへのパニッシュカウンターからSA3につなげ、KOを奪った。",
+                "2BASSAのジュリは、体力が残り少ないブランカの隙にパニッシュカウンターを決めて倒し切った。",
+                "2BASSAはジュリの風水エンジンを発動して連続攻撃を展開し、MenaRDのルークをバーンアウトに追い込んでKOした。"
               ]
             },
             "games": [
@@ -244,7 +245,7 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           },
           {
             "status": 3,
@@ -265,12 +266,12 @@
               "Game 3: [0-2] 鶏めし選手がストレート先取"
             ],
             "analysis": {
-              "source": "official-data",
-              "summary": "鶏めし選手（ダルシム）がヤマグチ選手（不知火舞）を2-1で下した。",
+              "source": "gemini-video",
+              "summary": "鶏めし選手（ダルシム）がヤマグチ選手を2-1で下し、IBUSHIGINの30-20での勝利を決めた。第2ゲームを奪われて並ばれたが、最終ゲームを取り切った。",
               "keyPoints": [
-                "ゲーム推移: 第1ゲーム鶏めし→第2ゲームヤマグチ→第3ゲーム鶏めし",
-                "最終ゲームまでもつれたフルセットを鶏めし選手が制した。",
-                "第1ゲームは鶏めし選手が1ラウンド目を落としてから逆転。"
+                "鶏めしはバーンアウトしたヤマグチにヨガファイアやヨガアーチで牽制を重ね、CAを当てた後の起き上がりにもパニッシュカウンターを決めてKOした。",
+                "ヤマグチは下段攻撃などからコンボを始動し、ドライブラッシュを絡めてCAまでつなぎ、鶏めしの残り体力を削り切った。",
+                "決着の場面では鶏めしが空中で拾うコンボからCAへ移行し、そのまま完走してKOを奪った。"
               ]
             },
             "games": [
@@ -318,10 +319,10 @@
               }
             ],
             "tags": [],
-            "videoStatus": "pending"
+            "videoStatus": "complete"
           }
         ],
-        "narrationStatus": "pending"
+        "narrationStatus": "complete"
       },
       {
         "matchId": "div-s-sec8-m2",
