@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T04:01:10.711Z",
+  "updatedAt": "2026-11-14T11:01:02.828Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -6635,6 +6635,243 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-14T04:01:10.586Z"
+    },
+    "div-s-sec8-m2-b0:4420bb6105694ed7:published": {
+      "articleId": "div-s-sec8-m2-b0:4420bb6105694ed7:published",
+      "matchId": "div-s-sec8-m2",
+      "boutId": "div-s-sec8-m2-b0",
+      "revision": "4420bb6105694ed7",
+      "status": "passed",
+      "summary": "先鋒戦はsako選手（エレナ）がACQUA選手（ブランカ）に2-1で勝利。第1ゲームを落としてから第2・第3ゲームを連取し、KADOKAWA FAV gamingが先制した。",
+      "summaryEvidenceIds": [
+        "ev-ae3cbb0ad9a6f494fca0"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム最終ラウンドは、ACQUAがパニッシュカウンターを取り、めくり攻撃からのコンボをCAにつないでKOを奪った。",
+          "evidenceIds": [
+            "ev-e764962eddcf549bf9d6"
+          ]
+        },
+        {
+          "text": "第3ゲーム第1ラウンドは、sakoがパニッシュカウンターから大ダメージを与え、続く地上戦でもカウンターヒットからコンボをつないでKOした。",
+          "evidenceIds": [
+            "ev-f932aa0d8aaf1ab079f3"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-ae3cbb0ad9a6f494fca0",
+        "ev-e764962eddcf549bf9d6",
+        "ev-f932aa0d8aaf1ab079f3"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-14T11:01:02.777Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-14T11:01:02.777Z"
+    },
+    "div-s-sec8-m2-b1:285ea677604ce03f:published": {
+      "articleId": "div-s-sec8-m2-b1:285ea677604ce03f:published",
+      "matchId": "div-s-sec8-m2",
+      "boutId": "div-s-sec8-m2-b1",
+      "revision": "285ea677604ce03f",
+      "status": "passed",
+      "summary": "中堅戦はもけ選手（不知火舞）がtakepi選手（JP）を2-1で下した。takepiの第1ゲーム先取に対し、もけが続く2ゲームを取り返し、FAVが先鋒戦に続いて勝利した。",
+      "summaryEvidenceIds": [
+        "ev-de5cacf3dd8bd03ab244"
+      ],
+      "keyPoints": [
+        {
+          "text": "takepiがバーンアウトした場面では、もけがドライブインパクトや連続打撃で圧力をかけ、攻撃を通してKOを奪った。",
+          "evidenceIds": [
+            "ev-b8f9269b7a363ed1f4e9"
+          ]
+        },
+        {
+          "text": "もけはリバーサル攻撃でカウンターを取ってコンボへ移行し、その後も攻勢を維持して最後はパニッシュカウンターからKOにつなげた。",
+          "evidenceIds": [
+            "ev-cdbe6e4860621424fba7"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-de5cacf3dd8bd03ab244",
+        "ev-b8f9269b7a363ed1f4e9",
+        "ev-cdbe6e4860621424fba7"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-14T11:01:02.777Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-14T11:01:02.777Z"
+    },
+    "div-s-sec8-m2-b2:35aed57504a826d2:published": {
+      "articleId": "div-s-sec8-m2-b2:35aed57504a826d2:published",
+      "matchId": "div-s-sec8-m2",
+      "boutId": "div-s-sec8-m2-b2",
+      "revision": "35aed57504a826d2",
+      "status": "passed",
+      "summary": "大将戦はひびき選手（リリー）がりゅうきち選手（ケン）に3-1で勝利。最初の2ゲームを取り、第3ゲームを返されても第4ゲームで決着をつけ、広島 TEAM iXAが延長戦につないだ。",
+      "summaryEvidenceIds": [
+        "ev-7a0d23e21de8b6834595"
+      ],
+      "keyPoints": [
+        {
+          "text": "第3ゲーム第1ラウンドは、りゅうきちが画面端で攻撃を重ね、ジャストパリィからの反撃も決めてパーフェクトKOを奪った。",
+          "evidenceIds": [
+            "ev-019ec9d02246f8fa2801"
+          ]
+        },
+        {
+          "text": "第4ゲーム第1ラウンドは、ひびきがバーンアウトしたりゅうきちに画面端でドライブインパクトを当て、スタンからSA1を組み込んだコンボでKOした。",
+          "evidenceIds": [
+            "ev-0db1731cf4fd5571650d"
+          ]
+        },
+        {
+          "text": "第4ゲーム第2ラウンドは、ひびきが画面端付近から反撃に転じ、ODコンドルスパイアを組み込んだコンボでKOを奪って大将戦を締めくくった。",
+          "evidenceIds": [
+            "ev-c3aaaba040d5c0ac04f3"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-7a0d23e21de8b6834595",
+        "ev-019ec9d02246f8fa2801",
+        "ev-0db1731cf4fd5571650d",
+        "ev-c3aaaba040d5c0ac04f3"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-14T11:01:02.777Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-14T11:01:02.777Z"
+    },
+    "div-s-sec8-m2-b3:b4ee7a38277a9514:published": {
+      "articleId": "div-s-sec8-m2-b3:b4ee7a38277a9514:published",
+      "matchId": "div-s-sec8-m2",
+      "boutId": "div-s-sec8-m2-b3",
+      "revision": "b4ee7a38277a9514",
+      "status": "passed",
+      "summary": "延長戦はあきら選手が藤村選手とのC.ヴァイパー同キャラ戦を2-0で制した。最終ラウンドは瀕死から切り返してKOを奪い、広島 TEAM iXAのチーム戦勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-1d68ad62a5bda38b3fe9",
+        "ev-cbf922514bd863f64c8e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンドでは、藤村がパニッシュカウンターからCAを決め、あきらをバーンアウトに追い込みながら体力を残りわずかまで削った。",
+          "evidenceIds": [
+            "ev-83b41b73e56c96a20f78"
+          ]
+        },
+        {
+          "text": "第2ゲーム最終ラウンドは、藤村のCAを受けたあきらがパニッシュカウンターからCAを返し、起き上がりにOD必殺技を重ねて逆転KOを奪った。",
+          "evidenceIds": [
+            "ev-cbf922514bd863f64c8e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-1d68ad62a5bda38b3fe9",
+        "ev-cbf922514bd863f64c8e",
+        "ev-83b41b73e56c96a20f78"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-14T11:01:02.778Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-14T11:01:02.778Z"
+    },
+    "div-s-sec8-m2:6d36aaf8fec5b6fc:published": {
+      "articleId": "div-s-sec8-m2:6d36aaf8fec5b6fc:published",
+      "matchId": "div-s-sec8-m2",
+      "revision": "6d36aaf8fec5b6fc",
+      "status": "passed",
+      "headline": "広島 TEAM iXA、延長戦を制して30-20で勝利",
+      "summary": "広島 TEAM iXAがKADOKAWA FAV gamingに30-20で勝利した。先鋒戦はACQUA、中堅戦はtakepiが第1ゲームを先取したものの、sakoともけがそれぞれ続く2ゲームを取り返し、FAVが連勝。大将戦ではひびきが2ゲームを先行し、りゅうきちに第3ゲームを返されながらも3-1で勝って延長戦につないだ。決着をつけたのはあきら。藤村との延長戦を2-0で制し、最終ラウンドは藤村のCAで瀕死に追い込まれながら、CAを返してOD必殺技で逆転KOを奪った。",
+      "summaryEvidenceIds": [
+        "ev-ae3cbb0ad9a6f494fca0",
+        "ev-de5cacf3dd8bd03ab244",
+        "ev-7a0d23e21de8b6834595",
+        "ev-1d68ad62a5bda38b3fe9",
+        "ev-cbf922514bd863f64c8e"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-ae3cbb0ad9a6f494fca0",
+        "ev-de5cacf3dd8bd03ab244",
+        "ev-7a0d23e21de8b6834595",
+        "ev-1d68ad62a5bda38b3fe9",
+        "ev-cbf922514bd863f64c8e"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-14T11:01:02.778Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-14T11:01:02.778Z"
     }
   }
 }
