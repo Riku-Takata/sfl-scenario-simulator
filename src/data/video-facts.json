@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T11:01:02.775Z",
+  "updatedAt": "2026-11-14T18:01:08.584Z",
   "videos": {
     "div-s-sec4": {
       "videoId": "WfaUMDDZ6Es",
@@ -9429,6 +9429,105 @@
           ]
         }
       ]
+    },
+    "div-s-sec8-m3": {
+      "inputHash": "73b00c27bbe736c7",
+      "model": "codex-cli",
+      "generatedAt": "2026-11-14T18:00:41.787Z",
+      "matchHeadline": "熊本が延長戦を制しCRに30-20で勝利",
+      "matchSummary": "Saishunkan Sol 熊本がCrazy Raccoonを30-20で下した。先鋒戦はどぐらがまちゃぼーに2-0で勝利。中堅戦もShutoがこばやんに第1ゲームを取られてから2ゲームを連取し、Crazy Raccoonが連勝した。熊本は大将戦でcosaが反撃。かずのこに先取を許しながら3ゲームを取り返し、3-1の勝利で延長戦につないだ。決着を託されたきんちょも、ボンちゃんに第1ゲームを落とした後に2ゲームを連取。大将戦と延長戦で先取されたゲームを取り返した熊本が、チーム戦の勝利をつかんだ。",
+      "matchEvidenceIds": [
+        "ev-b696c79637b196052ccf",
+        "ev-81ac59f53b26604e115c",
+        "ev-103eca1f33e963473641",
+        "ev-58628c608ed93697bd5a"
+      ],
+      "bouts": [
+        {
+          "boutId": "div-s-sec8-m3-b0",
+          "summary": "どぐら選手（エレナ）がまちゃぼー選手（リュウ）を2-0で下し、Crazy Raccoonが先勝。第1・第2ゲームを続けて取り、先鋒戦を勝利で終えた。",
+          "summaryEvidenceIds": [
+            "ev-b696c79637b196052ccf"
+          ],
+          "keyPoints": [
+            {
+              "text": "まちゃぼーはパニッシュカウンターからCAを組み込んだコンボを決め、大ダメージとダウンを奪った。",
+              "evidenceIds": [
+                "ev-99ad18ac9af33772f703"
+              ]
+            },
+            {
+              "text": "どぐらはパニッシュカウンターからコンボを決め、バーンアウト状態のまちゃぼーを連続攻撃で押し切ってKOした。",
+              "evidenceIds": [
+                "ev-b5d94d6f9f9fe9b1930e"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec8-m3-b1",
+          "summary": "Shuto選手（リュウ）がこばやん選手（ザンギエフ）に2-1で逆転勝ち。第1ゲームを落としてから第2・第3ゲームを連取し、Crazy Raccoonが先鋒戦に続いて勝利した。",
+          "summaryEvidenceIds": [
+            "ev-81ac59f53b26604e115c"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム第2ラウンド、ShutoはリバーサルOD昇竜拳でパニッシュカウンターを取り、パーフェクトKOでラウンドを取り返した。",
+              "evidenceIds": [
+                "ev-9b6545a900dadf3cb559"
+              ]
+            },
+            {
+              "text": "第1ゲーム最終ラウンド、こばやんは画面端でShutoをスタンさせ、パニッシュカウンターからCA「ボリショイ・オペラティフ」を決めて先取した。",
+              "evidenceIds": [
+                "ev-73ad08c5594a5dc965c8"
+              ]
+            },
+            {
+              "text": "第2ゲーム第1ラウンド、Shutoはパニッシュカウンターから攻めをつなぎ、画面端でスタンを奪ってスーパーアーツを絡めた連続技でKOした。",
+              "evidenceIds": [
+                "ev-67f1d625bad922d2cfd6"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec8-m3-b2",
+          "summary": "cosa選手（豪鬼）がかずのこ選手（C.ヴァイパー）を3-1で下した。第1ゲームを先取されながら第2ゲームから3連取し、熊本が延長戦へ持ち込んだ。",
+          "summaryEvidenceIds": [
+            "ev-103eca1f33e963473641"
+          ],
+          "keyPoints": [
+            {
+              "text": "第1ゲーム最終ラウンド、かずのこはパニッシュカウンターからCAにつなぎ、その後の攻撃も重ねてKOを奪った。",
+              "evidenceIds": [
+                "ev-ece3e551e44346d27398"
+              ]
+            },
+            {
+              "text": "第3ゲーム第1ラウンド、cosaは差し返しでパニッシュカウンターを取り、最後は対空の昇竜拳を決めてパーフェクトKOを達成した。",
+              "evidenceIds": [
+                "ev-6ffce0c68cb07e6d02c4"
+              ]
+            },
+            {
+              "text": "第3ゲーム第2ラウンド、cosaはかずのこのCAへの反撃でパニッシュカウンターを取り、KOしてゲームカウント2-1と勝利に王手をかけた。",
+              "evidenceIds": [
+                "ev-a8f5fac9cba733935c26",
+                "ev-103eca1f33e963473641"
+              ]
+            }
+          ]
+        },
+        {
+          "boutId": "div-s-sec8-m3-b3",
+          "summary": "きんちょ選手（テリー）がボンちゃん選手（サガット）との延長戦に2-1で勝利。第1ゲームを落としてから第2・第3ゲームを取り返し、熊本のチーム戦勝利を決めた。",
+          "summaryEvidenceIds": [
+            "ev-58628c608ed93697bd5a"
+          ],
+          "keyPoints": []
+        }
+      ]
     }
   },
   "visual": {
@@ -16855,7 +16954,5 @@
       "runs": []
     }
   },
-  "pendingNarrations": [
-    "div-s-sec8-m3"
-  ]
+  "pendingNarrations": []
 }
