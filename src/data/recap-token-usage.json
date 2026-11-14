@@ -880,20 +880,20 @@
         }
       },
       "gemini:verify:gemini-3.8-flash": {
-        "responses": 2,
+        "responses": 3,
         "tokens": {
-          "inputTokens": 20655,
+          "inputTokens": 34672,
           "cachedInputTokens": 0,
-          "outputTokens": 690,
-          "thoughtTokens": 2352,
-          "totalTokens": 23697
+          "outputTokens": 1176,
+          "thoughtTokens": 7211,
+          "totalTokens": 43059
         },
         "observations": {
-          "inputTokens": 2,
-          "cachedInputTokens": 2,
-          "outputTokens": 2,
-          "thoughtTokens": 2,
-          "totalTokens": 2
+          "inputTokens": 3,
+          "cachedInputTokens": 3,
+          "outputTokens": 3,
+          "thoughtTokens": 3,
+          "totalTokens": 3
         }
       }
     }
@@ -1143,20 +1143,20 @@
         "failures": {}
       },
       "gemini:verify:gemini-3.8-flash": {
-        "responses": 2,
+        "responses": 3,
         "tokens": {
-          "inputTokens": 20655,
+          "inputTokens": 34672,
           "cachedInputTokens": 0,
-          "outputTokens": 690,
-          "thoughtTokens": 2352,
-          "totalTokens": 23697
+          "outputTokens": 1176,
+          "thoughtTokens": 7211,
+          "totalTokens": 43059
         },
         "observations": {
-          "inputTokens": 2,
-          "cachedInputTokens": 2,
-          "outputTokens": 2,
-          "thoughtTokens": 2,
-          "totalTokens": 2
+          "inputTokens": 3,
+          "cachedInputTokens": 3,
+          "outputTokens": 3,
+          "thoughtTokens": 3,
+          "totalTokens": 3
         },
         "failures": {}
       }

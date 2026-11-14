@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-13T23:51:38.290Z",
+  "updatedAt": "2026-11-14T02:50:41.516Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -11523,10 +11523,13 @@
       "officialRefs": [
         "div-s-sec8-m3-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "1P側（画面左）のきんちょ（テリー）と、2P側（画面右）のボンちゃん（サガット）の対戦。ボンちゃんは体力が僅少でバーンアウト（EMPTY）状態。きんちょが高打点のキックでパニッシュカウンターを取り、飛び道具を放った後、空中に浮いた相手にSA1を発動してヒットさせ、K.O.を奪いラウンドを取得する。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:51:38.259Z"
     },
@@ -11547,10 +11550,13 @@
       "officialRefs": [
         "div-s-sec8-m3-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "1P側のきんちょ（テリー）に対し、2P側のボンちゃん（サガット）が開幕から連続攻撃を決め、通常投げで画面端へ追い詰める。きんちょのリバーサル無敵技をガードしたボンちゃんがパニッシュカウンターから大ダメージコンボを叩き込み、起き攻めでも続けて攻撃をヒットさせてノーダメージのパーフェクトK.O.（PERFECT K.O.）を達成する。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:51:38.259Z"
     },
@@ -11571,10 +11577,13 @@
       "officialRefs": [
         "div-s-sec8-m3-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "ステージは空母。きんちょ（テリー）のSA3が決まった直後から始まり、ボンちゃん（サガット）の体力は残り僅かとなる。ボンちゃんが間合いを詰め、後ろ投げを決めるなどプレッシャーをかけていくが、きんちょが固い立ちガードで凌ぎ、最後はボンちゃんの技の隙に反撃をパニッシュカウンターでヒットさせてK.O.を奪う。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:51:38.259Z"
     },
@@ -11595,10 +11604,13 @@
       "officialRefs": [
         "div-s-sec8-m3-b3:winner-order-reviewed"
       ],
-      "status": "candidate",
+      "status": "verified",
       "extractorVersion": "recap-evidence-v2",
+      "verifierVersion": "independent-description-v4",
+      "verificationObservation": "ステージは空母。打撃の相打ちからボンちゃん（サガット）がSA3を発動してきんちょ（テリー）の体力を大幅に奪う。起き上がりにジャンプしたきんちょをボンちゃんが対空技で落とし、続けて通常投げを決める。さらに攻めを継続して下段からのドライブラッシュコンボを完走し、きんちょをK.O.する。",
       "sourceModels": [
-        "gemini-3.6-flash"
+        "gemini-3.6-flash",
+        "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:51:38.259Z"
     }
