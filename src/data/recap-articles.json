@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T18:01:08.656Z",
+  "updatedAt": "2026-11-15T11:01:12.731Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -7103,6 +7103,251 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-14T18:01:08.589Z"
+    },
+    "div-s-sec8-m3-b0:158a667185ef7014:published": {
+      "articleId": "div-s-sec8-m3-b0:158a667185ef7014:published",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b0",
+      "revision": "158a667185ef7014",
+      "status": "passed",
+      "summary": "先鋒戦はどぐら（エレナ）がまちゃぼー（リュウ）を2-0で下し、Crazy Raccoonが先勝。まちゃぼーは両ゲームでラウンドを取り返したものの、ゲーム獲得には届かなかった。",
+      "summaryEvidenceIds": [
+        "ev-b696c79637b196052ccf",
+        "ev-99ad18ac9af33772f703",
+        "ev-b5d94d6f9f9fe9b1930e"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲームでは、まちゃぼーがパニッシュカウンターからCAを組み込んだコンボを決め、大ダメージを与えた。",
+          "evidenceIds": [
+            "ev-99ad18ac9af33772f703"
+          ]
+        },
+        {
+          "text": "第2ゲームでは、どぐらがパニッシュカウンターからコンボを決め、バーンアウトしたリュウへの連続攻撃でKOを奪った。",
+          "evidenceIds": [
+            "ev-b5d94d6f9f9fe9b1930e"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-b696c79637b196052ccf",
+        "ev-99ad18ac9af33772f703",
+        "ev-b5d94d6f9f9fe9b1930e"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-15T11:01:12.668Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-15T11:01:12.668Z"
+    },
+    "div-s-sec8-m3-b1:116edf53088f9d81:published": {
+      "articleId": "div-s-sec8-m3-b1:116edf53088f9d81:published",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b1",
+      "revision": "116edf53088f9d81",
+      "status": "passed",
+      "summary": "中堅戦はShuto（リュウ）がこばやん（ザンギエフ）に2-1で逆転勝ち。こばやんがCAで第1ゲームを先取したが、Shutoが続く2ゲームを取り、Crazy Raccoonが連勝した。",
+      "summaryEvidenceIds": [
+        "ev-81ac59f53b26604e115c",
+        "ev-73ad08c5594a5dc965c8"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム第2ラウンドは、ShutoがリバーサルOD昇竜拳でパニッシュカウンターを取り、パーフェクトKOを決めた。",
+          "evidenceIds": [
+            "ev-9b6545a900dadf3cb559"
+          ]
+        },
+        {
+          "text": "第1ゲーム最終ラウンドは、こばやんが画面端でShutoをスタンさせ、パニッシュカウンターからCAにつないで先取した。",
+          "evidenceIds": [
+            "ev-73ad08c5594a5dc965c8"
+          ]
+        },
+        {
+          "text": "第2ゲーム第1ラウンドは、Shutoがパニッシュカウンターから攻めを伸ばし、画面端でのスタンからスーパーアーツにつないでKOした。",
+          "evidenceIds": [
+            "ev-67f1d625bad922d2cfd6"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-81ac59f53b26604e115c",
+        "ev-73ad08c5594a5dc965c8",
+        "ev-9b6545a900dadf3cb559",
+        "ev-67f1d625bad922d2cfd6"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-15T11:01:12.668Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-15T11:01:12.668Z"
+    },
+    "div-s-sec8-m3-b2:3fc321c215fa8eb8:published": {
+      "articleId": "div-s-sec8-m3-b2:3fc321c215fa8eb8:published",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b2",
+      "revision": "3fc321c215fa8eb8",
+      "status": "passed",
+      "summary": "大将戦はcosa（豪鬼）がかずのこ（C.ヴァイパー）を3-1で破り、熊本が延長戦につないだ。第1ゲームを落としたcosaは、第3ゲームのパーフェクトKOも挟みながら3ゲームを連取した。",
+      "summaryEvidenceIds": [
+        "ev-103eca1f33e963473641",
+        "ev-6ffce0c68cb07e6d02c4"
+      ],
+      "keyPoints": [
+        {
+          "text": "第1ゲーム最終ラウンドは、かずのこがCAで体力を削り、さらに起き上がりへの攻撃を重ねてKOを奪った。",
+          "evidenceIds": [
+            "ev-ece3e551e44346d27398"
+          ]
+        },
+        {
+          "text": "第3ゲーム第1ラウンドは、cosaが差し返しでパニッシュカウンターを取り、最後は対空の昇竜拳でパーフェクトKOを達成した。",
+          "evidenceIds": [
+            "ev-6ffce0c68cb07e6d02c4"
+          ]
+        },
+        {
+          "text": "第3ゲーム第2ラウンドは、cosaがかずのこのCAに対処し、パニッシュカウンターの反撃でKOして勝利に王手をかけた。",
+          "evidenceIds": [
+            "ev-a8f5fac9cba733935c26"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-103eca1f33e963473641",
+        "ev-6ffce0c68cb07e6d02c4",
+        "ev-ece3e551e44346d27398",
+        "ev-a8f5fac9cba733935c26"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-15T11:01:12.668Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-15T11:01:12.668Z"
+    },
+    "div-s-sec8-m3-b3:480915f92e57a9be:published": {
+      "articleId": "div-s-sec8-m3-b3:480915f92e57a9be:published",
+      "matchId": "div-s-sec8-m3",
+      "boutId": "div-s-sec8-m3-b3",
+      "revision": "480915f92e57a9be",
+      "status": "passed",
+      "summary": "延長戦はきんちょ（テリー）がボンちゃん（サガット）を2-1で下した。第1ゲームを先取されながら第2・第3ゲームを取り返し、熊本の30-20での勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-58628c608ed93697bd5a"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームの攻防では、リバーサルの無敵技をガードし、パニッシュカウンターから大ダメージのコンボにつなげる場面があった。",
+          "evidenceIds": [
+            "ev-f4f778a9e7c0c37ef0a6"
+          ]
+        },
+        {
+          "text": "第3ゲーム最終ラウンドには、打撃の相打ちをきっかけにSA3が決まり、大きく体力を削る場面があった。",
+          "evidenceIds": [
+            "ev-b0c8924d76673f315ee7"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-58628c608ed93697bd5a",
+        "ev-f4f778a9e7c0c37ef0a6",
+        "ev-b0c8924d76673f315ee7"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-15T11:01:12.669Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-15T11:01:12.669Z"
+    },
+    "div-s-sec8-m3:df7d4394acc1e4e9:published": {
+      "articleId": "div-s-sec8-m3:df7d4394acc1e4e9:published",
+      "matchId": "div-s-sec8-m3",
+      "revision": "df7d4394acc1e4e9",
+      "status": "passed",
+      "headline": "熊本が延長戦を制し30-20で勝利",
+      "summary": "Saishunkan Sol 熊本がCrazy Raccoonを30-20で下した。先鋒戦はどぐらがまちゃぼーに2-0で勝利。中堅戦もShutoがこばやんに第1ゲームを取られてから2ゲームを連取し、Crazy Raccoonが連勝した。熊本をつないだのは大将のcosa。かずのこに先取を許しながら3ゲームを取り返し、3-1で延長戦へ持ち込んだ。決着を担ったきんちょも、ボンちゃんに第1ゲームを落としてから2ゲームを連取。熊本が大将戦と延長戦を取り切って勝利した。",
+      "summaryEvidenceIds": [
+        "ev-b696c79637b196052ccf",
+        "ev-81ac59f53b26604e115c",
+        "ev-103eca1f33e963473641",
+        "ev-58628c608ed93697bd5a"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-b696c79637b196052ccf",
+        "ev-81ac59f53b26604e115c",
+        "ev-103eca1f33e963473641",
+        "ev-58628c608ed93697bd5a"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-15T11:01:12.669Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-15T11:01:12.669Z"
     }
   }
 }
