@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T19:30:11.379Z",
+ "updatedAt": "2026-11-22T19:30:13.680Z",
  "source": "Buckler's Boot Camp (CAPCOM) のプロフィール・対戦ログを自宅サーバーで日次集計",
  "players": {
   "2bassa": {
@@ -82,41 +82,41 @@
     }
    ],
    "last7Days": {
-    "matches": 225,
-    "wins": 147,
-    "activeDays": 6,
+    "matches": 155,
+    "wins": 99,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "cammy",
-      "n": 200,
-      "w": 130
+      "n": 132,
+      "w": 84
      },
      {
       "char": "juri",
-      "n": 25,
-      "w": 17
+      "n": 23,
+      "w": 15
      }
     ],
     "byMode": {
-     "rank": 202,
+     "rank": 132,
      "casual": 0,
      "hub": 0,
      "custom": 23
     }
    },
    "last30Days": {
-    "matches": 1680,
-    "wins": 1040,
-    "activeDays": 29,
+    "matches": 1665,
+    "wins": 1031,
+    "activeDays": 28,
     "byChar": [
      {
       "char": "cammy",
-      "n": 1089,
-      "w": 653
+      "n": 1076,
+      "w": 644
      },
      {
       "char": "juri",
-      "n": 495,
+      "n": 493,
       "w": 334
      },
      {
@@ -156,17 +156,13 @@
      }
     ],
     "byMode": {
-     "rank": 1537,
+     "rank": 1527,
      "casual": 0,
      "hub": 0,
-     "custom": 143
+     "custom": 138
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2367
-    },
     {
      "date": "2026-10-24",
      "mr": 2326
@@ -279,9 +275,9 @@
    "risingChars": [
     {
      "char": "cammy",
-     "recentShare": 77.3,
-     "priorShare": 54.9,
-     "recentMatches": 520
+     "recentShare": 74.4,
+     "priorShare": 57.5,
+     "recentMatches": 445
     }
    ],
    "mainVsChar": [
@@ -955,14 +951,14 @@
     }
    ],
    "last7Days": {
-    "matches": 304,
-    "wins": 175,
-    "activeDays": 3,
+    "matches": 234,
+    "wins": 135,
+    "activeDays": 2,
     "byChar": [
      {
       "char": "yasmine",
-      "n": 199,
-      "w": 107
+      "n": 129,
+      "w": 67
      },
      {
       "char": "blanka",
@@ -981,26 +977,26 @@
      }
     ],
     "byMode": {
-     "rank": 258,
+     "rank": 188,
      "casual": 0,
      "hub": 0,
      "custom": 46
     }
    },
    "last30Days": {
-    "matches": 1145,
-    "wins": 754,
-    "activeDays": 22,
+    "matches": 1069,
+    "wins": 711,
+    "activeDays": 21,
     "byChar": [
      {
       "char": "blanka",
-      "n": 477,
-      "w": 334
+      "n": 474,
+      "w": 333
      },
      {
       "char": "arjun",
-      "n": 323,
-      "w": 210
+      "n": 250,
+      "w": 168
      },
      {
       "char": "yasmine",
@@ -1014,10 +1010,10 @@
      }
     ],
     "byMode": {
-     "rank": 761,
+     "rank": 688,
      "casual": 0,
      "hub": 67,
-     "custom": 317
+     "custom": 314
     }
    },
    "mrTrend": [
@@ -1045,9 +1041,9 @@
    "risingChars": [
     {
      "char": "yasmine",
-     "recentShare": 39,
-     "priorShare": 0,
-     "recentMatches": 234
+     "recentShare": 43.5,
+     "priorShare": 0.3,
+     "recentMatches": 232
     }
    ],
    "mainVsChar": [
@@ -1739,8 +1735,8 @@
     {
      "char": "ed",
      "recentShare": 100,
-     "priorShare": 84.4,
-     "recentMatches": 311
+     "priorShare": 86.2,
+     "recentMatches": 248
     }
    ],
    "mainVsChar": [
@@ -2314,14 +2310,14 @@
     }
    },
    "last30Days": {
-    "matches": 1241,
-    "wins": 688,
-    "activeDays": 27,
+    "matches": 1163,
+    "wins": 646,
+    "activeDays": 25,
     "byChar": [
      {
       "char": "cviper",
-      "n": 783,
-      "w": 436
+      "n": 705,
+      "w": 394
      },
      {
       "char": "cammy",
@@ -2335,17 +2331,13 @@
      }
     ],
     "byMode": {
-     "rank": 397,
+     "rank": 349,
      "casual": 0,
      "hub": 0,
-     "custom": 844
+     "custom": 814
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-24",
-     "mr": 2358
-    },
     {
      "date": "2026-10-25",
      "mr": 2240
@@ -2975,37 +2967,37 @@
     }
    ],
    "last7Days": {
-    "matches": 253,
-    "wins": 155,
-    "activeDays": 5,
+    "matches": 207,
+    "wins": 125,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "sagat",
-      "n": 225,
-      "w": 138
+      "n": 192,
+      "w": 117
      },
      {
       "char": "gouki_akuma",
-      "n": 28,
-      "w": 17
+      "n": 15,
+      "w": 8
      }
     ],
     "byMode": {
-     "rank": 139,
+     "rank": 118,
      "casual": 0,
      "hub": 0,
-     "custom": 114
+     "custom": 89
     }
    },
    "last30Days": {
-    "matches": 796,
-    "wins": 498,
-    "activeDays": 24,
+    "matches": 787,
+    "wins": 492,
+    "activeDays": 23,
     "byChar": [
      {
       "char": "sagat",
-      "n": 532,
-      "w": 334
+      "n": 523,
+      "w": 328
      },
      {
       "char": "gouki_akuma",
@@ -3019,17 +3011,13 @@
      }
     ],
     "byMode": {
-     "rank": 467,
+     "rank": 458,
      "casual": 0,
      "hub": 2,
      "custom": 327
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2357
-    },
     {
      "date": "2026-10-26",
      "mr": 2277
@@ -3090,8 +3078,8 @@
    "risingChars": [
     {
      "char": "sagat",
-     "recentShare": 73.8,
-     "priorShare": 62.6,
+     "recentShare": 76.3,
+     "priorShare": 61.7,
      "recentMatches": 254
     }
    ],
@@ -3672,9 +3660,9 @@
     }
    },
    "last30Days": {
-    "matches": 380,
-    "wins": 258,
-    "activeDays": 16,
+    "matches": 377,
+    "wins": 255,
+    "activeDays": 15,
     "byChar": [
      {
       "char": "gouki_akuma",
@@ -3683,8 +3671,8 @@
      },
      {
       "char": "ken",
-      "n": 79,
-      "w": 61
+      "n": 76,
+      "w": 58
      },
      {
       "char": "jamie",
@@ -3701,7 +3689,7 @@
      "rank": 320,
      "casual": 0,
      "hub": 0,
-     "custom": 60
+     "custom": 57
     }
    },
    "mrTrend": [
@@ -3744,16 +3732,16 @@
    ],
    "risingChars": [
     {
-     "char": "ken",
-     "recentShare": 31.2,
-     "priorShare": 3.3,
-     "recentMatches": 74
-    },
-    {
      "char": "jamie",
-     "recentShare": 29.5,
+     "recentShare": 31.4,
      "priorShare": 0,
      "recentMatches": 70
+    },
+    {
+     "char": "ken",
+     "recentShare": 26.9,
+     "priorShare": 11.6,
+     "recentMatches": 60
     }
    ],
    "mainVsChar": [
@@ -4316,28 +4304,24 @@
     }
    },
    "last30Days": {
-    "matches": 514,
-    "wins": 308,
-    "activeDays": 14,
+    "matches": 414,
+    "wins": 255,
+    "activeDays": 13,
     "byChar": [
      {
       "char": "gouki_akuma",
-      "n": 514,
-      "w": 308
+      "n": 414,
+      "w": 255
      }
     ],
     "byMode": {
-     "rank": 478,
+     "rank": 384,
      "casual": 0,
      "hub": 0,
-     "custom": 36
+     "custom": 30
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2273
-    },
     {
      "date": "2026-10-24",
      "mr": 2322
@@ -4892,19 +4876,19 @@
     }
    },
    "last30Days": {
-    "matches": 848,
-    "wins": 531,
-    "activeDays": 20,
+    "matches": 809,
+    "wins": 506,
+    "activeDays": 19,
     "byChar": [
      {
       "char": "elena",
-      "n": 407,
-      "w": 267
+      "n": 392,
+      "w": 258
      },
      {
       "char": "vega_mbison",
-      "n": 380,
-      "w": 233
+      "n": 356,
+      "w": 217
      },
      {
       "char": "alex",
@@ -4918,17 +4902,13 @@
      }
     ],
     "byMode": {
-     "rank": 478,
+     "rank": 463,
      "casual": 0,
      "hub": 0,
-     "custom": 370
+     "custom": 346
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2246
-    },
     {
      "date": "2026-10-27",
      "mr": 2268
@@ -4977,9 +4957,9 @@
    "risingChars": [
     {
      "char": "elena",
-     "recentShare": 68.1,
-     "priorShare": 42,
-     "recentMatches": 203
+     "recentShare": 67.3,
+     "priorShare": 45,
+     "recentMatches": 144
     }
    ],
    "mainVsChar": [
@@ -5529,21 +5509,21 @@
     }
    },
    "last30Days": {
-    "matches": 83,
-    "wins": 62,
-    "activeDays": 7,
+    "matches": 76,
+    "wins": 59,
+    "activeDays": 6,
     "byChar": [
      {
       "char": "cviper",
-      "n": 83,
-      "w": 62
+      "n": 76,
+      "w": 59
      }
     ],
     "byMode": {
      "rank": 14,
      "casual": 0,
      "hub": 0,
-     "custom": 69
+     "custom": 62
     }
    },
    "mrTrend": [
@@ -6074,14 +6054,14 @@
     }
    ],
    "last7Days": {
-    "matches": 76,
-    "wins": 53,
-    "activeDays": 5,
+    "matches": 52,
+    "wins": 35,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "cviper",
-      "n": 70,
-      "w": 49
+      "n": 46,
+      "w": 31
      },
      {
       "char": "dhalsim",
@@ -6093,18 +6073,18 @@
      "rank": 13,
      "casual": 0,
      "hub": 0,
-     "custom": 63
+     "custom": 39
     }
    },
    "last30Days": {
-    "matches": 347,
-    "wins": 239,
-    "activeDays": 20,
+    "matches": 318,
+    "wins": 218,
+    "activeDays": 19,
     "byChar": [
      {
       "char": "cviper",
-      "n": 296,
-      "w": 201
+      "n": 267,
+      "w": 180
      },
      {
       "char": "ed",
@@ -6123,17 +6103,13 @@
      }
     ],
     "byMode": {
-     "rank": 173,
+     "rank": 152,
      "casual": 0,
      "hub": 0,
-     "custom": 174
+     "custom": 166
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2370
-    },
     {
      "date": "2026-10-24",
      "mr": 2371
@@ -6178,9 +6154,9 @@
    "risingChars": [
     {
      "char": "cviper",
-     "recentShare": 96.7,
-     "priorShare": 83.4,
-     "recentMatches": 178
+     "recentShare": 96.4,
+     "priorShare": 84.3,
+     "recentMatches": 162
     }
    ],
    "mainVsChar": [
@@ -6715,14 +6691,14 @@
     }
    ],
    "last7Days": {
-    "matches": 321,
-    "wins": 233,
-    "activeDays": 5,
+    "matches": 250,
+    "wins": 180,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "rashid",
-      "n": 314,
-      "w": 227
+      "n": 243,
+      "w": 174
      },
      {
       "char": "cviper",
@@ -6731,21 +6707,21 @@
      }
     ],
     "byMode": {
-     "rank": 26,
+     "rank": 0,
      "casual": 0,
      "hub": 0,
-     "custom": 295
+     "custom": 250
     }
    },
    "last30Days": {
-    "matches": 875,
-    "wins": 587,
-    "activeDays": 21,
+    "matches": 850,
+    "wins": 568,
+    "activeDays": 20,
     "byChar": [
      {
       "char": "rashid",
-      "n": 860,
-      "w": 577
+      "n": 835,
+      "w": 558
      },
      {
       "char": "luke",
@@ -6759,21 +6735,13 @@
      }
     ],
     "byMode": {
-     "rank": 201,
+     "rank": 184,
      "casual": 0,
      "hub": 0,
-     "custom": 674
+     "custom": 666
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2352
-    },
-    {
-     "date": "2026-10-24",
-     "mr": 2376
-    },
     {
      "date": "2026-10-25",
      "mr": 2354
@@ -7332,19 +7300,19 @@
     }
    ],
    "last7Days": {
-    "matches": 166,
-    "wins": 108,
-    "activeDays": 5,
+    "matches": 97,
+    "wins": 59,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "mai",
-      "n": 99,
-      "w": 64
+      "n": 63,
+      "w": 33
      },
      {
       "char": "lily",
-      "n": 65,
-      "w": 42
+      "n": 32,
+      "w": 24
      },
      {
       "char": "kimberly",
@@ -7353,21 +7321,21 @@
      }
     ],
     "byMode": {
-     "rank": 127,
+     "rank": 71,
      "casual": 0,
      "hub": 0,
-     "custom": 39
+     "custom": 26
     }
    },
    "last30Days": {
-    "matches": 841,
-    "wins": 538,
-    "activeDays": 24,
+    "matches": 808,
+    "wins": 519,
+    "activeDays": 23,
     "byChar": [
      {
       "char": "lily",
-      "n": 740,
-      "w": 472
+      "n": 707,
+      "w": 453
      },
      {
       "char": "mai",
@@ -7384,7 +7352,7 @@
      "rank": 202,
      "casual": 0,
      "hub": 0,
-     "custom": 639
+     "custom": 606
     }
    },
    "mrTrend": [
@@ -7404,7 +7372,7 @@
    "risingChars": [
     {
      "char": "mai",
-     "recentShare": 26.5,
+     "recentShare": 30.3,
      "priorShare": 0,
      "recentMatches": 99
     }
@@ -7933,66 +7901,41 @@
     }
    ],
    "last7Days": {
-    "matches": 190,
-    "wins": 141,
-    "activeDays": 3,
+    "matches": 90,
+    "wins": 61,
+    "activeDays": 1,
     "byChar": [
      {
       "char": "guile",
-      "n": 75,
-      "w": 54
-     },
-     {
-      "char": "dee_jay",
-      "n": 53,
-      "w": 43
-     },
-     {
-      "char": "dhalsim",
-      "n": 20,
-      "w": 12
+      "n": 67,
+      "w": 47
      },
      {
       "char": "ryu",
-      "n": 15,
-      "w": 13
+      "n": 12,
+      "w": 10
      },
      {
-      "char": "zangief",
+      "char": "dhalsim",
       "n": 11,
-      "w": 6
-     },
-     {
-      "char": "ken",
-      "n": 6,
-      "w": 6
-     },
-     {
-      "char": "vega_mbison",
-      "n": 6,
-      "w": 3
-     },
-     {
-      "char": "luke",
-      "n": 4,
       "w": 4
      }
     ],
     "byMode": {
-     "rank": 41,
+     "rank": 0,
      "casual": 0,
-     "hub": 74,
-     "custom": 75
+     "hub": 23,
+     "custom": 67
     }
    },
    "last30Days": {
-    "matches": 601,
+    "matches": 598,
     "wins": 435,
-    "activeDays": 17,
+    "activeDays": 16,
     "byChar": [
      {
       "char": "guile",
-      "n": 477,
+      "n": 474,
       "w": 343
      },
      {
@@ -8035,7 +7978,7 @@
      "rank": 238,
      "casual": 0,
      "hub": 83,
-     "custom": 280
+     "custom": 277
     }
    },
    "mrTrend": [
@@ -8083,13 +8026,13 @@
    "risingChars": [
     {
      "char": "dee_jay",
-     "recentShare": 18.3,
+     "recentShare": 19.9,
      "priorShare": 0,
      "recentMatches": 53
     },
     {
      "char": "dhalsim",
-     "recentShare": 10,
+     "recentShare": 10.9,
      "priorShare": 0,
      "recentMatches": 29
     }
@@ -8669,14 +8612,14 @@
     }
    ],
    "last7Days": {
-    "matches": 257,
-    "wins": 160,
-    "activeDays": 5,
+    "matches": 239,
+    "wins": 147,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "arjun",
-      "n": 211,
-      "w": 128
+      "n": 193,
+      "w": 115
      },
      {
       "char": "aki",
@@ -8690,21 +8633,21 @@
      }
     ],
     "byMode": {
-     "rank": 76,
+     "rank": 65,
      "casual": 0,
      "hub": 0,
-     "custom": 181
+     "custom": 174
     }
    },
    "last30Days": {
-    "matches": 1440,
-    "wins": 852,
-    "activeDays": 26,
+    "matches": 1412,
+    "wins": 834,
+    "activeDays": 25,
     "byChar": [
      {
       "char": "arjun",
-      "n": 890,
-      "w": 517
+      "n": 862,
+      "w": 499
      },
      {
       "char": "aki",
@@ -8733,17 +8676,13 @@
      }
     ],
     "byMode": {
-     "rank": 986,
+     "rank": 962,
      "casual": 0,
      "hub": 0,
-     "custom": 454
+     "custom": 450
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2252
-    },
     {
      "date": "2026-10-24",
      "mr": 2346
@@ -8820,9 +8759,9 @@
    "risingChars": [
     {
      "char": "arjun",
-     "recentShare": 82.8,
-     "priorShare": 54.6,
-     "recentMatches": 408
+     "recentShare": 82,
+     "priorShare": 55.5,
+     "recentMatches": 386
     }
    ],
    "mainVsChar": [
@@ -9464,19 +9403,19 @@
     }
    ],
    "last7Days": {
-    "matches": 321,
-    "wins": 158,
-    "activeDays": 5,
+    "matches": 235,
+    "wins": 109,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "luke",
-      "n": 205,
-      "w": 103
+      "n": 158,
+      "w": 77
      },
      {
       "char": "sagat",
-      "n": 98,
-      "w": 48
+      "n": 59,
+      "w": 25
      },
      {
       "char": "ken",
@@ -9505,21 +9444,21 @@
      }
     ],
     "byMode": {
-     "rank": 137,
+     "rank": 82,
      "casual": 0,
      "hub": 0,
-     "custom": 184
+     "custom": 153
     }
    },
    "last30Days": {
-    "matches": 958,
-    "wins": 561,
-    "activeDays": 24,
+    "matches": 870,
+    "wins": 509,
+    "activeDays": 23,
     "byChar": [
      {
       "char": "luke",
-      "n": 667,
-      "w": 388
+      "n": 584,
+      "w": 341
      },
      {
       "char": "sagat",
@@ -9532,22 +9471,17 @@
       "w": 8
      },
      {
-      "char": "ed",
-      "n": 5,
-      "w": 2
-     },
-     {
       "char": "ken",
       "n": 5,
       "w": 4
      },
      {
-      "char": "ryu",
+      "char": "gouki_akuma",
       "n": 3,
-      "w": 3
+      "w": 0
      },
      {
-      "char": "gouki_akuma",
+      "char": "ed",
       "n": 3,
       "w": 0
      },
@@ -9563,17 +9497,13 @@
      }
     ],
     "byMode": {
-     "rank": 654,
+     "rank": 577,
      "casual": 0,
      "hub": 0,
-     "custom": 304
+     "custom": 293
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2328
-    },
     {
      "date": "2026-10-24",
      "mr": 2341
@@ -9646,8 +9576,8 @@
    "risingChars": [
     {
      "char": "sagat",
-     "recentShare": 34.6,
-     "priorShare": 18.9,
+     "recentShare": 35.7,
+     "priorShare": 18.6,
      "recentMatches": 159
     }
    ],
@@ -10236,14 +10166,14 @@
     }
    },
    "last30Days": {
-    "matches": 284,
-    "wins": 165,
-    "activeDays": 8,
+    "matches": 229,
+    "wins": 134,
+    "activeDays": 7,
     "byChar": [
      {
       "char": "arjun",
-      "n": 154,
-      "w": 82
+      "n": 99,
+      "w": 51
      },
      {
       "char": "marisa",
@@ -10257,17 +10187,13 @@
      }
     ],
     "byMode": {
-     "rank": 216,
+     "rank": 161,
      "casual": 0,
      "hub": 0,
      "custom": 68
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2265
-    },
     {
      "date": "2026-10-29",
      "mr": 2189
@@ -10812,21 +10738,21 @@
     }
    },
    "last30Days": {
-    "matches": 135,
-    "wins": 71,
-    "activeDays": 6,
+    "matches": 131,
+    "wins": 70,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "elena",
-      "n": 135,
-      "w": 71
+      "n": 131,
+      "w": 70
      }
     ],
     "byMode": {
      "rank": 104,
      "casual": 0,
      "hub": 0,
-     "custom": 31
+     "custom": 27
     }
    },
    "mrTrend": [
@@ -11365,9 +11291,9 @@
     }
    },
    "last30Days": {
-    "matches": 270,
-    "wins": 156,
-    "activeDays": 13,
+    "matches": 232,
+    "wins": 131,
+    "activeDays": 12,
     "byChar": [
      {
       "char": "terry",
@@ -11375,19 +11301,14 @@
       "w": 33
      },
      {
-      "char": "luke",
-      "n": 50,
-      "w": 29
-     },
-     {
       "char": "mai",
       "n": 34,
       "w": 13
      },
      {
-      "char": "kimberly",
+      "char": "luke",
       "n": 33,
-      "w": 23
+      "w": 20
      },
      {
       "char": "alex",
@@ -11398,6 +11319,11 @@
       "char": "zangief",
       "n": 26,
       "w": 12
+     },
+     {
+      "char": "kimberly",
+      "n": 12,
+      "w": 7
      },
      {
       "char": "vega_mbison",
@@ -11441,17 +11367,13 @@
      }
     ],
     "byMode": {
-     "rank": 198,
+     "rank": 160,
      "casual": 0,
      "hub": 0,
      "custom": 72
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 1845
-    },
     {
      "date": "2026-10-24",
      "mr": 1842
@@ -12706,19 +12628,19 @@
     }
    ],
    "last7Days": {
-    "matches": 262,
-    "wins": 149,
-    "activeDays": 5,
+    "matches": 196,
+    "wins": 108,
+    "activeDays": 4,
     "byChar": [
-     {
-      "char": "arjun",
-      "n": 154,
-      "w": 85
-     },
      {
       "char": "cammy",
       "n": 91,
       "w": 51
+     },
+     {
+      "char": "arjun",
+      "n": 88,
+      "w": 44
      },
      {
       "char": "zangief",
@@ -12727,21 +12649,21 @@
      }
     ],
     "byMode": {
-     "rank": 262,
+     "rank": 196,
      "casual": 0,
      "hub": 0,
      "custom": 0
     }
    },
    "last30Days": {
-    "matches": 1197,
-    "wins": 733,
-    "activeDays": 26,
+    "matches": 1109,
+    "wins": 668,
+    "activeDays": 25,
     "byChar": [
      {
       "char": "cviper",
-      "n": 561,
-      "w": 342
+      "n": 473,
+      "w": 277
      },
      {
       "char": "arjun",
@@ -12770,10 +12692,10 @@
      }
     ],
     "byMode": {
-     "rank": 993,
+     "rank": 944,
      "casual": 0,
      "hub": 0,
-     "custom": 204
+     "custom": 165
     }
    },
    "mrTrend": [
@@ -12813,8 +12735,8 @@
    "risingChars": [
     {
      "char": "arjun",
-     "recentShare": 48.4,
-     "priorShare": 13.5,
+     "recentShare": 53.4,
+     "priorShare": 12.8,
      "recentMatches": 260
     }
    ],
@@ -13938,37 +13860,32 @@
     }
    ],
    "last7Days": {
-    "matches": 47,
-    "wins": 27,
-    "activeDays": 2,
+    "matches": 30,
+    "wins": 17,
+    "activeDays": 1,
     "byChar": [
      {
       "char": "cviper",
       "n": 30,
       "w": 17
-     },
-     {
-      "char": "terry",
-      "n": 17,
-      "w": 10
      }
     ],
     "byMode": {
      "rank": 30,
      "casual": 0,
      "hub": 0,
-     "custom": 17
+     "custom": 0
     }
    },
    "last30Days": {
-    "matches": 1370,
-    "wins": 803,
-    "activeDays": 23,
+    "matches": 1288,
+    "wins": 759,
+    "activeDays": 21,
     "byChar": [
      {
       "char": "terry",
-      "n": 1229,
-      "w": 717
+      "n": 1147,
+      "w": 673
      },
      {
       "char": "cviper",
@@ -13982,21 +13899,13 @@
      }
     ],
     "byMode": {
-     "rank": 1235,
+     "rank": 1158,
      "casual": 0,
      "hub": 0,
-     "custom": 135
+     "custom": 130
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2302
-    },
-    {
-     "date": "2026-10-24",
-     "mr": 2354
-    },
     {
      "date": "2026-10-25",
      "mr": 2296
@@ -14751,9 +14660,9 @@
     }
    },
    "last30Days": {
-    "matches": 137,
-    "wins": 83,
-    "activeDays": 15,
+    "matches": 133,
+    "wins": 80,
+    "activeDays": 14,
     "byChar": [
      {
       "char": "gouki_akuma",
@@ -14762,15 +14671,15 @@
      },
      {
       "char": "zangief",
-      "n": 30,
-      "w": 17
+      "n": 26,
+      "w": 14
      }
     ],
     "byMode": {
      "rank": 112,
      "casual": 0,
      "hub": 0,
-     "custom": 25
+     "custom": 21
     }
    },
    "mrTrend": [
@@ -14818,9 +14727,9 @@
    "risingChars": [
     {
      "char": "gouki_akuma",
-     "recentShare": 95.7,
-     "priorShare": 35.8,
-     "recentMatches": 88
+     "recentShare": 95.5,
+     "priorShare": 39.3,
+     "recentMatches": 85
     }
    ],
    "mainVsChar": [],
@@ -15341,14 +15250,14 @@
     }
    },
    "last30Days": {
-    "matches": 314,
-    "wins": 221,
-    "activeDays": 15,
+    "matches": 285,
+    "wins": 196,
+    "activeDays": 14,
     "byChar": [
      {
       "char": "ryu",
-      "n": 213,
-      "w": 137
+      "n": 206,
+      "w": 130
      },
      {
       "char": "terry",
@@ -15361,26 +15270,16 @@
       "w": 29
      },
      {
-      "char": "luke",
-      "n": 18,
-      "w": 16
-     },
-     {
-      "char": "vega_mbison",
-      "n": 4,
-      "w": 2
-     },
-     {
       "char": "jp",
       "n": 3,
       "w": 2
      }
     ],
     "byMode": {
-     "rank": 136,
+     "rank": 114,
      "casual": 0,
      "hub": 0,
-     "custom": 178
+     "custom": 171
     }
    },
    "mrTrend": [
@@ -15929,21 +15828,21 @@
     }
    ],
    "last7Days": {
-    "matches": 25,
-    "wins": 7,
+    "matches": 14,
+    "wins": 5,
     "activeDays": 2,
     "byChar": [
      {
       "char": "mai",
-      "n": 25,
-      "w": 7
+      "n": 14,
+      "w": 5
      }
     ],
     "byMode": {
      "rank": 0,
      "casual": 0,
      "hub": 0,
-     "custom": 25
+     "custom": 14
     }
    },
    "last30Days": {
@@ -16482,14 +16381,14 @@
     }
    },
    "last30Days": {
-    "matches": 24,
-    "wins": 12,
-    "activeDays": 4,
+    "matches": 17,
+    "wins": 8,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "blanka",
-      "n": 16,
-      "w": 7
+      "n": 9,
+      "w": 3
      },
      {
       "char": "luke",
@@ -16501,7 +16400,7 @@
      "rank": 0,
      "casual": 0,
      "hub": 0,
-     "custom": 24
+     "custom": 17
     }
    },
    "mrTrend": [],
@@ -17402,14 +17301,14 @@
     }
    ],
    "last7Days": {
-    "matches": 178,
-    "wins": 86,
-    "activeDays": 6,
+    "matches": 177,
+    "wins": 85,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "gouki_akuma",
-      "n": 104,
-      "w": 42
+      "n": 103,
+      "w": 41
      },
      {
       "char": "luke",
@@ -17418,21 +17317,21 @@
      }
     ],
     "byMode": {
-     "rank": 152,
+     "rank": 151,
      "casual": 0,
      "hub": 0,
      "custom": 26
     }
    },
    "last30Days": {
-    "matches": 647,
-    "wins": 353,
-    "activeDays": 18,
+    "matches": 580,
+    "wins": 317,
+    "activeDays": 16,
     "byChar": [
      {
       "char": "gouki_akuma",
-      "n": 560,
-      "w": 301
+      "n": 493,
+      "w": 265
      },
      {
       "char": "luke",
@@ -17441,21 +17340,13 @@
      }
     ],
     "byMode": {
-     "rank": 560,
+     "rank": 493,
      "casual": 0,
      "hub": 0,
      "custom": 87
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2344
-    },
-    {
-     "date": "2026-10-24",
-     "mr": 2315
-    },
     {
      "date": "2026-10-25",
      "mr": 2350
@@ -18064,14 +17955,14 @@
     }
    },
    "last30Days": {
-    "matches": 396,
-    "wins": 219,
-    "activeDays": 14,
+    "matches": 392,
+    "wins": 216,
+    "activeDays": 13,
     "byChar": [
      {
       "char": "mai",
-      "n": 334,
-      "w": 181
+      "n": 330,
+      "w": 178
      },
      {
       "char": "chunli",
@@ -18088,7 +17979,7 @@
      "rank": 347,
      "casual": 0,
      "hub": 0,
-     "custom": 49
+     "custom": 45
     }
    },
    "mrTrend": [
@@ -18661,44 +18552,29 @@
     }
    ],
    "last7Days": {
-    "matches": 176,
-    "wins": 136,
-    "activeDays": 3,
+    "matches": 100,
+    "wins": 75,
+    "activeDays": 1,
     "byChar": [
      {
+      "char": "gouki_akuma",
+      "n": 19,
+      "w": 14
+     },
+     {
       "char": "luke",
-      "n": 55,
-      "w": 43
+      "n": 15,
+      "w": 10
      },
      {
       "char": "ken",
-      "n": 26,
-      "w": 21
-     },
-     {
-      "char": "gouki_akuma",
-      "n": 23,
-      "w": 17
+      "n": 14,
+      "w": 12
      },
      {
       "char": "ryu",
-      "n": 13,
-      "w": 10
-     },
-     {
-      "char": "jp",
       "n": 10,
-      "w": 10
-     },
-     {
-      "char": "mai",
-      "n": 7,
-      "w": 4
-     },
-     {
-      "char": "cviper",
-      "n": 7,
-      "w": 6
+      "w": 7
      },
      {
       "char": "ed",
@@ -18731,7 +18607,17 @@
       "w": 3
      },
      {
+      "char": "cviper",
+      "n": 3,
+      "w": 3
+     },
+     {
       "char": "lily",
+      "n": 3,
+      "w": 3
+     },
+     {
+      "char": "mai",
       "n": 3,
       "w": 3
      },
@@ -18739,19 +18625,24 @@
       "char": "zangief",
       "n": 3,
       "w": 3
+     },
+     {
+      "char": "jp",
+      "n": 1,
+      "w": 1
      }
     ],
     "byMode": {
      "rank": 0,
      "casual": 0,
      "hub": 0,
-     "custom": 176
+     "custom": 100
     }
    },
    "last30Days": {
-    "matches": 344,
-    "wins": 269,
-    "activeDays": 10,
+    "matches": 340,
+    "wins": 268,
+    "activeDays": 9,
     "byChar": [
      {
       "char": "luke",
@@ -18759,14 +18650,14 @@
       "w": 72
      },
      {
-      "char": "jamie",
-      "n": 50,
-      "w": 33
-     },
-     {
       "char": "ken",
       "n": 49,
       "w": 40
+     },
+     {
+      "char": "jamie",
+      "n": 46,
+      "w": 32
      },
      {
       "char": "gouki_akuma",
@@ -18838,7 +18729,7 @@
      "rank": 0,
      "casual": 0,
      "hub": 0,
-     "custom": 344
+     "custom": 340
     }
    },
    "mrTrend": [],
@@ -20441,15 +20332,10 @@
     }
    ],
    "last7Days": {
-    "matches": 182,
-    "wins": 140,
-    "activeDays": 4,
+    "matches": 103,
+    "wins": 80,
+    "activeDays": 3,
     "byChar": [
-     {
-      "char": "rashid",
-      "n": 79,
-      "w": 60
-     },
      {
       "char": "cammy",
       "n": 61,
@@ -20467,16 +20353,16 @@
      }
     ],
     "byMode": {
-     "rank": 164,
+     "rank": 85,
      "casual": 0,
      "hub": 0,
      "custom": 18
     }
    },
    "last30Days": {
-    "matches": 984,
-    "wins": 711,
-    "activeDays": 21,
+    "matches": 968,
+    "wins": 707,
+    "activeDays": 20,
     "byChar": [
      {
       "char": "jamie",
@@ -20522,15 +20408,10 @@
       "char": "yasmine",
       "n": 20,
       "w": 18
-     },
-     {
-      "char": "arjun",
-      "n": 16,
-      "w": 4
      }
     ],
     "byMode": {
-     "rank": 601,
+     "rank": 585,
      "casual": 0,
      "hub": 121,
      "custom": 262
@@ -21134,15 +21015,10 @@
     }
    ],
    "last7Days": {
-    "matches": 14,
-    "wins": 12,
-    "activeDays": 2,
+    "matches": 7,
+    "wins": 6,
+    "activeDays": 1,
     "byChar": [
-     {
-      "char": "ryu",
-      "n": 7,
-      "w": 6
-     },
      {
       "char": "vega_mbison",
       "n": 7,
@@ -21150,7 +21026,7 @@
      }
     ],
     "byMode": {
-     "rank": 14,
+     "rank": 7,
      "casual": 0,
      "hub": 0,
      "custom": 0
@@ -21273,9 +21149,9 @@
    "risingChars": [
     {
      "char": "jp",
-     "recentShare": 32,
-     "priorShare": 4.1,
-     "recentMatches": 62
+     "recentShare": 25.4,
+     "priorShare": 7.2,
+     "recentMatches": 43
     }
    ],
    "mainVsChar": [],
@@ -21834,9 +21710,9 @@
     }
    ],
    "last7Days": {
-    "matches": 339,
-    "wins": 216,
-    "activeDays": 6,
+    "matches": 326,
+    "wins": 205,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "elena",
@@ -21845,13 +21721,8 @@
      },
      {
       "char": "mai",
-      "n": 28,
-      "w": 22
-     },
-     {
-      "char": "cammy",
-      "n": 8,
-      "w": 7
+      "n": 23,
+      "w": 18
      },
      {
       "char": "luke",
@@ -21860,21 +21731,21 @@
      }
     ],
     "byMode": {
-     "rank": 313,
+     "rank": 300,
      "casual": 0,
      "hub": 0,
      "custom": 26
     }
    },
    "last30Days": {
-    "matches": 1084,
-    "wins": 634,
-    "activeDays": 26,
+    "matches": 1078,
+    "wins": 630,
+    "activeDays": 25,
     "byChar": [
      {
       "char": "luke",
-      "n": 449,
-      "w": 246
+      "n": 446,
+      "w": 245
      },
      {
       "char": "elena",
@@ -21883,8 +21754,8 @@
      },
      {
       "char": "mai",
-      "n": 160,
-      "w": 99
+      "n": 157,
+      "w": 96
      },
      {
       "char": "ken",
@@ -21928,17 +21799,13 @@
      }
     ],
     "byMode": {
-     "rank": 961,
+     "rank": 958,
      "casual": 0,
      "hub": 0,
-     "custom": 123
+     "custom": 120
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-24",
-     "mr": 2000
-    },
     {
      "date": "2026-10-25",
      "mr": 2018
@@ -21991,7 +21858,7 @@
    "risingChars": [
     {
      "char": "elena",
-     "recentShare": 49.7,
+     "recentShare": 57.6,
      "priorShare": 0,
      "recentMatches": 301
     }
@@ -22595,14 +22462,14 @@
     }
    ],
    "last7Days": {
-    "matches": 350,
-    "wins": 242,
-    "activeDays": 6,
+    "matches": 279,
+    "wins": 190,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "terry",
-      "n": 197,
-      "w": 127
+      "n": 164,
+      "w": 105
      },
      {
       "char": "mai",
@@ -22610,32 +22477,27 @@
       "w": 71
      },
      {
-      "char": "jamie",
-      "n": 28,
-      "w": 23
-     },
-     {
       "char": "ed",
-      "n": 14,
-      "w": 14
+      "n": 10,
+      "w": 10
      },
      {
       "char": "ryu",
-      "n": 11,
-      "w": 7
+      "n": 5,
+      "w": 4
      }
     ],
     "byMode": {
-     "rank": 350,
+     "rank": 279,
      "casual": 0,
      "hub": 0,
      "custom": 0
     }
    },
    "last30Days": {
-    "matches": 1145,
-    "wins": 763,
-    "activeDays": 23,
+    "matches": 1123,
+    "wins": 752,
+    "activeDays": 22,
     "byChar": [
      {
       "char": "terry",
@@ -22644,8 +22506,8 @@
      },
      {
       "char": "luke",
-      "n": 286,
-      "w": 177
+      "n": 282,
+      "w": 173
      },
      {
       "char": "gouki_akuma",
@@ -22659,8 +22521,8 @@
      },
      {
       "char": "ed",
-      "n": 100,
-      "w": 65
+      "n": 82,
+      "w": 58
      },
      {
       "char": "cviper",
@@ -22684,10 +22546,10 @@
      }
     ],
     "byMode": {
-     "rank": 951,
+     "rank": 933,
      "casual": 0,
      "hub": 0,
-     "custom": 194
+     "custom": 190
     }
    },
    "mrTrend": [
@@ -23350,46 +23212,42 @@
     }
    ],
    "last7Days": {
-    "matches": 178,
-    "wins": 95,
-    "activeDays": 5,
+    "matches": 147,
+    "wins": 79,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "elena",
-      "n": 178,
-      "w": 95
+      "n": 147,
+      "w": 79
      }
     ],
     "byMode": {
-     "rank": 167,
+     "rank": 136,
      "casual": 0,
      "hub": 0,
      "custom": 11
     }
    },
    "last30Days": {
-    "matches": 673,
-    "wins": 399,
-    "activeDays": 17,
+    "matches": 667,
+    "wins": 395,
+    "activeDays": 16,
     "byChar": [
      {
       "char": "elena",
-      "n": 673,
-      "w": 399
+      "n": 667,
+      "w": 395
      }
     ],
     "byMode": {
-     "rank": 545,
+     "rank": 539,
      "casual": 0,
      "hub": 0,
      "custom": 128
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2301
-    },
     {
      "date": "2026-10-25",
      "mr": 2336
@@ -24011,46 +23869,42 @@
     }
    ],
    "last7Days": {
-    "matches": 53,
-    "wins": 36,
-    "activeDays": 2,
+    "matches": 27,
+    "wins": 18,
+    "activeDays": 1,
     "byChar": [
      {
       "char": "chunli",
-      "n": 53,
-      "w": 36
+      "n": 27,
+      "w": 18
      }
     ],
     "byMode": {
-     "rank": 53,
+     "rank": 27,
      "casual": 0,
      "hub": 0,
      "custom": 0
     }
    },
    "last30Days": {
-    "matches": 352,
-    "wins": 200,
-    "activeDays": 13,
+    "matches": 281,
+    "wins": 166,
+    "activeDays": 12,
     "byChar": [
      {
       "char": "chunli",
-      "n": 352,
-      "w": 200
+      "n": 281,
+      "w": 166
      }
     ],
     "byMode": {
-     "rank": 326,
+     "rank": 255,
      "casual": 0,
      "hub": 0,
      "custom": 26
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2240
-    },
     {
      "date": "2026-10-24",
      "mr": 2258
@@ -24588,14 +24442,14 @@
     }
    ],
    "last7Days": {
-    "matches": 486,
-    "wins": 277,
-    "activeDays": 6,
+    "matches": 386,
+    "wins": 217,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "rashid",
-      "n": 304,
-      "w": 156
+      "n": 204,
+      "w": 96
      },
      {
       "char": "luke",
@@ -24619,21 +24473,21 @@
      }
     ],
     "byMode": {
-     "rank": 434,
+     "rank": 334,
      "casual": 0,
      "hub": 0,
      "custom": 52
     }
    },
    "last30Days": {
-    "matches": 1258,
-    "wins": 772,
-    "activeDays": 23,
+    "matches": 1214,
+    "wins": 747,
+    "activeDays": 22,
     "byChar": [
      {
       "char": "luke",
-      "n": 528,
-      "w": 340
+      "n": 484,
+      "w": 315
      },
      {
       "char": "rashid",
@@ -24667,10 +24521,10 @@
      }
     ],
     "byMode": {
-     "rank": 1083,
+     "rank": 1047,
      "casual": 0,
      "hub": 0,
-     "custom": 175
+     "custom": 167
     }
    },
    "mrTrend": [
@@ -24706,15 +24560,9 @@
    "risingChars": [
     {
      "char": "rashid",
-     "recentShare": 54.4,
+     "recentShare": 61.7,
      "priorShare": 0,
      "recentMatches": 404
-    },
-    {
-     "char": "ryu",
-     "recentShare": 19.8,
-     "priorShare": 7.2,
-     "recentMatches": 147
     }
    ],
    "mainVsChar": [
@@ -25339,14 +25187,14 @@
     }
    ],
    "last7Days": {
-    "matches": 83,
-    "wins": 53,
-    "activeDays": 6,
+    "matches": 72,
+    "wins": 46,
+    "activeDays": 4,
     "byChar": [
      {
       "char": "blanka",
-      "n": 78,
-      "w": 49
+      "n": 67,
+      "w": 42
      },
      {
       "char": "gouki_akuma",
@@ -25360,21 +25208,21 @@
      }
     ],
     "byMode": {
-     "rank": 72,
+     "rank": 67,
      "casual": 0,
      "hub": 0,
-     "custom": 11
+     "custom": 5
     }
    },
    "last30Days": {
-    "matches": 404,
-    "wins": 248,
-    "activeDays": 19,
+    "matches": 392,
+    "wins": 242,
+    "activeDays": 18,
     "byChar": [
      {
       "char": "blanka",
-      "n": 313,
-      "w": 195
+      "n": 301,
+      "w": 189
      },
      {
       "char": "gouki_akuma",
@@ -25436,7 +25284,7 @@
      "rank": 201,
      "casual": 0,
      "hub": 0,
-     "custom": 203
+     "custom": 191
     }
    },
    "mrTrend": [
@@ -25481,7 +25329,14 @@
      "mr": 2013
     }
    ],
-   "risingChars": [],
+   "risingChars": [
+    {
+     "char": "gouki_akuma",
+     "recentShare": 15.2,
+     "priorShare": 3.9,
+     "recentMatches": 21
+    }
+   ],
    "mainVsChar": [
     {
      "char": "luke",
@@ -26009,37 +25864,37 @@
     }
    ],
    "last7Days": {
-    "matches": 209,
-    "wins": 130,
-    "activeDays": 6,
+    "matches": 165,
+    "wins": 103,
+    "activeDays": 5,
     "byChar": [
      {
       "char": "jp",
-      "n": 159,
-      "w": 101
+      "n": 118,
+      "w": 76
      },
      {
       "char": "arjun",
-      "n": 50,
-      "w": 29
+      "n": 47,
+      "w": 27
      }
     ],
     "byMode": {
-     "rank": 173,
+     "rank": 137,
      "casual": 0,
      "hub": 0,
-     "custom": 36
+     "custom": 28
     }
    },
    "last30Days": {
-    "matches": 1562,
-    "wins": 1072,
-    "activeDays": 28,
+    "matches": 1494,
+    "wins": 1028,
+    "activeDays": 27,
     "byChar": [
      {
       "char": "jp",
-      "n": 1329,
-      "w": 923
+      "n": 1272,
+      "w": 885
      },
      {
       "char": "arjun",
@@ -26047,14 +25902,14 @@
       "w": 62
      },
      {
-      "char": "sagat",
-      "n": 38,
-      "w": 26
-     },
-     {
       "char": "dhalsim",
       "n": 33,
       "w": 19
+     },
+     {
+      "char": "sagat",
+      "n": 27,
+      "w": 20
      },
      {
       "char": "ryu",
@@ -26088,17 +25943,13 @@
      }
     ],
     "byMode": {
-     "rank": 1159,
+     "rank": 1109,
      "casual": 0,
      "hub": 0,
-     "custom": 403
+     "custom": 385
     }
    },
    "mrTrend": [
-    {
-     "date": "2026-10-23",
-     "mr": 2414
-    },
     {
      "date": "2026-10-24",
      "mr": 2429
@@ -27880,37 +27731,37 @@
     }
    ],
    "last7Days": {
-    "matches": 212,
-    "wins": 122,
-    "activeDays": 3,
+    "matches": 112,
+    "wins": 59,
+    "activeDays": 2,
     "byChar": [
      {
       "char": "lily",
-      "n": 176,
-      "w": 97
+      "n": 87,
+      "w": 43
      },
      {
       "char": "dhalsim",
-      "n": 36,
-      "w": 25
+      "n": 25,
+      "w": 16
      }
     ],
     "byMode": {
-     "rank": 176,
+     "rank": 87,
      "casual": 0,
      "hub": 0,
-     "custom": 36
+     "custom": 25
     }
    },
    "last30Days": {
-    "matches": 898,
-    "wins": 548,
-    "activeDays": 20,
+    "matches": 860,
+    "wins": 521,
+    "activeDays": 19,
     "byChar": [
      {
       "char": "dhalsim",
-      "n": 475,
-      "w": 317
+      "n": 437,
+      "w": 290
      },
      {
       "char": "lily",
@@ -27919,10 +27770,10 @@
      }
     ],
     "byMode": {
-     "rank": 745,
+     "rank": 724,
      "casual": 0,
      "hub": 0,
-     "custom": 153
+     "custom": 136
     }
    },
    "mrTrend": [
@@ -27962,9 +27813,9 @@
    "risingChars": [
     {
      "char": "lily",
-     "recentShare": 74.1,
-     "priorShare": 17,
-     "recentMatches": 370
+     "recentShare": 67.7,
+     "priorShare": 28,
+     "recentMatches": 270
     }
    ],
    "mainVsChar": [
@@ -29626,31 +29477,31 @@
     }
    ],
    "last7Days": {
-    "matches": 291,
-    "wins": 171,
-    "activeDays": 4,
+    "matches": 191,
+    "wins": 112,
+    "activeDays": 3,
     "byChar": [
      {
       "char": "vega_mbison",
-      "n": 291,
-      "w": 171
+      "n": 191,
+      "w": 112
      }
     ],
     "byMode": {
-     "rank": 242,
+     "rank": 142,
      "casual": 0,
      "hub": 0,
      "custom": 49
     }
    },
    "last30Days": {
-    "matches": 896,
+    "matches": 893,
     "wins": 506,
-    "activeDays": 17,
+    "activeDays": 16,
     "byChar": [
      {
       "char": "sagat",
-      "n": 455,
+      "n": 452,
       "w": 244
      },
      {
@@ -29668,7 +29519,7 @@
      "rank": 774,
      "casual": 0,
      "hub": 0,
-     "custom": 122
+     "custom": 119
     }
    },
    "mrTrend": [
@@ -30313,14 +30164,14 @@
     }
    },
    "last30Days": {
-    "matches": 105,
-    "wins": 63,
-    "activeDays": 8,
+    "matches": 82,
+    "wins": 48,
+    "activeDays": 7,
     "byChar": [
      {
       "char": "ryu",
-      "n": 97,
-      "w": 59
+      "n": 74,
+      "w": 44
      },
      {
       "char": "cviper",
@@ -30337,7 +30188,7 @@
      "rank": 22,
      "casual": 0,
      "hub": 0,
-     "custom": 83
+     "custom": 60
     }
    },
    "mrTrend": [
