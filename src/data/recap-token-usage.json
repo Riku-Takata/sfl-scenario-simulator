@@ -928,6 +928,42 @@
           "thoughtTokens": 3
         }
       }
+    },
+    "2026-11-28": {
+      "gemini:extract:gemini-3.8-flash": {
+        "responses": 9,
+        "tokens": {
+          "inputTokens": 534590,
+          "cachedInputTokens": 0,
+          "outputTokens": 3682,
+          "thoughtTokens": 17914,
+          "totalTokens": 556186
+        },
+        "observations": {
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
+        }
+      },
+      "gemini:verify:gemini-3.6-flash": {
+        "responses": 9,
+        "tokens": {
+          "inputTokens": 142008,
+          "cachedInputTokens": 0,
+          "outputTokens": 3845,
+          "thoughtTokens": 11548,
+          "totalTokens": 157401
+        },
+        "observations": {
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
+        }
+      }
     }
   },
   "sections": {
@@ -1189,6 +1225,44 @@
           "outputTokens": 3,
           "thoughtTokens": 3,
           "totalTokens": 3
+        },
+        "failures": {}
+      }
+    },
+    "div-f-sec8": {
+      "gemini:extract:gemini-3.8-flash": {
+        "responses": 9,
+        "tokens": {
+          "inputTokens": 534590,
+          "cachedInputTokens": 0,
+          "outputTokens": 3682,
+          "thoughtTokens": 17914,
+          "totalTokens": 556186
+        },
+        "observations": {
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
+        },
+        "failures": {}
+      },
+      "gemini:verify:gemini-3.6-flash": {
+        "responses": 9,
+        "tokens": {
+          "inputTokens": 142008,
+          "cachedInputTokens": 0,
+          "outputTokens": 3845,
+          "thoughtTokens": 11548,
+          "totalTokens": 157401
+        },
+        "observations": {
+          "inputTokens": 9,
+          "cachedInputTokens": 9,
+          "outputTokens": 9,
+          "thoughtTokens": 9,
+          "totalTokens": 9
         },
         "failures": {}
       }
