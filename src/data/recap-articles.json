@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-15T11:01:12.731Z",
+  "updatedAt": "2026-11-27T18:00:49.944Z",
   "articles": {
     "div-s-sec5-m1-b0:bb88511ce563110b:candidate": {
       "articleId": "div-s-sec5-m1-b0:bb88511ce563110b:candidate",
@@ -7348,6 +7348,187 @@
         "evaluatorVersion": "recap-quality-v2"
       },
       "createdAt": "2026-11-15T11:01:12.669Z"
+    },
+    "div-f-sec8-m1-b0:24146db0fca32ea6:published": {
+      "articleId": "div-f-sec8-m1-b0:24146db0fca32ea6:published",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b0",
+      "revision": "24146db0fca32ea6",
+      "status": "passed",
+      "summary": "さはら（ルーク）がYAS（リュウ）との先鋒戦を2-1で制し、Good 8 Squadが先制した。第2ゲームはYASが取ったが、さはらが第3ゲームを勝ち切った。",
+      "summaryEvidenceIds": [
+        "ev-00ce4ccbfc65eaa0db60"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲームはYASが弱波動拳や波掌撃で距離を保ち、パリィ隙へのパニッシュカウンターからSA3につないで取り返した。",
+          "evidenceIds": [
+            "ev-c440189f95a59654a607"
+          ]
+        },
+        {
+          "text": "第3ゲームでは、さはらがドライブラッシュを絡めたコンボでYASを倒し、最終ラウンドも生ドライブラッシュからの攻めでKOを決めた。",
+          "evidenceIds": [
+            "ev-aaded4ba182f11a4fc61",
+            "ev-2576d9663032acdad914"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-00ce4ccbfc65eaa0db60",
+        "ev-c440189f95a59654a607",
+        "ev-aaded4ba182f11a4fc61",
+        "ev-2576d9663032acdad914"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-27T18:00:49.728Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-27T18:00:49.728Z"
+    },
+    "div-f-sec8-m1-b1:332b0cad060496d7:published": {
+      "articleId": "div-f-sec8-m1-b1:332b0cad060496d7:published",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b1",
+      "revision": "332b0cad060496d7",
+      "status": "passed",
+      "summary": "ウメハラ（豪鬼）がぷげら（C.ヴァイパー）に2-1で勝利。第2ゲームを落とした後、第3ゲームを連取してREJECTがチームスコアをタイに戻した。",
+      "summaryEvidenceIds": [
+        "ev-e1b23131e5ed7160f585"
+      ],
+      "keyPoints": [
+        {
+          "text": "第3ゲーム第1ラウンド、ウメハラはバーンアウト中もガードで耐え、相手の隙への反撃から投げを通してラウンドを取った。",
+          "evidenceIds": [
+            "ev-82f3a9dcda86515531e9"
+          ]
+        },
+        {
+          "text": "続くラウンドではバーンアウトで追い詰められながら、ぷげらの前ジャンプを立ち強Kで迎撃してKOを決めた。",
+          "evidenceIds": [
+            "ev-86178db44f747a78c0ec"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-e1b23131e5ed7160f585",
+        "ev-82f3a9dcda86515531e9",
+        "ev-86178db44f747a78c0ec"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-27T18:00:49.728Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-27T18:00:49.728Z"
+    },
+    "div-f-sec8-m1-b2:4dc355897a304ee4:published": {
+      "articleId": "div-f-sec8-m1-b2:4dc355897a304ee4:published",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b2",
+      "revision": "4dc355897a304ee4",
+      "status": "passed",
+      "summary": "カワノ（ルーク）がふ～ど（C.ヴァイパー）に3-2で勝利。ふ～どが先に2ゲームを取ったが、カワノが第3ゲームから3連取してGood 8 Squadの勝利を決めた。",
+      "summaryEvidenceIds": [
+        "ev-95b7f9057bebe272837d"
+      ],
+      "keyPoints": [
+        {
+          "text": "第2ゲーム第2ラウンド、ふ～どはカワノの接近を捌いてパニッシュカウンターからコンボにつなぎ、SA3でKOして2ゲーム連取とした。",
+          "evidenceIds": [
+            "ev-0a81f6ed07107eed7dcc"
+          ]
+        },
+        {
+          "text": "2ゲームを先行されたカワノは第3ゲーム第1ラウンドでパニッシュカウンターからふ～どを画面端へ追い込んだが、ふ～どが脱出してラウンドを取り返した。",
+          "evidenceIds": [
+            "ev-cb341692811676489284"
+          ]
+        }
+      ],
+      "evidenceIds": [
+        "ev-95b7f9057bebe272837d",
+        "ev-0a81f6ed07107eed7dcc",
+        "ev-cb341692811676489284"
+      ],
+      "quality": {
+        "score": 1,
+        "checks": {
+          "summaryHasVerifiedReferences": true,
+          "everyPointHasVerifiedReferences": true,
+          "noForeignEvidence": true,
+          "noOfficialContradiction": true,
+          "summaryHasSubstance": true,
+          "enoughSpecificPoints": true,
+          "multipleVideoBackedPoints": true,
+          "noRepeatedPoints": true,
+          "everyClaimOverlapsCitedEvidence": true
+        },
+        "reasons": [],
+        "evaluatedAt": "2026-11-27T18:00:49.729Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-27T18:00:49.729Z"
+    },
+    "div-f-sec8-m1:7399a881d274a347:candidate": {
+      "articleId": "div-f-sec8-m1:7399a881d274a347:candidate",
+      "matchId": "div-f-sec8-m1",
+      "revision": "7399a881d274a347",
+      "status": "insufficient",
+      "headline": "Good 8 Squadが30-10で勝利",
+      "summary": "先鋒戦はさはらがYASに2-1で勝利。中堅戦はウメハラがぷげらに2-1で勝ち、REJECTが追いついた。大将戦ではふ～どが先に2ゲームを取ったものの、カワノが3ゲームを連取して3-2で勝利。Good 8 Squadが大将戦を制し、チーム戦を30-10で終えた。",
+      "summaryEvidenceIds": [
+        "ev-00ce4ccbfc65eaa0db60",
+        "ev-e1b23131e5ed7160f585",
+        "ev-95b7f9057bebe272837d"
+      ],
+      "keyPoints": [],
+      "evidenceIds": [
+        "ev-00ce4ccbfc65eaa0db60",
+        "ev-e1b23131e5ed7160f585",
+        "ev-95b7f9057bebe272837d"
+      ],
+      "quality": {
+        "score": 0.8,
+        "checks": {
+          "allBoutsPassed": true,
+          "everyBoutReferenced": true,
+          "noForeignEvidence": true,
+          "headlineHasContent": true,
+          "summaryHasSubstance": false
+        },
+        "reasons": [
+          "summaryHasSubstance"
+        ],
+        "evaluatedAt": "2026-11-27T18:00:49.729Z",
+        "evaluatorVersion": "recap-quality-v2"
+      },
+      "createdAt": "2026-11-27T18:00:49.729Z"
     }
   }
 }
