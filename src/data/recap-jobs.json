@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-15T11:01:12.737Z",
+  "updatedAt": "2026-11-27T14:00:45.462Z",
   "jobs": {
     "div-s-sec4-m1:article": {
       "jobId": "div-s-sec4-m1:article",
@@ -1913,7 +1913,7 @@
         "ev-383c5301ef2ce12b6535"
       ],
       "publishedRevision": "f8f27028a6dd35bd",
-      "updatedAt": "2026-11-15T11:01:12.631Z"
+      "updatedAt": "2026-11-27T14:00:45.412Z"
     },
     "div-s-sec8-m1-b0": {
       "jobId": "div-s-sec8-m1-b0",
@@ -1932,7 +1932,7 @@
         "ev-64de24394328c4fe992c"
       ],
       "publishedRevision": "eb858a489c64ad78",
-      "updatedAt": "2026-11-15T11:01:12.631Z"
+      "updatedAt": "2026-11-27T14:00:45.413Z"
     },
     "div-s-sec8-m1-b1": {
       "jobId": "div-s-sec8-m1-b1",
@@ -1951,7 +1951,7 @@
         "ev-bbf99b0e6c3e86677a9e"
       ],
       "publishedRevision": "94a1502375f548aa",
-      "updatedAt": "2026-11-15T11:01:12.632Z"
+      "updatedAt": "2026-11-27T14:00:45.413Z"
     },
     "div-s-sec8-m1-b2": {
       "jobId": "div-s-sec8-m1-b2",
@@ -1971,7 +1971,7 @@
         "ev-19edf443ac1bb531d2d0"
       ],
       "publishedRevision": "12cda63772a6de09",
-      "updatedAt": "2026-11-15T11:01:12.632Z"
+      "updatedAt": "2026-11-27T14:00:45.413Z"
     },
     "div-s-sec8-m1-b3": {
       "jobId": "div-s-sec8-m1-b3",
@@ -1991,7 +1991,7 @@
         "ev-383c5301ef2ce12b6535"
       ],
       "publishedRevision": "0e1c88af053da8d6",
-      "updatedAt": "2026-11-15T11:01:12.632Z"
+      "updatedAt": "2026-11-27T14:00:45.413Z"
     },
     "div-s-sec8-m2:article": {
       "jobId": "div-s-sec8-m2:article",
@@ -2011,7 +2011,7 @@
         "ev-cbf922514bd863f64c8e"
       ],
       "publishedRevision": "6d36aaf8fec5b6fc",
-      "updatedAt": "2026-11-15T11:01:12.640Z"
+      "updatedAt": "2026-11-27T14:00:45.417Z"
     },
     "div-s-sec8-m2-b0": {
       "jobId": "div-s-sec8-m2-b0",
@@ -2030,7 +2030,7 @@
         "ev-f932aa0d8aaf1ab079f3"
       ],
       "publishedRevision": "4420bb6105694ed7",
-      "updatedAt": "2026-11-15T11:01:12.640Z"
+      "updatedAt": "2026-11-27T14:00:45.417Z"
     },
     "div-s-sec8-m2-b1": {
       "jobId": "div-s-sec8-m2-b1",
@@ -2049,7 +2049,7 @@
         "ev-cdbe6e4860621424fba7"
       ],
       "publishedRevision": "285ea677604ce03f",
-      "updatedAt": "2026-11-15T11:01:12.640Z"
+      "updatedAt": "2026-11-27T14:00:45.417Z"
     },
     "div-s-sec8-m2-b2": {
       "jobId": "div-s-sec8-m2-b2",
@@ -2069,7 +2069,7 @@
         "ev-c3aaaba040d5c0ac04f3"
       ],
       "publishedRevision": "35aed57504a826d2",
-      "updatedAt": "2026-11-15T11:01:12.640Z"
+      "updatedAt": "2026-11-27T14:00:45.418Z"
     },
     "div-s-sec8-m2-b3": {
       "jobId": "div-s-sec8-m2-b3",
@@ -2088,7 +2088,7 @@
         "ev-83b41b73e56c96a20f78"
       ],
       "publishedRevision": "b4ee7a38277a9514",
-      "updatedAt": "2026-11-15T11:01:12.640Z"
+      "updatedAt": "2026-11-27T14:00:45.418Z"
     },
     "div-s-sec8-m3:article": {
       "jobId": "div-s-sec8-m3:article",
@@ -2107,7 +2107,7 @@
         "ev-58628c608ed93697bd5a"
       ],
       "publishedRevision": "df7d4394acc1e4e9",
-      "updatedAt": "2026-11-15T11:01:12.669Z"
+      "updatedAt": "2026-11-27T14:00:45.421Z"
     },
     "div-s-sec8-m3-b0": {
       "jobId": "div-s-sec8-m3-b0",
@@ -2126,7 +2126,7 @@
         "ev-b5d94d6f9f9fe9b1930e"
       ],
       "publishedRevision": "158a667185ef7014",
-      "updatedAt": "2026-11-15T11:01:12.669Z"
+      "updatedAt": "2026-11-27T14:00:45.421Z"
     },
     "div-s-sec8-m3-b1": {
       "jobId": "div-s-sec8-m3-b1",
@@ -2146,7 +2146,7 @@
         "ev-67f1d625bad922d2cfd6"
       ],
       "publishedRevision": "116edf53088f9d81",
-      "updatedAt": "2026-11-15T11:01:12.670Z"
+      "updatedAt": "2026-11-27T14:00:45.421Z"
     },
     "div-s-sec8-m3-b2": {
       "jobId": "div-s-sec8-m3-b2",
@@ -2166,7 +2166,7 @@
         "ev-a8f5fac9cba733935c26"
       ],
       "publishedRevision": "3fc321c215fa8eb8",
-      "updatedAt": "2026-11-15T11:01:12.670Z"
+      "updatedAt": "2026-11-27T14:00:45.421Z"
     },
     "div-s-sec8-m3-b3": {
       "jobId": "div-s-sec8-m3-b3",
@@ -2185,7 +2185,184 @@
         "ev-b0c8924d76673f315ee7"
       ],
       "publishedRevision": "480915f92e57a9be",
-      "updatedAt": "2026-11-15T11:01:12.670Z"
+      "updatedAt": "2026-11-27T14:00:45.421Z"
+    },
+    "div-f-sec8-m1:article": {
+      "jobId": "div-f-sec8-m1:article",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m1",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "4a986ebebebd7fd418e3c8bb957b168e09ef5efafbc7cfacd30575f24ddde6fd",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.422Z"
+    },
+    "div-f-sec8-m1-b0": {
+      "jobId": "div-f-sec8-m1-b0",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b0",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "759fe65ebeb82273678835f24bbaab437a37e896e77bd32719da48ad9bc38e51",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.422Z"
+    },
+    "div-f-sec8-m1-b1": {
+      "jobId": "div-f-sec8-m1-b1",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b1",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "cf6155ce52461f22fa3d7fd3723b791f347495d652b8a1111f0946c25d84ca86",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.422Z"
+    },
+    "div-f-sec8-m1-b2": {
+      "jobId": "div-f-sec8-m1-b2",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b2",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "9489fb6e584a5555f2b106496db95fcfcdcd516035f1a5f910a0c9485ec0ba72",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.422Z"
+    },
+    "div-f-sec8-m2:article": {
+      "jobId": "div-f-sec8-m2:article",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m2",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "f7262ed140949ff95b7201bc7a785ab93c192056e285ef4ecfb9fe17e888a9cd",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.423Z"
+    },
+    "div-f-sec8-m2-b0": {
+      "jobId": "div-f-sec8-m2-b0",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m2",
+      "boutId": "div-f-sec8-m2-b0",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "879cd07807a3b11d42d88355f3aaabf07803168af45d606dca129161133c2b24",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.423Z"
+    },
+    "div-f-sec8-m2-b1": {
+      "jobId": "div-f-sec8-m2-b1",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m2",
+      "boutId": "div-f-sec8-m2-b1",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "e72113330b9726a5cd169737f89d45b693b930db95e4cc2b2f6a14d8d1edecb2",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.423Z"
+    },
+    "div-f-sec8-m2-b2": {
+      "jobId": "div-f-sec8-m2-b2",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m2",
+      "boutId": "div-f-sec8-m2-b2",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "d99c08e326f8beea35fb2a197c8446b7371f8e3eaaf0ad07aeb0a9e00b6759c4",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.423Z"
+    },
+    "div-f-sec8-m3:article": {
+      "jobId": "div-f-sec8-m3:article",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m3",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "8abc91b81271127ffb84010fa9e8571e1a4161bb039454ef4c2aca7655f449ea",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.424Z"
+    },
+    "div-f-sec8-m3-b0": {
+      "jobId": "div-f-sec8-m3-b0",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m3",
+      "boutId": "div-f-sec8-m3-b0",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "9d0683963a3f697816068c9c3eb50d004a76d3f62122f7e2fd9ab44c14b5c2d9",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.424Z"
+    },
+    "div-f-sec8-m3-b1": {
+      "jobId": "div-f-sec8-m3-b1",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m3",
+      "boutId": "div-f-sec8-m3-b1",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "8942fa72a3847e5c8b0c8f0589af1a39bbd8c4c251832d06336e30a586ef44ea",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.424Z"
+    },
+    "div-f-sec8-m3-b2": {
+      "jobId": "div-f-sec8-m3-b2",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m3",
+      "boutId": "div-f-sec8-m3-b2",
+      "stage": "waiting_window",
+      "quality": "not_evaluated",
+      "publication": "results_only",
+      "inputHash": "3358b30cb1ab3ac7070ed4b22658f7e87dadaf47ba9a42ff5821b301eb4f0e13",
+      "pipelineVersion": "recap-pipeline-v3",
+      "attempts": 0,
+      "nextAttemptAt": "2026-11-27T15:10:00.000Z",
+      "evidenceIds": [],
+      "updatedAt": "2026-11-27T14:00:45.424Z"
     }
   }
 }

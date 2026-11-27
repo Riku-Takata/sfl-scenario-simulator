@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-13T16:30:25.899Z",
+ "updatedAt": "2026-11-27T14:00:40.146Z",
  "bouts": [
   {"season":"2025","slug":"div-s-sec1","stage":"regular","date":"2025-08-29","matchNo":1,"homeTeam":"fav","awayTeam":"sol","position":0,"homePlayer":"fujimura","awayPlayer":"cosa","homeChar":"mai","awayChar":"ryu","homeMode":"c","awayMode":"c","homeBattles":0,"awayBattles":2},
   {"season":"2025","slug":"div-s-sec1","stage":"regular","date":"2025-08-29","matchNo":1,"homeTeam":"fav","awayTeam":"sol","position":1,"homePlayer":"sako","awayPlayer":"kobayan","homeChar":"elena","awayChar":"zangief","homeMode":"c","awayMode":"c","homeBattles":2,"awayBattles":0},
@@ -382,6 +382,15 @@
   {"season":"2026","slug":"div-s-sec8","stage":"regular","date":"2026-11-13","matchNo":3,"homeTeam":"cr","awayTeam":"sol","position":0,"homePlayer":"dogura","awayPlayer":"machabo","homeChar":"elena","awayChar":"ryu","homeMode":"c","awayMode":"c","homeBattles":2,"awayBattles":0},
   {"season":"2026","slug":"div-s-sec8","stage":"regular","date":"2026-11-13","matchNo":3,"homeTeam":"cr","awayTeam":"sol","position":1,"homePlayer":"shuto","awayPlayer":"kobayan","homeChar":"ryu","awayChar":"zangief","homeMode":"c","awayMode":"c","homeBattles":2,"awayBattles":1},
   {"season":"2026","slug":"div-s-sec8","stage":"regular","date":"2026-11-13","matchNo":3,"homeTeam":"cr","awayTeam":"sol","position":2,"homePlayer":"kazunoko","awayPlayer":"cosa","homeChar":"cviper","awayChar":"gouki_akuma","homeMode":"c","awayMode":"c","homeBattles":1,"awayBattles":3},
-  {"season":"2026","slug":"div-s-sec8","stage":"regular","date":"2026-11-13","matchNo":3,"homeTeam":"cr","awayTeam":"sol","position":3,"homePlayer":"bonchan","awayPlayer":"kincho","homeChar":"sagat","awayChar":"terry","homeMode":"c","awayMode":"c","homeBattles":1,"awayBattles":2}
+  {"season":"2026","slug":"div-s-sec8","stage":"regular","date":"2026-11-13","matchNo":3,"homeTeam":"cr","awayTeam":"sol","position":3,"homePlayer":"bonchan","awayPlayer":"kincho","homeChar":"sagat","awayChar":"terry","homeMode":"c","awayMode":"c","homeBattles":1,"awayBattles":2},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":1,"homeTeam":"good8","awayTeam":"rc","position":0,"homePlayer":"sahara","awayPlayer":"yas","homeChar":"luke","awayChar":"ryu","homeMode":"c","awayMode":"c","homeBattles":2,"awayBattles":1},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":1,"homeTeam":"good8","awayTeam":"rc","position":1,"homePlayer":"pugera","awayPlayer":"daigo","homeChar":"cviper","awayChar":"gouki_akuma","homeMode":"c","awayMode":"c","homeBattles":1,"awayBattles":2},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":1,"homeTeam":"good8","awayTeam":"rc","position":2,"homePlayer":"kawano","awayPlayer":"fuudo","homeChar":"luke","awayChar":"cviper","homeMode":"c","awayMode":"c","homeBattles":3,"awayBattles":2},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":2,"homeTeam":"dng","awayTeam":"varrel","position":0,"homePlayer":"keib","awayPlayer":"tokido","homeChar":"mai","awayChar":"jp","homeMode":"c","awayMode":"c","homeBattles":1,"awayBattles":2},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":2,"homeTeam":"dng","awayTeam":"varrel","position":1,"homePlayer":"nauman","awayPlayer":"mago","homeChar":"mai","awayChar":"mai","homeMode":"c","awayMode":"c","homeBattles":2,"awayBattles":1},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":2,"homeTeam":"dng","awayTeam":"varrel","position":2,"homePlayer":"takeuchi","awayPlayer":"wabiichi","homeChar":"jamie","awayChar":"terry","homeMode":"c","awayMode":"c","homeBattles":1,"awayBattles":3},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":3,"homeTeam":"oja","awayTeam":"rid","position":0,"homePlayer":"otani","awayPlayer":"jr","homeChar":"luke","awayChar":"zangief","homeMode":"c","awayMode":"c","homeBattles":2,"awayBattles":0},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":3,"homeTeam":"oja","awayTeam":"rid","position":1,"homePlayer":"seiya","awayPlayer":"takagi","homeChar":"chunli","awayChar":"blanka","homeMode":"c","awayMode":"c","homeBattles":1,"awayBattles":2},
+  {"season":"2026","slug":"div-f-sec8","stage":"regular","date":"2026-11-27","matchNo":3,"homeTeam":"oja","awayTeam":"rid","position":2,"homePlayer":"mocchi","awayPlayer":"hikaru","homeChar":"gouki_akuma","awayChar":"arjun","homeMode":"c","awayMode":"c","homeBattles":1,"awayBattles":3}
  ]
 }

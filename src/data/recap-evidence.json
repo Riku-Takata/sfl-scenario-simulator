@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T02:50:41.516Z",
+  "updatedAt": "2026-11-27T14:00:45.449Z",
   "evidence": {
     "ev-d17115f5b7d85f873b35": {
       "id": "ev-d17115f5b7d85f873b35",
@@ -11613,6 +11613,216 @@
         "gemini-3.8-flash"
       ],
       "createdAt": "2026-11-13T23:51:38.259Z"
+    },
+    "ev-00ce4ccbfc65eaa0db60": {
+      "id": "ev-00ce4ccbfc65eaa0db60",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b0",
+      "kind": "official",
+      "playerIds": [
+        "YAS",
+        "さはら"
+      ],
+      "observation": "YASとさはらの先鋒戦は2-1。第1ゲームさはらが勝利、第2ゲームYASが勝利、第3ゲームさはらが勝利",
+      "officialRefs": [
+        "div-f-sec8-m1-b0:score",
+        "div-f-sec8-m1-b0:game:0:winner-and-rounds",
+        "div-f-sec8-m1-b0:game:1:winner-and-rounds",
+        "div-f-sec8-m1-b0:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.421Z"
+    },
+    "ev-e1b23131e5ed7160f585": {
+      "id": "ev-e1b23131e5ed7160f585",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b1",
+      "kind": "official",
+      "playerIds": [
+        "ウメハラ",
+        "ぷげら"
+      ],
+      "observation": "ウメハラとぷげらの中堅戦は2-1。第1ゲームウメハラが勝利、第2ゲームぷげらが勝利、第3ゲームウメハラが勝利",
+      "officialRefs": [
+        "div-f-sec8-m1-b1:score",
+        "div-f-sec8-m1-b1:game:0:winner-and-rounds",
+        "div-f-sec8-m1-b1:game:1:winner-and-rounds",
+        "div-f-sec8-m1-b1:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.421Z"
+    },
+    "ev-95b7f9057bebe272837d": {
+      "id": "ev-95b7f9057bebe272837d",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m1",
+      "boutId": "div-f-sec8-m1-b2",
+      "kind": "official",
+      "playerIds": [
+        "ふ～ど",
+        "カワノ"
+      ],
+      "observation": "ふ～どとカワノの大将戦は3-2。第1ゲームふ～どが勝利、第2ゲームふ～どが勝利、第3ゲームカワノが勝利、第4ゲームカワノが勝利、第5ゲームカワノが勝利",
+      "officialRefs": [
+        "div-f-sec8-m1-b2:score",
+        "div-f-sec8-m1-b2:game:0:winner-and-rounds",
+        "div-f-sec8-m1-b2:game:1:winner-and-rounds",
+        "div-f-sec8-m1-b2:game:2:winner-and-rounds",
+        "div-f-sec8-m1-b2:game:3:winner-and-rounds",
+        "div-f-sec8-m1-b2:game:4:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.421Z"
+    },
+    "ev-747e3f1fe71cb68da16f": {
+      "id": "ev-747e3f1fe71cb68da16f",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m2",
+      "boutId": "div-f-sec8-m2-b0",
+      "kind": "official",
+      "playerIds": [
+        "ときど",
+        "KEI.B"
+      ],
+      "observation": "ときどとKEI.Bの先鋒戦は2-1。第1ゲームKEI.Bが勝利、第2ゲームときどが勝利、第3ゲームときどが勝利",
+      "officialRefs": [
+        "div-f-sec8-m2-b0:score",
+        "div-f-sec8-m2-b0:game:0:winner-and-rounds",
+        "div-f-sec8-m2-b0:game:1:winner-and-rounds",
+        "div-f-sec8-m2-b0:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.422Z"
+    },
+    "ev-b0056c9b4080760285aa": {
+      "id": "ev-b0056c9b4080760285aa",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m2",
+      "boutId": "div-f-sec8-m2-b1",
+      "kind": "official",
+      "playerIds": [
+        "マゴ",
+        "ナウマン"
+      ],
+      "observation": "マゴとナウマンの中堅戦は2-1。第1ゲームナウマンが勝利、第2ゲームマゴが勝利、第3ゲームナウマンが勝利",
+      "officialRefs": [
+        "div-f-sec8-m2-b1:score",
+        "div-f-sec8-m2-b1:game:0:winner-and-rounds",
+        "div-f-sec8-m2-b1:game:1:winner-and-rounds",
+        "div-f-sec8-m2-b1:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.422Z"
+    },
+    "ev-cfffde1f32d09e42060b": {
+      "id": "ev-cfffde1f32d09e42060b",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m2",
+      "boutId": "div-f-sec8-m2-b2",
+      "kind": "official",
+      "playerIds": [
+        "わびいち",
+        "竹内ジョン"
+      ],
+      "observation": "わびいちと竹内ジョンの大将戦は3-1。第1ゲーム竹内ジョンが勝利、第2ゲームわびいちが勝利、第3ゲームわびいちが勝利、第4ゲームわびいちが勝利",
+      "officialRefs": [
+        "div-f-sec8-m2-b2:score",
+        "div-f-sec8-m2-b2:game:0:winner-and-rounds",
+        "div-f-sec8-m2-b2:game:1:winner-and-rounds",
+        "div-f-sec8-m2-b2:game:2:winner-and-rounds",
+        "div-f-sec8-m2-b2:game:3:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.422Z"
+    },
+    "ev-f5ac3f30452a9b019807": {
+      "id": "ev-f5ac3f30452a9b019807",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m3",
+      "boutId": "div-f-sec8-m3-b0",
+      "kind": "official",
+      "playerIds": [
+        "Jr.",
+        "大谷"
+      ],
+      "observation": "Jr.と大谷の先鋒戦は2-0。第1ゲーム大谷が勝利、第2ゲーム大谷が勝利",
+      "officialRefs": [
+        "div-f-sec8-m3-b0:score",
+        "div-f-sec8-m3-b0:game:0:winner-and-rounds",
+        "div-f-sec8-m3-b0:game:1:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.423Z"
+    },
+    "ev-1404a0dbeac5e64e79d7": {
+      "id": "ev-1404a0dbeac5e64e79d7",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m3",
+      "boutId": "div-f-sec8-m3-b1",
+      "kind": "official",
+      "playerIds": [
+        "高木",
+        "Seiya"
+      ],
+      "observation": "高木とSeiyaの中堅戦は2-1。第1ゲーム高木が勝利、第2ゲームSeiyaが勝利、第3ゲーム高木が勝利",
+      "officialRefs": [
+        "div-f-sec8-m3-b1:score",
+        "div-f-sec8-m3-b1:game:0:winner-and-rounds",
+        "div-f-sec8-m3-b1:game:1:winner-and-rounds",
+        "div-f-sec8-m3-b1:game:2:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.423Z"
+    },
+    "ev-18a0c9b158dcce2da772": {
+      "id": "ev-18a0c9b158dcce2da772",
+      "sectionId": "div-f-sec8",
+      "matchId": "div-f-sec8-m3",
+      "boutId": "div-f-sec8-m3-b2",
+      "kind": "official",
+      "playerIds": [
+        "ひかる",
+        "もっちー"
+      ],
+      "observation": "ひかるともっちーの大将戦は3-1。第1ゲームひかるが勝利、第2ゲームひかるが勝利、第3ゲームもっちーが勝利、第4ゲームひかるが勝利",
+      "officialRefs": [
+        "div-f-sec8-m3-b2:score",
+        "div-f-sec8-m3-b2:game:0:winner-and-rounds",
+        "div-f-sec8-m3-b2:game:1:winner-and-rounds",
+        "div-f-sec8-m3-b2:game:2:winner-and-rounds",
+        "div-f-sec8-m3-b2:game:3:winner-and-rounds"
+      ],
+      "status": "verified",
+      "extractorVersion": "official-log-v1",
+      "verifierVersion": "official-source-v1",
+      "sourceModels": [],
+      "createdAt": "2026-11-27T14:00:45.423Z"
     }
   }
 }
