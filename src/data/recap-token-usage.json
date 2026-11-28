@@ -979,6 +979,23 @@
           "thoughtTokens": 3
         }
       }
+    },
+    "2026-11-29": {
+      "codex:narration:codex-cli": {
+        "responses": 1,
+        "tokens": {
+          "inputTokens": 20284,
+          "cachedInputTokens": 0,
+          "outputTokens": 949,
+          "thoughtTokens": 0
+        },
+        "observations": {
+          "inputTokens": 1,
+          "cachedInputTokens": 1,
+          "outputTokens": 1,
+          "thoughtTokens": 1
+        }
+      }
     }
   },
   "sections": {
@@ -1319,6 +1336,7 @@
     "5a715466-d058-4773-ae3e-3e8466edbce6",
     "a7e16ffa-6430-43e2-9897-c5acaf8546c2",
     "6fd47ef1-7dfd-483f-a2a6-f9c2301d0605",
-    "e98cfeb7-4868-43b1-aae8-28c2abeadd67"
+    "e98cfeb7-4868-43b1-aae8-28c2abeadd67",
+    "e287903c-3792-413b-b687-fb73e80da745"
   ]
 }
