@@ -120,8 +120,34 @@ export const NARRATION_JSON_SCHEMA = {
   },
 };
 
+/** The verified evidence fields the writer is actually shown. */
+export function writerEvidenceView(evidence: RecapEvidence[] | undefined) {
+  return (evidence || []).filter((item) => item.status === "verified").map(({ id, kind, startSec, endSec, observation, verificationObservation }) => ({
+    id, kind, startSec, endSec, observation, verificationObservation,
+  }));
+}
+
+/** Must match evaluateMatchArticle's summaryHasSubstance threshold. */
+export const MATCH_SUMMARY_MIN_CHARS = 180;
+
+// Reason codes alone do not tell the writer what to change.
+const QUALITY_HINTS: Record<string, string> = {
+  summaryHasSubstance: "要約が短すぎる（Bout summary は45字以上、matchSummary は" + MATCH_SUMMARY_MIN_CHARS + "字以上が必須）",
+  everyClaimOverlapsCitedEvidence: "引用した根拠IDの observation と内容が重ならない文がある。各文は付けた根拠の記述に沿って書く",
+  enoughSpecificPoints: "具体的な keyPoint が2件未満、または24字未満の短い要点がある",
+  multipleVideoBackedPoints: "visual / commentary 根拠に基づく keyPoint が2件未満",
+  everyBoutReferenced: "matchEvidenceIds に、いずれかのBoutの根拠IDが含まれていない",
+  headlineHasContent: "matchHeadline は8〜40字",
+};
+
+function explainFeedback(feedback: Record<string, string[]> | undefined) {
+  return Object.fromEntries(Object.entries(feedback ?? {}).map(([key, reasons]) => [
+    key, reasons.map((reason) => QUALITY_HINTS[reason] ? `${reason}: ${QUALITY_HINTS[reason]}` : reason),
+  ]));
+}
+
 function boutPayload(b: NarrationBoutInput) {
-  const evidence = (b.evidence || []).filter((item) => item.status === "verified");
+  const evidence = writerEvidenceView(b.evidence);
   return {
     boutId: b.ctx.boutId,
     bout: b.ctx.statusName,
@@ -133,14 +159,12 @@ function boutPayload(b: NarrationBoutInput) {
     officialRounds: b.games.map(
       (g, i) => `第${i + 1}ゲーム: ${g.rounds.map((r) => nameOf(b.ctx, r)).join("→")}`
     ),
-    verifiedEvidence: evidence.map(({ id, kind, startSec, endSec, observation, verificationObservation }) => ({
-      id, kind, startSec, endSec, observation, verificationObservation,
-    })),
+    verifiedEvidence: evidence,
   };
 }
 
 export function narrationInputHash(match: NarrationMatchInput): string {
-  const payload = JSON.stringify({ v: 8, m: match.matchId, b: match.bouts.map(boutPayload), q: match.qualityFeedback ?? {}, s: match.styleExamples ?? [] });
+  const payload = JSON.stringify({ v: 9, m: match.matchId, b: match.bouts.map(boutPayload), q: match.qualityFeedback ?? {}, s: match.styleExamples ?? [] });
   return crypto.createHash("sha256").update(payload).digest("hex").slice(0, 16);
 }
 
@@ -153,7 +177,7 @@ export function buildNarrationPrompt(match: NarrationMatchInput): string {
 ${JSON.stringify(match.bouts.map(boutPayload), null, 1)}
 
 【前回の品質判定】
-${JSON.stringify(match.qualityFeedback ?? {}, null, 1)}
+${JSON.stringify(explainFeedback(match.qualityFeedback), null, 1)}
 
 【編集原稿の文体見本（事実の根拠として使用禁止）】
 ${JSON.stringify(match.styleExamples ?? [], null, 1)}
@@ -169,7 +193,7 @@ ${JSON.stringify(match.styleExamples ?? [], null, 1)}
 - 一般論、キャラ性能の説明、「圧巻」「劇的」など根拠のない誇張、他のBoutと同じ言い回しの使い回しは禁止。
 - summary は1〜2文（60〜120字程度）。対戦結果だけでなく、ゲーム展開の概要やチームスコアへの影響（先制、タイ、突き放した等）を含める。keyPoints は最大3件、各1文。
 - 前回の品質判定に不足点がある場合は、その項目を直す。ただし根拠がない内容を加えて合格させようとしない。
-- matchHeadline は30文字以内。matchSummary は試合の流れ（先鋒から大将/延長への転換）と勝敗を分けた確認済みの出来事をつなぎ、180〜350字を目安にする。材料が足りない場合は無理に水増しせず、公式記録だけの短い速報にする。
+- matchHeadline は30文字以内。matchSummary は${MATCH_SUMMARY_MIN_CHARS}〜350字（${MATCH_SUMMARY_MIN_CHARS}字未満は不合格）。試合の流れ（先鋒から大将/延長への転換）と勝敗を分けた確認済みの出来事をつなぐ。映像の根拠が少ない試合でも、各Boutの勝者とゲームカウント、ゲームごとの勝敗推移（officialRounds）、Boutごとのチームスコアの推移（例: 10-0→10-10→30-10）は公式記録なので、これらで${MATCH_SUMMARY_MIN_CHARS}字に届かせる。根拠のない描写や誇張で水増ししない。
 
 JSONのみで出力:
 {"matchHeadline":"","matchSummary":"","matchEvidenceIds":[],"bouts":[{"boutId":"","summary":"","summaryEvidenceIds":[],"keyPoints":[{"text":"","evidenceIds":[]}]}]}`;

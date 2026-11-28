@@ -27,10 +27,21 @@ export function saveWriteRequests(data: WriteRequests): void {
   const text = JSON.stringify(WriteRequestsSchema.parse(data), null, 2) + "\n";
   if (!fs.existsSync(file()) || fs.readFileSync(file(), "utf8") !== text) fs.writeFileSync(file(), text);
 }
-export function queueWriteRequest(data: WriteRequests, input: Pick<WriteRequest, "matchId" | "sectionId" | "inputHash" | "sourceHash" | "prompt">): void {
+export function queueWriteRequest(
+  data: WriteRequests,
+  input: Pick<WriteRequest, "matchId" | "sectionId" | "inputHash" | "sourceHash" | "prompt">,
+  options: { retryOfRejectedDraft?: boolean } = {},
+): void {
   const old = data.requests[input.matchId];
-  if (old?.inputHash === input.inputHash && old.stage !== "waiting_evidence") return;
-  const attempts = old?.sourceHash === input.sourceHash ? old.attempts : 0;
+  if (old?.inputHash === input.inputHash && old.stage !== "waiting_evidence") {
+    // The writer sees the same input, so only the bookkeeping hash moved. Keep it
+    // current so a later retry is still counted against the same source.
+    if (old.sourceHash !== input.sourceHash) old.sourceHash = input.sourceHash;
+    return;
+  }
+  // A retry after a rejected draft rewrites the same verified source with quality
+  // feedback. Resetting here would let a draft that never passes loop forever.
+  const attempts = old && (options.retryOfRejectedDraft || old.sourceHash === input.sourceHash) ? old.attempts : 0;
   data.requests[input.matchId] = { ...input, attempts, stage: attempts >= 3 ? "needs_review" : "queued", updatedAt: new Date().toISOString() };
 }
 export function finishWriteRequest(data: WriteRequests, matchId: string, inputHash: string, passed: boolean): void {
