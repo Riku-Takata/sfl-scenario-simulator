@@ -3,11 +3,11 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { normalizeMatchNarrative, narrationInputHash, type NarrationMatchInput } from "../scripts/recap/narration";
+import { MATCH_SUMMARY_MIN_CHARS, buildNarrationPrompt, normalizeMatchNarrative, narrationInputHash, type NarrationMatchInput } from "../scripts/recap/narration";
 import { queueWriteRequest, finishWriteRequest, readPreparedNarratives, type WriteRequests } from "../scripts/recap/writer-state";
 import { codexUsage, writeWithCodex } from "../scripts/recap/codex-writer";
 import { geminiTokenCounts, recordFailedRequest, recordTokenUsage, setTokenUsageSection } from "../scripts/recap/token-usage";
-import { applyPublicationMode, evaluateBoutArticle } from "../scripts/recap/article-quality";
+import { applyPublicationMode, evaluateBoutArticle, evaluateMatchArticle } from "../scripts/recap/article-quality";
 import { upsertJob, upsertMatchJob } from "../scripts/recap/recap-state";
 import { nextArchiveCheckAt } from "../scripts/recap/check-schedule";
 import { chaptersFromWatchPage } from "../scripts/recap/youtube-chapters";
@@ -161,6 +161,38 @@ test("local writer requests are durable, bounded on quality failures, and recove
   finishWriteRequest(state, request.matchId, request.inputHash, true);
   assert.equal(state.requests[request.matchId].stage, "completed");
   assert.equal(state.requests[request.matchId].prompt, "");
+});
+
+test("rejected local drafts keep counting retries even when the stored source hash is stale", () => {
+  const state: WriteRequests = { schemaVersion: 1, requests: {} };
+  const request = { matchId: "div-f-sec8-m1", sectionId: "div-f-sec8", inputHash: "aaaaaaaaaaaaaaaa", sourceHash: "queued-before-evidence-settled", prompt: "draft" };
+  queueWriteRequest(state, request);
+  // The same writer input seen again refreshes the bookkeeping hash.
+  queueWriteRequest(state, { ...request, sourceHash: "settled" });
+  assert.equal(state.requests[request.matchId].sourceHash, "settled");
+  // Draft rejected by the quality gate, then requeued with feedback, three times.
+  let current = { ...request, sourceHash: "settled" };
+  for (let retry = 0; retry < 3; retry++) {
+    finishWriteRequest(state, current.matchId, current.inputHash, false);
+    if (state.requests[current.matchId].stage === "needs_review") break;
+    current = { ...current, sourceHash: "drifted-" + retry, inputHash: String(retry).repeat(16) };
+    queueWriteRequest(state, current, { retryOfRejectedDraft: true });
+  }
+  assert.equal(state.requests[request.matchId].attempts, 3);
+  assert.equal(state.requests[request.matchId].stage, "needs_review");
+});
+
+test("the match summary rule in the writer prompt matches the quality gate", () => {
+  const match: NarrationMatchInput = {
+    matchId: "div-f-sec8-m1", awayTeam: "A", homeTeam: "B", awayPoint: 10, homePoint: 30, winnerTeam: "B", isTiebreaker: false, bouts: [],
+    qualityFeedback: { "div-f-sec8-m1:article": ["summaryHasSubstance"] },
+  };
+  const prompt = buildNarrationPrompt(match);
+  assert.match(prompt, new RegExp(`matchSummary は${MATCH_SUMMARY_MIN_CHARS}〜350字（${MATCH_SUMMARY_MIN_CHARS}字未満は不合格）`));
+  assert.doesNotMatch(prompt, /短い速報/);
+  assert.match(prompt, /summaryHasSubstance: 要約が短すぎる/);
+  const article = evaluateMatchArticle({ matchId: match.matchId, headline: "Bが30-10で勝利した", summary: "あ".repeat(MATCH_SUMMARY_MIN_CHARS - 1), evidenceIds: [], boutArticles: [], evidence: [] });
+  assert.ok(article.quality.reasons.includes("summaryHasSubstance"));
 });
 
 test("provider token accounting preserves real fields and deduplicates resubmitted Codex drafts", () => {

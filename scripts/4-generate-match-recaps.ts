@@ -63,6 +63,7 @@ import {
   generateMatchNarrative,
   narrationInputHash,
   buildNarrationPrompt,
+  writerEvidenceView,
   normalizeMatchNarrative,
   type BoutGameDetail,
   type NarrationBoutInput,
@@ -681,7 +682,9 @@ export async function generateAndSaveMatchRecaps(
         awayPoint: result.total.point.away, homePoint: result.total.point.home,
         bouts: boutInputs.map((input) => ({ ctx: input.ctx, games: input.games, videoId })),
       });
-      const writerSourceHash = recapInputHash({ matchSourceHash, evidence: boutInputs.map((bout) => bout.evidence?.filter((item) => item.status === "verified")) });
+      // Hash only what the writer is shown, so bookkeeping fields on evidence
+      // (timestamps, verifier metadata) cannot reset the retry counter.
+      const writerSourceHash = recapInputHash({ matchSourceHash, evidence: boutInputs.map((bout) => writerEvidenceView(bout.evidence)) });
       const previousRequest = writeRequests.requests[matchId];
       const writerAttempts = previousRequest?.sourceHash === writerSourceHash ? previousRequest.attempts : 0;
       const buildQualityFeedback = (attempts: number) => Object.fromEntries([
@@ -721,7 +724,7 @@ export async function generateAndSaveMatchRecaps(
         if (request?.stage !== "queued" || request.inputHash !== inputHash) return;
         const retryInput = { ...narrationInput, qualityFeedback: buildQualityFeedback(request.attempts) };
         queueWriteRequest(writeRequests, { matchId, sectionId: slug, inputHash: narrationInputHash(retryInput),
-          sourceHash: writerSourceHash, prompt: buildNarrationPrompt(retryInput) });
+          sourceHash: writerSourceHash, prompt: buildNarrationPrompt(retryInput) }, { retryOfRejectedDraft: true });
       };
 
       // 全Boutの動画解析が決着（complete/failed/区間なし）したら解説を1回だけ生成

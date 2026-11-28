@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import type { BoutGameDetail } from "./narration";
 import type { RecapArticle, RecapEvidence } from "../../src/lib/types";
-import { contradictsOfficialRounds, isVacuousKeyPoint } from "./narration";
+import { MATCH_SUMMARY_MIN_CHARS, contradictsOfficialRounds, isVacuousKeyPoint } from "./narration";
 
 export const ARTICLE_QUALITY_VERSION = "recap-quality-v2";
 
@@ -116,7 +116,7 @@ export function evaluateMatchArticle(input: {
     everyBoutReferenced: coversAllBouts,
     noForeignEvidence: refs.length === input.evidenceIds.length,
     headlineHasContent: input.headline.trim().length >= 8 && input.headline.trim().length <= 40,
-    summaryHasSubstance: input.summary.trim().length >= 180,
+    summaryHasSubstance: input.summary.trim().length >= MATCH_SUMMARY_MIN_CHARS,
   };
   const passed = Object.values(checks).every(Boolean);
   const reasons = Object.entries(checks).filter(([, ok]) => !ok).map(([key]) => key);
